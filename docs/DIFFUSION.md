@@ -1,60 +1,57 @@
-# Préparer la diffusion — sans publier automatiquement
+# Distribution de CursorFlow Studio 2.6.6 — plan avant publication
 
-## Périmètre actuel
+> **Documentation mise à jour dans le dépôt privé.** Aucun changement de visibilité ni publication de release n’est autorisé par ce document.
 
-Le dépôt **JulienLecomteGit/cursorflow-studio** est préparé en privé. Seuls les documents
-et métadonnées y sont versionnés. Aucun EXE ni source applicative n'y est envoyé à cette étape.
-Les autorisations de publication, de visibilité et d'envoi de fichiers restent distinctes.
+## État vérifié le 8 novembre 2026
 
-## Les trois fichiers prévus pour les destinataires
+- Dépôt `JulienLecomteGit/cursorflow-studio` : **privé**, branche `main`.
+- Release `v2.6.6` : **brouillon privé**, id `438533321`, `published_at=null`.
+- Trois pièces : `CursorFlowSetup.exe` (446 976 octets), `LIRE_AVANT_INSTALLATION.txt`, `SHA256SUMS.txt`.
+- L'empreinte GitHub du setup est **identique** à celle du binaire 2.6.6 testé : `F4A66366B2AF1CA0A8D131517F78F2566F09C049B20401B3AFA5DA1039515C67`.
+- Aucune signature Authenticode sur cette fabrication ; les sources applicatives ne figurent pas dans `main`.
+- **Aucun canal de téléchargement public autorisé pour l'instant.**
 
-| Fichier | Origine |
-|---|---|
-| CursorFlowSetup.exe | Copie du setup 2.6.6 déjà construit et contrôlé sur le PC de l'auteur |
-| LIRE_AVANT_INSTALLATION.txt | [Notice](../releases/2.6.6/LIRE_AVANT_INSTALLATION.txt) |
-| SHA256SUMS.txt | [Empreinte](../releases/2.6.6/SHA256SUMS.txt) |
+## Modèle retenu
 
-Empreinte du setup attendu : `F4A66366B2AF1CA0A8D131517F78F2566F09C049B20401B3AFA5DA1039515C67`.
+CursorFlow est envisagé comme une application **gratuite, à code propriétaire**. Une licence d'utilisation explicite doit autoriser l'installation et l'usage du binaire sans autoriser, par défaut, la redistribution du code source, la revente ni la republication de fichiers modifiés.
 
-Ne pas reconstruire B pour l'héberger. Ne pas prendre le setup 2.6.5 ou un ancien
-exécutable portant le même nom. Les chemins personnels sont exclusivement dans le guide
-local privé, jamais dans ces documents.
+Avant d'afficher des conditions définitives : vérifier les droits sur les éléments tiers, l'identité/contact public de l'éditeur, la portée des garanties obligatoires et l'applicabilité du règlement européen sur la cyberrésilience.
 
-## Prochaine décision : un brouillon privé
+## Avant toute publication
 
-Après accord explicite de Julien pour créer le brouillon et y déposer le binaire :
+1. Réaliser un essai volontaire sur un **autre PC Windows 11 x64**, si possible non administré ; conserver le premier message en cas de blocage sécurité. **Ne pas désactiver Smart App Control, Defender ni une stratégie d'organisation.**
+2. Valider les conditions d'utilisation, la notice de confidentialité et la politique de signalement de sécurité, actuellement préparées **hors du dépôt** (pas encore publiées).
+3. Maintenir README et manifeste cohérents avec le brouillon ; leur actualisation documentaire fait partie de la présente validation.
+4. Contrôler le dépôt et **son historique Git complet** avant un passage en public, même si seul le contenu courant semble propre.
+5. Déterminer si l'on publie **le dépôt documentaire existant** ou si l'on crée plus tard un dépôt public séparé ; **un dépôt public rend son historique lisible**.
+6. Choisir une voie de distribution et de confiance Windows : GitHub avec EXE non signé (risque de blocage), signature CA reconnue (payante), ou empaquetage MSIX Store (autre produit de distribution à tester). Aucun achat ni migration décidés.
+7. Obtenir un accord explicite, distinct, pour rendre le dépôt public et/ou cliquer sur « Publish release ».
 
-1. Vérifier que le dépôt est toujours privé et que les fichiers à joindre sont les trois
-   éléments autorisés ci-dessus. Contrôler l'empreinte de la copie locale du setup.
-2. Dans GitHub, ouvrir **Releases → Draft a new release**.
-3. Préparer le tag **v2.6.6**, ciblant la branche **main**, et le titre
-   **CursorFlow Studio 2.6.6 — Windows x64**.
-4. Utiliser [les notes préparées](../releases/2.6.6/NOTES_VERSION.md), ajouter uniquement
-   les pièces autorisées, puis **Save draft**. Ne pas cliquer sur **Publish release**.
-5. Vérifier le brouillon, ses fichiers et la visibilité avec l'auteur avant toute suite.
+## Interpréter correctement l'état du brouillon
 
-Ce texte décrit un parcours futur : il ne signifie pas qu'un tag ou une release existe.
-Un dépôt privé n'est pas un lien public de téléchargement. La mention « pre-release »
-n'est pas un contrôle de confidentialité. Toute publication ou ouverture du dépôt
-nécessite un accord séparé et une revue de son contenu.
+Le tag **nommé** `v2.6.6` apparaît sur l'objet release ; les URL de téléchargement du brouillon peuvent utiliser un identifiant `untagged-...`. Ne pas promettre qu'un lien public stable existe avant publication. Le dossier `releases/2.6.6` de la branche `main` contient des **documents**, pas les actifs binaires d'une release.
 
-## Exclusions
+## Compatibilité et sécurité
 
-Pas de sources C#, de kit de fabrication, de profil, de sauvegarde, de journaux bruts,
-de guide HTML privé ni de chemin utilisateur. Le fichier .gitignore aide aux ajouts
-locaux mais ne remplace pas une revue avant envoi. Ne pas ajouter de licence open source,
-de service payant, de signature ou de workflow sans décision appropriée.
+- Environnement réellement éprouvé : un poste Windows 11 x64 de référence, avec essais de fluidité et mise à jour.
+- À contrôler séparément : installation sur un deuxième PC, échelles d'affichage, absence de régression des boutons et du dessin, désinstallation de la **2.6.6** et démarrage après reconnexion.
+- Installateur non signé : **ne pas conseiller un contournement** des protections Windows. Une empreinte SHA-256 sert seulement à contrôler l'identité du fichier.
+- GitHub Releases héberge le binaire mais ne lui confère aucune signature numérique.
 
-## Sécurité et conditions
+## Documents d'aide
 
-Le setup actuel est non signé. En cas de blocage Windows, demander le message sans
-recommander la désactivation des protections. Héberger sur GitHub n'ajoute aucune signature.
-Les conditions d'utilisation et les droits sur les éléments tiers restent à vérifier
-avant diffusion publique ; cette préparation n'attribue aucune licence automatiquement.
+- [Validation antérieure 2.6.6](VALIDATION_2.6.6.md)
+- Conditions d’utilisation proposées : **en cours de validation hors GitHub**, non publiées.
+- Notice de confidentialité : **en cours de validation hors GitHub**, non publiée.
+- Politique de signalement de sécurité : **à finaliser hors GitHub**, non publiée.
+- Plan de pilote sur second PC : à conserver d'abord hors dépôt, jusqu'à validation.
 
-## Sources officielles
+## Références officielles
 
-- [GitHub : releases, pièces jointes et brouillons](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
-- [Microsoft : fonctionnement et limites de Smart App Control](https://support.microsoft.com/en-US/Windows/Security/Threat-Malware-Protection/smart-app-control-frequently-asked-questions)
+- [GitHub : licences et droits par défaut](https://docs.github.com/fr/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+- [GitHub : changer la visibilité](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility)
+- [Microsoft : options de signature](https://learn.microsoft.com/fr-fr/windows/apps/package-and-deploy/code-signing-options)
+- [Microsoft : Smart App Control](https://support.microsoft.com/fr-fr/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions)
+- [Commission européenne : CRA et signalement](https://digital-strategy.ec.europa.eu/en/policies/cra-reporting)
 
-Références consultées le 8 novembre 2026. Aucun programme ni workflow n'est lancé par ces documents.
+**Ce texte n'est pas une autorisation de publier.**

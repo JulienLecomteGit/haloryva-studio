@@ -2,62 +2,50 @@
 
 **Rends ton curseur visible. Dessine, explique et présente sur Windows.**
 
-Windows x64 · Version de référence **2.6.6** · Création : **Julien Lecomte**
+Windows x64 · Version préparée : **2.6.6** · Création : **Julien Lecomte**
 
-> **Dépôt privé de préparation.** La documentation de la 2.6.6 est prête à relire.
-> Aucun installateur, aucune source applicative et aucune release ne sont disponibles
-> dans ce dépôt à cette étape. Ce n'est pas un dépôt permettant de compiler l'application.
+> **Dépôt actuellement privé — préparation de diffusion.** La release `v2.6.6` existe en **brouillon privé** avec l'installateur contrôlé et deux documents d'accompagnement. **Elle n'est pas publiée et aucun téléchargement public n'est ouvert.**
 
-## Une application pour montrer ce que tu fais
+## Fonctions
 
-| Fonction | Usage |
+| Fonction | Description |
 |---|---|
-| **Halo intelligent** | Personnaliser le contour du pointeur, son extinction au repos et le centrage sur le curseur texte. |
-| **Traînées** | Choisir parmi huit styles, ajuster couleurs, largeur et persistance, ou utiliser un logo. |
-| **Clics visibles** | Mettre en évidence les actions de la souris pendant une présentation. |
-| **Boutons souris** | Affecter des actions aux boutons, notamment aux appuis courts et longs des boutons latéraux. |
-| **Dessin sur le Bureau** | Annoter, tracer des flèches libres et utiliser l'assistance de formes, avec annulation. |
-| **Installation graphique** | Installer ou mettre à jour depuis un seul EXE ; désinstaller depuis Windows. |
+| Halo intelligent | Contour personnalisable, extinction au repos, centrage sur curseur texte |
+| Traînées | Huit styles, couleurs, persistance, largeur et logos |
+| Clics visibles | Mise en évidence des actions lors des démonstrations |
+| Boutons souris | Actions personnalisables, appuis courts/longs |
+| Dessin sur le Bureau | Stylo, flèches libres, formes assistées et annulation |
+| Installation graphique | Un EXE précompilé, mise à jour graphique et désinstallation depuis Windows |
 
-## Ce qui change en 2.6.6
+## Nouveauté 2.6.6
 
-Le moteur de traînée conserve les points jusqu'à leur expiration, stabilise la surface
-transparente et régularise le travail de rendu. Le design, les réglages et les fonctions
-approuvées sont conservés. Le moteur B a été apprécié pendant l'essai, puis sa fluidité
-retrouvée après la mise à jour installée.
+Le moteur de traînée préserve les points jusqu'à leur expiration, stabilise le cadrage et régularise les rendus. Lors d'un essai local du style Lumière, le moteur a enregistré **16,66 ms d'intervalle médian en mouvement**. Ce résultat ne constitue pas une garantie de fréquence d'affichage sur tous les écrans.
 
-**Il s'agit du retour d'usage sur le poste de l'auteur, pas d'une garantie de 60 FPS sur
-chaque ordinateur.** Les mesures détaillées et leur périmètre sont décrits dans
-[Validation 2.6.6](docs/VALIDATION_2.6.6.md).
+## Installer et utiliser
 
-## Commencer
+L'installateur à terme est **`CursorFlowSetup.exe`**, actuellement dans une release non publiée. Il contient l'application précompilée et ne demande ni compilateur ni script PowerShell sur le poste destinataire. La cible de recette actuelle est **Windows 11 x64**.
 
-- [Installer, mettre à jour et désinstaller](docs/INSTALLATION.md)
-- [Lire les notes de version 2.6.6](releases/2.6.6/NOTES_VERSION.md)
-- [Consulter les vérifications et limites](docs/VALIDATION_2.6.6.md)
-- [Préparer la diffusion sans publier](docs/DIFFUSION.md)
+- [Installation, mise à jour et désinstallation](docs/INSTALLATION.md)
+- [Validation de la version 2.6.6](docs/VALIDATION_2.6.6.md)
+- [Notes de version](releases/2.6.6/NOTES_VERSION.md)
+- [Préparation de diffusion](docs/DIFFUSION.md)
 
-**Fichier prévu : `CursorFlowSetup.exe`.** Il contient l'application précompilée.
-Les archives automatiques « Source code » d'une future release de ce dépôt documentaire
-ne seront pas l'installateur et ne contiendront pas les sources C# de CursorFlow.
+## Gratuit, mais propriétaire — décision de principe
 
-## Sécurité et compatibilité
+La distribution gratuite en code propriétaire est **retenue comme orientation**. Le projet de conditions d'utilisation reste à valider avant publication et n'est pas encore déposé dans le dépôt. Aucune licence open source n'est accordée par ce dépôt : les sources C# ne sont pas fournies.
 
-La cible de recette est **Windows 11 sur PC x64**. Les autres environnements et la
-compatibilité sur d'autres PC ne sont pas encore validés par les essais reçus.
-Le setup de référence n'a pas reçu de signature numérique. Une protection Windows
-peut donc refuser son exécution : **ne désactive aucune protection** et conserve le
-message exact. L'hébergement sur GitHub n'ajoute pas de signature au fichier.
+## Confidentialité et sécurité
 
-## Suivi
+CursorFlow fonctionne localement. L'examen des sources de la version 2.6.6 n'a révélé aucun envoi réseau intégré, mais le logiciel utilise des hooks globaux souris/clavier et certaines options peuvent capturer localement une zone d'écran. Une notice de confidentialité est en préparation hors du dépôt et doit encore être validée.
 
-Les modèles de signalement couvrent les anomalies et les propositions d'amélioration.
-Indique la version, les étapes et le résultat constaté. Ne joins pas de profil personnel,
-de sauvegarde, de secret ni de capture non anonymisée.
+La version préparée est **non signée** : les protections de Windows peuvent bloquer son exécution. Ne les désactive pas pour lancer le logiciel. Le canal de remontée des problèmes de sécurité et son document de politique restent à finaliser hors du dépôt.
+
+## Signaler un problème
+
+Les formulaires GitHub sont préparés pour les anomalies et améliorations. Ils ne deviennent accessibles au public qu'après décision sur la visibilité. Ne joins jamais de secrets, profils complets, données sensibles ou captures non anonymisées.
 
 ## Périmètre du dépôt
 
-Ce dépôt conserve la présentation, les notices et l'identité de la version.
-Les sources applicatives, exécutables, réglages et rapports bruts restent hors du dépôt.
-La visibilité publique, le dépôt de l'EXE et les conditions de diffusion attendent des
-accords distincts. Aucune licence open source n'est choisie automatiquement.
+Ce dépôt contient uniquement la documentation de diffusion, des métadonnées, et les formulaires de signalement. Les **sources applicatives restent privées**. Le binaire est joint **à la release en brouillon**, et non aux fichiers `main`.
+
+La publication publique, la revue des droits tiers, les conditions et le canal de sécurité restent à autoriser séparément.

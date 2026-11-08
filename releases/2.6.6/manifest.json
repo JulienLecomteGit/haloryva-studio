@@ -1,38 +1,56 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "product": "CursorFlow Studio",
   "version": "2.6.6",
   "platform": "windows-x64",
-  "documentation_status": "PREPARATION_PRIVEE_AVANT_DIFFUSION",
-  "reference_source": "RESULTAT_SETUP_2_6_6.json fourni par le proprietaire ; binaire non relu depuis ce depot",
-  "expected_artifacts": [
+  "documentation_status": "DIFFUSION_PUBLIQUE_EN_PREPARATION",
+  "repository": "JulienLecomteGit/cursorflow-studio",
+  "repository_visibility_verified": "private",
+  "draft_release": {
+    "id": 438533321,
+    "tag_name": "v2.6.6",
+    "title": "CursorFlow Studio 2.6.6 — Windows x64",
+    "draft": true,
+    "published_at": null,
+    "target_commitish": "main",
+    "asset_count": 3,
+    "public_download_available": false
+  },
+  "artifacts": [
     {
       "name": "CursorFlowSetup.exe",
+      "size_bytes": 446976,
       "sha256": "F4A66366B2AF1CA0A8D131517F78F2566F09C049B20401B3AFA5DA1039515C67",
-      "role": "installateur_graphique",
-      "uploaded_to_repository": false
+      "state": "uploaded_to_private_draft_release",
+      "code_signed": false
+    },
+    {
+      "name": "LIRE_AVANT_INSTALLATION.txt",
+      "size_bytes": 2284,
+      "state": "uploaded_to_private_draft_release"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size_bytes": 86,
+      "state": "uploaded_to_private_draft_release"
     }
   ],
   "embedded_application": {
     "name": "CursorFlow.exe",
     "sha256": "B9BD52DCA5BB119A188782CC6AE9EB61B82097F66F09BE79438CB5218301F362",
-    "verified_identical_to_tested_B_by_report": true
+    "verified_identical_to_B_by_prior_report": true
   },
-  "signing_status": "AUCUNE_SIGNATURE_AJOUTEE_SELON_RAPPORT",
-  "publication": {
-    "tag_proposed": "v2.6.6",
-    "tag_created": false,
-    "release_created": false,
-    "public_publication_authorized": false
-  },
-  "validation": {
-    "automated_tests": "RAPPORTS_OK",
-    "installed_update": "UTILISATEUR_DECLARE_OK",
-    "installed_fluidity": "UTILISATEUR_COMME_B_FLUIDE",
-    "other_computers": "NON_VALIDE",
-    "reboot": "NON_TESTE",
-    "uninstall_2_6_6": "HORS_RECETTE",
-    "total_data_purge": "HORS_PERIMETRE"
-  },
-  "last_reviewed": "2026-11-08"
+  "product_use": "FREE_PROPRIETARY_PROPOSED_PENDING_TERMS_VALIDATION",
+  "source_code_published": false,
+  "public_distribution_authorized": false,
+  "next_gates": [
+    "third_party_rights_clearance",
+    "conditions_and_privacy_approval",
+    "security_reporting_channel",
+    "second_pc_pilot",
+    "signature_or_distribution_risk_decision",
+    "explicit_publication_approval"
+  ],
+  "scope_of_current_validation": "Mise a jour documentaire R16 autorisee: README.md, docs/DIFFUSION.md et releases/2.6.6/manifest.json seulement; pas de publication ni de changement de visibilite.",
+  "review_date": "2026-11-08"
 }
