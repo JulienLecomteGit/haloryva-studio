@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "product": "CursorFlow Studio",
+  "version": "2.6.6",
+  "platform": "windows-x64",
+  "documentation_status": "PREPARATION_PRIVEE_AVANT_DIFFUSION",
+  "reference_source": "RESULTAT_SETUP_2_6_6.json fourni par le proprietaire ; binaire non relu depuis ce depot",
+  "expected_artifacts": [
+    {
+      "name": "CursorFlowSetup.exe",
+      "sha256": "F4A66366B2AF1CA0A8D131517F78F2566F09C049B20401B3AFA5DA1039515C67",
+      "role": "installateur_graphique",
+      "uploaded_to_repository": false
+    }
+  ],
+  "embedded_application": {
+    "name": "CursorFlow.exe",
+    "sha256": "B9BD52DCA5BB119A188782CC6AE9EB61B82097F66F09BE79438CB5218301F362",
+    "verified_identical_to_tested_B_by_report": true
+  },
+  "signing_status": "AUCUNE_SIGNATURE_AJOUTEE_SELON_RAPPORT",
+  "publication": {
+    "tag_proposed": "v2.6.6",
+    "tag_created": false,
+    "release_created": false,
+    "public_publication_authorized": false
+  },
+  "validation": {
+    "automated_tests": "RAPPORTS_OK",
+    "installed_update": "UTILISATEUR_DECLARE_OK",
+    "installed_fluidity": "UTILISATEUR_COMME_B_FLUIDE",
+    "other_computers": "NON_VALIDE",
+    "reboot": "NON_TESTE",
+    "uninstall_2_6_6": "HORS_RECETTE",
+    "total_data_purge": "HORS_PERIMETRE"
+  },
+  "last_reviewed": "2026-11-08"
+}

@@ -1,0 +1,36 @@
+# Depot documentaire : ne pas ajouter le logiciel, les builds ou les donnees privees.
+*.exe
+*.dll
+*.pdb
+*.zip
+*.7z
+*.bak
+*.cs
+*.ps1
+*.pfx
+*.p12
+*.key
+.env
+.env.*
+/src/
+/installer/
+/02_SOURCES/
+/03_REFERENCE_2_6_5/
+/03_SUIVI/
+/04_PREUVES/
+/fabrications/
+/SESSIONS/
+/dist/
+/Backups/
+settings.json
+settings.json.*
+RESULTAT*.json
+RECETTE*.json
+MESURES*
+images.csv
+00_GUIDE_VISUEL*.html
+CursorFlow_Guide_*.html
+CONTEXTE*.md
+Thumbs.db
+.DS_Store
+# Ces regles n'empechent pas un ajout force ou un envoi par API : relire avant commit.

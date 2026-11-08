@@ -1,0 +1,42 @@
+CURSORFLOW STUDIO 2.6.6 — WINDOWS x64
+Création : Julien Lecomte
+
+STATUT
+Notice préparée pour un envoi autorisé. Le dépôt documentaire ne fournit pas encore
+l'EXE. Le programme à installer est CursorFlowSetup.exe 2.6.6, contenant l'application
+précompilée. Aucun compilateur, kit source ou script PowerShell n'est à lancer.
+
+CIBLE ET SÉCURITÉ
+Recette réalisée sur le poste Windows 11 x64 de l'auteur. Les autres PC ne sont pas
+certifiés. L'EXE n'est pas signé. Si Windows ou ton organisation le bloque, arrête,
+note le premier message et contacte l'auteur sans désactiver de protection.
+
+INSTALLATION / MISE À JOUR
+1. Télécharge le setup uniquement depuis le canal autorisé communiqué par l'auteur.
+2. Pour une mise à jour, quitte CursorFlow via son icône près de l'horloge et conserve
+   une copie de l'installation et des préférences hors du dossier installé.
+3. Double-clique sur CursorFlowSetup.exe et vérifie la version 2.6.6.
+4. Vérifie les options de raccourci et de démarrage Windows, puis utilise Installer
+   ou Mettre à jour selon ta situation. Termine dans l'assistant graphique.
+5. Vérifie le lancement, la version, les réglages et la fluidité normale.
+
+DÉSINSTALLATION
+Paramètres Windows > Applications > Applications installées > CursorFlow Studio
+> Désinstaller. Pour conserver les préférences, laisse décochée la suppression
+supplémentaire des réglages et sauvegardes. Ne supprime pas manuellement le dossier.
+La désinstallation 2.6.6 n'a pas été rejouée dans la recette de mise à jour ; le cycle
+antérieur en 2.6.5 avait été déclaré réussi.
+
+RETOUR UTILE
+Version de Windows et de CursorFlow, étapes, résultat attendu et constaté, message
+exact. Masque toute information personnelle dans les captures. Ne joins pas tes
+réglages, sauvegardes complètes, mots de passe ou données sensibles.
+
+IDENTITÉ DU SETUP
+SHA-256 : F4A66366B2AF1CA0A8D131517F78F2566F09C049B20401B3AFA5DA1039515C67
+Une empreinte identique identifie le fichier de référence ; elle ne le signe pas
+et ne constitue pas une garantie d'innocuité.
+
+DIFFUSION
+La visibilité, les destinataires et les conditions de diffusion doivent être validés
+par l'auteur avant envoi ou publication. Ce fichier n'attribue pas de licence au logiciel.

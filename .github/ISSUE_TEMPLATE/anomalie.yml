@@ -1,0 +1,70 @@
+name: Signaler une anomalie
+description: Décrire un problème reproductible dans CursorFlow Studio.
+title: "[Anomalie] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Le dépôt est en préparation privée. Ne joins ni profil, ni sauvegarde complète,
+        ni secret. Masque les données personnelles. En cas de blocage de sécurité,
+        conserve le message sans désactiver les protections.
+  - type: input
+    id: version
+    attributes:
+      label: Version de CursorFlow
+      placeholder: "2.6.6 — indication dans À propos"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows et affichage
+      placeholder: "Version Windows, échelle 125 %, nombre d'écrans"
+    validations:
+      required: true
+  - type: dropdown
+    id: zone
+    attributes:
+      label: Partie concernée
+      options:
+        - Installation ou mise à jour
+        - Désinstallation
+        - Traînée ou halo
+        - Boutons souris
+        - Dessin assisté
+        - Interface ou réglages
+        - Autre
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Étapes pour reproduire
+      description: Indique les actions et réglages utiles sans joindre ton profil complet.
+      placeholder: "1. Ouvrir…\n2. Choisir…\n3. Observer…"
+    validations:
+      required: true
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Résultat attendu
+    validations:
+      required: true
+  - type: textarea
+    id: constate
+    attributes:
+      label: Résultat constaté et premier message d'erreur
+    validations:
+      required: true
+  - type: textarea
+    id: capture
+    attributes:
+      label: Capture ou extrait de journal anonymisé
+      description: Facultatif. Pas de chemin utilisateur, de secret ni de données opérationnelles.
+  - type: checkboxes
+    id: confidentialite
+    attributes:
+      label: Vérification avant envoi
+      options:
+        - label: J'ai retiré les données personnelles et sensibles de mon signalement.
+          required: true

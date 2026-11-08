@@ -1,0 +1,30 @@
+name: Proposer une amélioration
+description: Expliquer un besoin sans remettre en cause les fonctions déjà validées.
+title: "[Amélioration] "
+body:
+  - type: textarea
+    id: besoin
+    attributes:
+      label: Quel usage souhaites-tu améliorer ?
+      description: Décris le besoin et la difficulté actuelle.
+    validations:
+      required: true
+  - type: textarea
+    id: resultat
+    attributes:
+      label: Quel résultat attends-tu ?
+      description: Donne un exemple concret, sans données personnelles.
+    validations:
+      required: true
+  - type: textarea
+    id: conserver
+    attributes:
+      label: Ce qui doit rester inchangé
+      description: Fonctions, réglages ou comportement à préserver.
+  - type: checkboxes
+    id: confidentialite
+    attributes:
+      label: Vérification avant envoi
+      options:
+        - label: Mon message ne contient ni données personnelles ni informations sensibles.
+          required: true
