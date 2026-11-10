@@ -1,62 +1,36 @@
-# Installer et utiliser CursorFlow Studio 2.6.6
+# Installer Haloryva Studio 2.7.0 sur Windows
 
-> Cette notice décrit le parcours de la version de référence. Aucun EXE n'est encore
-> joint dans ce dépôt. N'utilise pas une archive de sources comme installateur.
+Cette notice concerne **Haloryva Studio 2.7.0**, Windows x64. Le parcours a été préparé pour Windows 11 x64 ; la compilation et l'extraction du setup ont été vérifiées, mais une nouvelle installation complète de cette fabrication reste à confirmer.
 
-## Avant de commencer
+## 1. Télécharger et vérifier
 
-La cible essayée est Windows 11 sur PC x64. Le fichier nécessaire est
-**CursorFlowSetup.exe**, contenant l'application précompilée. Aucun kit source,
-compilateur, script PowerShell, Python ou Visual Studio n'est nécessaire pour ce parcours.
+1. Ouvre la [release GitHub v2.7.0](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/v2.7.0).
+2. Télécharge **`HaloryvaSetup_2.7.0.exe`** dans `Assets`.
+3. Dans **Windows PowerShell 5.1**, vérifie son empreinte sans lancer le fichier :
 
-Vérifie la provenance de l'EXE et son identité dans
-[SHA256SUMS.txt](../releases/2.6.6/SHA256SUMS.txt). L'empreinte ne remplace ni une signature
-numérique ni une évaluation de sécurité. En cas de refus de Windows ou de ton organisation,
-arrête et conserve le premier message : ne désactive aucune protection.
+   ```powershell
+   Get-FileHash -LiteralPath "$env:USERPROFILE\Downloads\HaloryvaSetup_2.7.0.exe" -Algorithm SHA256
+   ```
 
-## Première installation
+4. Le résultat doit être exactement : `A60215938B82EFBAD1B744E4E85911256426103F4D18E7F1B2213E9C4BC6178A`. Si différent, arrête et supprime uniquement cette copie suspecte après vérification ; ne l'exécute pas.
 
-1. Après mise à disposition autorisée, télécharge **CursorFlowSetup.exe**.
-2. Ouvre-le normalement par double-clic, sans demander les droits administrateur.
-3. Vérifie le nom CursorFlow et la version **2.6.6**. Choisis les options de raccourci
-   Bureau et de démarrage avec Windows.
-4. Clique sur **Installer**, puis **Terminer**. L'option de lancement immédiat ouvre le Studio.
+## 2. Installer ou mettre à jour
 
-Ne confonds pas la fin de copie avec le lancement réussi : signale toute erreur à l'une
-ou l'autre étape.
+1. Si Haloryva fonctionne déjà, quitte l'application depuis son icône près de l'horloge (fermer la fenêtre du Studio ne suffit pas toujours).
+2. Conserve une copie de tes préférences et de l'ancien installateur dans un emplacement sûr.
+3. Ouvre `HaloryvaSetup_2.7.0.exe` par double-clic et vérifie le nom et la version affichés.
+4. Choisis les options souhaitées, puis **Installer** ou **Mettre à jour**, selon l'écran proposé. Termine l'assistant.
+5. Vérifie dans **À propos** : `2.7.0` sans « candidat »/« C4 ». Contrôle ensuite le halo, la traînée et les affectations X1/X2 selon ta souris. Le préréglage courant est personnalisable.
 
-## Mettre à jour une version existante
+Les profils ne doivent pas être écrasés manuellement : utilise l'import/export intégré si nécessaire.
 
-1. Quitte CursorFlow depuis son icône près de l'horloge. Fermer seulement le Studio
-   ne suffit pas. Quitte aussi les éventuelles sessions d'essai.
-2. Conserve une copie de l'installation et de ses préférences, ainsi que l'ancien setup,
-   dans un emplacement de sauvegarde distinct. Ne remplace pas une ancienne sauvegarde.
-3. Ouvre le setup **2.6.6**, vérifie **Mise à jour**, puis tes options de raccourci et de démarrage.
-4. Utilise **Mettre à jour**, puis **Terminer**. Ne désinstalle pas d'abord pour cette mise à jour.
-5. Vérifie la version dans **À propos**, les réglages et le comportement normal.
+## 3. Désinstaller
 
-Le profil d'un essai isolé n'est pas importé automatiquement. Ne remplace pas un fichier
-settings.json pour obtenir les réglages d'une démonstration.
+Dans **Paramètres Windows → Applications → Applications installées**, recherche **Haloryva Studio**, puis ouvre **Désinstaller**. Si l'assistant propose de conserver les réglages, garde-les pour faciliter un retour arrière. Le cycle complet de désinstallation/réinstallation de cette fabrication 2.7.0 n'est pas encore documenté comme réussi.
 
-## Désinstaller depuis Windows
+## 4. Sécurité et dépannage
 
-Ouvre **Paramètres → Applications → Applications installées → CursorFlow Studio → … →
-Désinstaller**, puis suis l'assistant graphique.
-
-Pour conserver les préférences, laisse décochée **« Supprimer aussi mes réglages et
-sauvegardes »**. Le dossier de données peut alors subsister : c'est volontaire.
-Ne supprime pas manuellement le dossier installé pour désinstaller l'application.
-
-Le cycle de désinstallation/réinstallation 2.6.5 avait été déclaré réussi. Il n'a pas
-été réexécuté en 2.6.6 dans la recette reçue ; cette distinction est conservée dans
-[le bilan de validation](VALIDATION_2.6.6.md).
-
-## En cas de problème
-
-Note la version, le premier message et les étapes. Pour un blocage de souris,
-**Ctrl + Alt + R** remet les affectations de boutons à leur fonctionnement normal :
-c'est une réinitialisation volontaire de ces réglages. Pour quitter le mode dessin,
-utilise Échap ou le clic droit.
-
-Ne fournis pas de données personnelles ou de sauvegardes complètes dans un signalement.
-Référence Windows : [désinstaller depuis les paramètres](https://support.microsoft.com/fr-fr/windows/apps/uninstall-or-remove-apps-and-programs-in-windows).
+- L'installateur n'est pas signé numériquement. Un contrôle SHA-256 ne remplace pas une signature ni une analyse de sécurité.
+- Si Microsoft Defender, Smart App Control ou une règle de ton organisation bloque l'exécution, **ne contourne pas cette protection** ; conserve le message exact.
+- En cas de comportement inattendu des boutons, **Ctrl + Alt + R** rétablit les actions Windows normales selon le mécanisme prévu par l'application.
+- Ne transmets ni profil privé, ni chemin personnel complet, ni données sensibles dans un rapport public.
