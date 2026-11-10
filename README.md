@@ -8,10 +8,10 @@ Application Windows x64 de présentation et d'annotation du curseur, développé
 
 - Compilation Windows x64, autotests de protocole, application et traînée : **OK** ; cinq étapes avec codes 0 dans le rapport `RESULTAT_HALORYVA_C4.json`.
 - Installateur graphique C4 : **compilation, autotest et extraction OK** ; binaire candidat conservé sur le Drive du projet. SHA-256 du setup : `8DEB78FDEAD50E24B3844451336C0255D63125AA20B10E64FA13969BD8E26124`.
-- Interface C4 **ouverte sous Windows** (captures fournies par Julien).
+- Interface C4 **ouverte sous Windows** (captures fournies par Julien) ; **présence dans « Applications installées » confirmée par Julien (1A)** le 10/11/2026.
 - Souris physique : **arrière = X1, avant = X2** ; préréglage « X1 dessin · X2 outil suivant » exécuté correctement selon l'essai utilisateur **1A** ; inversion X1/X2 désactivée.
 - Traînée : style **Ligne**, souplesse **50 %**, rendu continu et sans points visibles **accepté par Julien (1A)**.
-- **Non vérifié** : inscription dans « Applications installées », cycle de désinstallation/restauration, stabilité prolongée des effets, tous les autres styles et niveaux de souplesse. Les essais utilisateur ne constituent pas une certification générale.
+- **Non vérifié** : cycle de désinstallation/restauration, stabilité prolongée des effets, tous les autres styles et niveaux de souplesse. Les essais utilisateur ne constituent pas une certification générale.
 - **Aucune release binaire Haloryva** et aucune publication publique à ce jour.
 - La release **CursorFlow Studio v2.6.6** reste un **brouillon privé**, à conserver pour retour arrière.
 
