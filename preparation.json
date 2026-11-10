@@ -1,0 +1,15 @@
+{
+  "Prepared": true,
+  "Executed": false,
+  "GitHubModified": false,
+  "PreviewSHA256": "F655930368239905C2DAED1948C22ECC9E7256782C4EC2454E539780C0BD0D2E",
+  "OriginalTests195Included": false,
+  "BranchProposed": "haloryva-tests-preview2",
+  "PublicContent": [
+    "preview executable",
+    "prototype MSIX layout",
+    "test driver",
+    "workflow"
+  ],
+  "NoUserProfiles": true
+}
