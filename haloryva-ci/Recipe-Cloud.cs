@@ -63,7 +63,7 @@ internal static class Recipe
     {
         try { Guard(); } catch { return 90; }
         mode=args.Length>0?args[0]:"probe";
-        if(mode=="target") { SetProcessDPIAware(); Application.Run(new Target()); return 0; }
+        if(mode=="target") { SetProcessDPIAware(); Application.Run(new Target(args.Length>1?args[1]:null)); return 0; }
         folder=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"RecipeHaloryvaRuns",args[1]);
         Directory.CreateDirectory(folder); log=new StreamWriter(Path.Combine(folder,"recipe.log"),true,Encoding.UTF8);
         try {
@@ -71,7 +71,7 @@ internal static class Recipe
             if(mode=="probe") { Write("PASS verified sandbox identity; no Haloryva launched, no input generated"); return 0; }
             app=Assembly.LoadFrom(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Haloryva.exe"));
             if(mode=="smoke") { Smoke(); return code; }
-            if(mode!="functional") throw new Exception("Unknown mode");
+            if(mode!="replay-diagnostic") throw new Exception("Unknown mode");
             SetProcessDPIAware(); original=Cursor.Position;
             Application.EnableVisualStyles(); Application.SetCompatibleTextRenderingDefault(false);
             Static("TrailTrial","Initialize",(object)new[]{"--trail-session",Path.Combine(folder,"profile")});
@@ -81,7 +81,7 @@ internal static class Recipe
             controller=Activator.CreateInstance(app.GetType("CursorFlow.CursorController"),true);
             SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
             SynchronizationContext.Current.Post(async delegate {
-                try { await Functional(); Write("COMPLETE functional automated checks passed"); }
+                try { await Functional(); Write("COMPLETE targeted short-click checks passed"); }
                 catch(Exception ex) { code=1; Write("ERROR "+ex); }
                 finally {
                     foreach(ushort key in heldKeys) SendInput(1,new[]{new INPUT {type=1,data=new UNION {key=new KEY {vk=key,flags=2u|(key==0xa5?1u:0u)}}}},Marshal.SizeOf(typeof(INPUT)));
@@ -111,73 +111,103 @@ internal static class Recipe
             Check(File.Exists(Path.Combine(folder,"smoke-profile/settings.json")),"Isolated profile saved on shutdown");
         } finally { if(!p.HasExited) { p.Kill(); Write("FAIL test child stopped after incomplete shutdown or startup error"); code=1; } p.Dispose(); }
     }
+    static void State(string label, object config)
+    {
+        object hooks=Get(controller,"hooks");
+        object error=Get(hooks,"callbackError");
+        Write("STATE "+label+" target="+Query(0)+"/"+Query(1)+" ring="+Get(config,"Ring")+
+            " pending="+Get(hooks,"Pending")+" polls="+Get(hooks,"PollCount")+
+            " installed="+Get(hooks,"Installed")+" mouse="+Get(controller,"LastPhysicalButton")+
+            " error="+(error==null?"none":error.ToString()));
+    }
     static async Task Functional()
     {
         object hooks=Get(controller,"hooks");
-        Check((bool)Get(hooks,"Installed"),"Real mouse and keyboard hooks installed");
-        target=Process.Start(new ProcessStartInfo(Application.ExecutablePath,"target"){UseShellExecute=false});
+        Check((bool)Get(hooks,"Installed"),"Real hooks installed");
+        target=Process.Start(new ProcessStartInfo(Application.ExecutablePath,"target \""+Path.Combine(folder,"target-trace.log")+"\""){UseShellExecute=false});
         for(int n=0;n<40 && target.MainWindowHandle==IntPtr.Zero;n++) { await Task.Delay(100); target.Refresh(); }
         targetWindow=target.MainWindowHandle;
         SetForegroundWindow(targetWindow);
         for(int n=0;n<150 && GetForegroundWindow()!=targetWindow;n++) await Task.Delay(100);
         FocusGuard();
-        Check(Marshal.SizeOf(typeof(INPUT))==40,"x64 SendInput layout");
+        Check(Query(9)==13579,"Target responds");
         foreach(int k in new[]{1,2,4,5,6,0x10,0x11,0x12,0x5b,0x5c})
-            Check((GetAsyncKeyState(k)&0x8000)==0,"Input neutral before automation: "+k);
-        Move(350,350); await Task.Delay(100);
-        Check(Query(9)==13579,"Target query channel responds");
-        Write("Pointer="+Cursor.Position+" target="+targetWindow);
-        int before=Query(0),released=Query(1);
-        await Click(2,4); Write("left="+Query(0)+"/"+Query(1)); await Click(8,16); Write("right="+Query(0)+"/"+Query(1)); await Click(32,64); Write("middle="+Query(0)+"/"+Query(1)); await Click(128,256,1); Write("X1="+Query(0)+"/"+Query(1)); await Click(128,256,2); Write("X2="+Query(0)+"/"+Query(1));
-        Check(Query(0)-before==5 && Query(1)-released==5,"Five normal buttons reach external target once, paired DOWN/UP");
+            Check((GetAsyncKeyState(k)&0x8000)==0,"Neutral input "+k);
+        Move(350,350); await Task.Delay(200);
         object config=Get(controller,"Options");
-        Set(config,"ButtonMiddleLong","Halo : activer / arrêter"); Set(config,"LongPressMs",400); Call(controller,"Changed"); await Task.Delay(100);
-        before=Query(0); released=Query(1); bool ring=(bool)Get(config,"Ring");
+        Write("CONFIG short="+Get(config,"ButtonMiddle")+" long="+Get(config,"ButtonMiddleLong")+" threshold="+Get(config,"LongPressMs"));
+        State("baseline-before",config);
+        int d=Query(0),u=Query(1);
         await Click(32,64,0,100);
-        Check(Query(0)==before+1 && Query(1)==released+1 && (bool)Get(config,"Ring")==ring,"Short held gesture replays exactly one native click");
-        before=Query(0); released=Query(1);
-        await Click(32,64,0,650);
-        Check(Query(0)==before && Query(1)==released && (bool)Get(config,"Ring")!=ring,"Long press toggles once without leaking click");
-        await Task.Delay(500); Check((bool)Get(config,"Ring")!=ring,"Long action not repeated after release");
-        // Real keyboard route, using the target's existing layout without changing system settings.
-        uint pid; uint tid=GetWindowThreadProcessId(targetWindow,out pid); var layout=GetKeyboardLayout(tid);
-        short mapping=VkKeyScanEx('@',layout);
-        if(mapping!=-1 && ((mapping>>8)&7)==6) {
-            int chars=Query(2); Key(0xa2); Key(0xa5); Key((ushort)(mapping&255)); Key((ushort)(mapping&255),true); Key(0xa5,true); Key(0xa2,true); await Task.Delay(250);
-            Check(Query(2)==chars+1 && Query(3)=='@',"AltGr produces @ in external target");
-            bool clicks=(bool)Get(config,"Clicks"); Key(0xa2); Key(0xa5); Key(0x43); Key(0x43,true); Key(0xa5,true); Key(0xa2,true); await Task.Delay(250);
-            Check((bool)Get(config,"Clicks")==clicks,"AltGr+C does not trigger Ctrl+Alt+C");
-        } else Write("NOT_RUN AltGr text: target layout has no Ctrl+Alt mapping for @");
-        Set(config,"AnnotationTool","Stylo"); Set(config,"AnnotationColor","#FF0000"); Set(config,"AnnotationThickness",4); Set(config,"DrawSmoothMode","Désactivé"); Call(controller,"Changed");
-        await Chord(0x44); Check((bool)Get(controller,"IsDrawing"),"Native Ctrl+Alt+D starts drawing");
-        before=Query(0); released=Query(1); Move(350,350); Mouse(2); await Task.Delay(150);
-        Check(Get(controller,"CurrentStroke")!=null,"Native DOWN starts a real controller stroke");
-        var stroke=Get(controller,"CurrentStroke");
-        Set(config,"AnnotationTool","Rectangle"); Set(config,"AnnotationColor","#0000FF"); Set(config,"AnnotationThickness",12); Call(controller,"Changed");
-        for(int n=1;n<=15;n++) { Move(350+n*8,350+n*3); await Task.Delay(20); }
-        Mouse(4); await Task.Delay(250);
-        Check(Get(controller,"CurrentStroke")==null && ((IList)Get(controller,"Strokes")).Count==1,"Stroke finishes once");
-        Check((string)Get(stroke,"Tool")=="Stylo" && (int)Get(stroke,"Width")==4 && ((Color)Get(stroke,"Color")).ToArgb()==Color.Red.ToArgb(),"Tool/color/width retained while settings change mid-stroke");
-        Check(((IList)Get(stroke,"Points")).Count>=10,"Real mouse moves recorded in stroke");
-        Check(Query(0)==before && Query(1)==released,"Drawing consumes both endpoints from target");
-        Move(350,350); Mouse(2); await Task.Delay(100); var next=Get(controller,"CurrentStroke"); Move(440,410); Mouse(4); await Task.Delay(200);
-        Check((string)Get(next,"Tool")=="Rectangle" && (int)Get(next,"Width")==12 && ((Color)Get(next,"Color")).ToArgb()==Color.Blue.ToArgb(),"Next stroke uses new settings");
-        Key(0x1b); Key(0x1b,true); await Task.Delay(200); Check(!(bool)Get(controller,"IsDrawing"),"Escape exits drawing through keyboard hook");
-        Check((bool)Static("ConfigStore","Save",config),"Save isolated settings");
-        object loaded=Static("ConfigStore","Load");
-        Check((string)Get(loaded,"AnnotationTool")=="Rectangle" && (int)Get(loaded,"AnnotationThickness")==12,"Saved settings survive reload");
-        Write("NOT_RUN manual visual quality, physical high-rate mouse, multi-monitor/DPI, text prompt, MSIX identity");
+        State("baseline-after",config);
+        Check(Query(0)==d+1 && Query(1)==u+1,"Baseline middle click reaches target");
+        Set(config,"ButtonMiddleLong","Halo : activer / arrêter"); Set(config,"LongPressMs",400);
+        Call(controller,"Changed"); await Task.Delay(250);
+        Write("CONFIG short="+Get(config,"ButtonMiddle")+" long="+Get(config,"ButtonMiddleLong")+" threshold="+Get(config,"LongPressMs"));
+        d=Query(0); u=Query(1); FocusGuard();
+        object sent=app.GetType("CursorFlow.Native").GetMethod("SendMouseClick",Flags).Invoke(null,new object[]{"Milieu"});
+        Write("DIRECT production wrapper returned="+sent);
+        await Task.Delay(300); State("direct-wrapper-after",config);
+        bool direct=Query(0)==d+1 && Query(1)==u+1;
+        Write("OBS direct wrapper paired="+direct);
+        int failures=0;
+        for(int attempt=1;attempt<=3;attempt++)
+        {
+            await Task.Delay(700);
+            d=Query(0); u=Query(1); bool ring=(bool)Get(config,"Ring");
+            State("short-"+attempt+"-before",config);
+            var elapsed=Stopwatch.StartNew();
+            Mouse(32); await Task.Delay(100);
+            Write("TIMING short-"+attempt+" release-request-ms="+elapsed.ElapsedMilliseconds);
+            State("short-"+attempt+"-held",config);
+            Mouse(64);
+            await Task.Delay(200); State("short-"+attempt+"-after-200ms",config);
+            await Task.Delay(800); State("short-"+attempt+"-after-1000ms",config);
+            bool paired=Query(0)==d+1 && Query(1)==u+1;
+            bool unchanged=(bool)Get(config,"Ring")==ring;
+            Write("RESULT short-"+attempt+" downDelta="+(Query(0)-d)+" upDelta="+(Query(1)-u)+" ringUnchanged="+unchanged);
+            if(!paired || !unchanged) failures++;
+        }
+        Write("SUMMARY replayFailures="+failures+" directWrapperPaired="+direct);
+        Write("NOT_RUN long-action, AltGr, drawing, previous 195 assertions (targeted diagnosis only)");
+        Check(failures==0 && direct,"Targeted short-click replay diagnostics");
     }
     sealed class Target : Form
     {
         int downs,ups,chars,last;
-        public Target() { Text="Haloryva — cible de recette automatique"; StartPosition=FormStartPosition.Manual; Location=new Point(160,160); ClientSize=new Size(700,450); BackColor=Color.WhiteSmoke; Shown+=delegate { Activate(); }; }
+        StreamWriter trace;
+        IntPtr observer;
+        HookProc observerProc;
+        delegate IntPtr HookProc(int code,IntPtr message,IntPtr data);
+        [DllImport("user32.dll",SetLastError=true)] static extern IntPtr SetWindowsHookEx(int id,HookProc proc,IntPtr module,uint thread);
+        [DllImport("user32.dll")] static extern IntPtr CallNextHookEx(IntPtr hook,int code,IntPtr message,IntPtr data);
+        [DllImport("user32.dll")] static extern bool UnhookWindowsHookEx(IntPtr hook);
+        [StructLayout(LayoutKind.Sequential)] struct MSLL { public int x,y; public uint data,flags,time; public IntPtr extra; }
+        void Trace(string message) { if(trace!=null) { trace.WriteLine(DateTime.UtcNow.ToString("o")+" "+message); trace.Flush(); } }
+        IntPtr Observe(int code,IntPtr message,IntPtr data) {
+            if(code>=0 && (message.ToInt64()==0x207 || message.ToInt64()==0x208)) {
+                var m=(MSLL)Marshal.PtrToStructure(data,typeof(MSLL));
+                Trace("HOOK msg="+message.ToInt64().ToString("X")+" flags="+m.flags+" extra="+m.extra.ToInt64().ToString("X"));
+            }
+            return CallNextHookEx(observer,code,message,data);
+        }
+        protected override void OnShown(EventArgs e) {
+            observerProc=Observe; observer=SetWindowsHookEx(14,observerProc,GetModuleHandle(null),0);
+            Trace("OBSERVER installed="+(observer!=IntPtr.Zero)+" error="+Marshal.GetLastWin32Error());
+            base.OnShown(e);
+        }
+        protected override void OnFormClosed(FormClosedEventArgs e) {
+            if(observer!=IntPtr.Zero) UnhookWindowsHookEx(observer);
+            if(trace!=null) trace.Dispose(); base.OnFormClosed(e);
+        }
+        public Target(string tracePath) { if(tracePath!=null) trace=new StreamWriter(tracePath,false,Encoding.UTF8); Text="Haloryva — cible de recette automatique"; StartPosition=FormStartPosition.Manual; Location=new Point(160,160); ClientSize=new Size(700,450); BackColor=Color.WhiteSmoke; Shown+=delegate { Activate(); }; }
         protected override void WndProc(ref Message m) {
             int msg=m.Msg;
             if(msg==0x8001) { int q=(int)m.WParam; m.Result=(IntPtr)(q==9?13579:q==0?downs:q==1?ups:q==2?chars:last); return; }
             if(msg==0x201 || msg==0x204 || msg==0x207 || msg==0x20b || msg==0x203 || msg==0x206 || msg==0x209 || msg==0x20d) downs++;
             if(msg==0x202 || msg==0x205 || msg==0x208 || msg==0x20c) ups++;
             if(msg==0x102) { chars++; last=(int)m.WParam; }
+            if(msg==0x207 || msg==0x208 || msg==0x209) Trace("WINDOW msg="+msg.ToString("X")+" counts="+downs+"/"+ups);
             base.WndProc(ref m);
         }
     }

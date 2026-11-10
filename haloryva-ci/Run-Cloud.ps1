@@ -7,6 +7,7 @@ if(Test-Path -LiteralPath $out) { throw 'Fresh job required.' }
 New-Item -ItemType Directory -Path $out | Out-Null
 $report=[ordered]@{Mode=$Mode;Status='started';Steps=@();Tests195Repeated=$false;Signed=$false;ReleasePublished=$false}
 $child=$null; $registered=$null
+$testStart=Get-Date
 Start-Transcript -Path (Join-Path $out 'transcript.txt')
 try {
     $os=Get-CimInstance Win32_OperatingSystem
@@ -23,7 +24,7 @@ try {
         [IO.File]::WriteAllLines($rsp,$compilerArgs,(New-Object Text.UTF8Encoding($true)))
         & $compiler ('@'+$rsp) 2>&1 | Out-File (Join-Path $out 'compile.log')
         if($LASTEXITCODE -ne 0) { throw 'Test driver compilation failed.' }
-        foreach($stage in @('smoke','functional')) {
+        foreach($stage in @('replay-diagnostic')) {
             $run='cloud-'+$env:GITHUB_RUN_ID+'-'+$stage
             $child=Start-Process -FilePath (Join-Path $out 'Recipe.exe') -ArgumentList ($stage+' '+$run+' --silent') -PassThru -WindowStyle Hidden
             $done=$child.WaitForExit(90000)
@@ -62,12 +63,54 @@ try {
         Add-Type -TypeDefinition @'
 using System;
 using System.Text;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 public static class PackageProbe {
  [DllImport("kernel32.dll",CharSet=CharSet.Unicode)] public static extern int GetPackageFullName(IntPtr process,ref uint length,StringBuilder name);
+ [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)] static extern IntPtr OpenEvent(uint rights,bool inherit,string name);
+ [DllImport("kernel32.dll",SetLastError=true)] static extern bool SetEvent(IntPtr handle);
+ [DllImport("kernel32.dll")] static extern bool CloseHandle(IntPtr handle);
+ public static int ExitEvent(string name,bool signal) {
+   IntPtr h=OpenEvent(signal?2u:0x100000u,false,name);
+   if(h==IntPtr.Zero) return Marshal.GetLastWin32Error();
+   try { if(signal && !SetEvent(h)) return Marshal.GetLastWin32Error(); return 0; }
+   finally { CloseHandle(h); }
+ }
+ delegate bool EnumProc(IntPtr hwnd,IntPtr state);
+ [DllImport("user32.dll")] static extern bool EnumWindows(EnumProc callback,IntPtr state);
+ [DllImport("user32.dll")] static extern bool EnumChildWindows(IntPtr parent,EnumProc callback,IntPtr state);
+ [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr hwnd,out uint pid);
+ [DllImport("user32.dll",CharSet=CharSet.Unicode)] static extern int GetWindowText(IntPtr hwnd,StringBuilder text,int length);
+ [DllImport("user32.dll",CharSet=CharSet.Unicode)] static extern int GetClassName(IntPtr hwnd,StringBuilder text,int length);
+ [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr hwnd);
+ [DllImport("user32.dll",CharSet=CharSet.Unicode,SetLastError=true)] static extern IntPtr SendMessageTimeout(IntPtr hwnd,uint message,UIntPtr count,StringBuilder text,uint flags,uint timeout,out UIntPtr result);
+ static string Describe(IntPtr hwnd,bool child) {
+   var title=new StringBuilder(2048); var cls=new StringBuilder(256);
+   GetWindowText(hwnd,title,title.Capacity); GetClassName(hwnd,cls,cls.Capacity);
+   if(child && title.Length==0) { UIntPtr result; SendMessageTimeout(hwnd,13,(UIntPtr)2048,title,2,200,out result); }
+   return "hwnd="+hwnd.ToInt64().ToString("X")+" visible="+IsWindowVisible(hwnd)+" class="+cls+" text="+title;
+ }
+ public static string[] Windows(uint pid) {
+   var lines=new List<string>();
+   EnumWindows(delegate(IntPtr hwnd,IntPtr unused) {
+     uint owner; GetWindowThreadProcessId(hwnd,out owner); if(owner!=pid) return true;
+     lines.Add(Describe(hwnd,false));
+     EnumChildWindows(hwnd,delegate(IntPtr child,IntPtr state) { if(lines.Count<100) lines.Add("  "+Describe(child,true)); return lines.Count<100; },IntPtr.Zero);
+     return lines.Count<100;
+   },IntPtr.Zero);
+   return lines.ToArray();
+ }
 }
 '@
+        $msixLog=Join-Path $out 'msix-diagnostic.log'
+        function Write-MsixDiagnostic([string]$message) {
+            $line=[DateTime]::UtcNow.ToString('o')+' '+$message
+            $line | Add-Content -LiteralPath $msixLog -Encoding UTF8
+            Write-Output $line
+        }
         for($cycle=1;$cycle -le 2;$cycle++) {
+            $timer=[Diagnostics.Stopwatch]::StartNew()
+            Write-MsixDiagnostic "LAUNCH cycle=$cycle runnerSession=$([Diagnostics.Process]::GetCurrentProcess().SessionId)"
             Start-Process explorer.exe -ArgumentList ('shell:AppsFolder\'+$registered.PackageFamilyName+'!Haloryva')
             $child=$null
             for($n=0;$n -lt 40 -and !$child;$n++) {
@@ -78,11 +121,30 @@ public static class PackageProbe {
             [uint32]$size=512; $name=New-Object Text.StringBuilder 512
             $rc=[PackageProbe]::GetPackageFullName($child.Handle,[ref]$size,$name)
             if($rc -ne 0 -or $name.ToString() -ne $registered.PackageFullName) { throw 'Process package identity not confirmed.' }
+            $eventName='Local\HaloryvaStudio.Exit.'+$child.Id
+            Write-MsixDiagnostic "IDENTITY cycle=$cycle pid=$($child.Id) session=$($child.SessionId) package=$name event=$eventName"
             Start-Sleep -Seconds 3
-            if($child.HasExited) { throw 'Packaged app exited unexpectedly.' }
-            $ev=[Threading.EventWaitHandle]::OpenExisting('Local\HaloryvaStudio.Exit.'+$child.Id)
-            try { [void]$ev.Set() } finally { $ev.Dispose() }
+            $ready=$false
+            for($n=0;$n -le 27;$n++) {
+                $child.Refresh()
+                if($child.HasExited) { throw "Packaged app exited unexpectedly: $($child.ExitCode)." }
+                $native=[PackageProbe]::ExitEvent($eventName,$false)
+                $managed='opened'
+                try { $ev=[Threading.EventWaitHandle]::OpenExisting($eventName); $ev.Dispose() }
+                catch { $managed=$_.Exception.ToString().Replace([Environment]::NewLine,' ') }
+                Write-MsixDiagnostic "POLL cycle=$cycle elapsedMs=$($timer.ElapsedMilliseconds) cpuSeconds=$($child.CPU) responding=$($child.Responding) nativeEventCode=$native managedEvent=$managed"
+                if($n -in @(0,2,7,17,27) -or $native -eq 0) {
+                    [PackageProbe]::Windows([uint32]$child.Id) | ForEach-Object { Write-MsixDiagnostic ('WINDOW '+$_) }
+                }
+                if($native -eq 0) { $ready=$true; break }
+                if($n -lt 27) { Start-Sleep -Seconds 1 }
+            }
+            if(!$ready) { throw 'Exit event absent after bounded startup wait; inspect msix-diagnostic.log for startup windows and native error.' }
+            $signal=[PackageProbe]::ExitEvent($eventName,$true)
+            Write-MsixDiagnostic "SIGNAL cycle=$cycle nativeResult=$signal"
+            if($signal -ne 0) { throw "Exit signal refused: native code $signal." }
             if(!$child.WaitForExit(15000) -or $child.ExitCode -ne 0) { throw 'Packaged app did not shut down normally.' }
+            Write-MsixDiagnostic "EXIT cycle=$cycle code=$($child.ExitCode) elapsedMs=$($timer.ElapsedMilliseconds)"
             $report.Steps+="packaged launch $cycle identity confirmed and clean shutdown"
         }
         Remove-AppxPackage -Package $registered.PackageFullName
@@ -94,10 +156,20 @@ public static class PackageProbe {
 } catch {
     $report.Status='failed-or-environment-blocked'
     $report.Error=$_.Exception.Message
+    if($Mode -eq 'msix') {
+        Get-WinEvent -FilterHashtable @{LogName='Application';StartTime=$testStart} -ErrorAction SilentlyContinue | Where-Object {$_.Message -match 'Haloryva'} | Select-Object TimeCreated,Id,ProviderName,Message | Format-List | Out-File (Join-Path $out 'application-events.log')
+    }
     throw
 } finally {
-    if($child -and !$child.HasExited) { $child.Kill() }
-    if($registered) { Remove-AppxPackage -Package $registered.PackageFullName -ErrorAction Continue }
+    if($child -and !$child.HasExited) { $child.Kill(); $report.Steps+='test child forcibly stopped during cleanup (not a clean shutdown)' }
+    if($registered) {
+        Remove-AppxPackage -Package $registered.PackageFullName -ErrorAction Continue
+        $report.CleanupPackageRemoved=!(Get-AppxPackage -Name HaloryvaStudio.CloudUnsignedTest)
+    }
     $report | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $out 'result.json')
+    Get-ChildItem -LiteralPath $out -Recurse -File | Where-Object {$_.Name -in @('recipe.log','target-trace.log','compile.log','application-events.log','result.json','environment.json')} | ForEach-Object {
+        Write-Output ('EVIDENCE '+$_.Name)
+        Get-Content -LiteralPath $_.FullName
+    }
     Stop-Transcript
 }
