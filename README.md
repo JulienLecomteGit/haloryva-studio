@@ -1,5 +1,9 @@
 # Haloryva Studio
 
+<p align="center">
+  <img src="docs/Haloryva_Banniere_V01.png" alt="Bannière Haloryva Studio : curseur lumineux et halo" width="900">
+</p>
+
 **Version 2.7.0 — Windows x64**  
 Créé par Julien Lecomte.
 
@@ -26,7 +30,7 @@ L'application est précompilée : son installation normale ne nécessite ni Pyth
 - La fabrication Windows de **Haloryva Studio 2.7.0** a passé **8 étapes** : compilation de l'application et des tests, protocoles, autotests de l'application et des traînées, compilation de l'installateur, autotest de l'installateur, extraction et comparaison de l'EXE extrait.
 - **108 assertions de protocole** et **63 contrôles de traînée** réussis ; les sorties de contrôle et les empreintes sont conservées dans le dossier de preuves du projet.
 - L'installateur final téléchargé depuis Google Drive a été comparé à l'empreinte du rapport de fabrication : **identique**.
-- La base C4 précédente a été lancée sous Windows et soumise à des essais ciblés par Julien : boutons X1/X2 et traînée Ligne à 50 %. Le passage à 2.7.0 stable ne change que les libellés de marque/version, sans modification revendiquée du moteur souris.
+- La préversion précédente a été lancée sous Windows et soumise à des essais ciblés par Julien : boutons X1/X2 et traînée Ligne à 50 %. Le passage à 2.7.0 stable ne change que les libellés de marque/version, sans modification revendiquée du moteur souris.
 - **Limites :** le cycle de désinstallation/réinstallation du nouvel installateur, un essai prolongé et exhaustif des effets, les autres styles de traînée et un second PC Windows restent à vérifier. La version est déclarée stable par son auteur ; ces tests ne constituent pas une certification extérieure.
 
 ## Code et historique
@@ -36,7 +40,13 @@ L'application est précompilée : son installation normale ne nécessite ni Pyth
 - `Haloryva_Windows64/tests/maintenance/` : tests C#.
 - `Haloryva_Windows64/assets/` : ressources de l'application.
 
-L'historique technique est décrit dans le [CHANGELOG](CHANGELOG.md). Les versions C1–C4 antérieures sont conservées comme archives de travail et ne sont pas des versions de téléchargement recommandées.
+L'historique technique est décrit dans le [CHANGELOG](CHANGELOG.md). Les préversions antérieures sont conservées comme archives de travail et ne sont pas des versions de téléchargement recommandées.
+
+## Identité visuelle
+
+<img src="docs/Haloryva_Logo_V01.png" alt="Logo Haloryva Studio : pointeur et halo lumineux" width="160">
+
+Logo et bannière de présentation V01 : ils ne remplacent pas encore les ressources intégrées à l'installateur Windows 2.7.0 contrôlé.
 
 ## Licence et sécurité
 
