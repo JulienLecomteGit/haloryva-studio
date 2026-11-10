@@ -12,8 +12,8 @@ Application Windows x64 de présentation et d'annotation du curseur, développé
 - Souris physique : **arrière = X1, avant = X2** ; préréglage « X1 dessin · X2 outil suivant » exécuté correctement selon l'essai utilisateur **1A** ; inversion X1/X2 désactivée.
 - Traînée : style **Ligne**, souplesse **50 %**, rendu continu et sans points visibles **accepté par Julien (1A)**.
 - **Non vérifié** : cycle de désinstallation/restauration, stabilité prolongée des effets, tous les autres styles et niveaux de souplesse. Les essais utilisateur ne constituent pas une certification générale.
-- **Aucune release binaire Haloryva** et aucune publication publique à ce jour.
-- La release **CursorFlow Studio v2.6.6** reste un **brouillon privé**, à conserver pour retour arrière.
+- **[Release Haloryva C4 en brouillon](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/untagged-557ced11c29edd2ca782)** : préversion non publiée, installateur attaché (607 KB), SHA-256 GitHub correspondant exactement au fichier Drive. Le tag prévu `v2.7.0-c4` sera créé seulement lors d'une éventuelle publication. **Aucune publication publique**.
+- La release **[CursorFlow Studio 2.6.6](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/untagged-bf32b31e3f3adab1b563)** reste un **brouillon privé** avec ses trois assets, à conserver pour retour arrière.
 
 ## Architecture
 
