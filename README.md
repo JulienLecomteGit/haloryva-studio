@@ -1,51 +1,24 @@
-# CursorFlow Studio
+# Haloryva Studio — Windows
 
-**Rends ton curseur visible. Dessine, explique et présente sur Windows.**
+> **2.7.0 C4 : candidat technique, non publié et non validé en installation réelle.**
 
-Windows x64 · Version préparée : **2.6.6** · Création : **Julien Lecomte**
+Application Windows x64 de présentation et d'annotation du curseur, développée par Julien Lecomte. Le code C# et ses ressources sont conservés dans `Haloryva_Windows64/`.
 
-> **Dépôt actuellement privé — préparation de diffusion.** La release `v2.6.6` existe en **brouillon privé** avec l'installateur contrôlé et deux documents d'accompagnement. **Elle n'est pas publiée et aucun téléchargement public n'est ouvert.**
+## État au 10 novembre 2026
 
-## Fonctions
+- Compilation Windows x64 : OK.
+- Tests de protocoles et autotests de l'application et de la traînée : OK, cinq étapes avec code 0 dans `RESULTAT_HALORYVA_C4.json`.
+- Installation graphique, X1/X2 sur souris physique, rendu réel des effets et désinstallation : **à valider**.
+- Aucun installateur Haloryva C4 n'est publié en release.
+- La release CursorFlow Studio **v2.6.6** reste un **brouillon** préservé comme référence de retour arrière.
 
-| Fonction | Description |
-|---|---|
-| Halo intelligent | Contour personnalisable, extinction au repos, centrage sur curseur texte |
-| Traînées | Huit styles, couleurs, persistance, largeur et logos |
-| Clics visibles | Mise en évidence des actions lors des démonstrations |
-| Boutons souris | Actions personnalisables, appuis courts/longs |
-| Dessin sur le Bureau | Stylo, flèches libres, formes assistées et annulation |
-| Installation graphique | Un EXE précompilé, mise à jour graphique et désinstallation depuis Windows |
+## Architecture
 
-## Nouveauté 2.6.6
+- `Haloryva_Windows64/src/` — application Windows Forms, dessin, souris et diagnostics.
+- `Haloryva_Windows64/installer/` — assistant graphique d'installation/désinstallation.
+- `Haloryva_Windows64/assets/` — icône, manifestes et visuels.
+- `Haloryva_Windows64/tests/maintenance/` — tests C# de protocole.
 
-Le moteur de traînée préserve les points jusqu'à leur expiration, stabilise le cadrage et régularise les rendus. Lors d'un essai local du style Lumière, le moteur a enregistré **16,66 ms d'intervalle médian en mouvement**. Ce résultat ne constitue pas une garantie de fréquence d'affichage sur tous les écrans.
+La compilation de l'installateur s'effectue localement avec `csc.exe` de .NET Framework x64 sous Windows PowerShell 5.1. Les résultats Windows et les livrables sont gérés sur le Drive du projet, séparément du code versionné. Les versions historiques restent dans l'historique Git et les copies de sauvegarde.
 
-## Installer et utiliser
-
-L'installateur à terme est **`CursorFlowSetup.exe`**, actuellement dans une release non publiée. Il contient l'application précompilée et ne demande ni compilateur ni script PowerShell sur le poste destinataire. La cible de recette actuelle est **Windows 11 x64**.
-
-- [Installation, mise à jour et désinstallation](docs/INSTALLATION.md)
-- [Validation de la version 2.6.6](docs/VALIDATION_2.6.6.md)
-- [Notes de version](releases/2.6.6/NOTES_VERSION.md)
-- [Préparation de diffusion](docs/DIFFUSION.md)
-
-## Gratuit, mais propriétaire — décision de principe
-
-La distribution gratuite en code propriétaire est **retenue comme orientation**. Le projet de conditions d'utilisation reste à valider avant publication et n'est pas encore déposé dans le dépôt. Aucune licence open source n'est accordée par ce dépôt : les sources C# ne sont pas fournies.
-
-## Confidentialité et sécurité
-
-CursorFlow fonctionne localement. L'examen des sources de la version 2.6.6 n'a révélé aucun envoi réseau intégré, mais le logiciel utilise des hooks globaux souris/clavier et certaines options peuvent capturer localement une zone d'écran. Une notice de confidentialité est en préparation hors du dépôt et doit encore être validée.
-
-La version préparée est **non signée** : les protections de Windows peuvent bloquer son exécution. Ne les désactive pas pour lancer le logiciel. Le canal de remontée des problèmes de sécurité et son document de politique restent à finaliser hors du dépôt.
-
-## Signaler un problème
-
-Les formulaires GitHub sont préparés pour les anomalies et améliorations. Ils ne deviennent accessibles au public qu'après décision sur la visibilité. Ne joins jamais de secrets, profils complets, données sensibles ou captures non anonymisées.
-
-## Périmètre du dépôt
-
-Ce dépôt contient uniquement la documentation de diffusion, des métadonnées, et les formulaires de signalement. Les **sources applicatives restent privées**. Le binaire est joint **à la release en brouillon**, et non aux fichiers `main`.
-
-La publication publique, la revue des droits tiers, les conditions et le canal de sécurité restent à autoriser séparément.
+**Licence :** droits réservés © Julien Lecomte. Ce dépôt est privé ; aucune licence de redistribution publique n'est accordée par défaut.
