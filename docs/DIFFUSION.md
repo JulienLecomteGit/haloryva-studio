@@ -1,8 +1,8 @@
 # Diffusion et transparence — Haloryva Studio 2.7.0
 
-## Périmètre public prévu
+## Publication publique — 10 novembre 2026
 
-L'auteur Julien Lecomte a demandé le **10 novembre 2026** une distribution publique de Haloryva Studio 2.7.0. L'objectif est de publier la release stable `v2.7.0` avec un EXE, son empreinte SHA-256, une notice et des visuels validés.
+Le dépôt [JulienLecomteGit/haloryva-studio](https://github.com/JulienLecomteGit/haloryva-studio) est public avec une [release stable `v2.7.0`](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/v2.7.0) contenant l'installateur Windows x64 et son fichier de vérification SHA-256. Le README présente la notice, les limites et les visuels V01. Le tag C4 est conservé pour la traçabilité ; l'ancienne fiche de préversion C4 et son téléchargement public ont été retirés.
 
 La diffusion publique doit être distinguée de la **validation technique** : sur Windows 11 x64, huit étapes automatiques ont réussi ; un essai réel de la version immédiatement précédente a eu lieu. Un essai long, un second PC, la désinstallation de cette nouvelle fabrication et une signature Authenticode restent hors preuve.
 
