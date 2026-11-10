@@ -12,8 +12,8 @@ Application Windows x64 de présentation et d'annotation du curseur, développé
 - Souris physique : **arrière = X1, avant = X2** ; préréglage « X1 dessin · X2 outil suivant » exécuté correctement selon l'essai utilisateur **1A** ; inversion X1/X2 désactivée.
 - Traînée : style **Ligne**, souplesse **50 %**, rendu continu et sans points visibles **accepté par Julien (1A)**.
 - **Non vérifié** : cycle de désinstallation/restauration, stabilité prolongée des effets, tous les autres styles et niveaux de souplesse. Les essais utilisateur ne constituent pas une certification générale.
-- **[Release Haloryva C4 en brouillon](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/untagged-557ced11c29edd2ca782)** : préversion non publiée, installateur attaché (607 KB), SHA-256 GitHub correspondant exactement au fichier Drive. Le tag prévu `v2.7.0-c4` sera créé seulement lors d'une éventuelle publication. **Aucune publication publique**.
-- La release **[CursorFlow Studio 2.6.6](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/untagged-bf32b31e3f3adab1b563)** reste un **brouillon privé** avec ses trois assets, à conserver pour retour arrière.
+- **[Préversion Haloryva Studio 2.7.0 C4 publiée sur le dépôt privé](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/v2.7.0-c4)** : tag `v2.7.0-c4`, statut GitHub **Pre-release**, installateur joint (607 KB), SHA-256 GitHub conforme au fichier Drive. Publication le 10 novembre 2026 ; **le dépôt reste privé** et aucun accès public n'a été ouvert. C4 demeure un candidat de recette, pas une version stable certifiée.
+- Le retour arrière 2.6.6 est également disponible sur [Drive](https://drive.google.com/file/d/1tJaQCvdfHkkUr1Ff8ILzoZs9RP96E_7z/view), contrôlé localement par SHA-256. La release **[CursorFlow Studio 2.6.6](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/untagged-bf32b31e3f3adab1b563)** reste un **brouillon privé** avec ses trois assets, à conserver pour retour arrière.
 
 ## Architecture
 
