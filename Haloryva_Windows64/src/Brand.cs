@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: AssemblyCopyright("© 2026 Julien Lecomte")]
 [assembly: AssemblyVersion("2.7.0.0")]
 [assembly: AssemblyFileVersion("2.7.0.0")]
-[assembly: AssemblyInformationalVersion("2.7.0-C4")]
+[assembly: AssemblyInformationalVersion("2.7.0")]
 
 namespace CursorFlow
 {
@@ -32,9 +32,9 @@ namespace CursorFlow
         // Historique court affiché dans « À propos » : version, date, résumé.
         public static readonly string[][] History = new string[][]
         {
-            new string[] { Version, "10/11/2026", "C4 : 269 ms, souplesse continue et orientation X1/X2 personnalisable (candidat)" },
-            new string[] { "2.6.6", "08/11/2026", "Candidat fluidité : traînée persistante, surface stable, cadence et mesures" },
-            new string[] { "2.6.5", "08/11/2026", "Candidat : routage des boutons, installation précompilée et maintenance vérifiée" },
+            new string[] { Version, "10/11/2026", "269 ms, souplesse continue et orientation X1/X2 personnalisable" },
+            new string[] { "2.6.6", "08/11/2026", "Fluidité : traînée persistante, surface stable, cadence et mesures" },
+            new string[] { "2.6.5", "08/11/2026", "Routage des boutons, installation précompilée et maintenance vérifiée" },
             new string[] { "2.6.4", "08/11/2026", "Option : halo agrandi sur curseur texte" },
             new string[] { "2.6.3", "08/11/2026", "Fiabilité : boutons, réglages, installateur avec retour arrière" },
             new string[] { "2.6.2", "08/11/2026", "Exe d'installation autonome, signature et paquet Store préparés" },
@@ -49,7 +49,7 @@ namespace CursorFlow
         public static readonly Color Cyan = Color.FromArgb(34, 211, 238);
         public static readonly Color Purple = Color.FromArgb(150, 108, 255);
 
-        public static string VersionLine { get { return Product + " " + Version + " · candidat C4 · build " + BuildDate + " · Windows x64"; } }
+        public static string VersionLine { get { return Product + " " + Version + " · build " + BuildDate + " · Windows x64"; } }
 
         public static GraphicsPath RoundRect(RectangleF r, float radius)
         {
