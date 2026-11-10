@@ -11,7 +11,7 @@
 ## 2.7.0 C4 — préversion du 10 novembre 2026 (archive)
 
 - Build de travail avec les réglages de fluidité et l'orientation X1/X2.
-- Interface ouverte et essais physiques ciblés validés par Julien ; ancienne release privée `v2.7.0-c4` conservée pour traçabilité.
+- Interface ouverte et essais physiques ciblés validés par Julien ; la fiche de préversion C4 a été retirée de GitHub avant l’ouverture publique, tandis que le tag historique `v2.7.0-c4` reste conservé.
 - Binaire et script C4 d'origine classés en archive récupérable, sans suppression.
 
 ## 2.6.6 — CursorFlow Studio (secours historique)
