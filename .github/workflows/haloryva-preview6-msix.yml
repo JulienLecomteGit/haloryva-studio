@@ -1,0 +1,48 @@
+name: Haloryva preview.6 MSIX three languages
+on:
+  push:
+    branches: ['haloryva-tests-preview6']
+    paths: ['haloryva-ci/preview6-msix/**', '.github/workflows/haloryva-preview6-msix.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  msix:
+    name: Preserved preview.6 MSIX FR EN ES
+    runs-on: windows-11-arm
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.6-build
+          run-id: 42951517482
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview6-build/
+      - uses: actions/download-artifact@v4
+        with:
+          name: preview6-language-fr-off-evidence
+          run-id: 42952468075
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview6-native/from-fr/
+      - uses: actions/download-artifact@v4
+        with:
+          name: preview6-language-es-off-evidence
+          run-id: 42952822477
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview6-native/from-es/
+      - uses: actions/download-artifact@v4
+        with:
+          name: preview6-language-en-off-evidence
+          run-id: 42953364906
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview6-native/from-en/
+      - name: Package, observe localized UI, preserve profiles, stop and remove
+        shell: powershell
+        run: ./haloryva-ci/preview6-msix/Run-Msix.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview6-msix-evidence
+          path: ${{ runner.temp }}/haloryva-preview6-msix/
+          retention-days: 30
