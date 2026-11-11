@@ -83,6 +83,10 @@ public static class UiProbe {
  [DllImport("user32.dll")] static extern bool GetClientRect(IntPtr h,out RECT r);
  [DllImport("user32.dll")] static extern bool PostMessage(IntPtr h,uint msg,IntPtr w,IntPtr l);
  [DllImport("user32.dll")] static extern bool SetForegroundWindow(IntPtr h);
+ [DllImport("user32.dll")] static extern bool GetWindowRect(IntPtr h,out RECT r);
+ [DllImport("user32.dll")] static extern IntPtr GetAncestor(IntPtr h,uint flags);
+ [DllImport("user32.dll")] static extern bool SetCursorPos(int x,int y);
+ [DllImport("user32.dll")] static extern void mouse_event(uint flags,uint dx,uint dy,uint data,UIntPtr extra);
  [DllImport("user32.dll",CharSet=CharSet.Unicode)] static extern IntPtr SendMessageTimeout(IntPtr h,uint m,UIntPtr n,StringBuilder b,uint f,uint t,out UIntPtr result);
  static string Text(IntPtr h){var b=new StringBuilder(2048);UIntPtr r;SendMessageTimeout(h,13,(UIntPtr)2048,b,2,200,out r);return b.ToString();}
  public static IntPtr Find(uint pid,string label){
@@ -95,10 +99,10 @@ public static class UiProbe {
  }
  public static void Click(IntPtr h){
   if(h==IntPtr.Zero || !IsWindowVisible(h) || !IsWindowEnabled(h))throw new Exception("UI target unavailable");
-  RECT r;if(!GetClientRect(h,out r))throw new Exception("No client bounds");
-  int x=(r.Right-r.Left)/2,y=(r.Bottom-r.Top)/2;IntPtr xy=(IntPtr)((y<<16)|(x&65535));
-  SetForegroundWindow(h);
-  if(!PostMessage(h,0x0201,(IntPtr)1,xy)||!PostMessage(h,0x0202,IntPtr.Zero,xy))throw new Exception("Click not queued");
+  RECT r;if(!GetWindowRect(h,out r))throw new Exception("No screen bounds");
+  SetForegroundWindow(GetAncestor(h,2)); System.Threading.Thread.Sleep(100);
+  if(!SetCursorPos((r.Left+r.Right)/2,(r.Top+r.Bottom)/2))throw new Exception("Cursor unavailable");
+  mouse_event(2,0,0,0,UIntPtr.Zero);System.Threading.Thread.Sleep(80);mouse_event(4,0,0,0,UIntPtr.Zero);
  }
 }
 
@@ -134,7 +138,12 @@ public static class UiProbe {
   $script:toggle=[UiProbe]::Find($appPid,'Démarrage avec Windows')
   [PackageProbe]::Windows($appPid)|Set-Content -LiteralPath (Join-Path $out ('windows-'+$script:registered.Version+'.txt')) -Encoding UTF8
   Snapshot ('opened-'+$script:registered.Version)
-  if($script:toggle -eq [IntPtr]::Zero -or ![UiProbe]::IsWindowEnabled($script:toggle)){throw 'Startup UI unavailable; inspect application logs and manifest'}
+  $report.States+=,@{Stage='control-found';Found=($script:toggle -ne [IntPtr]::Zero);Enabled=[UiProbe]::IsWindowEnabled($script:toggle)}
+  if($script:toggle -eq [IntPtr]::Zero -or ![UiProbe]::IsWindowEnabled($script:toggle)){
+   [PackageProbe]::Windows($appPid)|Write-Output
+   Get-ChildItem -LiteralPath $out -Filter '*.log'|ForEach-Object {Get-Content -LiteralPath $_.FullName}
+   throw 'Startup UI unavailable; inspect application logs and manifest'
+  }
  }
  function Read-Profile {
   $file=Join-Path $env:LOCALAPPDATA ('Packages\'+$script:registered.PackageFamilyName+'\LocalState\Haloryva\settings.json')
