@@ -1,0 +1,60 @@
+HALORYVA STUDIO 2.7.1 — LES SEULS RETOURS NECESSAIRES POUR CES CONTENUS F06
+11 novembre 2026 — aucun engagement, hébergement ou service activé
+
+1. ADRESSE DE CONTACT A AFFICHER
+Fournir une adresse que l’éditeur accepte de rendre publique pour recevoir
+en privé les demandes de confidentialité et de sécurité, ainsi que le support confidentiel.
+Une seule adresse suffit pour les trois langues et ces usages.
+Ne pas envoyer ici de mot de passe, code ou identifiant de connexion.
+Aucune adresse personnelle existante n’est récupérée ou publiée par défaut.
+Champ laissé vide : CONTACT_PUBLIC_A_COMPLETER.
+
+2. CANAUX ET HEBERGEMENT PROPOSES
+Proposition : GitHub Issues pour les questions et anomalies non personnelles :
+https://github.com/JulienLecomteGit/haloryva-studio/issues
+Le dépôt est public et les Issues sont activées, vérifiés en lecture seule.
+Les tickets sont publics ; les demandes sensibles utilisent l’adresse du point 1.
+Proposition d’hébergement des politiques et notices : fichiers lisibles dans le dépôt
+GitHub existant, avec une page d’entrée et les trois langues. Aucun site ni compte nouveau.
+Après accord de publication seulement, URL d’entrée envisagée :
+https://github.com/JulienLecomteGit/haloryva-studio/blob/main/docs/confidentialite/README.md
+URL de support à renseigner dans Partner Center, si approuvée : le lien Issues ci-dessus.
+Cette page d’entrée n’existe pas par cette préparation ; aucun chemin main créé.
+La validité finale des liens et leur acceptation par le Store devront être vérifiées
+au moment de leur mise en service, sans prétendre à une approbation Microsoft actuelle.
+Retour attendu : accepter cette proposition ou indiquer un site/canal déjà disponible.
+Aucun abonnement, nom de domaine, messagerie ou GitHub Pages à créer dans ce lot.
+
+3. APPROBATION DES TEXTES ET DE LA GESTION DU SUPPORT
+Relire les douze textes référencés dans LIRE-DABORD.txt et signaler les modifications voulues.
+La proposition de support privé prévoit suppression des échanges/pièces jointes de la
+messagerie de support au plus tard trois mois après clôture, sauf conservation requise
+ou suivi encore demandé. C’est un engagement nouveau proposé à l’éditeur, pas une
+pratique constatée ni un réglage automatique de sa messagerie.
+Retour attendu : confirmer cette durée et les textes, ou proposer une durée praticable.
+Aucun délai garanti de réponse n’est annoncé. La clôture d’un ticket GitHub ne le rend
+pas privé ni ne le supprime automatiquement ; les règles du prestataire s’appliquent.
+La date d’effet sera renseignée à la publication réelle, sans vous redemander une date arbitraire.
+L’approbation de textes ne vaut pas autorisation de les publier.
+
+4. ORIGINE ET DROITS DES VISUELS FOURNIS
+Indiquer si le logo, l’icône et les images fournis avec Haloryva ont été créés pour
+ce projet et peuvent être distribués, ou signaler les ressources externes et leur provenance.
+Les notices de droits du dépôt ne prouvent pas à elles seules la provenance de chaque image.
+Ressources identifiées dans les sources conservées :
+- Haloryva_Windows64/assets/Haloryva.ico et Haloryva.png ;
+- Haloryva_Windows64/assets/haloryva_demo.png, incorporé au setup ;
+- livraison-2.7.1-historique/assets/Haloryva.ico ;
+- haloryva-ci/Inputs/msix-layout/Assets/StoreLogo.png,
+  Square150x150Logo.png et Square44x44Logo.png ;
+- visuels publics du dépôt, notamment docs/Haloryva_Logo_V01.png
+  et docs/Haloryva_Banniere_V01.png, si repris dans la diffusion.
+Ces noms ne signifient pas qu’ils seront tous sélectionnés pour la fiche finale.
+Aucun changement de licence demandé : droits actuels conservés.
+Les PNG/WAV personnels choisis par un utilisateur ne sont pas des ressources distribuées ici.
+
+RIEN D’AUTRE A RENSEIGNER POUR CES BROUILLONS
+Nom, éditeur, identité Microsoft, versions, gratuité, trois langues et choix GitHub public
+sont déjà connus ; ne pas les redemander.
+Les choix de marchés/IARC/OS, les captures finales et l’environnement S6 appartiennent
+aux étapes Store restantes. Ils ne sont pas déclarés clos par F06.

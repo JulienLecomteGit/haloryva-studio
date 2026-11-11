@@ -1,0 +1,49 @@
+HALORYVA STUDIO 2.7.1 — MICROSOFT STORE INSTALLATION AND REMOVAL
+DRAFT, 11 NOVEMBER 2026 — future flow, not validated on a production package.
+The preserved dossier contains no uploaded or published official 2.7.1 package.
+The assigned link below does not mean a public listing is already available.
+Technical test packages are not public downloads.
+
+Install from the Store once the release is available
+1. Open the official Haloryva Studio listing, publisher Julien Lecomte:
+   https://apps.microsoft.com/detail/9NJ14SZJP55B
+2. Check the publisher and the stated compatibility with your device.
+3. Select Get or Install and let Microsoft Store finish.
+4. Open Haloryva from the Store or Start.
+This channel is managed by the Store; do not run HaloryvaSetup_2.7.1.exe to install it.
+If the listing is unavailable, do not substitute a test package identity or a
+certificate that you are asked to install.
+
+Older versions and settings
+Before changing channels, export your profile and save personal PNG/WAV files
+separately. Quit the older app before opening the Store version.
+If offered an import of older settings, read the summary and accept, decline or
+cancel. Accepted supported files are copied; import does not uninstall the old
+application or delete the source files.
+Migration from an actual 2.7.0 installation remains unvalidated.
+The Store version has separate app data; do not assume it stays synchronized
+with the EXE installation.
+Choose your interface language in Preferences, then fully restart the app.
+Windows startup is optional; the choice made in Windows takes precedence.
+
+Update
+Use the updates offered by Microsoft Store, rather than the EXE setup.
+Keep a backup of important settings. Preservation observed with test packages
+does not certify the future official package.
+
+Uninstall
+1. Use Preferences > Profiles and backups > Export my profile.
+   Save custom PNG/WAV files and exported drawings to a personal location outside
+   app data. The JSON profile alone does not contain these files.
+2. Choose Quit Haloryva from the icon near the clock.
+3. In Windows 11, open Settings > Apps > Installed apps, select Haloryva Studio,
+   choose Uninstall and confirm.
+The EXE uninstaller's keep-settings option does not apply here.
+Windows may remove package data, including settings and imported resources.
+Do not rely on reinstalling to recover them.
+Exports saved in your personal folders and older-version source files are separate;
+manage their copies independently.
+
+Help: SUPPORT.txt in this folder.
+Editorial note: production-package qualification, certification and actual Windows
+logon remain outstanding. This guide does not execute or validate those steps.

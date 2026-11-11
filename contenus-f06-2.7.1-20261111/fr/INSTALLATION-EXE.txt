@@ -1,0 +1,58 @@
+HALORYVA STUDIO 2.7.1 — INSTALLATION ET DÉSINSTALLATION EXE
+BROUILLON DU 11 NOVEMBRE 2026 — aucune installation demandée maintenant.
+L’installateur final est fabriqué et testé dans le périmètre documenté, mais reste
+non signé et non diffusé. Le lien de téléchargement final n’est pas encore publié.
+La cible Windows 11 x64 et les limites finales doivent figurer dans la future diffusion.
+
+Avant d’installer
+Utilisez uniquement HaloryvaSetup_2.7.1.exe provenant de la diffusion officielle
+de JulienLecomteGit/haloryva-studio. L’application affiche 2.7.1 ; le fichier porte
+la révision technique 2.7.1.11.
+Si vous avez déjà des réglages, sauvegardez-les depuis Préférences > Profils et
+sauvegardes > Exporter mon profil. Conservez séparément vos PNG/WAV personnalisés :
+un profil JSON n’est pas une archive de tous les fichiers auxquels il fait référence.
+Exportez les dessins que vous souhaitez garder avant de quitter.
+Fermez complètement Haloryva depuis son icône près de l’horloge > Quitter Haloryva.
+
+Installer
+1. Ouvrez l’installateur officiel.
+2. Choisissez si vous souhaitez un raccourci sur le Bureau et le démarrage avec Windows.
+   L’installation est destinée à votre compte Windows.
+3. Cliquez sur « Installer ». Si une installation existante est détectée, l’assistant
+   peut afficher « Mettre à jour » ; la sauvegarde préalable reste recommandée.
+4. Attendez la fin des vérifications et de l’installation.
+5. Cochez « Lancer Haloryva maintenant » si vous souhaitez l’ouvrir, puis « Terminer ».
+   Vous pouvez aussi le retrouver dans le menu Démarrer.
+
+Si Windows bloque le fichier, ne désactivez aucune protection : relevez le message
+et contactez le support. L’empreinte d’un fichier n’est ni une signature ni une garantie
+d’acceptation par Windows. Ne poursuivez pas avec un autre fichier non vérifié.
+
+Réglages et langue
+Choisissez français, anglais ou espagnol dans les préférences. Le changement prend
+effet au prochain lancement complet. Fermer seulement le Studio ne suffit pas toujours.
+Les réglages classiques se trouvent dans le dossier Haloryva des données locales ;
+« Ouvrir le dossier des réglages » permet de le retrouver.
+
+Désinstaller en gardant les réglages
+1. Exportez votre profil et vos dessins utiles, puis quittez Haloryva.
+2. Dans Windows 11 : Paramètres > Applications > Applications installées,
+   trouvez Haloryva Studio, ouvrez son menu et choisissez Désinstaller.
+3. Dans l’assistant Haloryva, laissez « Supprimer aussi mes réglages et sauvegardes »
+   DÉCOCHÉ pour conserver le profil.
+4. Cliquez sur « Désinstaller », attendez la fin, puis « Terminer ».
+L’application, ses raccourcis et son inscription Windows sont retirés ; les réglages
+conservés restent sur le disque. Ce comportement a été vérifié avec un profil de test.
+
+Supprimer aussi les réglages
+Ne cochez l’option de suppression qu’après avoir sauvegardé ce que vous souhaitez garder.
+Elle vise le contenu du dossier de l’application, y compris les fichiers personnels
+que vous y auriez placés. Les exports et copies situés ailleurs restent à gérer séparément.
+La conservation après désinstallation ne garantit pas toutes les situations de
+réinstallation ou de migration. Le passage depuis une installation réelle 2.7.0
+n’a pas été validé par le cycle final ; ne l’assimilez pas à une migration certifiée.
+
+Assistance : SUPPORT.txt dans ce dossier.
+Note de rédaction : l’option de suppression complète et le relancement normal après
+installation n’ont pas été exécutés dans la dernière recette ciblée. Cette notice
+s’appuie sur les sources et les preuves conservées ; elle ne crée pas une validation.

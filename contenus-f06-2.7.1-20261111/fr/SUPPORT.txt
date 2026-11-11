@@ -1,0 +1,34 @@
+HALORYVA STUDIO 2.7.1 — ASSISTANCE
+BROUILLON — canaux et contenu à approuver avant diffusion.
+
+Question ou anomalie sans données personnelles
+https://github.com/JulienLecomteGit/haloryva-studio/issues
+Consultez d’abord les signalements existants. Pour en créer un, GitHub peut vous
+demander de vous connecter ; aucun compte Haloryva n’est nécessaire pour utiliser l’application.
+Ce dépôt est public : tout le contenu du ticket et ses pièces jointes peuvent être consultés.
+
+Confidentialité, données personnelles ou faille de sécurité
+Contact privé : [CONTACT_PUBLIC_A_COMPLETER]
+N’utilisez pas un ticket public pour envoyer des fichiers privés ou les détails
+d’une faille. Décrivez d’abord le problème, sans joindre de fichier sensible.
+
+Informations utiles
+- Version affichée dans À propos ; installation EXE ou Microsoft Store.
+- Version de Windows, langue de l’interface, résolution et mise à l’échelle si l’affichage est concerné.
+- Quelques étapes pour reproduire, résultat attendu, résultat obtenu et message exact après retrait des données privées.
+- Un exemple non personnel ; une capture recadrée sur le problème uniquement si nécessaire.
+Le bouton « Copier les informations de version » peut aider : relisez le texte
+avant de le partager. Un profil ou journal complet n’est pas demandé par défaut.
+
+Conseils
+Fermer le Studio peut laisser Haloryva actif. Utilisez « Quitter Haloryva » dans
+son icône près de l’horloge pour le fermer complètement.
+Une nouvelle langue s’applique au prochain lancement complet.
+Si Windows bloque un fichier, conservez ses protections, relevez le message et
+contactez le support. Ne remplacez pas l’installateur par un fichier non officiel.
+Ne supprimez pas vos réglages pour résoudre un problème sans les avoir sauvegardés.
+
+Disponibilité
+Aucun délai garanti de réponse n’est annoncé. Le suivi se fait dans le ticket ou
+par le canal privé choisi. La gestion des échanges est décrite dans la politique :
+[URL_POLITIQUE_A_RENSEIGNER]

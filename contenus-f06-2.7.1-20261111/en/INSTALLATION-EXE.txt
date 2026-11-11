@@ -1,0 +1,58 @@
+HALORYVA STUDIO 2.7.1 — EXE INSTALLATION AND REMOVAL
+DRAFT, 11 NOVEMBER 2026 — no installation is requested now.
+The final installer has been built and tested within the documented scope; it remains
+unsigned and unreleased. The final download link has not been published.
+The intended Windows 11 x64 scope and final limitations must accompany the release.
+
+Before installing
+Use only HaloryvaSetup_2.7.1.exe from the official JulienLecomteGit/haloryva-studio
+release. The app displays 2.7.1; the file's technical revision is 2.7.1.11.
+If you have existing settings, save them using Preferences > Profiles and backups >
+Export my profile. Save custom PNG/WAV files separately: a JSON profile is not
+an archive of all the files it references.
+Export any drawings you want to keep, then fully exit using the notification-area
+icon > Quit Haloryva.
+
+Install
+The EXE setup currently uses French labels. Their meanings are given below.
+1. Open the official installer.
+2. Choose whether to create a desktop shortcut (“Créer un raccourci sur le Bureau”)
+   and start with Windows (“Démarrer Haloryva avec Windows”).
+   Installation is for your Windows account.
+3. Select “Installer” (Install). If an installation is detected, the button may say
+   “Mettre à jour” (Update); still make a backup first.
+4. Wait for verification and installation to finish.
+5. Select “Lancer Haloryva maintenant” (Launch Haloryva now) if wanted, then
+   “Terminer” (Finish). You can also open the app from Start.
+
+If Windows blocks the file, keep all protections enabled, note the message and
+contact support. A file hash is neither a signature nor a guarantee that Windows
+will accept it. Do not continue with an unverified replacement file.
+
+Settings and language
+Choose French, English or Spanish in Preferences. The change takes effect after
+a full application restart; closing only the Studio may not exit the app.
+Classic settings are in the Haloryva folder within local Windows app data.
+Use “Open the settings folder” to find it.
+
+Uninstall while keeping settings
+1. Export your profile and useful drawings, then quit Haloryva.
+2. In Windows 11, open Settings > Apps > Installed apps, find Haloryva Studio,
+   open its menu and choose Uninstall.
+3. In Haloryva's setup, leave “Supprimer aussi mes réglages et sauvegardes”
+   (Also delete my settings and backups) UNCHECKED to keep your profile.
+4. Choose “Désinstaller” (Uninstall), wait, then “Terminer” (Finish).
+The application, shortcuts and Windows registration are removed; retained settings
+remain on disk. This behaviour was verified using a test profile.
+
+Also delete settings
+Select the deletion option only after saving anything you want to keep.
+It targets the application folder's contents, including any personal files you
+placed there. Exports and copies stored elsewhere must be managed separately.
+Retained settings do not guarantee every reinstall or migration scenario.
+An upgrade from a real 2.7.0 installation was not validated in the final cycle.
+
+Help: SUPPORT.txt in this folder.
+Editorial note: complete settings deletion and a normal post-install app launch
+were not run in the latest targeted recipe. This guide uses preserved source
+and test evidence; it is not an additional validation.

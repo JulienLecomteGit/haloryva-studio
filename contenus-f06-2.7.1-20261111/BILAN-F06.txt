@@ -1,0 +1,68 @@
+HALORYVA STUDIO 2.7.1 — BILAN DES CONTENUS F06
+11 novembre 2026 — préparation documentaire exclusivement
+
+RESULTAT
+12 textes rédigés : 4 catégories x 3 langues.
+Confidentialité, support, notice EXE et notice Store/MSIX en français, anglais et espagnol.
+4 retours limités restent nécessaires : contact public pour échanges privés,
+canaux/hébergement proposés, approbation des textes et de la durée de support privé,
+origine/droits des visuels.
+Aucun changement des fiches Store déjà préparées ; elles sont référencées.
+
+CHOIX DE REDACTION
+- Traitement local des entrées, loupe, dessins, préférences, copies de récupération,
+  ressources PNG/WAV et journaux décrits à partir du brouillon et des preuves conservés.
+- Pas de promesse de réseau inexistant dans tout Windows ou les services tiers ;
+  pas de garantie de chiffrement propre ou de suppression de toutes les copies.
+- Support GitHub public séparé du contact privé. Les données sensibles ne sont pas
+  demandées dans les tickets ; journaux/profils complets non demandés par défaut.
+- Conservation privée trois mois après clôture : proposition explicite, à approuver,
+  non présentée comme une pratique en place. Aucun réglage de messagerie effectué.
+- Sauvegarde JSON et PNG/WAV distincte : pas de promesse qu’un JSON embarque les ressources.
+- EXE : conservation par défaut ; option de suppression nommée exactement.
+  Sa portée couvre le dossier applicatif, pas tous les exports placés ailleurs.
+- L’assistant reste français. Les notices EN/ES conservent les vrais libellés français
+  et les expliquent ; l’interface applicative possède ses vrais libellés FR/EN/ES.
+- Store : parcours futur, sans commande de sideloading, certificat de test ou contournement.
+  Aucune assimilation à une mise à jour de l’EXE ni à une migration 2.7.0 certifiée.
+- Pas de droit open source, souscription, réponse garantie, certification ou signature inventés.
+
+LECTURES DE COHERENCE EFFECTUEES, PAS TESTS DU PRODUIT
+Relecture des trois politiques et des trois guides par catégorie, des intitulés
+dans le catalogue existant et des libellés de l’assistant.
+Les références Git des fichiers d’entrée du setup correspondent à celles de la
+recette d’emballage final. Les passages utiles aux notices ont été lus dans
+SetupForm.cs et SetupWork.cs, sans nouveau parcours d’exécution.
+La désinstallation avec suppression complète est décrite d’après le code ; ce cas
+n’a pas été exécuté dans la recette finale. La conservation s’appuie sur le run 43090537264.
+Les comportements MSIX restent issus des préversions et des règles Windows publiques.
+Aucun nouvel audit exhaustif de réseau ou de confidentialité ; aucune certification juridique.
+Les champs non connus restent signalés, sans coordonnée privée inventée.
+
+ETAT F06
+Rédaction des douze textes : PREPAREE.
+Approbation finale, contact, canaux/hébergement et droits : EN ATTENTE.
+Hébergement d’une politique définitive, liens de service en production et publication : NON EXECUTES.
+F06 reste partiel tant que ces décisions et les éléments finaux de diffusion manquent.
+Les captures finales Store appartiennent à D5 ; elles ne sont pas produites ici.
+Le suivi global 9/12 et les résultats techniques précédents ne sont pas augmentés.
+Aucune nouvelle anomalie applicative constatée ; aucune correction binaire proposée.
+
+PRESERVATION
+Nouvelle branche documentaire haloryva-contenus-f06-2.7.1,
+nouveau dossier contenus-f06-2.7.1-20261111/.
+Base 61216fa897338a5ff997ef72112438897ffaa119.
+679 fichiers et 28 branches préexistants à conserver à l’identique.
+App .11 SHA-256 :
+1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81
+Setup final SHA-256 :
+BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1
+0 compilation ; 0 test ; 0 autotest ; 0 relance des 195 contrôles ;
+0 modification de workflow ; 0 téléchargement de binaire ; 0 signature ;
+0 release ; 0 paquet soumis ; 0 ouverture Partner Center ;
+0 modification du PC ou du dossier GIT ; 0 nouveau compte ou service.
+
+PROCHAINE ACTION
+L’utilisateur peut fournir les quatre retours de DECISIONS-A-CONFIRMER.txt.
+Intégrer ensuite uniquement ces décisions dans une révision documentaire.
+Cela n’autorise ni publication de politique finale, ni fusion vers main, ni installation.

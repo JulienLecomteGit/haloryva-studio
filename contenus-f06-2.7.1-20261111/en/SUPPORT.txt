@@ -1,0 +1,34 @@
+HALORYVA STUDIO 2.7.1 — SUPPORT
+DRAFT — channels and content require approval before release.
+
+Questions or bugs without personal information
+https://github.com/JulienLecomteGit/haloryva-studio/issues
+Check existing reports first. GitHub may require you to sign in to create an issue;
+using the application itself does not require a Haloryva account.
+The repository is public: issue content and attachments may be viewed by others.
+
+Privacy, personal information or security vulnerabilities
+Private contact: [CONTACT_PUBLIC_A_COMPLETER]
+Do not use a public issue to send private files or vulnerability details.
+Describe the problem first, without sensitive attachments.
+
+Useful details
+- The version shown in About, and whether you installed the EXE or Microsoft Store version.
+- Your Windows version, interface language, and resolution/scaling for display issues.
+- Short reproduction steps, expected and actual results, and the exact message after removing private details.
+- A non-personal example; a screenshot cropped to the problem only if needed.
+“Copy version information” can help: review the text before sharing it.
+A complete profile or log is not requested by default.
+
+Tips
+Closing the Studio may leave Haloryva running. Choose “Quit Haloryva” from its
+icon near the clock to exit completely.
+A new interface language takes effect after a full restart of the application.
+If Windows blocks a file, keep its protections enabled, note the message and
+contact support. Do not replace the installer with an unofficial file.
+Back up your settings before considering their removal to resolve a problem.
+
+Availability
+No response-time guarantee is offered. Follow-up takes place in the issue or
+through the chosen private channel. Handling of messages is described in the privacy policy:
+[URL_POLITIQUE_A_RENSEIGNER]

@@ -1,0 +1,42 @@
+HALORYVA STUDIO 2.7.1 — CONTENUS F06 PREPARES
+11 novembre 2026 — brouillons documentaires, aucune opération sur le logiciel
+
+DOUZE TEXTES REDIGES
+fr/CONFIDENTIALITE.txt ; en/PRIVACY.txt ; es/PRIVACIDAD.txt
+fr/SUPPORT.txt ; en/SUPPORT.txt ; es/SOPORTE.txt
+fr/INSTALLATION-EXE.txt ; en/INSTALLATION-EXE.txt ; es/INSTALACION-EXE.txt
+fr/INSTALLATION-MSIX.txt ; en/INSTALLATION-MSIX.txt ; es/INSTALACION-MSIX.txt
+
+Chaque langue couvre confidentialité, support, installation et désinstallation EXE,
+puis installation et désinstallation Store/MSIX. Tous les textes sont des brouillons.
+Les libellés anglais/espagnols du Studio viennent du catalogue existant.
+L’assistant EXE reste français ; les notices EN/ES expliquent ses vrais boutons.
+Aucune traduction nouvelle de l’assistant ni modification de binaire n’a lieu ici.
+
+CE QUI EST ACQUIS
+Les textes sont rédigés et relus pour cohérence entre langues et avec les sources.
+Le parcours EXE distingue conservation des réglages et suppression optionnelle.
+Le parcours Store est explicitement futur : aucun paquet officiel .11 n’a été exécuté.
+Les captures, les tests et les preuves binaires restent ceux du dossier précédent.
+
+CE QUI RESTE A CONFIRMER
+Voir DECISIONS-A-CONFIRMER.txt : contact, canaux/hébergement proposés,
+approbation des textes et de la gestion du support privé, origine/droits des visuels.
+La date d’entrée en vigueur sera la vraie date de publication ; ne pas l’inventer.
+Les marchés, l’IARC, les bornes Windows et S6 restent dans le suivi Store, mais ne
+sont pas redemandés comme renseignements nécessaires pour rédiger ces textes.
+
+PRECAUTION DE DIFFUSION
+Les mentions BROUILLON, propositions et notes éditoriales doivent être retirées
+seulement après décisions et validation finale. Aucun contenu définitif n’est mis
+en service par ce dossier. Aucun hébergement nouveau ou GitHub Pages activé.
+Les URL de publication proposées n’ont pas été créées ; main reste inchangée.
+Le dossier documentaire est conservé sur une branche dédiée, comme les bilans précédents.
+
+VERSION DE REFERENCE
+Version publique 2.7.1, fichier 2.7.1.11, setup final HaloryvaSetup_2.7.1.exe.
+Bilan global :
+https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/preparation-store-2.7.1-20261111/BILAN-GLOBAL-2.7.1.txt
+Fiches Store FR/EN/ES déjà rédigées :
+https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/preparation-store-2.7.1-20261111/FICHES-STORE-fr-en-es.txt
+Ces fichiers historiques ne sont pas remplacés ; le présent dossier est le complément F06.

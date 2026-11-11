@@ -1,0 +1,250 @@
+{
+  "date": "2026-11-11",
+  "branch": "haloryva-contenus-f06-2.7.1",
+  "base_commit": "61216fa897338a5ff997ef72112438897ffaa119",
+  "base_tree": "6ff7b796f72a1a5ca246e4d9ea290defb9061c3d",
+  "documents_only": true,
+  "sources": [
+    {
+      "path": "preparation-store-2.7.1-20261111/CONFIDENTIALITE-brouillon.txt",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/preparation-store-2.7.1-20261111/CONFIDENTIALITE-brouillon.txt",
+      "blob": "66455533773b1eeb5dc3bfdc4b3694f46b131d81"
+    },
+    {
+      "path": "preparation-store-2.7.1-20261111/BILAN-GLOBAL-2.7.1.txt",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/preparation-store-2.7.1-20261111/BILAN-GLOBAL-2.7.1.txt",
+      "blob": "dd9f44834838899fed366de4fbbdc3614250a198"
+    },
+    {
+      "path": "preparation-store-2.7.1-20261111/DOSSIER-MICROSOFT-STORE.txt",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/preparation-store-2.7.1-20261111/DOSSIER-MICROSOFT-STORE.txt",
+      "blob": "442b227d2895f349015e82bbb7b1b70b46270b61"
+    },
+    {
+      "path": "preparation-store-2.7.1-20261111/FICHES-STORE-fr-en-es.txt",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/preparation-store-2.7.1-20261111/FICHES-STORE-fr-en-es.txt",
+      "blob": "4725bd5f1851db2616c98690b96eabe5658f6949"
+    },
+    {
+      "path": "Haloryva_Windows64/installer/SetupForm.cs",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/Haloryva_Windows64/installer/SetupForm.cs",
+      "blob": "d5f8aebfd2940482a61b6d491cfc933431aa414e"
+    },
+    {
+      "path": "Haloryva_Windows64/installer/SetupWork.cs",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/Haloryva_Windows64/installer/SetupWork.cs",
+      "blob": "4e531293914254014929852471eec5130fd24b52"
+    },
+    {
+      "path": "haloryva-ci/installer271/installer-inputs.json",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/haloryva-ci/installer271/installer-inputs.json",
+      "blob": "13df1b920b7d3d7f177e366990734879435b753d"
+    },
+    {
+      "path": "livraison-2.7.1-historique/src/PackageContext.cs",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/livraison-2.7.1-historique/src/PackageContext.cs",
+      "blob": "5c57976eab39ae023faf5240bc90d94e0402f66c"
+    },
+    {
+      "path": "livraison-2.7.1-historique/languages/strings.json",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/livraison-2.7.1-historique/languages/strings.json",
+      "blob": "c3d59047cb7ca7066ba45324de6b010f22460572"
+    },
+    {
+      "path": "docs/DIFFUSION.md",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/docs/DIFFUSION.md",
+      "blob": "674d12694aba4ada6ff781007c5eb3babe8ba1b7"
+    },
+    {
+      "path": "README.md",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/61216fa897338a5ff997ef72112438897ffaa119/README.md",
+      "blob": "d1061ae6785d7662e71dadd9500b05bb43d12f6f"
+    }
+  ],
+  "official_references": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/store-policies",
+      "scope": "10.5.1 privacy policy and accurate product descriptions"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements",
+      "scope": "MSIX Store signing separate from EXE"
+    },
+    {
+      "url": "https://support.microsoft.com/en-gb/windows/apps/uninstall-or-remove-apps-and-programs-in-windows",
+      "scope": "Windows 11 uninstall using installed apps"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/apps/develop/data/store-and-retrieve-app-data",
+      "scope": "ApplicationData lifetime and updates; not new Haloryva production-package validation"
+    },
+    {
+      "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+      "scope": "GitHub as separate service and its privacy rules"
+    }
+  ],
+  "support": {
+    "issues_url": "https://github.com/JulienLecomteGit/haloryva-studio/issues",
+    "issues_enabled_read_only": true,
+    "public_repository": true,
+    "approval_pending": true,
+    "private_contact": null,
+    "private_retention_proposed_months_after_closure": 3,
+    "retention_approved": false,
+    "new_service_created": false
+  },
+  "pending_tokens": [
+    "CONTACT_PUBLIC_A_COMPLETER",
+    "DATE_PUBLICATION_A_RENSEIGNER",
+    "URL_POLITIQUE_A_RENSEIGNER"
+  ],
+  "rights_unchanged": true,
+  "resource_provenance_confirmation_pending": true,
+  "content_approval_pending": true,
+  "prepared_customer_documents": 12,
+  "languages": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "categories": [
+    "privacy",
+    "support",
+    "exe_install_uninstall",
+    "msix_install_uninstall"
+  ],
+  "f06_closed": false,
+  "milestone_count_unchanged": 9,
+  "milestone_total": 12,
+  "existing_blob_count": 679,
+  "existing_branch_heads": [
+    {
+      "name": "haloryva-2.7.0-c4",
+      "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+    },
+    {
+      "name": "haloryva-bilan-final-2.7.1",
+      "sha": "61216fa897338a5ff997ef72112438897ffaa119"
+    },
+    {
+      "name": "haloryva-candidat-2.7.1-historique",
+      "sha": "fa3c0ed958c5382e6b69832ea4c054f21b47f506"
+    },
+    {
+      "name": "haloryva-candidat-2.7.1",
+      "sha": "25f6f03216c4f89988bf82521edc0938c458e35f"
+    },
+    {
+      "name": "haloryva-installateur-final-2.7.1",
+      "sha": "7d61f7115e4e57962947ba474c0accc810dc1e33"
+    },
+    {
+      "name": "haloryva-preparation-exe-preview9",
+      "sha": "c158d3fa27e1cd3e1dbeeb3655a4682b820e034d"
+    },
+    {
+      "name": "haloryva-preparation-livraison-2.7.1",
+      "sha": "9482b046fa6fc096fd5942482c3ddff8516dcbcc"
+    },
+    {
+      "name": "haloryva-preparation-msix-preview7",
+      "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+    },
+    {
+      "name": "haloryva-preparation-store-preview5",
+      "sha": "f07890303144653049a05069841838ecd9b9d73d"
+    },
+    {
+      "name": "haloryva-preparation-store-preview7",
+      "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+    },
+    {
+      "name": "haloryva-preparation-store-preview8",
+      "sha": "bf8892413e6d686feb2884d26e118eff94d32723"
+    },
+    {
+      "name": "haloryva-preparation-store-preview9",
+      "sha": "dca613b3714ccc85a2d1930f1a0cb5e23e91388c"
+    },
+    {
+      "name": "haloryva-recette-installateur-final-2.7.1",
+      "sha": "721672cd474c471af068617a4cef038614fc1ee6"
+    },
+    {
+      "name": "haloryva-tests-installateur-preview9",
+      "sha": "18a647ed7c22c6f4d19159721bc2ce844d8455a9"
+    },
+    {
+      "name": "haloryva-tests-preview2",
+      "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+    },
+    {
+      "name": "haloryva-tests-preview3",
+      "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+    },
+    {
+      "name": "haloryva-tests-preview4",
+      "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+    },
+    {
+      "name": "haloryva-tests-preview5-msix",
+      "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+    },
+    {
+      "name": "haloryva-tests-preview5",
+      "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+    },
+    {
+      "name": "haloryva-tests-preview6",
+      "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+    },
+    {
+      "name": "haloryva-tests-preview7-msix",
+      "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+    },
+    {
+      "name": "haloryva-tests-preview7",
+      "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+    },
+    {
+      "name": "haloryva-tests-preview8-focus",
+      "sha": "638e2044e6c988b784941329316aa53b99005e8a"
+    },
+    {
+      "name": "haloryva-tests-preview8-import",
+      "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420"
+    },
+    {
+      "name": "haloryva-tests-preview8",
+      "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+    },
+    {
+      "name": "haloryva-tests-preview9",
+      "sha": "d1afe7b5a155355bbf60645a4ad04c7f963bfb87"
+    },
+    {
+      "name": "main",
+      "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+    },
+    {
+      "name": "release/2.7.0-stable",
+      "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+    }
+  ],
+  "workflow_blob_shas_unchanged": true,
+  "new_branch_matches_any_workflow_push_trigger": false,
+  "this_task": {
+    "compiles": 0,
+    "tests": 0,
+    "autotests": 0,
+    "binary_downloads": 0,
+    "local_writes": 0,
+    "system_changes": 0,
+    "main_updates": 0,
+    "signatures": 0,
+    "releases": 0,
+    "store_submissions": 0,
+    "partner_center_updates": 0
+  },
+  "verification": "Read-only source review, text consistency and Git preservation; no product tests executed."
+}

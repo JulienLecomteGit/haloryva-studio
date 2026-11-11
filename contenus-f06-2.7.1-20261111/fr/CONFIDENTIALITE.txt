@@ -1,0 +1,83 @@
+HALORYVA STUDIO 2.7.1 — CONFIDENTIALITÉ
+BROUILLON À APPROUVER — rédigé le 11 novembre 2026, non entré en vigueur.
+Contact et gestion du support à confirmer avant diffusion.
+
+Éditeur : Julien Lecomte
+Contact privé : [CONTACT_PUBLIC_A_COMPLETER]
+Date d’entrée en vigueur : [DATE_PUBLICATION_A_RENSEIGNER]
+
+Fonctionnement sur votre appareil
+Haloryva Studio met en valeur le curseur et permet de dessiner des annotations.
+L’application traite les événements de souris et de clavier pour ses effets,
+raccourcis et actions de boutons, même lorsqu’une autre fenêtre est active.
+L’affichage des touches présente certaines combinaisons avec Ctrl, Alt ou Windows ;
+il ne constitue pas un historique des textes saisis.
+La loupe utilise temporairement les pixels autour du curseur. Les dessins et le
+texte saisi dans une annotation sont traités dans la session de dessin. Vous pouvez
+choisir de les enregistrer par export.
+L’export PNG enregistre les annotations sur fond transparent dans le fichier choisi ;
+il ne produit pas une capture complète du bureau.
+
+Réglages, fichiers et copies de récupération
+Un profil JSON local conserve les préférences : langue, outils choisis, actions de
+boutons et réglages visuels. Il peut contenir les chemins de vos fichiers PNG ou WAV.
+La version EXE utilise le dossier Haloryva de vos données locales Windows.
+La version Microsoft Store/MSIX utilise ses données locales d’application.
+Des sauvegardes, copies de profils invalides et journaux techniques locaux peuvent
+être conservés pour la récupération et le diagnostic.
+
+Lorsque vous acceptez la reprise des réglages classiques, l’application en crée une
+copie indépendante. Les PNG/WAV personnalisés lisibles peuvent être copiés avec votre
+consentement, dans la limite annoncée par fichier. Une copie du profil source et une
+sauvegarde du profil remplacé peuvent aussi être conservées. Ces copies contiennent
+les mêmes chemins et préférences que leur source ; elles ne sont pas anonymisées.
+L’import ne supprime ni les fichiers ni l’installation d’origine. Vous pouvez refuser
+ou annuler. L’import d’un ancien choix de démarrage n’autorise pas à lui seul le
+démarrage automatique dans Windows.
+
+Journaux et réseau
+Un journal d’erreur peut conserver la date, la catégorie, le type d’erreur et la pile
+technique, avec rotation des fichiers. Le journal d’erreur exclut le message et les
+données de l’exception. Les diagnostics supplémentaires sont activés explicitement.
+Aucun envoi automatique de ces journaux ou des profils au support n’est prévu.
+Les fonctions courantes ne demandent pas de compte Haloryva. Les revues de sources
+de cette version n’ont identifié ni télémétrie applicative, ni publicité, ni mécanisme
+d’envoi vers un serveur de l’éditeur.
+Un fichier placé dans un dossier synchronisé ou réseau peut être traité par le
+service que vous avez choisi. Windows, le Microsoft Store, GitHub et votre service
+de messagerie appliquent leurs propres règles.
+
+Conservation et suppression
+Les fichiers locaux restent jusqu’à leur remplacement, rotation ou suppression.
+L’assistant EXE conserve les réglages et sauvegardes par défaut à la désinstallation ;
+leur suppression est une option distincte. Les exports et copies conservés ailleurs
+ne sont pas tous supprimés par cette option.
+La désinstallation Store relève de Windows et peut supprimer les données du paquet,
+y compris les copies PNG/WAV importées. Exportez votre profil et conservez séparément
+vos ressources avant de désinstaller. Ne comptez pas sur une réinstallation pour les récupérer.
+Les copies de récupération et les fichiers synchronisés doivent aussi être pris en
+compte si vous souhaitez effacer vos données. Haloryva n’offre pas de chiffrement
+propre de ces fichiers ni de garantie d’effacement de toutes leurs copies.
+
+Support et demandes de confidentialité
+Un envoi au support nécessite votre action. L’éditeur utilise les informations
+communiquées pour répondre à votre demande et comprendre le problème signalé.
+Les tickets GitHub sont publics : n’y joignez ni profil personnel complet, ni
+journal non relu, ni capture contenant des informations privées.
+Les tickets peuvent rester accessibles après clôture et suivent aussi les règles GitHub :
+https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+Utilisez le contact privé ci-dessus pour une demande confidentielle.
+Proposition soumise à l’approbation de l’éditeur : les échanges privés et leurs pièces
+jointes sont supprimés de sa messagerie de support au plus tard trois mois après
+clôture, sauf obligation de conservation applicable ou suivi encore demandé.
+Les services de messagerie peuvent conserver leurs propres copies selon leurs règles.
+Vous pouvez contacter l’éditeur pour demander l’accès, la correction ou la suppression
+des informations que vous lui avez transmises. Il ne dispose pas d’un accès à distance
+aux réglages restés sur votre appareil et ne peut pas les effacer à votre place.
+
+Vos choix
+Vous pouvez modifier les préférences, désactiver les effets, gérer le démarrage
+dans l’application et Windows, ou quitter depuis l’icône près de l’horloge.
+« Ouvrir le dossier des réglages » permet de retrouver vos fichiers locaux.
+Relisez les informations de version, profils, annotations et diagnostics avant de
+les partager. Cette politique sera actualisée si les fonctions ou les pratiques changent.

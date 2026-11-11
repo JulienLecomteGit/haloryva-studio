@@ -1,0 +1,49 @@
+HALORYVA STUDIO 2.7.1 — INSTALLATION ET DÉSINSTALLATION MICROSOFT STORE
+BROUILLON DU 11 NOVEMBRE 2026 — parcours futur, non validé sur un paquet de production.
+Aucun paquet officiel 2.7.1 n’est déposé ou publié d’après le dossier conservé.
+Le lien attribué ci-dessous ne signifie pas qu’une fiche est déjà disponible.
+Ne pas utiliser les paquets techniques d’essai comme téléchargement public.
+
+Installer depuis le Store, lorsque la version sera publiée
+1. Ouvrez la fiche officielle Haloryva Studio, éditeur Julien Lecomte :
+   https://apps.microsoft.com/detail/9NJ14SZJP55B
+2. Vérifiez l’éditeur et la compatibilité annoncée pour votre appareil.
+3. Choisissez Obtenir ou Installer et laissez le Microsoft Store terminer.
+4. Ouvrez Haloryva depuis le Store ou le menu Démarrer.
+Le Store gère ce canal ; vous n’avez pas à lancer HaloryvaSetup_2.7.1.exe pour l’installer.
+Si la fiche n’est pas disponible, n’utilisez pas une identité de test ou un certificat
+à installer comme solution de remplacement.
+
+Ancienne version et réglages
+Avant de changer de canal, exportez votre profil et conservez séparément vos PNG/WAV
+personnels. Quittez l’ancienne version avant d’ouvrir la version Store.
+Si une reprise des anciens réglages est proposée, lisez le résumé et choisissez
+d’accepter, refuser ou annuler. Les fichiers compatibles acceptés sont copiés ;
+l’opération ne désinstalle pas l’ancienne application et n’efface pas ses sources.
+Une migration depuis une véritable installation 2.7.0 reste non validée à ce jour.
+La version Store possède ses propres données ; ne présumez pas qu’elles se synchronisent
+avec l’installation EXE.
+Choisissez la langue dans les préférences et relancez complètement l’application.
+Le démarrage avec Windows est facultatif et le choix effectué dans Windows reste prioritaire.
+
+Mettre à jour
+Utilisez les mises à jour proposées par le Microsoft Store. Ne lancez pas le setup EXE
+pour mettre à jour cette installation. Conservez une sauvegarde de vos réglages importants.
+La conservation constatée dans les paquets d’essai ne certifie pas encore le futur paquet officiel.
+
+Désinstaller
+1. Dans Préférences > Profils et sauvegardes, utilisez Exporter mon profil.
+   Sauvegardez les PNG/WAV personnalisés et les dessins exportés dans un emplacement
+   personnel extérieur aux données de l’application. Le JSON seul ne contient pas ces fichiers.
+2. Quittez Haloryva depuis son icône près de l’horloge > Quitter Haloryva.
+3. Dans Windows 11 : Paramètres > Applications > Applications installées,
+   sélectionnez Haloryva Studio, puis Désinstaller et confirmez.
+L’option de conservation du désinstalleur EXE ne s’applique pas à ce parcours.
+Windows peut supprimer les données du paquet, notamment les réglages et ressources
+importées. Ne comptez pas sur une réinstallation pour les retrouver.
+Les exports placés dans vos dossiers personnels et les sources de l’ancienne version
+sont distincts ; gérez leurs copies séparément.
+
+Assistance : SUPPORT.txt dans ce dossier.
+Note de rédaction : le paquet de production, sa certification et la vraie ouverture
+de session Windows restent à qualifier. Aucune de ces étapes n’est exécutée par cette notice.
