@@ -1,0 +1,139 @@
+{
+    "Version":  "2.7.1-preview.4",
+    "SHA256":  "2AB807BB6E01ECE73AE6010854D0A69C74192AF1D48A51D05D7EE155A2E4060C",
+    "Commit":  "6fe36c96ebf8d14daa6fad7d42de4648e467ec59",
+    "OriginalPreview2SHA256":  "F655930368239905C2DAED1948C22ECC9E7256782C4EC2454E539780C0BD0D2E",
+    "OriginalPreview3SHA256":  "4170BEFEC193F5049051D73744CFCAD6D300240CE840E791E2C469A7CECAB13C",
+    "BaselineCommit":  "c74f4d66c6a7f742e338408e427e29da3fa02eb5",
+    "SourceOrigin":  "Preserved preview.3 source snapshot on haloryva-tests-preview3",
+    "ChangedSourceFiles":  [
+                               "src/Brand.cs",
+                               "src/PremiumStudioForm.cs"
+                           ],
+    "SourceFiles":  [
+                        {
+                            "Path":  "assets/Haloryva.ico",
+                            "SHA256":  "7B0DAA920CD5CFDADEBF530ABD69AA301ABF2069847D3E5F691E707D9CEF100C"
+                        },
+                        {
+                            "Path":  "assets/app.manifest",
+                            "SHA256":  "7977EF6C649A2F60B1D79C923CF453B405B378E55A77CC65DDB705E101870E91"
+                        },
+                        {
+                            "Path":  "src/Annotations.cs",
+                            "SHA256":  "E240BFF4AEA4F7AB0B11B2250F5FC8A8F5F6C489555B18FCBD6C76C080CC8496"
+                        },
+                        {
+                            "Path":  "src/Brand.cs",
+                            "SHA256":  "492EE912B543ACB0B00592111FA19385AD1C62A452A0C4BF8A5836C28BFA8679"
+                        },
+                        {
+                            "Path":  "src/ColorWheelPopup.cs",
+                            "SHA256":  "4C61BC0C618E504D6609A823351EB751D3197FC3DEDDEDDAACF568FCB9FC1D3C"
+                        },
+                        {
+                            "Path":  "src/Config.cs",
+                            "SHA256":  "359387B961DAC7A40B72EDC8FC3DB1B6FE467A28679BBCB8CA2D8C682CD66273"
+                        },
+                        {
+                            "Path":  "src/Controller.cs",
+                            "SHA256":  "EDCEADC4F0D8D6CCEACCFE8418C1319FCCA30B4A6984054141D1592B05C2FA6D"
+                        },
+                        {
+                            "Path":  "src/DrawingGeometry.cs",
+                            "SHA256":  "CE400617A316A70F1B14BCDE3CA8C1387344E28D1E624E42E4AA3C54C88FE25D"
+                        },
+                        {
+                            "Path":  "src/EffectDiagnostics.cs",
+                            "SHA256":  "797271B20687A605C985627DF782D16DABFB7228A516616A361C7329D18CA7B4"
+                        },
+                        {
+                            "Path":  "src/ErrorReporting.cs",
+                            "SHA256":  "046E5FAF483912B6B51B2B028A1DE22E1E77EB8E06137109CF39F9504C4F544A"
+                        },
+                        {
+                            "Path":  "src/FrameBounds.cs",
+                            "SHA256":  "D083BF4AA6E8B41BA9BD4D389163E722463A84747B2251CAD77B56223235745A"
+                        },
+                        {
+                            "Path":  "src/FramePump.cs",
+                            "SHA256":  "2B42058033BED569A06871680C5F3D3EED96D3844F77861169FAC5D0B0F3A97E"
+                        },
+                        {
+                            "Path":  "src/GlobalHooks.cs",
+                            "SHA256":  "90212FF443C03CF6565F65259D925B09A8E6E748F1C253DA5B7B5067EF3BD1DF"
+                        },
+                        {
+                            "Path":  "src/InputPipeline.cs",
+                            "SHA256":  "BAD968C9749AD19324762560E9C03E16AEC5AC6602481C0A1D77389EE127A7B9"
+                        },
+                        {
+                            "Path":  "src/InputState.cs",
+                            "SHA256":  "BCE38EF4E48F8DA7BC588F4AC7391A9CB73AFDA67A243FE634ED398551BF4E22"
+                        },
+                        {
+                            "Path":  "src/KeyboardPolicy.cs",
+                            "SHA256":  "DC7542E144032506440AA0D4856791DC624C3F67DA30F711C9B73A3B5E3ABFE2"
+                        },
+                        {
+                            "Path":  "src/PremiumStudioForm.cs",
+                            "SHA256":  "ED06922564CA1D9AAC45479F11E0D437CDFE7FBC4234679B5249170656186974"
+                        },
+                        {
+                            "Path":  "src/PremiumWidgets.cs",
+                            "SHA256":  "AA87BC1F27C060B11FFB431F8B0F8177B83918C1957CAD1FEC363A84402F97B0"
+                        },
+                        {
+                            "Path":  "src/Program.cs",
+                            "SHA256":  "CFF5BC9CDBAF622AF8614918B6A4674142F7736EE352551F8489809A30CD78AB"
+                        },
+                        {
+                            "Path":  "src/SelfTest.cs",
+                            "SHA256":  "E1A6656666103765E18A08A47528E2A17C8FF4D83469AFEC4A15486EC6D7D711"
+                        },
+                        {
+                            "Path":  "src/Splash.cs",
+                            "SHA256":  "C319281F03727874684BDDDD6B6C69CB95A73918575285545D1D9DB6194B9D2E"
+                        },
+                        {
+                            "Path":  "src/StudioControls.cs",
+                            "SHA256":  "CFB302E46D30FC475E21DB6951F42CE3349076CB149486CEBCF24CFDBBADC947"
+                        },
+                        {
+                            "Path":  "src/StudioTheme.cs",
+                            "SHA256":  "028A58F9E46D26A3D502E1A41DB035D66E1548457551322FE232951AAFA12AE1"
+                        },
+                        {
+                            "Path":  "src/TextPrompt.cs",
+                            "SHA256":  "3F322DC2A9DBB1ACBCE05FEF52741F4580C0805D36B52E0AD792C18CCECD3A30"
+                        },
+                        {
+                            "Path":  "src/ToolToast.cs",
+                            "SHA256":  "69DBA3E4F85AAC44DFE48DA6C20D6C0F9ED36AA85A733725CF37E06E685273C8"
+                        },
+                        {
+                            "Path":  "src/TrailDiagnostics.cs",
+                            "SHA256":  "D6ACA66BEBFE56DA247E9EAB22DBB11BE5C11FAB81F577515833E70C49B36470"
+                        },
+                        {
+                            "Path":  "src/TrailEngine.cs",
+                            "SHA256":  "00A237B0762B40B50DC51AFFA4F9DDF5F0A3025291BDC50C9FF8FFCAA86E677B"
+                        },
+                        {
+                            "Path":  "src/TrailSelfTest.cs",
+                            "SHA256":  "A24848CBF1FBF086779950913734CE2D3F3DAA3BD496309E982BAB0CDDFC58A0"
+                        },
+                        {
+                            "Path":  "src/Visuals.cs",
+                            "SHA256":  "AE04DEFD8755D4FEABA09A55F7A31EFF5390EFC5FEC033F1B4B4C47028FEE401"
+                        },
+                        {
+                            "Path":  "src/WinNative.cs",
+                            "SHA256":  "78CD836411C3CD71858387D93C617BD7B82824A7A453BDF2DA670BAF09E6E1F2"
+                        }
+                    ],
+    "Legacy195Executed":  false,
+    "Installed":  false,
+    "Signed":  false,
+    "ReleasePublished":  false
+}

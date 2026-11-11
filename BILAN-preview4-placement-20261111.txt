@@ -1,0 +1,136 @@
+HALORYVA STUDIO — BILAN PREVIEW.4 / PLACEMENT DU STUDIO
+Date : 11 novembre 2026
+Statut : correction ciblée validée sur GitHub ; aucune diffusion.
+
+1. Résultat
+Deux ouvertures réelles de l'exécutable et 106 assertions de la recette Studio
+ont réussi sur les machines éphémères GitHub. Le pilote ne recentre plus le Studio.
+Aucune anomalie observée dans le périmètre exécuté. La validation n'est pas
+une certification globale Windows 11, MSIX ou Microsoft Store.
+
+Run : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42942640399
+Commit testé : 6fe36c96ebf8d14daa6fad7d42de4648e467ec59
+Branche : haloryva-tests-preview4
+Binaire : 2.7.1-preview.4, 384512 octets, compilé une seule fois.
+SHA256 : 2AB807BB6E01ECE73AE6010854D0A69C74192AF1D48A51D05D7EE155A2E4060C
+Empreinte identique dans la compilation et les deux recettes, contrôlée avant/après.
+
+2. Défaut constaté et correction
+Le diagnostic précédent (run 42940698728, preview.3 inchangée) observait
+une fenêtre 984 x 680 à (78,78), puis (104,104), dans une zone utile 1024 x 720 :
+débordement de 38 puis 64 pixels à droite et en bas.
+
+Le constructeur de PremiumStudioForm appelait InitScale avant de fixer
+StartPosition et la taille. InitScale utilise CreateGraphics, qui peut créer
+prématurément le handle natif ; l'ordre d'initialisation explique le placement
+Windows en cascade observé. La correction évite cette dépendance :
+- FormBorderStyle.None, StartPosition.Manual et AutoScaleMode.None avant InitScale ;
+- même calcul de taille et taille minimale qu'en preview.3 ;
+- Bounds centré explicitement après ce calcul dans Screen.FromPoint(Cursor.Position).WorkingArea,
+  avec prise en compte de l'origine du moniteur ;
+- uniquement à la construction, pas de recentrage d'une fenêtre déjà ouverte.
+
+Seuls src/PremiumStudioForm.cs et src/Brand.cs sont différents dans le nouveau
+snapshot : correction et identité preview.4. Les 26 autres sources et les
+2 ressources sont identiques par SHA. La compilation vérifie les sources
+préservées par hash Git et refuse toute autre différence.
+La version d'assemblage reste 2.7.1.0 ; FileVersion 2.7.1.4 ;
+InformationalVersion 2.7.1-preview.4. Le libellé général du Studio reste 2.7.1.
+
+3. Exécution réellement terminée — tous les jobs réussis
+Compilation : job 130267863584.
+Placement normal : job 130268012432.
+- Deux profils neufs et deux lancements de l'exécutable par son point d'entrée normal.
+- Pas de --silent, pas de contrôleur hébergé, pas de déplacement de fenêtre,
+  pas d'entrée souris/clavier injectée pour ces deux lancements.
+- Fenêtre 984 x 680 en (20,20), zone utile 1024 x 720, lors des deux ouvertures.
+- Centrage exact, aucun débordement, marge de 20 pixels sur les quatre côtés.
+- Deux arrêts propres avec code 0.
+- Captures des deux ouvertures inspectées : fenêtre entièrement visible.
+
+Commandes Studio : job 130268012468.
+- 106 assertions PASS, exit=0, observateur externe désactivé.
+- Ce total inclut les contrôles de préparation, l'identité du binaire et l'arrêt.
+  Il ne correspond pas aux 195 contrôles historiques.
+- Position initiale et après fermeture/réouverture : centrée et contenue.
+- Bouton agrandir, conservation de l'état agrandi lors de ShowSettings,
+  bouton rétablir et retour aux limites initiales : réussis.
+- Navigation sur les 8 pages ; sélection des 10 outils ; onglets et réglages.
+- Bornes d'épaisseur, couleur valide/invalide, sélection au clavier, pause/reprise.
+- Entrées natives de dessin, deux commandes pour démarrer, retour par clic droit/Échap.
+- Annuler/rétablir, restaurer le trait original, effacer.
+- Export PNG par le bouton et la boîte d'enregistrement Windows :
+  fichier réellement créé, dimensions du bureau, transparence et trait présents.
+- Fermeture/réouverture avec réglages conservés ; arrêt des deux workers d'entrée.
+
+Les clics et la saisie passent par SendInput sur le bureau GitHub ;
+le pilote utilise aussi l'introspection pour localiser les contrôles et vérifier
+l'état du moteur. Il peut défiler le contenu pour rendre un contrôle visible,
+mais ne déplace pas la fenêtre du Studio.
+Le texte générique « COMPLETE Studio/smoothing/assisted suite passed » du pilote
+commun ne signifie pas que trois suites ont tourné : result.json et le lanceur
+identifient uniquement Suite=studio. Les suites géométriques smoothing et assisted
+n'ont pas été exécutées dans ce run.
+
+Environnement réel : Microsoft Windows Server 2025 Datacenter x64, build 26100,
+image GitHub 20261103.298.1, bureau interactif 1024 x 768, zone utile 1024 x 720.
+
+4. Éléments préservés et limites
+Branches contrôlées sans changement :
+main : 9e900eeaa62dcd2812a6aa0d3f251ad019ef3686
+haloryva-tests-preview2 : 8d84f31157ebfc1e09144811b6b112247f926f81
+haloryva-tests-preview3 : c74f4d66c6a7f742e338408e427e29da3fa02eb5
+
+Preview.2 SHA256 :
+F655930368239905C2DAED1948C22ECC9E7256782C4EC2454E539780C0BD0D2E
+Preview.3 SHA256 :
+4170BEFEC193F5049051D73744CFCAD6D300240CE840E791E2C469A7CECAB13C
+
+Les fichiers existants sont intacts ; ce travail ajoute uniquement preview.4,
+son workflow et son bilan sur la nouvelle branche.
+Aucun lancement ni installation d'Haloryva sur le PC utilisateur.
+Lecture des artefacts en mémoire, sans enregistrer les exécutables localement.
+Aucune modification système, signature, release, tag de diffusion ou publication Store.
+Aucun des 195 contrôles historiques n'a été relancé.
+
+NON EXÉCUTÉ cette fois :
+- suites complètes clic court/AltGr/autres outils/lissage/formes assistées ;
+- MSIX preview.4 et essai Microsoft Store ;
+- Windows 11 physique, plusieurs écrans, DPI différents, changement d'écran.
+Les résultats réussis de preview.3 restent conservés, mais ne sont pas
+présentés comme de nouvelles exécutions de preview.4.
+
+5. Preuves
+Artefact de compilation : 13820779226, Haloryva-2.7.1-preview.4-build
+Placement : 13821511980, preview4-placement-evidence
+Studio : 13821512071, preview4-studio-evidence
+Échéance annoncée des artefacts GitHub : 25 novembre 2026.
+Les JSON de provenance/résultat/environnement et le journal des 106 assertions
+sont également conservés avec ce bilan dans preuves-preview4-placement-20261111/.
+Les captures et le binaire restent dans les artefacts du run, pas en release.
+
+Captures PNG originales :
+normal-launch-1.png : EFD37F8688DDF2FB52581D014125CB1CE6D7291EC103DF97A0F068E4E72B5244
+normal-launch-2.png : A6804B01D729653789D32D4799FF4D41B2EA6B9978D240A487153C6AE224E27F
+studio-drawing.png : 2E0DB7368FE7E5A7246FEB368FB329A3B416F7C90FA6C7ABDC78306EC6E45A33
+studio-button-export.png : F0BB68A53FF71324F1587678B02B5F2FFB519A67ADA4E0B98354042D7CA7B3E2
+
+6. Prochaine fonction demandée
+Choisir les outils inclus dans le défilement des boutons : deux outils cochés
+doivent permettre d'alterner uniquement entre eux. Fonction notée, non implémentée.
+La correction de placement étant validée, cette évolution peut maintenant
+être traitée séparément dans preview.5, avant la recette MSIX de la version finale.
+
+Proposition pour cette évolution :
+- sélection explicite et mémorisée des outils parcourus ;
+- conserver la liste actuelle par défaut pour les profils existants ;
+- au moins un outil sélectionné ; garder l'accès direct aux autres outils ;
+- tests ciblés : un/deux/plusieurs outils, bouclage, sauvegarde/rechargement,
+  boutons affectés au changement d'outil et conservation du trait en cours.
+Ces choix de détail restent des propositions pour la prochaine étape.
+
+Prompt de continuation :
+« Ajoute dans preview.5 le choix des outils parcourus par les boutons, avec
+mémorisation et tests ciblés sur GitHub. Préserve preview.4, preview.3, preview.2,
+main et mon PC. Ne relance pas les 195 contrôles et ne publie rien.
+Présente le bilan avant diffusion. »

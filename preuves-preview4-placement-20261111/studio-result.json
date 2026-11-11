@@ -1,0 +1,13 @@
+{
+    "Version":  "2.7.1-preview.4",
+    "Suite":  "studio",
+    "Observer":  "off",
+    "Status":  "studio-passed",
+    "Legacy195Executed":  false,
+    "Installed":  false,
+    "Signed":  false,
+    "ReleasePublished":  false,
+    "SHA256":  "2AB807BB6E01ECE73AE6010854D0A69C74192AF1D48A51D05D7EE155A2E4060C",
+    "BuildRun":  "42942640399",
+    "RebuiltInTest":  false
+}

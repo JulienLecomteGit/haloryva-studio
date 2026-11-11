@@ -1,0 +1,68 @@
+{
+    "Version":  "2.7.1-preview.4",
+    "SHA256":  "2AB807BB6E01ECE73AE6010854D0A69C74192AF1D48A51D05D7EE155A2E4060C",
+    "Rebuilt":  false,
+    "Legacy195Executed":  false,
+    "Installed":  false,
+    "Signed":  false,
+    "ReleasePublished":  false,
+    "Status":  "normal-launch-placement-passed",
+    "Launches":  [
+                     {
+                         "Launch":  1,
+                         "Ready":  true,
+                         "ExitNormal":  true,
+                         "WindowMoved":  false,
+                         "InputInjected":  false,
+                         "Bounds":  {
+                                        "X":  20,
+                                        "Y":  20,
+                                        "Width":  984,
+                                        "Height":  680
+                                    },
+                         "WorkingArea":  {
+                                             "X":  0,
+                                             "Y":  0,
+                                             "Width":  1024,
+                                             "Height":  720
+                                         },
+                         "Contained":  true,
+                         "CenterErrorX":  0,
+                         "CenterErrorY":  0,
+                         "Centered":  true,
+                         "OverflowRight":  0,
+                         "OverflowBottom":  0
+                     },
+                     {
+                         "Launch":  2,
+                         "Ready":  true,
+                         "ExitNormal":  true,
+                         "WindowMoved":  false,
+                         "InputInjected":  false,
+                         "Bounds":  {
+                                        "X":  20,
+                                        "Y":  20,
+                                        "Width":  984,
+                                        "Height":  680
+                                    },
+                         "WorkingArea":  {
+                                             "X":  0,
+                                             "Y":  0,
+                                             "Width":  1024,
+                                             "Height":  720
+                                         },
+                         "Contained":  true,
+                         "CenterErrorX":  0,
+                         "CenterErrorY":  0,
+                         "Centered":  true,
+                         "OverflowRight":  0,
+                         "OverflowBottom":  0
+                     }
+                 ],
+    "Environment":  {
+                        "Caption":  "Microsoft Windows Server 2025 Datacenter",
+                        "Build":  "26100",
+                        "Image":  "20261103.298.1",
+                        "Arch":  "X64"
+                    }
+}
