@@ -1,0 +1,101 @@
+HALORYVA STUDIO — CANDIDAT 2.7.1, HISTORIQUE CORRIGE
+11 novembre 2026 — révision de fichier 2.7.1.11
+
+RESULTAT
+V01 corrigé et vérifié dans le périmètre demandé.
+1 compilation GitHub réussie ; 10/10 vérifications de métadonnées réussies.
+6/6 captures À propos réalisées et examinées : haut et bas en FR, EN et ES.
+Les 13 lignes d’historique sont entièrement lisibles à 1024×768.
+Le bouton de copie et la note de raccourcis restent accessibles après défilement.
+Aucun chevauchement avec la dernière ligne d’historique.
+
+MODIFICATION PRECISE
+Nouvelle copie : livraison-2.7.1-historique/
+Nouvelle branche : haloryva-candidat-2.7.1-historique
+Commit compilé : ca14eca6be1e0a19ef9004ba0de2499e00c7c624
+Base préservée : 25f6f03216c4f89988bf82521edc0938c458e35f
+Une seule ligne de comportement modifiée dans PremiumStudioForm.cs / AboutBlock :
+hauteur fixe S(286) remplacée par
+S(128) + (Brand.History.Length + 1) * S(24) + S(14).
+La hauteur suit maintenant le nombre de lignes et le même pas que le dessin.
+A 100 % : 478 pixels, dernière ligne terminée à 460, marge finale de 18 pixels.
+Les 13 entrées, leur texte, leurs traductions et leur ordre restent inchangés.
+Brand.cs change uniquement la révision de fichier de 2.7.1.10 à 2.7.1.11.
+34 des 36 fichiers d’entrée réutilisent exactement les objets Git de la copie précédente.
+La date réelle est inscrite dans la copie temporaire de fabrication ; marqueur conservé dans les sources préparées.
+Le détail des deux lignes changées est dans livraison-2.7.1-historique/comparaison-candidat-precedent.diff.
+
+IDENTITE DU NOUVEL EXE
+Version affichée / informative : 2.7.1
+Version de fichier : 2.7.1.11
+AssemblyVersion : 2.7.1.0
+Date affichée : 11/11/2026
+Fabrication Europe/Paris : 2026-11-11T20:20:08.0200927+01:00
+Fabrication UTC : 2026-11-11T19:20:08.0200927+00:00
+SHA-256 :
+1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81
+Le même SHA-256 a été contrôlé dans les trois séances de capture.
+Ancien candidat .10 conservé :
+22A2EFBDA164B7682051F0212EABB6CF1B1F0BE5E4C123FB926E78BB0E6255A0
+
+PREUVES GITHUB
+Exécution complète, réussie dès cette tentative :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43086180391
+Job de compilation :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43086180391/job/130751062049
+Archive de fabrication (EXE, provenance et sources estampillées) :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43086180391/artifacts/13886896454
+Archives des deux vues par langue :
+FR : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43086180391/artifacts/13886801697
+EN : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43086180391/artifacts/13886447128
+ES : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43086180391/artifacts/13886047795
+Expiration planifiée des archives : 9 février 2027.
+Les PNG originaux sont dans les archives, pas ajoutés au dépôt public.
+resultats.json conserve les mesures et les empreintes des captures.
+build-provenance.json conserve le résultat exact des métadonnées et la provenance de la compilation.
+
+CAPTURES REELLEMENT REVUES
+Pour chaque langue :
+1. a-propos-historique-complet-1024x768.png :
+   titre À propos, version, date et toutes les lignes de 2.7.1 à 2.4.0 visibles ;
+   ancienne ligne 2.6.3 entièrement lisible, ainsi que les sept lignes suivantes.
+2. a-propos-bas-1024x768.png :
+   dernière ligne, bouton Copier les informations de version et note de raccourcis
+   entièrement visibles après défilement, sans chevauchement.
+Le haut de la carte sort naturellement du viewport dans la deuxième vue ;
+ce n’est pas une coupure interne de l’historique.
+42 zones de texte par langue ont été mesurées avant revue des PNG ; toutes tiennent
+dans leurs rectangles visibles. Ces mesures ne sont pas une relance de tests fonctionnels.
+Aucun clic sur le bouton Copier, aucun changement de réglage par l’interface.
+
+METADONNEES
+Nom produit, version produit, version fichier, assembly, Brand.Version,
+date réelle, version/date de première entrée, absence de signature et catalogue embarqué :
+10/10 contrôles réussis.
+Un avertissement CS1701 System.Runtime/WinRT hérité de la recette précédente subsiste.
+Zéro erreur de compilation. Aucun changement aux références ou à la signature.
+
+ENVIRONNEMENT ET PORTEE
+Windows Server 2025 Datacenter x64 hébergé par GitHub, build 26100,
+image 20261103.298.1, session interactive, résolution réelle 1024×768.
+Vraie interface du nouvel EXE chargée via CursorController par le pilote.
+Profils synthétiques neufs, un par langue ; navigation limitée à À propos.
+Ce contrôle n’est ni une installation ni une qualification de Program.Main,
+de la persistance des langues, d’une connexion Windows 11 ou du MSIX.
+Les limites Store et les validations antérieures restent distinctes.
+Aucun défaut supplémentaire constaté dans les surfaces examinées.
+
+PRESERVATION
+24 branches antérieures, dont main, le candidat .10 et toutes les préversions, inchangées.
+601 fichiers préexistants conservés par identité d’objet Git.
+Aucun binaire antérieur remplacé, aucune modification du PC principal.
+0 exécution Sonidos ; 0 relance des 195 contrôles ; 0 autotest Haloryva.
+0 ancienne recette générale ; 0 installateur ; 0 installation ; 0 MSIX.
+0 signature ; 0 release ; 0 publication Store ; 0 abonnement.
+
+PROCHAINE ACTION
+La finition V01 est close pour les trois langues à 1024×768.
+Après autorisation : fabriquer l’installateur final en réutilisant strictement cet EXE .11
+et le Brand.cs estampillé de l’archive de fabrication, sans recompiler l’application.
+Vérifier ensuite uniquement les opérations d’emballage/installateur autorisées.
+L’installateur final n’a pas été fabriqué dans cette tâche.

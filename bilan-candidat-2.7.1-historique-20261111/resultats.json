@@ -1,0 +1,1900 @@
+{
+  "candidate": {
+    "version": "2.7.1",
+    "fileVersion": "2.7.1.11",
+    "assemblyVersion": "2.7.1.0",
+    "buildDate": "11/11/2026",
+    "builtAtParis": "2026-11-11T20:20:08.0200927+01:00",
+    "builtAtUTC": "2026-11-11T19:20:08.0200927+00:00",
+    "sha256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+    "sourceCommit": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624",
+    "sourceCopy": "livraison-2.7.1-historique",
+    "branch": "haloryva-candidat-2.7.1-historique"
+  },
+  "change": {
+    "id": "V01",
+    "status": "corrected and verified in requested scope",
+    "oldHeightAt100Percent": 286,
+    "newHeightAt100Percent": 478,
+    "historyRows": 13,
+    "lastRowBottomAt100Percent": 460,
+    "bottomMargin": 18,
+    "functionalFilesChanged": [
+      "PremiumStudioForm.cs"
+    ],
+    "functionalLinesChanged": 1,
+    "metadataOnlyFilesChanged": [
+      "Brand.cs"
+    ],
+    "unchangedInputFiles": 34,
+    "historyTextUnchanged": true,
+    "translationCatalogUnchanged": true
+  },
+  "validation": {
+    "buildCount": 1,
+    "buildRun": 43086180391,
+    "runConclusion": "success",
+    "metadataChecks": {
+      "ProductName": true,
+      "ProductVersion": true,
+      "FileVersion": true,
+      "AssemblyVersion": true,
+      "BrandVersion": true,
+      "ActualParisBuildDate": true,
+      "FirstHistoryVersion": true,
+      "FirstHistoryDate": true,
+      "NoSignature": true,
+      "CatalogMatchesPreparedSource": true
+    },
+    "metadataChecksPassed": 10,
+    "captureCount": 6,
+    "reviewedImageCount": 6,
+    "languages": [
+      "fr",
+      "en",
+      "es"
+    ],
+    "capturedDesktop": "1024x768",
+    "fullHistoryVisible": true,
+    "copyButtonVisibleAtBottom": true,
+    "shortcutNoteVisibleAtBottom": true,
+    "noOverlapAtBottom": true,
+    "perLanguage": [
+      {
+        "language": "fr",
+        "driver": {
+          "Status": "passed",
+          "Language": "fr",
+          "Assertions": 14,
+          "Measurements": [
+            {
+              "Label": "About card heading",
+              "Text": "À propos",
+              "TextWidth": 78,
+              "TextHeight": 21,
+              "AvailableWidth": 732,
+              "AvailableHeight": 24,
+              "Region": "{X=201,Y=117,Width=732,Height=24}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "Version",
+              "Text": "Version 2.7.1 · build 11/11/2026 · Windows x64",
+              "TextWidth": 247,
+              "TextHeight": 15,
+              "AvailableWidth": 680,
+              "AvailableHeight": 20,
+              "Region": "{X=253,Y=209,Width=680,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History heading",
+              "Text": "HISTORIQUE DES VERSIONS",
+              "TextWidth": 147,
+              "TextHeight": 13,
+              "AvailableWidth": 784,
+              "AvailableHeight": 18,
+              "Region": "{X=149,Y=305,Width=784,Height=18}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 version",
+              "Text": "2.7.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=329,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 text",
+              "Text": "Langues, outils choisis et corrections de fiabilité",
+              "TextWidth": 258,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=329,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 date",
+              "Text": "11/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=329,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 version",
+              "Text": "2.7.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=353,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 text",
+              "Text": "269 ms, souplesse continue et orientation X1/X2 personnalisable",
+              "TextWidth": 344,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=353,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 date",
+              "Text": "10/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=353,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 version",
+              "Text": "2.6.6",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=377,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 text",
+              "Text": "Fluidité : traînée persistante, surface stable, cadence et mesures",
+              "TextWidth": 339,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=377,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=377,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 version",
+              "Text": "2.6.5",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=401,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 text",
+              "Text": "Routage des boutons, installation précompilée et maintenance vérifiée",
+              "TextWidth": 378,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=401,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=401,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 version",
+              "Text": "2.6.4",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=425,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 text",
+              "Text": "Option : halo agrandi sur curseur texte",
+              "TextWidth": 208,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=425,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=425,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 version",
+              "Text": "2.6.3",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=449,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 text",
+              "Text": "Fiabilité : boutons, réglages, installateur avec retour arrière",
+              "TextWidth": 313,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=449,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=449,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 version",
+              "Text": "2.6.2",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=473,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 text",
+              "Text": "Exe d'installation autonome, signature et paquet Store préparés",
+              "TextWidth": 339,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=473,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=473,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 version",
+              "Text": "2.6.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=497,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 text",
+              "Text": "Inscription dans Applications installées et désinstallateur graphique",
+              "TextWidth": 360,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=497,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=497,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 version",
+              "Text": "2.6.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=521,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 text",
+              "Text": "Logo, crédits, splash et installateur graphique",
+              "TextWidth": 245,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=521,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=521,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 version",
+              "Text": "2.5.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=545,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 text",
+              "Text": "Correctif : appui long réservé à la molette, X1 et X2",
+              "TextWidth": 272,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=545,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=545,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 version",
+              "Text": "2.5.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=569,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 text",
+              "Text": "Appui long sur 5 boutons, roue de couleur, menus réorganisés",
+              "TextWidth": 335,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=569,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=569,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 version",
+              "Text": "2.4.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=593,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 text",
+              "Text": "Affichage d'outil plus sobre",
+              "TextWidth": 152,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=593,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=593,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 version",
+              "Text": "2.4.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=617,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 text",
+              "Text": "Cycle des outils de dessin avec annonce en haut à gauche",
+              "TextWidth": 311,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=617,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=617,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            }
+          ],
+          "Captures": [
+            "fr-a-propos-historique-complet-1024x768.png",
+            "fr-a-propos-bas-1024x768.png"
+          ],
+          "Execution": "Actual compiled UI loaded by a capture driver; not Program.Main or an installed application",
+          "Historical195Executed": false,
+          "SelfTestsExecuted": false,
+          "Installed": false,
+          "Signed": false,
+          "Published": false
+        },
+        "process": {
+          "Version": "2.7.1",
+          "Language": "fr",
+          "Status": "passed",
+          "Historical195Executed": false,
+          "SelfTestsExecuted": false,
+          "Installed": false,
+          "Signed": false,
+          "Published": false,
+          "RebuiltInCapture": false,
+          "SHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+          "BuildDate": "11/11/2026",
+          "ExitCode": 0,
+          "Captures": [
+            "fr-a-propos-historique-complet-1024x768.png",
+            "fr-a-propos-bas-1024x768.png"
+          ],
+          "CaptureHashes": [
+            {
+              "SHA256": "E29BBC561209D6F3D45E6FA569AA6FD01B71AF8EE4D3241812DA0B5CB7916727",
+              "File": "fr-a-propos-bas-1024x768.png"
+            },
+            {
+              "SHA256": "8DE56D4D97E6EC777C5207D587FF4E997955CB87B2391AAB20C70E2AFA69A872",
+              "File": "fr-a-propos-historique-complet-1024x768.png"
+            }
+          ]
+        }
+      },
+      {
+        "language": "en",
+        "driver": {
+          "Status": "passed",
+          "Language": "en",
+          "Assertions": 14,
+          "Measurements": [
+            {
+              "Label": "About card heading",
+              "Text": "About",
+              "TextWidth": 56,
+              "TextHeight": 21,
+              "AvailableWidth": 732,
+              "AvailableHeight": 24,
+              "Region": "{X=201,Y=117,Width=732,Height=24}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "Version",
+              "Text": "Version 2.7.1 · build 11/11/2026 · Windows x64",
+              "TextWidth": 247,
+              "TextHeight": 15,
+              "AvailableWidth": 680,
+              "AvailableHeight": 20,
+              "Region": "{X=253,Y=209,Width=680,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History heading",
+              "Text": "VERSION HISTORY",
+              "TextWidth": 99,
+              "TextHeight": 13,
+              "AvailableWidth": 784,
+              "AvailableHeight": 18,
+              "Region": "{X=149,Y=305,Width=784,Height=18}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 version",
+              "Text": "2.7.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=329,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 text",
+              "Text": "Languages, selected tools and reliability fixes",
+              "TextWidth": 242,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=329,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 date",
+              "Text": "11/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=329,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 version",
+              "Text": "2.7.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=353,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 text",
+              "Text": "269 ms, smooth trails and customizable X1/X2 orientation",
+              "TextWidth": 310,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=353,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 date",
+              "Text": "10/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=353,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 version",
+              "Text": "2.6.6",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=377,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 text",
+              "Text": "Smoothness: persistent trails, stable surface, frame timing and measurements",
+              "TextWidth": 414,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=377,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=377,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 version",
+              "Text": "2.6.5",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=401,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 text",
+              "Text": "Button routing, precompiled installer and verified maintenance",
+              "TextWidth": 339,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=401,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=401,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 version",
+              "Text": "2.6.4",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=425,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 text",
+              "Text": "Option: larger halo around the text cursor",
+              "TextWidth": 225,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=425,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=425,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 version",
+              "Text": "2.6.3",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=449,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 text",
+              "Text": "Reliability: buttons, settings and installer rollback",
+              "TextWidth": 264,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=449,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=449,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 version",
+              "Text": "2.6.2",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=473,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 text",
+              "Text": "Standalone installer; signing and Store package prepared",
+              "TextWidth": 305,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=473,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=473,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 version",
+              "Text": "2.6.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=497,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 text",
+              "Text": "Installed Apps registration and graphical uninstaller",
+              "TextWidth": 277,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=497,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=497,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 version",
+              "Text": "2.6.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=521,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 text",
+              "Text": "Logo, credits, splash screen and graphical installer",
+              "TextWidth": 270,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=521,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=521,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 version",
+              "Text": "2.5.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=545,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 text",
+              "Text": "Fix: long presses restricted to the middle button, X1 and X2",
+              "TextWidth": 315,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=545,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=545,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 version",
+              "Text": "2.5.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=569,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 text",
+              "Text": "Long presses on 5 buttons, color wheel and reorganized menus",
+              "TextWidth": 339,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=569,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=569,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 version",
+              "Text": "2.4.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=593,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 text",
+              "Text": "More discreet tool indicator",
+              "TextWidth": 153,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=593,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=593,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 version",
+              "Text": "2.4.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=617,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 text",
+              "Text": "Cycle drawing tools with an indicator at the top left",
+              "TextWidth": 277,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=617,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=617,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            }
+          ],
+          "Captures": [
+            "en-a-propos-historique-complet-1024x768.png",
+            "en-a-propos-bas-1024x768.png"
+          ],
+          "Execution": "Actual compiled UI loaded by a capture driver; not Program.Main or an installed application",
+          "Historical195Executed": false,
+          "SelfTestsExecuted": false,
+          "Installed": false,
+          "Signed": false,
+          "Published": false
+        },
+        "process": {
+          "Version": "2.7.1",
+          "Language": "en",
+          "Status": "passed",
+          "Historical195Executed": false,
+          "SelfTestsExecuted": false,
+          "Installed": false,
+          "Signed": false,
+          "Published": false,
+          "RebuiltInCapture": false,
+          "SHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+          "BuildDate": "11/11/2026",
+          "ExitCode": 0,
+          "Captures": [
+            "en-a-propos-historique-complet-1024x768.png",
+            "en-a-propos-bas-1024x768.png"
+          ],
+          "CaptureHashes": [
+            {
+              "SHA256": "7C94E5C33DE7CBEDFDE10C11EF18182CC36602D752A64BA8E5440FD9B10BE296",
+              "File": "en-a-propos-bas-1024x768.png"
+            },
+            {
+              "SHA256": "1AE2A4638778615A9C6837AA67D96BC7314F8EB5C75C606B9BD8C46EA62DF8E4",
+              "File": "en-a-propos-historique-complet-1024x768.png"
+            }
+          ]
+        }
+      },
+      {
+        "language": "es",
+        "driver": {
+          "Status": "passed",
+          "Language": "es",
+          "Assertions": 14,
+          "Measurements": [
+            {
+              "Label": "About card heading",
+              "Text": "Acerca de",
+              "TextWidth": 83,
+              "TextHeight": 21,
+              "AvailableWidth": 732,
+              "AvailableHeight": 24,
+              "Region": "{X=201,Y=117,Width=732,Height=24}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "Version",
+              "Text": "Versión 2.7.1 · compilación 11/11/2026 · Windows x64",
+              "TextWidth": 286,
+              "TextHeight": 15,
+              "AvailableWidth": 680,
+              "AvailableHeight": 20,
+              "Region": "{X=253,Y=209,Width=680,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History heading",
+              "Text": "HISTORIAL DE VERSIONES",
+              "TextWidth": 137,
+              "TextHeight": 13,
+              "AvailableWidth": 784,
+              "AvailableHeight": 18,
+              "Region": "{X=149,Y=305,Width=784,Height=18}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 version",
+              "Text": "2.7.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=329,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 text",
+              "Text": "Idiomas, herramientas elegidas y mejoras de fiabilidad",
+              "TextWidth": 292,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=329,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 0 date",
+              "Text": "11/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=329,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 version",
+              "Text": "2.7.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=353,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 text",
+              "Text": "269 ms, trazos suaves y orientación X1/X2 personalizable",
+              "TextWidth": 303,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=353,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 1 date",
+              "Text": "10/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=353,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 version",
+              "Text": "2.6.6",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=377,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 text",
+              "Text": "Fluidez: estelas persistentes, superficie estable, ritmo y mediciones",
+              "TextWidth": 355,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=377,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 2 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=377,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 version",
+              "Text": "2.6.5",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=401,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 text",
+              "Text": "Gestión de botones, instalador precompilado y mantenimiento verificado",
+              "TextWidth": 393,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=401,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 3 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=401,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 version",
+              "Text": "2.6.4",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=425,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 text",
+              "Text": "Opción: halo ampliado alrededor del cursor de texto",
+              "TextWidth": 281,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=425,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 4 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=425,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 version",
+              "Text": "2.6.3",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=449,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 text",
+              "Text": "Fiabilidad: botones, ajustes e instalador con reversión",
+              "TextWidth": 287,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=449,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 5 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=449,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 version",
+              "Text": "2.6.2",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=473,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 text",
+              "Text": "Instalador independiente; firma y paquete Store preparados",
+              "TextWidth": 319,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=473,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 6 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=473,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 version",
+              "Text": "2.6.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=497,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 text",
+              "Text": "Registro en Aplicaciones instaladas y desinstalador gráfico",
+              "TextWidth": 313,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=497,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 7 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=497,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 version",
+              "Text": "2.6.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=521,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 text",
+              "Text": "Logotipo, créditos, pantalla de inicio e instalador gráfico",
+              "TextWidth": 303,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=521,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 8 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=521,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 version",
+              "Text": "2.5.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=545,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 text",
+              "Text": "Corrección: pulsaciones largas solo en la rueda, X1 y X2",
+              "TextWidth": 297,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=545,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 9 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=545,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 version",
+              "Text": "2.5.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=569,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 text",
+              "Text": "Pulsaciones largas en 5 botones, rueda de color y menús reorganizados",
+              "TextWidth": 381,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=569,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 10 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=569,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 version",
+              "Text": "2.4.1",
+              "TextWidth": 29,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=593,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 text",
+              "Text": "Indicador de herramienta más discreto",
+              "TextWidth": 210,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=593,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 11 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=593,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 version",
+              "Text": "2.4.0",
+              "TextWidth": 31,
+              "TextHeight": 13,
+              "AvailableWidth": 50,
+              "AvailableHeight": 20,
+              "Region": "{X=149,Y=617,Width=50,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 text",
+              "Text": "Recorrido de herramientas con indicador en la esquina superior izquierda",
+              "TextWidth": 391,
+              "TextHeight": 15,
+              "AvailableWidth": 634,
+              "AvailableHeight": 20,
+              "Region": "{X=211,Y=617,Width=634,Height=20}",
+              "Visible": true,
+              "Fits": true
+            },
+            {
+              "Label": "History 12 date",
+              "Text": "08/11/2026",
+              "TextWidth": 63,
+              "TextHeight": 13,
+              "AvailableWidth": 84,
+              "AvailableHeight": 20,
+              "Region": "{X=849,Y=617,Width=84,Height=20}",
+              "Visible": true,
+              "Fits": true
+            }
+          ],
+          "Captures": [
+            "es-a-propos-historique-complet-1024x768.png",
+            "es-a-propos-bas-1024x768.png"
+          ],
+          "Execution": "Actual compiled UI loaded by a capture driver; not Program.Main or an installed application",
+          "Historical195Executed": false,
+          "SelfTestsExecuted": false,
+          "Installed": false,
+          "Signed": false,
+          "Published": false
+        },
+        "process": {
+          "Version": "2.7.1",
+          "Language": "es",
+          "Status": "passed",
+          "Historical195Executed": false,
+          "SelfTestsExecuted": false,
+          "Installed": false,
+          "Signed": false,
+          "Published": false,
+          "RebuiltInCapture": false,
+          "SHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+          "BuildDate": "11/11/2026",
+          "ExitCode": 0,
+          "Captures": [
+            "es-a-propos-historique-complet-1024x768.png",
+            "es-a-propos-bas-1024x768.png"
+          ],
+          "CaptureHashes": [
+            {
+              "SHA256": "1F0A5B76177F2FCBFF4ABFDC03A6DB797D4A6EAF0FEFF1CBA5AD21D82D142F70",
+              "File": "es-a-propos-bas-1024x768.png"
+            },
+            {
+              "SHA256": "E9F2D7CD2431F89B39124BE249C79550F9EA5160A7CD39B6AE40279714609D1E",
+              "File": "es-a-propos-historique-complet-1024x768.png"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "compilerWarning": {
+    "code": "CS1701",
+    "description": "Inherited System.Runtime / WinRT reference unification warning, no compilation error."
+  },
+  "executionLimits": {
+    "os": "GitHub-hosted Windows Server 2025 Datacenter x64 build 26100, image 20261103.298.1",
+    "mode": "Real compiled interface loaded by capture driver via CursorController, not normal Program.Main or an installed application",
+    "profile": "Fresh synthetic profile per language",
+    "languagePersistenceRetested": false,
+    "sonidosExecuted": false,
+    "historical195Executed": false,
+    "haloryvaSelfTestsExecuted": false,
+    "oldFunctionalSuitesExecuted": false,
+    "installerBuilt": false,
+    "installed": false,
+    "msixBuilt": false,
+    "msixValidated": false,
+    "signed": false,
+    "published": false,
+    "subscribed": false,
+    "userComputerChanged": false
+  },
+  "preservation": {
+    "previousCandidateSHA256": "22A2EFBDA164B7682051F0212EABB6CF1B1F0BE5E4C123FB926E78BB0E6255A0",
+    "previousCandidateHead": "25f6f03216c4f89988bf82521edc0938c458e35f",
+    "allPreviousBranches": [
+      {
+        "name": "haloryva-2.7.0-c4",
+        "commit": {
+          "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/678c637b4c87b07ebc6b615154ffc2122c320a06"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-candidat-2.7.1",
+        "commit": {
+          "sha": "25f6f03216c4f89988bf82521edc0938c458e35f",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/25f6f03216c4f89988bf82521edc0938c458e35f"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-exe-preview9",
+        "commit": {
+          "sha": "c158d3fa27e1cd3e1dbeeb3655a4682b820e034d",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/c158d3fa27e1cd3e1dbeeb3655a4682b820e034d"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-livraison-2.7.1",
+        "commit": {
+          "sha": "9482b046fa6fc096fd5942482c3ddff8516dcbcc",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/9482b046fa6fc096fd5942482c3ddff8516dcbcc"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-msix-preview7",
+        "commit": {
+          "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview5",
+        "commit": {
+          "sha": "f07890303144653049a05069841838ecd9b9d73d",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/f07890303144653049a05069841838ecd9b9d73d"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview7",
+        "commit": {
+          "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview8",
+        "commit": {
+          "sha": "bf8892413e6d686feb2884d26e118eff94d32723",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/bf8892413e6d686feb2884d26e118eff94d32723"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview9",
+        "commit": {
+          "sha": "dca613b3714ccc85a2d1930f1a0cb5e23e91388c",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/dca613b3714ccc85a2d1930f1a0cb5e23e91388c"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-installateur-preview9",
+        "commit": {
+          "sha": "18a647ed7c22c6f4d19159721bc2ce844d8455a9",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/18a647ed7c22c6f4d19159721bc2ce844d8455a9"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview2",
+        "commit": {
+          "sha": "8d84f31157ebfc1e09144811b6b112247f926f81",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/8d84f31157ebfc1e09144811b6b112247f926f81"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview3",
+        "commit": {
+          "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview4",
+        "commit": {
+          "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview5-msix",
+        "commit": {
+          "sha": "cfdb260c50bf771843065eff8eefadae24899f06",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/cfdb260c50bf771843065eff8eefadae24899f06"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview5",
+        "commit": {
+          "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview6",
+        "commit": {
+          "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview7-msix",
+        "commit": {
+          "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/6689a23a953c5c553d6706e0c845467d7c8592e0"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview7",
+        "commit": {
+          "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8-focus",
+        "commit": {
+          "sha": "638e2044e6c988b784941329316aa53b99005e8a",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/638e2044e6c988b784941329316aa53b99005e8a"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8-import",
+        "commit": {
+          "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/78c8063e7109e8e8529f82adf8f37d075fe20420"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8",
+        "commit": {
+          "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/61db4b63737c3907216c9d4bee2bc8485662f2aa"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview9",
+        "commit": {
+          "sha": "d1afe7b5a155355bbf60645a4ad04c7f963bfb87",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/d1afe7b5a155355bbf60645a4ad04c7f963bfb87"
+        },
+        "protected": false
+      },
+      {
+        "name": "main",
+        "commit": {
+          "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+        },
+        "protected": false
+      },
+      {
+        "name": "release/2.7.0-stable",
+        "commit": {
+          "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/d80b33ea17bf6d667322adc60bdde31ac9039980"
+        },
+        "protected": false
+      }
+    ],
+    "all24PreviousBranchesUnchanged": true,
+    "existingFilesUnchanged": 601,
+    "allOldBinariesUnmodified": true,
+    "sourcePreparationUnchanged": true,
+    "mainUnchanged": true,
+    "imagesNotAddedToPublicRepository": true
+  },
+  "artifacts": [
+    {
+      "id": 13886896454,
+      "name": "Haloryva-2.7.1-file11-history-build",
+      "size_in_bytes": 479036,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886896454",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886896454/zip",
+      "expired": false,
+      "created_at": "2026-11-11T19:20:16Z",
+      "expires_at": "2027-02-09T19:19:51Z",
+      "updated_at": "2026-11-11T19:20:16Z",
+      "digest": "sha256:32568f54e246a6cbee0ae1d6dddda451341d3fe5134ff9fbec742ee728a9ce67",
+      "workflow_run": {
+        "id": 43086180391,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-candidat-2.7.1-historique",
+        "head_sha": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624"
+      }
+    },
+    {
+      "id": 13886801697,
+      "name": "Haloryva-2.7.1-file11-about-fr",
+      "size_in_bytes": 543224,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886801697",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886801697/zip",
+      "expired": false,
+      "created_at": "2026-11-11T19:20:40Z",
+      "expires_at": "2027-02-09T19:19:51Z",
+      "updated_at": "2026-11-11T19:20:40Z",
+      "digest": "sha256:de6154704aa9ecc701848847592d5a51b1216a81e0e1b4bd6b24d044318b6f80",
+      "workflow_run": {
+        "id": 43086180391,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-candidat-2.7.1-historique",
+        "head_sha": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624"
+      }
+    },
+    {
+      "id": 13886447128,
+      "name": "Haloryva-2.7.1-file11-about-en",
+      "size_in_bytes": 543374,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886447128",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886447128/zip",
+      "expired": false,
+      "created_at": "2026-11-11T19:20:44Z",
+      "expires_at": "2027-02-09T19:19:51Z",
+      "updated_at": "2026-11-11T19:20:44Z",
+      "digest": "sha256:4ab6a86f501afe201829dda6d230e81448ca0f844c725be6ae860feb53397f41",
+      "workflow_run": {
+        "id": 43086180391,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-candidat-2.7.1-historique",
+        "head_sha": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624"
+      }
+    },
+    {
+      "id": 13886047795,
+      "name": "Haloryva-2.7.1-file11-about-es",
+      "size_in_bytes": 543625,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886047795",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886047795/zip",
+      "expired": false,
+      "created_at": "2026-11-11T19:20:51Z",
+      "expires_at": "2027-02-09T19:19:51Z",
+      "updated_at": "2026-11-11T19:20:51Z",
+      "digest": "sha256:6a527cca3898da6b8f734f6eeb6860dbd8e829813bb505f43a589c57cc4ece55",
+      "workflow_run": {
+        "id": 43086180391,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-candidat-2.7.1-historique",
+        "head_sha": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624"
+      }
+    }
+  ],
+  "nextAction": "After user authorization, package this exact .11 executable and stamped Brand.cs into the final installer, then perform only agreed installer checks. No app rebuild or prior suite replay required by this display fix."
+}
