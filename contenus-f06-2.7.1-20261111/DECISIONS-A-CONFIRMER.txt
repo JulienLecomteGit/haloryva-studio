@@ -7,6 +7,9 @@ en privé les demandes de confidentialité et de sécurité, ainsi que le suppor
 Une seule adresse suffit pour les trois langues et ces usages.
 Ne pas envoyer ici de mot de passe, code ou identifiant de connexion.
 Aucune adresse personnelle existante n’est récupérée ou publiée par défaut.
+Une adresse inscrite dans ces fichiers devient lisible par tout visiteur du dépôt
+GitHub public, même sur une branche de brouillon, et peut être collectée par des robots.
+Elle ne serait pas réservée à Microsoft. Le choix du contact reste non validé.
 Champ laissé vide : CONTACT_PUBLIC_A_COMPLETER.
 
 2. CANAUX ET HEBERGEMENT PROPOSES
@@ -37,10 +40,12 @@ pas privé ni ne le supprime automatiquement ; les règles du prestataire s’ap
 La date d’effet sera renseignée à la publication réelle, sans vous redemander une date arbitraire.
 L’approbation de textes ne vaut pas autorisation de les publier.
 
-4. ORIGINE ET DROITS DES VISUELS FOURNIS
-Indiquer si le logo, l’icône et les images fournis avec Haloryva ont été créés pour
-ce projet et peuvent être distribués, ou signaler les ressources externes et leur provenance.
-Les notices de droits du dépôt ne prouvent pas à elles seules la provenance de chaque image.
+4. ORIGINE DES VISUELS — REPONSE RECUE
+L’utilisateur précise : les images ont été créées par l’assistant pour Haloryva.
+Origine consignée : créations réalisées avec l’aide d’une IA pour le projet.
+Aucune nouvelle déclaration d’origine générale n’est à demander à l’utilisateur.
+Cette indication est une provenance déclarée, pas une nouvelle licence ni un audit
+indépendant de chaque fichier et d’éventuels éléments tiers.
 Ressources identifiées dans les sources conservées :
 - Haloryva_Windows64/assets/Haloryva.ico et Haloryva.png ;
 - Haloryva_Windows64/assets/haloryva_demo.png, incorporé au setup ;
@@ -53,7 +58,10 @@ Ces noms ne signifient pas qu’ils seront tous sélectionnés pour la fiche fin
 Aucun changement de licence demandé : droits actuels conservés.
 Les PNG/WAV personnels choisis par un utilisateur ne sont pas des ressources distribuées ici.
 
-RIEN D’AUTRE A RENSEIGNER POUR CES BROUILLONS
+IL RESTE TROIS RETOURS POUR CES BROUILLONS
+Points 1 à 3 ci-dessus ; le point 4 est désormais une information reçue.
+
+RIEN D’AUTRE A RENSEIGNER
 Nom, éditeur, identité Microsoft, versions, gratuité, trois langues et choix GitHub public
 sont déjà connus ; ne pas les redemander.
 Les choix de marchés/IARC/OS, les captures finales et l’environnement S6 appartiennent

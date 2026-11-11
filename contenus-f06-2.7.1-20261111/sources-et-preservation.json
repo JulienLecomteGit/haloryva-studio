@@ -99,7 +99,7 @@
     "URL_POLITIQUE_A_RENSEIGNER"
   ],
   "rights_unchanged": true,
-  "resource_provenance_confirmation_pending": true,
+  "resource_provenance_confirmation_pending": false,
   "content_approval_pending": true,
   "prepared_customer_documents": 12,
   "languages": [
@@ -246,5 +246,15 @@
     "store_submissions": 0,
     "partner_center_updates": 0
   },
-  "verification": "Read-only source review, text consistency and Git preservation; no product tests executed."
+  "verification": "Read-only source review, text consistency and Git preservation; no product tests executed.",
+  "resource_origin_declared_by_user": {
+    "date": "2026-11-11",
+    "description": "Images created with the assistant for Haloryva",
+    "source": "User clarification in this conversation",
+    "independent_per_asset_rights_audit": false,
+    "new_license_granted": false
+  },
+  "remaining_user_decision_groups": 3,
+  "contact_public_visibility_explained": true,
+  "personal_contact_added": false
 }

@@ -4,9 +4,10 @@ HALORYVA STUDIO 2.7.1 — BILAN DES CONTENUS F06
 RESULTAT
 12 textes rédigés : 4 catégories x 3 langues.
 Confidentialité, support, notice EXE et notice Store/MSIX en français, anglais et espagnol.
-4 retours limités restent nécessaires : contact public pour échanges privés,
-canaux/hébergement proposés, approbation des textes et de la durée de support privé,
-origine/droits des visuels.
+3 retours limités restent nécessaires : contact public pour échanges privés,
+canaux/hébergement proposés, approbation des textes et de la durée de support privé.
+Origine des visuels renseignée par l’utilisateur : créations réalisées avec l’aide
+de l’assistant pour Haloryva. Cette déclaration ne change pas les droits actuels.
 Aucun changement des fiches Store déjà préparées ; elles sont référencées.
 
 CHOIX DE REDACTION
@@ -41,7 +42,9 @@ Les champs non connus restent signalés, sans coordonnée privée inventée.
 
 ETAT F06
 Rédaction des douze textes : PREPAREE.
-Approbation finale, contact, canaux/hébergement et droits : EN ATTENTE.
+Approbation finale, contact et canaux/hébergement : EN ATTENTE.
+Origine générale des images : RENSEIGNEE PAR L’UTILISATEUR ; aucun audit de droits
+supplémentaire ni nouvelle licence déduit de ce renseignement.
 Hébergement d’une politique définitive, liens de service en production et publication : NON EXECUTES.
 F06 reste partiel tant que ces décisions et les éléments finaux de diffusion manquent.
 Les captures finales Store appartiennent à D5 ; elles ne sont pas produites ici.
@@ -63,6 +66,13 @@ BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1
 0 modification du PC ou du dossier GIT ; 0 nouveau compte ou service.
 
 PROCHAINE ACTION
-L’utilisateur peut fournir les quatre retours de DECISIONS-A-CONFIRMER.txt.
+L’utilisateur peut fournir les trois retours restants de DECISIONS-A-CONFIRMER.txt.
 Intégrer ensuite uniquement ces décisions dans une révision documentaire.
 Cela n’autorise ni publication de politique finale, ni fusion vers main, ni installation.
+
+COMPLEMENT — CONTACT ET ORIGINE DES IMAGES
+L’utilisateur a demandé qui verrait une adresse personnelle. Le contact reste vide.
+Une inscription dans un brouillon sur ce dépôt public exposerait l’adresse publiquement ;
+aucune adresse de contact n’est ajoutée et aucune boîte de messagerie créée.
+Seuls les documents de suivi de F06 sont actualisés ; aucun texte utilisateur,
+binaire, test, workflow, main ou fichier du PC n’est modifié.

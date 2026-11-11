@@ -21,7 +21,9 @@ Les captures, les tests et les preuves binaires restent ceux du dossier précéd
 
 CE QUI RESTE A CONFIRMER
 Voir DECISIONS-A-CONFIRMER.txt : contact, canaux/hébergement proposés,
-approbation des textes et de la gestion du support privé, origine/droits des visuels.
+approbation des textes et de la gestion du support privé.
+L’origine générale des visuels est renseignée : l’utilisateur indique qu’ils ont été
+créés avec l’aide de l’assistant pour Haloryva. Les droits actuels restent inchangés.
 La date d’entrée en vigueur sera la vraie date de publication ; ne pas l’inventer.
 Les marchés, l’IARC, les bornes Windows et S6 restent dans le suivi Store, mais ne
 sont pas redemandés comme renseignements nécessaires pour rédiger ces textes.
