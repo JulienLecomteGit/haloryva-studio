@@ -218,8 +218,16 @@ internal static class Recipe
     static async Task FocusStudio()
     {
         if(Studio==null || Studio.IsDisposed || !Studio.Visible) throw new Exception("Studio not visible");
+        Rectangle work=Screen.FromControl(Studio).WorkingArea;
+        if(!work.Contains(Studio.Bounds)) {
+            Write("UI placement before="+Studio.Bounds+" work="+work);
+            Studio.Location=new Point(work.Left+Math.Max(0,(work.Width-Studio.Width)/2),work.Top+Math.Max(0,(work.Height-Studio.Height)/2));
+            await Task.Delay(150);
+            Write("UI placement after="+Studio.Bounds);
+        }
         for(int n=0;n<30 && GetForegroundWindow()!=Studio.Handle;n++) { Studio.Activate(); SetForegroundWindow(Studio.Handle); await Task.Delay(100); }
         if(GetForegroundWindow()!=Studio.Handle) throw new Exception("Studio could not acquire foreground; no input sent");
+        await Task.Delay(100);
     }
     static INPUT AbsoluteMove(Point p)
     {
@@ -236,12 +244,20 @@ internal static class Recipe
         bool inside=false;
         for(Control p=control;p!=null;p=p.Parent) if(p==workspace) inside=true;
         if(inside) {
-            Point screenPoint=control.PointToScreen(local);
-            Rectangle viewport=workspace.RectangleToScreen(workspace.ClientRectangle);
-            int shift=screenPoint.Y<viewport.Top+20?screenPoint.Y-(viewport.Top+20):screenPoint.Y>viewport.Bottom-20?screenPoint.Y-(viewport.Bottom-20):0;
-            if(shift!=0) { workspace.AutoScrollPosition=new Point(0,-workspace.AutoScrollPosition.Y+shift); await Task.Delay(100); }
+            workspace.ScrollControlIntoView(control); await Task.Delay(80);
+            for(int attempt=0;attempt<4;attempt++) {
+                Point screenPoint=control.PointToScreen(local);
+                Rectangle viewport=Rectangle.Intersect(workspace.RectangleToScreen(workspace.ClientRectangle),Screen.FromControl(Studio).WorkingArea);
+                int shift=screenPoint.Y<viewport.Top+25?screenPoint.Y-(viewport.Top+25):screenPoint.Y>viewport.Bottom-25?screenPoint.Y-(viewport.Bottom-25):0;
+                if(shift==0) break;
+                Write("UI scroll point="+screenPoint+" viewport="+viewport+" before="+workspace.AutoScrollPosition+" shift="+shift);
+                workspace.AutoScrollPosition=new Point(0,-workspace.AutoScrollPosition.Y+shift);
+                await Task.Delay(120);
+                Write("UI scroll after="+workspace.AutoScrollPosition+" point="+control.PointToScreen(local));
+            }
         }
         Point point=control.PointToScreen(local);
+        if(!Screen.FromControl(Studio).WorkingArea.Contains(point)) throw new Exception("Studio click would leave visible working area: "+point);
         for(Control p=control;p!=null;p=p.Parent)
             if(!p.RectangleToScreen(p.ClientRectangle).Contains(point)) throw new Exception("Click point is clipped by "+p.GetType().Name+" for "+control.Text+" at "+point);
         Write("UI CLICK type="+control.GetType().Name+" text="+control.Text+" accessible="+control.AccessibleName+" point="+point);
@@ -364,7 +380,7 @@ internal static class Recipe
     static void DumpUi(string label)
     {
         if(Studio==null) return;
-        var text=new StringBuilder();
+        var text=new StringBuilder("Studio bounds="+Studio.Bounds+" screen="+SystemInformation.VirtualScreen+" work="+Screen.FromControl(Studio).WorkingArea+"\r\n");
         foreach(Control c in Descendants(Studio)) text.AppendLine(c.GetType().Name+" | "+c.Text+" | "+c.AccessibleName+" | "+c.Bounds+" | visible="+c.Visible+" enabled="+c.Enabled);
         File.WriteAllText(Path.Combine(folder,"ui-"+label+".txt"),text.ToString(),Encoding.UTF8);
     }
