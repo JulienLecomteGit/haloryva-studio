@@ -1,0 +1,201 @@
+HALORYVA STUDIO — BILAN PREVIEW.6 FR / EN / ES
+11 novembre 2026 — branche haloryva-tests-preview6
+Nouveauté intégrée ; essais ciblés seulement. Aucun accord de diffusion implicite.
+
+COMPORTEMENT LIVRÉ
+Dans Préférences > Langue de l'application :
+Français / English / Español. Le choix est mémorisé sous UiLanguage=fr/en/es.
+Il s'applique au prochain lancement complet de Haloryva ; rouvrir le Studio
+ne suffit pas. Aucun redémarrage forcé ni interruption d'un dessin.
+Ancien profil sans langue ou valeur inconnue : français. Variantes régionales
+normalisées (fr-FR, en-GB, es_ES). Les réglages de Windows et le clavier ne sont
+pas changés. Les annotations de l'utilisateur ne sont jamais traduites.
+
+Les valeurs historiques des outils/actions restent inchangées dans les profils.
+Seuls les libellés sont traduits. Couleurs, épaisseurs, lissage, boutons,
+outils du défilement et signature du preset conservent leur sens.
+451 entrées FR/EN/ES incorporées au binaire, aucune valeur de langue vide.
+L'inventaire des 524 chaînes des surfaces visées classe 437 textes à traduire
+et 87 identités/formats/protocoles invariants ; les 14 entrées restantes du
+catalogue couvrent des clés préparées et les nouveaux textes/contextes.
+Les menus, pages, contrôles personnalisés, aides, dialogues, toasts, notices
+et messages applicatifs inventoriés sont couverts. Les textes système des
+dialogues Windows et les détails d'exceptions de Windows suivent Windows.
+Les journaux internes et protocoles de diagnostic restent stables.
+Une relecture linguistique indépendante et l'inspection visuelle complète
+des captures ne sont pas déclarées acquises.
+
+BINAIRE ET SOURCES
+Compilation unique sur GitHub :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42951517482
+Commit sources : 92d9887198b4efd932639265912030b9238c2a57
+SHA-256 Haloryva.exe :
+9978501F8E6B010BAC2739622E7F6E7C5DF6FBBBC19C8FECD76E59E3369A66F8
+Version produit : 2.7.1-preview.6 ; exécutable .NET Framework x64.
+Le même fichier est réutilisé dans toutes les recettes ; aucun rebuild entre
+les essais fonctionnels et MSIX.
+29 sources : copie des 28 sources preview.5, avec 13 modifiées pour les libellés,
+le sélecteur et la mémorisation, plus Localization.cs. Les 15 autres sources,
+l'icône et le manifeste EXE restent identiques à preview.5. Les hooks, la file
+des entrées, la politique clavier et le moteur de géométrie restent identiques.
+Quatre avertissements CS0649 concernent les champs du catalogue remplis par
+désérialisation JSON : les essais confirment leur chargement réel.
+Des avertissements de dépréciation des actions GitHub sont aussi présents ;
+ils n'ont pas empêché les exécutions. Aucun logiciel ajouté au PC utilisateur.
+
+RECETTE FONCTIONNELLE RÉELLEMENT EXÉCUTÉE
+Environnement : bureau interactif Windows Server 2025 Datacenter x64 sur
+machine GitHub hébergée (image windows-2025-vs2026).
+Chaque variante : 144 assertions fonctionnelles + 41 après rechargement.
+Les 6 variantes réussies totalisent 1110 assertions, incluant les conditions
+de préparation/arrêt et les répétitions ; ce ne sont pas 1110 scénarios distincts.
+Les 195 contrôles historiques ne sont ni appelés, ni recomptés.
+
+- FR / observateur off : RÉUSSI, 185 assertions.
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952468075/job/130299733274
+- FR / observateur on : RÉUSSI, 185 assertions.
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952468075/job/130299733560
+- EN / observateur off : RÉUSSI, 185 assertions.
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42953364906/job/130302637328
+- EN / observateur on : RÉUSSI, 185 assertions.
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952822477/job/130300882721
+- ES / observateur off : RÉUSSI, 185 assertions.
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952822477/job/130300882878
+- ES / observateur on : RÉUSSI, 185 assertions.
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952822477/job/130300882727
+
+Ces six succès se répartissent sur trois exécutions GitHub. Les deux premières
+exécutions globales sont en échec, car certains jobs du pilote ont échoué ;
+ne pas présenter tous ces runs comme verts. Les succès déjà acquis n'ont
+pas été relancés.
+
+Parcours exercés :
+- Chargement du catalogue, normalisation/repli, ancien profil preview.5 :
+  comparaison de chaque champ existant et maintien des 10 identités d'outils.
+- Navigation native dans les 8 pages et sous-sections halo/traînée/dessin,
+  libellés et noms accessibles ; mesures des légendes des grilles de choix.
+- Affectation native du preset X2 suivant / appui long précédent.
+  Deux outils choisis par l'interface ; vrais clics de 45 ms et appuis de 650 ms.
+- Sélecteur de langue actionné par l'interface, sauvegarde automatique différée,
+  maintien de la langue active, du preset, de la culture et du clavier.
+- Trait maintenu avec une entrée souris native ; invocation par le pilote du
+  vrai callback du sélecteur de langue pendant cet appui, puis clic X2 natif.
+  Outil/couleur/épaisseur et identité du trait conservés ; trait suivant Rectangle.
+  Ce callback n'est pas présenté comme un second clic natif simultané.
+- Dialogue texte réel : accents et chaîne « Stylo / Français / English /
+  Español / ñ @ € » conservés, titre et annulation traduits.
+  Saisie Unicode injectée : pas une nouvelle recette AltGr/claviers EN/ES.
+- Annuler/rétablir via boutons traduits ; export PNG via l'interface,
+  transparence et dimensions contrôlées.
+- Export/import JSON via les méthodes de production ConfigStore et comparaison
+  de chaque champ ; ce point ne simule pas les dialogues de fichiers JSON.
+- Nouveau processus du pilote, copie byte-à-byte du profil réellement sauvegardé,
+  rechargement par ConfigStore/Controller, langue suivante appliquée et outils,
+  boutons, couleur/épaisseur repris ; nouveaux gestes court/long.
+  Ce lancement instrumenté ne passe pas par Program.Main. La recette MSIX
+  complète la preuve par des activations réelles de l'exécutable.
+
+INCIDENTS DES PILOTES — AUCUNE RETOUCHE DU BINAIRE
+1. Run 42952468075 : FR off/on réussis ; EN/ES arrêtés sur la recherche du
+   contrôle couleur. Le pilote traduisait une chaîne assemblée en bloc ;
+   l'application traduisait correctement le titre et son suffixe séparément.
+   Correction du repérage et diagnostic des noms accessibles dans le pilote.
+2. Run 42952822477 : EN on et ES off/on réussis ; EN off s'est arrêté après
+   68 assertions sur une navigation vérifiée trop tôt avec délai fixe.
+   Attente bornée de l'état attendu (sans second clic) et journal des clics
+   ajoutés ; reprise EN off seule, run 42953364906, réussie 144+41.
+   Le journal de cette reprise confirme les clics et transitions. Il ne permet
+   pas de reconstituer avec certitude l'ordonnancement du premier incident.
+3. Premier MSIX 42953990339 : arrêté avant création/installation du paquet.
+   Après vidage des ressources XML, PowerShell exposait l'élément comme chaîne.
+   Le pilote conserve désormais le vrai XmlElement. Aucun défaut applicatif
+   ni blocage Windows attribué à cet incident.
+4. MSIX 42954229657 : paquet créé, installé et identité du processus confirmée,
+   puis erreur du pilote utilisant une variable réservée de PowerShell.
+   Nom remplacé par une variable propre au test. Ce run a arrêté le processus
+   de force pour nettoyer : il ne valide donc pas l'arrêt normal. Le paquet
+   a été retiré et son absence vérifiée avant destruction de la machine GitHub.
+
+MSIX
+RÉUSSI :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42954558295
+Job 130306464884 ; pilote d99532ca67b408fd9b589c621174adea928319cf.
+Windows 11 Enterprise ARM64 build 26200, image 20261101.203.1 ;
+exécutable x64 exécuté en émulation, pas un binaire natif ARM64.
+
+Paquet d'essai HaloryvaStudio.Preview6UnsignedTest, version 2.7.1.6, x64 ;
+ressources déclarées fr-fr, en-us, es-es ; aucune signature.
+SHA-256 MSIX :
+86EA0FD925B87EF48D04884EA07D003A8D49F54E3BC9CB0142B93C616A1A68AD
+MakeAppx : structure validée. Absence de AppxSignature.p7x contrôlée.
+Empreinte EXE identique avant empaquetage, dans le paquet, après installation
+et après les lancements. Installation AllowUnsigned uniquement sur la machine
+GitHub jetable ; aucun certificat ou réglage de sécurité changé.
+
+Sept activations AppsFolder réelles avec identité de paquet confirmée :
+1. Profil vierge : français, dix outils par défaut.
+2-3. Profil français issu de la recette native, puis reprise de sa sauvegarde.
+4-5. Même séquence en anglais.
+6-7. Même séquence en espagnol.
+Le second lancement de chaque langue reprend le fichier écrit par le premier,
+sans réinjecter le profil source. Les trois profils viennent des recettes
+natives réussies ; leur contenu complet est comparé champ par champ, puis
+octet par octet avant/après. L'horodatage confirme l'écriture par l'application.
+Langue, Stylo/Rectangle, boutons, couleur, épaisseur et tous les autres champs
+du profil sont conservés. Les libellés Accueil/Préférences, Home/Preferences,
+Inicio/Preferencias sont observés dans les contrôles du processus.
+Les journaux des six reprises montrent aussi ces contrôles visibles.
+Pas d'injection de gestes dans cette recette MSIX : les gestes ont été
+exercés séparément par la recette fonctionnelle x64.
+
+Les sept arrêts sont normaux, code 0, sans tuer le processus. Désinstallation
+réussie et absence d'enregistrement du paquet pour l'utilisateur vérifiée.
+Profil stocké sous LocalCache\Local\Haloryva\settings.json.
+Empreintes des profils conservés :
+FR : 0714E7F9A69403722628FFFE1696A3716A789306E2DE25440F5038611D06332C
+EN : CDE3E33E6701A3024C19B665D1037BC8CFBBB793CA6018F618C32FB6591BF4E9
+ES : 0578ECD8F3EB8536A79CFC260507A8C234A8352431D7B6FF5BD1D301BF1BF215
+Ce résultat valide le cycle d'essai non signé ; il ne vaut ni signature de
+distribution ni certification Microsoft Store.
+
+PORTÉE ET RESTE À VALIDER
+- Inspection visuelle des captures des 3 langues, toutes surfaces et DPI ;
+  les mesures automatiques des grilles ne garantissent pas toute la mise en page.
+- Relecture EN/ES indépendante ; claviers physiques/dispositions EN/ES et AltGr.
+- Windows 11 x64 natif pour les gestes, plusieurs moniteurs/DPI, usage prolongé.
+- Démarrage automatique MSIX, migration de l'installation 2.7.0 vers le paquet,
+  coexistence/instance unique et mise à jour entre deux paquets de même identité.
+  La reprise d'un profil synthétique ne prouve pas la migration automatique.
+- Identité Partner Center, politique de confidentialité/support approuvés,
+  captures finales, droits des ressources, IARC, WACK et certification Store.
+Les preuves des autres outils, formes assistées et AltGr des préversions
+antérieures sont héritées de leurs propres binaires, sans nouvelle exécution
+globale ni validation exhaustive revendiquée pour preview.6.
+
+CONSERVATION ET ACCÈS AUX PREUVES
+Les 252 fichiers du dossier de préparation preview.5 sont identiques dans
+la branche preview.6 ; les neuf branches de référence, dont main et stable
+2.7.0, restent à leurs commits initiaux. Les valeurs de référence sont dans
+preuves-preview6-20261111/resultats-consolides.json.
+Aucune installation, modification de protection, paramètre système ou logiciel
+ajouté sur le PC utilisateur. Aucun certificat, signature, release, soumission
+Store ou changement des droits. Travail limité à la nouvelle branche de tests.
+
+Les artefacts des succès (binaire, journaux, captures et profils synthétiques)
+restent dans GitHub Actions ; rétention 30 jours, échéance le 11 décembre 2026.
+Le JSON consolidé conserve les identités, empreintes et résultats, pas les
+images/profils ni les binaires. Prévoir leur conservation privée autorisée
+avant expiration ; les empreintes ne remplacent pas une archive binaire.
+
+Les journaux et états de jobs ont été lus. Les captures ont été générées,
+mais pas inspectées visuellement ici : le téléchargement en lecture seule
+via le connecteur a échoué (résolution d'adresse).
+Le contrôle automatique a refusé la méthode alternative qui aurait recopié
+captures et profils dans des logs publics, pour risque d'exposition.
+Cette méthode a été abandonnée, aucun workflow d'exposition créé.
+
+PROCHAINE ACTION
+Organiser une consultation privée des captures existantes, sans publication
+et avec accord explicite sur toute copie locale nécessaire, puis corriger
+uniquement les défauts réellement observés. Préparer ensuite les points
+Store restants, dont démarrage automatique et migration, avec essais ciblés.

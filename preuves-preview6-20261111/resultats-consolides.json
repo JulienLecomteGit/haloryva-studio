@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "version": "2.7.1-preview.6",
+  "branch": "haloryva-tests-preview6",
+  "status": "targeted-native-and-unsigned-msix-passed-with-documented-limitations",
+  "build": {
+    "run": 42951517482,
+    "commit": "92d9887198b4efd932639265912030b9238c2a57",
+    "sha256": "9978501F8E6B010BAC2739622E7F6E7C5DF6FBBBC19C8FECD76E59E3369A66F8",
+    "sourceFiles": 29,
+    "changedExistingSources": 13,
+    "newSources": 1,
+    "artifact": {
+      "id": 13823869886,
+      "name": "Haloryva-2.7.1-preview.6-build",
+      "expiresAt": "2026-12-11T03:15:39Z",
+      "digest": "sha256:f65153fca6962147f7dfa07645ccf01f7873c85d82dae58f84131d5225bc6144"
+    }
+  },
+  "translations": {
+    "languages": [
+      "fr",
+      "en",
+      "es"
+    ],
+    "entries": 451,
+    "inventoriedStrings": 524,
+    "translatedInventoriedStrings": 437,
+    "invariantInventoriedStrings": 87,
+    "appliedOn": "next-process-start",
+    "fallback": "fr",
+    "independentLinguisticReview": false
+  },
+  "native": {
+    "environment": {
+      "os": "Microsoft Windows Server 2025 Datacenter",
+      "build": 26100,
+      "arch": "X64",
+      "image": "20261103.298.1",
+      "interactive": true
+    },
+    "successVariants": [
+      {
+        "language": "fr",
+        "observer": "off",
+        "run": 42952468075,
+        "job": 130299733274,
+        "jobUrl": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952468075/job/130299733274",
+        "status": "success",
+        "phases": [
+          {
+            "phase": "features",
+            "assertions": 144,
+            "exit": 0
+          },
+          {
+            "phase": "reload",
+            "assertions": 41,
+            "exit": 0
+          }
+        ],
+        "assertions": 185,
+        "artifact": {
+          "id": 13826310024,
+          "name": "preview6-language-fr-off-evidence",
+          "digest": "sha256:2c7efc76fe04887eada69c694421d27f88482b67fa5299cb6a2217a0207e60db",
+          "expiresAt": "2026-12-11T03:25:01Z",
+          "bytes": 3201302
+        }
+      },
+      {
+        "language": "fr",
+        "observer": "on",
+        "run": 42952468075,
+        "job": 130299733560,
+        "jobUrl": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952468075/job/130299733560",
+        "status": "success",
+        "phases": [
+          {
+            "phase": "features",
+            "assertions": 144,
+            "exit": 0
+          },
+          {
+            "phase": "reload",
+            "assertions": 41,
+            "exit": 0
+          }
+        ],
+        "assertions": 185,
+        "artifact": {
+          "id": 13825184159,
+          "name": "preview6-language-fr-on-evidence",
+          "digest": "sha256:6def21a772b88e338c3771b9d987f8f41abc92937b249910c7be99adced44dd1",
+          "expiresAt": "2026-12-11T03:24:46Z",
+          "bytes": 3207536
+        }
+      },
+      {
+        "language": "en",
+        "observer": "off",
+        "run": 42953364906,
+        "job": 130302637328,
+        "jobUrl": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42953364906/job/130302637328",
+        "status": "success",
+        "phases": [
+          {
+            "phase": "features",
+            "assertions": 144,
+            "exit": 0
+          },
+          {
+            "phase": "reload",
+            "assertions": 41,
+            "exit": 0
+          }
+        ],
+        "assertions": 185,
+        "artifact": {
+          "id": 13825957557,
+          "name": "preview6-language-en-off-evidence",
+          "digest": "sha256:b702ebf472ad2f60803329b9a910c6348f083bcaf7c9eac7214c9a70c87055e6",
+          "expiresAt": "2026-12-11T03:32:49Z",
+          "bytes": 3123414
+        }
+      },
+      {
+        "language": "en",
+        "observer": "on",
+        "run": 42952822477,
+        "job": 130300882721,
+        "jobUrl": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952822477/job/130300882721",
+        "status": "success",
+        "phases": [
+          {
+            "phase": "features",
+            "assertions": 144,
+            "exit": 0
+          },
+          {
+            "phase": "reload",
+            "assertions": 41,
+            "exit": 0
+          }
+        ],
+        "assertions": 185,
+        "artifact": {
+          "id": 13826270565,
+          "name": "preview6-language-en-on-evidence",
+          "digest": "sha256:f0166a97e6b47a086e2393691e2b6d28bf79fdf7bc0464529d7d959873fc7b1b",
+          "expiresAt": "2026-12-11T03:27:49Z",
+          "bytes": 3187169
+        }
+      },
+      {
+        "language": "es",
+        "observer": "off",
+        "run": 42952822477,
+        "job": 130300882878,
+        "jobUrl": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952822477/job/130300882878",
+        "status": "success",
+        "phases": [
+          {
+            "phase": "features",
+            "assertions": 144,
+            "exit": 0
+          },
+          {
+            "phase": "reload",
+            "assertions": 41,
+            "exit": 0
+          }
+        ],
+        "assertions": 185,
+        "artifact": {
+          "id": 13826270568,
+          "name": "preview6-language-es-off-evidence",
+          "digest": "sha256:b2fd5915147639a0abbf849bc097fc124e238018ceab3a76ff58553e3b3b5831",
+          "expiresAt": "2026-12-11T03:27:50Z",
+          "bytes": 3207261
+        }
+      },
+      {
+        "language": "es",
+        "observer": "on",
+        "run": 42952822477,
+        "job": 130300882727,
+        "jobUrl": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42952822477/job/130300882727",
+        "status": "success",
+        "phases": [
+          {
+            "phase": "features",
+            "assertions": 144,
+            "exit": 0
+          },
+          {
+            "phase": "reload",
+            "assertions": 41,
+            "exit": 0
+          }
+        ],
+        "assertions": 185,
+        "artifact": {
+          "id": 13825497872,
+          "name": "preview6-language-es-on-evidence",
+          "digest": "sha256:d58c1cfd18126946f8431c939ccfa5c310c452212b9daddc990d8fd19f2dcb23",
+          "expiresAt": "2026-12-11T03:27:52Z",
+          "bytes": 3164053
+        }
+      }
+    ],
+    "successfulAssertionExecutions": 1110,
+    "countNote": "144 feature + 41 reload assertions per variant; includes preparation and stop checks. Not 1110 distinct scenarios.",
+    "fullLegacy195Run": false,
+    "profileImportExport": "production ConfigStore methods, not native JSON file dialogs",
+    "heldLanguageChange": "actual preference callback while native mouse stroke held",
+    "keyboard": "Unicode injected text and unchanged layout; no new AltGr/disposition matrix",
+    "successfulVariantCount": 6
+  },
+  "msix": {
+    "run": 42954558295,
+    "job": 130306464884,
+    "commit": "d99532ca67b408fd9b589c621174adea928319cf",
+    "environment": {
+      "os": "Windows 11 Enterprise",
+      "build": 26200,
+      "hostArch": "ARM64",
+      "applicationArch": "x64 emulated",
+      "image": "20261101.203.1"
+    },
+    "status": "unsigned-test-identity-passed-NOT-production-signature",
+    "packageSHA256": "86EA0FD925B87EF48D04884EA07D003A8D49F54E3BC9CB0142B93C616A1A68AD",
+    "binarySHA256": "9978501F8E6B010BAC2739622E7F6E7C5DF6FBBBC19C8FECD76E59E3369A66F8",
+    "productionIdentity": false,
+    "signed": false,
+    "installSucceeded": true,
+    "launchCount": 7,
+    "allExitCodesZero": true,
+    "profilesWrittenAndBytesRetained": true,
+    "profileHashes": [
+      {
+        "SHA256": "0714E7F9A69403722628FFFE1696A3716A789306E2DE25440F5038611D06332C",
+        "Language": "fr"
+      },
+      {
+        "SHA256": "CDE3E33E6701A3024C19B665D1037BC8CFBBB793CA6018F618C32FB6591BF4E9",
+        "Language": "en"
+      },
+      {
+        "SHA256": "0578ECD8F3EB8536A79CFC260507A8C234A8352431D7B6FF5BD1D301BF1BF215",
+        "Language": "es"
+      }
+    ],
+    "localizedControlsObserved": [
+      "Accueil / Préférences",
+      "Home / Preferences",
+      "Inicio / Preferencias"
+    ],
+    "gesturesInjected": false,
+    "removed": true,
+    "artifact": {
+      "id": 13827040098,
+      "name": "preview6-msix-evidence",
+      "digest": "sha256:10a055b2dc643bdc0ed34bcd12f3308fda6f19f7bf0bf1b9686b41fbc4afb1da",
+      "expiresAt": "2026-12-11T03:44:27Z",
+      "bytes": 559546
+    }
+  },
+  "failedAttempts": [
+    {
+      "run": 42952468075,
+      "scope": "native EN/ES jobs",
+      "reason": "test editor lookup translated compound caption instead of composing translated base/suffix",
+      "successfulJobsPreserved": [
+        "fr/off",
+        "fr/on"
+      ]
+    },
+    {
+      "run": 42952822477,
+      "scope": "native EN/off",
+      "reason": "fixed-delay navigation assertion; bounded wait and click diagnostics added",
+      "successfulJobsPreserved": [
+        "en/on",
+        "es/off",
+        "es/on"
+      ]
+    },
+    {
+      "run": 42953990339,
+      "scope": "MSIX preparation",
+      "reason": "PowerShell XML adapter returned string after Resources.RemoveAll; retained XmlElement instead",
+      "installed": false
+    },
+    {
+      "run": 42954229657,
+      "scope": "MSIX UI probe",
+      "reason": "reserved PowerShell variable name; renamed task-specific caption variable",
+      "installed": true,
+      "forcedStopDuringCleanup": true,
+      "packageRemoved": true
+    }
+  ],
+  "preservation": {
+    "baseCommit": "f07890303144653049a05069841838ecd9b9d73d",
+    "baseFilesUnchanged": 252,
+    "protectedBranches": [
+      {
+        "branch": "haloryva-2.7.0-c4",
+        "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+      },
+      {
+        "branch": "haloryva-preparation-store-preview5",
+        "sha": "f07890303144653049a05069841838ecd9b9d73d"
+      },
+      {
+        "branch": "haloryva-tests-preview2",
+        "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+      },
+      {
+        "branch": "haloryva-tests-preview3",
+        "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+      },
+      {
+        "branch": "haloryva-tests-preview4",
+        "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+      },
+      {
+        "branch": "haloryva-tests-preview5-msix",
+        "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+      },
+      {
+        "branch": "haloryva-tests-preview5",
+        "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+      },
+      {
+        "branch": "main",
+        "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+      },
+      {
+        "branch": "release/2.7.0-stable",
+        "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+      }
+    ],
+    "legacy195Repeated": false,
+    "oldPreviewsRebuilt": false,
+    "mainChanged": false,
+    "userPcInstalledOrConfigured": false,
+    "releasePublished": false,
+    "signed": false
+  },
+  "limitations": [
+    "Screenshots generated but not visually inspected here; private connector download failed.",
+    "Public-log transfer of screenshots/profiles rejected by automatic review; abandoned.",
+    "Independent EN/ES proofreading, other DPI/monitors, native Windows 11 x64 gestures and physical keyboard layouts not newly validated.",
+    "MSIX auto-start, actual 2.7.0 migration and same-identity update not validated.",
+    "Partner Center final identity, WACK, Store certification and distribution pending."
+  ],
+  "evidencePreservation": "Summary and hashes retained in Git; artifacts remain in Actions until their expiry. No profiles/screenshots copied into public logs or new repository proof files."
+}

@@ -1,0 +1,39 @@
+HALORYVA STUDIO — COMPLÉMENT STORE PREVIEW.6
+11 novembre 2026 — préparation, aucune soumission
+
+Le dossier preparation-store-preview5-20261111 est conservé comme référence.
+Ce complément remplace seulement son état « langues à intégrer » pour preview.6.
+
+ACQUIS NOUVEAU
+- Interface FR/EN/ES intégrée, choix mémorisé et appliqué au prochain lancement.
+- Catalogue complet des surfaces inventoriées, avec repli français.
+- Six recettes fonctionnelles réussies (langue x observateur), même binaire.
+- MSIX non signé : structure, installation, sept activations réelles, trois
+  langues, conservation complète des profils, arrêt et désinstallation réussis.
+Voir BILAN-preview6-langues-MSIX-20261111.txt pour les preuves et limites.
+L'anglais/espagnol peuvent désormais être décrits comme langues de preview.6.
+Les fiches Store antérieures restent des brouillons ; aucune fiche envoyée.
+
+PRÉPARÉ, SANS VALIDATION FINALE
+Le manifeste du paquet d'essai déclare fr-fr, en-us, es-es. Cela ne fournit pas
+à lui seul les métadonnées traduites du produit final, ni la certification.
+L'identité HaloryvaStudio.Preview6UnsignedTest, le Publisher d'essai et la
+version 2.7.1.6 servent uniquement à la recette non signée ; ne pas les
+réutiliser comme identité/version définitives Partner Center.
+
+AVANT LE PAQUET FINAL
+1. Consultation privée et revue des captures FR/EN/ES, lisibilité et longs
+   textes sur les écrans/DPI visés ; relecture linguistique indépendante.
+2. Démarrage automatique sous MSIX : examiner l'option HKCU Run actuelle et
+   la déclaration de démarrage du futur paquet. Pas de validation acquise ici.
+3. Migration réelle depuis 2.7.0, coexistence et mise à jour de paquet.
+   Les profils synthétiques testés ne prouvent pas une migration utilisateur.
+4. Identité/nom Partner Center, support, confidentialité, droits, IARC,
+   ressources et fiche finales, puis WACK/certification sur le paquet final.
+5. Conserver les artefacts privés avant leur expiration du 11 décembre 2026.
+   Les preuves textuelles et empreintes du bilan ne remplacent pas les fichiers.
+
+Les autres limites et décisions du dossier précédent restent applicables :
+GitHub public, application gratuite, droits actuels conservés, aucun ajout de
+licence. Aucun achat, compte, signature, dépôt Store ou publication effectué.
+Aucun accord de lancement sur le PC principal déduit de cette préparation.
