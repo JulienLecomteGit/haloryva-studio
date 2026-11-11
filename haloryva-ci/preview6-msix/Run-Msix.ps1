@@ -208,13 +208,13 @@ public static class PackageProbe {
             }
             if(!$ready) { throw 'Exit event absent after bounded startup wait; inspect msix-diagnostic.log for startup windows and native error.' }
             # Observe actual localized controls in the packaged executable, not just the saved field.
-            $home=@{fr='Accueil';en='Home';es='Inicio'}[$language]
-            $preferences=@{fr='Préférences';en='Preferences';es='Preferencias'}[$language]
+            $expectedHomeCaption=@{fr='Accueil';en='Home';es='Inicio'}[$language]
+            $expectedPreferencesCaption=@{fr='Préférences';en='Preferences';es='Preferencias'}[$language]
             $localized=$false
             for($n=0;$n -lt 50 -and !$localized;$n++) {
                 $windowLines=@([PackageProbe]::Windows([uint32]$child.Id))
                 $joined=$windowLines -join "`n"
-                $localized=$joined.Contains('text='+$home) -and $joined.Contains('text='+$preferences)
+                $localized=$joined.Contains('text='+$expectedHomeCaption) -and $joined.Contains('text='+$expectedPreferencesCaption)
                 if(!$localized) { Start-Sleep -Milliseconds 200 }
             }
             if(!$localized) {
@@ -222,7 +222,7 @@ public static class PackageProbe {
                 throw "Packaged UI language $language not observed."
             }
             $record.VisibleLanguageConfirmed=$true
-            Write-MsixDiagnostic "LANGUAGE_UI cycle=$cycle expected=$language home=$home preferences=$preferences"
+            Write-MsixDiagnostic "LANGUAGE_UI cycle=$cycle expected=$language home=$expectedHomeCaption preferences=$expectedPreferencesCaption"
             $signal=[PackageProbe]::ExitEvent($eventName,$true)
             Write-MsixDiagnostic "SIGNAL cycle=$cycle nativeResult=$signal"
             if($signal -ne 0) { throw "Exit signal refused: native code $signal." }
