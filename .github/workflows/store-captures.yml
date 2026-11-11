@@ -1,0 +1,30 @@
+name: Store screenshots only
+on:
+  push:
+    branches: [haloryva-store-captures-2.7.1]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  screenshots:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture unchanged file11 Studio
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: ./haloryva-ci/store-captures/Run.ps1
+      - name: Capture diagnostics
+        if: always()
+        shell: powershell
+        run: |
+          Get-ChildItem "$env:RUNNER_TEMP/store-three-captures" -Filter '*.txt' -ErrorAction SilentlyContinue | ForEach-Object { Get-Content $_.FullName }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Haloryva-2.7.1.11-Store-FR-EN-ES
+          path: ${{ runner.temp }}/store-three-captures/
+          if-no-files-found: error
+          retention-days: 30
