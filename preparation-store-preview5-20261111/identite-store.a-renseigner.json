@@ -1,0 +1,51 @@
+{
+  "status": "DRAFT_NOT_A_SUBMISSION_MANIFEST",
+  "preparation_date": "2026-11-11",
+  "product_name_proposed": "Haloryva Studio",
+  "name_reserved": false,
+  "partner_center_account_checked": false,
+  "partner_center_product_id": null,
+  "package_identity_name": null,
+  "package_publisher": null,
+  "publisher_display_name": null,
+  "package_family_name": null,
+  "final_package_version": null,
+  "version_proposal_if_first_final_2_7_1_package": "2.7.1.0",
+  "version_proposal_requires_partner_center_history_check": true,
+  "package_architecture_proposed": "x64",
+  "min_windows_version_final": null,
+  "max_windows_version_tested_final": null,
+  "app_language_current": [
+    "fr-FR"
+  ],
+  "app_language_target_after_implementation": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "supported_languages_final": null,
+  "price_requested": "free",
+  "category_proposed": "Productivity",
+  "markets": null,
+  "age_rating": null,
+  "privacy_policy_url": null,
+  "support_url": null,
+  "support_url_proposed": "https://github.com/JulienLecomteGit/haloryva-studio/issues",
+  "privacy_contact": null,
+  "license_policy": "Keep existing rights; no new open source license.",
+  "rights_notice_existing": "© 2026 Julien Lecomte — droits réservés.",
+  "terms_approved": false,
+  "store_assets_approved": false,
+  "restricted_capability_requested": "runFullTrust",
+  "restricted_capability_approved": false,
+  "wack_executed": false,
+  "submitted": false,
+  "signed_this_task": false,
+  "published_this_task": false,
+  "forbidden_test_identity_for_final_submission": {
+    "name": "HaloryvaStudio.Preview5UnsignedTest",
+    "publisher": "CN=JulienLecomteGit, OID.2.25.311729368913984317654407730594956997722=1",
+    "version": "2.7.1.5",
+    "reason": "Prototype AllowUnsigned identity; replace with actual Partner Center identity."
+  }
+}

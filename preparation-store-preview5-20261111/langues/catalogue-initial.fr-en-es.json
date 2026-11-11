@@ -1,0 +1,1751 @@
+{
+  "document_status": "preparation_only_not_integrated",
+  "source_commit": "cfdb260c50bf771843065eff8eefadae24899f06",
+  "requested_languages": [
+    "fr",
+    "en",
+    "es"
+  ],
+  "complete": false,
+  "scope": "Initial subset: navigation, drawing tools and cycle, button actions, profile commands, tray and proposed language selector. Remaining interface strings must still be extracted.",
+  "notes": [
+    "Never serialize translated captions as tool, action or other existing configuration values.",
+    "Do not apply a language change by closing an active drawing session.",
+    "Existing-source labels without source_occurrences require extraction review before integration.",
+    "Translations have not been tested in the actual UI."
+  ],
+  "entries": [
+    {
+      "key": "nav.home",
+      "fr": "Accueil",
+      "en": "Home",
+      "es": "Inicio",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 299
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "nav.halo",
+      "fr": "Halo",
+      "en": "Halo",
+      "es": "Halo",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 299
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 816
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "nav.trails",
+      "fr": "Traînées",
+      "en": "Trails",
+      "es": "Estelas",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 299
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "nav.clicks",
+      "fr": "Clics",
+      "en": "Clicks",
+      "es": "Clics",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 299
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "nav.mouseButtons",
+      "fr": "Boutons souris",
+      "en": "Mouse buttons",
+      "es": "Botones del ratón",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 299
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "nav.drawing",
+      "fr": "Dessin",
+      "en": "Drawing",
+      "es": "Dibujo",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 299
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "nav.presentation",
+      "fr": "Présentation",
+      "en": "Presentation",
+      "es": "Presentación",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 299
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 829
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "nav.preferences",
+      "fr": "Préférences",
+      "en": "Preferences",
+      "es": "Preferencias",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 299
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "group.effects",
+      "fr": "EFFETS",
+      "en": "EFFECTS",
+      "es": "EFECTOS",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 311
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "group.workshop",
+      "fr": "ATELIER",
+      "en": "WORKSPACE",
+      "es": "ÁREA DE TRABAJO",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 311
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "group.system",
+      "fr": "SYSTÈME",
+      "en": "SYSTEM",
+      "es": "SISTEMA",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 311
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.tab.draw",
+      "fr": "Dessiner",
+      "en": "Draw",
+      "es": "Dibujar",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 344
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 662
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1107
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.tab.settings",
+      "fr": "Réglages",
+      "en": "Settings",
+      "es": "Ajustes",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1107
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.tab.cycle",
+      "fr": "Défilement",
+      "en": "Tool cycling",
+      "es": "Recorrido de herramientas",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1107
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.cycle.title",
+      "fr": "Outils à faire défiler",
+      "en": "Tools to cycle through",
+      "es": "Herramientas que recorrer",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1165
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.cycle.minimumHint",
+      "fr": "Garde au moins un outil activé.",
+      "en": "Keep at least one tool enabled.",
+      "es": "Mantén al menos una herramienta activada.",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1165
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.cycle.minimumNotice",
+      "fr": "Au moins un outil doit rester sélectionné.",
+      "en": "At least one tool must remain selected.",
+      "es": "Debe quedar al menos una herramienta seleccionada.",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1184
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.cycle.buttonsTitle",
+      "fr": "Défilement par boutons",
+      "en": "Cycle tools with buttons",
+      "es": "Recorrer herramientas con botones",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1187
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.cycle.savedHint",
+      "fr": "Choix enregistré automatiquement.",
+      "en": "Your selection is saved automatically.",
+      "es": "Tu selección se guarda automáticamente.",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1187
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.cycle.includeAll",
+      "fr": "Inclure tous les outils",
+      "en": "Include all tools",
+      "es": "Incluir todas las herramientas",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1193
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.exportPng",
+      "fr": "Exporter PNG",
+      "en": "Export PNG",
+      "es": "Exportar PNG",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1133
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.assisted.title",
+      "fr": "Formes assistées",
+      "en": "Assisted shapes",
+      "es": "Formas asistidas",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 90
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 167
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 387
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 388
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 668
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1114
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1143
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1144
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1146
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.assisted.subtitle",
+      "fr": "Cercles, rectangles, triangles et lignes.",
+      "en": "Circles, rectangles, triangles and lines.",
+      "es": "Círculos, rectángulos, triángulos y líneas.",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1143
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.smoothing.raw",
+      "fr": "Brut",
+      "en": "Raw",
+      "es": "Sin suavizado",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1144
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.smoothing.light",
+      "fr": "Lissage",
+      "en": "Smoothing",
+      "es": "Suavizado",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1144
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "drawing.smoothing.shapes",
+      "fr": "Auto-formes",
+      "en": "Auto shapes",
+      "es": "Formas automáticas",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1144
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 16
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.pen",
+      "fr": "Stylo",
+      "en": "Pen",
+      "es": "Lápiz",
+      "storage_value": "Stylo",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 80
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 180
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 633
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 652
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 660
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 669
+        },
+        {
+          "file": "haloryva-ci/preview5/src/DrawingGeometry.cs",
+          "line": 55
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1146
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 18
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 161
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 170
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 13
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 15
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 691
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.highlighter",
+      "fr": "Surligneur",
+      "en": "Highlighter",
+      "es": "Resaltador",
+      "storage_value": "Surligneur",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 180
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 633
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 652
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 660
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 13
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 15
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 660
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.line",
+      "fr": "Ligne",
+      "en": "Line",
+      "es": "Línea",
+      "storage_value": "Ligne droite",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 176
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 938
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 15
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 67
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 388
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.rectangle",
+      "fr": "Rectangle",
+      "en": "Rectangle",
+      "es": "Rectángulo",
+      "storage_value": "Rectangle",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 180
+        },
+        {
+          "file": "haloryva-ci/preview5/src/DrawingGeometry.cs",
+          "line": 51
+        },
+        {
+          "file": "haloryva-ci/preview5/src/DrawingGeometry.cs",
+          "line": 142
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 96
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 102
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 13
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 15
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 666
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.ellipse",
+      "fr": "Ellipse",
+      "en": "Ellipse",
+      "es": "Elipse",
+      "storage_value": "Ellipse",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 175
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 180
+        },
+        {
+          "file": "haloryva-ci/preview5/src/DrawingGeometry.cs",
+          "line": 51
+        },
+        {
+          "file": "haloryva-ci/preview5/src/DrawingGeometry.cs",
+          "line": 168
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 883
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 80
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 85
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 91
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 13
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 15
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 87
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 88
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 374
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 668
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.arrow",
+      "fr": "Flèche",
+      "en": "Arrow",
+      "es": "Flecha",
+      "storage_value": "Flèche droite",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 16
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 670
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.freeArrow",
+      "fr": "Flèche libre",
+      "en": "Freehand arrow",
+      "es": "Flecha a mano alzada",
+      "storage_value": "Flèche libre",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 181
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 634
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 653
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 661
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 136
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 14
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 16
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 675
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.autoShapes",
+      "fr": "Auto-formes",
+      "en": "Auto shapes",
+      "es": "Formas automáticas",
+      "storage_value": "Forme libre",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1144
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 16
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.number",
+      "fr": "Numéro",
+      "en": "Number",
+      "es": "Número",
+      "storage_value": "Numéro",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 181
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 421
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 625
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 14
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 16
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 649
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tool.text",
+      "fr": "Texte",
+      "en": "Text",
+      "es": "Texto",
+      "storage_value": "Texte",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Annotations.cs",
+          "line": 58
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 181
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 675
+        },
+        {
+          "file": "haloryva-ci/preview5/src/InputPipeline.cs",
+          "line": 184
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 14
+        },
+        {
+          "file": "haloryva-ci/preview5/src/ToolToast.cs",
+          "line": 16
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Visuals.cs",
+          "line": 635
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.normal",
+      "fr": "Normal",
+      "en": "Normal",
+      "es": "Normal",
+      "storage_value": "Normal",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 94
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 95
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 96
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 97
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 98
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 99
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 104
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 105
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 106
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 107
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 108
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 116
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 124
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 125
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 197
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 198
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 199
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 200
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 201
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 202
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 203
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 204
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 205
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 206
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 207
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 208
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 209
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 210
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 211
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 215
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 216
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 501
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 520
+        },
+        {
+          "file": "haloryva-ci/preview5/src/InputPipeline.cs",
+          "line": 187
+        },
+        {
+          "file": "haloryva-ci/preview5/src/InputPipeline.cs",
+          "line": 196
+        },
+        {
+          "file": "haloryva-ci/preview5/src/InputPipeline.cs",
+          "line": 210
+        },
+        {
+          "file": "haloryva-ci/preview5/src/InputState.cs",
+          "line": 94
+        },
+        {
+          "file": "haloryva-ci/preview5/src/InputState.cs",
+          "line": 97
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1047
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1049
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1083
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1084
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1095
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1559
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1560
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1561
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1605
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1609
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1610
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1612
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1613
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 183
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 185
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 187
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.toggleDrawing",
+      "fr": "Dessin : activer / arrêter",
+      "en": "Drawing: start / stop",
+      "es": "Dibujo: activar / detener",
+      "storage_value": "Dessin : activer / arrêter",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 116
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 530
+        },
+        {
+          "file": "haloryva-ci/preview5/src/InputPipeline.cs",
+          "line": 127
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 836
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1061
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1062
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 186
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.nextTool",
+      "fr": "Outil de dessin suivant",
+      "en": "Next drawing tool",
+      "es": "Siguiente herramienta de dibujo",
+      "storage_value": "Outil de dessin suivant",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 117
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 531
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1062
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1063
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 165
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 167
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.previousTool",
+      "fr": "Outil de dessin précédent",
+      "en": "Previous drawing tool",
+      "es": "Herramienta de dibujo anterior",
+      "storage_value": "Outil de dessin précédent",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 117
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 532
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1063
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.undo",
+      "fr": "Annuler le dernier trait",
+      "en": "Undo last stroke",
+      "es": "Deshacer el último trazo",
+      "storage_value": "Annuler le dernier trait",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 117
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 533
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 898
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 836
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1061
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.redo",
+      "fr": "Rétablir un trait",
+      "en": "Redo a stroke",
+      "es": "Rehacer un trazo",
+      "storage_value": "Rétablir un trait",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 118
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 534
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 899
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.clear",
+      "fr": "Effacer les dessins",
+      "en": "Clear drawings",
+      "es": "Borrar dibujos",
+      "storage_value": "Effacer les dessins",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 118
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 535
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 836
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 184
+        },
+        {
+          "file": "haloryva-ci/preview5/src/SelfTest.cs",
+          "line": 186
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.toggleTrail",
+      "fr": "Traînée : activer / arrêter",
+      "en": "Trail: enable / disable",
+      "es": "Estela: activar / desactivar",
+      "storage_value": "Traînée : activer / arrêter",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 118
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 536
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.toggleHalo",
+      "fr": "Halo : activer / arrêter",
+      "en": "Halo: enable / disable",
+      "es": "Halo: activar / desactivar",
+      "storage_value": "Halo : activer / arrêter",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 119
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 537
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.pauseEffects",
+      "fr": "Effets : pause / reprise",
+      "en": "Effects: pause / resume",
+      "es": "Efectos: pausar / reanudar",
+      "storage_value": "Effets : pause / reprise",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 119
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 538
+        },
+        {
+          "file": "haloryva-ci/preview5/src/InputPipeline.cs",
+          "line": 128
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 836
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.clickEffect",
+      "fr": "Effet de clic",
+      "en": "Click effect",
+      "es": "Efecto de clic",
+      "storage_value": "Effet de clic",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 119
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 539
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.nextTrail",
+      "fr": "Traînée suivante",
+      "en": "Next trail",
+      "es": "Siguiente estela",
+      "storage_value": "Traînée suivante",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 120
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 540
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "action.openSettings",
+      "fr": "Ouvrir les réglages",
+      "en": "Open settings",
+      "es": "Abrir los ajustes",
+      "storage_value": "Ouvrir les réglages",
+      "storage_value_must_not_be_translated": true,
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Config.cs",
+          "line": 120
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 545
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "buttons.noLongAction",
+      "fr": "Aucun",
+      "en": "None",
+      "es": "Ninguna",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 103
+        },
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 513
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 296
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 297
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1047
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1049
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1061
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1062
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1074
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1083
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "window.minimize",
+      "fr": "Réduire",
+      "en": "Minimize",
+      "es": "Minimizar",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 347
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "window.maximize",
+      "fr": "Agrandir",
+      "en": "Maximize",
+      "es": "Maximizar",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 348
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "window.closeHint",
+      "fr": "Fermer (Haloryva reste actif près de l'horloge)",
+      "en": "Close (Haloryva stays active near the clock)",
+      "es": "Cerrar (Haloryva sigue activo junto al reloj)",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 349
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "profile.title",
+      "fr": "Profils et sauvegardes",
+      "en": "Profiles and backups",
+      "es": "Perfiles y copias de seguridad",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1242
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "profile.subtitle",
+      "fr": "Compatible avec tes anciens réglages JSON.",
+      "en": "Compatible with your existing JSON settings.",
+      "es": "Compatible con tus ajustes JSON anteriores.",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1242
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "profile.export",
+      "fr": "Exporter mon profil",
+      "en": "Export my profile",
+      "es": "Exportar mi perfil",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1243
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "profile.import",
+      "fr": "Importer un profil",
+      "en": "Import a profile",
+      "es": "Importar un perfil",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1255
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "profile.openFolder",
+      "fr": "Ouvrir le dossier des réglages",
+      "en": "Open the settings folder",
+      "es": "Abrir la carpeta de ajustes",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1267
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "profile.reset",
+      "fr": "Réinitialiser la configuration",
+      "en": "Reset settings",
+      "es": "Restablecer los ajustes",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 1272
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "profile.custom",
+      "fr": "Personnalisé",
+      "en": "Custom",
+      "es": "Personalizado",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 205
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+          "line": 670
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tray.effects",
+      "fr": "Effets actifs",
+      "en": "Effects enabled",
+      "es": "Efectos activados",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 891
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1372
+        },
+        {
+          "file": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+          "line": 1375
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tray.settings",
+      "fr": "Réglages...",
+      "en": "Settings...",
+      "es": "Ajustes...",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 894
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tray.recenterHalo",
+      "fr": "Recentrer le halo (Ctrl+Alt+H)",
+      "en": "Recenter halo (Ctrl+Alt+H)",
+      "es": "Centrar el halo (Ctrl+Alt+H)",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 895
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tray.annotationMode",
+      "fr": "Mode annotation (Ctrl+Alt+D)",
+      "en": "Annotation mode (Ctrl+Alt+D)",
+      "es": "Modo de anotación (Ctrl+Alt+D)",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 892
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tray.clear",
+      "fr": "Effacer les annotations",
+      "en": "Clear annotations",
+      "es": "Borrar las anotaciones",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 900
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tray.export",
+      "fr": "Exporter les dessins en PNG...",
+      "en": "Export drawings as PNG...",
+      "es": "Exportar dibujos como PNG...",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 901
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "tray.quit",
+      "fr": "Quitter Haloryva",
+      "en": "Quit Haloryva",
+      "es": "Salir de Haloryva",
+      "origin": "existing_source_label",
+      "source_occurrences": [
+        {
+          "file": "haloryva-ci/preview5/src/Controller.cs",
+          "line": 903
+        }
+      ],
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "language.title",
+      "fr": "Langue",
+      "en": "Language",
+      "es": "Idioma",
+      "origin": "proposed",
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "language.french",
+      "fr": "Français",
+      "en": "Français",
+      "es": "Français",
+      "origin": "proposed",
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "language.english",
+      "fr": "English",
+      "en": "English",
+      "es": "English",
+      "origin": "proposed",
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "language.spanish",
+      "fr": "Español",
+      "en": "Español",
+      "es": "Español",
+      "origin": "proposed",
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "language.restartNotice",
+      "fr": "La langue choisie sera utilisée au prochain lancement de Haloryva.",
+      "en": "Your selected language will be used the next time you start Haloryva.",
+      "es": "El idioma elegido se utilizará la próxima vez que inicies Haloryva.",
+      "origin": "proposed",
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "language.keepDrawingNotice",
+      "fr": "Tu peux continuer à dessiner. Ferme Haloryva quand tu as terminé pour appliquer la nouvelle langue au prochain lancement.",
+      "en": "You can keep drawing. When you are finished, quit Haloryva to apply the new language the next time it starts.",
+      "es": "Puedes seguir dibujando. Cuando termines, sal de Haloryva para aplicar el nuevo idioma la próxima vez que lo inicies.",
+      "origin": "proposed",
+      "review_status": "draft_translation_not_visually_validated"
+    },
+    {
+      "key": "language.saved",
+      "fr": "Choix de langue enregistré.",
+      "en": "Language preference saved.",
+      "es": "Preferencia de idioma guardada.",
+      "origin": "proposed",
+      "review_status": "draft_translation_not_visually_validated"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+HALORYVA STUDIO — CERTIFICATION ET VISUELS
+Préparé, non exécuté — 11 novembre 2026
+
+NOTES POUR L'ÉVALUATEUR MICROSOFT — BROUILLON EN ANGLAIS
+Update these notes to match the final package and language before submission.
+
+Haloryva Studio is a Windows desktop application for pointer effects and screen
+annotations. It requires no Haloryva account or login credentials.
+
+The runFullTrust capability is required because the package contains a Win32
+Windows Forms application. It uses desktop overlays, global mouse/keyboard
+hooks for user-configured shortcuts and mouse actions, a notification-area
+icon, and local settings and user-selected file exports. These functions run
+in the interactive user's desktop session. The application is not designed
+to require elevation or install a service or driver. It does not request the
+allowElevation capability.
+
+To inspect the current French interface:
+1. Start Haloryva from the Start menu. The Studio opens on the current display.
+2. Open Dessin > Défilement. Select Stylo and Rectangle; keep at least one tool.
+3. In Boutons souris, assign a supported button to Outil de dessin suivant.
+   A long-press action can be assigned separately. Use a middle or side button
+   available on the test mouse; avoid replacing a primary click unnecessarily.
+4. Use Dessiner to annotate; verify the chosen tools cycle as configured.
+5. Return to the Studio and use Annuler/Rétablir and Exporter PNG.
+6. Close the Studio. Haloryva remains accessible from its notification-area
+   icon; Quitter Haloryva exits the application completely.
+7. Relaunch it and inspect the saved selection and button assignments.
+The annotations are exported on a transparent background. The magnifier is
+a separate optional screen effect.
+No command line diagnostic mode or unsigned-installation procedure is needed
+for an ordinary Store installation.
+
+Do not claim these steps were performed by Microsoft's certification team.
+The current test package is a prototype identity, not the submission package.
+
+CAPACITÉ / CONTRÔLES RESTANTS
+runFullTrust est une capacité restreinte à justifier dans le dossier. Elle
+correspond au fonctionnement bureau à intégrité moyenne, pas à une demande de
+droits administrateur. L'acceptation finale appartient à Microsoft.
+Source : https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/app-capability-declarations
+
+WACK n'a pas été exécuté. Prévoir son contrôle sur le paquet final dans un
+environnement Windows distinct et autorisé disposant du kit approprié.
+Aucun logiciel ne doit être installé sur le PC principal pour cette préparation.
+La présence et la version du kit sur une machine GitHub restent à vérifier
+avant de promettre un contrôle automatisé. Conserver le rapport complet.
+Préparer aussi un essai de mise à jour sous la même identité et la conservation
+des profils ; le simple cycle installer/lancer/désinstaller ne le couvre pas.
+Le démarrage automatique reste un point séparé : la solution Windows empaquetée
+documentée est une extension windows.startupTask, à examiner avec le réglage
+existant ; aucune migration ou modification de ce code n'est réalisée ici.
+Source : https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-extensions
+
+VISUELS EXISTANTS — INVENTAIRE, PAS APPROBATION ARTISTIQUE
+- docs/Haloryva_Banniere_V01.png
+  Git blob ac02acc6f4ad0cb1645b9d459ace566fa76db1a2 ; 1549455 octets ; dimensions non vérifiées.
+  Contenu binaire non renvoyé par le connecteur ; dimensions et rendu non vérifiés.
+- docs/Haloryva_Logo_V01.png
+  Git blob 40615ef1992e5fcf3703092b8a53a2affd2a43cf ; 1396457 octets ; dimensions non vérifiées.
+  Contenu binaire non renvoyé par le connecteur ; dimensions et rendu non vérifiés.
+- haloryva-ci/Inputs/msix-layout/Assets/Square150x150Logo.png
+  Git blob d65cdd6c9ab12116aa7a4ab318408fc8f11bec1e ; 28131 octets ; 150 × 150 pixels.
+  Dimensions lues dans l'en-tête PNG ; rendu visuel non évalué pendant cette préparation.
+- haloryva-ci/Inputs/msix-layout/Assets/Square44x44Logo.png
+  Git blob 925c2a51c8fc484953480766ccbb06b7c0d7d01a ; 4676 octets ; 44 × 44 pixels.
+  Dimensions lues dans l'en-tête PNG ; rendu visuel non évalué pendant cette préparation.
+- haloryva-ci/Inputs/msix-layout/Assets/StoreLogo.png
+  Git blob 3a0b8aa6dfbcac9442b82b44c6f7127d757112c5 ; 5694 octets ; 50 × 50 pixels.
+  Dimensions lues dans l'en-tête PNG ; rendu visuel non évalué pendant cette préparation.
+Les petites icônes du paquet ne constituent pas des captures de fiche Store.
+Les images de marque existantes ne prouvent ni le rendu de la version finale
+ni les droits de chaque élément visuel ; vérifier origine et autorisations.
+Aucun nouveau visuel ou faux écran n'a été généré.
+
+PLAN DE CAPTURES RÉELLES À RÉALISER APRÈS LA VERSION FINALE
+Cible de travail proposée : 1920 × 1080, bureau neutre sans données personnelles.
+1. Accueil du Studio et halo : « Guidez le regard pendant vos présentations ».
+2. Dessin avec plusieurs annotations : « Dix outils pour expliquer à l'écran ».
+3. Défilement avec deux favoris : « Parcourez uniquement vos outils préférés ».
+4. Boutons souris : « Un clic court ou long pour chaque action ».
+5. Choix de langue : seulement lorsque la fonction est intégrée et validée.
+Faire les variantes de l'interface pour FR/EN/ES et vérifier les textes tronqués
+avant de préparer les fiches correspondantes. Ne pas réutiliser une capture
+française en la présentant comme une interface déjà traduite.
+
+Microsoft indique des captures PNG, 50 Mo maximum, au moins une capture pour
+la soumission et un minimum de 1366 × 768 pour Desktop. Les visuels sont à
+renseigner séparément par fiche linguistique. Ne pas agrandir une ancienne
+capture de recette 1024 × 768 pour en faire une preuve de qualité du produit final.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images

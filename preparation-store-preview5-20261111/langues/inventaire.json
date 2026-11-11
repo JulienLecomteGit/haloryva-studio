@@ -1,0 +1,196 @@
+{
+  "source_commit": "cfdb260c50bf771843065eff8eefadae24899f06",
+  "source_files_reviewed": 28,
+  "catalog_entries": 74,
+  "catalog_complete": false,
+  "language_feature_implemented": false,
+  "automatic_string_extraction_is_not_a_ui_audit": true,
+  "configuration_string_fields": [
+    {
+      "field": "ActivePreset",
+      "current_default": "",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ActivePresetSignature",
+      "current_default": "",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "RingShape",
+      "current_default": "Cercle",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "RingColor",
+      "current_default": "#38D6FF",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "RingColorMode",
+      "current_default": "Unie",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "RingColor2",
+      "current_default": "#AC68FF",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "TrailStyle",
+      "current_default": "Particules",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "TrailColorMode",
+      "current_default": "Dégradé",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "TrailColor",
+      "current_default": "#2BD9F4",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "TrailColor2",
+      "current_default": "#A475FF",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "TrailLogoPath",
+      "current_default": "",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ClickStyle",
+      "current_default": "Ondes",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "LeftColor",
+      "current_default": "#49E6B2",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "RightColor",
+      "current_default": "#FFB46D",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "CustomSound",
+      "current_default": "",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "KeyStyle",
+      "current_default": "Verre",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "AnnotationTool",
+      "current_default": "Stylo",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "DrawCursorColor",
+      "current_default": "#20DCE7",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "DrawCursorStyle",
+      "current_default": "Croix + anneau",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "DrawSmoothMode",
+      "current_default": "Formes assistées",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "AnnotationColor",
+      "current_default": "#FF5DA2",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonLeft",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonRight",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonMiddle",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonX1",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonX2",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonLeftLong",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonRightLong",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonMiddleLong",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonX1Long",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "ButtonX2Long",
+      "current_default": "Normal",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    },
+    {
+      "field": "StudioAccent",
+      "current_default": "Aurora",
+      "rule": "Review individually. Preserve stored identity/value; only UI captions are candidates for translation."
+    }
+  ],
+  "review_priority": [
+    "PremiumStudioForm.cs",
+    "PremiumWidgets.cs",
+    "StudioControls.cs",
+    "Controller.cs",
+    "ToolToast.cs",
+    "TextPrompt.cs",
+    "ColorWheelPopup.cs",
+    "Splash.cs",
+    "Brand.cs",
+    "Program.cs",
+    "Config.cs",
+    "ErrorReporting.cs"
+  ],
+  "prepared_checks": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7",
+    "L8",
+    "L9"
+  ],
+  "executed_localization_checks": []
+}

@@ -1,0 +1,75 @@
+HALORYVA STUDIO — DOSSIER MICROSOFT STORE
+Préparation uniquement — 11 novembre 2026 — aucune soumission.
+
+DÉCISIONS DÉJÀ RETENUES
+- Dépôt GitHub public et diffusion Microsoft Store par MSIX.
+- Application gratuite ; droits actuels conservés : © 2026 Julien Lecomte.
+- Aucune licence open source ajoutée. Visibilité du code et gratuité du produit
+  ne définissent pas à elles seules les permissions de réutilisation.
+- Trois langues demandées : français, anglais, espagnol. À ce stade seule
+  l'interface française existe ; les deux autres fiches sont des brouillons.
+- L'application reste une application de bureau Win32/.NET Framework x64.
+
+CONTENU PRÉPARÉ
+Nom proposé : Haloryva Studio (disponibilité et réservation non vérifiées).
+Éditeur proposé : Julien Lecomte (à faire correspondre au compte vérifié).
+Catégorie proposée : Productivité ; application, pas jeu.
+Prix souhaité : gratuit ; pas d'achat intégré ou d'abonnement identifié dans
+les sources consultées. Marchés : à choisir dans Partner Center, sans déduire
+les pays de diffusion des trois langues.
+Site du projet : https://github.com/JulienLecomteGit/haloryva-studio
+Support proposé : https://github.com/JulienLecomteGit/haloryva-studio/issues
+Ce dernier choix reste à approuver comme canal public ; ne pas y demander de
+profils contenant des chemins personnels. Adresse de contact : non fournie.
+Public visé proposé : utilisateurs présentant, expliquant ou annotant un écran.
+Classification IARC : questionnaire non rempli, aucune classe d'âge inventée.
+Configuration recommandée à préparer : Windows 11, PC x64 ; autres systèmes
+ou architectures à annoncer seulement selon preuves et paquet retenu.
+La preuve MSIX actuelle sur ARM64 concerne l'émulation x64, pas un binaire ARM64.
+Conditions d'utilisation : conserver les droits actuels et faire approuver les
+conditions de distribution du binaire/conditions applicables au Store avant
+soumission. Aucun texte existant du dépôt n'est remplacé.
+
+COÛT ET SIGNATURE — VOIE RETENUE
+Microsoft décrit une nouvelle inscription développeur sans frais via
+storedeveloper.microsoft.com. Le type de compte doit correspondre à l'activité :
+personnel pour un projet personnel admissible, entreprise si l'activité l'exige.
+L'état du compte utilisateur n'a pas été consulté.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account
+
+Le Store signe les MSIX/AppX après certification ; pas d'achat de certificat
+pour cette voie. Il ne signe pas un EXE/MSI hébergé sur GitHub. La distribution
+MSIX hors Store exige sa propre signature. Prévoir à terme un lien GitHub vers
+le Store pour l'installation simple ; aucune promesse de signature de 2.7.0.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/package-version-numbering
+
+IDENTITÉ DU PAQUET
+Reporter les valeurs exactes de Partner Center dans identite-store.a-renseigner.json :
+Package/Identity/Name, Publisher, PublisherDisplayName, nom réservé, ProductId.
+Le fichier contient des null explicites tant que ces données sont inconnues.
+Ne pas réutiliser HaloryvaStudio.Preview5UnsignedTest ni son Publisher avec OID
+d'installation non signée. Le paquet de test ne doit pas être soumis comme produit.
+Proposition pour une première version finale : 2.7.1.0 si la version produit
+reste 2.7.1 et si l'identité finale n'a pas déjà reçu cette version. À confirmer
+avec l'historique Partner Center ; aucune version finale imposée aujourd'hui.
+Le nom, l'architecture, les OS et les langues devront correspondre à la réalité
+testée. Ne pas déclarer EN/ES tant que l'application ne les fournit pas.
+
+PRÉREQUIS AVANT SOUMISSION
+- Compte actif et nom réservé ; identités définitives renseignées.
+- Décision sur les langues intégrées à la version finale.
+- Traitement/validation du démarrage automatique du paquet ; migration et
+  mise à jour selon la portée annoncée ; voir bilan pour les limites connues.
+- URL accessible de confidentialité et moyen de support ; textes approuvés.
+  Une politique est nécessaire pour les produits Win32/Desktop Bridge.
+  Source : https://learn.microsoft.com/en-us/windows/apps/publish/store-policies
+- Fiche exacte, captures réelles, droits des ressources et questionnaire IARC.
+- Paquet final distinct, contrôlé avec le Windows App Certification Kit (WACK).
+- Justification runFullTrust et examen de certification Microsoft.
+  MakeAppx valide la structure ; il ne remplace ni WACK ni la certification.
+  Source : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/create-app-submission
+
+ACTIONS QUE CETTE PRÉPARATION N'A PAS FAITES
+Création de compte, connexion, vérification d'identité, réservation, modification
+de droits, validation IARC, fabrication finale, WACK, signature, soumission,
+publication ou installation. Ces états restent « à faire », pas « réussis ».

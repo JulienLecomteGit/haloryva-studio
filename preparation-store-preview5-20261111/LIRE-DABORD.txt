@@ -1,0 +1,35 @@
+HALORYVA STUDIO — DOSSIER DE PRÉPARATION
+11 novembre 2026 — preview.5 conservée
+Base immuable : cfdb260c50bf771843065eff8eefadae24899f06
+
+Ce dossier rassemble les preuves existantes et prépare le Microsoft Store ainsi
+que les langues demandées : français, anglais, espagnol.
+Il n'est ni une nouvelle version, ni une certification, ni une soumission.
+
+À lire dans cet ordre :
+1. BILAN-GLOBAL-preview5.txt : résultats directs, héritage et limites.
+2. DOSSIER-MICROSOFT-STORE.txt : contenu préparé et décisions encore nécessaires.
+3. FICHES-STORE-fr-en-es.txt : textes réutilisables, non soumis.
+4. CONFIDENTIALITE-brouillon.txt : politique proposée et justification technique.
+5. CERTIFICATION-et-CAPTURES.txt : notes évaluateur, visuels, recette restante.
+6. LANGUES-PREPARATION.txt : intégration proposée dans une future preview.6.
+7. langues/catalogue-initial.fr-en-es.json : première base de traduction, partielle.
+8. identite-store.a-renseigner.json et preuves-et-sources.json : champs et références.
+
+Décision de préparation : avancer vers une prochaine préversion trilingue avant
+de figer les captures et la fiche définitive du Store. Preview.5 reste en français.
+Aucun résultat acquis n'a été relancé pendant cette consolidation.
+Aucune modification de l'application, de ses binaires, de ses pilotes, workflows,
+préversions ou de main ; aucune installation ni écriture sur le PC utilisateur.
+Seuls des documents sont ajoutés sur une branche de préparation distincte.
+Aucune signature, release, soumission Store ou fusion vers main.
+
+Le choix français/anglais/espagnol est confirmé par l'auteur. L'implantation,
+les traductions complètes, la validation visuelle et les essais multilingues
+restent à réaliser ; le catalogue ne doit pas être présenté comme intégré.
+
+Prochaine action :
+Intégrer ces trois langues dans une nouvelle preview.6, puis vérifier seulement
+les comportements touchés et la persistance MSIX sur GitHub. Conserver les
+préversions, main et le PC ; ne pas relancer les 195 contrôles historiques.
+Attendre une demande explicite avant de lancer cette étape.

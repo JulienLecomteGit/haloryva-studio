@@ -1,0 +1,131 @@
+HALORYVA STUDIO — TEXTES DE FICHE STORE
+Brouillons du 11 novembre 2026 — aucune fiche soumise.
+Les descriptions ci-dessous correspondent aux fonctions de preview.5.
+FR est la seule langue actuellement intégrée à l'application.
+Les textes EN/ES sont préparés pour la prochaine version multilingue ; ils ne
+constituent pas une annonce de prise en charge de ces langues par preview.5.
+Versions, configurations requises, captures et nouveauté « choix de langue »
+seront actualisées après validation de la version finale.
+
+FRANÇAIS — fr-FR
+Titre : Haloryva Studio
+Résumé :
+Rendez votre curseur visible et annotez votre écran pendant vos présentations.
+
+Description :
+Haloryva Studio vous aide à guider le regard pendant une démonstration, un cours
+ou une présentation. Personnalisez le halo du curseur, ses traînées et les effets
+de clic, puis dessinez directement sur votre écran.
+
+Choisissez parmi dix outils : stylo, surligneur, ligne, rectangle, ellipse,
+flèche, flèche libre, auto-formes, numéro et texte. Ajustez la couleur,
+l'épaisseur et le lissage, annulez ou rétablissez un trait, puis exportez vos
+annotations en PNG sur fond transparent.
+
+Attribuez des actions aux boutons de votre souris, avec un appui court et un
+appui long. Sélectionnez les outils que vous souhaitez parcourir : deux outils
+favoris suffisent pour alterner entre eux, sans parcourir toute la liste.
+
+Le Studio rassemble les réglages de présentation, la loupe, le focus et
+l'affichage des raccourcis. Les profils s'enregistrent localement et peuvent
+être exportés ou importés au format JSON. L'application peut rester accessible
+depuis son icône près de l'horloge lorsque vous fermez le Studio.
+
+Fonctionnalités :
+- Halo du curseur, traînées et effets de clic personnalisables.
+- Dix outils d'annotation, lissage et formes assistées.
+- Liste personnelle des outils parcourus par les boutons.
+- Actions par appui court ou long ; annuler et rétablir.
+- Export PNG des annotations et sauvegarde des profils.
+
+Nouveautés proposées pour la version finale issue de preview.5 :
+Sélection mémorisée des outils parcourus par les boutons, correction du clic
+court et du placement initial du Studio, conservation des réglages d'un trait.
+Ne pas ajouter « disponible en trois langues » avant intégration et recette.
+
+Mots-clés proposés (7) :
+présentation ; annotation ; curseur ; dessin ; halo ; démonstration ; formation
+
+ENGLISH — en-US — DRAFT FOR THE FUTURE LOCALIZED VERSION
+Title: Haloryva Studio
+Short description:
+Make your pointer easy to follow and annotate your screen during presentations.
+
+Description:
+Haloryva Studio helps you guide attention during a demo, a lesson or a
+presentation. Customize the pointer halo, trails and click effects, then draw
+directly on your screen.
+
+Choose from ten tools: pen, highlighter, line, rectangle, ellipse, arrow,
+freehand arrow, auto shapes, number and text. Adjust color, thickness and
+smoothing, undo or redo a stroke, and export your annotations as a PNG with
+a transparent background.
+
+Assign actions to your mouse buttons for both short clicks and long presses.
+Choose which drawing tools the buttons cycle through: select two favorites
+to switch between them without cycling through the full list.
+
+The Studio brings together presentation settings, a magnifier, a focus effect
+and shortcut display. Profiles are saved locally and can be exported or
+imported as JSON. After you close the Studio window, the app can remain
+available from its icon near the clock.
+
+Features:
+- Customizable pointer halo, trails and click effects.
+- Ten annotation tools, smoothing and assisted shapes.
+- A personal selection of tools to cycle through with mouse buttons.
+- Short-click and long-press actions; undo and redo.
+- PNG annotation export and saved settings profiles.
+
+Proposed release notes:
+Saved selection of tools for button cycling, fixes for short clicks and the
+Studio's initial placement, and consistent settings throughout each stroke.
+Add language support only after the localized build has passed its checks.
+
+Suggested keywords (7):
+presentation; annotation; pointer; drawing; halo; demonstration; teaching
+
+ESPAÑOL — es-ES — BORRADOR PARA LA FUTURA VERSIÓN TRADUCIDA
+Título: Haloryva Studio
+Descripción breve:
+Haz que tu cursor sea fácil de seguir y anota en pantalla durante tus presentaciones.
+
+Descripción:
+Haloryva Studio te ayuda a guiar la atención durante una demostración, una clase
+o una presentación. Personaliza el halo del cursor, las estelas y los efectos
+de clic, y dibuja directamente en la pantalla.
+
+Elige entre diez herramientas: lápiz, resaltador, línea, rectángulo, elipse,
+flecha, flecha a mano alzada, formas automáticas, número y texto. Ajusta el color,
+el grosor y el suavizado, utiliza las opciones de deshacer y rehacer y exporta tus anotaciones
+como PNG con fondo transparente.
+
+Asigna acciones a los botones del ratón para clics cortos y pulsaciones largas.
+Elige las herramientas de dibujo que recorrerán los botones: selecciona dos
+favoritas para alternar entre ellas sin pasar por toda la lista.
+
+El Studio reúne los ajustes de presentación, una lupa, un efecto de enfoque
+y la visualización de atajos. Los perfiles se guardan localmente y se pueden
+exportar o importar en formato JSON. Al cerrar la ventana del Studio, puedes
+seguir accediendo a la aplicación desde su icono junto al reloj.
+
+Funciones:
+- Halo del cursor, estelas y efectos de clic personalizables.
+- Diez herramientas de anotación, suavizado y formas asistidas.
+- Selección personal de herramientas para recorrer con los botones del ratón.
+- Acciones de clic corto y pulsación larga; deshacer y rehacer.
+- Exportación de anotaciones a PNG y perfiles de ajustes guardados.
+
+Novedades propuestas:
+Selección guardada de herramientas para los botones, correcciones del clic corto
+y de la posición inicial del Studio, y ajustes constantes durante cada trazo.
+Añadir la disponibilidad de idiomas solo después de validar la versión traducida.
+
+Palabras clave propuestas (7):
+presentación; anotación; cursor; dibujo; halo; demostración; formación
+
+CHAMPS COMMUNS NON DÉCIDÉS
+Disponibilité du nom ; identité éditeur vérifiée ; version finale ; URL de
+confidentialité et contact ; classification IARC ; marchés ; limites OS finales.
+Aucun texte ne doit promettre certification, signature, fonctionnement sur
+toutes les applications ou compatibilité avec des écrans protégés non testés.

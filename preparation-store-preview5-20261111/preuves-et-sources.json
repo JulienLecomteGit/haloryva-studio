@@ -1,0 +1,214 @@
+{
+  "prepared_on": "2026-11-11",
+  "repository": "https://github.com/JulienLecomteGit/haloryva-studio",
+  "base_commit": "cfdb260c50bf771843065eff8eefadae24899f06",
+  "base_tree": "0d92d5337c94bab0704072c4cb73fa4cfc16a241",
+  "protected_branch_heads_before": [
+    {
+      "branch": "haloryva-2.7.0-c4",
+      "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+    },
+    {
+      "branch": "haloryva-tests-preview2",
+      "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+    },
+    {
+      "branch": "haloryva-tests-preview3",
+      "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+    },
+    {
+      "branch": "haloryva-tests-preview4",
+      "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+    },
+    {
+      "branch": "haloryva-tests-preview5-msix",
+      "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+    },
+    {
+      "branch": "haloryva-tests-preview5",
+      "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+    },
+    {
+      "branch": "main",
+      "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+    },
+    {
+      "branch": "release/2.7.0-stable",
+      "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+    }
+  ],
+  "application_version": "2.7.1-preview.5",
+  "application_sha256": "E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40",
+  "msix_test_sha256": "AE938759B122925AF6244885C72E8E4C0695A93E37E3073148C69D22B82F2FD7",
+  "application_tests_executed_during_preparation": [],
+  "new_builds": 0,
+  "new_signatures": 0,
+  "submissions": 0,
+  "releases": 0,
+  "local_file_writes": 0,
+  "local_installs": 0,
+  "document_checks_only": [
+    "JSON syntax and consistency",
+    "FR/EN/ES keys nonempty",
+    "Tool/action storage identities match current source",
+    "Only new dossier paths added to parent tree",
+    "Protected branch heads compared before and after"
+  ],
+  "direct_preview5_evidence": [
+    {
+      "run_id": 42944347258,
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42944347258",
+      "overall_conclusion": "failure",
+      "successful_phases": "Build and 215 feature assertions per observer variant",
+      "limitation": "Later reload harness phase refused reused directory"
+    },
+    {
+      "run_id": 42944896117,
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42944896117",
+      "overall_conclusion": "success",
+      "successful_phases": "45 reload assertions per observer variant; same binary"
+    },
+    {
+      "run_id": 42946758266,
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42946758266",
+      "job_id": 130281308480,
+      "overall_conclusion": "success",
+      "successful_phases": "Windows 11 ARM64, x64 emulation: MSIX structure, installation, 3 activations and clean exits, 2 profile-preserving relaunches, removal"
+    }
+  ],
+  "inherited_runs_on_older_binaries": [
+    42931395281,
+    42934182084,
+    42937850681,
+    42940097691,
+    42942640399
+  ],
+  "observed_failures_documented": [
+    {
+      "run_id": 42940698728,
+      "cause": "Studio initial placement; application fixed in preview.4"
+    },
+    {
+      "run_id": 42944347258,
+      "cause": "Harness reload directory; fixed without rebuild"
+    },
+    {
+      "run_id": 42946291492,
+      "cause": "Harness/manifest UTF-8 handling; fixed without rebuild"
+    }
+  ],
+  "test_artifacts": {
+    "build": 13821833032,
+    "msix_success": 13822194484,
+    "expiry_reported": "2026-11-25",
+    "binaries_durably_archived_this_task": false
+  },
+  "durable_evidence_paths": [
+    "BILAN-preview5-defilement-20261111.txt",
+    "BILAN-preview5-MSIX-20261111.txt",
+    "BILAN-preview4-placement-20261111.txt",
+    "BILAN-preview3-clic-court-20261111.txt",
+    "BILAN-preview3-AltGr-dessin-MSIX-20261111.txt",
+    "BILAN-preview3-outils-annuler-export-20261111.txt",
+    "BILAN-preview3-studio-lissage-formes-20261111.txt",
+    "preuves-preview5-defilement-20261111/",
+    "preuves-preview5-msix-20261111/"
+  ],
+  "static_privacy_review": {
+    "source_directory": "haloryva-ci/preview5/src",
+    "source_file_count": 28,
+    "explicit_network_api_found": false,
+    "network_runtime_capture_executed": false,
+    "limits": "Static inspection is not an exhaustive security audit or proof about external Windows/Store/sync services."
+  },
+  "asset_inventory": [
+    {
+      "path": "docs/Haloryva_Banniere_V01.png",
+      "git_blob": "ac02acc6f4ad0cb1645b9d459ace566fa76db1a2",
+      "bytes": 1549455,
+      "width": null,
+      "height": null,
+      "status": "Contenu binaire non renvoyé par le connecteur ; dimensions et rendu non vérifiés."
+    },
+    {
+      "path": "docs/Haloryva_Logo_V01.png",
+      "git_blob": "40615ef1992e5fcf3703092b8a53a2affd2a43cf",
+      "bytes": 1396457,
+      "width": null,
+      "height": null,
+      "status": "Contenu binaire non renvoyé par le connecteur ; dimensions et rendu non vérifiés."
+    },
+    {
+      "path": "haloryva-ci/Inputs/msix-layout/Assets/Square150x150Logo.png",
+      "git_blob": "d65cdd6c9ab12116aa7a4ab318408fc8f11bec1e",
+      "bytes": 28131,
+      "width": 150,
+      "height": 150,
+      "status": "Dimensions lues dans l'en-tête PNG ; rendu visuel non évalué pendant cette préparation."
+    },
+    {
+      "path": "haloryva-ci/Inputs/msix-layout/Assets/Square44x44Logo.png",
+      "git_blob": "925c2a51c8fc484953480766ccbb06b7c0d7d01a",
+      "bytes": 4676,
+      "width": 44,
+      "height": 44,
+      "status": "Dimensions lues dans l'en-tête PNG ; rendu visuel non évalué pendant cette préparation."
+    },
+    {
+      "path": "haloryva-ci/Inputs/msix-layout/Assets/StoreLogo.png",
+      "git_blob": "3a0b8aa6dfbcac9442b82b44c6f7127d757112c5",
+      "bytes": 5694,
+      "width": 50,
+      "height": 50,
+      "status": "Dimensions lues dans l'en-tête PNG ; rendu visuel non évalué pendant cette préparation."
+    }
+  ],
+  "official_sources_consulted": [
+    {
+      "topic": "Free developer onboarding",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account"
+    },
+    {
+      "topic": "Package identity and Store signing; distinct from EXE/MSI and external MSIX distribution",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/package-version-numbering"
+    },
+    {
+      "topic": "Store signing",
+      "url": "https://learn.microsoft.com/en-us/windows/msix/package/sign-msix-package-guide"
+    },
+    {
+      "topic": "Submission fields",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/create-app-submission"
+    },
+    {
+      "topic": "Privacy and localization policies",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/store-policies"
+    },
+    {
+      "topic": "Screenshots",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images"
+    },
+    {
+      "topic": "Full-trust capability",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/app-capability-declarations"
+    },
+    {
+      "topic": "Packaged startup tasks",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-extensions"
+    },
+    {
+      "topic": "Framework resource localization",
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/system.resources.resourcemanager?view=netframework-4.8"
+    }
+  ],
+  "open_items": [
+    "Localization implementation and visual review",
+    "Partner Center identity and approved contact/terms",
+    "Packaged autostart behavior",
+    "Stable 2.7.0 to MSIX migration and package update",
+    "Windows 11 x64 native/physical coverage as needed",
+    "Final manifest and WACK",
+    "Final screenshots/assets",
+    "Microsoft certification"
+  ]
+}

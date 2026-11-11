@@ -1,0 +1,105 @@
+HALORYVA STUDIO — PRÉPARATION FRANÇAIS / ANGLAIS / ESPAGNOL
+Demande confirmée par l'auteur — 11 novembre 2026
+État : conception préparée et premier catalogue rédigé. Aucune intégration,
+compilation ni recette multilingue exécutée. Preview.5 reste inchangée.
+
+COMPORTEMENT PROPOSÉ POUR UNE FUTURE PREVIEW.6
+Dans Préférences, ajouter « Langue » avec les noms toujours reconnaissables :
+Français / English / Español.
+Enregistrer une valeur stable UiLanguage : fr, en ou es.
+Ancien profil, valeur absente ou inconnue : français, pour préserver le
+comportement actuel. Les variantes régionales peuvent être normalisées vers
+la langue prise en charge (fr-FR -> fr, en-US -> en, es-ES -> es).
+
+Première étape conseillée : appliquer le choix au prochain lancement.
+Afficher un message clair ; ne jamais fermer de force une session de dessin
+ni perdre ses annotations pour changer de langue. La valeur doit survivre à
+l'arrêt normal, à l'import/export du profil et au lancement MSIX.
+Pas de modification des préférences régionales de Windows ni de la disposition
+du clavier. Les formats de stockage restent stables ; choisir une langue ne
+doit pas changer la lecture des nombres/couleurs ou la logique des raccourcis.
+
+PRINCIPE ESSENTIEL : TRADUIRE L'AFFICHAGE, PAS LES VALEURS ENREGISTRÉES
+Les noms historiques servent parfois de clés métier :
+- DrawingTools.Names et DrawingToolCycle : « Stylo », « Forme libre », etc.
+- AnnotationTool, DrawSmoothMode, actions de boutons court/long.
+- Types de halo, traînée et curseur, sons, presets et autres choix sauvegardés.
+Le changement de langue ne doit pas remplacer ces valeurs par Pen/Lápiz,
+Auto shapes/Formas automáticas, etc., dans le JSON ou les switch du moteur.
+Le catalogue comporte donc des clés sémantiques distinctes et, pour les outils
+et actions, un storage_value correspondant exactement à la valeur actuelle.
+
+Préserver notamment :
+- Config.ButtonActions : 13 valeurs, dont Normal ; « Aucun » est un libellé
+  particulier d'appui long, actuellement converti vers Normal.
+- DrawingTools.Names : 10 valeurs ; Captions est déjà séparé des valeurs.
+- DrawSmoothMode : Désactivé, Lissage léger, Formes assistées.
+- ActivePresetSignature : vérifier que la signature repose sur les paramètres
+  et non sur les nouveaux libellés traduits ; ne pas renommer les presets stockés.
+- X1/X2, identités natives, raccourcis, numéros de touche, couleurs et fichiers.
+
+INTÉGRATION CONSEILLÉE — SANS NOUVELLE DÉPENDANCE
+Le projet est en C# compatible avec sa compilation .NET Framework existante
+et dessine une grande partie du Studio lui-même. La traduction des seules
+ressources d'un formulaire ne couvrira pas toute l'interface.
+
+Préparer un service de libellés à clés stables avec repli français. Les catalogues
+peuvent être incorporés comme ressources au binaire et lus avec les outils .NET
+déjà utilisés ; ne pas ajouter de service réseau de traduction ou de dépendance
+externe. La bibliothèque ResourceManager est une option native pour les ressources
+localisées ; le format JSON présent dans ce dossier est un format de préparation,
+pas une décision imposant une nouvelle bibliothèque.
+Source : https://learn.microsoft.com/en-us/dotnet/api/system.resources.resourcemanager?view=netframework-4.8
+
+Charger les ressources une seule fois et conserver les lectures rapides.
+Ne pas faire d'accès disque, traduction, ou reconstruction de fenêtre dans les
+hooks ni pendant le rendu d'un trait. Réutiliser les identités capturées au début
+du trait. Sélectionner la culture d'interface sans modifier la culture de données.
+
+Inventaire des surfaces à couvrir :
+- PremiumStudioForm.cs : navigation, sous-titres, cartes, boutons, choix,
+  fenêtres fichier, noms accessibles, notices, profils et À propos.
+- PremiumWidgets.cs, StudioControls.cs : contrôles personnalisés, listes,
+  légendes et textes affichés. PremiumSelect doit distinguer valeur et libellé ;
+  PremiumChoiceGrid le permet déjà. Auditer chaque appel, pas seulement les outils.
+- Controller.cs : menu près de l'horloge, export, erreurs, affichage des touches.
+- ToolToast.cs : captions des 10 outils, indication cohérente avec le choix réel.
+- TextPrompt.cs, ColorWheelPopup.cs, Splash.cs, Brand.cs : dialogues et informations.
+- Program.cs, Config.cs, ErrorReporting.cs : alertes de démarrage, profil invalide,
+  sauvegarde et erreurs. Prévoir les messages pouvant précéder le chargement
+  complet des réglages, sans multiplier les chargements destructifs.
+- Constantes de protocole, catégories des journaux, arguments de diagnostic :
+  rester stables ; les messages de test ne sont pas des valeurs traduites métier.
+
+Le catalogue initial est PARTIEL. Il couvre navigation, outils, actions,
+défilement et choix de langue, plus quelques commandes générales.
+Il ne constitue pas l'extraction exhaustive des textes des 28 sources.
+Les longues descriptions, historiques, contrôles secondaires, dialogues et
+messages techniques visibles restent à extraire et traduire avant de déclarer
+l'interface entièrement multilingue. Faire relire EN/ES, puis vérifier à l'écran.
+
+RECETTE CIBLÉE FUTURE — PRÉPARÉE, AUCUN DE CES TESTS EXÉCUTÉ
+L1. Compilation nouvelle preview.6 ; conservation par empreintes des sources
+    hors périmètre. Ne pas reconstruire ou remplacer preview.5.
+L2. Clés identiques/non vides, repli français, caractères accentués, raccourcis
+    d'accès, formats avec paramètres et absence de valeurs métier traduites.
+L3. Chaque langue : démarrage normal, 8 pages, menus, dialogues, toast, noms
+    accessibles, tailles de contrôles et textes longs à l'échelle retenue.
+L4. Sélection 2 outils, suivant/précédent, import/export et ancien profil :
+    mêmes valeurs persistées dans les trois langues ; affichage traduit.
+L5. Changement de langue demandé pendant un trait : session et trait préservés,
+    choix mémorisé, langue appliquée au prochain lancement.
+L6. Clic court/long et dessin touchés par le nouveau sélecteur : tests ciblés
+    avec/sans observateur selon les chemins modifiés, pas les 195 historiques.
+L7. AltGr/dispositions clavier FR/EN/ES : distinguer langue d'interface et
+    disposition de saisie. Ne pas présenter l'essai AltGr français de preview.3
+    comme une preuve du clavier espagnol.
+L8. MSIX nouvelle préversion : lancement, mémorisation/reprise de la langue
+    et du choix des outils, arrêt normal. Réutiliser le kit après adaptation
+    ciblée et conserver les artefacts précédents.
+L9. Actualiser fiche, manifeste et captures EN/ES seulement après réussite ;
+    les ressources .resx/JSON ne suffisent pas à elles seules à localiser les
+    métadonnées Store ou les langues déclarées dans le manifeste MSIX.
+
+Une régression constatée devra être corrigée dans cette nouvelle préversion.
+Les tests déjà acquis restent des références ; aucune relance globale prévue.

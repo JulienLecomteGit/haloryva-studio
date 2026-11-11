@@ -1,0 +1,149 @@
+HALORYVA STUDIO — BILAN GLOBAL PREVIEW.5
+Consolidation documentaire du 11 novembre 2026
+Résultats antérieurs consultés ; aucun nouvel essai applicatif exécuté.
+
+CONCLUSION
+Preview.5 est validée dans le périmètre ciblé documenté ci-dessous, y compris
+la conservation du choix des outils dans le MSIX de test après redémarrage.
+Aucun défaut applicatif restant n'est constaté dans ces essais réussis.
+Elle n'est pas certifiée Microsoft Store et ne dispose pas encore de langues
+anglaise et espagnole. Les limites décrites ici restent explicites.
+
+IDENTITÉ DU PRODUIT TESTÉ
+Version : 2.7.1-preview.5 ; taille : 388096 octets.
+SHA-256 : E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40
+Source de compilation : 92302dbca043f87794a7eab8e792ff56e74c531c
+Run de compilation : 42944347258 ; artefact : 13821833032.
+Le même binaire a servi aux recettes fonctionnelles et au MSIX ; aucune
+recompilation n'a été nécessaire après les corrections de pilotes.
+
+VALIDÉ DIRECTEMENT SUR CE BINAIRE PREVIEW.5
+
+A. Choix des outils, gestes et sauvegarde — Windows Server 2025 x64, GitHub
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42944347258
+Phase fonctionnelle : 215 assertions réussies sans observateur et 215 avec.
+Jobs 130273567103 (off) et 130273566801 (on).
+Ce run reste globalement en ÉCHEC : sa seconde phase réutilisait un dossier
+d'essai que l'application exige neuf. Les 215 assertions par variante ont
+réellement réussi avant cet échec de préparation du rechargement.
+
+Couverture : Studio centré ; anciens profils ; normalisation des listes ;
+10 outils par défaut ; sélections par l'interface de 1, 2 et 3 outils ; maintien
+d'au moins un outil ; suivant/précédent, bouclage et entrée depuis un outil exclu ;
+boutons du milieu/X1/X2 ; clic court et appui long, dont maintien 1100 ms ;
+absence de clic parasite pour ces actions ; indicateur du véritable outil ;
+Auto-formes ; clavier Espace ; restauration de la liste complète ;
+réouverture du Studio, sauvegarde différée, export/import JSON.
+Pendant un trait tenu, le changement d'outil par X1 conserve l'outil, la couleur
+et l'épaisseur capturés ; le nouvel outil s'applique au trait suivant.
+
+B. Rechargement — même binaire, pilote corrigé uniquement
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42944896117
+45 assertions réussies sans observateur et 45 avec ; run entièrement réussi.
+Jobs 130275220762 (off), 130275220566 (on).
+Le JSON réellement sauvegardé par l'interface est copié à l'identique dans un
+nouveau dossier. Un nouveau processus charge ConfigStore et le contrôleur de
+production : sélection, affectations et gestes retrouvés ; arrêt propre.
+Cette phase utilise le pilote et ne constitue pas un lancement par Program.Main.
+Total A+B : 520 assertions réussies, comprenant préparation et arrêt ; ce ne
+sont ni 520 scénarios indépendants ni les 195 contrôles historiques.
+Le lanceur combiné réparé n'a pas été réexécuté intégralement : preuve répartie
+sur ces deux runs, sans relance de la phase fonctionnelle déjà acquise.
+
+C. Cycle MSIX — Windows 11 Enterprise ARM64 build 26200, x64 en émulation
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42946758266
+Job 130281308480 ; pilote 1834331217591f6480b7e6938677c8fd8aa8c243.
+Paquet de test non signé, 241871 octets :
+SHA-256 AE938759B122925AF6244885C72E8E4C0695A93E37E3073148C69D22B82F2FD7
+Identité HaloryvaStudio.Preview5UnsignedTest ; version 2.7.1.5 ; x64.
+Structure MakeAppx valide ; installation ; trois activations AppsFolder avec
+identité de paquet confirmée ; trois arrêts normaux code 0 ; désinstallation
+et absence d'enregistrement utilisateur vérifiée.
+Premier lancement : 10 outils par défaut. Puis reprise du profil réellement
+créé par la recette native ; deux relancements du paquet conservent
+Stylo/Rectangle/Auto-formes, boutons, outil actif, couleur, épaisseur et lissage.
+Le troisième lancement reprend le fichier écrit par le deuxième sans le recopier.
+SHA-256 du profil avant/après :
+E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696
+L'horodatage confirme la sauvegarde par l'application, pas seulement la présence
+d'un fichier d'entrée inchangé. Le profil du paquet réside dans LocalCache\Local\Haloryva.
+Il s'agit d'activations réelles de l'exécutable, complémentaires à B.
+L'installation d'essai utilise AllowUnsigned sur la machine GitHub, sans
+changement des protections, de certificat ni du mode développeur.
+
+Premier essai MSIX 42946291492 : erreur d'encodage UTF-8 du pilote PowerShell
+et lecture ANSI du manifeste ; le profil réel était correct. Correction du kit
+uniquement, puis run C réussi. Ce premier run n'est pas compté comme validé.
+
+VALIDATIONS HÉRITÉES — AUTRES BINAIRES, PAS DE RÉEXÉCUTION SUR PREVIEW.5
+- Preview.2 : 195 contrôles des entrées acquis lors de la préparation précédente,
+  conservés comme antécédent ; non réexécutés ni recomptés ici.
+- Preview.3, 42931395281 : correction du clic court, 35 assertions par variante
+  avec/sans observateur, gestes courts et appuis longs. Le rejeu souris est
+  séparé du thread des hooks.
+- Preview.3, 42934182084 : 50 assertions AltGr (clavier français @, €, #),
+  dessin et réglages capturés au début du trait.
+- Preview.3, 42937850681 : 173 assertions autres outils, annuler/rétablir,
+  export. Ce premier pilote d'export appelle le moteur ; les essais Studio
+  suivants exercent également le bouton d'export de l'interface.
+- Preview.3, 42940097691 : 274 assertions Studio (98), lissage (86),
+  formes assistées (90). Ce pilote recentrait la fenêtre : il ne prouvait
+  pas son placement initial normal.
+- Preview.3, 42940698728 : défaut réel de placement, fenêtre hors zone utile.
+- Preview.4, 42942640399 : défaut corrigé ; deux lancements normaux centrés
+  et 106 assertions Studio, sans recentrage par le pilote.
+- Preview.3, MSIX : job 130237335499 du run 42933311984 réussi ; ce run
+  avait un autre job en échec. Le cycle MSIX preview.5 fournit la preuve récente.
+Chaque run est accessible sous https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/NUMERO.
+
+Preview.5 change quatre sources par rapport à preview.4 : Config.cs,
+Controller.cs, PremiumStudioForm.cs, Brand.cs. Les 24 autres sources et les deux
+ressources sont identiques. Cela étaye l'héritage, sans transformer les anciens
+essais en résultats directs du nouveau binaire. Le Studio centré et les réglages
+figés pendant un trait sont aussi contrôlés dans la recette preview.5.
+
+DÉFAUTS TRAITÉS / LIMITES
+Corrigés dans l'application : clic court (preview.3), placement initial (preview.4).
+Corrigés dans les pilotes : attente du signal d'arrêt MSIX ; dossier de reload ;
+encodage UTF-8 PowerShell/manifeste. Ces corrections ne modifient pas preview.5.
+Un succès technique MSIX n'est pas une certification Store, une preuve de
+signature publique, ni une validation exhaustive de tous les appareils.
+
+RESTANT À TRAITER, DANS L'ORDRE CONSEILLÉ
+1. Trois langues : extraction complète, intégration et validation ciblée d'une
+   nouvelle préversion ; preview.5 est actuellement française.
+2. Identité Partner Center définitive, nom disponible/réservé, contact support,
+   politique de confidentialité accessible, conditions d'utilisation à approuver.
+   Droits actuels conservés ; aucune licence MIT/GPL ajoutée.
+3. Démarrage automatique : ConfigStore.ApplyAutoStart écrit actuellement HKCU Run.
+   Le manifeste de test ne déclare pas windows.startupTask. Aucune ouverture de
+   session Windows ni activation de cette option n'a été testée dans le paquet.
+   Examiner l'intégration MSIX avant de promettre cette fonction sur le Store :
+   constat statique et couverture manquante, pas un échec observé.
+4. Migration 2.7.0 installée -> MSIX : le test injectait un profil synthétique
+   connu, il ne validait pas une migration automatique réelle. Examiner les
+   emplacements redirigés, la coexistence et le mutex d'instance unique.
+   Vérifier aussi une mise à jour entre deux paquets de même identité.
+5. Matrice finale : gestes sous Windows 11 x64 natif, plusieurs écrans/DPI,
+   disposition EN/ES du clavier, usage prolongé et fenêtres privilégiées.
+   Choisir des essais ciblés selon les risques ; pas de relance des 195 par défaut.
+6. Paquet Store définitif : identité/version/architecture/OS/langues cohérents,
+   justification runFullTrust, contrôle WACK et certification Microsoft.
+   Le manifeste de test annonce MinVersion 10.0.19041.0, mais Windows 10
+   n'est pas validé par cette recette : ne pas confondre déclaration et preuve.
+7. Captures réelles conformes du produit final, lisibilité et droits des ressources.
+
+PREUVES ET CONSERVATION
+Bilans détaillés : BILAN-preview5-defilement-20261111.txt,
+BILAN-preview5-MSIX-20261111.txt et bilans preview.3/4 à la racine.
+Preuves durables : preuves-preview5-defilement-20261111/,
+preuves-preview5-msix-20261111/, preuves-preview4-placement-20261111/.
+Les artefacts binaires GitHub sont temporaires, échéance annoncée le 25/11/2026.
+Les textes, profils, journaux et empreintes conservés dans Git ne remplacent pas
+une archive binaire durable. Prévoir son archivage privé autorisé avant expiration ;
+aucune copie ni nouvelle diffusion binaire réalisée pendant cette préparation.
+
+Ce document ne clôt pas artificiellement chaque observation des audits initiaux :
+il consolide les résultats effectivement disponibles, avec leurs périmètres.
+Les métadonnées historiques preparation.json « Executed: false » concernent
+la préparation initiale et ne décrivent pas l'état actuel des recettes GitHub.

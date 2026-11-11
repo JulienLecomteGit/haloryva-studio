@@ -1,0 +1,95 @@
+HALORYVA STUDIO — CONFIDENTIALITÉ
+Brouillon fondé sur les sources preview.5 — 11 novembre 2026
+À approuver et héberger à une URL accessible avant soumission Store.
+Contact à renseigner ; ce brouillon ne remplace pas une validation des textes
+applicables à la version finale et aux pays effectivement visés.
+
+TEXTE PROPOSÉ
+
+Haloryva Studio est une application de bureau développée par Julien Lecomte.
+Elle met en valeur le curseur et permet de dessiner des annotations à l'écran.
+
+Traitements sur votre appareil
+Pour réaliser ses effets, ses raccourcis et ses actions de boutons, Haloryva
+traite les événements de souris et de clavier, y compris lorsque une autre
+fenêtre est active. Ces événements servent au fonctionnement en cours.
+L'option d'affichage des touches présente certaines combinaisons avec Ctrl,
+Alt ou Windows ; elle ne constitue pas un historique des textes saisis.
+
+La loupe lit temporairement les pixels autour du curseur pour les agrandir.
+Les annotations, y compris le texte que vous choisissez d'y saisir, restent
+dans la session de dessin. L'export PNG enregistre les annotations sur fond
+transparent dans le fichier que vous choisissez ; il ne crée pas une capture
+complète du bureau.
+
+Réglages et fichiers locaux
+Le profil JSON conserve les préférences, les outils choisis et les affectations
+des boutons. Des chemins de fichiers peuvent y figurer si vous choisissez un
+logo ou un son personnalisé. Des copies de sauvegarde et des profils invalides
+peuvent être conservés pour permettre la récupération des réglages.
+Les exports de profils et d'annotations sont écrits à l'endroit choisi.
+
+Un journal technique local peut être créé en cas d'erreur. Il contient notamment
+la date, la catégorie, le type d'erreur et une pile d'appels technique, avec une
+rotation limitant sa taille. Le code de journalisation exclut le message et
+les données de l'exception. Des diagnostics supplémentaires sont produits
+seulement lorsqu'une session de diagnostic ou d'essai est explicitement lancée.
+Ces diagnostics ne sont pas envoyés automatiquement à l'éditeur.
+
+Réseau et partage
+Aucun mécanisme d'envoi vers un serveur de l'éditeur, de télémétrie applicative
+ou de publicité n'a été identifié dans les sources examinées de preview.5.
+Les fonctions courantes ne demandent pas de compte Haloryva.
+Si vous placez un export ou un fichier personnalisé sur un dossier synchronisé
+ou réseau, le service que vous utilisez peut traiter ce fichier selon ses
+propres règles. Le Microsoft Store et Windows relèvent également de leurs
+propres services ; cette politique décrit le logiciel Haloryva.
+
+Vos choix
+Vous pouvez modifier les préférences, désactiver les effets, fermer Haloryva
+depuis son icône près de l'horloge et choisir les exports que vous partagez.
+Les préférences permettent d'ouvrir le dossier des réglages. Les fichiers
+locaux y restent jusqu'à remplacement, rotation ou suppression ; les exports
+que vous avez créés ne sont pas supprimés par cette politique.
+Ne partagez pas un profil ou une annotation contenant des informations
+personnelles sans l'avoir vérifié. L'envoi volontaire d'un diagnostic au support
+nécessite votre propre action ; l'application ne le transmet pas automatiquement.
+
+Contact
+Responsable indiqué : Julien Lecomte.
+Moyen de contact relatif à la confidentialité : À RENSEIGNER PAR L'AUTEUR.
+Date de la politique définitive : À CONFIRMER APRÈS VALIDATION.
+Toute évolution des traitements ou des fonctionnalités nécessite une mise à jour.
+
+FIN DU TEXTE PROPOSÉ
+
+JUSTIFICATION TECHNIQUE ET LIMITES — NE PAS COPIER DANS LA FICHE CLIENT
+Revue statique de 28 fichiers C# dans haloryva-ci/preview5/src, base
+cfdb260c50bf771843065eff8eefadae24899f06. Aucun nouveau test réseau exécuté.
+Recherche d'API réseau explicites et revue des fichiers de traitement concernés ;
+ceci ne constitue ni une capture réseau ni un audit exhaustif des bibliothèques.
+Une application Win32 full trust n'est pas privée de réseau par la simple absence
+de capacité internetClient dans son manifeste.
+
+- GlobalHooks.cs, InputPipeline.cs, KeyboardPolicy.cs, Controller.cs : événements
+  globaux, règles AltGr, affichage conditionnel des raccourcis.
+- Visuals.cs, ExportAnnotations : PNG transparent rendu depuis les traits ;
+  CopyFromScreen utilisé par la loupe en mémoire.
+- Config.cs : settings.json, .bak et sauvegardes invalides ; import/export JSON.
+  En MSIX, la redirection vers LocalCache\Local\Haloryva est observée dans le test.
+- ErrorReporting.cs : Logs/errors.log, rotation .1/.2, limite 1 Mio par fichier ;
+  type/pile sans message ni Data ; pas d'envoi réseau dans ce composant.
+- EffectDiagnostics.cs / TrailDiagnostics.cs : modes explicites locaux,
+  compteurs/rendu et fichiers de recette ; à distinguer du fonctionnement courant.
+- PremiumStudioForm.cs : copie d'informations techniques au presse-papiers
+  seulement sur commande utilisateur ; ouverture du dossier via l'Explorateur.
+- ConfigStore.ApplyAutoStart : modification HKCU Run à la demande ; compatibilité
+  de cette option dans le paquet Store encore à traiter.
+
+La politique de Store 10.5.1 cite explicitement Win32/Desktop Bridge parmi les
+produits qui doivent avoir une politique de confidentialité. Ne pas omettre
+l'URL au motif que le logiciel ne contient pas de télémétrie identifiée.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/store-policies
+Les paramètres et exports ne sont pas chiffrés par Haloryva : ne pas promettre
+un chiffrement spécifique ou une suppression complète à la désinstallation
+sans preuve. Relecture finale et contact manquants avant diffusion de ce texte.
