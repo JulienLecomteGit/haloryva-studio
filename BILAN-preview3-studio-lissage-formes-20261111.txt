@@ -1,0 +1,199 @@
+HALORYVA STUDIO — BILAN STUDIO, LISSAGE ET FORMES ASSISTÉES
+Date : 11 novembre 2026
+Binaire : 2.7.1-preview.3 conservé à l'identique
+Conclusion : 274 contrôles fonctionnels réussis ; un défaut de placement initial
+confirmé au lancement direct sur le petit bureau GitHub. Correction à préparer
+dans une nouvelle préversion avant diffusion. Aucune correction du binaire ici.
+
+RÉSULTATS RÉELLEMENT EXÉCUTÉS
+----------------------------
+Recette principale : SUCCÈS, trois machines GitHub indépendantes.
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42940097691
+Commit des pilotes validés : 2d584f4c77a407242aad2140703bf434a98df8df
+- Studio : 98 assertions réussies, job 130259570750.
+- Lissage : 86 assertions réussies, job 130259571150.
+- Formes assistées : 90 assertions réussies, job 130259571035.
+Total 274, comprenant les prérequis et l'arrêt des travailleurs d'entrée.
+Ce total ne correspond pas à la série historique des 195 contrôles :
+aucun des pilotes de cette série n'a été exécuté.
+
+Diagnostic supplémentaire : ÉCHEC ATTENDU DU CONTRÔLE DE PLACEMENT,
+défaut reproduit avec le véritable exécutable sur deux lancements distincts.
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42940698728
+Job 130261533210, commit 1703a2b1115ccb783a8ce49357f0a6e2ebef4829.
+Cette exécution rouge est conservée comme preuve d'une anomalie encore ouverte.
+
+Environnement : Windows Server 2025 Datacenter x64, build 26100,
+image GitHub 20261103.298.1 ; bureau 1024 x 768, zone de travail 1024 x 720.
+Observateur désactivé. Profils temporaires séparés.
+Aucune installation de logiciel ni modification de paramètres du PC principal.
+
+COMMANDES DU STUDIO VALIDÉES
+----------------------------
+Les commandes sont activées par de vrais clics et frappes SendInput.
+La réflexion sert à repérer les contrôles existants, leurs zones et à lire le résultat ;
+elle n'appelle pas leurs gestionnaires de clics.
+
+- Navigation dans les huit pages.
+- Sélection des dix outils de dessin par leurs cases visibles.
+- Navigation gauche/droite au clavier dans les choix d'outils.
+- Onglets Dessiner et Réglages.
+- Auto-formes active le mode assisté ; choisir Brut repasse au Stylo.
+- Choix des modes Brut, Lissage et Auto-formes, saisie des intensités.
+- Épaisseur saisie : bornes 1 et 24 respectées, valeur 7 acceptée.
+- Couleur hexadécimale valide acceptée ; couleur invalide refusée sans perte
+  de la couleur précédente.
+- Bouton d'état : pause puis reprise des effets.
+- Démarrage du dessin depuis le bouton rapide et depuis « Dessiner sur le Bureau ».
+- Le Studio se masque pour dessiner et revient après clic droit ou Échap.
+- Le trait utilise bien la couleur et l'épaisseur sélectionnées dans l'interface.
+- Boutons Annuler, Rétablir, Restaurer le trait original et Tout effacer.
+- Activation/désactivation cohérente des boutons selon l'historique disponible.
+- Clic réel sur « Exporter PNG », saisie du nom dans la fenêtre Windows, PNG produit.
+- Fermer le Studio laisse l'application et les hooks actifs ; réouverture possible,
+  avec conservation en mémoire des réglages modifiés.
+- Arrêt final normal des deux travailleurs d'entrée.
+
+Le PNG issu du bouton Exporter PNG est transparent, de dimensions 1024 x 768,
+et contient le trait dessiné. Fichier studio-button-export.png, 3930 octets :
+SHA256 F0BB68A53FF71324F1587678B02B5F2FFB519A67ADA4E0B98354042D7CA7B3E2
+
+LISSAGE VALIDÉ
+-------------
+Quatre gestes identiques, décalés verticalement, saisis par les hooks réels :
+- mode Désactivé : points natifs conservés sans modification ;
+- Lissage à 0 % : points conservés sans modification ;
+- Lissage à 50 % : traitement au relâchement, points originaux conservés ;
+- Lissage à 100 % : traitement plus fort sur le même geste.
+
+Dans tous les cas :
+- les extrémités exactes sont préservées ;
+- le geste reste brut tant que le bouton est maintenu ;
+- le trait est enregistré une seule fois, sans fuite de clic vers l'application cible.
+Le bouton « Restaurer le trait original » restitue exactement les points de départ
+après lissage fort et enlève l'état lissé.
+
+Mesure sur le geste en zigzag choisi, et non score général de qualité :
+longueur brute 833,092 pixels ;
+après 50 % : 564,916 pixels ;
+après 100 % : 553,344 pixels.
+La diminution des irrégularités est confirmée par les captures.
+Les listes de points avant relâchement, après traitement et d'origine sont
+conservées en CSV dans les preuves.
+
+FORMES ASSISTÉES VALIDÉES
+-------------------------
+Avec l'outil Auto-formes choisi dans le Studio :
+- ligne légèrement irrégulière -> Ligne droite, extrémités conservées ;
+- rectangle -> Rectangle, dimensions conservées à la tolérance du geste ;
+- cercle -> Ellipse ronde ;
+- ellipse -> Ellipse conservant son allongement ;
+- rectangle incliné -> contour à quatre sommets inclinés ;
+- ellipse inclinée -> contour polygonal fermé régularisé ;
+- gribouillage répété -> reste Forme libre, sans fausse reconnaissance géométrique.
+
+Les six formes reconnues conservent leurs points et outil d'origine.
+Le bouton de restauration restitue exactement le geste de l'ellipse inclinée.
+Le triangle avait déjà été validé dans la recette précédente ; il n'a pas été redessiné ici.
+Les captures ont été examinées : géométries, lissage et restauration visibles.
+
+ANOMALIE CONFIRMÉE — PLACEMENT INITIAL SUR PETIT BUREAU
+----------------------------------------------------
+Les premiers essais du nouveau pilote :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42939685465
+ont été arrêtés lorsqu'un champ se trouvait hors de la zone utilisable.
+Ces essais ne sont pas déclarés comme des validations complètes.
+
+Le pilote fonctionnel a été amélioré pour replacer la fenêtre à (20,20) si elle
+sort de la zone de travail et pour révéler les contrôles par défilement.
+Il vérifie aussi que les clics restent dans la zone utilisable, hors barre des tâches.
+Cela a permis de valider les commandes, sans corriger l'application.
+
+Un diagnostic indépendant a ensuite lancé directement Haloryva.exe,
+par son point d'entrée habituel, avec un profil d'essai et sans --silent.
+Aucun contrôleur n'a été hébergé par réflexion, aucune fenêtre n'a été déplacée
+et aucun clic/clavier n'a été injecté dans ce diagnostic.
+L'application a été activée pour la capture, puis arrêtée par son mécanisme
+d'arrêt existant ; les deux arrêts se sont terminés normalement, code 0.
+
+Deux observations :
+1. Fenêtre 984 x 680 placée à (78,78), zone de travail 1024 x 720 :
+   dépassement de 38 pixels à droite et de 38 pixels en bas.
+2. Fenêtre 984 x 680 placée à (104,104) :
+   dépassement de 64 pixels à droite et de 64 pixels en bas.
+
+Impact : une partie des commandes peut sortir de l'écran ou passer derrière
+la barre des tâches dès l'ouverture. Les commandes fonctionnent après repositionnement.
+Ce défaut n'est donc pas seulement une erreur de coordonnées du pilote.
+L'antériorité du défaut dans 2.7.0/preview.2 n'a pas été testée ; aucune régression
+par rapport à ces versions n'est affirmée.
+
+Piste technique, à confirmer pendant la correction :
+PremiumStudioForm.cs appelle PremiumPalette.InitScale(this) à la ligne 318,
+avant de définir StartPosition = CenterScreen à la ligne 322.
+StudioTheme.cs, ligne 57, utilise reference.CreateGraphics() pour lire le DPI.
+L'ordre entre création du handle, lecture du DPI et placement initial est à examiner.
+Il faudra aussi borner explicitement la position finale à la zone de travail.
+Aucun correctif n'a été appliqué dans cette séance.
+
+Sources inspectées :
+https://github.com/JulienLecomteGit/haloryva-studio/blob/1703a2b1115ccb783a8ce49357f0a6e2ebef4829/haloryva-ci/preview3/src/PremiumStudioForm.cs#L318
+https://github.com/JulienLecomteGit/haloryva-studio/blob/1703a2b1115ccb783a8ce49357f0a6e2ebef4829/haloryva-ci/preview3/src/StudioTheme.cs#L57
+Documentation consultée pour l'analyse, qui ne remplace pas la reproduction :
+https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.control.creategraphics?view=netframework-4.8.1
+https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.form.startposition?view=netframework-4.8.1
+
+PRÉSERVATION VÉRIFIÉE
+---------------------
+Le même binaire provient de l'artefact existant :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42931395281
+Haloryva.exe : 384512 octets.
+SHA256 dans les trois recettes et dans le diagnostic direct, vérifié à nouveau
+sur les preuves téléchargées en mémoire :
+4170BEFEC193F5049051D73744CFCAD6D300240CE840E791E2C469A7CECAB13C
+
+L'application n'a pas été recompilée.
+main : 9e900eeaa62dcd2812a6aa0d3f251ad019ef3686, inchangé.
+haloryva-tests-preview2 : 8d84f31157ebfc1e09144811b6b112247f926f81, inchangé.
+Les sources de l'application, les anciennes recettes et les bilans précédents
+n'ont pas été modifiés. Seuls les nouveaux pilotes/workflows et ce bilan ont
+été ajoutés sur haloryva-tests-preview3.
+Pas de nouveau tag, release, signature ou installation de Haloryva.
+Aucun fichier de travail n'a été écrit sur le PC principal.
+
+PREUVES CONSERVÉES
+------------------
+Studio :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42940097691/artifacts/13819962567
+Lissage :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42940097691/artifacts/13819079801
+Formes assistées :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42940097691/artifacts/13819912734
+Défaut de placement au lancement direct :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42940698728/artifacts/13820691784
+
+Conservation GitHub annoncée : jusqu'au 25 novembre 2026.
+Les artefacts contiennent résultats JSON, journaux, environnement, captures,
+points CSV et copie du binaire contrôlé.
+Aucun résultat en échec n'a été supprimé ou remplacé par un succès fictif.
+
+LIMITES ET NON-EXÉCUTÉ
+---------------------
+- Pas de relance des 195 contrôles ni des anciennes séries clic court, AltGr,
+  autres outils, réglages pendant un trait et MSIX.
+- Pas de validation sur matériel Windows 11 physique, ni multi-écran/DPI multiples.
+- Le placement défaillant est constaté sur ce bureau GitHub 1024 x 768 ;
+  l'étendue aux autres résolutions reste à mesurer.
+- La recette des commandes n'est pas un test exhaustif de tous les réglages
+  des autres modules, profils et options système du Studio.
+- Les suites fonctionnelles réussies recentrent la fenêtre ; elles ne valident
+  donc pas, à elles seules, son placement initial. Le diagnostic séparé échoue
+  précisément sur ce point.
+- La correction proposée ci-dessous est seulement la prochaine action, non exécutée.
+
+PROCHAINE ACTION CONCRÈTE
+------------------------
+Créer une nouvelle préversion pour corriger uniquement le placement initial du Studio,
+puis tester sur GitHub l'ouverture à petite résolution et les commandes concernées.
+Conserver preview.3/preview.2, main, le PC principal et les résultats actuels.
+Ne pas publier avant examen des résultats.
