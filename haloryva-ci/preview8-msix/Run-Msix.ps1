@@ -23,6 +23,31 @@ try {
  if($kitResult.Status -ne 'targeted-passed' -or $kitResult.SHA256 -cne $newHash){throw 'Only successful targeted kit allowed'}
  $helper=Join-Path $kit 'Haloryva.Preview8.Targeted.exe'
  if((Get-FileHash -LiteralPath $helper).Hash -cne $kitResult.DriverSHA256){throw 'Helper differs'}
+ $kitHelperHash=$kitResult.DriverSHA256
+$pf86=[Environment]::GetFolderPath('ProgramFilesX86')
+$sdkRoot=Join-Path $pf86 'Windows Kits/10/UnionMetadata'
+$winmd=Get-ChildItem -LiteralPath $sdkRoot -Filter Windows.winmd -Recurse | Sort-Object FullName -Descending | Select-Object -First 1
+$bridge=Join-Path $env:WINDIR 'Microsoft.NET/Framework64/v4.0.30319/System.Runtime.WindowsRuntime.dll'
+$facades=Join-Path $pf86 'Reference Assemblies/Microsoft/Framework/.NETFramework/v4.8/Facades'
+if(!$winmd -or !(Test-Path -LiteralPath $bridge) -or !(Test-Path -LiteralPath $facades)) { throw "Required installed references unavailable: $winmd ; $bridge ; $facades" }
+$sdkVersion=($winmd.FullName -split '\\' | Where-Object {$_ -match '^10\.\d+\.\d+\.\d+$'} | Select-Object -First 1)
+$contractRoot=Join-Path $pf86 ('Windows Kits/10/References/'+$sdkVersion)
+$contracts=@(Get-ChildItem -LiteralPath $contractRoot -Filter '*.winmd' -Recurse | Group-Object BaseName | ForEach-Object {$_.Group | Sort-Object {[version]$_.Directory.Name} -Descending | Select-Object -First 1} | ForEach-Object FullName)
+if(!$contracts.Count) { throw 'Installed SDK contracts missing' }
+$refs=@($winmd.FullName,$bridge)+$contracts+@(Get-ChildItem -LiteralPath $facades -Filter '*.dll' | ForEach-Object FullName)
+
+$csc=Join-Path $env:WINDIR 'Microsoft.NET/Framework64/v4.0.30319/csc.exe'
+$exe=Join-Path $out 'Haloryva.Preview8.Targeted.exe'
+$argv=@('/nologo','/utf8output','/codepage:65001','/langversion:5','/target:exe','/platform:x64',('/out:"'+$exe+'"'),('/reference:"'+$newExe+'"'),'/reference:System.dll','/reference:System.Core.dll','/reference:System.Drawing.dll','/reference:System.Windows.Forms.dll','/reference:System.Web.Extensions.dll')+@($refs|ForEach-Object {'/reference:"'+$_+'"'})+@('"'+(Join-Path $PSScriptRoot 'Package-Diagnostics.cs')+'"')
+$rsp=Join-Path $out 'Targeted.rsp';[IO.File]::WriteAllLines($rsp,$argv,(New-Object Text.UTF8Encoding($true)))
+& $csc ('@'+$rsp) 2>&1|Tee-Object -FilePath (Join-Path $out 'compile-driver.log')
+if($LASTEXITCODE -ne 0){throw 'Targeted driver compilation failed'}
+
+ Copy-Item -LiteralPath $newExe -Destination (Join-Path $out 'Haloryva.exe')
+ $helper=$exe
+ $report.DiagnosticHelperSHA256=(Get-FileHash -LiteralPath $helper).Hash
+ $report.OriginalHelperSHA256=$kitHelperHash
+ $report.StartupChecksPassed=$true
  $nativeRoot=Join-Path $env:RUNNER_TEMP 'haloryva-preview7-native'
  $profile=Get-ChildItem -LiteralPath $nativeRoot -Recurse -Filter saved-native-profile.json|Select-Object -First 1
  if(!$profile -or (Get-FileHash -LiteralPath $profile.FullName).Hash -cne '8D2BB7BDF7210CC95124C0C1911F13CD455974E9FDA9EC5318CAF69FB9086B4F'){throw 'Validated Spanish profile missing'}
@@ -191,7 +216,7 @@ public static class ActivatePackaged {
   if(!(Test-Path -LiteralPath $result)){throw 'Packaged helper result missing'}
   $r=Get-Content -LiteralPath $result -Raw -Encoding UTF8|ConvertFrom-Json
   $report.HelperResults+=,$r
-  if(!$r.Passed){$r|ConvertTo-Json -Depth 8|Write-Output;throw 'Real packaged API checks failed'}
+  if(!$r.Passed){$r|ConvertTo-Json -Depth 8|Write-Output;$report.StartupChecksPassed=$false}
   $hp=Get-Process -Id $helperPid -ErrorAction SilentlyContinue
   if($hp -and !$hp.WaitForExit(10000)){throw 'Helper remains running'}
  }
@@ -237,12 +262,16 @@ public static class ActivatePackaged {
  if(Get-AppxPackage -Name $name){throw 'Test package remains'}
  $report.CleanupPackageRemoved=$true
  $registered=$null
- $report.Status='msix8-passed'
+ $report.Status=if($report.StartupChecksPassed){'msix8-passed'}else{'msix8-partial-startup-failed'}
+ if(!$report.StartupChecksPassed){throw 'Lifecycle checks completed; startup diagnostics require review'}
 }catch{
- $report.Status='failed';$report.Error=$_.ToString()
+ if($report.Status -eq 'started'){$report.Status='failed'};$report.Error=$_.ToString()
  throw
 }finally{
- if($registered -and !$child){try{Remove-AppxPackage -Package $registered.PackageFullName -ErrorAction Stop}catch{$report.CleanupError=$_.ToString()}}
+ if($registered -and !$child){try{
+  $logs=Join-Path $env:LOCALAPPDATA ('Packages\'+$registered.PackageFamilyName+'\LocalState\Haloryva\Logs')
+  if(Test-Path -LiteralPath $logs){Copy-Item -LiteralPath $logs -Destination (Join-Path $out 'application-logs') -Recurse}
+  Remove-AppxPackage -Package $registered.PackageFullName -ErrorAction Stop}catch{$report.CleanupError=$_.ToString()}}
  $report|ConvertTo-Json -Depth 15|Set-Content -LiteralPath (Join-Path $out 'result.json') -Encoding UTF8
  $report|ConvertTo-Json -Depth 15|Write-Output
  Stop-Transcript
