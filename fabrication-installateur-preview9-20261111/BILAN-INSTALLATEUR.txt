@@ -1,0 +1,85 @@
+HALORYVA — INSTALLATEUR 2.7.1-preview.9
+11 novembre 2026 — fabrication et extraction uniquement
+
+RÉSULTAT
+Installateur fabriqué sur GitHub et extraction vérifiée avec succès.
+Un seul run de fabrication, un seul job réussi, aucune reprise nécessaire.
+Le binaire Haloryva existant a été incorporé à l'identique. Il n'a été ni
+recompilé ni lancé. Aucun autotest de l'application ou du setup n'a été exécuté.
+
+FICHIER PRODUIT
+HaloryvaSetup_2.7.1-preview.9.exe
+SHA-256 installateur :
+3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394
+
+Haloryva.exe incorporé et extrait :
+678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC
+Cette empreinte est exactement celle de la preview.9 conservée.
+Sa compilation d'origine reste le run 43035196363, commit
+a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5.
+
+PREUVES ET ACCÈS
+Run réussi :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43060226353
+Job : 130660452270.
+Commit de fabrication : c2ebfc73b90d2603291e90768b25d5d3991fa38e
+Archive de travail :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43060226353/artifacts/13872288880
+Nom d'archive : HaloryvaSetup-2.7.1-preview.9-candidate
+Taille ZIP : 1182295 octets.
+SHA-256 ZIP (distinct de celui de l'installateur) :
+sha256:72dd484af82e7e0e3d4636cf346f8dd2a483f609e757c5dd7223027df33ae39f
+Expiration annoncée : 11 décembre 2026.
+L'archive contient l'installateur, les preuves, les sources temporaires de
+l'assistant et les copies du contenu avant/après extraction.
+Aucun fichier n'a été téléchargé sur le PC principal.
+
+VÉRIFICATIONS RÉELLEMENT EXÉCUTÉES
+- Empreinte et provenance de l'application d'origine, métadonnée preview.9.
+- Empreintes Git des neuf fichiers d'entrée du constructeur.
+- Compilation du seul installateur par le compilateur .NET déjà présent.
+- Métadonnée de version preview.9 et état Authenticode NotSigned du setup.
+- Exécution du seul mode --extract de l'installateur, terminée avec code 0.
+- Exactement trois fichiers extraits : Haloryva.exe, Haloryva.sha256,
+  haloryva_demo.png. Les trois empreintes correspondent aux fichiers incorporés.
+- Empreinte du binaire Haloryva d'origine encore inchangée après l'opération.
+- Enregistrement de la provenance et de l'empreinte propre de l'installateur.
+
+ENVIRONNEMENT ET ADAPTATIONS
+Windows Server 2025 x64 GitHub, image windows-2025-vs2026 20261103.298.1.
+Aucune installation d'outil supplémentaire.
+La recette préparée a été utilisée sans modification ; son modèle de workflow
+a été activé uniquement sur haloryva-preparation-exe-preview9.
+Les copies temporaires des sources de l'assistant portent la version preview.9.
+La dépendance de traduction propre à Brand.cs a été adaptée pour l'assistant
+français, sans modification du programme Haloryva ou de ses trois langues.
+Les sources de l'application, du constructeur initial et le pilote diagnostic
+précédent n'ont pas été modifiés.
+
+CE QUI N'A PAS ÉTÉ EXÉCUTÉ
+- Installation ou désinstallation, mise à jour d'une ancienne installation.
+- Lancement normal de l'assistant ou de Haloryva.
+- Autotest Haloryva --selftest, autotest setup --selftest, 195 contrôles historiques.
+- Recette d'une vraie connexion Windows, nouveau test MSIX ou relecture des acquis.
+- Signature, release GitHub, soumission Microsoft Store ou souscription.
+Ce résultat valide la fabrication et l'extraction. Il ne valide pas encore
+l'installation, les raccourcis, la désinstallation ou la conservation des réglages
+lors d'une maintenance réelle. Il n'établit pas non plus une compatibilité avec
+toutes les politiques de protection du PC utilisateur.
+La limite de clôture du pilote diagnostic MSIX reste celle du bilan précédent.
+
+CONSERVATION VÉRIFIÉE
+507 fichiers présents au début sont identiques.
+19 branches autres que la branche de préparation sont inchangées : main,
+preview.9, toutes les anciennes préversions et la stable sont préservés.
+Aucun changement de fichier, lancement, installation ou réglage sur le PC principal.
+Les documents de préparation sont conservés ; ce bilan enregistre leur exécution.
+
+PROCHAINE ÉTAPE
+Recette ciblée de l'installation/désinstallation sur un Windows GitHub isolé,
+avec conservation des réglages, après une demande explicite couvrant ce périmètre.
+Le mode normal de l'installateur lance automatiquement Haloryva.exe --selftest.
+Cette particularité devra être explicitement autorisée pour cette prochaine recette ;
+elle n'a pas été déclenchée par le contrôle --extract effectué ici.
+Les 195 contrôles externes n'ont pas à être relancés.
+Aucune installation sur le PC principal ni diffusion avant présentation du bilan.
