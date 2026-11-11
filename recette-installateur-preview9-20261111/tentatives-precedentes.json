@@ -1,0 +1,388 @@
+[
+  {
+    "Version": "2.7.1-preview.9",
+    "Commit": "fcc8e6432716d9ef39af026d0a7f100b5b66ae2c",
+    "Run": "43062677711",
+    "Status": "failed",
+    "Phase": "install",
+    "StartedUtc": "2026-11-11T16:53:51.4735576Z",
+    "SetupSHA256": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+    "ApplicationSHA256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+    "SourceArtifactRun": 43060226353,
+    "SourceArtifactId": 13872288880,
+    "Profile": "synthetic pre-existing settings, no real 2.7.0 installation",
+    "InstallExecuted": false,
+    "UninstallExecuted": false,
+    "ApplicationRecompiled": false,
+    "InstallerRecompiled": false,
+    "Historical195Executed": false,
+    "SeparateSelftestInvoked": false,
+    "Signed": false,
+    "Published": false,
+    "Checks": [
+      {
+        "Name": "windows11-interactive-runner",
+        "Passed": true,
+        "Detail": {
+          "Caption": "Microsoft Windows 11 Enterprise",
+          "Version": "10.0.26200",
+          "Build": "26200",
+          "Architecture": "ARM64",
+          "ImageOS": "win11-vs2026-arm64",
+          "ImageVersion": "20261101.203.1",
+          "SessionId": 2,
+          "User": "runneradmin"
+        },
+        "Utc": "2026-11-11T16:53:52.5132280Z"
+      },
+      {
+        "Name": "frozen-setup-input",
+        "Passed": true,
+        "Detail": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+        "Utc": "2026-11-11T16:53:53.3333522Z"
+      },
+      {
+        "Name": "frozen-application-input",
+        "Passed": true,
+        "Detail": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+        "Utc": "2026-11-11T16:53:53.3406694Z"
+      },
+      {
+        "Name": "fresh-test-profile",
+        "Passed": true,
+        "Detail": {
+          "Occupied": [],
+          "ExistingProcesses": 0
+        },
+        "Utc": "2026-11-11T16:53:53.3967388Z"
+      }
+    ],
+    "AppEvents": [],
+    "Environment": {
+      "Caption": "Microsoft Windows 11 Enterprise",
+      "Version": "10.0.26200",
+      "Build": "26200",
+      "Architecture": "ARM64",
+      "ImageOS": "win11-vs2026-arm64",
+      "ImageVersion": "20261101.203.1",
+      "SessionId": 2,
+      "User": "runneradmin"
+    },
+    "ProfileBefore": {
+      "settings.json": "130999A02C990AA21B8887DA33BD514CD460DA6284A5EE32C228ECCB3EA77431",
+      "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+      "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+    },
+    "Error": "System.Management.Automation.RuntimeException: Unexpected setup worker location",
+    "ErrorPosition": "At C:\\a\\haloryva-studio\\haloryva-studio\\haloryva-ci\\preview9-install-cycle\\Run-InstallCycle.ps1:67 char:87\r\n+ ... rison]::OrdinalIgnoreCase)){throw 'Unexpected setup worker location'}\r\n+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "FinishedUtc": "2026-11-11T16:53:57.9732329Z"
+  },
+  {
+    "Version": "2.7.1-preview.9",
+    "Commit": "4439dceebafcce099fb42677ccf057e318570c31",
+    "Run": "43063068133",
+    "Status": "failed",
+    "Phase": "install",
+    "StartedUtc": "2026-11-11T16:56:16.1075176Z",
+    "SetupSHA256": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+    "ApplicationSHA256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+    "SourceArtifactRun": 43060226353,
+    "SourceArtifactId": 13872288880,
+    "Profile": "synthetic pre-existing settings, no real 2.7.0 installation",
+    "InstallExecuted": false,
+    "UninstallExecuted": false,
+    "ApplicationRecompiled": false,
+    "InstallerRecompiled": false,
+    "Historical195Executed": false,
+    "SeparateSelftestInvoked": false,
+    "Signed": false,
+    "Published": false,
+    "Checks": [
+      {
+        "Name": "windows11-interactive-runner",
+        "Passed": true,
+        "Detail": {
+          "Caption": "Microsoft Windows 11 Enterprise",
+          "Version": "10.0.26200",
+          "Build": "26200",
+          "Architecture": "ARM64",
+          "ImageOS": "win11-vs2026-arm64",
+          "ImageVersion": "20261101.203.1",
+          "SessionId": 2,
+          "User": "runneradmin"
+        },
+        "Utc": "2026-11-11T16:56:17.0825529Z"
+      },
+      {
+        "Name": "frozen-setup-input",
+        "Passed": true,
+        "Detail": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+        "Utc": "2026-11-11T16:56:17.8801022Z"
+      },
+      {
+        "Name": "frozen-application-input",
+        "Passed": true,
+        "Detail": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+        "Utc": "2026-11-11T16:56:17.8801022Z"
+      },
+      {
+        "Name": "fresh-test-profile",
+        "Passed": true,
+        "Detail": {
+          "Occupied": [],
+          "ExistingProcesses": 0
+        },
+        "Utc": "2026-11-11T16:56:17.9438113Z"
+      }
+    ],
+    "AppEvents": [],
+    "Environment": {
+      "Caption": "Microsoft Windows 11 Enterprise",
+      "Version": "10.0.26200",
+      "Build": "26200",
+      "Architecture": "ARM64",
+      "ImageOS": "win11-vs2026-arm64",
+      "ImageVersion": "20261101.203.1",
+      "SessionId": 2,
+      "User": "runneradmin"
+    },
+    "ProfileBefore": {
+      "settings.json": "130999A02C990AA21B8887DA33BD514CD460DA6284A5EE32C228ECCB3EA77431",
+      "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+      "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+    },
+    "LastWorkerLocation": {
+      "ExecutablePath": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-36e94e51622b47cc91ad3cc7e33a5256\\HaloryvaSetup.exe",
+      "ExpectedRoot": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance",
+      "ActualRoot": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance",
+      "TempEnvironment": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+      "TmpEnvironment": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+      "CommandLine": "\"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-36e94e51622b47cc91ad3cc7e33a5256\\HaloryvaSetup.exe\" --worker --parent=1316"
+    },
+    "installWorker": {
+      "Pid": 6708,
+      "LauncherPid": 1316,
+      "Path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-36e94e51622b47cc91ad3cc7e33a5256\\HaloryvaSetup.exe",
+      "Title": "Haloryva Studio — Installation"
+    },
+    "Error": "System.Management.Automation.MethodInvocationException: Exception calling \"Capture\" with \"2\" argument(s): \"Setup foreground not confirmed\" ---> System.Exception: Setup foreground not confirmed\r\n   at SetupUi.Focus(IntPtr h)\r\n   at SetupUi.Capture(IntPtr h, String file)\r\n   at CallSite.Target(Closure , CallSite , Type , Object , Object )\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)",
+    "ErrorPosition": "At C:\\a\\haloryva-studio\\haloryva-studio\\haloryva-ci\\preview9-install-cycle\\Run-InstallCycle.ps1:82 char:2\r\n+  [SetupUi]::Capture($worker.MainWindowHandle,(Join-Path $out ($phase+ ...\r\n+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "FinishedUtc": "2026-11-11T16:56:25.3377093Z"
+  },
+  {
+    "Version": "2.7.1-preview.9",
+    "Commit": "c89eec16a723c40cd7810ac6152e460af8c745a0",
+    "Run": "43063629872",
+    "Status": "failed",
+    "Phase": "install",
+    "StartedUtc": "2026-11-11T16:59:49.8232713Z",
+    "SetupSHA256": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+    "ApplicationSHA256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+    "SourceArtifactRun": 43060226353,
+    "SourceArtifactId": 13872288880,
+    "Profile": "synthetic pre-existing settings, no real 2.7.0 installation",
+    "InstallExecuted": false,
+    "UninstallExecuted": false,
+    "ApplicationRecompiled": false,
+    "InstallerRecompiled": false,
+    "Historical195Executed": false,
+    "SeparateSelftestInvoked": false,
+    "Signed": false,
+    "Published": false,
+    "Checks": [
+      {
+        "Name": "windows11-interactive-runner",
+        "Passed": true,
+        "Detail": {
+          "Caption": "Microsoft Windows 11 Enterprise",
+          "Version": "10.0.26200",
+          "Build": "26200",
+          "Architecture": "ARM64",
+          "ImageOS": "win11-vs2026-arm64",
+          "ImageVersion": "20261101.203.1",
+          "SessionId": 2,
+          "User": "runneradmin"
+        },
+        "Utc": "2026-11-11T16:59:50.9245879Z"
+      },
+      {
+        "Name": "frozen-setup-input",
+        "Passed": true,
+        "Detail": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+        "Utc": "2026-11-11T16:59:51.9126422Z"
+      },
+      {
+        "Name": "frozen-application-input",
+        "Passed": true,
+        "Detail": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+        "Utc": "2026-11-11T16:59:51.9263327Z"
+      },
+      {
+        "Name": "fresh-test-profile",
+        "Passed": true,
+        "Detail": {
+          "Occupied": [],
+          "ExistingProcesses": 0
+        },
+        "Utc": "2026-11-11T16:59:51.9732615Z"
+      }
+    ],
+    "AppEvents": [],
+    "Environment": {
+      "Caption": "Microsoft Windows 11 Enterprise",
+      "Version": "10.0.26200",
+      "Build": "26200",
+      "Architecture": "ARM64",
+      "ImageOS": "win11-vs2026-arm64",
+      "ImageVersion": "20261101.203.1",
+      "SessionId": 2,
+      "User": "runneradmin"
+    },
+    "ProfileBefore": {
+      "settings.json": "130999A02C990AA21B8887DA33BD514CD460DA6284A5EE32C228ECCB3EA77431",
+      "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+      "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+    },
+    "LastWorkerLocation": {
+      "ExecutablePath": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-e9843ca5ebac4baab7722aa7fa034d1c\\HaloryvaSetup.exe",
+      "ExpectedRoot": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance",
+      "ActualRoot": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance",
+      "TempEnvironment": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+      "TmpEnvironment": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+      "CommandLine": "\"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-e9843ca5ebac4baab7722aa7fa034d1c\\HaloryvaSetup.exe\" --worker --parent=7900"
+    },
+    "installWorker": {
+      "Pid": 6928,
+      "LauncherPid": 7900,
+      "Path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-e9843ca5ebac4baab7722aa7fa034d1c\\HaloryvaSetup.exe",
+      "Title": "Haloryva Studio — Installation"
+    },
+    "Error": "System.Management.Automation.MethodInvocationException: Exception calling \"Capture\" with \"2\" argument(s): \"Setup title is obscured; foreground=10204 Microsoft account\" ---> System.Exception: Setup title is obscured; foreground=10204 Microsoft account\r\n   at SetupUi.Focus(IntPtr h)\r\n   at SetupUi.Capture(IntPtr h, String file)\r\n   at CallSite.Target(Closure , CallSite , Type , Object , Object )\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)",
+    "ErrorPosition": "At C:\\a\\haloryva-studio\\haloryva-studio\\haloryva-ci\\preview9-install-cycle\\Run-InstallCycle.ps1:82 char:2\r\n+  [SetupUi]::Capture($worker.MainWindowHandle,(Join-Path $out ($phase+ ...\r\n+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "FinishedUtc": "2026-11-11T17:00:02.4491416Z"
+  },
+  {
+    "Version": "2.7.1-preview.9",
+    "Commit": "58137d142f7f41a421d41b021c6415f599df69ae",
+    "Run": "43064809038",
+    "Status": "failed",
+    "Phase": "install",
+    "StartedUtc": "2026-11-11T17:06:53.8900998Z",
+    "SetupSHA256": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+    "ApplicationSHA256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+    "SourceArtifactRun": 43060226353,
+    "SourceArtifactId": 13872288880,
+    "Profile": "synthetic pre-existing settings, no real 2.7.0 installation",
+    "InstallExecuted": true,
+    "UninstallExecuted": false,
+    "ApplicationRecompiled": false,
+    "InstallerRecompiled": false,
+    "Historical195Executed": false,
+    "SeparateSelftestInvoked": false,
+    "Signed": false,
+    "Published": false,
+    "Checks": [
+      {
+        "Name": "windows11-interactive-runner",
+        "Passed": true,
+        "Detail": {
+          "Caption": "Microsoft Windows 11 Enterprise",
+          "Version": "10.0.26200",
+          "Build": "26200",
+          "Architecture": "ARM64",
+          "ImageOS": "win11-vs2026-arm64",
+          "ImageVersion": "20261101.203.1",
+          "SessionId": 2,
+          "User": "runneradmin"
+        },
+        "Utc": "2026-11-11T17:06:55.1585705Z"
+      },
+      {
+        "Name": "frozen-setup-input",
+        "Passed": true,
+        "Detail": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+        "Utc": "2026-11-11T17:06:56.1575998Z"
+      },
+      {
+        "Name": "frozen-application-input",
+        "Passed": true,
+        "Detail": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+        "Utc": "2026-11-11T17:06:56.1734379Z"
+      },
+      {
+        "Name": "fresh-test-profile",
+        "Passed": true,
+        "Detail": {
+          "Occupied": [],
+          "ExistingProcesses": 0
+        },
+        "Utc": "2026-11-11T17:06:56.2205369Z"
+      },
+      {
+        "Name": "install-normal-exit",
+        "Passed": false,
+        "Detail": {
+          "WorkerPid": 4172,
+          "ExitCode": null,
+          "Closure": "Normal WM_CLOSE on completed real GUI; no normal app launch requested"
+        },
+        "Utc": "2026-11-11T17:07:12.8946818Z"
+      }
+    ],
+    "AppEvents": [
+      {
+        "Kind": "start",
+        "TimeUtc": "2026-11-11T17:07:06.1479939Z",
+        "Name": "Haloryva.exe",
+        "CommandLine": "\"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-2ba7568ca8324a1884f23b239fc8b419\\payload\\Haloryva.exe\" --selftest",
+        "ReadError": null,
+        "Pid": 1396,
+        "ParentPid": 4172,
+        "ExitStatus": 0
+      },
+      {
+        "Kind": "stop",
+        "TimeUtc": "2026-11-11T17:07:08.1770301Z",
+        "Name": "Haloryva.exe",
+        "CommandLine": null,
+        "ReadError": null,
+        "Pid": 1396,
+        "ParentPid": 0,
+        "ExitStatus": 0
+      }
+    ],
+    "Environment": {
+      "Caption": "Microsoft Windows 11 Enterprise",
+      "Version": "10.0.26200",
+      "Build": "26200",
+      "Architecture": "ARM64",
+      "ImageOS": "win11-vs2026-arm64",
+      "ImageVersion": "20261101.203.1",
+      "SessionId": 2,
+      "User": "runneradmin"
+    },
+    "ProfileBefore": {
+      "settings.json": "130999A02C990AA21B8887DA33BD514CD460DA6284A5EE32C228ECCB3EA77431",
+      "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+      "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+    },
+    "UiAutomation": "Targeted external mouse messages to the verified setup window; normal WM_CLOSE after completion. Not physical-desktop click validation. No interaction with the Microsoft account window.",
+    "LastWorkerLocation": {
+      "ExecutablePath": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-2ba7568ca8324a1884f23b239fc8b419\\HaloryvaSetup.exe",
+      "ExpectedRoot": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance",
+      "ActualRoot": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance",
+      "TempEnvironment": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+      "TmpEnvironment": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+      "CommandLine": "\"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-2ba7568ca8324a1884f23b239fc8b419\\HaloryvaSetup.exe\" --worker --parent=8468"
+    },
+    "installWorker": {
+      "Pid": 4172,
+      "LauncherPid": 8468,
+      "Path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-2ba7568ca8324a1884f23b239fc8b419\\HaloryvaSetup.exe",
+      "Title": "Haloryva Studio — Installation"
+    },
+    "Error": "System.Management.Automation.RuntimeException: Check failed: install-normal-exit",
+    "ErrorPosition": "At C:\\a\\haloryva-studio\\haloryva-studio\\haloryva-ci\\preview9-install-cycle\\Run-InstallCycle.ps1:25 char:11\r\n+  if(!$ok){throw ('Check failed: '+$name)}\r\n+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "FinishedUtc": "2026-11-11T17:07:13.1982735Z"
+  }
+]

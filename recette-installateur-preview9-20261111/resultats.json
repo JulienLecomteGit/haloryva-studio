@@ -1,0 +1,381 @@
+{
+  "Version": "2.7.1-preview.9",
+  "Commit": "450bb3614c19cc47dff4fd11d2982585de57dcf8",
+  "Run": "43065284869",
+  "Status": "passed",
+  "Phase": "finished",
+  "StartedUtc": "2026-11-11T17:09:47.4149947Z",
+  "SetupSHA256": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+  "ApplicationSHA256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+  "SourceArtifactRun": 43060226353,
+  "SourceArtifactId": 13872288880,
+  "Profile": "synthetic pre-existing settings, no real 2.7.0 installation",
+  "InstallExecuted": true,
+  "UninstallExecuted": true,
+  "ApplicationRecompiled": false,
+  "InstallerRecompiled": false,
+  "Historical195Executed": false,
+  "SeparateSelftestInvoked": false,
+  "Signed": false,
+  "Published": false,
+  "Checks": [
+    {
+      "Name": "windows11-interactive-runner",
+      "Passed": true,
+      "Detail": {
+        "Caption": "Microsoft Windows 11 Enterprise",
+        "Version": "10.0.26200",
+        "Build": "26200",
+        "Architecture": "ARM64",
+        "ImageOS": "win11-vs2026-arm64",
+        "ImageVersion": "20261101.203.1",
+        "SessionId": 2,
+        "User": "runneradmin"
+      },
+      "Utc": "2026-11-11T17:09:48.4450542Z"
+    },
+    {
+      "Name": "frozen-setup-input",
+      "Passed": true,
+      "Detail": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+      "Utc": "2026-11-11T17:09:49.3306795Z"
+    },
+    {
+      "Name": "frozen-application-input",
+      "Passed": true,
+      "Detail": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+      "Utc": "2026-11-11T17:09:49.3464049Z"
+    },
+    {
+      "Name": "fresh-test-profile",
+      "Passed": true,
+      "Detail": {
+        "Occupied": [],
+        "ExistingProcesses": 0
+      },
+      "Utc": "2026-11-11T17:09:49.3944419Z"
+    },
+    {
+      "Name": "install-normal-exit",
+      "Passed": true,
+      "Detail": {
+        "WorkerPid": 11124,
+        "ExitCode": 0,
+        "ExitEvidence": "Native process handle retained before GUI command",
+        "Closure": "Normal WM_CLOSE on completed real GUI; no normal app launch requested"
+      },
+      "Utc": "2026-11-11T17:10:04.2008577Z"
+    },
+    {
+      "Name": "installed-app-identical",
+      "Passed": true,
+      "Detail": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+      "Utc": "2026-11-11T17:10:04.2147772Z"
+    },
+    {
+      "Name": "registered-setup-identical",
+      "Passed": true,
+      "Detail": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+      "Utc": "2026-11-11T17:10:04.2147772Z"
+    },
+    {
+      "Name": "windows-uninstall-registration",
+      "Passed": true,
+      "Detail": {
+        "DisplayVersion": "2.7.1-preview.9",
+        "InstallLocation": "C:\\Users\\runneradmin\\AppData\\Local\\Haloryva",
+        "UninstallString": "\"C:\\Users\\runneradmin\\AppData\\Local\\Haloryva\\Setup\\HaloryvaSetup.exe\" --uninstall"
+      },
+      "Utc": "2026-11-11T17:10:04.2299844Z"
+    },
+    {
+      "Name": "shortcut-Haloryva.lnk",
+      "Passed": true,
+      "Detail": {
+        "Link": "C:\\Users\\runneradmin\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Haloryva.lnk",
+        "Target": "C:\\Users\\runneradmin\\AppData\\Local\\Haloryva\\Haloryva.exe",
+        "WorkingDirectory": "C:\\Users\\runneradmin\\AppData\\Local\\Haloryva"
+      },
+      "Utc": "2026-11-11T17:10:04.4206516Z"
+    },
+    {
+      "Name": "shortcut-Haloryva Studio.lnk",
+      "Passed": true,
+      "Detail": {
+        "Link": "C:\\Users\\runneradmin\\Desktop\\Haloryva Studio.lnk",
+        "Target": "C:\\Users\\runneradmin\\AppData\\Local\\Haloryva\\Haloryva.exe",
+        "WorkingDirectory": "C:\\Users\\runneradmin\\AppData\\Local\\Haloryva"
+      },
+      "Utc": "2026-11-11T17:10:04.4206516Z"
+    },
+    {
+      "Name": "install-all-settings",
+      "Passed": true,
+      "Detail": {
+        "Fields": 13,
+        "Differences": [],
+        "UiLanguage": "es",
+        "DrawingToolCycle": [
+          "Stylo",
+          "Rectangle"
+        ]
+      },
+      "Utc": "2026-11-11T17:10:04.4681578Z"
+    },
+    {
+      "Name": "install-backup-and-custom-file-preserved",
+      "Passed": true,
+      "Detail": {
+        "settings.json": "39A64800F20435DD8422E769F6442EA573217404F06B7D25809ACEEEF15D3E1C",
+        "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+        "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+      },
+      "Utc": "2026-11-11T17:10:04.4920501Z"
+    },
+    {
+      "Name": "install-autostart-remains-off",
+      "Passed": true,
+      "Detail": "No Haloryva Run value",
+      "Utc": "2026-11-11T17:10:04.4940669Z"
+    },
+    {
+      "Name": "automatic-installation-selftest",
+      "Passed": true,
+      "Detail": {
+        "Events": [
+          {
+            "Kind": "start",
+            "TimeUtc": "2026-11-11T17:09:58.5987211Z",
+            "Name": "Haloryva.exe",
+            "CommandLine": "\"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-664a888ab05f4b549cc7f6b4be438b8e\\payload\\Haloryva.exe\" --selftest",
+            "ReadError": null,
+            "Pid": 10036,
+            "ParentPid": 11124,
+            "ExitStatus": 0
+          },
+          {
+            "Kind": "stop",
+            "TimeUtc": "2026-11-11T17:10:00.6136900Z",
+            "Name": "Haloryva.exe",
+            "CommandLine": null,
+            "ReadError": null,
+            "Pid": 10036,
+            "ParentPid": 0,
+            "ExitStatus": 0
+          }
+        ],
+        "Meaning": "Only application invocation allowed by installer source before commit; WMI records observed child start and zero exit. No separate selftest invoked."
+      },
+      "Utc": "2026-11-11T17:10:04.5155917Z"
+    },
+    {
+      "Name": "no-normal-app-left-running",
+      "Passed": true,
+      "Detail": "Completed setup closed through normal WM_CLOSE",
+      "Utc": "2026-11-11T17:10:04.5155917Z"
+    },
+    {
+      "Name": "uninstall-normal-exit",
+      "Passed": true,
+      "Detail": {
+        "WorkerPid": 7308,
+        "ExitCode": 0,
+        "ExitEvidence": "Native process handle retained before GUI command",
+        "Closure": "Normal WM_CLOSE on completed real GUI; no normal app launch requested"
+      },
+      "Utc": "2026-11-11T17:10:09.7394127Z"
+    },
+    {
+      "Name": "application-and-setup-removed",
+      "Passed": true,
+      "Detail": "Installed application and registered uninstaller absent",
+      "Utc": "2026-11-11T17:10:09.7553626Z"
+    },
+    {
+      "Name": "windows-uninstall-entry-removed",
+      "Passed": true,
+      "Detail": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Haloryva",
+      "Utc": "2026-11-11T17:10:09.7714098Z"
+    },
+    {
+      "Name": "shortcuts-removed",
+      "Passed": true,
+      "Detail": [
+        "C:\\Users\\runneradmin\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Haloryva.lnk",
+        "C:\\Users\\runneradmin\\Desktop\\Haloryva Studio.lnk"
+      ],
+      "Utc": "2026-11-11T17:10:09.7714098Z"
+    },
+    {
+      "Name": "uninstall-autostart-absent",
+      "Passed": true,
+      "Detail": "No Haloryva Run value",
+      "Utc": "2026-11-11T17:10:09.7714098Z"
+    },
+    {
+      "Name": "uninstall-all-settings",
+      "Passed": true,
+      "Detail": {
+        "Fields": 13,
+        "Differences": [],
+        "UiLanguage": "es",
+        "DrawingToolCycle": [
+          "Stylo",
+          "Rectangle"
+        ]
+      },
+      "Utc": "2026-11-11T17:10:09.7964900Z"
+    },
+    {
+      "Name": "uninstall-profile-files-byte-identical",
+      "Passed": true,
+      "Detail": {
+        "Files": {
+          "settings.json": "39A64800F20435DD8422E769F6442EA573217404F06B7D25809ACEEEF15D3E1C",
+          "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+          "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+        },
+        "Changed": []
+      },
+      "Utc": "2026-11-11T17:10:09.8032707Z"
+    },
+    {
+      "Name": "demo-asset-removed",
+      "Passed": true,
+      "Detail": "Bundled demo removed",
+      "Utc": "2026-11-11T17:10:09.8190359Z"
+    },
+    {
+      "Name": "only-preserved-profile-files-remain",
+      "Passed": true,
+      "Detail": [
+        "fixture-note.txt",
+        "settings.json",
+        "settings.json.bak"
+      ],
+      "Utc": "2026-11-11T17:10:09.8443844Z"
+    },
+    {
+      "Name": "normal-process-shutdown",
+      "Passed": true,
+      "Detail": {
+        "Count": 0
+      },
+      "Utc": "2026-11-11T17:10:09.8503512Z"
+    },
+    {
+      "Name": "no-extra-app-execution",
+      "Passed": true,
+      "Detail": [
+        {
+          "Kind": "start",
+          "TimeUtc": "2026-11-11T17:09:58.5987211Z",
+          "Name": "Haloryva.exe",
+          "CommandLine": "\"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-664a888ab05f4b549cc7f6b4be438b8e\\payload\\Haloryva.exe\" --selftest",
+          "ReadError": null,
+          "Pid": 10036,
+          "ParentPid": 11124,
+          "ExitStatus": 0
+        },
+        {
+          "Kind": "stop",
+          "TimeUtc": "2026-11-11T17:10:00.6136900Z",
+          "Name": "Haloryva.exe",
+          "CommandLine": null,
+          "ReadError": null,
+          "Pid": 10036,
+          "ParentPid": 0,
+          "ExitStatus": 0
+        }
+      ],
+      "Utc": "2026-11-11T17:10:10.8533167Z"
+    },
+    {
+      "Name": "original-artifact-unchanged",
+      "Passed": true,
+      "Detail": {
+        "Setup": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+        "Application": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC"
+      },
+      "Utc": "2026-11-11T17:10:10.8787002Z"
+    }
+  ],
+  "AppEvents": [
+    {
+      "Kind": "start",
+      "TimeUtc": "2026-11-11T17:09:58.5987211Z",
+      "Name": "Haloryva.exe",
+      "CommandLine": "\"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-664a888ab05f4b549cc7f6b4be438b8e\\payload\\Haloryva.exe\" --selftest",
+      "ReadError": null,
+      "Pid": 10036,
+      "ParentPid": 11124,
+      "ExitStatus": 0
+    },
+    {
+      "Kind": "stop",
+      "TimeUtc": "2026-11-11T17:10:00.6136900Z",
+      "Name": "Haloryva.exe",
+      "CommandLine": null,
+      "ReadError": null,
+      "Pid": 10036,
+      "ParentPid": 0,
+      "ExitStatus": 0
+    }
+  ],
+  "Environment": {
+    "Caption": "Microsoft Windows 11 Enterprise",
+    "Version": "10.0.26200",
+    "Build": "26200",
+    "Architecture": "ARM64",
+    "ImageOS": "win11-vs2026-arm64",
+    "ImageVersion": "20261101.203.1",
+    "SessionId": 2,
+    "User": "runneradmin"
+  },
+  "ProfileBefore": {
+    "settings.json": "130999A02C990AA21B8887DA33BD514CD460DA6284A5EE32C228ECCB3EA77431",
+    "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+    "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+  },
+  "UiAutomation": "Targeted external mouse messages to the verified setup window; normal WM_CLOSE after completion. Not physical-desktop click validation. No interaction with the Microsoft account window.",
+  "LastWorkerLocation": {
+    "ExecutablePath": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-b1530fa931e34e938c6635b9b5ccf282\\HaloryvaSetup.exe",
+    "ExpectedRoot": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance",
+    "ActualRoot": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance",
+    "TempEnvironment": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+    "TmpEnvironment": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+    "CommandLine": "\"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-b1530fa931e34e938c6635b9b5ccf282\\HaloryvaSetup.exe\" --worker --parent=1056 --uninstall"
+  },
+  "installWorker": {
+    "Pid": 11124,
+    "LauncherPid": 4844,
+    "Path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-664a888ab05f4b549cc7f6b4be438b8e\\HaloryvaSetup.exe",
+    "Title": "Haloryva Studio — Installation"
+  },
+  "ProfileAfterInstall": {
+    "settings.json": "39A64800F20435DD8422E769F6442EA573217404F06B7D25809ACEEEF15D3E1C",
+    "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+    "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+  },
+  "uninstallWorker": {
+    "Pid": 7308,
+    "LauncherPid": 1056,
+    "Path": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\HaloryvaMaintenance\\run-b1530fa931e34e938c6635b9b5ccf282\\HaloryvaSetup.exe",
+    "Title": "Haloryva Studio — Désinstallation"
+  },
+  "ProfileAfterUninstall": {
+    "settings.json": "39A64800F20435DD8422E769F6442EA573217404F06B7D25809ACEEEF15D3E1C",
+    "settings.json.bak": "E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC",
+    "fixture-note.txt": "3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65"
+  },
+  "MaintenanceFilesRemaining": [
+    "operation.lock"
+  ],
+  "Limits": [
+    "Synthetic settings fixture, not a real previous 2.7.0 installation",
+    "Windows 11 ARM64 with x64 emulation; physical x64 PC not tested",
+    "No normal app launch, no reboot/logon, no 195-suite, no MSIX or signing test",
+    "Installer maintenance executable in temporary run folder and unlocked operation.lock may remain by design"
+  ],
+  "FinishedUtc": "2026-11-11T17:10:10.8890999Z"
+}

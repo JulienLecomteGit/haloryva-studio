@@ -1,0 +1,95 @@
+HALORYVA STUDIO 2.7.1-preview.9 — INSTALLATION ET DESINSTALLATION EXE
+Bilan du 11 novembre 2026
+
+RESULTAT
+Cycle complet réellement exécuté et réussi sur Windows GitHub isolé : 27 vérifications / 27.
+Ces 27 assertions comprennent 4 vérifications préalables de l'environnement et des fichiers.
+Aucune anomalie produit constatée dans ce périmètre. Les adaptations ont concerné uniquement le pilote externe.
+Il s'agit d'une validation ciblée de l'installateur, pas d'une validation de diffusion générale.
+
+PREUVE PRINCIPALE
+Exécution : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43065284869
+Commit du pilote : 450bb3614c19cc47dff4fd11d2982585de57dcf8
+Machine : Windows 11 Enterprise ARM64, build 26200, image 20261101.203.1.
+Le programme x64 utilise l'émulation Windows. Compte de test : runneradmin.
+Durée de la recette : 17:09:47 à 17:10:10 UTC ; workflow terminé avec succès à 17:10:19 UTC.
+Archive de preuves : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43065284869/artifacts/13874957559
+11 fichiers, 237016 octets ; rétention jusqu'au 11 décembre 2026, 17:10:11 UTC.
+SHA256 de l'archive : d5c7a28e70047a3fa4b1a9aa81814b8e2a8c7fde225a167a00debfe85398f04c
+
+IDENTITE DES FICHIERS CONSERVEE
+Installateur : HaloryvaSetup_2.7.1-preview.9.exe
+SHA256 : 3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394
+Application : Haloryva.exe
+SHA256 : 678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC
+L'archive d'entrée est celle du run 43060226353, artifact 13872288880.
+Les empreintes sont identiques avant l'installation, sur les copies installées et sur les fichiers d'entrée après la désinstallation.
+Aucune recompilation de Haloryva ou de l'installateur. Seul l'auxiliaire externe du pilote est chargé par PowerShell.
+
+CE QUI A REELLEMENT ETE EXECUTE
+1. Création d'un profil fictif préexistant, sans application déjà installée.
+2. Lancement normal de l'installateur figé ; sa propre copie de maintenance est identifiée par sa filiation, son emplacement et son empreinte.
+3. Commande du bouton Installer dans la véritable fenêtre, par messages souris ciblés du pilote.
+4. Autotest Haloryva automatiquement lancé par l'installation : ligne de commande --selftest observée, processus parent installateur confirmé, sortie 0.
+5. Installation réelle dans le profil Windows du runner, transaction validée, fermeture normale de l'installateur avec sortie 0.
+6. Vérification de l'exécutable installé, du désinstalleur enregistré, de l'entrée Windows preview.9 et des raccourcis Bureau/menu Démarrer.
+7. Vérification des 13 réglages et des fichiers complémentaires.
+8. Lancement du désinstalleur enregistré avec --uninstall ; suppression des réglages laissée décochée.
+9. Désinstallation réelle, fermeture normale avec sortie 0.
+10. Vérification de la disparition des exécutables installés, des deux raccourcis, de l'entrée Windows et du logo fourni.
+11. Vérification de la conservation exacte des fichiers du profil et de l'absence de processus Haloryva/Setup restant.
+
+REGLAGES CONSERVES
+13 champs du profil comparés avant et après installation, puis après désinstallation :
+UiLanguage=es ; Enabled=true ; DrawingToolCycle=[Stylo, Rectangle] ; AnnotationTool=Rectangle ;
+AnnotationColor=#137AC4 ; AnnotationThickness=9 ; DrawSmoothMode=Formes assistées ;
+DrawSmoothStrength=65 ; ButtonX1=Outil de dessin suivant ; ButtonX2=Outil de dessin précédent ;
+LongPressMs=550 ; RingRadius=44 ; LaunchAtLogin=false.
+Aucune différence de valeur.
+
+settings.json est réécrit par l'installateur : son empreinte change, ses 13 valeurs restent identiques.
+Après l'installation puis après la désinstallation :
+settings.json = 39A64800F20435DD8422E769F6442EA573217404F06B7D25809ACEEEF15D3E1C
+settings.json.bak = E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC
+fixture-note.txt = 3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65
+Ces trois fichiers constituent tout le contenu restant du dossier Haloryva après désinstallation.
+Le fichier technique operation.lock reste dans Haloryva.Maintenance ; aucun processus ne le conserve ouvert.
+Les copies de maintenance temporaires relèvent du dossier temporaire du runner, et non du programme enregistré.
+Le démarrage automatique est resté désactivé : cela ne teste pas la suppression d'une entrée Run préalablement activée.
+
+METHODE ET LIMITES
+L'installation et la désinstallation ne sont pas simulées : elles ont modifié puis nettoyé réellement le profil Windows de la machine GitHub.
+L'appui sur les boutons est automatisé par messages adressés à la seule fenêtre de l'installateur identifiée.
+Cela ne valide pas le clic physique ni le focus sur le bureau recouvert par une fenêtre Microsoft account du runner.
+Aucune interaction avec cette fenêtre de compte, aucune connexion, aucun changement de protection.
+Quatre captures de la fenêtre Haloryva ont été produites ; elles n'ont pas été revues visuellement dans ce bilan.
+Le lancement normal de l'application après installation a volontairement été omis ; seul l'autotest autorisé l'a exécutée.
+Les validations antérieures ne sont pas élargies artificiellement.
+
+Non exécutés dans cette recette :
+- mise à jour depuis une vraie installation 2.7.0 (le profil était fictif) ;
+- réinstallation après désinstallation et rechargement visuel du profil ;
+- validation sur PC Windows x64 physique ou compte standard non élevé ;
+- ouverture de session réelle / redémarrage ;
+- MSIX, nouvelle recette fonctionnelle, 195 contrôles d'entrées ;
+- signature, publication GitHub Release, Store, abonnement.
+
+TRANSPARENCE SUR LES TENTATIVES
+5 runs ciblés ont été conservés, dont 1 cycle complet réussi.
+Les 3 premiers se sont arrêtés avant le bouton Installer : chemin court/long, focus, puis fenêtre Microsoft account identifiée.
+Le quatrième a installé réellement Haloryva et observé son autotest réussi ; son pilote s'est arrêté sur une valeur de code de sortie indisponible après fermeture. Il n'est pas compté comme cycle complet.
+Le cinquième a conservé un accès au processus jusqu'à sa fermeture : installation et désinstallation ont toutes deux renvoyé 0.
+Deux autotests automatiques ont donc réellement été exécutés au total, tous deux avec sortie 0. Aucun autotest séparé, aucun des 195 contrôles.
+La nouvelle installation était nécessaire après la fin de la machine GitHub du quatrième run pour atteindre la désinstallation.
+Détails et résultats partiels conservés dans historique.json et tentatives-precedentes.json.
+
+PRESERVATION
+Les 20 branches préexistantes, dont main, stable 2.7.0 et toutes les préversions, sont inchangées.
+Les 512 fichiers préexistants de la branche de départ sont identiques par identifiant Git.
+Seule une nouvelle branche a été créée : haloryva-tests-installateur-preview9.
+Aucune installation sur le PC de l'utilisateur, aucun paramètre système local modifié, aucun fichier local écrit.
+Aucune signature, aucune publication de produit, aucun abonnement.
+
+PROCHAINE ETAPE PROPOSEE, NON EXECUTEE
+Actualiser le bilan global preview.9 et le dossier Microsoft Store avec cette preuve, puis isoler les points réellement bloquants avant diffusion.
+Cela peut être fait sans relancer les tests ni modifier les exécutables.

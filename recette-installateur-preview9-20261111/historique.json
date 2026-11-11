@@ -1,0 +1,47 @@
+{
+  "FinalRun": 43065284869,
+  "FinalConclusion": "success",
+  "FinalChecksPassed": 27,
+  "FinalChecksTotal": 27,
+  "RunsTotal": 5,
+  "RealInstallationsStarted": 2,
+  "CompletedUninstallCycles": 1,
+  "AutomaticApplicationSelftestsObserved": 2,
+  "AutomaticApplicationSelftestsExitCodes": [
+    0,
+    0
+  ],
+  "SeparateSelftestsInvoked": 0,
+  "Historical195Runs": 0,
+  "Attempts": [
+    {
+      "Run": 43062677711,
+      "Outcome": "Driver rejected short TEMP path vs long worker path before Installer click; no application execution."
+    },
+    {
+      "Run": 43063068133,
+      "Outcome": "Driver could not confirm foreground before Installer click; no application execution."
+    },
+    {
+      "Run": 43063629872,
+      "Outcome": "Foreground diagnosis identified Microsoft account runner window covering setup; no application execution or account interaction."
+    },
+    {
+      "Run": 43064809038,
+      "Outcome": "Real installation committed and automatic selftest observed with exit 0. Driver lost exit-code access after normal setup closure; uninstall not executed. Preserved as partial evidence, not complete validation."
+    },
+    {
+      "Run": 43065284869,
+      "Outcome": "Complete real install/uninstall cycle, 27/27 checks, setup exits 0, automatic selftest 0, settings preserved."
+    }
+  ],
+  "DriverOnlyCorrections": [
+    "Canonicalize existing worker paths and use .NET temporary-directory resolution.",
+    "Use targeted external mouse messages to the verified installer HWND; normal WM_CLOSE after completion. No physical-desktop gesture validation, no Microsoft account interaction, no security-setting change.",
+    "Keep a native query/synchronize process handle while the worker is alive to read its true exit status after closure."
+  ],
+  "ReadOnlyCaptureAttempt": {
+    "PublicDesktopBase64WorkflowCreated": false,
+    "Note": "Automatic approval review rejected preparing a workflow exposing the entire desktop capture in public GitHub logs because it could include account information. No such workflow was committed or run. A private archive reference was retrieved; the in-memory image fetch failed and no local file was written. The final driver captures only its verified Haloryva window; captures were produced but not visually reviewed here."
+  }
+}
