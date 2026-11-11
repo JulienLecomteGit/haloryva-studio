@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-11",
+  "state": "sources_prepared_not_compiled_or_tested",
+  "scope": [
+    "F01",
+    "F02",
+    "F03"
+  ],
+  "changes": [
+    {
+      "lot": "F01",
+      "file": "languages/strings.json",
+      "field": "ui.0328.es",
+      "before": "Respuesta sonora que puedes desactivar en cualquier momento.",
+      "after": "Sonido opcional, fácil de desactivar."
+    },
+    {
+      "lot": "F02",
+      "file": "src/Brand.cs",
+      "field": "AssemblyInformationalVersion",
+      "before": "2.7.1-preview.9",
+      "after": "2.7.1"
+    },
+    {
+      "lot": "F02",
+      "file": "src/Brand.cs",
+      "field": "AssemblyFileVersion",
+      "before": "2.7.1.9",
+      "after": "2.7.1.10"
+    },
+    {
+      "lot": "F02",
+      "file": "src/Brand.cs",
+      "field": "BuildDate",
+      "before": "11/11/2026",
+      "after": "__DATE_FABRICATION__",
+      "status": "Future build recipe must stamp the actual build date and reject any remaining placeholder before compilation."
+    },
+    {
+      "lot": "F03",
+      "file": "src/Brand.cs",
+      "field": "History[0]",
+      "before": [
+        "Version",
+        "11/11/2026",
+        "Préversion : démarrage MSIX et reprise indépendante des réglages"
+      ],
+      "after": [
+        "Version",
+        "BuildDate",
+        "Langues, outils choisis et corrections de fiabilité"
+      ]
+    },
+    {
+      "lot": "F03",
+      "file": "languages/strings.json",
+      "field": "release271.0",
+      "before": null,
+      "after": {
+        "key": "release271.0",
+        "fr": "Langues, outils choisis et corrections de fiabilité",
+        "en": "Languages, selected tools and reliability fixes",
+        "es": "Idiomas, herramientas elegidas y mejoras de fiabilidad"
+      }
+    }
+  ],
+  "text_comparison": {
+    "catalogEntriesBefore": 471,
+    "catalogEntriesAfter": 472,
+    "existingEntriesChanged": [
+      "ui.0328"
+    ],
+    "newEntries": [
+      "release271.0"
+    ],
+    "otherCatalogEntriesUnchanged": 470,
+    "oldHistoryEntriesRetained": true,
+    "localizationMechanismUnchanged": true
+  }
+}

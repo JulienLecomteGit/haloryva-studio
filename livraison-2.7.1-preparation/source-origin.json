@@ -1,0 +1,279 @@
+{
+  "date": "2026-11-11",
+  "status": "PREPARED_SOURCE_COPY_NOT_A_BUILD_PROVENANCE",
+  "repository": "JulienLecomteGit/haloryva-studio",
+  "base_commit": "dca613b3714ccc85a2d1930f1a0cb5e23e91388c",
+  "source_prefix": "haloryva-ci/preview9/",
+  "destination_prefix": "livraison-2.7.1-preparation/",
+  "historical_preview9_build": {
+    "commit": "a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5",
+    "run": 43035196363,
+    "executable_sha256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC"
+  },
+  "target_versions": {
+    "public": "2.7.1",
+    "informational": "2.7.1",
+    "assembly": "2.7.1.0",
+    "file_proposed": "2.7.1.10",
+    "store_package": "2.7.1.0",
+    "build_date": "not_assigned"
+  },
+  "build_date_marker": "__DATE_FABRICATION__",
+  "date_must_be_stamped_at_actual_build": true,
+  "compiled": false,
+  "tests_executed": false,
+  "inputs": [
+    {
+      "source": "haloryva-ci/preview9/assets/Haloryva.ico",
+      "destination": "livraison-2.7.1-preparation/assets/Haloryva.ico",
+      "source_blob_sha": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/assets/app.manifest",
+      "destination": "livraison-2.7.1-preparation/assets/app.manifest",
+      "source_blob_sha": "efe344ab5adb62649ed61625ba63d3ebe311cede",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/languages/strings.json",
+      "destination": "livraison-2.7.1-preparation/languages/strings.json",
+      "source_blob_sha": "1b3e19f0252eccc44c22095d74a3b64d4bb3016f",
+      "mode": "100644",
+      "unchanged_copy": false
+    },
+    {
+      "source": "haloryva-ci/preview9/src/Annotations.cs",
+      "destination": "livraison-2.7.1-preparation/src/Annotations.cs",
+      "source_blob_sha": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/Brand.cs",
+      "destination": "livraison-2.7.1-preparation/src/Brand.cs",
+      "source_blob_sha": "14511359c3e75b0a33e45368b5102c34bbc2123e",
+      "mode": "100644",
+      "unchanged_copy": false
+    },
+    {
+      "source": "haloryva-ci/preview9/src/ColorWheelPopup.cs",
+      "destination": "livraison-2.7.1-preparation/src/ColorWheelPopup.cs",
+      "source_blob_sha": "b6b0f526361d8771d1ce42a2935d664075174144",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/Config.cs",
+      "destination": "livraison-2.7.1-preparation/src/Config.cs",
+      "source_blob_sha": "d4b5facee8d7374b813f62881e5c37aa62019d06",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/Controller.cs",
+      "destination": "livraison-2.7.1-preparation/src/Controller.cs",
+      "source_blob_sha": "68df9227b3697d52eaf75bc8fcd4d9a49e049032",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/DrawingGeometry.cs",
+      "destination": "livraison-2.7.1-preparation/src/DrawingGeometry.cs",
+      "source_blob_sha": "152be1f87728b7d71cfee264b1ff98de96409b16",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/EffectDiagnostics.cs",
+      "destination": "livraison-2.7.1-preparation/src/EffectDiagnostics.cs",
+      "source_blob_sha": "599b0e40ddb66606e70b4a8d58a5a25f6951bbb0",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/ErrorReporting.cs",
+      "destination": "livraison-2.7.1-preparation/src/ErrorReporting.cs",
+      "source_blob_sha": "92eb1ef6f221c1f0dd03c9bf0f2c7839acb711c3",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/FrameBounds.cs",
+      "destination": "livraison-2.7.1-preparation/src/FrameBounds.cs",
+      "source_blob_sha": "8c7c04fa382b310d8333f9688e499cd73bcc8602",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/FramePump.cs",
+      "destination": "livraison-2.7.1-preparation/src/FramePump.cs",
+      "source_blob_sha": "935ff42e4081a91a2d85a7f771d1bc6f3538e942",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/GlobalHooks.cs",
+      "destination": "livraison-2.7.1-preparation/src/GlobalHooks.cs",
+      "source_blob_sha": "f159a03fed9066e75decf1a657bb5e2fa4f17e88",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/InputPipeline.cs",
+      "destination": "livraison-2.7.1-preparation/src/InputPipeline.cs",
+      "source_blob_sha": "c201a63dd9dfde8d402785dd9404edcc45c19287",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/InputState.cs",
+      "destination": "livraison-2.7.1-preparation/src/InputState.cs",
+      "source_blob_sha": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/KeyboardPolicy.cs",
+      "destination": "livraison-2.7.1-preparation/src/KeyboardPolicy.cs",
+      "source_blob_sha": "9d0b136a80cadb131385aef683fa7a3096ceb882",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/Localization.cs",
+      "destination": "livraison-2.7.1-preparation/src/Localization.cs",
+      "source_blob_sha": "8b8dd12322656b5a73b4b10d8e8a5d6cc32ce6bd",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/PackageContext.cs",
+      "destination": "livraison-2.7.1-preparation/src/PackageContext.cs",
+      "source_blob_sha": "5c57976eab39ae023faf5240bc90d94e0402f66c",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/PremiumStudioForm.cs",
+      "destination": "livraison-2.7.1-preparation/src/PremiumStudioForm.cs",
+      "source_blob_sha": "505e0a2773e8458b2ec935e29bb46fb1ec0ce85f",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/PremiumWidgets.cs",
+      "destination": "livraison-2.7.1-preparation/src/PremiumWidgets.cs",
+      "source_blob_sha": "2f7d97aa8121d47cf4bb2883e37fa3f042e9f2ea",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/ProfileMigration.cs",
+      "destination": "livraison-2.7.1-preparation/src/ProfileMigration.cs",
+      "source_blob_sha": "c72c554f9585d68e249500745b6d9c743725377d",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/Program.cs",
+      "destination": "livraison-2.7.1-preparation/src/Program.cs",
+      "source_blob_sha": "08bed548abdb702c96863e32c0d6e7108c82b75b",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/SelfTest.cs",
+      "destination": "livraison-2.7.1-preparation/src/SelfTest.cs",
+      "source_blob_sha": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/Splash.cs",
+      "destination": "livraison-2.7.1-preparation/src/Splash.cs",
+      "source_blob_sha": "b9b79950ebb867a5dcaa6dd2f96d165bbc8e6c43",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/StartupRefreshTrace.cs",
+      "destination": "livraison-2.7.1-preparation/src/StartupRefreshTrace.cs",
+      "source_blob_sha": "2040e7bc9204638dc4229ee03b103e8ed2704b26",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/StartupSettings.cs",
+      "destination": "livraison-2.7.1-preparation/src/StartupSettings.cs",
+      "source_blob_sha": "0132c8f27a812ddd903aec1af8d983c1eaa72f6b",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/StudioControls.cs",
+      "destination": "livraison-2.7.1-preparation/src/StudioControls.cs",
+      "source_blob_sha": "caa9cf4bda5d361f42dc68fef03decf2087aacf3",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/StudioTheme.cs",
+      "destination": "livraison-2.7.1-preparation/src/StudioTheme.cs",
+      "source_blob_sha": "eb84acea0710a79b71de885766a0f0c750ec619c",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/TextPrompt.cs",
+      "destination": "livraison-2.7.1-preparation/src/TextPrompt.cs",
+      "source_blob_sha": "af7d55dfaf26f908b5c1ebb0ee1c516e99e0a5e3",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/ToolToast.cs",
+      "destination": "livraison-2.7.1-preparation/src/ToolToast.cs",
+      "source_blob_sha": "c0042ba4188f4be78834d8fdeb87618fff734e9d",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/TrailDiagnostics.cs",
+      "destination": "livraison-2.7.1-preparation/src/TrailDiagnostics.cs",
+      "source_blob_sha": "45aa3ab34c08abaef658b2f1f3a247a25375bd25",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/TrailEngine.cs",
+      "destination": "livraison-2.7.1-preparation/src/TrailEngine.cs",
+      "source_blob_sha": "ac1a37037c3052097cfb05f1ac2575fde01f905a",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/TrailSelfTest.cs",
+      "destination": "livraison-2.7.1-preparation/src/TrailSelfTest.cs",
+      "source_blob_sha": "b58ad2f7ec84a03ce529806c784ca505ac605365",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/Visuals.cs",
+      "destination": "livraison-2.7.1-preparation/src/Visuals.cs",
+      "source_blob_sha": "deb1961f3ee9d695af554dc1efb8e860679ca0aa",
+      "mode": "100644",
+      "unchanged_copy": true
+    },
+    {
+      "source": "haloryva-ci/preview9/src/WinNative.cs",
+      "destination": "livraison-2.7.1-preparation/src/WinNative.cs",
+      "source_blob_sha": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46",
+      "mode": "100644",
+      "unchanged_copy": true
+    }
+  ]
+}

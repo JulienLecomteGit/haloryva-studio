@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-11",
+  "base_commit": "dca613b3714ccc85a2d1930f1a0cb5e23e91388c",
+  "base_tree": "d130dfeab6438fdb523177169ce0d3992ffafc19",
+  "new_branch": "haloryva-preparation-livraison-2.7.1",
+  "only_new_path_prefix": "livraison-2.7.1-preparation/",
+  "preserved_branches": [
+    {
+      "name": "haloryva-2.7.0-c4",
+      "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+    },
+    {
+      "name": "haloryva-preparation-exe-preview9",
+      "sha": "c158d3fa27e1cd3e1dbeeb3655a4682b820e034d"
+    },
+    {
+      "name": "haloryva-preparation-msix-preview7",
+      "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+    },
+    {
+      "name": "haloryva-preparation-store-preview5",
+      "sha": "f07890303144653049a05069841838ecd9b9d73d"
+    },
+    {
+      "name": "haloryva-preparation-store-preview7",
+      "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+    },
+    {
+      "name": "haloryva-preparation-store-preview8",
+      "sha": "bf8892413e6d686feb2884d26e118eff94d32723"
+    },
+    {
+      "name": "haloryva-preparation-store-preview9",
+      "sha": "dca613b3714ccc85a2d1930f1a0cb5e23e91388c"
+    },
+    {
+      "name": "haloryva-tests-installateur-preview9",
+      "sha": "18a647ed7c22c6f4d19159721bc2ce844d8455a9"
+    },
+    {
+      "name": "haloryva-tests-preview2",
+      "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+    },
+    {
+      "name": "haloryva-tests-preview3",
+      "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+    },
+    {
+      "name": "haloryva-tests-preview4",
+      "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+    },
+    {
+      "name": "haloryva-tests-preview5-msix",
+      "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+    },
+    {
+      "name": "haloryva-tests-preview5",
+      "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+    },
+    {
+      "name": "haloryva-tests-preview6",
+      "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+    },
+    {
+      "name": "haloryva-tests-preview7-msix",
+      "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+    },
+    {
+      "name": "haloryva-tests-preview7",
+      "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+    },
+    {
+      "name": "haloryva-tests-preview8-focus",
+      "sha": "638e2044e6c988b784941329316aa53b99005e8a"
+    },
+    {
+      "name": "haloryva-tests-preview8-import",
+      "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420"
+    },
+    {
+      "name": "haloryva-tests-preview8",
+      "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+    },
+    {
+      "name": "haloryva-tests-preview9",
+      "sha": "d1afe7b5a155355bbf60645a4ad04c7f963bfb87"
+    },
+    {
+      "name": "main",
+      "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+    },
+    {
+      "name": "release/2.7.0-stable",
+      "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+    }
+  ],
+  "existing_files_to_preserve": 544,
+  "source_inputs_copied": 36,
+  "identical_input_copies": 34,
+  "edited_input_copies": [
+    "src/Brand.cs",
+    "languages/strings.json"
+  ],
+  "preview9_executable_sha256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+  "preview9_installer_sha256": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+  "existing_workflows_reviewed": 31,
+  "new_branch_matches_no_workflow_trigger": true,
+  "workflows_added": 0,
+  "workflows_modified": 0,
+  "builds": 0,
+  "application_executions": 0,
+  "tests": 0,
+  "historical195_runs": 0,
+  "signatures": 0,
+  "release_publications": 0,
+  "store_submissions": 0,
+  "local_file_writes": 0,
+  "local_system_changes": 0,
+  "partner_center_changes": false,
+  "validation_method": "Source text and Git object comparison only; no executable tests."
+}

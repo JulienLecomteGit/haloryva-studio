@@ -1,0 +1,68 @@
+HALORYVA — FINITIONS F01 A F03 PREPAREES DANS UNE COPIE SEPAREE
+11 novembre 2026 — modifications de sources seulement ; aucun test ni compilation.
+
+RESULTAT
+Nouvelle branche haloryva-preparation-livraison-2.7.1, nouveau dossier livraison-2.7.1-preparation/.
+36 entrées applicatives copiées depuis preview.9 : 34 identiques, 2 modifiées.
+Aucun fichier préexistant du dépôt remplacé ; aucun binaire touché.
+
+F01 — ESPAGNOL / CARTE SON
+languages/strings.json, clé ui.0328, champ es :
+Avant : Respuesta sonora que puedes desactivar en cualquier momento.
+Après : Sonido opcional, fácil de desactivar.
+Français et anglais de cette clé conservés.
+La phrase est plus courte ; son absence de troncature à 1024×768 reste à constater sur une future capture.
+Aucune capture ni exécution aujourd'hui.
+
+F02 — METADONNEES
+src/Brand.cs :
+AssemblyInformationalVersion : 2.7.1-preview.9 → 2.7.1.
+AssemblyFileVersion : 2.7.1.9 → 2.7.1.10 (révision technique proposée pour la prochaine fabrication).
+AssemblyVersion : 2.7.1.0, inchangé.
+Brand.Version : 2.7.1, inchangé.
+BuildDate : date de preview.9 remplacée par __DATE_FABRICATION__ en attendant la vraie fabrication.
+La première ligne d'historique réutilise cette même constante BuildDate.
+La recette future devra renseigner cette date dans sa copie de fabrication et bloquer tout marqueur restant.
+Nom, auteur, droits et logo inchangés. app.manifest reste à 2.7.1.0, asInvoker, sans élévation.
+
+F03 — HISTORIQUE FR/EN/ES
+Seule la première entrée de Brand.History change. Les 12 lignes des versions antérieures restent identiques.
+Le résumé de préversion est remplacé par :
+FR : Langues, outils choisis et corrections de fiabilité
+EN : Languages, selected tools and reliability fixes
+ES : Idiomas, herramientas elegidas y mejoras de fiabilidad
+Une entrée release271.0 est ajoutée au catalogue.
+Le texte français figure dans Brand.History ; PremiumPalette.TextAt appelle déjà L.T lors du dessin,
+ce qui résout la traduction par texte source selon la langue active.
+Aucun changement à Localization.cs, StudioTheme.cs ou au rendu du Studio.
+Aucun appel de traduction anticipé au chargement statique de Brand.
+
+COMPARAISON DES SOURCES EFFECTUEE
+Catalogue : 471 → 472 entrées ; une seule entrée existante modifiée (ui.0328.es), une entrée ajoutée.
+Les 470 autres entrées existantes restent identiques, y compris msix8.0 conservée comme donnée historique.
+Brand.cs : métadonnées, date à renseigner et première entrée d'historique uniquement.
+34 entrées applicatives réutilisent exactement les objets Git de preview.9.
+Cette comparaison de textes/objets ne constitue ni une recette fonctionnelle ni une compilation.
+
+NON EXECUTE
+0 compilation ; 0 lancement de Haloryva ; 0 autotest ; 0 relance des 195 contrôles.
+0 capture ; 0 installation ; 0 signature ; 0 release ; 0 soumission Store.
+Aucun fichier local, paramètre Windows ou application du PC principal modifié.
+Aucun changement des binaires, des 22 branches préexistantes ou de main.
+Les sources de SelfTest/TrailSelfTest restent dans la copie mais ne sont pas exécutées.
+
+FABRICATION SUIVANTE, A AUTORISER SEPAREMENT
+Préparer la recette de compilation isolée de cette copie et le renseignement de la date réelle.
+Après accord, compiler ce candidat une seule fois et conserver sa provenance/empreinte.
+Les contrôles ultérieurs doivent porter sur les métadonnées et les surfaces retouchées :
+- carte Sonidos à 1024×768 ;
+- première entrée d'historique et informations de version en FR/EN/ES.
+Aucun rejeu général des contrôles acquis n'est prévu par ces lots.
+Le setup final et le paquet Store ne sont pas fabriqués dans cette étape.
+Le choix public reste 2.7.1 ; premier paquet Store 2.7.1.0, identité Microsoft déjà réservée.
+
+LIMITES CONSERVEES
+La correction visuelle n'est pas déclarée confirmée tant que sa capture n'existe pas.
+La compilation C# et les métadonnées du nouvel EXE ne sont pas encore vérifiées sur un fichier fabriqué.
+Le jalon de finitions reste « préparé, non validé » ; aucune augmentation artificielle de la couverture.
+Les blocages MSIX/diffusion du dossier Store ne sont pas clos par ces retouches.
