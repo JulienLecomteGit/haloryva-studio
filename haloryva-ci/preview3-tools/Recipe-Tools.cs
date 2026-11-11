@@ -114,7 +114,7 @@ internal static class Recipe
             controller=Activator.CreateInstance(app.GetType("CursorFlow.CursorController"),true);
             SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
             SynchronizationContext.Current.Post(async delegate {
-                try { await Functional(); Write("COMPLETE remaining tools/history/export checks passed"); }
+                try { await Functional(); Write(code==0?"COMPLETE remaining tools/history/export checks passed":"COMPLETE with failures; renderer-only fallbacks do not validate the dialog"); }
                 catch(Exception ex) { code=1; Write("ERROR "+ex); }
                 finally {
                     foreach(ushort key in heldKeys) SendInput(1,new[]{new INPUT {type=1,data=new UNION {key=new KEY {vk=key,flags=2u|(key==0xa5?1u:0u)}}}},Marshal.SizeOf(typeof(INPUT)));
@@ -209,6 +209,7 @@ internal static class Recipe
         object[] originals=new object[strokes.Count]; strokes.CopyTo(originals,0);
         // Export is the actual controller action and native SaveFileDialog.
         await LeaveDrawing();
+        await Export("pilot-dialog-probe.png",false,false,true);
         string first=await Export("galerie é 123.png",false,false);
         ValidateGallery(first,true,false);
         int countBefore=Directory.GetFiles(folder,"*.png").Length;
@@ -322,7 +323,7 @@ internal static class Recipe
         await WaitFor(delegate { return (bool)Get(controller,"IsDrawing"); },"Drawing resumes after text prompt");
     }
     [DllImport("user32.dll",CharSet=CharSet.Unicode)] static extern int GetClassName(IntPtr hwnd,StringBuilder name,int capacity);
-    static async Task<string> Export(string name,bool cancel,bool empty)
+    static async Task<string> Export(string name,bool cancel,bool empty,bool probe=false)
     {
         string path=Path.Combine(folder,name);
         Check(!File.Exists(path),"Export uses a fresh test-only path: "+name);
@@ -363,7 +364,8 @@ internal static class Recipe
                 Check(owner==(uint)ownPid && GetForegroundWindow()==dialog,"Export action remains within the owned dialog");
                 using(var shot=new Bitmap(SystemInformation.VirtualScreen.Width,SystemInformation.VirtualScreen.Height)) {
                     using(var g=Graphics.FromImage(shot)) g.CopyFromScreen(SystemInformation.VirtualScreen.Location,Point.Empty,shot.Size);
-                    shot.Save(Path.Combine(folder,"dialog-"+name+".png"),System.Drawing.Imaging.ImageFormat.Png);
+                    string diagnostics=Path.Combine(folder,"dialogs"); Directory.CreateDirectory(diagnostics);
+                    shot.Save(Path.Combine(diagnostics,name+".png"),System.Drawing.Imaging.ImageFormat.Png);
                 }
                 Write("EXPORT dialog ready cancel="+cancel+" empty="+empty+" thread="+Thread.CurrentThread.ManagedThreadId);
                 if(!cancel && !empty) {
@@ -381,13 +383,33 @@ internal static class Recipe
             }
         });
         Write("EXPORT controller action entered");
-        Call(controller,"ExportDrawings");
+        if(probe) {
+            using(var testDialog=new SaveFileDialog()) {
+                testDialog.Filter="Image PNG transparente|*.png"; testDialog.FileName="Haloryva_annotations.png";
+                DialogResult result=testDialog.ShowDialog();
+                Write("EXPORT PROBE result="+result+" filename="+testDialog.FileName+" expected="+path);
+                if(result!=DialogResult.OK || testDialog.FileName!=path) {
+                    code=1; Write("FAIL Diagnostic standalone SaveFileDialog did not accept intended path");
+                }
+            }
+        } else Call(controller,"ExportDrawings");
         Write("EXPORT controller action returned fileExists="+File.Exists(path));
         await worker;
         await RefocusTarget();
-        if(!cancel && !empty) {
+        if(!cancel && !empty && !probe) {
             foreach(string file in Directory.GetFiles(folder)) Write("EXPORT observedFile="+Path.GetFileName(file)+" bytes="+new FileInfo(file).Length);
-            Check(File.Exists(path) && new FileInfo(path).Length>100,"Actual PNG export created: "+name);
+            bool actual=File.Exists(path) && new FileInfo(path).Length>100;
+            if(actual) Check(true,"Actual PNG export created: "+name);
+            else {
+                assertions++; code=1; Write("FAIL Actual dialog export missing; renderer-only diagnostic follows: "+name);
+                foreach(string rootDir in new[]{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),AppDomain.CurrentDomain.BaseDirectory}) {
+                    foreach(string file in Directory.GetFiles(rootDir,"*.png")) Write("EXPORT otherLocation="+file+" bytes="+new FileInfo(file).Length);
+                }
+                // Explicit fallback for independent history/render checks. Does NOT validate the failed dialog export.
+                path=Path.Combine(folder,"renderer-only-"+name);
+                Call(Get(controller,"overlay"),"ExportAnnotations",path);
+                Check(File.Exists(path),"Renderer-only diagnostic PNG created");
+            }
         }
         return path;
     }
