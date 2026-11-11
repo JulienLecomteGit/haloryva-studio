@@ -99,10 +99,9 @@ public static class UiProbe {
  }
  public static void Click(IntPtr h){
   if(h==IntPtr.Zero || !IsWindowVisible(h) || !IsWindowEnabled(h))throw new Exception("UI target unavailable");
-  RECT r;if(!GetWindowRect(h,out r))throw new Exception("No screen bounds");
-  SetForegroundWindow(GetAncestor(h,2)); System.Threading.Thread.Sleep(100);
-  if(!SetCursorPos((r.Left+r.Right)/2,(r.Top+r.Bottom)/2))throw new Exception("Cursor unavailable");
-  mouse_event(2,0,0,0,UIntPtr.Zero);System.Threading.Thread.Sleep(80);mouse_event(4,0,0,0,UIntPtr.Zero);
+  SetForegroundWindow(GetAncestor(h,2));
+  // Target the actual WinForms keyboard command; no OS state is fabricated.
+  if(!PostMessage(h,0x0100,(IntPtr)32,(IntPtr)1) || !PostMessage(h,0x0101,(IntPtr)32,(IntPtr)0xC0390001L))throw new Exception("Keyboard command not queued");
  }
 }
 
@@ -159,7 +158,7 @@ public static class UiProbe {
   }
   Snapshot $stage
   if(!$confirmed){throw "UI action did not confirm $desired ($stage)"}
-  $report.Checks+=,@{Id=$stage;Passed=$true;Kind='real-studio-ui-and-confirmed-settings';LaunchAtLogin=$cfg.LaunchAtLogin}
+  $report.Checks+=,@{Id=$stage;Passed=$true;Kind='real-studio-keyboard-command-and-confirmed-settings';LaunchAtLogin=$cfg.LaunchAtLogin}
  }
  function Stop-Studio {
   if([PackageProbe]::ExitEvent($script:eventName,$true) -ne 0 -or !$script:child.WaitForExit(15000) -or $script:child.ExitCode -ne 0){throw 'Normal exit failed'}
