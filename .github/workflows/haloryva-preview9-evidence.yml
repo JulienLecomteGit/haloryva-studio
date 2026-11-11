@@ -14,7 +14,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: preview9-first-refocus-on
-          run-id: 43030955991
+          run-id: 43032986050
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: ${{ runner.temp }}/preview9-existing-evidence/
       - name: Print preserved trace without executing Haloryva
@@ -23,4 +23,4 @@ jobs:
           $root=Join-Path $env:RUNNER_TEMP 'preview9-existing-evidence'
           $files=@(Get-ChildItem -LiteralPath $root -Recurse -File)
           $files|Select-Object Name,Length|ConvertTo-Json
-          $files|Where-Object {$_.Name -eq 'startup-refresh-recipe.tsv' -or $_.Name -eq 'errors.log'}|ForEach-Object {Write-Output ('EVIDENCE-FILE '+$_.Name);Get-Content -LiteralPath $_.FullName -Encoding UTF8}
+          $files|Where-Object {$_.Name -eq 'startup-refresh-recipe.tsv' -or $_.Name -eq 'errors.log' -or $_.Name -eq 'result.json' -or $_.Name -eq 'transcript.txt'}|ForEach-Object {Write-Output ('EVIDENCE-FILE '+$_.Name);Get-Content -LiteralPath $_.FullName -Encoding UTF8}
