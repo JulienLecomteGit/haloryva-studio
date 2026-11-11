@@ -1,0 +1,29 @@
+name: Haloryva preview.3 normal Studio placement diagnostic
+on:
+  push:
+    branches: ['haloryva-tests-preview3']
+    paths: ['haloryva-ci/preview3-placement/**', '.github/workflows/haloryva-preview3-placement.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  normal-launch-placement:
+    runs-on: windows-2025
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.3-build
+          run-id: 42931395281
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview3-build/
+      - name: Check original executable window placement without moving it
+        shell: powershell
+        run: ./haloryva-ci/preview3-placement/Check-Placement.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview3-normal-placement-evidence
+          path: ${{ runner.temp }}/haloryva-preview3-placement/
+          retention-days: 14
