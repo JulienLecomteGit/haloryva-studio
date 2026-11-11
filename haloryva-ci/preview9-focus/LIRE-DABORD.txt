@@ -1,0 +1,10 @@
+Premier retour au Studio sur preview.9 uniquement.
+EXE figé : 5A7CF59D6C4638F68474EBCCC9D4FDCEC610638D0EBCD612B2B5828B7411EE87
+Compilation acquise run 43029558353, aucune recompilation pendant les essais.
+MSIX d'essai version 2.7.1.90, même identité/manifeste que preview.8 hors version et EXE.
+Deux Windows 11 GitHub distincts, trace diagnostique activée et désactivée.
+Les 6 critères externes du premier retour restent ceux qui échouaient sur preview.8.
+Aucun second aller-retour ni relancement de l'application comme solution de secours.
+Contrôles supplémentaires : trace d'état lorsque demandée, arrêt des relectures bornées,
+absence de fichier diagnostique en mode normal.
+Aucune ancienne suite, 195 contrôles, session Windows réelle, signature ou publication.
