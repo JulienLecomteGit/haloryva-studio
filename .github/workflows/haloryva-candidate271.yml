@@ -1,0 +1,53 @@
+name: Haloryva 2.7.1 candidate build and targeted captures
+on:
+  push:
+    branches: ['haloryva-candidat-2.7.1']
+    paths:
+      - '.github/workflows/haloryva-candidate271.yml'
+      - 'haloryva-ci/candidate271/**'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2025
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile once with actual build date and inspect metadata
+        shell: powershell
+        run: ./haloryva-ci/candidate271/Build-Candidate.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Haloryva-2.7.1-candidate-build
+          path: ${{ runner.temp }}/haloryva-candidate271-build/
+          retention-days: 90
+          if-no-files-found: error
+  captures:
+    needs: build
+    runs-on: windows-2025
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [fr, en, es]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-candidate-build
+          path: ${{ runner.temp }}/haloryva-candidate271-build/
+      - name: Capture only requested delivery surfaces
+        shell: powershell
+        run: ./haloryva-ci/candidate271/Run-Captures.ps1 -Language ${{ matrix.language }}
+      - name: Deliver original PNGs for read-only visual review
+        if: always()
+        shell: powershell
+        run: ./haloryva-ci/candidate271/Emit-Captures.ps1 -Language ${{ matrix.language }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Haloryva-2.7.1-captures-${{ matrix.language }}
+          path: ${{ runner.temp }}/haloryva-candidate271-captures/${{ matrix.language }}/
+          retention-days: 90
+          if-no-files-found: error
