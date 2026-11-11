@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-11",
+  "requested_by_user": true,
+  "method": "Indice documentaire par jalons : chaque jalon vaut un point ; un jalon incomplet vaut zéro. Ce n'est ni une estimation d'heures, ni un pourcentage de corrections, ni une probabilité d'absence de bugs.",
+  "rubric_chosen_for_this_readout": true,
+  "application_and_installer": {
+    "closed": 6,
+    "total": 8,
+    "percentage": 75,
+    "remaining_percentage": 25,
+    "criteria": [
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5",
+      "J6",
+      "J7",
+      "J8"
+    ]
+  },
+  "complete_route_including_store": {
+    "closed": 6,
+    "total": 12,
+    "percentage": 50,
+    "remaining_percentage": 50,
+    "criteria": [
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5",
+      "J6",
+      "J7",
+      "J8",
+      "J9",
+      "J10",
+      "J11",
+      "J12"
+    ]
+  },
+  "not_included_as_completed": [
+    "Signature de l'EXE GitHub",
+    "Migration réelle depuis une installation 2.7.0",
+    "Exécution native Windows 11 x64 complète"
+  ],
+  "limits": "Les jalons ont des tailles différentes. Le comptage ne mesure pas la charge restante. La signature EXE hors Store et la promesse de migration réelle 2.7.0 restent des décisions séparées, pas des acquis.",
+  "milestones": [
+    {
+      "id": "J1",
+      "label": "Sources isolées et entrées/rendu fiabilisés",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Preview.2 et héritage conservé : hooks séparés, réglages figés pendant le trait."
+    },
+    {
+      "id": "J2",
+      "label": "Clic court et placement initial corrigés",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Bilans preview.3 et preview.4 ; preuves héritées, non rejouées."
+    },
+    {
+      "id": "J3",
+      "label": "Choix des outils mémorisé",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Preview.5 ; conservation du choix constatée dans le cycle EXE preview.9."
+    },
+    {
+      "id": "J4",
+      "label": "FR/EN/ES et affichage des outils intégrés",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Previews.6/.7 ; finition cosmétique Son espagnol séparée en J7."
+    },
+    {
+      "id": "J5",
+      "label": "Intégration MSIX et recettes ciblées réalisées",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Preview.8 import/états Windows ; preview.9 premier retour normal 7/7. La vraie connexion est J9, non couverte ici."
+    },
+    {
+      "id": "J6",
+      "label": "Installateur preview.9 construit et testé",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Build/extraction 43060226353 ; cycle installation/désinstallation 43065284869, 27/27."
+    },
+    {
+      "id": "J7",
+      "label": "Finitions et mentions de version stable",
+      "closed": false,
+      "scope": "application",
+      "evidence": "Liste fermée préparée seulement ; preview.9 reste inchangée."
+    },
+    {
+      "id": "J8",
+      "label": "EXE stable fabriqué et qualifié",
+      "closed": false,
+      "scope": "application",
+      "evidence": "Aucun binaire public 2.7.1 final fabriqué avec ces finitions."
+    },
+    {
+      "id": "J9",
+      "label": "Démarrage lors d’une vraie session Windows",
+      "closed": false,
+      "scope": "store_extra",
+      "evidence": "S6 non exécuté ; environnement distinct persistant non disponible/autorisé à ce jour."
+    },
+    {
+      "id": "J10",
+      "label": "Identité du produit Microsoft Store vérifiée",
+      "closed": false,
+      "scope": "store_extra",
+      "evidence": "Accès UI arrêté avant le portail : URL du navigateur Windows non identifiée avec assez de certitude."
+    },
+    {
+      "id": "J11",
+      "label": "Confidentialité, coordonnées et captures Store",
+      "closed": false,
+      "scope": "store_extra",
+      "evidence": "Brouillons disponibles ; approbation, coordonnées/URL et captures finales manquantes."
+    },
+    {
+      "id": "J12",
+      "label": "Paquet Store et certification",
+      "closed": false,
+      "scope": "store_extra",
+      "evidence": "Aucun paquet de production, rapport WACK ou résultat de certification."
+    }
+  ]
+}

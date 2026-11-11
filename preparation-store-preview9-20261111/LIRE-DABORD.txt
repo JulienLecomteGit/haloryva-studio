@@ -14,3 +14,9 @@ Les instructions de recette ci-jointes sont des propositions pour une étape ult
 Base documentaire : 18a647ed7c22c6f4d19159721bc2ce844d8455a9.
 Seule la branche haloryva-preparation-store-preview9 reçoit ce nouveau dossier.
 21 branches préexistantes et 521 fichiers préexistants sont à préserver à l'identique.
+
+AJOUT — LECTURE PARTNER CENTER ET LISTE FERMEE
+LECTURE-PARTNER-CENTER.txt précise le blocage du navigateur et les valeurs manquantes.
+FINITIONS-FERMEES-2.7.1.txt ferme le périmètre des retouches proposées ; aucune exécution.
+POINT-AVANCEMENT.txt explique les camemberts demandés (75 % / 50 % par comptage de jalons).
+AVANCEMENT-PAR-JALONS.json conserve leur base de calcul et les limites.

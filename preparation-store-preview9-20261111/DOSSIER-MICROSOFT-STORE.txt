@@ -71,3 +71,11 @@ SUITE CONCRETE
 Renseigner l'identité existante et l'historique des versions en lecture seule avant de préparer le paquet final.
 Les champs réellement manquants restent null dans identite-store.a-renseigner.json.
 Aucune création de compte, réservation, paiement ou soumission implicite.
+
+MISE A JOUR — TENTATIVE DE LECTURE PARTNER CENTER
+La consultation a été arrêtée par l'outil de navigateur avant ouverture du portail,
+car l'adresse du navigateur Windows ne pouvait pas être déterminée avec certitude.
+Aucune donnée de compte ou de produit obtenue ; les valeurs inconnues restent null.
+Cela ne signifie pas que le compte ou le produit est absent.
+Voir LECTURE-PARTNER-CENTER.txt pour la liste exacte des données manquantes et
+FINITIONS-FERMEES-2.7.1.txt pour les six lots préparés, non exécutés.

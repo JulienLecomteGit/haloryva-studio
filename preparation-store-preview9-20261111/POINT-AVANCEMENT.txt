@@ -1,0 +1,55 @@
+HALORYVA — POINT D'AVANCEMENT DEMANDE PAR L'UTILISATEUR
+11 novembre 2026 — comptage de jalons, aucun test supplémentaire.
+
+Application et installateur : 6 jalons clos sur 8, soit 75 %.
+Parcours complet incluant Microsoft Store : 6 jalons clos sur 12, soit 50 %.
+Les 8 premiers jalons sont inclus dans les 12, ce ne sont pas deux ensembles à additionner.
+
+Méthode choisie pour cet affichage : un jalon = un point ; seules les étapes closes comptent.
+Les étapes incomplètes, même déjà préparées, comptent zéro.
+Ce ne sont PAS des pourcentages de temps passé/restant, de correction exhaustive des audits,
+de couverture des tests, de chances de certification ou d'absence de bugs.
+Les étapes ont des charges très différentes. Il n'y a pas de date de livraison déduite de ce chiffre.
+L'ancien bilan refusant un pourcentage global de qualité reste exact : ce nouvel indicateur a un autre sens.
+
+J1 — CLOS — Sources isolées et entrées/rendu fiabilisés
+Preuve/périmètre : Preview.2 et héritage conservé : hooks séparés, réglages figés pendant le trait.
+
+J2 — CLOS — Clic court et placement initial corrigés
+Preuve/périmètre : Bilans preview.3 et preview.4 ; preuves héritées, non rejouées.
+
+J3 — CLOS — Choix des outils mémorisé
+Preuve/périmètre : Preview.5 ; conservation du choix constatée dans le cycle EXE preview.9.
+
+J4 — CLOS — FR/EN/ES et affichage des outils intégrés
+Preuve/périmètre : Previews.6/.7 ; finition cosmétique Son espagnol séparée en J7.
+
+J5 — CLOS — Intégration MSIX et recettes ciblées réalisées
+Preuve/périmètre : Preview.8 import/états Windows ; preview.9 premier retour normal 7/7. La vraie connexion est J9, non couverte ici.
+
+J6 — CLOS — Installateur preview.9 construit et testé
+Preuve/périmètre : Build/extraction 43060226353 ; cycle installation/désinstallation 43065284869, 27/27.
+
+J7 — OUVERT — Finitions et mentions de version stable
+Preuve/périmètre : Liste fermée préparée seulement ; preview.9 reste inchangée.
+
+J8 — OUVERT — EXE stable fabriqué et qualifié
+Preuve/périmètre : Aucun binaire public 2.7.1 final fabriqué avec ces finitions.
+
+J9 — OUVERT — Démarrage lors d’une vraie session Windows
+Preuve/périmètre : S6 non exécuté ; environnement distinct persistant non disponible/autorisé à ce jour.
+
+J10 — OUVERT — Identité du produit Microsoft Store vérifiée
+Preuve/périmètre : Accès UI arrêté avant le portail : URL du navigateur Windows non identifiée avec assez de certitude.
+
+J11 — OUVERT — Confidentialité, coordonnées et captures Store
+Preuve/périmètre : Brouillons disponibles ; approbation, coordonnées/URL et captures finales manquantes.
+
+J12 — OUVERT — Paquet Store et certification
+Preuve/périmètre : Aucun paquet de production, rapport WACK ou résultat de certification.
+
+Limites hors acquis : signature EXE séparée, migration réelle 2.7.0 et qualification Windows 11 x64 native complète.
+La cible de livraison reste 2.7.1 ; la preview.9 est déjà corrigée et testée, mais n'est pas encore le livrable final.
+
+Le camembert du chat est la représentation de ce seul indice documentaire.
+Aucune exécution de Haloryva, compilation, recette, signature ou publication n'a été réalisée pour le produire.

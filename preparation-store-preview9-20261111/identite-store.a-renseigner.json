@@ -157,5 +157,20 @@
   "external_exe_signature_group": "X1",
   "evidence_versions_mixed": true,
   "legacy_fixture_import_evidence_version": "preview.8",
-  "legacy_fixture_import_evidence_run": 43020483264
+  "legacy_fixture_import_evidence_run": 43020483264,
+  "partner_center_read_attempt": {
+    "date": "2026-11-11",
+    "requested_access": "read_only",
+    "status": "blocked_before_portal",
+    "reason": "Computer-use tool could not confidently identify the current Windows browser URL and stopped interaction.",
+    "portal_opened": false,
+    "account_exists": null,
+    "product_exists": null,
+    "new_credentials_requested": false,
+    "account_created": false,
+    "subscription_created": false,
+    "fields_obtained": []
+  },
+  "closed_finishing_list": "FINITIONS-FERMEES-2.7.1.txt",
+  "partner_center_missing_details_document": "LECTURE-PARTNER-CENTER.txt"
 }

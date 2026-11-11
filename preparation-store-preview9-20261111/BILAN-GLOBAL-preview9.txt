@@ -110,3 +110,13 @@ Nouveau dossier isolé sur haloryva-preparation-store-preview9, base 18a647ed7c2
 21 branches et 521 fichiers préexistants préservés. Aucun binaire, pilote ou workflow modifié.
 Les archives binaires GitHub ont une rétention annoncée jusqu'au 11 décembre 2026 ; identifiants et textes ne remplacent pas ces archives.
 Voir preuves-et-sources.json, progression-chiffree.json, couverture-msix.json et preservation.json.
+
+COMPLEMENT DOCUMENTAIRE — AVANCEMENT ET DERNIERES FINITIONS
+A la demande de l'utilisateur, POINT-AVANCEMENT.txt et AVANCEMENT-PAR-JALONS.json
+comptent les étapes closes : 6/8 pour application/installateur et 6/12 avec le Store.
+Cet indice à poids égaux ne remplace pas les limites de couverture et ne mesure pas le temps restant.
+Le pourcentage global de qualité reste non calculé.
+La consultation Partner Center n'a pas pu atteindre le portail ; aucune identité obtenue.
+Une liste fermée de six lots de finition 2.7.1 est préparée, sans code modifié.
+Aucun nouveau test, aucune compilation, signature, installation ni publication.
+Seul le camembert demandé a été ajouté localement dans le dossier de visualisation du chat.

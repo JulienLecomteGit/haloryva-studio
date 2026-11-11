@@ -1,0 +1,82 @@
+HALORYVA — LISTE FERMEE DES FINITIONS POUR LA STABLE 2.7.1
+11 novembre 2026 — PREPARE UNIQUEMENT ; aucune modification de code ou compilation.
+
+PRINCIPE
+La preview.9 et ses empreintes restent figées.
+Cible publique proposée : Haloryva Studio 2.7.1.
+Les six lots ci-dessous définissent le périmètre de finition ; aucune fonction supplémentaire.
+Une nouvelle anomalie réellement constatée devra être présentée séparément avant d'élargir ce périmètre.
+Les vérifications citées ci-dessous sont futures et NON EXECUTEES aujourd'hui.
+
+F01 — Sous-texte espagnol de la carte Son
+Fichier de départ : haloryva-ci/preview9/languages/strings.json, clé ui.0328.
+FR/EN conservés.
+ES actuel : Respuesta sonora que puedes desactivar en cualquier momento.
+ES proposé : Sonido opcional, fácil de desactivar.
+Motif : troncature observée sur la capture preview.7 à 1024×768 ; aucune commande masquée.
+Critère de fermeture futur : une capture ciblée de Clics > Sonidos à cette taille, montrant le texte lisible.
+Ne pas refaire les 174 captures ni la recette générale des outils.
+
+F02 — Métadonnées de la version stable
+Fichier de départ : haloryva-ci/preview9/src/Brand.cs, dans une NOUVELLE copie de livraison.
+AssemblyInformationalVersion proposé : 2.7.1, remplaçant 2.7.1-preview.9.
+Brand.Version : 2.7.1, déjà présent.
+AssemblyVersion : 2.7.1.0, à conserver.
+AssemblyFileVersion proposé pour cette prochaine fabrication : 2.7.1.10, révision technique supérieure à .9.
+Cette révision n'est pas le nom public ni une preview.10 ; vérifier l'absence de révision intermédiaire avant fabrication.
+BuildDate : date effective de la fabrication finale, pas une date inventée à l'avance.
+Manifeste de l'application : identité numérique 2.7.1.0 déjà cohérente ; conserver asInvoker, aucune élévation.
+Critère futur : lecture des métadonnées du nouveau fichier, version visible cohérente, empreinte nouvelle documentée.
+
+F03 — Historique visible et ses trois traductions
+Modifier seulement la première entrée d'historique de la nouvelle copie Brand.cs.
+Remplacer le résumé de préversion MSIX par une clé de livraison explicite, proposée release271.0 :
+FR : Langues, outils choisis et corrections de fiabilité
+EN : Languages, selected tools and reliability fixes
+ES : Idiomas, herramientas elegidas y mejoras de fiabilidad
+Ajouter la traduction correspondante au catalogue de la nouvelle copie ; conserver l'historique des anciennes versions.
+Les notes de diffusion détaillées restent dans les documents, pas dans la ligne courte du Studio.
+Critère futur : vérifier la ligne A propos dans FR/EN/ES ; pas de nouvelle recette générale des langues.
+L'ajout doit suivre le mécanisme de traduction existant, sans refonte de l'interface.
+
+F04 — Installateur final autour du nouvel EXE
+Nom proposé : HaloryvaSetup_2.7.1.exe.
+Adapter uniquement la recette de fabrication et ses métadonnées aux sources/empreintes finales.
+Le nouveau setup doit embarquer exactement le nouvel EXE final ; conserver tous les artifacts preview.9.
+Ne pas modifier les règles d'installation, de désinstallation ou de conservation des réglages déjà testées.
+Critère futur : extraction/intégrité et cycle de maintenance ciblé du NOUVEAU livrable.
+L'autotest déclenché par l'installation appartient à cette future recette ; aucune exécution autorisée aujourd'hui.
+L'installateur EXE n'est pas rendu signé par ce lot.
+
+F05 — Manifeste et emballage MSIX de production
+Renseigner uniquement les valeurs réelles du produit Partner Center : Name, Publisher et nom éditeur.
+Version proposée 2.7.1.0, conditionnée par l'historique du produit ; ne jamais forcer un retour de version.
+Ne pas reprendre HaloryvaStudio.MsixLifecycleTest ni son identité d'essai non signée.
+Confirmer architecture/OS/langues, ressources visuelles et description runFullTrust.
+Conserver la tâche unique de démarrage et son choix désactivé par défaut ; aucune modification fonctionnelle proposée.
+Critère futur : contrôle du paquet réel et rapport de certification local, puis examen avant soumission.
+Les champs manquants de Partner Center empêchent de finaliser ce lot.
+
+F06 — Documents et fiche de diffusion
+Finaliser FR/EN/ES, historique complet, instructions d'installation/désinstallation et limites connues.
+Définir les coordonnées publiques de support/confidentialité, faire approuver la politique et préparer les visuels finaux.
+Conserver les droits actuels ; ne pas introduire de nouvelle licence.
+Distinguer le téléchargement EXE GitHub du paquet MSIX Store et leurs signatures.
+Critère futur : revue de ces contenus complets avant tout hébergement ou dépôt.
+
+POINTS DE VALIDATION QUI NE SONT PAS DES CORRECTIONS DE CODE SUPPOSEES
+- S6 : vraie fermeture/ouverture de session Windows avec démarrage autorisé puis désactivé, toujours non exécuté.
+- Passage depuis une installation réelle 2.7.0 : toujours non exécuté ; conditionnel à la promesse de migration.
+- Compte Windows standard, Windows 11 x64 natif et revue complète des nouveaux dialogues : limites conservées.
+- Clôture du pilote diagnostic S3 : preuve incomplète conservée ; aucun nouveau défaut produit démontré.
+- WACK/certification : non réalisés, à faire sur le paquet de production après préparation et accord.
+- Signature de l'EXE hors Store : aucune solution déjà validée ; ne pas promettre qu'il passera les protections du PC principal.
+Ces points ne sont pas marqués « réussis » par la préparation de la présente liste.
+
+LIVRABLE VISE
+Un installateur 2.7.1 contenant les corrections cumulées, accompagné d'une provenance claire,
+et un canal MSIX Store une fois sa préparation et sa certification achevées.
+Le livrable actuel reste 2.7.1-preview.9 non signé ; il ne doit pas être renommé pour faire croire à une stable.
+L'utilisateur a indiqué avoir retiré 2.7.0 de son PC : une future installation sur ce PC serait une nouvelle installation.
+Les fichiers de préférences éventuellement restants doivent être préservés ; le test synthétique n'est pas une inspection du profil utilisateur.
+Aucune installation sur le PC principal n'est autorisée par cette liste.

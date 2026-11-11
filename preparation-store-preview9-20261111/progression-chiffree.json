@@ -93,11 +93,19 @@
     "builds": 0,
     "binary_changes": 0,
     "workflow_changes": 0,
-    "local_file_writes": 0,
+    "local_file_writes": 1,
     "system_changes": 0,
     "signatures": 0,
     "release_publications": 0,
     "store_submissions": 0,
-    "subscriptions": 0
+    "subscriptions": 0,
+    "visualization_files_created": 1,
+    "local_file_scope": "Only the requested chat visualization in the authorized visualization folder. No application or system file changed."
+  },
+  "documentary_milestone_index": {
+    "file": "AVANCEMENT-PAR-JALONS.json",
+    "application_installer_percent": 75,
+    "complete_route_with_store_percent": 50,
+    "method": "Equal-weight milestone count requested by user; not effort, test coverage or quality."
   }
 }
