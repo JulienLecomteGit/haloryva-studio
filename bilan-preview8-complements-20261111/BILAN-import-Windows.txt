@@ -1,0 +1,69 @@
+HALORYVA STUDIO preview.8 — COMPLÉMENT DE RECETTE DU 11 NOVEMBRE 2026
+
+Les deux nouveaux essais GitHub sont réussis dans leur périmètre. Le binaire final et le paquet MSIX sont strictement ceux déjà produits. Aucun ancien contrôle complet n’a été relancé.
+
+Binaire : CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512
+MSIX B : D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9
+Paquet : HaloryvaStudio.MsixLifecycleTest, version 2.7.1.80, non signé.
+Environnement : machines GitHub temporaires Windows 11 Enterprise ARM64, build 26200, application x64 émulée. Outils déjà installés sur ces machines.
+
+1. REPRISE DES RÉGLAGES PAR L’INTERFACE : 17 ASSERTIONS RÉUSSIES
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43020483264
+
+Parcours réellement exécuté dans le MSIX :
+- Présence d’un profil classique SYNTHÉTIQUE dans le dossier classique du compte temporaire.
+- Annulation de la proposition initiale : copie différée, aucun fichier personnalisé copié, source intacte.
+- Bouton « Reprendre mes réglages 2.7.0 », puis Non : refus mémorisé, aucune copie PNG/WAV ni activation du démarrage.
+- Même bouton, puis Oui : réglages copiés, PNG et WAV lus et copiés dans LocalState/Haloryva/ImportedAssets.
+- Vérification des empreintes : chaque fichier copié est identique à son original ; le profil source, le PNG original et le WAV original sont inchangés.
+- Sauvegarde brute du profil source vérifiée ; références des fichiers remplacées par leurs chemins internes au paquet, état du préréglage ajusté.
+- Le profil ancien ne contient ni langue ni sélection d’outils : les valeurs ajoutées par les préversions sont correctement initialisées (français et dix outils).
+- LaunchAtLogin=true du profil est conservé comme préférence historique ; la tâche Windows reste désactivée (State=0). Aucun démarrage implicite n’est créé par l’import.
+- Nouvelle demande de remplacement, puis Annuler : réglages déjà importés conservés.
+- Arrêt normal ; fichier source toujours intact ; paquet de test retiré.
+
+Les fenêtres de consentement sont celles de Haloryva/Windows, actionnées par le pilote sur les données de test autorisées. Ce n’est pas une simulation du code de migration.
+Le PNG est une image de 8×8 pixels ; le WAV est un petit son PCM silencieux. Ce ne sont pas des fichiers personnels.
+Il n’y a eu AUCUNE installation de Haloryva 2.7.0. Ce résultat valide une reprise de profil au format ancien, pas la migration d’une installation réelle avec son installateur, ses raccourcis et son démarrage.
+Le bouton générique « Importer un profil » avec sélecteur de fichier JSON n’est pas présenté comme exécuté par cette recette.
+
+2. DÉSACTIVATION PAR WINDOWS : 5 ASSERTIONS RÉUSSIES
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43021089861
+
+Une activation unique depuis le Studio sert de préparation nécessaire. L’ancienne suite d’activation/désactivation n’est pas répétée.
+Le pilote ouvre la vraie page Windows « Applications > Démarrage » (ms-settings:startupapps), trouve l’unique interrupteur « Haloryva Studio Lifecycle Test », puis le passe de On à Off via l’accessibilité de cette interface.
+Windows enregistre réellement State=1 (désactivé par l’utilisateur), et non un état de service fictif. Le pilote ne modifie aucune valeur du Registre : il le consulte uniquement pour vérifier le résultat.
+Après arrêt et relancement normaux de Haloryva, le contrôle de démarrage est désactivé dans le Studio. Le profil contient toujours LaunchAtLogin=true, mais cette valeur ne réactive pas Windows.
+Le paquet de test est retiré à la fin.
+
+LIMITE PRÉCISE SUR LA FENÊTRE DÉJÀ OUVERTE
+Le retour du focus vers le Studio n’a pas été confirmé par l’environnement GitHub (LiveFocusConfirmed=false). Avant relancement, son interrupteur est resté utilisable, alors que Windows était déjà à State=1.
+Le rafraîchissement immédiat au retour réel du focus n’est donc PAS validé. Ce constat ne prouve pas le comportement après un véritable retour utilisateur au premier plan. Le respect du choix Windows après relancement est, lui, réellement validé.
+Le pilote n’a ni forcé un événement Activated fictif ni contourné les protections Windows pour présenter cette partie comme réussie.
+
+CE QUI RESTE NON EXÉCUTÉ
+- Rafraîchissement immédiat après un retour réel du focus au Studio.
+- Ouverture de session Windows réelle et lancement automatique à cette occasion.
+- Migration/coexistence avec une installation réelle stable 2.7.0.
+- Dialogues d’avertissement pour fichiers personnalisés inaccessibles ou trop volumineux ; seuls les fichiers PNG/WAV valides et les refus de consentement décrits ci-dessus sont couverts.
+- Parcours générique du sélecteur de fichier JSON.
+- Validation native Windows 11 x64 et certification Microsoft Store.
+Ces points ne sont pas transformés en résultats positifs par les deux jobs verts.
+
+PRÉSERVATION
+Nouvelle branche : haloryva-tests-preview8-import.
+Les 15 branches préexistantes, y compris haloryva-tests-preview8, main et la stable, ainsi que les 416 fichiers de départ, sont inchangés. Les anciens bilans sont conservés.
+Aucun accès ou changement de fichier sur le PC de l’utilisateur, aucune exécution locale, aucune installation locale, aucune compilation du binaire applicatif, aucune signature ni certificat, aucune release ni soumission Store.
+Les seules additions sont les pilotes ciblés, leurs workflows et ce complément de bilan sur la nouvelle branche de travail publique.
+Les 195 contrôles et les autres suites déjà acquises ne sont pas relancés. Installation du paquet, lancement, activation préalable unique et arrêt sont les préparatifs nécessaires aux deux nouveaux cas.
+
+PREUVES
+Import : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43020483264/artifacts/13855181243
+Windows : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43021089861/artifacts/13854413758
+Les archives expirent le 11 décembre 2026. Résultats structurés, empreintes, portée et limites sont conservés dans preuves.json de ce dossier.
+
+SUITE PROPOSÉE
+Actualiser le bilan global et le dossier Store à partir des preuves accumulées, en gardant les points restants séparés des résultats acquis. Cette recette ne justifie pas à elle seule une diffusion finale.
+
+Documentation de la page Windows utilisée :
+https://learn.microsoft.com/windows/uwp/launch-resume/launch-settings-app

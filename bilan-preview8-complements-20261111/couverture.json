@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "version": "2.7.1-preview.8",
+  "complete_store_validation": false,
+  "M1": {
+    "status": "passed_real_ui_on_synthetic_legacy_profile",
+    "actual270Installed": false,
+    "run": 43020483264,
+    "consent": [
+      "Cancel",
+      "No",
+      "Yes"
+    ],
+    "genericJSONFilePicker": false
+  },
+  "M6": {
+    "status": "valid_png_wav_and_consent_passed",
+    "run": 43020483264,
+    "source_and_target_hashes_match": true,
+    "source_unchanged": true,
+    "unreadable_and_oversize_dialogs_not_executed": true
+  },
+  "S5": {
+    "status": "real_msix_import_no_implicit_startup_passed",
+    "run": 43020483264,
+    "storedLaunchAtLogin": true,
+    "effectiveWindowsState": 0
+  },
+  "S3": {
+    "status": "partial_real",
+    "run": 43021089861,
+    "windowsSettingsUI": true,
+    "actualDisabledByUser": true,
+    "respectedAfterRelaunch": true,
+    "immediateLiveRefocusVerified": false,
+    "liveControlBeforeRelaunchEnabled": true
+  },
+  "M7": {
+    "status": "not_executed",
+    "reason": "No real stable installation"
+  },
+  "S6": {
+    "status": "not_executed",
+    "reason": "No real Windows logon"
+  },
+  "historical195Executed": false,
+  "previouslyAcquiredSuitesRerun": false
+}

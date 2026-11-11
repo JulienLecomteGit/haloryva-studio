@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "version": "2.7.1-preview.8",
+  "date": "2026-11-11",
+  "branch": "haloryva-tests-preview8-import",
+  "finalExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+  "frozenMSIXSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+  "sourceArtifact": {
+    "run": 43017325667,
+    "id": 13853108416
+  },
+  "import": {
+    "run": 43020483264,
+    "status": "success",
+    "results": [
+      {
+        "Version": "2.7.1-preview.8",
+        "Status": "import-ui-passed",
+        "ExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+        "PackageSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+        "Actual270Installed": false,
+        "FixturesOnly": true,
+        "Rebuilt": false,
+        "Signed": false,
+        "ReleasePublished": false,
+        "Historical195Executed": false,
+        "AcquiredSuitesRerun": false,
+        "Checks": [
+          {
+            "Id": "frozen-installed-exe",
+            "Passed": true
+          },
+          {
+            "Id": "cancel-keeps-pending",
+            "Passed": true
+          },
+          {
+            "Id": "cancel-no-asset-copy",
+            "Passed": true
+          },
+          {
+            "Id": "cancel-original-unchanged",
+            "Passed": true
+          },
+          {
+            "Id": "refusal-remembered",
+            "Passed": true
+          },
+          {
+            "Id": "refusal-no-asset-copy",
+            "Passed": true
+          },
+          {
+            "Id": "refusal-no-startup-change",
+            "Passed": true
+          },
+          {
+            "Id": "accepted-fixture-settings",
+            "Passed": true
+          },
+          {
+            "Id": "new-fields-defaults",
+            "Passed": true
+          },
+          {
+            "Id": "independent-asset-paths",
+            "Passed": true
+          },
+          {
+            "Id": "png-and-wav-copied-exactly",
+            "Passed": true
+          },
+          {
+            "Id": "preset-cleared-for-new-paths",
+            "Passed": true
+          },
+          {
+            "Id": "all-source-bytes-unchanged",
+            "Passed": true
+          },
+          {
+            "Id": "raw-recovery-copy",
+            "Passed": true
+          },
+          {
+            "Id": "import-true-does-not-enable-windows",
+            "Passed": true
+          },
+          {
+            "Id": "cancel-preserves-existing-profile",
+            "Passed": true
+          },
+          {
+            "Id": "source-unchanged-after-normal-exit",
+            "Passed": true
+          }
+        ],
+        "Dialogs": [
+          {
+            "RealWin32Dialog": true,
+            "AnswerId": 2,
+            "Stage": "initial-cancel",
+            "Text": "Haloryva Studio\n&Yes\n&No\nCancel\nCopier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés."
+          },
+          {
+            "RealWin32Dialog": true,
+            "AnswerId": 7,
+            "Stage": "explicit-refuse",
+            "Text": "Haloryva Studio\n&Yes\n&No\nCancel\nCopier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés."
+          },
+          {
+            "RealWin32Dialog": true,
+            "AnswerId": 6,
+            "Stage": "explicit-consent",
+            "Text": "Haloryva Studio\n&Yes\n&No\nCancel\nCopier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés."
+          },
+          {
+            "RealWin32Dialog": true,
+            "AnswerId": 2,
+            "Stage": "cancel-existing-profile-replacement",
+            "Text": "Haloryva Studio\n&Yes\n&No\nCancel\nCopier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés.\n\nLes réglages actuels seront sauvegardés avant leur remplacement."
+          }
+        ],
+        "Environment": {
+          "Architecture": "ARM64",
+          "Build": "26200",
+          "OS": "Microsoft Windows 11 Enterprise",
+          "Image": "20261101.203.1"
+        },
+        "Fixture": {
+          "WAV": "60C0B6C740C791F5D9C1B7D688AA4E6719B93C8F4E7C4B7919AB86AD78B74068",
+          "AbsentNewFields": [
+            "UiLanguage",
+            "DrawingToolCycle"
+          ],
+          "SourceSHA256": "B685A1846C22696F76B6E76A68101FE84CE39EF7B721BF8886C473B39A1E8FBF",
+          "PNG": "FFC591E7489EC8754636564F5BF019520F45AA43F876C355FD533AB6803ADE40",
+          "Kind": "synthetic-270-format-no-installed-270"
+        },
+        "ImportedSummary": {
+          "LaunchAtLoginStored": true,
+          "Language": "fr",
+          "Tools": [
+            "Stylo",
+            "Surligneur",
+            "Ligne droite",
+            "Rectangle",
+            "Ellipse",
+            "Flèche droite",
+            "Flèche libre",
+            "Forme libre",
+            "Numéro",
+            "Texte"
+          ],
+          "Thickness": 8,
+          "PNGTargetSHA256": "FFC591E7489EC8754636564F5BF019520F45AA43F876C355FD533AB6803ADE40",
+          "WAVTargetSHA256": "60C0B6C740C791F5D9C1B7D688AA4E6719B93C8F4E7C4B7919AB86AD78B74068",
+          "ProfileSHA256": "5BF7D4A569F7FB41FBE454F5D00165DCDE4835FB8FD23FD98CC509D752A02FA8",
+          "WindowsStartupState": 0
+        },
+        "TestPackageRemoved": true
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 13855181243,
+        "name": "preview8-import-ui-evidence",
+        "size_in_bytes": 8128,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13855181243",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13855181243/zip",
+        "expired": false,
+        "created_at": "2026-11-11T12:28:46Z",
+        "expires_at": "2026-12-11T12:28:45Z",
+        "updated_at": "2026-11-11T12:28:46Z",
+        "digest": "sha256:680edb8239849d98e8fadc4da284cdb570087d4609dfcfd762a8e72884ff9868",
+        "workflow_run": {
+          "id": 43020483264,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-tests-preview8-import",
+          "head_sha": "ee449ff6d356929ad4592a4e599a7a6a0cfccd0c"
+        }
+      }
+    ]
+  },
+  "windowsStartup": {
+    "run": 43021089861,
+    "status": "success",
+    "results": [
+      {
+        "Version": "2.7.1-preview.8",
+        "Status": "windows-startup-disable-passed",
+        "ExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+        "PackageSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+        "Actual270Installed": false,
+        "FixturesOnly": true,
+        "Rebuilt": false,
+        "Signed": false,
+        "ReleasePublished": false,
+        "Historical195Executed": false,
+        "AcquiredSuitesRerun": false,
+        "Checks": [
+          {
+            "Id": "frozen-installed-exe",
+            "Passed": true
+          },
+          {
+            "Id": "windows-toggle-on-before-action",
+            "Passed": true
+          },
+          {
+            "Id": "windows-disabled-by-user-real-state",
+            "Passed": true
+          },
+          {
+            "Id": "relaunch-respects-disabled-by-user",
+            "Passed": true
+          },
+          {
+            "Id": "historical-json-does-not-override-windows",
+            "Passed": true
+          }
+        ],
+        "Dialogs": [],
+        "Environment": {
+          "Architecture": "ARM64",
+          "Build": "26200",
+          "OS": "Microsoft Windows 11 Enterprise",
+          "Image": "20261101.203.1"
+        },
+        "Setup": {
+          "StartupEnabledForWindowsDisable": true,
+          "PriorS2SuiteRerun": false
+        },
+        "WindowsSettingsOpened": true,
+        "WindowsControlBefore": "name=Haloryva Studio Lifecycle Test id=2277e2a9382cef8d_ToggleSwitch type=ControlType.Button enabled=True offscreen=False toggle=On",
+        "WindowsControlAfter": "name=Haloryva Studio Lifecycle Test id=2277e2a9382cef8d_ToggleSwitch type=ControlType.Button enabled=True offscreen=False toggle=Off",
+        "StateAfterWindowsAction": 1,
+        "LiveFocusConfirmed": false,
+        "LiveControlDisabled": false,
+        "LiveState": 1,
+        "StoredLaunchAtLoginBeforeRestart": true,
+        "TestPackageRemoved": true
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 13854413758,
+        "name": "preview8-windows-startup-evidence",
+        "size_in_bytes": 7286,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13854413758",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13854413758/zip",
+        "expired": false,
+        "created_at": "2026-11-11T12:33:16Z",
+        "expires_at": "2026-12-11T12:33:16Z",
+        "updated_at": "2026-11-11T12:33:16Z",
+        "digest": "sha256:2e9f67bd92b6389394e47791daed613c7d3f2de3d3ad209b2619ce5e63b9145f",
+        "workflow_run": {
+          "id": 43021089861,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-tests-preview8-import",
+          "head_sha": "43f5a6862b7abc48b61c998e1081914d1dc0e62b"
+        }
+      }
+    ]
+  },
+  "executedOnlyNewScope": true,
+  "olderSuitesExecuted": false,
+  "actual270Installed": false,
+  "realWindowsSettingsUsed": true,
+  "registryMutationByDriver": false,
+  "simulatedStartupStateUsed": false,
+  "limits": {
+    "liveRefocusConfirmed": false,
+    "liveRefreshValidated": false,
+    "actualWindowsLogonExecuted": false,
+    "actualInstalled270MigrationExecuted": false,
+    "oversizeAssetConsentDialogExecuted": false,
+    "unreadableAssetConsentDialogExecuted": false,
+    "genericJSONFilePickerPathExecuted": false,
+    "physicalMouseInputRecipe": false
+  },
+  "preservation": {
+    "protectedBranches": [
+      {
+        "name": "haloryva-2.7.0-c4",
+        "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+      },
+      {
+        "name": "haloryva-preparation-msix-preview7",
+        "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+      },
+      {
+        "name": "haloryva-preparation-store-preview5",
+        "sha": "f07890303144653049a05069841838ecd9b9d73d"
+      },
+      {
+        "name": "haloryva-preparation-store-preview7",
+        "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+      },
+      {
+        "name": "haloryva-tests-preview2",
+        "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+      },
+      {
+        "name": "haloryva-tests-preview3",
+        "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+      },
+      {
+        "name": "haloryva-tests-preview4",
+        "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+      },
+      {
+        "name": "haloryva-tests-preview5-msix",
+        "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+      },
+      {
+        "name": "haloryva-tests-preview5",
+        "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+      },
+      {
+        "name": "haloryva-tests-preview6",
+        "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+      },
+      {
+        "name": "haloryva-tests-preview7-msix",
+        "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+      },
+      {
+        "name": "haloryva-tests-preview7",
+        "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+      },
+      {
+        "name": "haloryva-tests-preview8",
+        "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+      },
+      {
+        "name": "main",
+        "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+      },
+      {
+        "name": "release/2.7.0-stable",
+        "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+      }
+    ],
+    "unchangedPriorFiles": 416,
+    "localComputerReadOrWriteOperations": 0,
+    "productionSourceChanges": 0,
+    "signatureCreated": false,
+    "releasePublished": false,
+    "storePublished": false,
+    "productionBinaryRebuilds": 0
+  }
+}
