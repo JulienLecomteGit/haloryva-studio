@@ -341,7 +341,7 @@ internal static class Recipe
                 Thread.Sleep(300);
                 var root=System.Windows.Automation.AutomationElement.FromHandle(dialog);
                 var nodes=root.FindAll(System.Windows.Automation.TreeScope.Descendants,System.Windows.Automation.Condition.TrueCondition);
-                System.Windows.Automation.AutomationElement edit=null,save=null,close=null;
+                System.Windows.Automation.AutomationElement edit=null,save=null,close=null,ok=null;
                 bool emptyMessage=false;
                 foreach(System.Windows.Automation.AutomationElement node in nodes) {
                     var c=node.Current;
@@ -350,9 +350,10 @@ internal static class Recipe
                     if(c.ControlType==System.Windows.Automation.ControlType.Edit && c.AutomationId=="1001") edit=node;
                     if(c.ControlType==System.Windows.Automation.ControlType.Button && c.AutomationId=="1") save=node;
                     if(c.ControlType==System.Windows.Automation.ControlType.Button && c.AutomationId=="2") close=node;
+                    if(c.ControlType==System.Windows.Automation.ControlType.Button && c.Name=="OK" && (c.AutomationId=="1" || c.AutomationId=="2")) ok=node;
                     if(c.Name.Contains("Aucun dessin à exporter.")) emptyMessage=true;
                 }
-                if(empty) Check(emptyMessage && save!=null,"Empty scene displays the expected information message");
+                if(empty) { Check(emptyMessage && ok!=null,"Empty scene displays the expected information message"); save=ok; }
                 else {
                     Check(edit!=null && save!=null && close!=null,"Native Save dialog exposes filename, Save and Cancel");
                     var value=(System.Windows.Automation.ValuePattern)edit.GetCurrentPattern(System.Windows.Automation.ValuePattern.Pattern);
