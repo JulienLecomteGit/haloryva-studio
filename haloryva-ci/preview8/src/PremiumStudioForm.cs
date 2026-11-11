@@ -398,7 +398,7 @@ namespace CursorFlow
                 engine.CancelButtonCapture();
             };
             // Mise en page recalculée une fois la fenêtre réellement affichée (tailles définitives).
-            Shown += delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); };
+            Shown += async delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); await engine.RefreshStartupStatusAsync(); };
             ResizeEnd += delegate { LayoutCards(); workspace.Invalidate(true); };
             Activated += async delegate { if (IsHandleCreated) BeginInvoke((Action)delegate { engine.KeepEffectLayersVisible(); }); await engine.RefreshStartupStatusAsync(); };
             ApplyNavWidth(); Navigate(0, 0);
