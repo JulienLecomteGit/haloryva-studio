@@ -30,8 +30,18 @@ Copy-Item -LiteralPath $app -Destination (Join-Path $layout 'Haloryva.exe')
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'AppxManifest.xml') -Destination $layout
 Add-Type -AssemblyName System.Drawing
 $iconPath=Join-Path $src 'stamped-source/assets/Haloryva.ico'
-$icon=New-Object Drawing.Icon($iconPath,256,256)
-$bitmap=$icon.ToBitmap()
+# WPF decodes PNG-compressed ICO frames without Icon.ToBitmap's GDI limitation.
+Add-Type -AssemblyName PresentationCore
+$iconStream=[IO.File]::OpenRead($iconPath)
+try {
+ $decoder=[Windows.Media.Imaging.BitmapDecoder]::Create($iconStream,[Windows.Media.Imaging.BitmapCreateOptions]::PreservePixelFormat,[Windows.Media.Imaging.BitmapCacheOption]::OnLoad)
+ $frame=$decoder.Frames|Sort-Object PixelWidth -Descending|Select-Object -First 1
+ $encoder=New-Object Windows.Media.Imaging.PngBitmapEncoder
+ $encoder.Frames.Add($frame)
+ $pngStream=New-Object IO.MemoryStream
+ $encoder.Save($pngStream);$pngStream.Position=0
+ $bitmap=[Drawing.Bitmap]::FromStream($pngStream)
+} finally {$iconStream.Dispose()}
 try {
  foreach($spec in @(@('StoreLogo.png',50),@('Square150x150Logo.png',150),@('Square44x44Logo.png',44))){
   $size=[int]$spec[1];$target=New-Object Drawing.Bitmap($size,$size)
@@ -41,7 +51,7 @@ try {
   $image=[Drawing.Image]::FromFile((Join-Path $assets $spec[0]))
   try{Check ("Logo-"+$spec[0]) ($image.Width -eq $size -and $image.Height -eq $size)}finally{$image.Dispose()}
  }
-}finally{$bitmap.Dispose();$icon.Dispose()}
+}finally{$bitmap.Dispose();$pngStream.Dispose()}
 $sdkBin=Join-Path ([Environment]::GetFolderPath('ProgramFilesX86')) 'Windows Kits/10/bin/*/x64/makeappx.exe'
 $makeappx=Get-ChildItem $sdkBin|Sort-Object FullName -Descending|Select-Object -First 1
 if(!$makeappx){throw 'Preinstalled MakeAppx absent'}
