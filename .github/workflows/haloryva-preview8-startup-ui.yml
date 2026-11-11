@@ -14,11 +14,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
-          name: preview8-msix-evidence
-          run-id: 43014976009
+          name: Haloryva-2.7.1-preview.8-build
+          run-id: 43017117882
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: ${{ runner.temp }}/haloryva-preview8-msix-input/
-      - name: Verify actual Studio startup commands without rebuilding MSIX
+      - name: Verify actual Studio startup commands with the newly compiled frozen EXE
         shell: powershell
         run: ./haloryva-ci/preview8-startup-ui/Run-Startup-UI.ps1
       - uses: actions/upload-artifact@v4
