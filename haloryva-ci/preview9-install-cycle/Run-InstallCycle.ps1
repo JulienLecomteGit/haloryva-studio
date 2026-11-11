@@ -193,6 +193,7 @@ try {
 } catch {
  $report.Status='failed';$report.Error=$_.Exception.ToString();$report.ErrorPosition=$_.InvocationInfo.PositionMessage
  Write-Host ('FAILURE: '+$report.Error+' '+$report.ErrorPosition)
+ try {[SetupUi]::CaptureDesktop((Join-Path $out 'failure-desktop.png'))}catch{Write-Host ('Desktop capture failed: '+$_)}
  try {if($null -ne $worker){$worker.Refresh();if(!$worker.HasExited -and $worker.MainWindowHandle -ne [IntPtr]::Zero){[SetupUi]::Capture($worker.MainWindowHandle,(Join-Path $out 'failure.png'))}}}catch{Write-Host ('Capture failed: '+$_)}
  throw
 } finally {

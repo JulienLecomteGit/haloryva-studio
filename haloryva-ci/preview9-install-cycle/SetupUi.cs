@@ -63,10 +63,37 @@ public static class SetupUi {
     [DllImport("user32.dll")] public static extern bool SetCursorPos(int x,int y);
     [DllImport("user32.dll")] static extern void mouse_event(uint f,uint x,uint y,uint data,UIntPtr extra);
     [DllImport("user32.dll")] static extern void keybd_event(byte vk,byte scan,uint flags,UIntPtr extra);
+    [DllImport("user32.dll")] static extern bool ShowWindow(IntPtr h,int command);
+    [DllImport("user32.dll")] static extern bool SetWindowPos(IntPtr h,IntPtr after,int x,int y,int cx,int cy,uint flags);
+    [DllImport("user32.dll")] static extern IntPtr WindowFromPoint(Point p);
+    [DllImport("user32.dll")] static extern IntPtr GetAncestor(IntPtr h,uint flags);
+    [DllImport("user32.dll",CharSet=CharSet.Unicode)] static extern int GetWindowText(IntPtr h,System.Text.StringBuilder b,int size);
+    [DllImport("user32.dll")] static extern int GetSystemMetrics(int index);
+    public static string Describe(IntPtr h) {
+        var b=new System.Text.StringBuilder(500);GetWindowText(h,b,b.Capacity);
+        return h.ToInt64().ToString("X")+" "+b.ToString();
+    }
     public static void Focus(IntPtr h) {
-        if(!IsWindowVisible(h) || IsHungAppWindow(h)) throw new Exception("Setup window unavailable");
-        SetForegroundWindow(h); Thread.Sleep(150);
-        if(GetForegroundWindow()!=h) throw new Exception("Setup foreground not confirmed");
+        ShowWindow(h,9);Thread.Sleep(250);
+        if(!IsWindowVisible(h) || IsHungAppWindow(h)) throw new Exception("Setup window unavailable: "+Describe(h));
+        SetForegroundWindow(h);Thread.Sleep(250);
+        if(GetForegroundWindow()==h)return;
+        // Raise only this verified setup window, then use an ordinary click on its neutral title area.
+        // No focus-policy, security, registry or system-setting changes.
+        SetWindowPos(h,IntPtr.Zero,0,0,0,0,0x43);Thread.Sleep(250);
+        Rect r;if(!GetWindowRect(h,out r))throw new Exception("Window bounds unavailable");
+        Point p=new Point {X=r.Left+45,Y=r.Top+35};
+        if(GetAncestor(WindowFromPoint(p),2)!=h)
+            throw new Exception("Setup title is obscured; foreground="+Describe(GetForegroundWindow()));
+        SetCursorPos(p.X,p.Y);Thread.Sleep(100);
+        mouse_event(2,0,0,0,UIntPtr.Zero);Thread.Sleep(80);mouse_event(4,0,0,0,UIntPtr.Zero);
+        Thread.Sleep(300);
+        if(GetForegroundWindow()!=h)
+            throw new Exception("Setup foreground not confirmed; target="+Describe(h)+" foreground="+Describe(GetForegroundWindow()));
+    }
+    public static void CaptureDesktop(string file) {
+        using(var b=new Bitmap(GetSystemMetrics(0),GetSystemMetrics(1)))
+        using(var g=Graphics.FromImage(b)) {g.CopyFromScreen(0,0,0,0,b.Size);b.Save(file,ImageFormat.Png);}
     }
     public static void Click(IntPtr h, int designX, int designY) {
         Focus(h); Rect r; if(!GetClientRect(h,out r)) throw new Exception("GetClientRect failed");
