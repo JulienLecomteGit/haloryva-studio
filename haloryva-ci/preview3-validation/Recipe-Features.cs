@@ -175,6 +175,8 @@ internal static class Recipe
             Check((GetAsyncKeyState(k)&0x8000)==0,"Neutral input "+k);
         Move(350,350); await Task.Delay(250);
         object config=Get(controller,"Options");
+        Set(config,"KeyDisplay",true); Call(controller,"Changed"); await Task.Delay(200);
+        string initialKeyDisplay=(string)Get(controller,"LastKeys");
         FocusGuard();
         Check((int)SendMessage(targetWindow,0x8003,IntPtr.Zero,IntPtr.Zero)==1,"French keyboard layout active in test target");
         uint pid; uint tid=GetWindowThreadProcessId(targetWindow,out pid);
@@ -188,17 +190,18 @@ internal static class Recipe
             await AltGr((ushort)(mapping&255));
             Write("ALTGR char=U+"+((int)symbol).ToString("X4")+" charDelta="+(Query(2)-chars)+" last=U+"+Query(3).ToString("X4"));
             Check(Query(2)==chars+1 && Query(3)==symbol,"AltGr inserts "+symbol+" in external textbox");
+            Check((string)Get(controller,"LastKeys")==initialKeyDisplay,"AltGr text is not displayed by key overlay");
         }
-        foreach(ushort letter in new ushort[]{0x43,0x4d,0x44})
+        foreach(ushort letter in new ushort[]{0x4d,0x44})
         {
             bool clicks=(bool)Get(config,"Clicks"),enabled=(bool)Get(config,"Enabled"),drawing=(bool)Get(controller,"IsDrawing");
             await AltGr(letter);
             Check((bool)Get(config,"Clicks")==clicks && (bool)Get(config,"Enabled")==enabled && (bool)Get(controller,"IsDrawing")==drawing,
                 "AltGr+"+(char)letter+" does not execute Ctrl+Alt shortcut");
         }
-        bool initialClicks=(bool)Get(config,"Clicks");
-        await Chord(0x43); Check((bool)Get(config,"Clicks")!=initialClicks,"Left Ctrl+Alt+C remains active");
-        await Chord(0x43); Check((bool)Get(config,"Clicks")==initialClicks,"Left Ctrl+Alt+C restores initial state");
+        bool initialEnabled=(bool)Get(config,"Enabled");
+        await Chord(0x4d); Check((bool)Get(config,"Enabled")!=initialEnabled,"Left Ctrl+Alt+M toggles effects");
+        await Chord(0x4d); Check((bool)Get(config,"Enabled")==initialEnabled,"Left Ctrl+Alt+M restores initial state");
 
         var beforePixels=Capture("drawing-before.png");
         Set(config,"AnnotationTool","Stylo"); Set(config,"AnnotationColor","#FF0000"); Set(config,"AnnotationThickness",4);
@@ -234,6 +237,8 @@ internal static class Recipe
         Check(strokes.Count==2 && Object.ReferenceEquals(strokes[1],next) && StrokeStyle(next,"Rectangle",Color.Blue,12),"Second stroke stored as blue rectangle width 12");
         Check(((IList)Get(next,"Points")).Count==2,"Rectangle keeps its two defining endpoints");
         Check(Query(0)==d && Query(1)==u,"Neither drawn stroke leaks button events to target");
+        await AltGr(0x43);
+        Check(strokes.Count==2 && (bool)Get(controller,"IsDrawing"),"AltGr+C preserves existing drawings and drawing mode");
         Move(750,510); await Task.Delay(500);
         var afterPixels=Capture("drawing-after.png");
         bool rendered=afterPixels[0]>beforePixels[0]+100 && afterPixels[1]>beforePixels[1]+100;
@@ -245,8 +250,10 @@ internal static class Recipe
         object loaded=Static("ConfigStore","Load");
         Check((string)Get(loaded,"AnnotationTool")=="Rectangle" && (string)Get(loaded,"AnnotationColor")=="#0000FF" &&
             (int)Get(loaded,"AnnotationThickness")==12,"Tool/color/width survive profile reload");
+        await Chord(0x43);
+        Check(strokes.Count==0,"Left Ctrl+Alt+C clears drawings");
         Check(rendered,"Desktop capture contains both red pen and blue rectangle");
-        Write("CASES AltGrChars=3 AltGrShortcutGuards=3 leftModifierControls=2 strokes=2 midStrokeEdit=1 profileReload=1 desktopCapture=1");
+        Write("CASES AltGrChars=3 AltGrShortcutGuards=3 leftModifierControls=3 strokes=2 midStrokeEdit=1 profileReload=1 desktopCapture=1");
         Write("NOT_RUN legacy195, short-click suite, physical keyboard/mouse, multiple screens/DPI, all drawing tools, MSIX in this job");
     }
     static async Task AltGr(ushort key)

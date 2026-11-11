@@ -29,7 +29,8 @@ jobs:
           retention-days: 14
   msix-windows11:
     needs: features-x64
-    if: ${{ always() && !cancelled() }}
+    # Retest only the gesture driver when the binary and successful MSIX pilot are unchanged.
+    if: ${{ always() && !cancelled() && !contains(github.event.head_commit.message, '[features-only]') }}
     runs-on: windows-11-arm
     timeout-minutes: 10
     steps:
