@@ -244,7 +244,15 @@ internal static class Recipe
     }
     static Control Button(string text) { return FindControl(delegate(Control c) { return c.GetType().Name=="PremiumButton" && c.Text==T(text); }); }
     static Control Grid(string contains) { return FindControl(delegate(Control c) { return c.GetType().Name=="PremiumChoiceGrid" && Array.IndexOf((string[])Get(c,"values"),contains)>=0; }); }
-    static TextBox Editor(string accessibleName) { return (TextBox)FindControl(delegate(Control c) { return c is TextBox && c.AccessibleName==T(accessibleName); }); }
+    static TextBox Editor(string accessibleName) {
+        // A color field composes its localized base name and suffix separately.
+        const string suffix=" (hexadécimal)";
+        string expected=accessibleName.EndsWith(suffix,StringComparison.Ordinal)
+            ? T(accessibleName.Substring(0,accessibleName.Length-suffix.Length))+T(suffix) : T(accessibleName);
+        foreach(Control c in Descendants(Studio)) if(c is TextBox && c.AccessibleName==expected) return (TextBox)c;
+        foreach(Control c in Descendants(Studio)) if(c is TextBox) Write("EDITOR available="+c.AccessibleName);
+        throw new Exception("Expected localized editor not found: "+expected);
+    }
     static async Task FocusStudio()
     {
         if(Studio==null || Studio.IsDisposed || !Studio.Visible) throw new Exception("Studio not visible");
