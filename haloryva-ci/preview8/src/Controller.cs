@@ -33,6 +33,11 @@ namespace CursorFlow
     internal interface IStudioEngine
     {
         Config Options { get; }
+        StartupSnapshot StartupStatus { get; }
+        bool StartupBusy { get; }
+        System.Threading.Tasks.Task RefreshStartupStatusAsync();
+        System.Threading.Tasks.Task RequestStartupChangeAsync(bool desired);
+        void ImportProfile(string path);
         bool IsDrawing { get; }
         int StrokeCount { get; }
         int RedoCount { get; }
@@ -153,10 +158,11 @@ namespace CursorFlow
         private readonly FramePump timer;
         private PremiumStudioForm settings;
         internal IStartupSettings StartupProvider = StartupSettings.Create();
-        internal StartupSnapshot StartupStatus = StartupSnapshot.FromState(-1);
-        internal bool StartupBusy;
+        private StartupSnapshot startupStatus = StartupSnapshot.FromState(-1);
+        public StartupSnapshot StartupStatus { get { return startupStatus; } private set { startupStatus = value; } }
+        public bool StartupBusy { get; private set; }
         private bool startupReadBusy;
-        internal async System.Threading.Tasks.Task RefreshStartupStatusAsync()
+        public async System.Threading.Tasks.Task RefreshStartupStatusAsync()
         {
             if (exiting || StartupBusy || startupReadBusy) return;
             startupReadBusy = true;
@@ -167,7 +173,7 @@ namespace CursorFlow
             }
             finally { startupReadBusy = false; }
         }
-        internal async System.Threading.Tasks.Task RequestStartupChangeAsync(bool desired)
+        public async System.Threading.Tasks.Task RequestStartupChangeAsync(bool desired)
         {
             if (exiting || StartupBusy || !ProfilePaths.SystemChangesAllowed) return;
             StartupBusy = true;
@@ -183,7 +189,7 @@ namespace CursorFlow
             }
             finally { StartupBusy = false; if (!exiting && SettingsChanged != null) SettingsChanged(); }
         }
-        internal void ImportProfile(string path)
+        public void ImportProfile(string path)
         {
             var plan = ProfileMigration.Prepare(ProfileMigration.ReadCandidate(path, false),
                 ConfigStore.DirectoryPath, false, true);
