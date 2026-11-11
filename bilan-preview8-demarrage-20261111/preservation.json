@@ -1,0 +1,121 @@
+{
+  "base_commit": "bf8892413e6d686feb2884d26e118eff94d32723",
+  "base_tree": "d4679f0c5940165e9cbbd13609ad40fa24e34c10",
+  "prior_files": 438,
+  "protected_branches": [
+    {
+      "name": "haloryva-2.7.0-c4",
+      "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+    },
+    {
+      "name": "haloryva-preparation-msix-preview7",
+      "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+    },
+    {
+      "name": "haloryva-preparation-store-preview5",
+      "sha": "f07890303144653049a05069841838ecd9b9d73d"
+    },
+    {
+      "name": "haloryva-preparation-store-preview7",
+      "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+    },
+    {
+      "name": "haloryva-preparation-store-preview8",
+      "sha": "bf8892413e6d686feb2884d26e118eff94d32723"
+    },
+    {
+      "name": "haloryva-tests-preview2",
+      "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+    },
+    {
+      "name": "haloryva-tests-preview3",
+      "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+    },
+    {
+      "name": "haloryva-tests-preview4",
+      "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+    },
+    {
+      "name": "haloryva-tests-preview5-msix",
+      "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+    },
+    {
+      "name": "haloryva-tests-preview5",
+      "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+    },
+    {
+      "name": "haloryva-tests-preview6",
+      "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+    },
+    {
+      "name": "haloryva-tests-preview7-msix",
+      "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+    },
+    {
+      "name": "haloryva-tests-preview7",
+      "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+    },
+    {
+      "name": "haloryva-tests-preview8-import",
+      "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420"
+    },
+    {
+      "name": "haloryva-tests-preview8",
+      "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+    },
+    {
+      "name": "main",
+      "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+    },
+    {
+      "name": "release/2.7.0-stable",
+      "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+    }
+  ],
+  "application_changes": 0,
+  "prior_workflow_changes": 0,
+  "new_workflows": 1,
+  "authorized_new_runs": 2,
+  "acquired_suites_repeated": 0,
+  "historical195_executed": false,
+  "local_file_writes": 0,
+  "local_commands": 0,
+  "signing": false,
+  "releases": false,
+  "new_infrastructure_installed": false,
+  "planned_new_files": 10,
+  "validation": "Prepared report tree compared: all 438 original blobs and 17 original branches unchanged; 10 additions only; exactly two completed targeted runs, both failed, retained.",
+  "verification": {
+    "verified_tree": "bd1988ab669c3fa7d2823be394a8e3801b8cdf01",
+    "prior_files": 438,
+    "changed_prior_files": 0,
+    "prior_branches": 17,
+    "changed_prior_branches": 0,
+    "added_files": [
+      ".github/workflows/haloryva-preview8-live-focus.yml",
+      "bilan-preview8-demarrage-20261111/BILAN-demarrage-preview8.txt",
+      "bilan-preview8-demarrage-20261111/PISTE-correction.txt",
+      "bilan-preview8-demarrage-20261111/PROPOSITION-session-Windows.txt",
+      "bilan-preview8-demarrage-20261111/couverture-msix.json",
+      "bilan-preview8-demarrage-20261111/preservation.json",
+      "bilan-preview8-demarrage-20261111/preuves.json",
+      "haloryva-ci/preview8-live-focus/LIRE-DABORD.txt",
+      "haloryva-ci/preview8-live-focus/RootFocus.cs",
+      "haloryva-ci/preview8-live-focus/Run-LiveFocus.ps1"
+    ],
+    "workflow_runs": [
+      {
+        "id": 43027294211,
+        "status": "completed",
+        "conclusion": "failure",
+        "sha": "dd89b388712b2b84478cdece23431c5795b4d937"
+      },
+      {
+        "id": 43026635830,
+        "status": "completed",
+        "conclusion": "failure",
+        "sha": "9236b83936770126dbcf8c906efa33bbb0931f77"
+      }
+    ]
+  }
+}

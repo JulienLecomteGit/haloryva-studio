@@ -1,0 +1,112 @@
+HALORYVA STUDIO — CONTRÔLES RESTANTS DU DÉMARRAGE PREVIEW.8
+11 novembre 2026 — résultats réels, binaire final conservé
+
+RÉSULTAT
+Le retour réel au premier plan est maintenant confirmé. L'actualisation attendue
+au PREMIER retour échoue sur deux postes GitHub successifs : le contrôle
+« Démarrage avec Windows » reste utilisable alors que Windows est DisabledByUser.
+Dans le second essai, un DEUXIÈME retour au Studio corrige l'affichage dans le
+même processus. Windows reste désactivé et le profil ne change pas.
+Ce résultat est un défaut observé du parcours d'actualisation, pas une réussite S3.
+La cause interne exacte n'est pas encore isolée ; aucun correctif applicatif appliqué.
+
+POINT CHIFFRÉ
+- 2 exécutions ciblées du même parcours S3 ; les 2 runs sont en ÉCHEC.
+- Premier run : 3 assertions réussies, 1 échouée ; les 2 suivantes non exécutées.
+- Second run de diagnostic : 5 assertions réussies, 1 échouée.
+- Retour au premier plan confirmé : 2/2 essais.
+- Actualisation au premier retour : 0/2.
+- Second retour différé : 1 observation, actualisation réussie ; ne transforme pas
+  l'échec initial en réussite. La variante réduire/restaurer n'a pas été exécutée,
+  car le second retour normal avait déjà actualisé le contrôle.
+- 0 relancement de Haloryva, 0 test de connexion Windows réelle, 0 contrôle historique
+  ou campagne acquise rejoué comme suite. Le prérequis activation puis désactivation
+  du démarrage est nécessaire à ce nouveau parcours.
+- 0 modification du binaire, de main, des anciennes branches ou du PC principal ;
+  0 signature, 0 publication d'application, 0 installation d'une autre infrastructure.
+Les deux séries d'assertions se recoupent : ne pas additionner leurs réussites comme
+des cas fonctionnels indépendants ni prétendre à une campagne globale réussie.
+
+PREUVES
+1. https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43026635830
+   Commit pilote : 9236b83936770126dbcf8c906efa33bbb0931f77.
+   Windows Settings au premier plan, interrupteur de la seule identité de test
+   passé de On à Off, état Windows 1 lu sans écriture de Registre.
+   Retour Studio confirmé par GetForegroundWindow ET GetGUIThreadInfo.hwndActive,
+   avec contrôle du propriétaire et de la vraie fenêtre racine.
+   Après environ 9,0 s : contrôle encore disponible, état Windows toujours 1.
+   Échec conservé, arrêt normal demandé, paquet de test retiré.
+
+2. https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43027294211
+   Commit pilote : dd89b388712b2b84478cdece23431c5795b4d937.
+   Ajout de diagnostics après l'échec, sans masquer celui-ci.
+   Premier retour : même échec après environ 9,1 s ; UI Automation confirme
+   aussi IsEnabled=true, en plus de la lecture native.
+   Retour à Windows Settings, attente de 2 s, nouveau retour réel au Studio :
+   contrôle verrouillé dès la première observation après ce retour
+   (6 ms dans la boucle de mesure ; ce nombre n'est pas une latence produit garantie).
+   UI Automation confirme IsEnabled=false, Windows reste State=1.
+   Même processus et même heure de lancement ; aucune relance de l'application.
+   Profil avant/après :
+   F47AACF7C397714236D0E518456CE862E7EEEE67D1A74F0CB22AB1CA52E30E31.
+   LaunchAtLogin=true conservé dans ce profil de test, sans réactivation Windows.
+   Aucun journal applicatif d'erreur retrouvé dans la copie recueillie.
+   Arrêt normal et retrait du seul paquet d'essai.
+
+CE QUI A ÉTÉ CORRIGÉ DANS LE PILOTE
+La fenêtre de premier plan est identifiée depuis la racine du contrôle de démarrage,
+pas seulement par une recherche textuelle. Aucun WM_ACTIVATE fictif, appel interne
+au rafraîchissement, injection de code ou valeur de démarrage simulée.
+L'hypothèse d'une recherche ancienne ciblant un enfant n'est PAS confirmée dans
+ces deux runs : OldLookupWasRoot=true dans les deux. Le meilleur diagnostic
+élimine cette ambiguïté ; il ne prouve pas qu'elle causait l'ancien échec de focus.
+
+PÉRIMÈTRE EXACT
+EXE final : CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512
+MSIX B : D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9.
+Téléchargés uniquement dans les Windows GitHub ; hashes du paquet et de l'EXE
+installé vérifiés. Aucune compilation de Haloryva ni reconstruction du paquet.
+Les petits pilotes C# sont compilés en mémoire avec les outils déjà disponibles.
+Windows 11 Enterprise ARM64, build 26200, image 20261101.203.1, EXE x64 émulé.
+Pas de recette souris physique, pas de validation Windows 11 x64 natif.
+
+SESSION WINDOWS RÉELLE S6
+NON EXÉCUTÉE. Les deux observations placent PowerShell, Runner.Listener,
+Runner.Worker, Explorer et Winlogon dans la même session interactive 2.
+Aucun service actions.runner.* trouvé ni continuité extérieure établie.
+Fermer cette session ferait perdre les processus qui pilotent le job ; aucun
+mécanisme de reprise fiable n'est préparé sur ce runner éphémère.
+Aucune fermeture de session, redémarrage, lecture de mot de passe, modification
+d'autologon ou création de service/compte. Le relevé de faisabilité est en lecture seule.
+Cette limite concerne le dispositif disponible, pas une impossibilité générale de GitHub.
+PROPOSITION-session-Windows.txt présente un Cloud PC Windows 11 accessible par
+navigateur, ou un PC de test déjà disponible, avant toute installation ou souscription.
+
+IMPACT SUR LE BILAN GLOBAL ET LA DIFFUSION
+Ce document actualise le point S3 du dossier Store précédent sans l'effacer.
+Le statut « retour de focus non confirmé » devient « retour confirmé, premier
+rafraîchissement en échec ». Le respect de la désactivation après RELANCEMENT,
+déjà acquis dans le run 43021089861, reste acquis ; il n'a pas été retesté ici.
+Les 17 assertions d'import, les autres acquis MSIX et les 195 contrôles historiques
+restent attachés à leurs versions/preuves. Aucun résultat antérieur supprimé.
+
+Matrice de 17 scénarios larges : 5 complets, 8 partiels, 1 avec échec observé (S3),
+3 non exécutés (C1, M7, S6). Ce n'est pas un pourcentage global de qualité.
+D1 reste bloquant pour notre feu vert fonctionnel, avec un défaut maintenant
+reproduit et la vraie connexion encore à valider. D3/D4/D5/D6 Store restent ouverts ;
+D2 migration réellement installée 2.7.0 reste conditionnel comme au dossier précédent.
+Il n'y a pas de régression introduite par un changement applicatif dans cette tâche :
+le binaire est identique. Une anomalie auparavant non tranchée est désormais observée.
+
+PROCHAINE ACTION CONSEILLÉE
+Préparer et corriger l'actualisation dans une NOUVELLE préversion après accord,
+puis rejouer uniquement S3 ciblé avec le même scénario et les gardes de conservation.
+Ne pas ouvrir un abonnement distant avant la décision sur l'environnement S6.
+PISTE-correction.txt précise les limites du diagnostic et les critères du correctif.
+
+CONSERVATION
+17 branches préexistantes et 438 fichiers de départ à l'identique.
+Nouvelle branche de test : haloryva-tests-preview8-focus.
+Les deux runs échoués et leurs archives restent conservés, expiration annoncée
+le 11 décembre 2026. Les résultats structurés sont versionnés dans preuves.json.
+Aucun nouveau fichier local ni installation sur le PC de l'utilisateur.

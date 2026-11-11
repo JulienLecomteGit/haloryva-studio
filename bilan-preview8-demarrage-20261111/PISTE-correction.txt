@@ -1,0 +1,46 @@
+HALORYVA — PISTE DE CORRECTION DU RAFRAÎCHISSEMENT
+Préparation uniquement ; aucune source applicative modifiée.
+
+FAITS REPRODUITS
+Deux retours rapides après une désactivation par Windows n'actualisent pas
+le contrôle, bien que la vraie fenêtre soit active. Attendre passivement
+environ neuf secondes ne suffit pas dans ces deux observations.
+Un nouveau cycle réel Settings → Studio après cette attente et deux secondes
+supplémentaires actualise le contrôle immédiatement dans le même processus.
+Le profil et l'état Windows restent intacts ; pas d'erreur applicative collectée.
+
+LOCALISATION À EXAMINER DANS LA FUTURE PRÉVERSION
+PremiumStudioForm.cs : Shown et Activated appellent RefreshStartupStatusAsync.
+Controller.cs : RefreshStartupStatusAsync retourne immédiatement si StartupBusy
+ou startupReadBusy ; garde de génération contre les réponses devenues anciennes.
+StartupSettings.cs : ReadAsync appelle StartupTask.GetAsync à chaque lecture ;
+il n'y a pas de champ StartupTask explicitement mis en cache par ce composant.
+Le contrôle est lié à StartupStatus dans PagePreferences/RefreshStates.
+
+INTERPRÉTATION LIMITÉE
+Le résultat est compatible avec une lecture trop précoce de l'état externe ou
+une demande de rafraîchissement perdue pendant une lecture déjà en cours.
+Les mesures externes ne disent pas quelle valeur GetAsync a renvoyée au premier
+retour ni si la garde busy a court-circuité cet appel. Ne pas présenter une de
+ces causes comme démontrée, ni incriminer un cache inexistant dans le composant.
+
+CORRECTIF CANDIDAT À INSTRUMENTER ET VALIDER, APRÈS AUTORISATION
+- Tracer dans un mode de recette explicite les demandes/fin de lecture, la
+  génération, la raison d'une lecture différée et l'état retourné ; aucune donnée
+  de profil, texte saisi ou télémétrie distante.
+- Garantir qu'une demande reçue pendant une lecture active est reprise, sans
+  perdre la protection contre une réponse ancienne.
+- Si une propagation retardée est confirmée, prévoir une relecture différée
+  bornée après activation de la fenêtre. Éviter de considérer une seule attente
+  fixe non mesurée comme une correction prouvée.
+- Annuler la relecture lors de la fermeture et empêcher les chevauchements ;
+  ne jamais activer/désactiver la tâche ni sauvegarder le profil pendant une lecture.
+- Conserver le choix Windows prioritaire et le fonctionnement des commandes explicites.
+
+ACCEPTATION CIBLÉE
+Premier retour confirmé → contrôle verrouillé et état utilisateur respecté,
+sans second aller-retour, relancement de l'application, modification du profil
+ou appel de mutation Windows. Conserver l'intégrité des sources/paquets existants.
+Le pilote existant doit rester rouge tant que ce critère n'est pas rempli ;
+ses diagnostics tardifs ne sont pas une solution de remplacement.
+Aucune nouvelle préversion, compilation, signature ou publication effectuée ici.

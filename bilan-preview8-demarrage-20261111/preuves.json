@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "version": "2.7.1-preview.8",
+  "branch": "haloryva-tests-preview8-focus",
+  "base_commit": "bf8892413e6d686feb2884d26e118eff94d32723",
+  "finalExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+  "frozenMSIXSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+  "runs": [
+    {
+      "id": 43026635830,
+      "job": 130542887453,
+      "conclusion": "failure",
+      "head": "9236b83936770126dbcf8c906efa33bbb0931f77",
+      "result": {
+        "Version": "2.7.1-preview.8",
+        "Status": "failed",
+        "ExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+        "PackageSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+        "Actual270Installed": false,
+        "FixturesOnly": true,
+        "Scope": "S3 live focus only plus read-only S6 feasibility",
+        "RealLogonExecuted": false,
+        "ApplicationRelaunched": false,
+        "ActivationMessagesInjected": false,
+        "RegistryWrittenByDriver": false,
+        "Rebuilt": false,
+        "Signed": false,
+        "ReleasePublished": false,
+        "Historical195Executed": false,
+        "AcquiredSuitesRerun": false,
+        "Checks": [
+          {
+            "Id": "actual-studio-root-identified",
+            "Passed": true
+          },
+          {
+            "Id": "real-disabled-by-user-while-studio-in-background",
+            "Passed": true
+          },
+          {
+            "Id": "top-level-foreground-and-active-window-confirmed",
+            "Passed": true
+          },
+          {
+            "Id": "live-refocus-refreshes-disabled-user-choice",
+            "Passed": false
+          }
+        ],
+        "Dialogs": [],
+        "Environment": {
+          "Architecture": "ARM64",
+          "Build": "26200",
+          "OS": "Microsoft Windows 11 Enterprise",
+          "Image": "20261101.203.1"
+        },
+        "SessionFeasibility": {
+          "LogoffOrRebootIssued": false,
+          "UserInteractive": true,
+          "SessionConfigurationChanged": false,
+          "CurrentSessionId": 2,
+          "CredentialsRead": false,
+          "ExternalContinuityEstablished": false,
+          "RunnerServices": [],
+          "CurrentProcessId": 8952,
+          "Processes": [
+            {
+              "ProcessName": "explorer",
+              "Id": 7576,
+              "SessionId": 2
+            },
+            {
+              "ProcessName": "Runner.Listener",
+              "Id": 11008,
+              "SessionId": 2
+            },
+            {
+              "ProcessName": "Runner.Worker",
+              "Id": 3104,
+              "SessionId": 2
+            },
+            {
+              "ProcessName": "winlogon",
+              "Id": 3024,
+              "SessionId": 2
+            }
+          ]
+        },
+        "TargetDiagnostic": {
+          "StartupControl": "hwnd=202F0 root=201E8 pid=8168 tid=8736 class=WindowsForms10.Window.8.app.0.3e799b_r11_ad1 text=Démarrage avec Windows",
+          "ActualStudioRoot": "hwnd=201E8 root=201E8 pid=8168 tid=8736 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio",
+          "OldTextLookup": "hwnd=201E8 root=201E8 pid=8168 tid=8736 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio",
+          "OldLookupWasRoot": true
+        },
+        "Setup": {
+          "StartupEnabledForDisable": true,
+          "ProfileSHA256": "F47AACF7C397714236D0E518456CE862E7EEEE67D1A74F0CB22AB1CA52E30E31",
+          "PriorRelaunchSuiteRerun": false,
+          "PriorS2SuiteRerun": false
+        },
+        "FocusTransitions": [
+          {
+            "SettingsConfirmed": true,
+            "UTC": "2026-11-11T13:11:00.8837351Z",
+            "StudioForeground": false,
+            "Stage": "before-Windows-disable",
+            "Foreground": "hwnd=10316 root=10316 pid=6016 tid=10704 class=ApplicationFrameWindow text=Settings"
+          },
+          {
+            "Attempt": 0,
+            "UTC": "2026-11-11T13:11:01.1836724Z",
+            "StudioConfirmed": true,
+            "Stage": "return",
+            "Foreground": "hwnd=201E8 root=201E8 pid=8168 tid=8736 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio"
+          }
+        ],
+        "BackgroundBeforeReturn": {
+          "Foreground": "hwnd=10316 root=10316 pid=6016 tid=10704 class=ApplicationFrameWindow text=Settings",
+          "WindowsToggle": "name=Haloryva Studio Lifecycle Test id=2277e2a9382cef8d_ToggleSwitch type=ControlType.Button enabled=True offscreen=False toggle=Off",
+          "ToggleStillEnabled": true,
+          "State": 1
+        },
+        "LiveFocusConfirmed": true,
+        "LiveControlDisabled": false,
+        "LiveState": 1,
+        "RefreshObservedWithinMilliseconds": 9026,
+        "ForegroundAfterRefresh": "hwnd=201E8 root=201E8 pid=8168 tid=8736 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio",
+        "Error": "Assertion: live-refocus-refreshes-disabled-user-choice",
+        "TestPackageRemoved": true
+      }
+    },
+    {
+      "id": 43027294211,
+      "job": 130545100408,
+      "conclusion": "failure",
+      "head": "dd89b388712b2b84478cdece23431c5795b4d937",
+      "result": {
+        "Version": "2.7.1-preview.8",
+        "Status": "failed",
+        "ExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+        "PackageSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+        "Actual270Installed": false,
+        "FixturesOnly": true,
+        "Scope": "S3 live focus only plus read-only S6 feasibility",
+        "RealLogonExecuted": false,
+        "ApplicationRelaunched": false,
+        "ActivationMessagesInjected": false,
+        "RegistryWrittenByDriver": false,
+        "Rebuilt": false,
+        "Signed": false,
+        "ReleasePublished": false,
+        "Historical195Executed": false,
+        "AcquiredSuitesRerun": false,
+        "Checks": [
+          {
+            "Id": "actual-studio-root-identified",
+            "Passed": true
+          },
+          {
+            "Id": "real-disabled-by-user-while-studio-in-background",
+            "Passed": true
+          },
+          {
+            "Id": "top-level-foreground-and-active-window-confirmed",
+            "Passed": true
+          },
+          {
+            "Id": "live-refocus-refreshes-disabled-user-choice",
+            "Passed": false
+          },
+          {
+            "Id": "same-process-no-relaunch",
+            "Passed": true
+          },
+          {
+            "Id": "refocus-read-only-profile-and-no-reactivation",
+            "Passed": true
+          }
+        ],
+        "Dialogs": [],
+        "Environment": {
+          "Architecture": "ARM64",
+          "Build": "26200",
+          "OS": "Microsoft Windows 11 Enterprise",
+          "Image": "20261101.203.1"
+        },
+        "SessionFeasibility": {
+          "LogoffOrRebootIssued": false,
+          "UserInteractive": true,
+          "SessionConfigurationChanged": false,
+          "CurrentSessionId": 2,
+          "CredentialsRead": false,
+          "ExternalContinuityEstablished": false,
+          "RunnerServices": [],
+          "CurrentProcessId": 6856,
+          "Processes": [
+            {
+              "ProcessName": "explorer",
+              "Id": 7544,
+              "SessionId": 2
+            },
+            {
+              "ProcessName": "Runner.Listener",
+              "Id": 2848,
+              "SessionId": 2
+            },
+            {
+              "ProcessName": "Runner.Worker",
+              "Id": 10356,
+              "SessionId": 2
+            },
+            {
+              "ProcessName": "winlogon",
+              "Id": 7040,
+              "SessionId": 2
+            }
+          ]
+        },
+        "TargetDiagnostic": {
+          "StartupControl": "hwnd=202F0 root=301EC pid=8180 tid=9876 class=WindowsForms10.Window.8.app.0.3e799b_r11_ad1 text=Démarrage avec Windows",
+          "ActualStudioRoot": "hwnd=301EC root=301EC pid=8180 tid=9876 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio",
+          "OldTextLookup": "hwnd=301EC root=301EC pid=8180 tid=9876 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio",
+          "OldLookupWasRoot": true
+        },
+        "Setup": {
+          "StartupEnabledForDisable": true,
+          "ProfileSHA256": "F47AACF7C397714236D0E518456CE862E7EEEE67D1A74F0CB22AB1CA52E30E31",
+          "PriorRelaunchSuiteRerun": false,
+          "PriorS2SuiteRerun": false
+        },
+        "FocusTransitions": [
+          {
+            "SettingsConfirmed": true,
+            "UTC": "2026-11-11T13:15:31.9881542Z",
+            "StudioForeground": false,
+            "Stage": "before-Windows-disable",
+            "Foreground": "hwnd=10316 root=10316 pid=9288 tid=9340 class=ApplicationFrameWindow text=Settings"
+          },
+          {
+            "Attempt": 0,
+            "UTC": "2026-11-11T13:15:32.2994597Z",
+            "StudioConfirmed": true,
+            "Stage": "return",
+            "Foreground": "hwnd=301EC root=301EC pid=8180 tid=9876 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio"
+          }
+        ],
+        "BackgroundBeforeReturn": {
+          "Foreground": "hwnd=10316 root=10316 pid=9288 tid=9340 class=ApplicationFrameWindow text=Settings",
+          "WindowsToggle": "name=Haloryva Studio Lifecycle Test id=2277e2a9382cef8d_ToggleSwitch type=ControlType.Button enabled=True offscreen=False toggle=Off",
+          "ToggleStillEnabled": true,
+          "State": 1
+        },
+        "LiveFocusConfirmed": true,
+        "LiveControlDisabled": false,
+        "LiveState": 1,
+        "RefreshObservedWithinMilliseconds": 9122,
+        "ForegroundAfterRefresh": "hwnd=301EC root=301EC pid=8180 tid=9876 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio",
+        "UIAutomationEnabledAfterFirstReturn": true,
+        "LaterFocusDiagnostics": [
+          {
+            "Mode": "delayed-second-return",
+            "WaitMilliseconds": 6,
+            "ControlDisabled": true,
+            "BackgroundConfirmed": true,
+            "StillForeground": true,
+            "UIAutomationEnabled": false,
+            "State": 1,
+            "Executed": true,
+            "ForegroundConfirmed": true,
+            "Foreground": "hwnd=301EC root=301EC pid=8180 tid=9876 class=WindowsForms10.Window.20008.app.0.3e799b_r11_ad1 text=Haloryva Studio"
+          }
+        ],
+        "ProfileAfterRefocus": {
+          "SHA256": "F47AACF7C397714236D0E518456CE862E7EEEE67D1A74F0CB22AB1CA52E30E31",
+          "LaunchAtLogin": true
+        },
+        "Error": "Initial confirmed refocus remained stale; later observations are diagnostics, not a pass",
+        "TestPackageRemoved": true,
+        "ApplicationErrorLogs": []
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "run": 43026635830,
+      "data": {
+        "artifacts": [
+          {
+            "id": 13856399584,
+            "name": "preview8-live-focus-evidence",
+            "size_in_bytes": 10123,
+            "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13856399584",
+            "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13856399584/zip",
+            "expired": false,
+            "created_at": "2026-11-11T13:11:15Z",
+            "expires_at": "2026-12-11T13:11:15Z",
+            "updated_at": "2026-11-11T13:11:15Z",
+            "digest": "sha256:7a00f715f6420befed0a0bb7dff03ef98394bed955d380cd35ab72354f4a15da",
+            "workflow_run": {
+              "id": 43026635830,
+              "repository_id": 1450529585,
+              "head_repository_id": 1450529585,
+              "head_branch": "haloryva-tests-preview8-focus",
+              "head_sha": "9236b83936770126dbcf8c906efa33bbb0931f77"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run": 43027294211,
+      "data": {
+        "artifacts": [
+          {
+            "id": 13857557271,
+            "name": "preview8-live-focus-evidence",
+            "size_in_bytes": 9290,
+            "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13857557271",
+            "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13857557271/zip",
+            "expired": false,
+            "created_at": "2026-11-11T13:15:46Z",
+            "expires_at": "2026-12-11T13:15:46Z",
+            "updated_at": "2026-11-11T13:15:46Z",
+            "digest": "sha256:36a8ae7059664db071b5ee4941d02e86063a7f4da29e3a7e23219ca6430bd865",
+            "workflow_run": {
+              "id": 43027294211,
+              "repository_id": 1450529585,
+              "head_repository_id": 1450529585,
+              "head_branch": "haloryva-tests-preview8-focus",
+              "head_sha": "dd89b388712b2b84478cdece23431c5795b4d937"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "execution_count": 2,
+  "scope": "S3 remaining live refocus; S6 read-only feasibility; no prior suite rerun",
+  "facts": {
+    "confirmed_foreground_trials": 2,
+    "first_return_refresh_passes": 0,
+    "late_second_return_refresh_observed": 1,
+    "actual_windows_logon_executed": false,
+    "original_application_binary_changed": false,
+    "main_changed": false,
+    "user_pc_modified": false,
+    "signed": false,
+    "released": false,
+    "new_cloud_subscription": false
+  },
+  "prior_acquired_evidence": {
+    "import": 43020483264,
+    "windows_disable_and_app_relaunch": 43021089861,
+    "studio_startup_and_update": 43017766592,
+    "warning": "Unchanged previous results; not rerun."
+  },
+  "source_provenance": {
+    "native_driver_reused": "haloryva-ci/preview8-windows-startup/Native.cs",
+    "windows_settings_driver_reused": "haloryva-ci/preview8-windows-startup/SettingsUi.cs",
+    "new_driver": "haloryva-ci/preview8-live-focus/Run-LiveFocus.ps1",
+    "application_sources_edited": []
+  },
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getancestor",
+    "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getforegroundwindow",
+    "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setforegroundwindow",
+    "https://docs.github.com/en/actions/concepts/runners/github-hosted-runners",
+    "https://learn.microsoft.com/en-us/windows-365/end-user-access-cloud-pc",
+    "https://www.microsoft.com/fr-fr/windows-365/faq"
+  ]
+}

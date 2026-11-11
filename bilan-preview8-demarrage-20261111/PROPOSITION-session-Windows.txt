@@ -1,0 +1,74 @@
+HALORYVA PREVIEW.8 — SESSION WINDOWS RÉELLE : PROPOSITION NON EXÉCUTÉE
+11 novembre 2026
+
+DÉCISION POUR LE GITHUB ACTUEL
+Le relevé du run 43026635830 place le pilote PowerShell, Runner.Listener,
+Runner.Worker, Explorer et Winlogon dans la session interactive 2.
+Aucun service actions.runner.* n'est détecté. Aucun dispositif externe de
+reconnexion ou de récupération après fermeture de session n'est établi.
+Une fermeture de cette session ferait perdre le contrôleur courant ; il n'est
+donc pas raisonnable de prétendre tester la connexion avec ce dispositif.
+Ce constat ne prouve pas une impossibilité générale de Windows sur GitHub.
+
+Non effectué : fermeture de session, redémarrage, nouveau compte, changement
+d'autologon, extraction de mot de passe, installation de service/agent/logiciel.
+Une reconnexion à une session restée ouverte ne satisferait pas le critère S6.
+
+SOLUTION CONCRÈTE À APPROUVER AVANT TOUTE CRÉATION OU INSTALLATION
+Un Windows 11 distinct, persistant entre les connexions, avec accès extérieur
+qui continue de fonctionner après la fermeture de sa session.
+Option sans logiciel ajouté au PC principal : Windows 365 Business configuré
+en Windows 11, accessible par son client web dans le navigateur.
+La documentation Microsoft confirme cet accès web. Il permet de rouvrir le
+poste distant après fermeture de la session Windows, contrairement au seul
+processus de recette vivant à l'intérieur de cette session.
+Prérequis à vérifier avant accord : compte/éligibilité, Windows 11 effectif,
+droits d'installation dans le Cloud PC, conditions de l'offre et coût local.
+Les pages officielles consultées annoncent un essai jusqu'à 30 jours, carte bancaire requise
+et renouvellement payant automatique : ce n'est pas une gratuité permanente.
+Aucun abonnement, compte, essai ou Cloud PC créé.
+
+Si un PC Windows 11 de test déjà disponible peut être utilisé, le même parcours
+évite une souscription. Sa disponibilité n'est pas supposée. Le PC principal
+et WSL ne sont pas des environnements autorisés pour cette recette.
+
+RECETTE PROPOSÉE — À PRÉPARER/EXÉCUTER APRÈS ACCORD SUR LE POSTE DISTINCT
+1. Télécharger le kit uniquement sur le Windows de test ; contrôler les SHA :
+   EXE CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512
+   MSIX D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9.
+   Source : run 43017325667, artifact 13853108416. Archive annoncée jusqu'au
+   11 décembre 2026 ; prévoir sa conservation autorisée avant expiration.
+2. Installer uniquement le paquet d'essai dans ce poste après accord ; aucun
+   certificat ni baisse de protection. En cas de blocage Windows, arrêter.
+   Le mécanisme AllowUnsigned du kit reste limité à l'identité d'essai prévue.
+3. Ouvrir Haloryva une première fois, activer la tâche par son interface,
+   vérifier l'état réel, quitter normalement puis fermer réellement la session
+   Windows. Ne pas se limiter à fermer l'onglet ou déconnecter le client distant.
+4. Rouvrir le poste par le client extérieur. Collecter un identifiant de connexion
+   Windows nouveau et l'heure de démarrage d'Explorer ; un SessionId peut être
+   réutilisé et ne suffit pas seul. Attendre dans une fenêtre bornée (jusqu'à
+   120 secondes proposée) sans lancer Haloryva manuellement. Vérifier un seul
+   processus issu du paquet, SHA attendu, arguments --silent et absence de
+   Studio/splash affiché. Consigner le délai observé et les captures nécessaires.
+5. Désactiver par Windows, quitter normalement, fermer réellement la session
+   puis se reconnecter. Même identification de connexion nouvelle ; vérifier
+   l'absence de lancement automatique sur la même fenêtre d'observation.
+6. Collecter les preuves, retirer le seul paquet d'essai ; conserver les données
+   autorisées avant suppression du poste ou fin d'abonnement.
+
+AUTOMATISATION ET MANIPULATIONS
+La préparation, les hashes, le relevé des processus/états et le bilan peuvent
+être automatisés dans le poste distant. Le choix de l'offre, l'authentification
+et l'approbation de l'installation restent à l'utilisateur. Aucun mot de passe
+n'est stocké dans le dépôt ou demandé dans le chat.
+Le client web fournit la continuité extérieure ; ne pas installer un service
+de recette ou configurer une connexion automatique pour fabriquer ce résultat.
+Aucun collecteur post-connexion ni validation S6 n'est déclaré exécuté ici.
+
+SOURCES
+https://docs.github.com/en/actions/concepts/runners/github-hosted-runners
+https://learn.microsoft.com/en-us/windows-365/end-user-access-cloud-pc
+https://www.microsoft.com/fr-fr/windows-365/faq
+https://www.microsoft.com/fr/windows-365/business/all-pricing
+Sources consultées le 11 novembre 2026. Les détails de l'offre locale sont à
+confirmer avant tout engagement ; aucune commande de création n'est fournie.
