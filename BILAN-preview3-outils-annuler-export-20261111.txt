@@ -1,0 +1,162 @@
+HALORYVA STUDIO — BILAN OUTILS, ANNULER/RÉTABLIR ET EXPORT
+Date : 11 novembre 2026
+Version testée : 2.7.1-preview.3, binaire existant inchangé
+Décision : recette ciblée réussie. Aucune diffusion autorisée ou réalisée.
+
+RÉSULTAT EXÉCUTÉ
+---------------
+Exécution finale GitHub Actions : SUCCÈS
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42937850681
+Job : 130252238129
+Commit du pilote validé : 72a2a4cacd163dfe8296c06b5a42d21aaf94b898
+173 assertions réussies, 0 échec, sortie 0, observateur désactivé.
+Ce nombre inclut les prérequis d'exécution et l'arrêt des deux travailleurs d'entrée.
+Il ne s'agit PAS des 195 contrôles historiques, qui n'ont pas été relancés.
+
+Environnement réellement utilisé :
+- machine GitHub hébergée temporaire windows-2025, x64 ;
+- Microsoft Windows Server 2025 Datacenter, build 26100 ;
+- image 20261103.298.1, bureau interactif, session 2 ;
+- profil d'essai séparé et gestes SendInput vers une fenêtre cible identifiée ;
+- aucune exécution de Haloryva, installation ou modification de paramètres sur le PC principal.
+
+BINAIRE ET GARANTIES
+-------------------
+Binaire téléchargé depuis l'artefact de compilation existant :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42931395281
+Haloryva.exe : 384512 octets
+SHA256 avant/après et recalcul indépendant sur la preuve téléchargée :
+4170BEFEC193F5049051D73744CFCAD6D300240CE840E791E2C469A7CECAB13C
+
+L'application n'a pas été recompilée. Seul le pilote de recette est compilé.
+Aucun fichier source de l'application ni résultat antérieur n'a été modifié.
+main conserve le commit 9e900eeaa62dcd2812a6aa0d3f251ad019ef3686.
+haloryva-tests-preview2 conserve le commit 8d84f31157ebfc1e09144811b6b112247f926f81.
+Les modifications de cette séance se limitent à une nouvelle recette, son workflow
+sur haloryva-tests-preview3 et ce bilan. Aucun tag, release, signature ou installation.
+Aucun fichier de travail n'a été écrit sur le PC principal : preuves consultées en mémoire.
+
+OUTILS ET GESTES VALIDÉS
+-----------------------
+Les huit outils supplémentaires ont reçu des gestes natifs via les vrais hooks :
+- Surligneur : continuité des points, couleur orange, transparence dans le PNG.
+- Ligne droite : deux extrémités exactes malgré un parcours intermédiaire irrégulier.
+- Ellipse : deux extrémités, rendu creux confirmé.
+- Flèche droite : géométrie et rendu visibles.
+- Flèche libre : continuité du parcours et rendu avec pointe.
+- Auto-formes / Forme libre : triangle reconnu à partir du geste,
+  avec conservation des points d'origine.
+- Numéro : numéros 1 et 2 consécutifs, puis numéro 3 ; réutilisation cohérente
+  du numéro 3 après annulation et nouveau dessin.
+- Texte : vraie fenêtre de saisie, texte Unicode « Haloryva é 123 » accepté
+  par Entrée ; autre texte annulé par Échap sans annotation vide.
+
+La saisie texte suspend le dessin puis le reprend.
+Les gestes de dessin ne transmettent pas leurs boutons à la fenêtre cible.
+La galerie comporte neuf annotations terminées ; les captures en confirment le rendu.
+
+ANNULER / RÉTABLIR VALIDÉS
+------------------------
+- Ctrl+Z : retrait des neuf annotations, une par une, dans l'ordre inverse.
+- Ctrl+Y : restauration des neuf annotations dans leur ordre initial.
+- Aucun effet supplémentaire lorsque l'historique est vide ou épuisé.
+- Ctrl+Alt+Retour arrière : annulation.
+- Ctrl+Alt+Maj+Retour arrière : rétablissement.
+- Après annulation puis nouveau dessin, l'ancien rétablissement est abandonné.
+- La numérotation demeure cohérente après ces opérations.
+- Effacer les dessins vide aussi l'historique.
+- L'export après restauration est identique pixel par pixel au premier export.
+  Les deux fichiers PNG ont aussi le même SHA256.
+- Les captures du bureau avant annulation et après restauration sont identiques
+  octet par octet ; la capture intermédiaire montre la disparition des annotations.
+
+EXPORT RÉEL VALIDÉ
+------------------
+L'action existante CursorController.ExportDrawings ouvre la véritable fenêtre Windows.
+Le nom de fichier est saisi par entrées clavier natives dans son champ identifié.
+Un témoin SaveFileDialog indépendant vérifie d'abord que le chemin réellement accepté
+est bien celui saisi, et non seulement le texte affiché.
+
+Trois exports réels réussis :
+1. « galerie é 123.png » : neuf annotations, texte compris.
+2. « restored.png » : même scène après annuler/rétablir, image identique.
+3. « new-branch.png » : texte abandonné absent, numéro 3 présent.
+
+Vérifications sur les fichiers produits :
+- PNG lisible, 1024 x 768, dimensions du bureau virtuel de cette machine ;
+- fond transparent ;
+- présence des huit régions graphiques et du texte accepté ;
+- transparence du surligneur, ellipse creuse ;
+- nom de fichier contenant espace et accent ;
+- annulation de l'export : aucun fichier créé et dessins conservés ;
+- scène vide : message « Aucun dessin à exporter. », fermeture par OK,
+  aucun fichier créé.
+Les exports finaux passent par la fenêtre réelle : aucun secours vers le moteur
+de rendu seul n'est utilisé dans l'exécution finale.
+
+DIAGNOSTICS DU PILOTE ET ESSAIS CONSERVÉS
+----------------------------------------
+Les essais préparatoires ne sont pas présentés comme des validations complètes.
+
+42936118480 et 42936538483 : outils réussis, arrêt sur le PNG attendu introuvable.
+42937012182 : diagnostic indépendant décisif :
+la fenêtre retournait OK avec le chemin par défaut
+C:\Users\runneradmin\Documents\Haloryva_annotations.png, malgré le texte de
+chemin modifié par ValuePattern.SetValue. Un PNG de 9343 octets a été retrouvé
+à cet endroit sur la machine GitHub. L'essai ultérieur attendait une confirmation
+de remplacement et a atteint son délai maximal.
+Le fichier « renderer-only-... » de cette exécution n'était qu'un diagnostic ;
+il ne validait pas le parcours d'export par la fenêtre.
+
+Correction du pilote : saisir le chemin par le clavier natif après Ctrl+A,
+puis vérifier le résultat réel de la fenêtre témoin. Haloryva est resté inchangé.
+
+42937581403 : outils, historique et trois exports réels réussis.
+Dernier échec du pilote : il cherchait un bouton OK d'identifiant 1 ; la fenêtre
+d'information exposait effectivement OK avec l'identifiant 2. Le texte attendu
+« Aucun dessin à exporter. » était présent.
+Correction limitée à l'identification du bouton réellement observé.
+
+42937850681 : recette complète réussie après ces corrections.
+Aucune anomalie fonctionnelle de Haloryva n'a été confirmée dans ce périmètre.
+Tous les essais et leurs preuves sont conservés ; aucun historique n'a été effacé.
+
+PREUVES
+-------
+Artefact final :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42937850681/artifacts/13819291782
+Nom : preview3-tools-history-export-evidence
+Conservation annoncée : jusqu'au 25 novembre 2026 à 01:18 UTC.
+Contient journaux, environnement, résultat JSON, captures, dialogues et PNG exportés.
+
+Sous-dossier des preuves finales : cloud-42937850681-X64-off/
+Fichiers PNG effectivement contrôlés en mémoire :
+- galerie é 123.png, 9343 octets :
+  ED959CC4FB9CA4FDCE32137B0D05C9BC6E7DEECA93059200E184A0551793FE66
+- restored.png, 9343 octets :
+  ED959CC4FB9CA4FDCE32137B0D05C9BC6E7DEECA93059200E184A0551793FE66
+- new-branch.png, 8758 octets :
+  D2FCA3FFE2CC3009F50D80711E1EB8EDC37A8CB553517AD1D8320EAED5CB7850
+- gallery.png et redo-restored.png, 13709 octets chacun :
+  AF6820CBDCB0026065D71CF5C55768264CD7C2B444FB32E09E82C8FCFDDB9DC0
+
+LIMITES — NON EXÉCUTÉ CETTE FOIS
+-------------------------------
+- Aucun des 195 contrôles historiques.
+- Pas de nouvelle série clic court, AltGr, réglages pendant un trait ou MSIX :
+  les résultats précédents du même binaire sont conservés.
+- Cette recette graphique utilise Windows Server 2025 x64, pas un PC Windows 11
+  physique. Elle ne remplace pas la validation matérielle finale.
+- Pas de périphérique physique, multi-écran ou variation d'échelle DPI.
+- Les outils sont sélectionnés par la configuration et la méthode Changed existantes ;
+  les clics sur chaque sélecteur du Studio ne sont pas couverts.
+- L'export appelle l'action existante du contrôleur ; le clic sur le bouton/menu
+  qui déclenche cette action n'est pas couvert.
+- La reconnaissance automatique est vérifiée sur le triangle ; les autres formes
+  assistées et les niveaux de lissage ne sont pas couverts par cette recette.
+
+SUITE CONCRÈTE PROPOSÉE
+-----------------------
+Tester les commandes visibles du Studio, le lissage et les autres formes assistées
+sur GitHub avec le même binaire, en préservant main, preview.2 et le PC principal.
+Cette suite n'est pas encore exécutée. Aucune publication n'est engagée.
