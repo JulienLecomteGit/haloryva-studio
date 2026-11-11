@@ -1,0 +1,76 @@
+HALORYVA STUDIO — DIAGNOSTICS CLOUD DU 11 NOVEMBRE 2026
+Préversion conservée : 2.7.1-preview.2. Validation finale NON ACQUISE.
+
+EXÉCUTION
+Branche : haloryva-tests-preview2
+Pilotes : bd782b76bb8e0f0ef295c81be525eb9b5ecc4e1d
+Exécution : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42927825091
+Comparaison : https://github.com/JulienLecomteGit/haloryva-studio/compare/40abf70dc8df79ce886528014085e3ba6c522488...bd782b76bb8e0f0ef295c81be525eb9b5ecc4e1d
+Seuls Recipe-Cloud.cs et Run-Cloud.ps1 ont été modifiés pour cette exécution.
+Le présent bilan est ajouté ensuite, hors chemins déclenchant le workflow.
+
+PRÉSERVATION
+main : 9e900eeaa62dcd2812a6aa0d3f251ad019ef3686, inchangé.
+Binaire preview.2 : SHA256 F655930368239905C2DAED1948C22ECC9E7256782C4EC2454E539780C0BD0D2E.
+Blob Git du binaire : e0708f5d179f4fb9015f7f00b3c906a74341767a, 384000 octets, inchangé.
+Empreinte vérifiée par les deux pilotes ; contrôle supplémentaire du binaire installé par le pilote MSIX.
+Aucune reconstruction ou signature applicative, aucune release, aucune fusion vers main.
+Aucune écriture ou exécution de Haloryva sur le PC utilisateur. Lecture seule des sources locales pour l'analyse.
+Aucun des 195 contrôles précédents relancé. Résultats antérieurs et ancien commit conservés.
+
+CLIC COURT — ÉCHEC REPRODUIT ET LOCALISÉ
+Job functional-x64 : Windows Server 2025 x64, bureau interactif, session 2.
+Compilation du pilote réussie ; vrais hooks installés ; cible dans un processus distinct.
+Clic milieu normal de référence : 1 DOWN / 1 UP.
+Même fonction de rejeu native du binaire, appelée directement hors callback : retourne true ; 1 DOWN / 1 UP.
+Action longue configurée : Halo : activer / arrêter ; seuil 400 ms.
+Trois essais courts ciblés, aucune action longue exécutée :
+- durée avant demande de relâchement : 144 / 111 / 119 ms ;
+- résultat de chaque essai : +1 DOWN / +2 UP ;
+- halo inchangé dans les trois essais ;
+- le défaut persiste après une seconde d'attente.
+Trace indépendante : le DOWN initial est retenu. À la sortie, la cible reçoit un UP avant le couple DOWN/UP réémis.
+Les deux événements réémis portent le marqueur applicatif 0x43463031.
+Délai entre UP simulé observé et début du rejeu marqué : environ 300 ms dans les trois essais.
+Le wrapper natif fonctionne directement ; le problème apparaît lorsque le rejeu passe par le traitement de relâchement du hook.
+Dans les sources preview.2 lues, InputRouter.Mouse appelle Execute -> replay -> Native.SendMouseClick avant de retourner la suppression de l'UP d'origine.
+Hypothèse technique forte : ce rejeu synchrone pendant le callback retarde le retour du hook et laisse passer un UP supplémentaire.
+La durée et l'ordre observés sont compatibles avec un délai d'attente Windows ; ils ne prouvent pas seuls le mécanisme exact.
+La documentation Microsoft recommande un retour immédiat du hook et le report du travail hors du callback :
+https://learn.microsoft.com/en-us/windows/win32/winmsg/lowlevelmouseproc
+Limites : gestes simulés avec SendInput, observateur ajouté dans la cible, pas de souris physique ni validation Windows 11 x64 de ce défaut.
+Le diagnostic n'a ni modifié le binaire ni remplacé son mécanisme de rejeu.
+Le job conserve volontairement un statut d'échec ; aucune assertion assouplie.
+
+MSIX — ARRÊT VALIDÉ APRÈS ATTENTE DE DISPONIBILITÉ
+Job msix-windows11 : Windows 11 Enterprise ARM64, exécutable x64 émulé.
+Paquet de test non signé avec identité temporaire officielle ; pas un paquet de diffusion.
+Fabrication/validation de structure, installation et identité du processus : réussies.
+Premier lancement :
+- signal d'arrêt encore absent au premier relevé, environ 5,94 s après demande de lancement ;
+- API native : erreur 2 (objet absent), API .NET : aucun handle de ce nom ;
+- signal accessible par les deux API au relevé suivant, environ 7,00 s après lancement ;
+- signalement natif réussi, sortie applicative code 0 à environ 8,39 s.
+Deuxième lancement :
+- signal présent au premier relevé, environ 3,54 s ;
+- arrêt propre code 0 à environ 3,74 s.
+Désinstallation vérifiée pour l'utilisateur du test.
+Le premier échec venait d'un contrôle de disponibilité trop précoce sur ce démarrage ; aucune preuve de défaut d'arrêt ou d'isolation des événements nommés.
+Le pilote attend maintenant la présence réelle du signal avec une limite et relève les fenêtres du seul processus testé.
+Aucune désactivation de protection, aucun certificat ajouté, aucune signature.
+
+NON EXÉCUTÉ / NON VALIDÉ
+Appuis longs, AltGr, dessin, réglages pendant un trait, souris physique et multi-écran.
+Persistance/migration du profil MSIX, mise à jour, signature de production et Microsoft Store.
+La réussite du pilote MSIX ne valide pas l'ensemble de la préversion.
+
+TRACES
+Clic : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42927825091/job/130218721458
+MSIX : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42927825091/job/130218721052
+Journaux détaillés intégrés aux logs GitHub ; artifacts conservés selon la rétention de 7 jours du workflow.
+Ce bilan durable conserve les observations essentielles après expiration éventuelle des artifacts.
+
+SUITE PROPOSÉE, NON EXÉCUTÉE
+Préparer une nouvelle préversion distincte qui reporte le rejeu après le retour du hook,
+puis vérifier le défaut avec et sans observateur avant les gestes restants.
+Conserver preview.2 comme référence, main et le PC utilisateur inchangés.
