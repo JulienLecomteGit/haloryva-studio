@@ -1,0 +1,223 @@
+{
+  "schema_version": 5,
+  "date": "2026-11-11",
+  "scope": "17 scénarios larges du plan MSIX préparé ; pas un pourcentage global du produit.",
+  "basis": "Critères et cas hérités conservés à l’identique. Dossier 2.7.1 actualisé sans nouvelle exécution MSIX ; les preuves restent attachées aux préversions/candidats cités. Aucun paquet de production .11 exécuté.",
+  "before_complements": {
+    "complete": 4,
+    "partial": 9,
+    "not_executed": 4
+  },
+  "counts": {
+    "total": 17,
+    "complete": 6,
+    "partial": 8,
+    "observed_failure": 0,
+    "not_executed": 3
+  },
+  "cases": [
+    {
+      "id": "S1",
+      "status": "partial_real",
+      "scope": "Binaire final preview.8 : tâche présente, State=0 en lecture seule et interrupteur utilisable dès l’affichage. Aucun suivi complet des écritures Run ; absence de repli Run vérifiée dans le code.",
+      "criterion": "New package; Enabled=false; read actual task state and UI; no Run write; ordinary Start launch shows Studio.",
+      "coverage": "partial",
+      "run_ids": [
+        43017766592
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "S2",
+      "status": "passed_real_studio_msix",
+      "scope": "Binaire final preview.8 : commandes clavier adressées au véritable interrupteur WinForms ; activation/désactivation via l’API Windows, changements de State 0→2→0 constatés en lecture seule, réglage sauvegardé. Ce ne sont ni des états simulés ni une recette du clic souris.",
+      "criterion": "Operate the dedicated control; actual StartupTask state follows successful requests; no force or Registry fallback; retain --silent for startup only.",
+      "coverage": "complete",
+      "run_ids": [
+        43017766592
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "S3",
+      "status": "passed_real_normal_preview9_diagnostic_job_incomplete",
+      "scope": "Preview.9 figée : premier retour confirmé, contrôle verrouillé en 137 ms observés, Windows State=1, même processus et profil inchangé. Mode normal : 7/7 assertions et arrêt/retrait normaux. Mode diagnostic : lecture réelle State=1 et marqueur placé après 9 assertions ; job interrompu ensuite, résultat final absent. Cette limite de clôture reste ouverte. Les preuves antérieures demeurent attachées à preview.8.",
+      "criterion": "Disable this test task using Windows' supported UI; refocus preferences; display false/disabled-by-user and do not re-enable. If UI unavailable, mark not executed, not pass.",
+      "run_ids": [
+        43021089861,
+        43026635830,
+        43027294211,
+        43035528813
+      ],
+      "coverage": "complete",
+      "evidence_context": "preview.9 normal; older preview.8 failures preserved"
+    },
+    {
+      "id": "S4",
+      "status": "partial_simulated",
+      "scope": "14 assertions sur la correspondance des états et permissions (0,1,2,3,4,-1,99). Pas de politique Windows modifiée ni de preuve visuelle des messages.",
+      "criterion": "Inject DisabledByPolicy, EnabledByPolicy and Unknown; lock/describe controls correctly. This is simulated policy coverage, not an OS policy test.",
+      "coverage": "partial",
+      "run_ids": [
+        43014257655
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "S5",
+      "status": "partial_real_and_double",
+      "scope": "Candidat : contrôleur réel avec service fictif, zéro demande de démarrage. Binaire final preview.8 : import accepté de LaunchAtLogin=true avec Windows restant à State=0 ; après désactivation Windows, relancement avec valeur JSON true respectant State=1. Ensemble des parcours true/false, couleur, normalisation et réouverture non couvert par l'interface réelle.",
+      "criterion": "Import profiles with LaunchAtLogin true/false; load, normalize, change color and reopen preferences; task state unchanged and zero OS-mutation requests. Explicit switch action remains separate.",
+      "run_ids": [
+        43014257655,
+        43020483264,
+        43021089861
+      ],
+      "coverage": "partial",
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "M1",
+      "status": "passed_real_ui_fixture",
+      "scope": "Binaire final preview.8 MSIX : profil synthétique au format 2.7.0, dans le vrai dossier classique ; dialogue initial Annuler, puis commande explicite Refuser/Accepter. Copies LocalState indépendantes et sources inchangées, valeurs vérifiées, défauts français et dix outils pour les nouvelles clés absentes. Annuler le remplacement préserve un profil existant. Aucune installation réelle 2.7.0.",
+      "criterion": "Place known non-personal 2.7.0-format profile in actual legacy directory; import by app UI; verify original file bytes/path intact and independent target in LocalState; compare fields with expected defaults for new keys. This fixture alone does not prove an installed-2.7.0 migration.",
+      "run_ids": [
+        43020483264
+      ],
+      "coverage": "complete",
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "M2",
+      "status": "partial_component",
+      "scope": "Source principale invalide avec .bak valide, deux sources invalides et fichier trop volumineux exécutés. Accès refusé par permissions non exécuté.",
+      "criterion": "Main invalid with valid .bak, both invalid, inaccessible, and >1,000,000-byte input: correct recovery/refusal, bounded read, no rename/delete/write to any source.",
+      "coverage": "partial",
+      "run_ids": [
+        43014257655
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "M3",
+      "status": "passed_real_msix",
+      "scope": "Mise à jour réelle A vers B : ancien LocalCache prioritaire sur un profil classique synthétique distinct ; 93 champs conservés, deux sources inchangées.",
+      "criterion": "Old same-family LocalCache profile and different legacy profile both present: take package profile; preserve language/tool cycle; do not scan other preview identities.",
+      "coverage": "complete",
+      "run_ids": [
+        43014976009
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "M4",
+      "status": "partial_component_and_msix",
+      "scope": "Refus d’une destination existante, règles de chevauchement et conservation du profil lors des relancements. Tous les modes diagnostic sous MSIX et la destination corrompue ne sont pas exercés.",
+      "criterion": "Existing LocalState main or backup prevents automatic overwrite; corrupt destination uses local recovery, not silent legacy fallback; second launch does not repeat migration. Explicit trial/diagnostic path guards reject overlapping LocalState, same-family LocalCache and legacy roots; no migration or startup mutation occurs in those modes.",
+      "coverage": "partial",
+      "run_ids": [
+        43014257655,
+        43014976009
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "M5",
+      "status": "partial_component",
+      "scope": "Destination modifiée après préparation : commit refusé et fichiers préservés. Panne d’E/S pendant remplacement et concurrence avec sauvegarde différée non injectées.",
+      "criterion": "Injected failure before commit leaves originals/current profile intact; pending old saves cannot overwrite committed import; retry does not duplicate or overwrite unexpectedly.",
+      "coverage": "partial",
+      "run_ids": [
+        43014257655
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "M6",
+      "status": "partial_real_ui_and_component",
+      "scope": "Binaire final preview.8 : PNG et WAV valides copiés seulement après consentement, hashes identiques, chemins indépendants ImportedAssets, copie brute de récupération et source intacte, préréglage ajusté. Candidat : référence WAV absente signalée dans le plan. Dialogues pour fichiers absents, illisibles, trop volumineux ou de type non pris en charge non exécutés.",
+      "criterion": "Referenced PNG/WAV copied only with consent; hashes match, new paths inside package data; missing/too-large/unsupported file shown before commit; raw source profile unchanged and preset status coherent.",
+      "run_ids": [
+        43014257655,
+        43020483264
+      ],
+      "coverage": "partial",
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "C1",
+      "status": "not_executed",
+      "scope": "Aucune exécution de la version stable 2.7.0 ni de son installateur ; verrou partagé et maintenance seulement revus dans le code.",
+      "criterion": "Use exact preserved 2.7.0 binary and recorded hash; verify one shared instance lock and read-only real maintenance lock. Refuse second engine without forced stop or changes to old Run/installation. Missing trusted binary or blocked launch => not executed; no reconstruction of stable or protection bypass.",
+      "coverage": "not_executed",
+      "run_ids": [],
+      "evidence_context": "not_executed"
+    },
+    {
+      "id": "U1",
+      "status": "passed_real_msix",
+      "scope": "Mise à jour sur place A(2.7.1.70, EXE preview.7 figé) vers B(2.7.1.80, EXE preview.8 figé), sans désinstallation intermédiaire ; migration LocalState et arrêt normal réussis.",
+      "criterion": "Same Name/Publisher/architecture/AppId, increasing package version; close A cleanly, update directly, no Remove-AppxPackage between A/B. Observe B version, LocalCache->LocalState migration, languages/tools/all fields, original source intact.",
+      "coverage": "complete",
+      "run_ids": [
+        43014976009
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "U2",
+      "status": "passed_targeted_combined_evidence",
+      "scope": "Premier candidat preview.8 : mise à jour B→C avec conservation de 93 champs et du hash de profil. Binaire final preview.8 : B→C sans désinstallation, EXE identique dans les deux paquets, démarrage actif conservé (State=2), désactivation finale et arrêts normaux. Les 93 champs n’ont pas été retestés après l’unique ajout de lecture d’état dans Shown.",
+      "criterion": "Only package version increases; EXE hash identical B/C. Keep profile and TaskId; verify LocalState data and startup state preserved, no migration replay or enable reset; restart and clean shutdown.",
+      "coverage": "complete",
+      "run_ids": [
+        43014976009,
+        43017766592
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "U3",
+      "status": "partial_real_msix",
+      "scope": "Retour à une version inférieure refusé par Windows sans forçage ; enregistrement C et profil conservés. Mise à jour pendant que l’application est ouverte et déploiement différé non exécutés.",
+      "criterion": "Refuse update on unclosed app or use supported deferred deployment; never force kill. Failure is recorded as failure, existing registration/profile preserved; no uninstall/reinstall workaround.",
+      "coverage": "partial",
+      "run_ids": [
+        43014976009
+      ],
+      "evidence_context": "inherited preview.8 evidence, sometimes prior candidate or preview.7 -> preview.8 update"
+    },
+    {
+      "id": "M7",
+      "status": "not_executed",
+      "scope": "Migration depuis une installation réelle 2.7.0 non exécutée. Aucun profil de test n’est présenté comme cette validation.",
+      "criterion": "Install the exact preserved 2.7.0 package if permitted; configure non-personal profile, quit normally, migrate into new MSIX and inspect original installation, preferences and custom assets. Do not substitute fixture M1 for this result; if protections block, stop and record not executed.",
+      "coverage": "not_executed",
+      "run_ids": [],
+      "evidence_context": "not_executed"
+    },
+    {
+      "id": "S6",
+      "status": "not_executed",
+      "scope": "Aucune fermeture/ouverture de session ni redémarrage de Windows. Lancement manuel --silent réussi : il ne prouve pas le démarrage à la connexion.",
+      "criterion": "After opt-in, log on to a new session; task starts exactly one process with --silent, no splash/Studio. After opt-out, no process starts. Manual --silent launch or API enable alone cannot satisfy this case.",
+      "coverage": "not_executed",
+      "run_ids": [],
+      "evidence_context": "not_executed"
+    }
+  ],
+  "current_update": "Consolidation documentaire preview.9. S3 réussi en mode normal ; clôture du pilote diagnostic toujours incomplète. Cycle EXE conservé dans une section séparée, sans modifier les 17 critères MSIX. Aucun test exécuté.",
+  "caveat": "Cette matrice combine des versions et périmètres délimités. 6 scénarios complets sur 17 ne sont ni une couverture globale de preview.9 ni un pourcentage de qualité. Aucun acquis n'a été rejoué.",
+  "classic_installer_separate": {
+    "run": 43065284869,
+    "version": "2.7.1-preview.9",
+    "passed": 27,
+    "total": 27,
+    "real_install_uninstall": true,
+    "synthetic_profile": true,
+    "changes_msix_case_counts": false
+  },
+  "previous_matrix_source": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/preparation-store-preview9-20261111/couverture-msix.json",
+  "current_task_tests_executed": 0,
+  "production_identity_qualified": false
+}

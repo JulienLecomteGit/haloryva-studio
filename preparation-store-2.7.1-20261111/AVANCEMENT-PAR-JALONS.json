@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-11",
+  "requested_by_user": "Historical rubric requested by the user, updated from existing evidence.",
+  "method": "Indice documentaire par jalons : chaque jalon vaut un point ; un jalon incomplet vaut zéro. Ce n'est ni une estimation d'heures, ni un pourcentage de corrections, ni une probabilité d'absence de bugs.",
+  "rubric_chosen_for_this_readout": true,
+  "application_and_installer": {
+    "closed": 8,
+    "total": 8,
+    "percentage": 100,
+    "remaining_percentage": 0,
+    "criteria": [
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5",
+      "J6",
+      "J7",
+      "J8"
+    ],
+    "label": "Eight defined technical milestones, not signed-release readiness or comprehensive qualification"
+  },
+  "complete_route_including_store": {
+    "closed": 9,
+    "total": 12,
+    "percentage": 75,
+    "remaining_percentage": 25,
+    "criteria": [
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5",
+      "J6",
+      "J7",
+      "J8",
+      "J9",
+      "J10",
+      "J11",
+      "J12"
+    ]
+  },
+  "not_included_as_completed": [
+    "Signature de l'EXE GitHub",
+    "Migration réelle depuis une installation 2.7.0",
+    "Exécution native Windows 11 x64 complète"
+  ],
+  "limits": "Les jalons ont des tailles différentes. Le comptage ne mesure pas la charge restante. La signature EXE hors Store et la promesse de migration réelle 2.7.0 restent des décisions séparées, pas des acquis.",
+  "milestones": [
+    {
+      "id": "J1",
+      "label": "Sources isolées et entrées/rendu fiabilisés",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Preview.2 et héritage conservé : hooks séparés, réglages figés pendant le trait."
+    },
+    {
+      "id": "J2",
+      "label": "Clic court et placement initial corrigés",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Bilans preview.3 et preview.4 ; preuves héritées, non rejouées."
+    },
+    {
+      "id": "J3",
+      "label": "Choix des outils mémorisé",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Preview.5 ; 13 valeurs dont le cycle d’outils préservées dans le cycle final 43090537264."
+    },
+    {
+      "id": "J4",
+      "label": "FR/EN/ES et affichage des outils intégrés",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Previews.6/.7 ; finition cosmétique Son espagnol séparée en J7."
+    },
+    {
+      "id": "J5",
+      "label": "Intégration MSIX et recettes ciblées réalisées",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Preview.8 import/états Windows ; preview.9 premier retour normal 7/7. La vraie connexion est J9, non couverte ici."
+    },
+    {
+      "id": "J6",
+      "label": "Installateur : recette initiale puis finale acquise",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Preview.9 conservée ; setup final build/extraction 43088395238 et cycle 43090537264, 28/28."
+    },
+    {
+      "id": "J7",
+      "label": "Finitions et mentions de version stable",
+      "closed": true,
+      "scope": "application",
+      "evidence": "F01 sur .10 43081072953 ; F02/F03 et V01 sur .11 43086180391 : métadonnées 10/10 et six vues À propos examinées."
+    },
+    {
+      "id": "J8",
+      "label": "EXE final et emballage qualifiés dans le périmètre ciblé",
+      "closed": true,
+      "scope": "application",
+      "evidence": "Application .11 figée ; setup final exact, 10/10 métadonnées, extraction 3/3 et cycle réel 28/28. Aucun MSIX de production ni signature déduit."
+    },
+    {
+      "id": "J9",
+      "label": "Démarrage lors d’une vraie session Windows",
+      "closed": false,
+      "scope": "store_extra",
+      "evidence": "S6 non exécuté ; environnement distinct persistant non disponible/autorisé à ce jour."
+    },
+    {
+      "id": "J10",
+      "label": "Identité du produit Microsoft Store vérifiée",
+      "closed": true,
+      "scope": "store_extra",
+      "evidence": "11 novembre 2026 : programme Windows individuel activé gratuitement, Haloryva Studio réservé, identité officielle relevée, produit neuf sans paquet. Aucune soumission."
+    },
+    {
+      "id": "J11",
+      "label": "Confidentialité, coordonnées et captures Store",
+      "closed": false,
+      "scope": "store_extra",
+      "evidence": "Brouillons disponibles ; approbation, coordonnées/URL et captures finales manquantes."
+    },
+    {
+      "id": "J12",
+      "label": "Paquet Store et certification",
+      "closed": false,
+      "scope": "store_extra",
+      "evidence": "Aucun paquet de production, rapport WACK ou résultat de certification."
+    }
+  ],
+  "previous_snapshot": {
+    "closed": 7,
+    "total": 12,
+    "percentage": 58.3,
+    "source": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/preparation-store-preview9-20261111/AVANCEMENT-PAR-JALONS.json"
+  },
+  "current_task_executed_tests": 0,
+  "release_clearance": false,
+  "store_remaining_groups": [
+    "D1",
+    "D3",
+    "D4",
+    "D5",
+    "D6"
+  ]
+}

@@ -1,0 +1,64 @@
+HALORYVA STUDIO 2.7.1 — QUALIFICATION ET VISUELS STORE A PREPARER
+11 novembre 2026 — aucun contrôle, capture ou empaquetage nouveau
+
+ETAT
+L’identité officielle est acquise. Le fichier 2.7.1.11 et son setup sont fabriqués.
+Aucun MSIX de production contenant .11, rapport WACK ou certification Microsoft.
+Le manifeste est un brouillon. La réussite du cycle EXE final ne clôt pas la recette MSIX.
+
+CAPTURES ACQUISES
+- .10 : quatre vues ciblées, Sonidos espagnol et version/historique FR/EN/ES.
+- .11 : six vues À propos, haut et bas dans chaque langue ; 13 lignes lisibles.
+- Preview.7 : 174 PNG produits, 84 examinés selon le bilan historique.
+Aucune de ces quantités n’est un nombre de captures Store approuvées.
+La troncature espagnole et l’historique rogné sont corrigés ; ne plus les lister
+comme défauts restants. Les captures .10/.11 en 1024×768 restent des preuves de recette.
+Pas de nouvelle revue d’images dans cette tâche ; les conclusions visuelles reprennent
+les bilans déjà rédigés après examen.
+
+VISUELS RESTANTS
+Source Microsoft relue le 11 novembre 2026 :
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images
+Une capture au minimum ; PNG, 50 Mo maximum ; famille Desktop au moins 1366×768.
+Préparer les images et légendes de chaque fiche linguistique.
+Proposition conservée : quatre scènes réelles à 1920×1080 par langue :
+présentation annotée, choix de deux outils, personnalisation/effets, préférences/langue.
+Il s’agit d’un choix de présentation, pas de douze nouveaux tests fonctionnels obligatoires.
+Aucune capture réalisée ni original agrandi pour simuler une résolution.
+Ne montrer ni profil personnel ni identité/outil de recette.
+Les logos du paquet doivent aussi être préparés et leurs droits confirmés.
+
+PRODUCTION ET QUALIFICATION FUTURES
+Après accord, utiliser l’EXE .11 exact, l’identité officielle, version MSIX 2.7.1.0,
+un layout sans pilote de recette, ressources approuvées et bornes OS décidées.
+Contrôler seulement le nouvel emballage et les écarts pertinents, puis WACK sur ce paquet.
+S6 nécessite une nouvelle session Windows réelle et un environnement distinct autorisé.
+Aucune recette générale ni 195 contrôles inclus d’office.
+La certification Microsoft n’est obtenue qu’après une soumission ultérieure autorisée.
+Référence : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+
+NOTES POUR LE CERTIFICATEUR — BROUILLON, NON SOUMIS
+Haloryva Studio is a desktop presentation and annotation utility. It does not require
+a Haloryva account. Closing the Studio window can leave the application running;
+use the notification-area Quit command to exit normally.
+The runFullTrust capability supports global input shortcuts and mouse-button actions,
+transparent annotation overlays, local preferences and user-selected exports.
+No administrative elevation, driver or background service is intended.
+Select two drawing tools, cycle through them using the configured mouse actions,
+draw and undo/redo, and export annotations as a transparent PNG.
+Choose French, English or Spanish in Preferences, then restart the application
+to apply the saved language.
+Startup is opt-in and follows the effective Windows permission. Importing settings
+must not enable a user-disabled startup task.
+The legacy-settings copy is consent-based. Supported PNG/WAV resources are copied
+independently; originals are preserved. This does not uninstall the classic application
+or transfer its startup registration.
+Use a non-personal profile for review. Final package-specific instructions and
+the results of actual Windows-logon qualification must be added before submission.
+
+LIMITES INTERNES A CONSERVER
+Les notes décrivent le comportement prévu et les preuves partielles disponibles.
+Import : profil synthétique, pas vraie installation 2.7.0.
+S3 : preview.9 normal acquis ; diagnostic sans clôture finale confirmée.
+S6 : non exécuté. Pas de paquet officiel .11 testé ni de résultat WACK.
+Ne pas transformer ces notes en certificat de réussite.

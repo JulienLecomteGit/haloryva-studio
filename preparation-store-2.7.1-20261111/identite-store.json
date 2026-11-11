@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-11",
+  "status": "DRAFT_NO_PRODUCTION_PACKAGE_NO_SUBMISSION",
+  "evidence_only_update": true,
+  "partner_center_reopened_this_task": false,
+  "partner_center_last_observation_source": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/preparation-store-preview9-20261111/LECTURE-PARTNER-CENTER.txt",
+  "name_reserved": "Haloryva Studio",
+  "store_id": "9NJ14SZJP55B",
+  "package_identity_name": "JulienLecomte.HaloryvaStudio",
+  "package_publisher": "CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1",
+  "publisher_display_name": "Julien Lecomte",
+  "package_family_name": "JulienLecomte.HaloryvaStudio_twtgq1d174ne0",
+  "developer_program_active": true,
+  "developer_agreement_accepted_by_user": true,
+  "product_state_last_observed": "draft",
+  "last_submitted_package_version": null,
+  "package_history_last_observed": "no_package_new_product_no_submission",
+  "store_url_assigned": "https://apps.microsoft.com/detail/9NJ14SZJP55B",
+  "store_listing_public_last_observed": false,
+  "price_requested": "free",
+  "category_proposed": "Productivity",
+  "markets": null,
+  "age_rating": null,
+  "rights_notice": "© 2026 Julien Lecomte — droits réservés.",
+  "new_license_selected": false,
+  "application": {
+    "informational_version": "2.7.1",
+    "file_version": "2.7.1.11",
+    "assembly_version": "2.7.1.0",
+    "architecture": "x64",
+    "build_date_display": "11/11/2026",
+    "build_timestamp_paris": "2026-11-11T20:20:08.0200927+01:00",
+    "build_commit": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624",
+    "build_run": 43086180391,
+    "sha256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+    "signed": false,
+    "archive_id": 13886896454,
+    "stamped_sources_required_for_packaging": true
+  },
+  "classic_installer": {
+    "name": "HaloryvaSetup_2.7.1.exe",
+    "file_version": "2.7.1.11",
+    "sha256": "BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1",
+    "build_and_extraction_run": 43088395238,
+    "archive_id": 13886638835,
+    "lifecycle_run": 43090537264,
+    "checks_passed": 28,
+    "checks_total": 28,
+    "preflight_checks": 5,
+    "profile_fields_preserved": 13,
+    "profile_files_identical_after_install_and_uninstall": 3,
+    "profile_type": "synthetic_no_installed_270",
+    "signed": false,
+    "real_install_uninstall": true,
+    "automatic_selftest_count": 1,
+    "automatic_selftest_exit_code": 0,
+    "normal_app_launch_tested_in_cycle": false,
+    "platform": "Windows 11 ARM64 build 26200, x64 emulation"
+  },
+  "first_production_msix": {
+    "version_selected": "2.7.1.0",
+    "architecture": "x64",
+    "identity_status": "official_values_in_draft",
+    "source_exe_sha256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+    "prepared": false,
+    "packaged": false,
+    "qualified": false,
+    "schema_checked_this_task": false,
+    "signed": false,
+    "submitted": false,
+    "published": false,
+    "manifest": "production-msix/AppxManifest.xml.template",
+    "manifest_content_unchanged_from_previous_draft": true,
+    "min_windows_version_proposed": "10.0.22000.0",
+    "max_windows_version_tested_draft": "10.0.26100.0",
+    "min_windows_version_final": null,
+    "max_windows_version_tested_final": null,
+    "os_bounds_qualified": false,
+    "languages_prepared": [
+      "fr-FR",
+      "en-US",
+      "es-ES"
+    ],
+    "startup_task_enabled_by_default": false,
+    "restricted_capabilities": [
+      "runFullTrust"
+    ],
+    "restricted_capabilities_approved": false
+  },
+  "source_evidence_scope": "Mixed versions; targeted .11 and final-setup proofs plus inherited preview evidence. No broad tests replayed.",
+  "auto_start_msix_validation": {
+    "studio_enable_disable": {
+      "validated": true,
+      "evidence_version": "preview.8",
+      "run": 43017766592
+    },
+    "retained_after_same_identity_update": {
+      "validated": true,
+      "evidence_version": "preview.8",
+      "run": 43017766592
+    },
+    "windows_disable_and_application_relaunch": {
+      "validated": true,
+      "evidence_version": "preview.8",
+      "run": 43021089861
+    },
+    "first_live_refocus": {
+      "validated": true,
+      "evidence_version": "preview.9",
+      "run": 43035528813,
+      "job": 130573406999,
+      "checks_passed": 7,
+      "checks_total": 7
+    },
+    "diagnostic_mode_closure": {
+      "validated": false,
+      "run": 43035528813,
+      "job": 130573407015,
+      "status": "cancelled_missing_final_result"
+    },
+    "actual_windows_logon_validated": false
+  },
+  "same_identity_update_validation": {
+    "actual_update_passed": true,
+    "profile93_fields": "prior_preview8_candidate_only",
+    "startup_state": "final_preview8_binary",
+    "store_production_identity": false,
+    "evidence_versions": "preview.7 -> preview.8; no production-identity update or .11 MSIX recipe"
+  },
+  "legacy_fixture_import": {
+    "validated": true,
+    "evidence_version": "preview.8",
+    "run": 43020483264,
+    "profile": "synthetic_270_format",
+    "consent_png_wav": true
+  },
+  "real_installed_270_migration_validated": false,
+  "native_windows11_x64_validation": false,
+  "standard_non_elevated_user_validation": false,
+  "privacy_policy_url": null,
+  "privacy_contact": null,
+  "privacy_text_status": "FR_draft_preserved_no_new_audit_EN_ES_and_approval_pending",
+  "support_url": null,
+  "support_url_proposed": "https://github.com/JulienLecomteGit/haloryva-studio/issues",
+  "store_assets_approved": false,
+  "resource_rights_review_complete": false,
+  "listing_languages_prepared": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "final_store_screenshots_prepared": false,
+  "wack_executed": false,
+  "store_certification_acquired": false,
+  "finishing_lots": {
+    "F01": "closed_targeted_dot10_inherited_identical_catalog_dot11",
+    "F02": "closed_dot11",
+    "F03": "closed_dot11",
+    "F04": "closed_targeted_final_setup_cycle",
+    "F05": "partial",
+    "F06": "partial",
+    "V01": "closed_dot11"
+  },
+  "common_finalization_group": "D0_closed_within_targeted_final_binary_and_installer_scope",
+  "store_blocking_groups": [
+    "D1",
+    "D3",
+    "D4",
+    "D5",
+    "D6"
+  ],
+  "external_signed_exe_blocker": "X1",
+  "conditional_legacy_group": "D2",
+  "release_readiness": "final_exe_targeted_recipe_complete_unsigned_store_not_ready_no_release_authorization",
+  "this_task": {
+    "compiled": false,
+    "tests_run": 0,
+    "application_executed": false,
+    "binaires_modified": false,
+    "signed": false,
+    "published": false,
+    "submitted": false,
+    "pc_modified": false,
+    "desktop_shortcuts_modified": false
+  },
+  "reservation_notice": {
+    "observed_text_summary": "Submit this product to the Store within three months or lose the name reservation.",
+    "exact_expiration_displayed": false,
+    "three_month_anniversary_inferred": "2027-02-11",
+    "no_automatic_submission_authorized": true
+  }
+}

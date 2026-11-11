@@ -1,0 +1,25 @@
+HALORYVA 2.7.1 — REFERENCES PUBLIQUES RELUES
+11 novembre 2026 ; aucune consultation du compte privé ni saisie Partner Center.
+
+1. Paquet MSIX, identité, version, WACK et signature
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+Le paquet doit utiliser l’identité du produit ; vérifier sa qualification avec WACK.
+La documentation prévoit la signature Microsoft des MSIX/AppX après certification,
+sans achat d’un certificat CA pour leur soumission. Elle ne s’étend pas au setup EXE.
+Le numéro de paquet de production retenu reste 2.7.1.0 ; il n’est pas la version fichier .11.
+
+2. Images
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images
+Au moins une capture, PNG, 50 Mo maximum, Desktop au moins 1366×768.
+Les images 1024×768 de recette ne sont pas un jeu final de soumission.
+
+3. Politique Store
+https://learn.microsoft.com/en-us/windows/apps/publish/store-policies
+Version 7.20, publiée le 15 septembre 2026, applicable le 22 octobre 2026.
+Section 10.5.1 : politique de confidentialité nécessaire aux applications Win32/Desktop Bridge,
+URL dans la soumission ; décrire les données, usages, conservation et choix de l’utilisateur.
+Les fiches doivent refléter les fonctions et limites réelles.
+
+Ces sources ne constituent ni approbation des contenus, ni validation du paquet,
+ni avis sur l’éligibilité à un service de signature EXE. Aucune souscription.
+L’état du produit est repris du relevé conservé, pas d’une nouvelle visite du portail.

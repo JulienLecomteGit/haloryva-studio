@@ -1,0 +1,124 @@
+HALORYVA STUDIO — CONFIDENTIALITÉ
+Brouillon conservé pour 2.7.1 — 11 novembre 2026
+À approuver, compléter et héberger à une URL accessible avant soumission Store.
+Aucune politique définitive publiée ; contact et versions EN/ES à finaliser.
+
+TEXTE PROPOSÉ
+
+Haloryva Studio est une application de bureau développée par Julien Lecomte.
+Elle met en valeur le curseur et permet de dessiner des annotations à l'écran.
+
+Fonctionnement sur votre appareil
+Haloryva traite les événements de souris et de clavier pour ses effets, raccourcis
+et actions de boutons, y compris lorsqu'une autre fenêtre est active. L'affichage
+des touches présente certaines combinaisons avec Ctrl, Alt ou Windows ; il ne
+constitue pas un historique des textes saisis.
+La loupe utilise temporairement les pixels autour du curseur pour les agrandir.
+Les annotations, y compris le texte que vous choisissez de saisir, restent dans
+la session de dessin. L'export PNG enregistre les annotations sur fond transparent
+dans le fichier choisi ; ce n'est pas une capture complète du bureau.
+
+Réglages et fichiers
+Un profil JSON local conserve les préférences, dont la langue, les outils choisis
+et les actions des boutons. Il peut contenir les chemins de votre logo ou son.
+La version MSIX conserve ses réglages dans ses données locales d'application.
+Des sauvegardes et profils invalides peuvent être conservés pour la récupération.
+Les exports de profils et d'annotations sont écrits à l'endroit choisi.
+
+Lorsque vous acceptez la reprise des réglages de la version classique, Haloryva
+en crée une copie dans ses propres données. Les PNG/WAV personnalisés lisibles
+peuvent être copiés avec votre consentement, dans la limite indiquée par fichier.
+Une copie brute du profil source est conservée pour la récupération ; un profil
+déjà présent est sauvegardé avant son remplacement accepté. Ces copies peuvent
+contenir des chemins et préférences issus du profil d'origine.
+Les fichiers et l'installation d'origine ne sont pas supprimés par cette opération.
+Vous pouvez refuser ou annuler la proposition de reprise. Le choix de démarrage
+à la connexion se règle séparément ; l'import d'un ancien profil ne vaut pas
+autorisation de l'activer dans Windows.
+
+Un journal technique local peut être créé en cas d'erreur. Le code de journalisation
+conserve notamment date, catégorie, type d'erreur et pile technique, avec rotation ;
+il exclut le message et les données de l'exception. Les modes de diagnostic
+supplémentaires sont lancés explicitement. Aucun envoi automatique au support
+n'est prévu pour ces journaux.
+
+Réseau et partage
+Les revues de sources documentées n'ont pas identifié de télémétrie applicative,
+publicité ou mécanisme d'envoi vers un serveur de l'éditeur.
+Les fonctions courantes ne demandent pas de compte Haloryva.
+Si un export ou fichier personnalisé se trouve dans un dossier synchronisé
+ou réseau, le service choisi peut le traiter selon ses propres règles.
+Windows et le Microsoft Store relèvent de leurs propres services.
+
+Vos choix et conservation
+L'assistant de désinstallation de la version EXE propose de conserver les réglages.
+La suppression des réglages est un choix distinct. Les fichiers exportés et les copies
+conservées ailleurs ne sont pas automatiquement tous effacés par ce choix.
+Cette option de l'assistant EXE ne décrit pas la gestion des données par Windows
+lors de la désinstallation d'un paquet Microsoft Store.
+
+Vous pouvez modifier les préférences, désactiver les effets, régler le démarrage
+dans les options prévues et dans Windows, ou quitter depuis l'icône près de l'horloge.
+Les préférences permettent d'ouvrir le dossier des réglages.
+Les fichiers locaux restent jusqu'à remplacement, rotation ou suppression ;
+les exports et anciennes sources copiées ne sont pas supprimés par cette politique.
+La reprise peut créer plusieurs copies de récupération : elles doivent être prises
+en compte si vous choisissez ensuite d'effacer vos fichiers.
+Haloryva ne promet pas de chiffrement propre à ces fichiers, ni de suppression
+complète de toutes leurs copies à la désinstallation.
+Vérifiez un profil, une annotation ou un diagnostic avant de le partager.
+Un envoi volontaire au support nécessite votre action.
+
+Contact
+Responsable indiqué : Julien Lecomte.
+Contact de confidentialité : À RENSEIGNER PAR L'AUTEUR.
+Date de la politique définitive : À CONFIRMER APRÈS APPROBATION.
+
+FIN DU TEXTE PROPOSÉ
+
+NOTES DE PRÉPARATION — NE PAS COPIER DANS LA FICHE CLIENT
+Base : brouillon preview.7 et ses revues de sources documentées.
+Actualisation : comportement MSIX de PackageContext.cs, ProfileMigration.cs et
+StartupSettings.cs ; preuves import et désactivation Windows existantes.
+Pas de nouvel audit exhaustif réseau, de capture réseau ou de test dans cette tâche.
+Une application full trust n'est pas rendue hors réseau par l'absence d'internetClient.
+
+Chemins techniques :
+- Ancienne version classique : dossier Haloryva dans le LocalAppData réel.
+- Ancien paquet de même famille : LocalCache ; migration vers LocalState/Haloryva.
+- PNG/WAV copiés : ImportedAssets ; limite de code 10 Mio par fichier.
+- Copie brute : migration-source-<SHA256>.json dans la destination.
+- Profil remplacé : settings.before-import-<identifiant>.json dans la destination.
+- Journal : Logs/errors.log avec rotation .1/.2, limites documentées antérieurement.
+- Les copies conservent les informations du profil : pas de promesse d'anonymisation.
+- En MSIX, StartupTask remplace l'écriture Run pour cette option. Le mode classique
+  conserve son mécanisme distinct. La recette EXE preview.9 a testé une installation/désinstallation avec démarrage désactivé ; elle ne valide pas une connexion réelle ni toutes les configurations classiques.
+
+Preuves : runs 43020483264 et 43021089861 ; binaire final
+CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512
+La preuve d'import porte sur un profil de test. La conservation de l'ancienne
+installation réelle reste à valider ; le texte décrit le comportement conçu,
+pas une certification de migration depuis toutes les installations.
+
+Le Store impose une politique aux produits Win32/Desktop Bridge (10.5.1).
+Préparer l'URL et les langues nécessaires ; aucun hébergement créé.
+https://learn.microsoft.com/en-us/windows/apps/publish/store-policies
+
+AJOUT DE PREUVES PREVIEW.9 — NOTE INTERNE
+Cycle EXE https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43065284869 : profil fictif, 13 champs conservés,
+settings.json et .bak préservés après désinstallation. Pas de promesse de suppression
+MSIX déduite de ce résultat. Pas de nouvel audit réseau ni test local.
+Le diagnostic optatif --startup-refresh-trace ajoute un journal technique local borné,
+non créé en mode normal lors de la recette S3 ; aucune transmission automatique annoncée.
+Les preuves d'import et désactivation citées ci-dessus restent celles de preview.8.
+
+ACTUALISATION 2.7.1 — NOTE INTERNE
+Le texte proposé ci-dessus reste en brouillon, sans nouvel audit réseau ni engagement
+supplémentaire. Le candidat .11 ne modifie pas le comportement de données décrit.
+Le cycle final 43090537264 confirme 13 valeurs préservées avec un profil fictif ;
+les 3 fichiers sont identiques entre fin d’installation et fin de désinstallation.
+Cela ne prouve ni la reprise du profil personnel de l’utilisateur ni une migration
+réelle 2.7.0, et ne décrit pas la suppression des données par le Store.
+Les mentions preview.8/.9 ci-dessus désignent leurs preuves historiques.
+Restent le contact, l’URL, l’approbation, les traductions EN/ES et leur revue.
+Aucun texte final de politique n’est hébergé ou publié par cette actualisation.

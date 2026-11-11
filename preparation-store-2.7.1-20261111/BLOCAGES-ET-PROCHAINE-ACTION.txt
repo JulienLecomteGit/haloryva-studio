@@ -1,0 +1,96 @@
+HALORYVA STUDIO 2.7.1 — BLOCAGES ET CRITERES DE FERMETURE
+11 novembre 2026 — liste documentaire, aucune opération exécutée
+
+D0 — CLOS DANS LE PERIMETRE DE FABRICATION/RECETTE DU LIVRABLE FINAL
+Candidat .11 et setup 2.7.1 fabriqués ; métadonnées, surfaces modifiées, extraction
+et cycle installation/désinstallation acquis. Ne plus demander leur refabrication
+ou une nouvelle recette identique pour clore ce point.
+F01/F02/F03/F04 et V01 clos. D0 ne vaut pas signature, certification ni feu vert de diffusion.
+
+X1 — OUVERT, VOIE EXE SIGNEE ET SIMPLE A INSTALLER
+App et setup non signés ; exécution du setup sur le PC principal avec ses protections
+non démontrée. La réussite sur GitHub ne garantit pas l’acceptation par Smart App Control.
+Bloque l’annonce « EXE signé et installation sans blocage ». Ce n’est pas une interdiction
+technique générale de distribuer un EXE non signé ; aucun choix de cette voie n’est présumé.
+Fermeture : solution de signature fiable autorisée et applicable à l’EXE, avec preuve
+du livrable résultant et qualification adaptée. Une signature changerait les octets :
+conserver les originaux actuels, produire un nouvel artefact distinct, après accord.
+Le MSIX Store est la voie retenue pour la diffusion signée sans achat d’un certificat
+pour sa soumission ; elle ne transforme pas le setup GitHub en EXE signé.
+Aucun contournement de protection, certificat auto-signé installé ou service souscrit.
+
+D1 / S6 — OUVERT, QUALIFICATION DU DEMARRAGE MSIX
+Bloque notre feu vert complet de qualité Store pour cette fonction, pas la fabrication EXE.
+Une véritable nouvelle connexion Windows doit lancer une seule instance silencieuse
+après activation, puis aucune après désactivation Windows.
+Une relance --silent, une réouverture du Studio ou S3 ne ferme pas S6.
+Solution concrète conservée : Windows 11 distinct persistant, PC ou VM déjà disponible
+et autorisé, avec pilotage extérieur capable de survivre à la fermeture de session.
+Il faut constater un nouvel identifiant de session et les processus au nouvel accès.
+Le runner GitHub actuellement utilisé ne dispose pas de cette continuité préparée.
+Aucun matériel disponible présumé, aucune installation, modification d’autologon,
+souscription ou nouveau service lancé par cette actualisation.
+Ce critère vient de notre plan de recette, pas d’une obligation Store citée mot pour mot.
+
+D3 — PARTIEL, METADONNEES STORE
+Acquis : compte Windows actif, nom réservé, Name, Publisher, éditeur, PFN, produit
+9NJ14SZJP55B neuf sans paquet lors du relevé ; identité officielle du modèle.
+Restent : bornes Windows supportées et cohérentes avec les preuves, marchés,
+classification IARC et validation finale des métadonnées de la fiche.
+MinVersion 10.0.22000.0 reste une proposition ; x64, gratuité, FR/EN/ES et catégorie
+Productivité sont préparés. Ne pas annoncer Windows 10 ou toutes les versions de Windows 11
+comme qualifiées. Aucun choix de classification n’est inventé.
+Fermeture : champs décidés et renseignés, périmètre OS explicitement qualifié ;
+relecture minimale de l’historique des paquets avant fabrication si dépôt intermédiaire.
+
+D4 — OUVERT, CONTENUS PUBLICS ET DROITS
+Contact de confidentialité absent ; URL publique de politique absente ;
+URL de support proposée, non approuvée ; texte FR en brouillon, EN/ES à finaliser ;
+droits des ressources à confirmer. Droits actuels réservés, aucune nouvelle licence.
+Support proposé : https://github.com/JulienLecomteGit/haloryva-studio/issues
+Ne pas y demander d’envoyer des données personnelles. Aucun contact privé publié par défaut.
+Fermeture : politique fidèle au fonctionnement et approuvée, contacts/URL utilisables,
+versions linguistiques et droits vérifiés ; hébergement seulement après accord.
+La signature et les tests ne remplacent pas ces informations.
+
+D5 — OUVERT, VISUELS STORE
+Les captures de recette et leurs dimensions ne constituent pas un jeu final approuvé.
+Les nouvelles captures .10/.11 en 1024×768 sont des preuves de lisibilité ciblées.
+Fermeture : vraies images du produit final aux dimensions requises, sans données privées,
+légendes FR/EN/ES et approbation avant tout dépôt. Préparer les scènes, puis autoriser
+leur capture séparément ; ne pas relancer la recette générale des langues/outils.
+
+D6 — OUVERT, PAQUET ET CERTIFICATION
+Aucun MSIX à identité officielle contenant .11 n’est fabriqué/qualifié.
+Aucun rapport WACK ni résultat de certification Microsoft.
+Fermeture technique avant soumission : package de production utilisant exactement .11,
+ressources/identité/version correctes, contrôles ciblés nécessaires et rapport WACK examiné.
+Fermeture de diffusion Store : soumission explicitement autorisée, certification acceptée
+et publication explicitement autorisée. La décision Microsoft ne peut être présumée.
+Les familles de tests et paquets 2.7.1.70/.80/.81/.90 sont exclus de la production.
+Aucune recompilation de Haloryva nécessaire uniquement pour changer son emballage.
+
+D2 — CONDITIONNEL, PROMESSE DE MIGRATION REELLE 2.7.0
+C1 et M7 non exécutés. Les imports et installations avec profils fictifs ne constituent
+pas une vraie mise à jour depuis l’ancienne installation.
+Bloque cette promesse, pas à lui seul une première installation au périmètre annoncé.
+Fermeture si retenue : ancienne version exacte préservée sur Windows distinct autorisé,
+arrêt normal, passage/coexistence et profil/ressources d’origine préservés.
+L’utilisateur a retiré 2.7.0 de son PC ; cela ne prouve pas l’absence de réglages résiduels.
+Aucun accès à son profil personnel ni installation locale dans cette tâche.
+
+LIMITES DISTINCTES, PAS NOUVELLES ANOMALIES
+Windows 11 x64 natif, compte standard, DPI/multi-écrans/claviers physiques et certains
+dialogues d’erreur incomplets ; état diagnostic S3 sans clôture finale.
+La matrice identifie les cas partiels ; ne pas les présenter comme verts ou comme bugs.
+L’expiration des archives est un risque de conservation, pas un échec fonctionnel.
+
+ORDRE RECOMMANDE, NON EXECUTE
+1. Achever F06 en brouillon : politique FR/EN/ES, contact à choisir, support proposé,
+   notices EXE/MSIX, fiches et liste des seuls champs nécessitant une décision.
+2. Arrêter D3 et préparer les visuels. Aucun nouveau test requis pour rédiger ces éléments.
+3. Choisir et autoriser l’environnement distinct pour S6 et la qualification finale MSIX.
+4. Après accord, emballer .11 sous l’identité officielle et effectuer uniquement les
+   validations nécessaires du paquet ; examiner les résultats avant toute soumission.
+5. Décider la diffusion Store et/ou la signature EXE, sans mélanger leurs garanties.
+Les étapes 3–5 ne sont pas autorisées par la demande d’actualisation documentaire.

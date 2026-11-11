@@ -1,0 +1,39 @@
+HALORYVA 2.7.1 — ETAT DE LA LISTE FERMEE F01 A F06
+11 novembre 2026 — 4 lots clos sur 6 ; aucun nouveau développement
+
+F01 — CLOS : sous-texte espagnol Sonidos
+Capture .10 réelle 1024×768, texte complet. Catalogue inchangé dans .11.
+Preuve 43081072953. Aucun rejeu Sonidos sur .11 nécessaire au présent bilan.
+
+F02 — CLOS : métadonnées finales
+Produit 2.7.1, fichier .11, assembly 2.7.1.0, date effective 11/11/2026.
+10/10 métadonnées .11 (43086180391), puis 10/10 setup (43088395238).
+La révision .10 reste conservée ; aucun numéro preview.10 ou preview.11 créé.
+
+F03 — CLOS : historique français/anglais/espagnol
+Nouvelle entrée validée .10 ; .11 conserve les traductions et rend les 13 lignes lisibles.
+V01 — CLOS : hauteur de l’historique corrigée, six vues À propos .11 examinées
+sur 43086180391. L’ancienne observation rognée n’est plus une finition ouverte.
+
+F04 — CLOS : installateur final, périmètre ciblé
+HaloryvaSetup_2.7.1.exe embarque .11 exactement.
+Fabrication/extraction 43088395238 ; cycle réel 43090537264, 28/28,
+13 valeurs conservées, un seul autotest automatique réussi.
+Le lot ne certifie ni migration réelle 2.7.0, ni signature, ni acceptation Smart App Control.
+
+F05 — PARTIEL : manifeste et MSIX de production
+Identité, numéro 2.7.1.0 et modèle acquis ; binaire final disponible.
+Bornes OS finales, emballage, ressources, qualification et WACK restent ouverts.
+Vraie session S6 non exécutée. Modèle copié à l’identique, aucune fabrication.
+Pas de nouveau besoin de recompiler le moteur pour l’emballage seul.
+
+F06 — PARTIEL : documents et fiche
+Bilan consolidé, fiches FR/EN/ES actualisées, éléments connus renseignés.
+Restent contact, politique approuvée et ses traductions, URLs, droits, marchés,
+classification, notices publiques et captures finales approuvées.
+La réservation du nom et l’identité ne sont plus à demander à l’utilisateur.
+
+HORS LOTS, A NE PAS MASQUER
+X1 signature EXE ; D2 conditionnel migration réelle ; limites de recette native ;
+clôture du pilote diagnostic S3 non confirmée. Aucun nouveau défaut produit démontré.
+Ces points ne justifient pas de refaire les 195 contrôles ou de relancer les recettes acquises.

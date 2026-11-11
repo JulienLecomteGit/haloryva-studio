@@ -1,0 +1,30 @@
+HALORYVA STUDIO 2.7.1 — DOSSIER ACTUALISE
+11 novembre 2026 — lecture des preuves existantes, aucune nouvelle recette.
+
+Ce dossier remplace le dossier preview.9 comme synthèse courante, sans modifier
+ni supprimer les dossiers historiques. Les anciens « prochaine action » sont datés.
+Les finitions F01–F04 et V01 sont closes dans leur périmètre. L’installateur final
+existe et son cycle installation/désinstallation est réussi. Le Store reste à préparer.
+
+Lire :
+1. BILAN-GLOBAL-2.7.1.txt : acquis et limites, sans confondre les versions.
+2. BLOCAGES-ET-PROCHAINE-ACTION.txt : EXE, Store, point conditionnel et critères de fermeture.
+3. DOSSIER-MICROSOFT-STORE.txt : identité officielle et champs manquants.
+4. FINITIONS-FERMEES-2.7.1.txt : état des six lots.
+5. preuves-et-sources.json : provenance, archives et résultats historiques.
+6. AVANCEMENT-PAR-JALONS.json : ancien référentiel à poids égaux, 9/12 clos.
+7. couverture-msix.json : 17 scénarios hérités, aucun nouveau résultat.
+8. identite-store.json et production-msix/ : brouillon de production, non empaqueté.
+9. FICHES-STORE-fr-en-es.txt, CONFIDENTIALITE-brouillon.txt et CERTIFICATION-et-CAPTURES.txt :
+   contenus de travail, approbation et éléments manquants explicités.
+10. preservation.json : périmètre documentaire.
+
+Version publique 2.7.1 ; fichier application et setup 2.7.1.11 ; assembly 2.7.1.0.
+Premier paquet Store retenu 2.7.1.0, non fabriqué.
+Aucune nouvelle licence ; gratuité et droits actuels conservés.
+Aucun feu vert de publication ou d’installation locale n’est donné par ce dossier.
+
+Aucune compilation, exécution de Haloryva, autotest, relance des 195 contrôles,
+signature, soumission, release, abonnement ou modification du PC dans cette tâche.
+Aucun raccourci du Bureau n’est modifié. Le compte Partner Center n’est pas rouvert.
+Les pages officielles publiques de règles Store ont seulement été relues.

@@ -1,0 +1,25 @@
+HALORYVA 2.7.1 — MANIFESTE DE PRODUCTION, TOUJOURS EN BROUILLON
+11 novembre 2026 — copie textuelle identique au modèle officiel préparé précédemment
+
+Le modèle est conservé sans modifier une seule ligne. Identité officielle et
+première version 2.7.1.0 acquises, aucun MSIX fabriqué ni contrôlé dans cette tâche.
+Application cible : EXE 2.7.1.11, SHA-256 1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81
+Archive de fabrication : run 43086180391, artefact 13886896454.
+Utiliser l’EXE et les sources estampillées d’origine ; aucune recompilation nécessaire
+pour le seul emballage. Le setup final embarque déjà cet EXE exact.
+
+MinVersion 10.0.22000.0 reste une proposition Windows 11 non qualifiée sur toutes
+les versions ; MaxVersionTested 10.0.26100.0 est repris du modèle précédent.
+Ni succès de schéma, ni disponibilité de ressources de production, ni acceptation WACK
+ne sont déduits de cette copie. Aucune validation native Windows 11 x64 nouvelle.
+
+Une application, un StartupTask désactivé, paramètres --silent, runFullTrust seul.
+Aucun pilote de recette, app Recipe, allowElevation ou identité de test à embarquer.
+Les chemins Assets/StoreLogo.png, Square150x150Logo.png et Square44x44Logo.png
+sont déclarés ; leur présence dans le modèle ne constitue pas un jeu Store final approuvé.
+Les descriptions du modèle restent françaises ; les fiches FR/EN/ES sont distinctes.
+
+Avant fabrication future : arrêter les bornes OS et les ressources, vérifier seulement
+si l’historique des dépôts a changé, puis qualifier le paquet officiel après accord.
+S6, WACK et certification demeurent ouverts. Aucun test historique à rejouer par défaut.
+Source exacte : https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/preparation-store-preview9-20261111/production-msix/AppxManifest.xml.template

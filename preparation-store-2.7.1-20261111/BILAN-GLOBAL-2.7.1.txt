@@ -1,0 +1,138 @@
+HALORYVA STUDIO — BILAN GLOBAL 2.7.1
+11 novembre 2026 — consolidation des preuves déjà produites
+
+CONCLUSION
+Le candidat final 2.7.1.11 intègre les corrections cumulées des préversions,
+les finitions F01–F03 et la correction V01 de hauteur de l’ancien historique.
+HaloryvaSetup_2.7.1.exe contient exactement cet EXE. Ses métadonnées, son extraction,
+puis son installation/désinstallation avec conservation des réglages sont validées
+dans les environnements et limites ci-dessous.
+D0 est clos pour la fabrication et la recette ciblée du livrable final ; ce constat
+ne signifie pas « signé », « publié » ni « certifié Microsoft Store ».
+Aucun nouveau défaut produit n’est établi par cette actualisation documentaire.
+
+IDENTITES FIGEES
+Application : Haloryva.exe ; Product/InformationalVersion 2.7.1 ; FileVersion 2.7.1.11 ;
+AssemblyVersion 2.7.1.0 ; Windows x64 ; non signé.
+SHA-256 : 1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81
+Fabrication réelle : 11 novembre 2026 à 20:20:08 Europe/Paris.
+Run https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43086180391
+Commit compilé ca14eca6be1e0a19ef9004ba0de2499e00c7c624.
+Sources : livraison-2.7.1-historique/ ; utiliser la copie estampillée de l’archive
+13886896454 pour l’emballage, pas les sources préparées contenant __DATE_FABRICATION__.
+
+Installateur : HaloryvaSetup_2.7.1.exe ; ProductVersion 2.7.1 ; FileVersion 2.7.1.11 ;
+AssemblyVersion 2.7.1.0 ; x64 ; 744960 octets ; non signé.
+SHA-256 : BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1
+Fabrication réelle : 11 novembre 2026 à 20:34:18 Europe/Paris.
+Run https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43088395238
+L’application n’a pas été recompilée pour l’installateur.
+Premier MSIX de production retenu : 2.7.1.0 ; aucun paquet produit à ce jour dans les preuves.
+
+ACQUIS AJOUTES AU BILAN PREVIEW.9
+F01 — Sonidos espagnol : capture réelle à 1024×768 sur le candidat .10,
+texte « Sonido opcional, fácil de desactivar. » complet : 196 px dans 311 px.
+Catalogue identique dans .11 ; Sonidos n’a pas été rejoué sur .11.
+Preuve : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43081072953
+
+F02/F03/V01 — candidat .11 : 10/10 métadonnées ; 6/6 captures À propos
+réalisées et examinées, deux vues par langue FR/EN/ES à 1024×768.
+Les 13 lignes d’historique, le bouton et la note basse sont accessibles sans chevauchement.
+V01 modifie seulement la hauteur du bloc ; la révision de fichier devient .11.
+Les 34 autres entrées applicatives sur 36 sont inchangées depuis .10.
+Les textes des anciennes versions et le catalogue ne sont pas réécrits.
+Environnement : Windows Server 2025 x64, interface réelle chargée par le pilote,
+profils synthétiques, navigation limitée. Pas une qualification de Program.Main.
+
+F04 — emballage final : 10/10 métadonnées setup ; extraction sortie 0 ;
+3/3 fichiers extraits identiques au contenu incorporé, EXE .11 inchangé.
+Fabrication du seul setup ; aucun autotest ni lancement de Haloryva à cette étape.
+Preuve : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43088395238
+
+F04 — installation et désinstallation : 28/28 vérifications, dont 5 préalables ;
+13/13 réglages conservés ; 3 fichiers de profil identiques entre fin d’installation
+et fin de désinstallation. Un seul autotest automatique de l’installateur, sortie 0,
+parent installateur effectivement observé. Aucun autotest séparé.
+Installation et désinstallation réelles, chacune sortie 0 ; fichiers exécutables,
+raccourcis et inscription Windows retirés ; profil volontairement conservé.
+settings.json est réécrit lors de l’installation, sans variation des 13 valeurs ;
+ne pas déclarer son contenu identique à l’octet près AVANT/APRES installation.
+Windows 11 Enterprise ARM64 build 26200, x64 émulé, profil fictif préexistant,
+démarrage désactivé. Les boutons sont commandés dans la vraie fenêtre identifiée ;
+ce n’est pas une recette du clic physique ni du focus.
+Aucune compilation pendant ce cycle, aucun lancement normal de l’application.
+Preuve : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43090537264
+
+ACQUIS HERITES, TOUJOURS ATTACHES A LEUR VERSION
+Preview.2 : séparation hooks/rendu et réglages figés pendant un trait ;
+195 contrôles d’origine conservés, jamais transformés en 195 tests du fichier .11.
+Preview.3/.4 : clic court, appuis longs, AltGr, dessin, autres outils, annuler/rétablir,
+export, commandes Studio, formes/lissage et placement selon leurs bilans.
+Preview.5/.6/.7 : choix des outils, FR/EN/ES, indicateur et pluriels ;
+174 PNG preview.7 produits, 84 examinés, 7 cycles MSIX propres.
+Preview.8 : import consenti par interface avec PNG/WAV (17/17), désactivation depuis
+Windows (5/5), états StartupTask et mise à jour de même famille selon la matrice.
+Les 30 assertions composants incluent 14 simulations d’états et un service fictif.
+La migration de 93 champs porte en partie sur un candidat antérieur preview.8.
+Preview.9 : premier retour normal au Studio 7/7 ; même processus, profil inchangé,
+actualisation observée en 137 ms, arrêt et retrait normaux.
+Aucun de ces scénarios n’est présenté comme rejoué sur le candidat .11.
+
+ECHECS ET LIMITES CONSERVES
+- Run 43080695119 : compilation .10 réussie ; pilotes de capture en échec.
+  Run 43081072953 : pilotes corrigés et captures réussies, même EXE .10.
+- V01 constaté sur .10 est corrigé et vérifié sur .11.
+- Run 43088099468 : script mal décodé, arrêt avant compilation du setup ;
+  BOM ajouté, run 43088395238 réussi ; une seule compilation effective du setup.
+- Run 43014976009 globalement en échec malgré des phases de migration réussies.
+- Job diagnostic preview.9 130573407015 interrompu ; pas de résultat final
+  ni de clôture normale confirmée. Le job normal est réussi ; aucun défaut produit
+  nouveau n’est déduit du seul défaut de collecte.
+- Avertissement de compilation CS1701 WinRT/System.Runtime hérité, sans erreur.
+Ces antécédents restent visibles ; le présent dossier ne les réécrit pas en succès.
+
+AVANCEMENT SANS CONFUSION DE PERIMETRE
+Six lots F01–F06 : 4 clos, F05/F06 encore partiels. V01 clos séparément.
+Ancien référentiel documentaire : 9/12 jalons clos (75 %), contre 7/12 (58,3 %).
+Les 8 jalons application/installateur sont clos dans leurs périmètres définis.
+Ce n’est ni 100 % de qualité, ni 100 % de compatibilité, ni une autorisation de diffusion.
+J9 (vraie session), J11 (contenus/visuels) et J12 (production/certification) restent ouverts.
+Signature EXE, migration réelle 2.7.0 et qualification x64 native ne sont pas incluses
+comme acquises dans ce pourcentage ; les tailles de travail des jalons sont inégales.
+Matrice MSIX inchangée : 17 scénarios, 6 complets, 8 partiels, 3 non exécutés
+(C1, M7, S6). Couverture héritée multi-version, pas 17 tests du futur paquet Store.
+0 MSIX de production, 0 WACK et 0 certification Store dans les preuves disponibles.
+
+CE QUI BLOQUE ENCORE LA DIFFUSION VISEE
+EXE : X1, aucune signature validée ; acceptation par Smart App Control non établie.
+Un téléchargement non signé est distinct de l’objectif d’installation simple et signée.
+Aucune baisse de protection ni installation locale proposée.
+Store : D1/S6 vraie session Windows ; D3 bornes OS/marchés/classification ;
+D4 confidentialité/contact/support/droits ; D5 visuels finaux ;
+D6 paquet à identité officielle, qualification ciblée, WACK et certification.
+D2 reste conditionnel à une promesse de migration/coexistence validée depuis 2.7.0.
+Aucun de ces éléments ne signifie qu’une nouvelle correction de code est déjà nécessaire.
+Les champs et critères de fermeture figurent dans BLOCAGES-ET-PROCHAINE-ACTION.txt.
+
+LIMITES CONSERVEES
+Pas de vraie installation 2.7.0, de reprise d’un profil personnel, de nouvelle session
+Windows ni de redémarrage. Pas de validation finale native Windows 11 x64 ou sous compte
+standard non élevé ; DPI, multi-écrans et claviers physiques non intégralement qualifiés.
+Pas de normalisation de ces limites en blocages de code supposés.
+La recette finale n’a pas relancé l’application normalement ni testé une réinstallation.
+Les captures ciblées .10/.11 ne constituent pas un jeu de visuels Store approuvé.
+Le manifeste de production reste un brouillon ; sa présence n’est pas une recette MSIX.
+
+CONSERVATION ET SUITE
+Actualisation documentaire uniquement dans un nouveau dossier et une branche dédiée.
+663 fichiers et 27 branches préexistants à préserver ; aucune source ou workflow modifié.
+Binaires et archives conservés, main inchangée. Aucun téléchargement ni écriture locale,
+y compris dans le dossier GIT. Aucun test, compilation, signature, release ou dépôt Store.
+Les nouvelles archives .10/.11/setup/cycle expirent au plus tôt le 9 février 2027
+d’après leurs preuves ; les archives historiques restent soumises à leur propre rétention.
+Un index textuel ne remplace pas la sauvegarde des archives.
+
+Prochaine action utile : terminer F06 (confidentialité FR/EN/ES, support, notices
+et champs Store), sous forme de brouillons à approuver ; aucune compilation nécessaire.
+S6 et la qualification du paquet feront l’objet d’une autorisation et d’un environnement
+distincts, sans rejouer les acquis. Aucun équipement ni abonnement n’est présumé.

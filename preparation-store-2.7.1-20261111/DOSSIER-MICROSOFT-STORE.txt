@@ -1,0 +1,89 @@
+HALORYVA STUDIO 2.7.1 — DOSSIER MICROSOFT STORE
+11 novembre 2026 — mise à jour documentaire, aucune saisie ni soumission Partner Center
+
+PRODUIT ET DECISIONS
+Application gratuite, dépôt GitHub public, droits actuels conservés :
+© 2026 Julien Lecomte — droits réservés. Aucune licence MIT/GPL ajoutée.
+Compte développeur Windows individuel actif, inscription gratuite et contrat
+accepté personnellement par l’utilisateur lors de l’étape précédente.
+Nom réservé Haloryva Studio ; Store ID 9NJ14SZJP55B ; état de brouillon.
+Dernier relevé conservé le 11 novembre 2026 : aucun paquet antérieur, aucune soumission.
+Ce compte n’a pas été rouvert dans la présente tâche.
+
+IDENTITE OFFICIELLE
+Package/Identity/Name : JulienLecomte.HaloryvaStudio
+Package/Identity/Publisher : CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1
+PublisherDisplayName : Julien Lecomte
+PackageFamilyName : JulienLecomte.HaloryvaStudio_twtgq1d174ne0
+URL attribuée : https://apps.microsoft.com/detail/9NJ14SZJP55B
+Cette adresse n’est pas présentée comme une fiche déjà publiée.
+Vue produit : https://partner.microsoft.com/fr-FR/dashboard/products/9NJ14SZJP55B/overview
+Identité : https://partner.microsoft.com/fr-FR/dashboard/products/9NJ14SZJP55B/identity
+Source du relevé : https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/preparation-store-preview9-20261111/LECTURE-PARTNER-CENTER.txt
+La réservation affichait un délai de trois mois sans soumission ; aucune date exacte
+d’expiration n’avait été affichée. Le 11 février 2027 est une déduction calendaire,
+pas une échéance confirmée par une nouvelle consultation.
+
+VERSIONNEMENT
+Public : 2.7.1 ; application x64 WinForms/.NET Framework, fichier 2.7.1.11 ;
+assembly 2.7.1.0 ; date réelle affichée 11/11/2026.
+SHA-256 application 1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81
+Setup final BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1
+Premier paquet retenu : 2.7.1.0, identité officielle ci-dessus, non fabriqué.
+La révision du fichier .11 n’est pas la version MSIX. Les paquets d’essai d’une autre
+famille n’imposent pas d’augmenter le premier paquet de production à .91.
+L’EXE validé est à reprendre tel quel, avec les sources estampillées de son archive.
+Le modèle de manifeste est copié à l’identique dans production-msix/.
+Aucun nouveau contrôle de schéma, MakeAppx, installation MSIX ou WACK.
+
+CIBLE PREPAREE ET CHAMPS RESTANTS
+Windows Desktop x64, proposition Windows 11 ; MinVersion 10.0.22000.0 et
+MaxVersionTested 10.0.26100.0 restent des valeurs de brouillon à qualifier.
+Pas d’ARM64 natif ; preuve Windows 11 ARM64 en émulation distincte de Windows Server x64.
+Langues applicatives : français, anglais, espagnol ; effet au prochain lancement complet.
+Fiches linguistiques correspondantes préparées ; catégorie Productivité proposée.
+Restent : bornes OS finales, marchés, IARC, URL confidentialité, contact confidentialité,
+URL support approuvée, droits des ressources, textes et captures finales approuvés.
+La proposition GitHub Issues pour le support ne devient pas approuvée automatiquement.
+Ne pas redemander Name/Publisher/nom réservé : ces données sont déjà acquises.
+Voir identite-store.json pour les champs volontairement nuls.
+
+PREUVES ACTUALISEES, PERIMETRES SEPARES
+.10 : Sonidos ES et entrée de version FR/EN/ES, 4 vues examinées, run 43081072953.
+.11 : métadonnées 10/10, historique complet FR/EN/ES, 6 vues examinées, 43086180391.
+Setup final : métadonnées 10/10 et extraction 3/3, 43088395238.
+Cycle final EXE : 28/28, 13 réglages conservés, autotest unique sortie 0, 43090537264.
+Ce dernier cycle n’installe pas le futur MSIX de production.
+Héritage preview.8 : import consenti et PNG/WAV 17/17 (43020483264),
+désactivation Windows 5/5 (43021089861), StartupTask/mises à jour (43017766592).
+Héritage preview.9 : premier retour normal 7/7 (43035528813, job 130573406999).
+S6 vraie connexion et migration depuis installation réelle 2.7.0 restent non exécutés.
+La matrice reste 6 complets, 8 partiels, 3 non exécutés sur 17 scénarios multi-version.
+
+COMPORTEMENT ET NOTES POUR LA FUTURE CERTIFICATION
+Icône de notification ; fermer le Studio ne quitte pas nécessairement le moteur.
+Préférences MSIX dans LocalState/Haloryva ; reprise de l’ancien LocalCache de même famille.
+Import classique explicite avec consentement et copies indépendantes des PNG/WAV ;
+sources préservées, aucune désinstallation classique ni transfert d’autorisation de démarrage.
+StartupTask unique, désactivé par défaut, paramètres --silent, choix Windows respecté.
+runFullTrust : événements globaux souris/clavier, actions de boutons, superpositions,
+icône de notification, préférences locales et exports demandés par l’utilisateur.
+Aucun allowElevation, pilote ou service ajouté au modèle. Capacité non encore approuvée.
+Ne pas annoncer une certification de migration 2.7.0 ou du démarrage à la connexion.
+
+SIGNATURE ET QUALIFICATION
+Le canal MSIX Store prévoit la signature Microsoft après certification ;
+cela ne signe pas l’EXE séparé. Le setup final actuel reste non signé.
+Aucun achat de certificat CA n’est requis pour la soumission MSIX/AppX au Store
+selon la documentation Microsoft relue ; aucun certificat ou service acheté ici.
+La réussite de notre cycle EXE ne vaut pas certification Store.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+La politique Win32/Desktop Bridge et les captures sont détaillées dans les documents
+dédiés, avec leurs sources officielles ; aucune approbation n’est présumée.
+
+ETAT DE PREPARATION
+D0 clos pour le livrable et sa recette ciblée. D3 identité close, métadonnées partielles.
+D1/D3/D4/D5/D6 ouverts avant le feu vert Store ; D2 conditionnel.
+F05 et F06 partiels ; aucune signature ni certification acquise.
+Prochaine action : finir les contenus et champs F06 en brouillon, puis arrêter D3.
+S6 exige un environnement distinct autorisé ; aucune infrastructure nouvelle installée.

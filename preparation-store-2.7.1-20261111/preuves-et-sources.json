@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-11",
+  "repository": "JulienLecomteGit/haloryva-studio",
+  "snapshot_commit": "721672cd474c471af068617a4cef038614fc1ee6",
+  "method": "Read existing reports, immutable Git objects and stored results. No binary downloads, replay or new visual examination in this task.",
+  "documents": [
+    {
+      "path": "livraison-2.7.1-preparation/BILAN-F01-F03.txt",
+      "git_blob_sha": "cee8a307636c3d4254f873b143503200840a54d9",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/livraison-2.7.1-preparation/BILAN-F01-F03.txt"
+    },
+    {
+      "path": "bilan-candidat-2.7.1-20261111/BILAN.txt",
+      "git_blob_sha": "12e4ea3673bc17483c50f4b5364d6ec47370316d",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/bilan-candidat-2.7.1-20261111/BILAN.txt"
+    },
+    {
+      "path": "bilan-candidat-2.7.1-historique-20261111/BILAN.txt",
+      "git_blob_sha": "0ecb914872a05e156ddfc6420e097b787a5121f1",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/bilan-candidat-2.7.1-historique-20261111/BILAN.txt"
+    },
+    {
+      "path": "fabrication-installateur-final-2.7.1-20261111/BILAN.txt",
+      "git_blob_sha": "6cbe60a641d674af03658502f784e840dc509ed5",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/fabrication-installateur-final-2.7.1-20261111/BILAN.txt"
+    },
+    {
+      "path": "recette-installateur-final-2.7.1-20261111/BILAN.txt",
+      "git_blob_sha": "50e8571f248bd829cd1967a223d6275c0f8c32ff",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/recette-installateur-final-2.7.1-20261111/BILAN.txt"
+    },
+    {
+      "path": "preparation-store-preview9-20261111/BILAN-GLOBAL-preview9.txt",
+      "git_blob_sha": "a791354090fba381cb9ca76a05897d45bdf44803",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/preparation-store-preview9-20261111/BILAN-GLOBAL-preview9.txt"
+    },
+    {
+      "path": "preparation-store-preview9-20261111/LECTURE-PARTNER-CENTER.txt",
+      "git_blob_sha": "5acbc3d8b79a46803640bf48b99110ec62b96e79",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/721672cd474c471af068617a4cef038614fc1ee6/preparation-store-preview9-20261111/LECTURE-PARTNER-CENTER.txt"
+    }
+  ],
+  "application": {
+    "version": "2.7.1.11",
+    "sha256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+    "run": 43086180391,
+    "artifact": 13886896454,
+    "metadata": {
+      "passed": 10,
+      "total": 10
+    },
+    "reviewed_about_captures": 6,
+    "history_rows_visible": 13,
+    "platform": "Windows Server 2025 x64 build 26100",
+    "expires_at_from_existing_evidence": "2027-02-09"
+  },
+  "sonidos": {
+    "evidence_version": "2.7.1.10",
+    "run": 43081072953,
+    "es_artifact": 13885295769,
+    "screen": "1024x768",
+    "text_width": 196,
+    "available_width": 311,
+    "rerun_on_dot11": false,
+    "catalog_unchanged_in_dot11": true
+  },
+  "setup": {
+    "sha256": "BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1",
+    "run": 43088395238,
+    "artifact": 13886638835,
+    "evidence_artifact": 13886898481,
+    "metadata": {
+      "passed": 10,
+      "total": 10
+    },
+    "extracted_files_identical": 3,
+    "app_recompiled": false,
+    "expires_at_from_existing_evidence": "2027-02-09"
+  },
+  "lifecycle": {
+    "run": 43090537264,
+    "job": 130766103100,
+    "artifact": 13888452170,
+    "archive_sha256": "d41ca61e7ebad208bf7eee069445010c518321f8daf7525652582637ea686b9a",
+    "assertions": {
+      "passed": 28,
+      "total": 28,
+      "preflight": 5
+    },
+    "profile_values": 13,
+    "profile_files_unchanged_after_uninstall": 3,
+    "automatic_selftest": {
+      "count": 1,
+      "exit_code": 0,
+      "parent_observed": true
+    },
+    "platform": "Windows 11 ARM64 build 26200; x64 emulation",
+    "real_installed_270": false,
+    "normal_application_launch": false,
+    "app_recompiled": false,
+    "expires_at_from_existing_evidence": "2027-02-09"
+  },
+  "inherited": [
+    {
+      "run": 43020483264,
+      "version": "preview.8",
+      "scope": "consented UI import with PNG/WAV fixture",
+      "passed": 17,
+      "total": 17
+    },
+    {
+      "run": 43021089861,
+      "version": "preview.8",
+      "scope": "disable startup in Windows and relaunch",
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "run": 43035528813,
+      "job": 130573406999,
+      "version": "preview.9",
+      "scope": "normal first confirmed Studio refocus",
+      "passed": 7,
+      "total": 7
+    }
+  ],
+  "retained_failures": [
+    {
+      "run": 43080695119,
+      "status": "overall failure; .10 build passed; capture drivers failed; corrected on same binary in 43081072953"
+    },
+    {
+      "run": 43088099468,
+      "status": "stopped before setup compilation; UTF8 BOM corrected in successful 43088395238"
+    },
+    {
+      "run": 43014976009,
+      "status": "overall failure; positive migration phases kept separately"
+    },
+    {
+      "run": 43035528813,
+      "job": 130573407015,
+      "status": "cancelled diagnostic job without final result; normal job passed"
+    }
+  ],
+  "retention_note": "New final archives have planned expiry 2027-02-09 from the saved results. Historical preview archives have their own retention, often 2026-12-11. No retention extended or archive backup performed. A text index is not a backup.",
+  "rules_reconsulted": [
+    "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements",
+    "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images",
+    "https://learn.microsoft.com/en-us/windows/apps/publish/store-policies"
+  ]
+}
