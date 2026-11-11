@@ -87,7 +87,7 @@
     "all_push_triggers_restricted_to_preexisting_test_branches": true,
     "new_documentation_branch_matches_none": true
   },
-  "verification_status": "Pre-commit tree compared against baseline: all 426 prior blobs identical, 12 new documentation files only; all 16 prior branches unchanged. Final branch/action verification follows the documentation commit.",
+  "verification_status": "Verified after documentation branch creation: 426 existing files and 16 prior branch heads unchanged, exactly 12 added documentation files, zero workflow runs on the documentation branch. This follow-up commit changes only this verification record.",
   "pre_commit_verification": {
     "existing_blobs_checked": 426,
     "existing_blobs_changed": 0,
@@ -108,5 +108,19 @@
       "preparation-store-preview8-20261111/progression-chiffree.json"
     ],
     "tree_verified": "62ec60a7716be5449eef70a562f8db9da97619f6"
+  },
+  "post_commit_verification": {
+    "commit": "fcc59aa18f5fdcc286cad7ae8ff95a599b4e589b",
+    "branch": "haloryva-preparation-store-preview8",
+    "oldFilesPreserved": 426,
+    "changedOldFiles": [],
+    "branchesPreserved": 16,
+    "changedOldBranches": [],
+    "newFiles": 12,
+    "onlyDocumentationAdded": true,
+    "workflowRunsOnNewBranch": 0,
+    "newBranchPointsToCommit": true,
+    "finalTree": "fcc59aa18f5fdcc286cad7ae8ff95a599b4e589b",
+    "treeTruncated": false
   }
 }
