@@ -14,48 +14,8 @@ try {
  if($os.Caption -notmatch 'Windows 11'){throw 'Windows 11 required'}
  $report.Environment=@{Caption=$os.Caption;Build=$os.BuildNumber;Arch=$env:RUNNER_ARCH;Image=$env:ImageVersion}
  if(Get-AppxPackage -Name $name){throw 'Identity already present'}
- $exe=Join-Path $inputKit 'Haloryva.exe'
- if((Get-FileHash -LiteralPath $exe).Hash -cne $expected){throw 'Frozen preview.8 differs'}
- $maker=Get-ChildItem -LiteralPath (Join-Path ([Environment]::GetFolderPath('ProgramFilesX86')) 'Windows Kits/10/bin') -Directory|Where-Object {$_.Name -match '^10[.]0[.]\d+[.]0$'}|Sort-Object {[Version]$_.Name} -Descending|ForEach-Object {Join-Path $_.FullName 'x64/makeappx.exe'}|Where-Object {Test-Path -LiteralPath $_}|Select-Object -First 1
- if(!$maker){throw 'Installed MakeAppx required'}
- Add-Type -AssemblyName System.IO.Compression.FileSystem
- function Pack([string]$version){
-  $layout=Join-Path $out ('layout-'+$version)
-  Copy-Item -LiteralPath (Join-Path $PSScriptRoot '../Inputs/msix-layout') -Destination $layout -Recurse
-  Copy-Item -LiteralPath $exe -Destination (Join-Path $layout 'Haloryva.exe') -Force
-  [xml]$xml=Get-Content -LiteralPath (Join-Path $layout 'AppxManifest.xml') -Raw -Encoding UTF8
-  $xml.Package.Identity.Name=$name;$xml.Package.Identity.Version=$version
-  $xml.Package.Identity.Publisher='CN=JulienLecomteGit, OID.2.25.311729368913984317654407730594956997722=1'
-  $desktop='http://schemas.microsoft.com/appx/manifest/desktop/windows10';$uap10='http://schemas.microsoft.com/appx/manifest/uap/windows10/10'
-  foreach($pair in @(@('desktop',$desktop),@('uap10',$uap10))){
-   $attr=$xml.CreateAttribute('xmlns',$pair[0],'http://www.w3.org/2000/xmlns/');$attr.Value=$pair[1];[void]$xml.DocumentElement.Attributes.Append($attr)
-  }
-  $xml.DocumentElement.SetAttribute('IgnorableNamespaces','uap rescap desktop uap10')
-  $appNode=$xml.SelectSingleNode("//*[local-name()='Application' and @Id='Haloryva']")
-  $extensions=$xml.CreateElement('Extensions',$xml.DocumentElement.NamespaceURI)
-  $extension=$xml.CreateElement('desktop','Extension',$desktop)
-  $extension.SetAttribute('Category','windows.startupTask');$extension.SetAttribute('Executable','Haloryva.exe');$extension.SetAttribute('EntryPoint','Windows.FullTrustApplication')
-  $params=$xml.CreateAttribute('uap10','Parameters',$uap10);$params.Value='--silent';[void]$extension.Attributes.Append($params)
-  $task=$xml.CreateElement('desktop','StartupTask',$desktop);$task.SetAttribute('TaskId','HaloryvaStudioStartup');$task.SetAttribute('Enabled','false');$task.SetAttribute('DisplayName','Haloryva Studio Lifecycle Test')
-  [void]$extension.AppendChild($task);[void]$extensions.AppendChild($extension);[void]$appNode.AppendChild($extensions)
-  $resources=$xml.SelectSingleNode("/*[local-name()='Package']/*[local-name()='Resources']");$resources.RemoveAll()
-  foreach($lang in @('fr-fr','en-us','es-es')){$r=$xml.CreateElement('Resource',$xml.DocumentElement.NamespaceURI);$r.SetAttribute('Language',$lang);[void]$resources.AppendChild($r)}
-  $xml.Save((Join-Path $layout 'AppxManifest.xml'))
-  $package=Join-Path $out ('Haloryva-test-'+$version+'.msix')
-  & $maker pack /d $layout /p $package /o 2>&1|Out-File (Join-Path $out ('pack-'+$version+'.log'))
-  if($LASTEXITCODE -ne 0){throw 'Manifest validation failed'}
-  $zip=[IO.Compression.ZipFile]::OpenRead($package)
-  try{
-   if($zip.GetEntry('AppxSignature.p7x')){throw 'Unexpected signature'}
-   $stream=$zip.GetEntry('Haloryva.exe').Open();$sha=[Security.Cryptography.SHA256]::Create()
-   try{$hash=[BitConverter]::ToString($sha.ComputeHash($stream)).Replace('-','')}finally{$stream.Dispose();$sha.Dispose()}
-   if($hash -cne $expected){throw 'Packed EXE differs'}
-  }finally{$zip.Dispose()}
-  $report.Packages+=,@{Version=$version;SHA256=(Get-FileHash -LiteralPath $package).Hash;ExecutableSHA256=$expected}
-  return $package
- }
- $report.Packages=@()
- $b=Pack '2.7.1.80';$c=Pack '2.7.1.81'
+ $b=Join-Path $inputKit 'Haloryva-test-2.7.1.80.msix';$c=Join-Path $inputKit 'Haloryva-test-2.7.1.81.msix'
+ if((Get-FileHash -LiteralPath $b).Hash -cne 'D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9' -or (Get-FileHash -LiteralPath $c).Hash -cne '08B68E89F32032C970B4B36EFFDE868772A10A0ECCFF542CF4BED810F57AAE73'){throw 'Frozen MSIX differs'}
  Add-Type -AssemblyName System.Drawing
  Add-Type -TypeDefinition @'
 using System;
@@ -186,6 +146,7 @@ public static class UiProbe {
  }
  function Read-Profile {
   $file=Join-Path $env:LOCALAPPDATA ('Packages\'+$script:registered.PackageFamilyName+'\LocalState\Haloryva\settings.json')
+  if(!(Test-Path -LiteralPath $file)){return [pscustomobject]@{LaunchAtLogin=$null}}
   return Get-Content -LiteralPath $file -Raw -Encoding UTF8|ConvertFrom-Json
  }
  function Change-Startup([bool]$desired,[string]$stage){
