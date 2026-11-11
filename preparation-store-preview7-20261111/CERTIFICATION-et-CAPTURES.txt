@@ -1,0 +1,103 @@
+HALORYVA STUDIO — CERTIFICATION ET CAPTURES PREVIEW.7
+11 novembre 2026 — notes préparées ; aucune certification exécutée
+
+NOTES POUR L'ÉVALUATEUR MICROSOFT — BROUILLON EN ANGLAIS
+To be finalized with the production package identity and actual support URLs.
+
+Haloryva Studio is a Windows desktop app for pointer effects and screen
+annotations. No Haloryva account or login credentials are required.
+The interface supports French, English and Spanish. The selected language is
+saved and applied the next time the application starts. Closing only the
+Studio window can leave the application running in the notification area.
+
+The runFullTrust capability is needed for this Win32 Windows Forms app:
+desktop overlays, global mouse/keyboard hooks for user-selected shortcuts and
+button actions, a notification-area icon, local settings and user-selected
+file exports. The app runs in the interactive user's desktop session.
+It is not designed to require elevation or install a driver or service.
+The package does not request allowElevation.
+
+Suggested review route for the final package:
+1. Start Haloryva from the Start menu and open its Studio.
+2. In drawing settings, select Pen and Rectangle for tool cycling.
+   At least one drawing tool must remain selected.
+3. Assign a middle/side mouse button to the next-tool action; short and long
+   presses have separate assignments. Use an appropriate physical mouse.
+4. Draw annotations, undo/redo, and export them as a transparent PNG.
+5. Choose a language in preferences. Quit the application completely through
+   its notification-area menu, then relaunch. Inspect the language and tools.
+6. Close the Studio window to check notification-area access. Use Quit to exit.
+The magnifier is separate from annotation export. Annotation PNG exports are
+not full screenshots of the desktop.
+No diagnostic command line or unsigned-installation procedure is part of a
+normal Store installation.
+
+Do not submit these notes until automatic startup and the migration/update
+policy have been resolved for the final package. Add the chosen behavior here.
+Do not claim that Microsoft's reviewers have already performed this route.
+The existing MSIX evidence covers launch/normal shutdown and profile
+persistence on a temporary test identity; it is not a certification report.
+
+ÉTAT DES CONTRÔLES
+MakeAppx et cycle MSIX preview.7 : réussis antérieurement.
+WACK : non exécuté ; à réaliser sur le paquet final dans un environnement
+Windows distinct autorisé, avec rapport complet. Vérifier la disponibilité du
+kit avant de promettre son automatisation ; aucune installation sur le PC.
+Certification Microsoft : non soumise.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+
+La justification runFullTrust est préparée ; son acceptation n'est pas acquise.
+Source : https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/app-capability-declarations
+
+CAPTURES DE RECETTE DÉJÀ DISPONIBLES
+174 PNG générés, 84 examinés. Les 48 vues des zones défilantes manquantes sont
+incluses dans la revue. Neuf planches couvrent les titres des dix outils aux
+trois facteurs de rendu et dans les trois langues.
+Liste exacte des 84 vues et réserve V7-ES-SON :
+preuves-preview7-visuel-20261111/resultats-consolides.json
+à la base 5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa.
+Les archives visuelles ont déjà une copie privée autorisée.
+Elles ne sont pas téléversées comme images de fiche Store dans cette tâche.
+
+CAPTURES FINALES DE FICHE — PLAN, PAS NOUVELLES CAPTURES
+Les vues de bureau actuelles sont en 1024 × 768. Microsoft demande pour
+Desktop au moins 1366 × 768, au format PNG, au maximum 50 Mo ; une capture
+minimum par soumission. Les visuels sont chargés séparément par fiche de langue.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images
+Ne pas agrandir les preuves existantes pour simuler une nouvelle recette.
+
+Cible proposée : 1920 × 1080, version finale, fond neutre sans données privées.
+Préparer les variantes FR/EN/ES. Pas de texte marketing ajouté dans l'image ;
+utiliser les champs de légende du Store. Exemples de légendes :
+1. Accueil et halo
+   FR : Guidez le regard pendant vos présentations.
+   EN : Guide attention during your presentations.
+   ES : Guía la atención durante tus presentaciones.
+2. Dessin et annotations
+   FR : Dix outils pour expliquer à l'écran.
+   EN : Ten tools to explain things on screen.
+   ES : Diez herramientas para explicar en pantalla.
+3. Défilement limité à deux outils
+   FR : Parcourez uniquement vos outils préférés.
+   EN : Cycle through your favorite tools.
+   ES : Recorre tus herramientas favoritas.
+4. Boutons souris
+   FR : Personnalisez les clics courts et les appuis longs.
+   EN : Customize short clicks and long presses.
+   ES : Personaliza los clics cortos y las pulsaciones largas.
+5. Langue des préférences
+   FR : Choisissez le français, l'anglais ou l'espagnol.
+   EN : Choose French, English or Spanish.
+   ES : Elige francés, inglés o español.
+La langue de la capture doit correspondre à celle de la fiche.
+Contrôler les textes longs, le sous-titre Sonidos et la lisibilité réelle.
+
+RESSOURCES EXISTANTES
+docs/Haloryva_Banniere_V01.png et docs/Haloryva_Logo_V01.png : références de
+marque conservées ; dimensions/rendu/droits non nouvellement validés.
+Icônes prototype : Square150x150Logo.png (150 × 150),
+Square44x44Logo.png (44 × 44), StoreLogo.png (50 × 50),
+dans haloryva-ci/Inputs/msix-layout/Assets/.
+Leurs dimensions avaient été lues précédemment ; aucune nouvelle image
+générée, exportée ou testée aujourd'hui. Ces icônes ne remplacent pas des
+captures de fiche. Vérifier les ressources finales selon le rapport WACK.

@@ -1,0 +1,148 @@
+HALORYVA STUDIO — BILAN GLOBAL PREVIEW.7
+Consolidation documentaire du 11 novembre 2026
+Aucun nouvel essai exécuté : preuves antérieures réutilisées.
+
+CONCLUSION
+Les corrections du nom d'outil, de l'indicateur et des pluriels sont validées
+dans le périmètre ciblé FR/EN/ES, avec et sans observateur. Le même exécutable
+réussit ensuite sept activations et arrêts normaux sous identité MSIX, avec
+conservation de la langue, du choix des outils et de l'intégralité des profils.
+Aucune anomalie fonctionnelle non résolue n'est constatée dans ces recettes.
+Une réserve cosmétique reste ouverte : V7-ES-SON, sous-titre espagnol tronqué.
+Le produit n'est pas encore certifié Store ; les étapes non couvertes restent
+listées séparément, sans les présenter comme des échecs observés.
+
+BINAIRE DE RÉFÉRENCE — INCHANGÉ
+Version : 2.7.1-preview.7 ; version fichier : 2.7.1.7 ; architecture x64.
+SHA-256 : B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604
+Compilation : commit 466c8addab0de12de47d6a22c53773152b91d323
+Run : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957075701
+Artefact : 13826914087, Haloryva-2.7.1-preview.7-build.
+Aucune recompilation dans les recettes natives, visuelles ou MSIX.
+Les six archives natives et les copies empaquetées/installées portent cette
+même empreinte. Les SHA des archives ZIP et du MSIX sont distincts du SHA EXE.
+
+VALIDATIONS DIRECTES SUR PREVIEW.7 — DÉJÀ EXÉCUTÉES
+
+1. Recette native et visuelle — six configurations
+Windows Server 2025 Datacenter x64, build 26100, bureau interactif 1024 × 768.
+FR, EN et ES, chacune avec et sans observateur.
+- 66 cas de gestes : clics courts/appuis longs ; cycles de 1, 2 et 10 outils ;
+  bouclage, entrée depuis un outil exclu et changement de sélection pendant
+  l'affichage de l'indicateur. Pas de vol de focus ni de clic parasite constaté.
+- 90 rendus de titres : 10 outils × 3 langues × facteurs 100/150/200 %.
+  Les glyphes sont présents et contenus dans la zone de titre.
+  Ces facteurs portent sur les cartes d'outil ; ce n'est pas un essai de tout
+  le Studio avec le réglage DPI Windows à 150 ou 200 %.
+- 18 états de pluriels : Accueil et Historique, valeurs 0/1/2, trois langues.
+- 36 parcours défilants, 84 captures de pages : bas de page atteint sans
+  sauter les contrôles intermédiaires.
+- Six rechargements dans un nouveau processus conservent langue et sélection.
+
+Avec observateur : jobs FR 130315879892, EN 130315879705, ES 130315880016
+du run https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957475470
+Ces trois jobs réussissent ; le run global reste en échec à cause des pilotes
+sans observateur, corrigés ensuite sans changer le binaire.
+Sans observateur : jobs FR 130458981667, EN 130458981866, ES 130458981176
+du run https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43001652792
+Ce run est entièrement réussi.
+
+Total : 1 371 exécutions d'assertions, comprenant préparation, répétitions par
+langue et rechargement. Ce ne sont pas 1 371 scénarios indépendants.
+Le nombre 195 d'une variante avec observateur est une coïncidence arithmétique ;
+la suite historique des 195 contrôles d'entrée n'a pas été relancée.
+
+2. Revue des captures existantes
+174 PNG produits ; 84 réellement examinés visuellement, dont les 48 captures
+des zones défilantes auparavant manquantes. Les neuf planches de dix outils
+couvrent les 90 rendus. Ne pas annoncer que les 174 images ont été inspectées.
+Noms des dix outils lisibles FR/EN/ES, indicateur adapté à la liste choisie,
+pluriels anglais/espagnols corrigés.
+Réserve V7-ES-SON : Clics > Sonidos, fichier
+scroll-page-3-section-0-y416-es.png, à 1024 × 768.
+« Respuesta sonora que puedes desactivar en cualquier momento. » se termine
+par une ellipse. Les commandes et leur aide restent lisibles. Texte préexistant
+à preview.7, réserve nouvellement observée dans une zone auparavant manquante.
+Proposition pour une future version : « Sonido opcional, fácil de desactivar. »
+Aucune modification de cette traduction dans le présent dossier.
+
+3. MSIX — sept lancements et arrêts normaux
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43004393887
+Job 130468142849 ; commit de recette 771b08b1846622446271a6ef6b3a0c2331efb802.
+Windows 11 Enterprise ARM64, build 26200 ; exécutable x64 en émulation.
+Image GitHub 20261101.203.1, session interactive.
+Identité d'essai HaloryvaStudio.Preview7UnsignedTest, version 2.7.1.7.
+MSIX non signé : F6783C3D121DD0FE8ED9540C24CACAB2EBAAF55AE27542F19139FF8AD8029BC0
+
+Structure MakeAppx validée, installation de test, identité confirmée dans
+chacun des sept lancements AppsFolder et langue visible vérifiée.
+- Premier lancement : français et dix outils par défaut.
+- Deux lancements par langue FR/EN/ES : Stylo/Rectangle conservés, tous les
+  champs et les octets complets du profil identiques avant/après arrêt.
+- Le second lancement de chaque langue reprend le fichier sauvegardé par
+  l'application, sans nouvelle injection de profil. L'horodatage confirme
+  l'écriture effective par Haloryva.
+Sept arrêts propres, code 0, par signal d'arrêt de l'application ; aucun arrêt
+forcé. Désinstallation vérifiée pour l'utilisateur de la machine d'essai.
+Aucun geste injecté dans cette recette MSIX : elle ne réexécute pas les
+scénarios de dessin ni la recette native.
+L'installation non signée concerne seulement la machine temporaire GitHub ;
+aucun certificat, changement de protection Windows ou mode développeur.
+Ce succès ne vaut ni signature de distribution ni certification Store,
+ni recette Windows 11 x64 natif.
+
+HÉRITAGE — PREUVES SUR D'AUTRES BINAIRES, NON REJOUÉES SUR PREVIEW.7
+- Preview.2 : 195 contrôles d'entrée acquis, conservés comme antécédent.
+- Preview.3 : clic court corrigé (42931395281) ; AltGr français @/€/#
+  et réglages figés au début du trait (42934182084) ; autres outils,
+  annuler/rétablir et export (42937850681) ; commandes Studio, lissage et
+  formes assistées (42940097691).
+- Preview.4 : placement initial corrigé, deux lancements normaux centrés
+  et 106 assertions Studio (42942640399).
+- Preview.5 : liste personnelle d'outils et maintien des réglages pendant
+  un trait (42944347258, phase fonctionnelle réussie) ; rechargement
+  séparé réussi (42944896117) ; MSIX et conservation du profil (42946758266).
+- Preview.6 : FR/EN/ES intégrés, langue appliquée au lancement suivant,
+  profils existants conservés ; six variantes réussies, 1 110 exécutions
+  d'assertions. Changement de langue pendant un trait vérifié ; saisie
+  Unicode vérifiée, sans nouvelle matrice AltGr/claviers EN/ES.
+  Runs réussis par variantes : 42952468075, 42952822477, 42953364906.
+Les bilans détaillés à la racine précisent les phases réussies des runs mixtes.
+Les anciens résultats ne deviennent pas des tests directs de preview.7.
+
+PORTÉE DES CHANGEMENTS PREVIEW.7
+Cinq sources changent depuis preview.6 : Brand.cs, Controller.cs,
+PremiumStudioForm.cs, ToolToast.cs et Localization.cs, plus une entrée du
+catalogue de traductions (Historique). Les 24 autres sources C# restent
+identiques, dont Config.cs et les composants d'entrée/dessin concernés.
+Controller.cs copie le contexte de sélection pour l'indicateur différé.
+Ces comparaisons étayent la continuité ; elles ne prouvent pas une absence
+absolue de régression sur toutes les fonctions.
+
+ÉCHECS EXPLIQUÉS
+42957414396 : erreur de compilation du pilote, avant recette applicative.
+42957475470, variantes sans observateur : surcharge Font ambiguë dans le
+pilote. Correction du pilote uniquement ; seules ces variantes ont été
+rejouées dans 43001652792. Aucun échec applicatif n'est masqué par ces succès.
+Le MSIX preview.7 réussit dès sa première exécution. L'attente initiale du
+signal d'arrêt absent avant initialisation n'est pas un échec ; le processus
+devient prêt puis s'arrête normalement.
+
+NON VALIDÉ / NON FAIT
+Démarrage automatique MSIX à la connexion, migration réelle depuis 2.7.0,
+coexistence et mise à jour entre paquets de même identité ; gestes sur
+Windows 11 x64 natif, Studio entier en DPI élevés/multi-écrans, périphériques
+physiques et dispositions clavier EN/ES ; relecture linguistique indépendante.
+Aucune validation Windows 10 déduite de MinVersion 10.0.19041.0.
+Identité Store finale, WACK, certification, signature et publication non faits.
+Les audits initiaux ne sont pas déclarés intégralement clôturés par ce bilan.
+
+CONSERVATION
+Les bilans et JSON sources sont référencés à leurs commits figés dans
+preuves-et-sources.json. Les six archives visuelles ont déjà été copiées
+privément lors de la revue autorisée ; aucune nouvelle copie aujourd'hui.
+L'artefact MSIX et l'artefact de compilation restent temporaires sur GitHub.
+Expiration preview.7 : 11 décembre 2026 ; prévoir un archivage privé autorisé
+avant cette échéance. Les empreintes et JSON ne remplacent pas les fichiers.
+Les branches précédentes, leurs fichiers, le binaire et main restent figés.
+Voir FINITIONS-AVANT-STORE.txt pour la prochaine étape, sans relance générale.

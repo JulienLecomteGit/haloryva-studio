@@ -1,0 +1,96 @@
+HALORYVA STUDIO — DERNIÈRES FINITIONS AVANT LE STORE
+11 novembre 2026 — plan préparé ; aucune action ci-dessous exécutée aujourd'hui
+
+A. À TRAITER AVANT DE FIGER LE PAQUET FINAL
+
+F1 — Démarrage automatique MSIX [intégration non validée, pas échec observé]
+Constat statique : ConfigStore.ApplyAutoStart écrit HKCU Run. Le manifeste
+d'essai ne déclare pas windows.startupTask. Aucun cycle de connexion Windows
+n'est couvert par les recettes acquises.
+Prochaine action : examiner l'intégration StartupTask et le comportement du
+réglage en contexte empaqueté, y compris un refus de l'utilisateur.
+Clôture : état de l'interface cohérent avec Windows ; activation et désactivation
+respectées ; preuve ciblée dans un environnement distinct autorisé, ou retrait
+explicite de cette possibilité de la version Store. Ne pas annoncer cette
+fonction validée et ne pas toucher au registre du PC principal.
+Référence : https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-extensions
+
+F2 — Passage de 2.7.0 au Store et mises à jour [couverture manquante]
+Les profils préinjectés prouvent la persistance, pas une migration réelle.
+Prochaine action : choisir une reprise automatique ou un import explicite
+guidé, examiner les dossiers redirigés et l'instance unique/coexistence.
+Clôture : ancien profil conservé sans écrasement, langue et outils retrouvés
+selon la procédure promise ; stratégie de coexistence documentée. Vérifier
+séparément une mise à jour entre deux versions sous la même identité.
+Ne pas déduire cette preuve des sept réactivations du même paquet.
+
+F3 — Petit texte espagnol [défaut visuel constaté, mineur]
+V7-ES-SON : sous-titre de Sonidos tronqué à 1024 × 768.
+Proposition : « Sonido opcional, fácil de desactivar. »
+À intégrer dans une nouvelle préversion, sans retoucher preview.7.
+Clôture : capture ciblée de cette carte, texte complet et commandes lisibles.
+Une relecture humaine EN/ES reste recommandée, sans réouverture générale
+de toutes les traductions ni relance des contrôles d'entrée acquis.
+
+B. À COMPLÉTER POUR LA SOUMISSION
+
+F4 — Identité et fiche [données auteur/Partner Center manquantes]
+Compte, nom réservé, identités exactes, historique de version, marchés, IARC,
+support et contact confidentialité. Les champs inconnus restent à null.
+Clôture : informations vérifiées et textes approuvés. Droits actuels conservés.
+Aucune pièce d'identité ou donnée de compte à déposer dans le dépôt public.
+
+F5 — Confidentialité et conditions [brouillons préparés]
+Confirmer le contact, les textes applicables et une URL de confidentialité
+accessible ; approuver le canal de support. Prévoir l'accès aux textes dans
+les langues annoncées. Les droits sur les ressources de marque sont à confirmer.
+Clôture : textes finalisés et URL prête pour la soumission. Hébergement et
+publication de ces pages feront l'objet d'une demande distincte.
+
+F6 — Visuels de fiche [captures de recette disponibles, fiche non finalisée]
+Les captures de recette 1024 × 768 ne satisfont pas le minimum Desktop Store
+1366 × 768. Préparer de vraies captures du produit final, cible 1920 × 1080,
+dans chaque langue, sans agrandir artificiellement les anciennes.
+Clôture : visuels vérifiés, légendes traduites, aucune donnée personnelle.
+Le choix de langue et les outils favoris peuvent désormais être présentés.
+
+F7 — Paquet final et certification [pas exécutés]
+Identité Partner Center réelle, version finale, OS/architecture, ressources
+et langues cohérents ; justification runFullTrust préparée.
+Ne pas livrer le paquet Preview7UnsignedTest ni son Publisher OID.
+Clôture technique : WACK sur le paquet final et analyse du rapport.
+Clôture Store : certification Microsoft, qui reste une étape distincte.
+Signature, soumission, fusion et diffusion restent hors autorisation actuelle.
+
+C. VALIDATION FINALE RECOMMANDÉE, CIBLÉE SELON LE PÉRIMÈTRE ANNONCÉ
+
+F8 — Windows 11 x64 natif et écrans
+Les gestes sont prouvés sur Server 2025 x64 ; le MSIX sur Windows 11 ARM64
+avec émulation x64. Prévoir quelques gestes et un lancement sur Windows 11
+x64 natif, puis le Studio entier en DPI élevés et plusieurs écrans si ces
+usages sont annoncés. Les cartes rendues à 150/200 % ne couvrent pas tout cela.
+Ce sont des limites de couverture, pas des régressions constatées.
+
+F9 — Claviers et usage matériel
+AltGr acquis sur disposition française en preview.3. Prévoir seulement les
+raccourcis sensibles sur dispositions EN/ES et boutons physiques pertinents ;
+usage prolongé si nécessaire. Ne pas promettre le dessin sur tous les écrans
+protégés/fenêtres élevées sans preuve. Aucun contournement des protections.
+
+D. CONSERVATION DES PREUVES — ÉCHÉANCE DISTINCTE
+
+F10 — Archivage privé des artefacts avant expiration
+Preview.7 : compilation et MSIX expirent le 11 décembre 2026.
+Les six archives de recette visuelle ont été copiées précédemment.
+Prévoir séparément la copie autorisée des autres archives utiles et vérifier
+leurs empreintes, sans extraction/exécution du logiciel. Les anciens artefacts
+preview.5 annonçaient le 25 novembre 2026 : voir leur dossier si leur archivage
+complet est nécessaire. Aucun téléchargement effectué pour ce bilan.
+
+ORDRE PROPOSÉ
+1. Examiner F1/F2 sans exécution ; établir la solution exacte pour le Store.
+2. Regrouper F3 et les adaptations nécessaires dans une future préversion.
+3. Ne tester que les comportements touchés, plus les lacunes retenues F8/F9.
+4. Compléter F4/F5 ; figer le produit ; préparer F6/F7.
+F10 est à organiser avant les dates d'expiration, indépendamment des corrections.
+Ce plan n'autorise ni nouvelle recette, ni modification, ni installation.

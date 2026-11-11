@@ -1,0 +1,81 @@
+{
+  "status": "DRAFT_NOT_A_SUBMISSION_MANIFEST",
+  "preparation_date": "2026-11-11",
+  "product_name_proposed": "Haloryva Studio",
+  "name_reserved": null,
+  "partner_center_account_checked": false,
+  "partner_center_product_id": null,
+  "package_identity_name": null,
+  "package_publisher": null,
+  "publisher_display_name": null,
+  "package_family_name": null,
+  "final_package_version": null,
+  "version_proposal_if_first_final_2_7_1_package": "2.7.1.0",
+  "version_proposal_requires_partner_center_history_check": true,
+  "package_architecture_proposed": "x64",
+  "min_windows_version_final": null,
+  "max_windows_version_tested_final": null,
+  "app_language_current": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "supported_languages_final": null,
+  "price_requested": "free",
+  "category_proposed": "Productivity",
+  "markets": null,
+  "age_rating": null,
+  "privacy_policy_url": null,
+  "support_url": null,
+  "support_url_proposed": "https://github.com/JulienLecomteGit/haloryva-studio/issues",
+  "privacy_contact": null,
+  "license_policy": "Keep existing rights; no new open source license.",
+  "rights_notice_existing": "© 2026 Julien Lecomte — droits réservés.",
+  "terms_approved": false,
+  "store_assets_approved": false,
+  "restricted_capability_requested": "runFullTrust",
+  "restricted_capability_approved": false,
+  "wack_executed": false,
+  "submitted": false,
+  "signed_this_task": false,
+  "published_this_task": false,
+  "forbidden_test_identity_for_final_submission": {
+    "name": "HaloryvaStudio.Preview7UnsignedTest",
+    "publisher": "CN=JulienLecomteGit, OID.2.25.311729368913984317654407730594956997722=1",
+    "version": "2.7.1.7",
+    "reason": "Unsigned test identity; replace with exact Partner Center production identity. Not a submission package."
+  },
+  "source_preview": "2.7.1-preview.7",
+  "source_commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+  "source_executable_sha256": "B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604",
+  "name_reservation_status": "not_checked",
+  "language_change_application": "next_application_launch",
+  "tested_environments": [
+    {
+      "purpose": "native_targeted_recipe",
+      "os": "Windows Server 2025 Datacenter",
+      "build": 26100,
+      "architecture": "x64"
+    },
+    {
+      "purpose": "MSIX_lifecycle_and_persistence",
+      "os": "Windows 11 Enterprise",
+      "build": 26200,
+      "architecture": "ARM64",
+      "executable_architecture": "x64",
+      "execution": "emulation"
+    }
+  ],
+  "native_windows11_x64_validation": false,
+  "windows10_validation": false,
+  "auto_start_msix_validation": false,
+  "real_270_migration_validation": false,
+  "same_identity_update_validation": false,
+  "privacy_text_status": "draft_updated_for_preview7_contact_and_approval_pending",
+  "listing_languages_prepared": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "final_store_screenshots_prepared": false
+}

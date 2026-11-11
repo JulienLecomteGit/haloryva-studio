@@ -1,0 +1,98 @@
+HALORYVA STUDIO — DOSSIER MICROSOFT STORE ACTUALISÉ
+11 novembre 2026 — preview.7 — préparation uniquement
+
+DÉCISIONS CONSERVÉES
+GitHub public, application gratuite, distribution prévue par MSIX sur le Store.
+Droits actuels conservés : © 2026 Julien Lecomte ; aucune nouvelle licence
+open source. Le caractère public du dépôt ne change pas cette décision.
+Application de bureau Win32/Windows Forms/.NET Framework, binaire x64.
+Français, anglais et espagnol intégrés ; choix mémorisé et appliqué au prochain
+lancement de l'application. Plus d'étape « langues à intégrer » à planifier.
+
+ÉTAT ACTUALISÉ DEPUIS LE DOSSIER PREVIEW.5
+- Intégration FR/EN/ES : acquise en preview.6.
+- Nom d'outil lisible, progression selon les outils choisis et pluriels EN/ES :
+  corrigés et vérifiés en preview.7.
+- Revue des zones défilantes manquantes : réalisée ; 84 PNG examinés sur 174.
+  Une réserve mineure espagnole reste ouverte, décrite dans le bilan.
+- MSIX preview.7 : structure, installation, sept activations/arrêts propres,
+  langue visible et conservation complète des profils validés sur GitHub.
+- Paquet de distribution, identité Partner Center et certification : pas prêts.
+Les validations ont eu lieu avant cette consolidation ; aucun test aujourd'hui.
+
+CHAMPS DU PRODUIT
+Nom proposé : Haloryva Studio ; disponibilité/réservation non vérifiées.
+Éditeur proposé : Julien Lecomte ; à faire correspondre au compte vérifié.
+Catégorie proposée : Productivité ; application, pas jeu.
+Prix retenu : gratuit. Aucun achat intégré ni abonnement identifié dans les
+sources déjà examinées. Marchés à choisir ; ne pas les déduire des langues.
+Site du projet : https://github.com/JulienLecomteGit/haloryva-studio
+Support proposé : https://github.com/JulienLecomteGit/haloryva-studio/issues
+Canal à approuver ; ne pas demander de profils avec chemins personnels dans
+un signalement public. Contact de confidentialité et URL définitive manquants.
+Public proposé : personnes qui présentent, expliquent ou annotent un écran.
+Classification IARC non remplie ; aucune classe d'âge déduite automatiquement.
+Cible de préparation : Windows 11 Desktop, x64 ; plage de versions finale à
+fixer. ARM64 observé en émulation x64, pas de version ARM64 native construite.
+Windows 10 n'est pas déclaré validé par les essais, même si le manifeste
+prototype contient MinVersion 10.0.19041.0.
+Fiches FR/EN/ES actualisées dans FICHES-STORE-fr-en-es.txt, non soumises.
+Conditions de distribution du binaire et textes finaux à approuver ; aucun
+texte de droits existant du dépôt n'est remplacé.
+
+COMPTE ET SIGNATURE — INFORMATIONS MICROSOFT REVUES LE 11/11/2026
+Le nouveau parcours d'inscription via storedeveloper.microsoft.com annonce
+l'absence de frais d'inscription. Le type individuel ou entreprise doit
+correspondre à l'activité réelle ; compte et admissibilité non vérifiés ici.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account
+
+Pour MSIX/AppX, Microsoft signe le paquet lors de la publication après
+certification : pas d'achat de certificat d'une autorité nécessaire pour
+cette voie. Cela ne signe pas l'EXE/installeur distribué sur GitHub.
+La distribution MSIX hors Store nécessite sa propre signature.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+Orientation conservée : lien GitHub vers le Store quand la publication aura
+été autorisée et réalisée. Aucun achat, compte ni certificat créé aujourd'hui.
+
+IDENTITÉ FINALE — À RENSEIGNER, PAS À INVENTER
+Le fichier identite-store.a-renseigner.json garde à null les valeurs inconnues :
+Identity/Name, Publisher, PublisherDisplayName, ProductId, famille de paquet,
+version finale, URL de confidentialité et autres champs non confirmés.
+Copier les valeurs exactes de Partner Center ; casse et ponctuation comptent.
+Proposition de première version finale : 2.7.1.0, uniquement si l'historique
+du produit et la version finale retenue le permettent. La proposition n'est
+pas une décision ni une modification de l'exécutable.
+L'identité Preview7UnsignedTest, son Publisher OID et sa version 2.7.1.7
+sont réservés à la recette ; ne pas les soumettre comme identité de production.
+Source : https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+
+DOSSIER PRÉPARÉ / ÉLÉMENTS ENCORE MANQUANTS
+Préparé :
+- Bilan des preuves, limites et empreintes.
+- Fiches FR/EN/ES et nouveautés actualisées.
+- Brouillon de confidentialité mentionnant les préférences de langue.
+- Notes évaluateur et justification fonctionnelle runFullTrust.
+- Plan de visuels et liste ordonnée des finitions.
+Manquant :
+- Résolution du démarrage automatique empaqueté ; stratégie de migration
+  2.7.0/coexistence et validation des mises à jour de même identité.
+- Informations du compte et textes/contact approuvés.
+- URL de confidentialité accessible : requise pour Win32/Desktop Bridge.
+  Source : https://learn.microsoft.com/en-us/windows/apps/publish/store-policies
+- IARC, marchés, visuels finaux et confirmation des droits des ressources.
+- Paquet final associé au produit, WACK et certification.
+Voir FINITIONS-AVANT-STORE.txt : critères concrets, pas de relance générale.
+
+JUSTIFICATION runFullTrust — PRÉPARÉE, PAS APPROUVÉE PAR MICROSOFT
+L'application utilise des superpositions de bureau, les événements globaux
+souris/clavier pour les actions choisies, une icône de notification, des réglages
+locaux et des exports demandés par l'utilisateur. Cette capacité correspond
+à l'application de bureau ; elle n'est pas une demande d'élévation administrateur.
+Le texte détaillé est dans CERTIFICATION-et-CAPTURES.txt.
+Source : https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/app-capability-declarations
+
+ACTIONS NON EFFECTUÉES
+Aucun compte ouvert, nom réservé, questionnaire IARC rempli, lien hébergé,
+nouveau paquet fabriqué, WACK exécuté, certificat créé, signature, soumission
+ou publication. Aucune fusion, modification de main/préversions ou du PC.
+Ce dossier ne constitue pas une autorisation pour ces étapes.

@@ -1,0 +1,35 @@
+HALORYVA STUDIO — DOSSIER DE PRÉPARATION PREVIEW.7
+11 novembre 2026 — documentation uniquement
+
+Base figée : 6689a23a953c5c553d6706e0c845467d7c8592e0
+Branche documentaire : haloryva-preparation-store-preview7
+
+Ce dossier actualise la préparation Store de preview.5 et son complément
+preview.6. Il ajoute les preuves visuelles et MSIX de preview.7 sans remplacer
+les anciens bilans, qui décrivent l'état connu au moment de leur rédaction.
+En particulier, « MSIX preview.7 non exécuté » dans le bilan visuel est
+désormais dépassé par le bilan MSIX du même jour.
+
+À lire :
+1. BILAN-GLOBAL-preview7.txt : résultats directs, héritage et limites.
+2. FINITIONS-AVANT-STORE.txt : travaux classés, critères de clôture et ordre.
+3. DOSSIER-MICROSOFT-STORE.txt : décisions retenues et champs manquants.
+4. FICHES-STORE-fr-en-es.txt : textes mis à jour, encore non soumis.
+5. CONFIDENTIALITE-brouillon.txt : texte existant actualisé, contact manquant.
+6. CERTIFICATION-et-CAPTURES.txt : notes évaluateur et visuels à préparer.
+7. identite-store.a-renseigner.json : données inconnues conservées à null.
+8. preuves-et-sources.json : références figées, empreintes et conservation.
+
+Conclusion : preview.7 réussit sa recette ciblée et son cycle MSIX non signé.
+Une réserve cosmétique espagnole reste constatée. La soumission Store exige
+encore des travaux précis ; elle n'est pas prête à être lancée aujourd'hui.
+
+Cette consolidation ne lance aucun test, ne reconstruit ni ne signe le binaire,
+ne modifie aucun ancien fichier ni aucune ancienne branche, ne crée aucune
+release et ne soumet rien au Store. Aucun téléchargement ni écriture, exécution,
+installation ou changement de paramètres sur le PC de l'utilisateur.
+
+Prochaine action conseillée : examiner le démarrage automatique empaqueté et
+la migration 2.7.0 avant de figer la version Store ; traiter le petit texte
+espagnol dans une future préversion. La liste de travaux est préparée,
+aucune correction ni nouvelle recette n'est exécutée dans ce dossier.
