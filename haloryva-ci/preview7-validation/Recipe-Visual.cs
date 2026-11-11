@@ -620,7 +620,6 @@ internal static class Recipe
         await CycleButton(2,"Rectangle",45); await ToastShot("restart-two-second",3,1,2);
         await StopDesktop();
     }
-    }
     sealed class Target : Form
     {
         int downs,ups,chars,last,unpaired;
