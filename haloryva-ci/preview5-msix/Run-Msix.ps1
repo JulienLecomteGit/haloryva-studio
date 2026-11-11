@@ -1,4 +1,4 @@
-$Mode='msix'
+﻿$Mode='msix'
 $ErrorActionPreference='Stop'
 # Refuse execution on the user's PC and on a self-hosted runner.
 if($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_ENVIRONMENT -ne 'github-hosted' -or !$env:RUNNER_TEMP) { throw 'GitHub-hosted runner required. No local execution.' }
@@ -36,7 +36,7 @@ try {
         Copy-Item -LiteralPath (Join-Path $PSScriptRoot '../Inputs/msix-layout') -Destination $layout -Recurse
         Copy-Item -LiteralPath $app -Destination (Join-Path $layout 'Haloryva.exe') -Force
         $manifest=Join-Path $layout 'AppxManifest.xml'
-        [xml]$xml=Get-Content -LiteralPath $manifest -Raw
+        [xml]$xml=Get-Content -LiteralPath $manifest -Raw -Encoding UTF8
         # Official Windows 11 unsigned-testing identity; no signing or security setting changes.
         # https://learn.microsoft.com/en-us/windows/msix/package/unsigned-package
         $xml.Package.Identity.Name='HaloryvaStudio.Preview5UnsignedTest'
@@ -193,6 +193,7 @@ public static class PackageProbe {
                 Copy-Item -LiteralPath $profilePath -Destination (Join-Path $out 'profile-initial.json')
                 $initial=Get-Content -LiteralPath $profilePath -Raw -Encoding UTF8 | ConvertFrom-Json
                 $defaultCycle='Stylo|Surligneur|Ligne droite|Rectangle|Ellipse|Flèche droite|Flèche libre|Forme libre|Numéro|Texte'
+                Write-MsixDiagnostic ("DEFAULT actual="+(@($initial.DrawingToolCycle) -join '|')+" expected="+$defaultCycle)
                 if((@($initial.DrawingToolCycle) -join '|') -cne $defaultCycle) { throw 'Fresh MSIX did not retain the complete default cycle.' }
                 $record.DefaultTenTools=$true
                 $report.ProfileRelativePath=$profilePath.Substring($packageData.Length+1)
