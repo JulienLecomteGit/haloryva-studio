@@ -393,17 +393,89 @@ namespace CursorFlow
             engine.MouseButtonObserved += ButtonObserved;
             FormClosed += delegate
             {
+                StopStartupForegroundWatch();
                 CancelStartupFocusRefresh();
                 engine.SettingsChanged -= EngineChanged;
                 engine.MouseButtonObserved -= ButtonObserved;
                 engine.CancelButtonCapture();
             };
             // Mise en page recalculée une fois la fenêtre réellement affichée (tailles définitives).
-            Shown += async delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); await RefreshStartupAfterActivationAsync(); };
+            Shown += async delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); StartStartupForegroundWatch(); await RefreshStartupAfterActivationAsync(); };
             ResizeEnd += delegate { LayoutCards(); workspace.Invalidate(true); };
             Activated += async delegate { if (IsHandleCreated) BeginInvoke((Action)delegate { engine.KeepEffectLayersVisible(); }); await RefreshStartupAfterActivationAsync(); };
             Deactivate += delegate { CancelStartupFocusRefresh(); };
             ApplyNavWidth(); Navigate(0, 0);
+        }
+
+
+        private delegate void StartupForegroundCallback(IntPtr hook, uint eventType, IntPtr window,
+            int objectId, int childId, uint threadId, uint eventTime);
+        [DllImport("user32.dll")]
+        private static extern IntPtr SetWinEventHook(uint first, uint last, IntPtr module,
+            StartupForegroundCallback callback, uint processId, uint threadId, uint flags);
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool UnhookWinEvent(IntPtr hook);
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+        private IntPtr startupForegroundHook;
+        private GCHandle startupForegroundCallbackRoot;
+
+        private void StartStartupForegroundWatch()
+        {
+            if (!PackageContext.IsPackaged || startupForegroundHook != IntPtr.Zero) return;
+            // Observe only foreground-window transitions, in this UI thread, without
+            // injecting into another process. Activated alone missed the real first return.
+            StartupForegroundCallback callback = OnStartupForeground;
+            startupForegroundCallbackRoot = GCHandle.Alloc(callback);
+            startupForegroundHook = SetWinEventHook(3, 3, IntPtr.Zero, callback, 0, 0, 0);
+            if (startupForegroundHook == IntPtr.Zero)
+            {
+                startupForegroundCallbackRoot.Free();
+                ErrorReporting.Record("STARTUP_FOREGROUND_WATCH", new InvalidOperationException("Foreground watch unavailable"));
+            }
+        }
+        private void OnStartupForeground(IntPtr hook, uint eventType, IntPtr window,
+            int objectId, int childId, uint threadId, uint eventTime)
+        {
+            if (startupForegroundHook == IntPtr.Zero || !IsHandleCreated || IsDisposed || Disposing) return;
+            try
+            {
+                // Queue work outside the native callback; never read WinRT or alter UI here.
+                BeginInvoke((Action)async delegate
+                {
+                    if (startupForegroundHook == IntPtr.Zero || !IsHandleCreated || IsDisposed || Disposing) return;
+                    if (window != Handle)
+                    {
+                        CancelStartupFocusRefresh();
+                        return;
+                    }
+                    if (GetForegroundWindow() != Handle) return; // discard an obsolete return
+                    StartupRefreshTrace.Record("native_foreground", 0, -1);
+                    await RefreshStartupAfterActivationAsync();
+                });
+            }
+            catch (InvalidOperationException) { } // handle destroyed while callback was queued
+        }
+        private void StopStartupForegroundWatch()
+        {
+            if (startupForegroundHook == IntPtr.Zero) return;
+            // Installed and removed on the same UI thread.
+            if (UnhookWinEvent(startupForegroundHook))
+            {
+                startupForegroundHook = IntPtr.Zero;
+                if (startupForegroundCallbackRoot.IsAllocated) startupForegroundCallbackRoot.Free();
+            }
+            else ErrorReporting.Record("STARTUP_FOREGROUND_UNHOOK", new InvalidOperationException("Foreground watch cleanup failed"));
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                StopStartupForegroundWatch();
+                CancelStartupFocusRefresh();
+            }
+            base.Dispose(disposing);
         }
 
         private System.Threading.CancellationTokenSource startupFocusRefresh;
