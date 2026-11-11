@@ -1,0 +1,29 @@
+name: Haloryva preview.8 confirmed live refocus only
+on:
+  push:
+    branches: ['haloryva-tests-preview8-focus']
+    paths: ['haloryva-ci/preview8-live-focus/**', '.github/workflows/haloryva-preview8-live-focus.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  live-refocus:
+    runs-on: windows-11-arm
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: preview8-startup-ui-evidence
+          run-id: 43017325667
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/preview8-frozen/
+      - name: Confirm actual Studio refocus after Windows disables startup
+        shell: powershell
+        run: ./haloryva-ci/preview8-live-focus/Run-LiveFocus.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview8-live-focus-evidence
+          path: ${{ runner.temp }}/preview8-live-focus/
+          retention-days: 30

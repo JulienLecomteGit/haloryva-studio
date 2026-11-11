@@ -1,0 +1,13 @@
+Recette ciblée S3 de preview.8 — binaire et MSIX finals figés.
+GitHub Windows 11 uniquement ; refus d'exécution locale.
+Réutilise Native.cs et SettingsUi.cs des pilotes conservés sans les modifier.
+6 assertions du nouveau parcours : vraie fenêtre racine, état Windows en arrière-plan,
+retour au premier plan + fenêtre active, actualisation immédiate, même processus,
+profil inchangé. Activation et désactivation sont les préalables du nouveau parcours.
+Pas de relancement de Haloryva, pas de suite S2/import/mise à jour/195.
+Les API normales d'activation de fenêtre sont utilisées ; aucun WM_ACTIVATE fictif,
+aucune injection de code, aucune modification du binaire ou du Registre.
+S6 : observation en lecture seule des sessions et processus GitHub, pas de déconnexion,
+redémarrage, identifiant/mot de passe lu, nouveau service ou logiciel installé.
+Si une continuité externe de session n'est pas disponible, la connexion réelle reste
+non exécutée et une proposition d'environnement distinct doit précéder toute installation.
