@@ -80,7 +80,15 @@ internal static class Recipe
     static void Key(ushort key,bool up=false) { Input(new INPUT {type=1,data=new UNION {key=new KEY {vk=key,flags=(up?2u:0u)|(key==0xa5?1u:0u)}}}); if(up) heldKeys.Remove(key); else heldKeys.Add(key); }
     static async Task Chord(ushort key) { Key(0xa2); Key(0xa4); Key(key); Key(key,true); Key(0xa4,true); Key(0xa2,true); await Task.Delay(250); }
     static int Query(int field) { return (int)SendMessage(targetWindow,0x8001,(IntPtr)field,IntPtr.Zero); }
-    static void Move(int x,int y) { FocusGuard(); Cursor.Position=new Point(x,y); }
+    static void Move(int x,int y)
+    {
+        Rectangle screen=SystemInformation.VirtualScreen;
+        if(!screen.Contains(x,y)) throw new Exception("Requested point outside test desktop.");
+        int nx=(int)(((long)(x-screen.Left)*65536+32768)/screen.Width);
+        int ny=(int)(((long)(y-screen.Top)*65536+32768)/screen.Height);
+        Input(new INPUT {data=new UNION {mouse=new MOUSE {x=nx,y=ny,flags=0xc001}}});
+        Write("MOVE SendInput requested="+x+","+y+" cursor="+Cursor.Position);
+    }
     static async Task Click(uint down,uint up,uint data=0,int hold=40) { Mouse(down,data); await Task.Delay(hold); Mouse(up,data); await Task.Delay(200); }
     [STAThread] static int Main(string[] args)
     {
@@ -214,10 +222,12 @@ internal static class Recipe
         object stroke=Get(controller,"CurrentStroke");
         Check(StrokeStyle(stroke,"Stylo",Color.Red,4),"First stroke captures its initial settings");
         Move(374,359); await Task.Delay(80);
+        Write("DRAW beforeEdit points="+((IList)Get(stroke,"Points")).Count+" controllerCursor="+Get(controller,"CursorPoint"));
         Set(config,"AnnotationTool","Rectangle"); Set(config,"AnnotationColor","#0000FF"); Set(config,"AnnotationThickness",12);
         Call(controller,"Changed"); await Task.Delay(100);
         Check(Object.ReferenceEquals(stroke,Get(controller,"CurrentStroke")) && StrokeStyle(stroke,"Stylo",Color.Red,4),"Mid-stroke edits preserve the current stroke");
         for(int n=4;n<=15;n++) { Move(350+n*8,350+n*3); await Task.Delay(30); }
+        Write("DRAW beforeUp points="+((IList)Get(stroke,"Points")).Count+" controllerCursor="+Get(controller,"CursorPoint"));
         Mouse(4);
         await WaitFor(delegate { return Get(controller,"CurrentStroke")==null; },"First stroke completes");
         IList strokes=(IList)Get(controller,"Strokes");
