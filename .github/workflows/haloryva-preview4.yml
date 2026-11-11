@@ -1,0 +1,64 @@
+name: Haloryva preview.4 Studio placement
+on:
+  push:
+    branches: ['haloryva-tests-preview4']
+    paths: ['haloryva-ci/preview4/**', '.github/workflows/haloryva-preview4.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  build:
+    name: Build preview.4 once
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build with preserved-source checks
+        shell: powershell
+        run: ./haloryva-ci/preview4/Build-Preview4.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.4-build
+          path: ${{ runner.temp }}/haloryva-preview4-build/
+          retention-days: 14
+          if-no-files-found: error
+  placement:
+    name: Normal startup placement
+    needs: build
+    runs-on: windows-2025
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.4-build
+          path: ${{ runner.temp }}/haloryva-preview4-build/
+      - name: Two real launches without moving the window
+        shell: powershell
+        run: ./haloryva-ci/preview4/Check-Placement.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview4-placement-evidence
+          path: ${{ runner.temp }}/haloryva-preview4-placement/
+          retention-days: 14
+  studio:
+    name: Studio commands without recentering
+    needs: build
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.4-build
+          path: ${{ runner.temp }}/haloryva-preview4-build/
+      - name: Targeted native Studio commands
+        shell: powershell
+        run: ./haloryva-ci/preview4/Run-Studio.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview4-studio-evidence
+          path: ${{ runner.temp }}/haloryva-preview4-studio/studio/
+          retention-days: 14

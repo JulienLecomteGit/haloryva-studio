@@ -1,0 +1,132 @@
+{
+  "Version": "2.7.1-preview.4",
+  "Origin": "Preserved preview.3 source snapshot on haloryva-tests-preview3",
+  "SourceCommit": "c74f4d66c6a7f742e338408e427e29da3fa02eb5",
+  "OriginalPreview3SHA256": "4170BEFEC193F5049051D73744CFCAD6D300240CE840E791E2C469A7CECAB13C",
+  "AllowedChangedFiles": [
+    "src/Brand.cs",
+    "src/PremiumStudioForm.cs"
+  ],
+  "Files": [
+    {
+      "Path": "assets/Haloryva.ico",
+      "GitBlobSHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "assets/app.manifest",
+      "GitBlobSHA": "efe344ab5adb62649ed61625ba63d3ebe311cede"
+    },
+    {
+      "Path": "src/Annotations.cs",
+      "GitBlobSHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "src/Brand.cs",
+      "GitBlobSHA": "df165c98ee62bcfbd2f98acac420f3e400e5ccd3"
+    },
+    {
+      "Path": "src/ColorWheelPopup.cs",
+      "GitBlobSHA": "310f0c43aaceebd6930974845d5aa17957ea05ba"
+    },
+    {
+      "Path": "src/Config.cs",
+      "GitBlobSHA": "5c9e80b9967576edf669ac11dc87077c7d1936c6"
+    },
+    {
+      "Path": "src/Controller.cs",
+      "GitBlobSHA": "5cba720469d42a067fc24da297ea967ea685ae85"
+    },
+    {
+      "Path": "src/DrawingGeometry.cs",
+      "GitBlobSHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "src/EffectDiagnostics.cs",
+      "GitBlobSHA": "de19fc05fdf4425a3b0b61c505a56bd12488fd82"
+    },
+    {
+      "Path": "src/ErrorReporting.cs",
+      "GitBlobSHA": "252c1a666c73378fa3256364802749f29af31565"
+    },
+    {
+      "Path": "src/FrameBounds.cs",
+      "GitBlobSHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "src/FramePump.cs",
+      "GitBlobSHA": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+    },
+    {
+      "Path": "src/GlobalHooks.cs",
+      "GitBlobSHA": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+    },
+    {
+      "Path": "src/InputPipeline.cs",
+      "GitBlobSHA": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+    },
+    {
+      "Path": "src/InputState.cs",
+      "GitBlobSHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "src/KeyboardPolicy.cs",
+      "GitBlobSHA": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+    },
+    {
+      "Path": "src/PremiumStudioForm.cs",
+      "GitBlobSHA": "3633dd7e2d5c66627be67e572fe8ee1020f6f7af"
+    },
+    {
+      "Path": "src/PremiumWidgets.cs",
+      "GitBlobSHA": "5907e96a3e90cb57b1dd721da8b9ec2a18105e43"
+    },
+    {
+      "Path": "src/Program.cs",
+      "GitBlobSHA": "e7851e7672ddb5411d90b5ed2b1bccf2d8410ef1"
+    },
+    {
+      "Path": "src/SelfTest.cs",
+      "GitBlobSHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "src/Splash.cs",
+      "GitBlobSHA": "321a6a3e689426f2480d0d5ba7135d03240d9a7a"
+    },
+    {
+      "Path": "src/StudioControls.cs",
+      "GitBlobSHA": "cce7c20c38020c7c9287f734fbbf29c3c0afda19"
+    },
+    {
+      "Path": "src/StudioTheme.cs",
+      "GitBlobSHA": "4b7c5e76700644f5ac376ab0dc7fdc8ce90f04d0"
+    },
+    {
+      "Path": "src/TextPrompt.cs",
+      "GitBlobSHA": "0b0147cea970202e225f749c533c9febb911d3ad"
+    },
+    {
+      "Path": "src/ToolToast.cs",
+      "GitBlobSHA": "58252968c512a0d8aa67017046a6d8809b857fe7"
+    },
+    {
+      "Path": "src/TrailDiagnostics.cs",
+      "GitBlobSHA": "240b7ed0c4152d62e72889de3f5d77d8bd3198c3"
+    },
+    {
+      "Path": "src/TrailEngine.cs",
+      "GitBlobSHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "src/TrailSelfTest.cs",
+      "GitBlobSHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "src/Visuals.cs",
+      "GitBlobSHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "src/WinNative.cs",
+      "GitBlobSHA": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+    }
+  ]
+}

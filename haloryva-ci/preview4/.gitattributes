@@ -1,0 +1,3 @@
+# Preserve source snapshot bytes on Windows checkouts for the integrity guard.
+src/*.cs -text
+assets/* -text
