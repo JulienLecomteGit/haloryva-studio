@@ -1,0 +1,2828 @@
+[
+  {
+    "key": "nav.home",
+    "fr": "Accueil",
+    "en": "Home",
+    "es": "Inicio"
+  },
+  {
+    "key": "nav.halo",
+    "fr": "Halo",
+    "en": "Halo",
+    "es": "Halo"
+  },
+  {
+    "key": "nav.trails",
+    "fr": "Traînées",
+    "en": "Trails",
+    "es": "Estelas"
+  },
+  {
+    "key": "nav.clicks",
+    "fr": "Clics",
+    "en": "Clicks",
+    "es": "Clics"
+  },
+  {
+    "key": "nav.mouseButtons",
+    "fr": "Boutons souris",
+    "en": "Mouse buttons",
+    "es": "Botones del ratón"
+  },
+  {
+    "key": "nav.drawing",
+    "fr": "Dessin",
+    "en": "Drawing",
+    "es": "Dibujo"
+  },
+  {
+    "key": "nav.presentation",
+    "fr": "Présentation",
+    "en": "Presentation",
+    "es": "Presentación"
+  },
+  {
+    "key": "nav.preferences",
+    "fr": "Préférences",
+    "en": "Preferences",
+    "es": "Preferencias"
+  },
+  {
+    "key": "group.effects",
+    "fr": "EFFETS",
+    "en": "EFFECTS",
+    "es": "EFECTOS"
+  },
+  {
+    "key": "group.workshop",
+    "fr": "ATELIER",
+    "en": "WORKSPACE",
+    "es": "ÁREA DE TRABAJO"
+  },
+  {
+    "key": "group.system",
+    "fr": "SYSTÈME",
+    "en": "SYSTEM",
+    "es": "SISTEMA"
+  },
+  {
+    "key": "drawing.tab.draw",
+    "fr": "Dessiner",
+    "en": "Draw",
+    "es": "Dibujar"
+  },
+  {
+    "key": "drawing.tab.settings",
+    "fr": "Réglages",
+    "en": "Settings",
+    "es": "Ajustes"
+  },
+  {
+    "key": "drawing.tab.cycle",
+    "fr": "Défilement",
+    "en": "Tool cycling",
+    "es": "Recorrido de herramientas"
+  },
+  {
+    "key": "drawing.cycle.title",
+    "fr": "Outils à faire défiler",
+    "en": "Tools to cycle through",
+    "es": "Herramientas que recorrer"
+  },
+  {
+    "key": "drawing.cycle.minimumHint",
+    "fr": "Garde au moins un outil activé.",
+    "en": "Keep at least one tool enabled.",
+    "es": "Mantén al menos una herramienta activada."
+  },
+  {
+    "key": "drawing.cycle.minimumNotice",
+    "fr": "Au moins un outil doit rester sélectionné.",
+    "en": "At least one tool must remain selected.",
+    "es": "Debe quedar al menos una herramienta seleccionada."
+  },
+  {
+    "key": "drawing.cycle.buttonsTitle",
+    "fr": "Défilement par boutons",
+    "en": "Cycle tools with buttons",
+    "es": "Recorrer herramientas con botones"
+  },
+  {
+    "key": "drawing.cycle.savedHint",
+    "fr": "Choix enregistré automatiquement.",
+    "en": "Your selection is saved automatically.",
+    "es": "Tu selección se guarda automáticamente."
+  },
+  {
+    "key": "drawing.cycle.includeAll",
+    "fr": "Inclure tous les outils",
+    "en": "Include all tools",
+    "es": "Incluir todas las herramientas"
+  },
+  {
+    "key": "drawing.exportPng",
+    "fr": "Exporter PNG",
+    "en": "Export PNG",
+    "es": "Exportar PNG"
+  },
+  {
+    "key": "drawing.assisted.title",
+    "fr": "Formes assistées",
+    "en": "Assisted shapes",
+    "es": "Formas asistidas"
+  },
+  {
+    "key": "drawing.assisted.subtitle",
+    "fr": "Cercles, rectangles, triangles et lignes.",
+    "en": "Circles, rectangles, triangles and lines.",
+    "es": "Círculos, rectángulos, triángulos y líneas."
+  },
+  {
+    "key": "drawing.smoothing.raw",
+    "fr": "Brut",
+    "en": "Raw",
+    "es": "Sin suavizado"
+  },
+  {
+    "key": "drawing.smoothing.light",
+    "fr": "Lissage",
+    "en": "Smoothing",
+    "es": "Suavizado"
+  },
+  {
+    "key": "tool.autoShapes",
+    "fr": "Auto-formes",
+    "en": "Auto shapes",
+    "es": "Formas automáticas"
+  },
+  {
+    "key": "tool.pen",
+    "fr": "Stylo",
+    "en": "Pen",
+    "es": "Lápiz"
+  },
+  {
+    "key": "tool.highlighter",
+    "fr": "Surligneur",
+    "en": "Highlighter",
+    "es": "Resaltador"
+  },
+  {
+    "key": "tool.line",
+    "fr": "Ligne",
+    "en": "Line",
+    "es": "Línea"
+  },
+  {
+    "key": "tool.rectangle",
+    "fr": "Rectangle",
+    "en": "Rectangle",
+    "es": "Rectángulo"
+  },
+  {
+    "key": "tool.ellipse",
+    "fr": "Ellipse",
+    "en": "Ellipse",
+    "es": "Elipse"
+  },
+  {
+    "key": "tool.arrow",
+    "fr": "Flèche",
+    "en": "Arrow",
+    "es": "Flecha"
+  },
+  {
+    "key": "tool.freeArrow",
+    "fr": "Flèche libre",
+    "en": "Freehand arrow",
+    "es": "Flecha a mano alzada"
+  },
+  {
+    "key": "tool.number",
+    "fr": "Numéro",
+    "en": "Number",
+    "es": "Número"
+  },
+  {
+    "key": "tool.text",
+    "fr": "Texte",
+    "en": "Text",
+    "es": "Texto"
+  },
+  {
+    "key": "action.normal",
+    "fr": "Normal",
+    "en": "Normal",
+    "es": "Normal"
+  },
+  {
+    "key": "action.toggleDrawing",
+    "fr": "Dessin : activer / arrêter",
+    "en": "Drawing: start / stop",
+    "es": "Dibujo: activar / detener"
+  },
+  {
+    "key": "action.nextTool",
+    "fr": "Outil de dessin suivant",
+    "en": "Next drawing tool",
+    "es": "Siguiente herramienta de dibujo"
+  },
+  {
+    "key": "action.previousTool",
+    "fr": "Outil de dessin précédent",
+    "en": "Previous drawing tool",
+    "es": "Herramienta de dibujo anterior"
+  },
+  {
+    "key": "action.undo",
+    "fr": "Annuler le dernier trait",
+    "en": "Undo last stroke",
+    "es": "Deshacer el último trazo"
+  },
+  {
+    "key": "action.redo",
+    "fr": "Rétablir un trait",
+    "en": "Redo a stroke",
+    "es": "Rehacer un trazo"
+  },
+  {
+    "key": "action.clear",
+    "fr": "Effacer les dessins",
+    "en": "Clear drawings",
+    "es": "Borrar dibujos"
+  },
+  {
+    "key": "action.toggleTrail",
+    "fr": "Traînée : activer / arrêter",
+    "en": "Trail: enable / disable",
+    "es": "Estela: activar / desactivar"
+  },
+  {
+    "key": "action.toggleHalo",
+    "fr": "Halo : activer / arrêter",
+    "en": "Halo: enable / disable",
+    "es": "Halo: activar / desactivar"
+  },
+  {
+    "key": "action.pauseEffects",
+    "fr": "Effets : pause / reprise",
+    "en": "Effects: pause / resume",
+    "es": "Efectos: pausar / reanudar"
+  },
+  {
+    "key": "action.clickEffect",
+    "fr": "Effet de clic",
+    "en": "Click effect",
+    "es": "Efecto de clic"
+  },
+  {
+    "key": "action.nextTrail",
+    "fr": "Traînée suivante",
+    "en": "Next trail",
+    "es": "Siguiente estela"
+  },
+  {
+    "key": "action.openSettings",
+    "fr": "Ouvrir les réglages",
+    "en": "Open settings",
+    "es": "Abrir los ajustes"
+  },
+  {
+    "key": "buttons.noLongAction",
+    "fr": "Aucun",
+    "en": "None",
+    "es": "Ninguna"
+  },
+  {
+    "key": "window.minimize",
+    "fr": "Réduire",
+    "en": "Minimize",
+    "es": "Minimizar"
+  },
+  {
+    "key": "window.maximize",
+    "fr": "Agrandir",
+    "en": "Maximize",
+    "es": "Maximizar"
+  },
+  {
+    "key": "window.closeHint",
+    "fr": "Fermer (Haloryva reste actif près de l'horloge)",
+    "en": "Close (Haloryva stays active near the clock)",
+    "es": "Cerrar (Haloryva sigue activo junto al reloj)"
+  },
+  {
+    "key": "profile.title",
+    "fr": "Profils et sauvegardes",
+    "en": "Profiles and backups",
+    "es": "Perfiles y copias de seguridad"
+  },
+  {
+    "key": "profile.subtitle",
+    "fr": "Compatible avec tes anciens réglages JSON.",
+    "en": "Compatible with your existing JSON settings.",
+    "es": "Compatible con tus ajustes JSON anteriores."
+  },
+  {
+    "key": "profile.export",
+    "fr": "Exporter mon profil",
+    "en": "Export my profile",
+    "es": "Exportar mi perfil"
+  },
+  {
+    "key": "profile.import",
+    "fr": "Importer un profil",
+    "en": "Import a profile",
+    "es": "Importar un perfil"
+  },
+  {
+    "key": "profile.openFolder",
+    "fr": "Ouvrir le dossier des réglages",
+    "en": "Open the settings folder",
+    "es": "Abrir la carpeta de ajustes"
+  },
+  {
+    "key": "profile.reset",
+    "fr": "Réinitialiser la configuration",
+    "en": "Reset settings",
+    "es": "Restablecer los ajustes"
+  },
+  {
+    "key": "profile.custom",
+    "fr": "Personnalisé",
+    "en": "Custom",
+    "es": "Personalizado"
+  },
+  {
+    "key": "tray.effects",
+    "fr": "Effets actifs",
+    "en": "Effects enabled",
+    "es": "Efectos activados"
+  },
+  {
+    "key": "tray.settings",
+    "fr": "Réglages...",
+    "en": "Settings...",
+    "es": "Ajustes..."
+  },
+  {
+    "key": "tray.recenterHalo",
+    "fr": "Recentrer le halo (Ctrl+Alt+H)",
+    "en": "Recenter halo (Ctrl+Alt+H)",
+    "es": "Centrar el halo (Ctrl+Alt+H)"
+  },
+  {
+    "key": "tray.annotationMode",
+    "fr": "Mode annotation (Ctrl+Alt+D)",
+    "en": "Annotation mode (Ctrl+Alt+D)",
+    "es": "Modo de anotación (Ctrl+Alt+D)"
+  },
+  {
+    "key": "tray.clear",
+    "fr": "Effacer les annotations",
+    "en": "Clear annotations",
+    "es": "Borrar las anotaciones"
+  },
+  {
+    "key": "tray.export",
+    "fr": "Exporter les dessins en PNG...",
+    "en": "Export drawings as PNG...",
+    "es": "Exportar dibujos como PNG..."
+  },
+  {
+    "key": "tray.quit",
+    "fr": "Quitter Haloryva",
+    "en": "Quit Haloryva",
+    "es": "Salir de Haloryva"
+  },
+  {
+    "key": "language.title",
+    "fr": "Langue",
+    "en": "Language",
+    "es": "Idioma"
+  },
+  {
+    "key": "language.french",
+    "fr": "Français",
+    "en": "Français",
+    "es": "Français"
+  },
+  {
+    "key": "language.english",
+    "fr": "English",
+    "en": "English",
+    "es": "English"
+  },
+  {
+    "key": "language.spanish",
+    "fr": "Español",
+    "en": "Español",
+    "es": "Español"
+  },
+  {
+    "key": "language.restartNotice",
+    "fr": "La langue choisie sera utilisée au prochain lancement de Haloryva.",
+    "en": "Your selected language will be used the next time you start Haloryva.",
+    "es": "El idioma elegido se utilizará la próxima vez que inicies Haloryva."
+  },
+  {
+    "key": "language.keepDrawingNotice",
+    "fr": "Tu peux continuer à dessiner. Ferme Haloryva quand tu as terminé pour appliquer la nouvelle langue au prochain lancement.",
+    "en": "You can keep drawing. When you are finished, quit Haloryva to apply the new language the next time it starts.",
+    "es": "Puedes seguir dibujando. Cuando termines, sal de Haloryva para aplicar el nuevo idioma la próxima vez que lo inicies."
+  },
+  {
+    "key": "language.saved",
+    "fr": "Choix de langue enregistré.",
+    "en": "Language preference saved.",
+    "es": "Preferencia de idioma guardada."
+  },
+  {
+    "key": "ui.0001",
+    "fr": "Effets de curseur, annotations et présentation d'écran pour Windows",
+    "en": "Pointer effects, annotations and screen presentations for Windows",
+    "es": "Efectos del cursor, anotaciones y presentaciones de pantalla para Windows"
+  },
+  {
+    "key": "ui.0005",
+    "fr": "Effets, annotations et présentation du curseur",
+    "en": "Pointer effects, annotations and presentations",
+    "es": "Efectos, anotaciones y presentación del cursor"
+  },
+  {
+    "key": "ui.0006",
+    "fr": "Application locale · aucune donnée envoyée",
+    "en": "Local application · no data sent",
+    "es": "Aplicación local · no se envían datos"
+  },
+  {
+    "key": "ui.0007",
+    "fr": "Préversion : choix mémorisé des outils parcourus par les boutons",
+    "en": "Preview: saved selection of tools cycled by mouse buttons",
+    "es": "Versión preliminar: selección guardada de herramientas para los botones"
+  },
+  {
+    "key": "ui.0008",
+    "fr": "269 ms, souplesse continue et orientation X1/X2 personnalisable",
+    "en": "269 ms, smooth trails and customizable X1/X2 orientation",
+    "es": "269 ms, trazos suaves y orientación X1/X2 personalizable"
+  },
+  {
+    "key": "ui.0009",
+    "fr": "Fluidité : traînée persistante, surface stable, cadence et mesures",
+    "en": "Smoothness: persistent trails, stable surface, frame timing and measurements",
+    "es": "Fluidez: estelas persistentes, superficie estable, ritmo y mediciones"
+  },
+  {
+    "key": "ui.0010",
+    "fr": "Routage des boutons, installation précompilée et maintenance vérifiée",
+    "en": "Button routing, precompiled installer and verified maintenance",
+    "es": "Gestión de botones, instalador precompilado y mantenimiento verificado"
+  },
+  {
+    "key": "ui.0011",
+    "fr": "Option : halo agrandi sur curseur texte",
+    "en": "Option: larger halo around the text cursor",
+    "es": "Opción: halo ampliado alrededor del cursor de texto"
+  },
+  {
+    "key": "ui.0012",
+    "fr": "Fiabilité : boutons, réglages, installateur avec retour arrière",
+    "en": "Reliability: buttons, settings and installer rollback",
+    "es": "Fiabilidad: botones, ajustes e instalador con reversión"
+  },
+  {
+    "key": "ui.0013",
+    "fr": "Exe d'installation autonome, signature et paquet Store préparés",
+    "en": "Standalone installer; signing and Store package prepared",
+    "es": "Instalador independiente; firma y paquete Store preparados"
+  },
+  {
+    "key": "ui.0014",
+    "fr": "Inscription dans Applications installées et désinstallateur graphique",
+    "en": "Installed Apps registration and graphical uninstaller",
+    "es": "Registro en Aplicaciones instaladas y desinstalador gráfico"
+  },
+  {
+    "key": "ui.0015",
+    "fr": "Logo, crédits, splash et installateur graphique",
+    "en": "Logo, credits, splash screen and graphical installer",
+    "es": "Logotipo, créditos, pantalla de inicio e instalador gráfico"
+  },
+  {
+    "key": "ui.0016",
+    "fr": "Correctif : appui long réservé à la molette, X1 et X2",
+    "en": "Fix: long presses restricted to the middle button, X1 and X2",
+    "es": "Corrección: pulsaciones largas solo en la rueda, X1 y X2"
+  },
+  {
+    "key": "ui.0017",
+    "fr": "Appui long sur 5 boutons, roue de couleur, menus réorganisés",
+    "en": "Long presses on 5 buttons, color wheel and reorganized menus",
+    "es": "Pulsaciones largas en 5 botones, rueda de color y menús reorganizados"
+  },
+  {
+    "key": "ui.0018",
+    "fr": "Affichage d'outil plus sobre",
+    "en": "More discreet tool indicator",
+    "es": "Indicador de herramienta más discreto"
+  },
+  {
+    "key": "ui.0019",
+    "fr": "Cycle des outils de dessin avec annonce en haut à gauche",
+    "en": "Cycle drawing tools with an indicator at the top left",
+    "es": "Recorrido de herramientas con indicador en la esquina superior izquierda"
+  },
+  {
+    "key": "ui.0023",
+    "fr": "Roue chromatique",
+    "en": "Color wheel",
+    "es": "Rueda de color"
+  },
+  {
+    "key": "ui.0025",
+    "fr": "Couleur (hexadécimal)",
+    "en": "Color (hexadecimal)",
+    "es": "Color (hexadecimal)"
+  },
+  {
+    "key": "ui.0027",
+    "fr": "Cercle",
+    "en": "Circle",
+    "es": "Círculo"
+  },
+  {
+    "key": "ui.0029",
+    "fr": "Unie",
+    "en": "Solid",
+    "es": "Sólido"
+  },
+  {
+    "key": "ui.0031",
+    "fr": "Particules",
+    "en": "Particles",
+    "es": "Partículas"
+  },
+  {
+    "key": "ui.0032",
+    "fr": "Dégradé",
+    "en": "Gradient",
+    "es": "Degradado"
+  },
+  {
+    "key": "ui.0035",
+    "fr": "Ondes",
+    "en": "Ripples",
+    "es": "Ondas"
+  },
+  {
+    "key": "ui.0038",
+    "fr": "Verre",
+    "en": "Glass",
+    "es": "Cristal"
+  },
+  {
+    "key": "ui.0041",
+    "fr": "Croix + anneau",
+    "en": "Cross + ring",
+    "es": "Cruz + anillo"
+  },
+  {
+    "key": "ui.0058",
+    "fr": "Arc-en-ciel",
+    "en": "Rainbow",
+    "es": "Arcoíris"
+  },
+  {
+    "key": "ui.0059",
+    "fr": "Dynamique",
+    "en": "Dynamic",
+    "es": "Dinámico"
+  },
+  {
+    "key": "ui.0060",
+    "fr": "Désactivé",
+    "en": "Off",
+    "es": "Desactivado"
+  },
+  {
+    "key": "ui.0061",
+    "fr": "Lissage léger",
+    "en": "Light smoothing",
+    "es": "Suavizado ligero"
+  },
+  {
+    "key": "ui.0062",
+    "fr": "Croix",
+    "en": "Cross",
+    "es": "Cruz"
+  },
+  {
+    "key": "ui.0063",
+    "fr": "Anneau",
+    "en": "Ring",
+    "es": "Anillo"
+  },
+  {
+    "key": "ui.0064",
+    "fr": "Point central",
+    "en": "Center dot",
+    "es": "Punto central"
+  },
+  {
+    "key": "ui.0065",
+    "fr": "Sunset",
+    "en": "Sunset",
+    "es": "Atardecer"
+  },
+  {
+    "key": "ui.0066",
+    "fr": "Émeraude",
+    "en": "Emerald",
+    "es": "Esmeralda"
+  },
+  {
+    "key": "ui.0067",
+    "fr": "Néon",
+    "en": "Neon",
+    "es": "Neón"
+  },
+  {
+    "key": "ui.0068",
+    "fr": "Glacier",
+    "en": "Glacier",
+    "es": "Glaciar"
+  },
+  {
+    "key": "ui.0069",
+    "fr": "Carré arrondi",
+    "en": "Rounded square",
+    "es": "Cuadrado redondeado"
+  },
+  {
+    "key": "ui.0071",
+    "fr": "Réticule",
+    "en": "Crosshair",
+    "es": "Retícula"
+  },
+  {
+    "key": "ui.0073",
+    "fr": "Points",
+    "en": "Dots",
+    "es": "Puntos"
+  },
+  {
+    "key": "ui.0074",
+    "fr": "Pointillés",
+    "en": "Dashed",
+    "es": "Discontinuo"
+  },
+  {
+    "key": "ui.0075",
+    "fr": "Lumière",
+    "en": "Light",
+    "es": "Luz"
+  },
+  {
+    "key": "ui.0076",
+    "fr": "Étoiles",
+    "en": "Stars",
+    "es": "Estrellas"
+  },
+  {
+    "key": "ui.0079",
+    "fr": "Anneau simple",
+    "en": "Single ring",
+    "es": "Anillo simple"
+  },
+  {
+    "key": "ui.0081",
+    "fr": "Étincelles",
+    "en": "Sparks",
+    "es": "Chispas"
+  },
+  {
+    "key": "ui.0082",
+    "fr": "Classique",
+    "en": "Classic",
+    "es": "Clásico"
+  },
+  {
+    "key": "ui.0083",
+    "fr": "Touches",
+    "en": "Keys",
+    "es": "Teclas"
+  },
+  {
+    "key": "ui.0086",
+    "fr": "Ligne droite",
+    "en": "Straight line",
+    "es": "Línea recta"
+  },
+  {
+    "key": "ui.0088",
+    "fr": "Flèche droite",
+    "en": "Straight arrow",
+    "es": "Flecha recta"
+  },
+  {
+    "key": "ui.0090",
+    "fr": "Forme libre",
+    "en": "Free shape",
+    "es": "Forma libre"
+  },
+  {
+    "key": "ui.0094",
+    "fr": "Réglages illisibles : la dernière sauvegarde valide a été restaurée.",
+    "en": "Settings could not be read: the last valid backup was restored.",
+    "es": "No se pudieron leer los ajustes: se restauró la última copia válida."
+  },
+  {
+    "key": "ui.0095",
+    "fr": "Réglages illisibles : valeurs par défaut utilisées. L'ancien fichier est conservé dans le dossier Haloryva.",
+    "en": "Settings could not be read: using defaults. The original file is kept in the Haloryva folder.",
+    "es": "No se pudieron leer los ajustes: se usan los valores predeterminados. El archivo original se conserva en la carpeta Haloryva."
+  },
+  {
+    "key": "ui.0096",
+    "fr": "Configuration vide",
+    "en": "Empty configuration",
+    "es": "Configuración vacía"
+  },
+  {
+    "key": "ui.0098",
+    "fr": "Réglages non enregistrés : ",
+    "en": "Settings were not saved: ",
+    "es": "No se guardaron los ajustes: "
+  },
+  {
+    "key": "ui.0099",
+    "fr": "Le fichier de réglages est trop volumineux.",
+    "en": "The settings file is too large.",
+    "es": "El archivo de ajustes es demasiado grande."
+  },
+  {
+    "key": "ui.0100",
+    "fr": "Clé de démarrage Windows absente.",
+    "en": "Windows startup registry key not found.",
+    "es": "No se encontró la clave de inicio de Windows."
+  },
+  {
+    "key": "ui.0101",
+    "fr": "Démarrage Haloryva refusé : une ancienne application d'effets démarre déjà avec Windows. Désactive d'abord son démarrage automatique.",
+    "en": "Haloryva startup was refused: another pointer-effects application already starts with Windows. Disable its automatic startup first.",
+    "es": "Se rechazó el inicio de Haloryva: otra aplicación de efectos del cursor ya se inicia con Windows. Desactiva primero su inicio automático."
+  },
+  {
+    "key": "ui.0104",
+    "fr": "Le réglage de démarrage Windows n'a pas été confirmé.",
+    "en": "The Windows startup setting could not be confirmed.",
+    "es": "No se pudo confirmar el ajuste de inicio de Windows."
+  },
+  {
+    "key": "ui.0105",
+    "fr": "Modification du démarrage Windows impossible : ",
+    "en": "Could not change Windows startup: ",
+    "es": "No se pudo modificar el inicio de Windows: "
+  },
+  {
+    "key": "ui.0107",
+    "fr": "Les raccourcis souris/clavier globaux n'ont pas pu démarrer : boutons et dessin indisponibles. Relance Haloryva.",
+    "en": "Global mouse/keyboard hooks could not start: button actions and drawing are unavailable. Restart Haloryva.",
+    "es": "No se pudieron iniciar los controles globales del ratón y teclado: las acciones de botones y el dibujo no están disponibles. Reinicia Haloryva."
+  },
+  {
+    "key": "ui.0108",
+    "fr": "Gauche",
+    "en": "Left",
+    "es": "Izquierdo"
+  },
+  {
+    "key": "ui.0109",
+    "fr": "Droit",
+    "en": "Right",
+    "es": "Derecho"
+  },
+  {
+    "key": "ui.0110",
+    "fr": "Le dessin a été interrompu car l’application était occupée. Tu peux reprendre le tracé.",
+    "en": "Drawing was interrupted because the application was busy. You can start drawing again.",
+    "es": "El dibujo se interrumpió porque la aplicación estaba ocupada. Puedes volver a dibujar."
+  },
+  {
+    "key": "ui.0118",
+    "fr": "Aucun dessin à exporter.",
+    "en": "There are no drawings to export.",
+    "es": "No hay dibujos que exportar."
+  },
+  {
+    "key": "ui.0119",
+    "fr": "Image PNG transparente|*.png",
+    "en": "Transparent PNG image|*.png",
+    "es": "Imagen PNG transparente|*.png"
+  },
+  {
+    "key": "ui.0121",
+    "fr": "Export impossible : ",
+    "en": "Export failed: ",
+    "es": "Error al exportar: "
+  },
+  {
+    "key": "ui.0122",
+    "fr": "Milieu",
+    "en": "Middle",
+    "es": "Central"
+  },
+  {
+    "key": "ui.0124",
+    "fr": "Windows a refusé le rejeu du clic. Aucune protection n'a été contournée.",
+    "en": "Windows refused to replay the click. No protection was bypassed.",
+    "es": "Windows rechazó la reproducción del clic. No se ha eludido ninguna protección."
+  },
+  {
+    "key": "ui.0127",
+    "fr": "Maj + ",
+    "en": "Shift + ",
+    "es": "Mayús + "
+  },
+  {
+    "key": "ui.0130",
+    "fr": "Fermeture annulée : les réglages ne sont pas sauvegardés.",
+    "en": "Closing canceled: settings have not been saved.",
+    "es": "Cierre cancelado: los ajustes no se han guardado."
+  },
+  {
+    "key": "ui.0131",
+    "fr": "Écriture des mesures impossible : ",
+    "en": "Could not write measurements: ",
+    "es": "No se pudieron guardar las mediciones: "
+  },
+  {
+    "key": "ui.0132",
+    "fr": "Haloryva — effets du curseur",
+    "en": "Haloryva — pointer effects",
+    "es": "Haloryva — efectos del cursor"
+  },
+  {
+    "key": "ui.0143",
+    "fr": "Une erreur est survenue dans Haloryva. Si elle persiste, ferme puis relance l’application.\n\nUn journal technique local est disponible dans le dossier Logs des réglages, si Windows autorise son écriture.",
+    "en": "An error occurred in Haloryva. If it persists, close and restart the application.\n\nA local technical log is available in the settings folder under Logs, if Windows allows it to be written.",
+    "es": "Se ha producido un error en Haloryva. Si persiste, cierra y reinicia la aplicación.\n\nHay un registro técnico local en la subcarpeta Logs de los ajustes, si Windows permite escribirlo."
+  },
+  {
+    "key": "ui.0146",
+    "fr": "PROFIL ACTIF",
+    "en": "ACTIVE PROFILE",
+    "es": "PERFIL ACTIVO"
+  },
+  {
+    "key": "ui.0147",
+    "fr": "Version ",
+    "en": "Version ",
+    "es": "Versión "
+  },
+  {
+    "key": "ui.0148",
+    "fr": "Création : ",
+    "en": "Created by: ",
+    "es": "Creado por: "
+  },
+  {
+    "key": "ui.0149",
+    "fr": " · Tous droits réservés",
+    "en": " · All rights reserved",
+    "es": " · Todos los derechos reservados"
+  },
+  {
+    "key": "ui.0150",
+    "fr": "HISTORIQUE DES VERSIONS",
+    "en": "VERSION HISTORY",
+    "es": "HISTORIAL DE VERSIONES"
+  },
+  {
+    "key": "ui.0159",
+    "fr": "Tout ton studio en un coup d'œil : modules, styles et raccourcis.",
+    "en": "Your whole studio at a glance: modules, styles and shortcuts.",
+    "es": "Todo tu estudio de un vistazo: módulos, estilos y atajos."
+  },
+  {
+    "key": "ui.0160",
+    "fr": "Un halo précis et lumineux qui rend ton pointeur visible partout.",
+    "en": "A precise, bright halo that makes your pointer easy to see.",
+    "es": "Un halo preciso y luminoso que hace visible tu cursor."
+  },
+  {
+    "key": "ui.0161",
+    "fr": "Une signature de mouvement fluide à chaque déplacement.",
+    "en": "A smooth visual trail with every movement.",
+    "es": "Una estela visual fluida con cada movimiento."
+  },
+  {
+    "key": "ui.0162",
+    "fr": "Des animations nettes pour rendre chaque clic lisible.",
+    "en": "Clear animations that make every click visible.",
+    "es": "Animaciones claras para que cada clic sea visible."
+  },
+  {
+    "key": "ui.0163",
+    "fr": "Chaque bouton physique peut déclencher une action Haloryva.",
+    "en": "Each physical button can trigger a Haloryva action.",
+    "es": "Cada botón físico puede activar una acción de Haloryva."
+  },
+  {
+    "key": "ui.0164",
+    "fr": "Annote ton écran librement — les formes se régularisent toutes seules.",
+    "en": "Draw freely on your screen — shapes are refined automatically.",
+    "es": "Anota libremente en pantalla: las formas se ajustan automáticamente."
+  },
+  {
+    "key": "ui.0165",
+    "fr": "Touches, loupe et focus pour présenter et expliquer.",
+    "en": "Keys, magnifier and focus to present and explain.",
+    "es": "Teclas, lupa y enfoque para presentar y explicar."
+  },
+  {
+    "key": "ui.0166",
+    "fr": "Performance, profils et informations sur l'application.",
+    "en": "Performance, profiles and application information.",
+    "es": "Rendimiento, perfiles e información de la aplicación."
+  },
+  {
+    "key": "ui.0174",
+    "fr": "Replier",
+    "en": "Collapse",
+    "es": "Contraer"
+  },
+  {
+    "key": "ui.0175",
+    "fr": "Déplier",
+    "en": "Expand",
+    "es": "Expandir"
+  },
+  {
+    "key": "ui.0176",
+    "fr": "Replier le menu",
+    "en": "Collapse menu",
+    "es": "Contraer el menú"
+  },
+  {
+    "key": "ui.0177",
+    "fr": "Dernier bouton détecté : ",
+    "en": "Last detected button: ",
+    "es": "Último botón detectado: "
+  },
+  {
+    "key": "ui.0178",
+    "fr": "Dessin actif",
+    "en": "Drawing active",
+    "es": "Dibujo activo"
+  },
+  {
+    "key": "ui.0179",
+    "fr": "Dessiner sur le Bureau",
+    "en": "Draw on desktop",
+    "es": "Dibujar en el escritorio"
+  },
+  {
+    "key": "ui.0180",
+    "fr": "Mettre en pause",
+    "en": "Pause effects",
+    "es": "Pausar efectos"
+  },
+  {
+    "key": "ui.0181",
+    "fr": "Ton curseur, version studio.",
+    "en": "Your pointer, studio style.",
+    "es": "Tu cursor, con estilo propio."
+  },
+  {
+    "key": "ui.0182",
+    "fr": "Effets en pause.",
+    "en": "Effects paused.",
+    "es": "Efectos en pausa."
+  },
+  {
+    "key": "ui.0183",
+    "fr": " modules actifs",
+    "en": " active modules",
+    "es": " módulos activos"
+  },
+  {
+    "key": "ui.0184",
+    "fr": " module actif",
+    "en": " active module",
+    "es": " módulo activo"
+  },
+  {
+    "key": "ui.0186",
+    "fr": " annotations",
+    "en": " annotations",
+    "es": " anotaciones"
+  },
+  {
+    "key": "ui.0187",
+    "fr": " annotation",
+    "en": " annotation",
+    "es": " anotación"
+  },
+  {
+    "key": "ui.0188",
+    "fr": " à l'écran",
+    "en": " on screen",
+    "es": " en pantalla"
+  },
+  {
+    "key": "ui.0189",
+    "fr": "  ·  dessin en cours",
+    "en": "  ·  drawing in progress",
+    "es": "  ·  dibujando"
+  },
+  {
+    "key": "ui.0190",
+    "fr": "Rien ne s'affiche à l'écran. Réactive les effets en un clic.",
+    "en": "Nothing is displayed on screen. Enable effects with one click.",
+    "es": "No se muestra nada en pantalla. Activa los efectos con un clic."
+  },
+  {
+    "key": "ui.0191",
+    "fr": "Réactiver les effets",
+    "en": "Enable effects",
+    "es": "Activar efectos"
+  },
+  {
+    "key": "ui.0192",
+    "fr": "Reprendre le dessin",
+    "en": "Resume drawing",
+    "es": "Reanudar el dibujo"
+  },
+  {
+    "key": "ui.0193",
+    "fr": "Modules",
+    "en": "Modules",
+    "es": "Módulos"
+  },
+  {
+    "key": "ui.0194",
+    "fr": "Active, coupe ou ouvre un module en un clic.",
+    "en": "Enable, disable or open a module with one click.",
+    "es": "Activa, desactiva o abre un módulo con un clic."
+  },
+  {
+    "key": "ui.0197",
+    "fr": "Traînée",
+    "en": "Trail",
+    "es": "Estela"
+  },
+  {
+    "key": "ui.0198",
+    "fr": "Clics animés",
+    "en": "Animated clicks",
+    "es": "Clics animados"
+  },
+  {
+    "key": "ui.0200",
+    "fr": "Touches à l'écran",
+    "en": "Keys on screen",
+    "es": "Teclas en pantalla"
+  },
+  {
+    "key": "ui.0201",
+    "fr": "Style ",
+    "en": "Style ",
+    "es": "Estilo "
+  },
+  {
+    "key": "ui.0202",
+    "fr": "Loupe",
+    "en": "Magnifier",
+    "es": "Lupa"
+  },
+  {
+    "key": "ui.0203",
+    "fr": "Grossissement ×",
+    "en": "Magnification ×",
+    "es": "Aumento ×"
+  },
+  {
+    "key": "ui.0204",
+    "fr": "Fenêtre active",
+    "en": "Active window",
+    "es": "Ventana activa"
+  },
+  {
+    "key": "ui.0205",
+    "fr": "Le reste du Bureau est assombri",
+    "en": "The rest of the desktop is dimmed",
+    "es": "Se oscurece el resto del escritorio"
+  },
+  {
+    "key": "ui.0206",
+    "fr": "Styles instantanés",
+    "en": "Instant styles",
+    "es": "Estilos rápidos"
+  },
+  {
+    "key": "ui.0207",
+    "fr": "Un profil complet en un clic.",
+    "en": "A complete profile in one click.",
+    "es": "Un perfil completo con un clic."
+  },
+  {
+    "key": "ui.0208",
+    "fr": "Halo net, sans traînée",
+    "en": "Clear halo, no trail",
+    "es": "Halo nítido, sin estela"
+  },
+  {
+    "key": "ui.0209",
+    "fr": "Halo lumineux + traînée lumière",
+    "en": "Bright halo + light trail",
+    "es": "Halo luminoso + estela de luz"
+  },
+  {
+    "key": "ui.0210",
+    "fr": "Clics + raccourcis affichés",
+    "en": "Clicks + shortcut display",
+    "es": "Clics + visualización de atajos"
+  },
+  {
+    "key": "ui.0211",
+    "fr": "Créatif",
+    "en": "Creative",
+    "es": "Creativo"
+  },
+  {
+    "key": "ui.0212",
+    "fr": "Étoiles arc-en-ciel",
+    "en": "Rainbow stars",
+    "es": "Estrellas arcoíris"
+  },
+  {
+    "key": "ui.0213",
+    "fr": "Raccourcis essentiels",
+    "en": "Essential shortcuts",
+    "es": "Atajos esenciales"
+  },
+  {
+    "key": "ui.0214",
+    "fr": "Utilisables depuis n'importe quelle application.",
+    "en": "Available from any application.",
+    "es": "Disponibles desde cualquier aplicación."
+  },
+  {
+    "key": "ui.0215",
+    "fr": "Recentrer le halo",
+    "en": "Recenter halo",
+    "es": "Centrar el halo"
+  },
+  {
+    "key": "ui.0216",
+    "fr": "Secours boutons souris",
+    "en": "Reset mouse buttons",
+    "es": "Restablecer botones del ratón"
+  },
+  {
+    "key": "ui.0221",
+    "fr": "Retour",
+    "en": "Backspace",
+    "es": "Retroceso"
+  },
+  {
+    "key": "ui.0234",
+    "fr": "Halo activé",
+    "en": "Halo enabled",
+    "es": "Halo activado"
+  },
+  {
+    "key": "ui.0235",
+    "fr": "Apparence",
+    "en": "Appearance",
+    "es": "Apariencia"
+  },
+  {
+    "key": "ui.0236",
+    "fr": "Comportement",
+    "en": "Behavior",
+    "es": "Comportamiento"
+  },
+  {
+    "key": "ui.0237",
+    "fr": "Aperçu en direct",
+    "en": "Live preview",
+    "es": "Vista previa"
+  },
+  {
+    "key": "ui.0238",
+    "fr": "Le rendu réel du halo, sans déplacer celui de ton écran.",
+    "en": "The actual halo rendering, without moving the one on your screen.",
+    "es": "El aspecto real del halo, sin mover el de tu pantalla."
+  },
+  {
+    "key": "ui.0239",
+    "fr": "Mode texte (curseur I)",
+    "en": "Text mode (I-beam cursor)",
+    "es": "Modo texto (cursor I)"
+  },
+  {
+    "key": "ui.0240",
+    "fr": "Mode pointeur",
+    "en": "Pointer mode",
+    "es": "Modo puntero"
+  },
+  {
+    "key": "ui.0241",
+    "fr": "Forme et taille",
+    "en": "Shape and size",
+    "es": "Forma y tamaño"
+  },
+  {
+    "key": "ui.0242",
+    "fr": "La silhouette du halo.",
+    "en": "The outline of the halo.",
+    "es": "La silueta del halo."
+  },
+  {
+    "key": "ui.0243",
+    "fr": "Forme",
+    "en": "Shape",
+    "es": "Forma"
+  },
+  {
+    "key": "ui.0244",
+    "fr": "Carré",
+    "en": "Square",
+    "es": "Cuadrado"
+  },
+  {
+    "key": "ui.0245",
+    "fr": "Diamètre",
+    "en": "Diameter",
+    "es": "Diámetro"
+  },
+  {
+    "key": "ui.0246",
+    "fr": "Épaisseur",
+    "en": "Thickness",
+    "es": "Grosor"
+  },
+  {
+    "key": "ui.0247",
+    "fr": "Opacité",
+    "en": "Opacity",
+    "es": "Opacidad"
+  },
+  {
+    "key": "ui.0249",
+    "fr": "Couleur et ambiance",
+    "en": "Color and mood",
+    "es": "Color y ambiente"
+  },
+  {
+    "key": "ui.0250",
+    "fr": "Roue chromatique, palette rapide et HEX précis.",
+    "en": "Color wheel, quick palette and precise HEX values.",
+    "es": "Rueda de color, paleta rápida y valores HEX precisos."
+  },
+  {
+    "key": "ui.0251",
+    "fr": "Mode de couleur",
+    "en": "Color mode",
+    "es": "Modo de color"
+  },
+  {
+    "key": "ui.0253",
+    "fr": "Couleur principale",
+    "en": "Primary color",
+    "es": "Color principal"
+  },
+  {
+    "key": "ui.0254",
+    "fr": "Couleur secondaire",
+    "en": "Secondary color",
+    "es": "Color secundario"
+  },
+  {
+    "key": "ui.0255",
+    "fr": "Lumière et animation",
+    "en": "Light and animation",
+    "es": "Luz y animación"
+  },
+  {
+    "key": "ui.0256",
+    "fr": "Glow, néon et pulsation.",
+    "en": "Glow, neon and pulsing.",
+    "es": "Resplandor, neón y pulsación."
+  },
+  {
+    "key": "ui.0257",
+    "fr": "Flou lumineux",
+    "en": "Glow blur",
+    "es": "Desenfoque del resplandor"
+  },
+  {
+    "key": "ui.0258",
+    "fr": "Intensité du glow",
+    "en": "Glow intensity",
+    "es": "Intensidad del resplandor"
+  },
+  {
+    "key": "ui.0259",
+    "fr": "Halo néon",
+    "en": "Neon halo",
+    "es": "Halo de neón"
+  },
+  {
+    "key": "ui.0260",
+    "fr": "Éclairage secondaire diffus",
+    "en": "Soft secondary glow",
+    "es": "Resplandor secundario suave"
+  },
+  {
+    "key": "ui.0261",
+    "fr": "Pulsation",
+    "en": "Pulsing",
+    "es": "Pulsación"
+  },
+  {
+    "key": "ui.0262",
+    "fr": "Respiration douce du contour",
+    "en": "Gentle breathing of the outline",
+    "es": "Expansión suave del contorno"
+  },
+  {
+    "key": "ui.0263",
+    "fr": "Vitesse de pulsation",
+    "en": "Pulse speed",
+    "es": "Velocidad de pulsación"
+  },
+  {
+    "key": "ui.0264",
+    "fr": "Comportement intelligent",
+    "en": "Smart behavior",
+    "es": "Comportamiento inteligente"
+  },
+  {
+    "key": "ui.0265",
+    "fr": "Disparaît au repos, revient au mouvement.",
+    "en": "Fades when idle, returns when you move.",
+    "es": "Desaparece en reposo y vuelve al mover el ratón."
+  },
+  {
+    "key": "ui.0266",
+    "fr": "Disparition automatique",
+    "en": "Auto hide",
+    "es": "Ocultación automática"
+  },
+  {
+    "key": "ui.0267",
+    "fr": "Fondu après inactivité de la souris",
+    "en": "Fade after mouse inactivity",
+    "es": "Desvanecer tras la inactividad del ratón"
+  },
+  {
+    "key": "ui.0268",
+    "fr": "Délai d'inactivité",
+    "en": "Idle delay",
+    "es": "Tiempo de inactividad"
+  },
+  {
+    "key": "ui.0270",
+    "fr": "Durée du fondu",
+    "en": "Fade duration",
+    "es": "Duración del desvanecimiento"
+  },
+  {
+    "key": "ui.0272",
+    "fr": "Curseur texte",
+    "en": "Text cursor",
+    "es": "Cursor de texto"
+  },
+  {
+    "key": "ui.0273",
+    "fr": "Recentrage précis et discret pendant la saisie.",
+    "en": "Precise, discreet centering while typing.",
+    "es": "Centrado preciso y discreto al escribir."
+  },
+  {
+    "key": "ui.0274",
+    "fr": "Centrer sur le curseur texte",
+    "en": "Center on text cursor",
+    "es": "Centrar en el cursor de texto"
+  },
+  {
+    "key": "ui.0275",
+    "fr": "Ignore le décalage dans les champs",
+    "en": "Ignore the offset in text fields",
+    "es": "Ignorar el desplazamiento en campos de texto"
+  },
+  {
+    "key": "ui.0276",
+    "fr": "Accent texte",
+    "en": "Text accent",
+    "es": "Resalte de texto"
+  },
+  {
+    "key": "ui.0277",
+    "fr": "Contour fin et lumineux sur le I",
+    "en": "Thin, bright I-beam outline",
+    "es": "Contorno fino y luminoso en el cursor I"
+  },
+  {
+    "key": "ui.0278",
+    "fr": "Agrandir le halo sur texte",
+    "en": "Enlarge halo on text",
+    "es": "Ampliar el halo sobre texto"
+  },
+  {
+    "key": "ui.0279",
+    "fr": "Dégage la lecture et la sélection",
+    "en": "Make reading and selection easier",
+    "es": "Facilitar la lectura y la selección"
+  },
+  {
+    "key": "ui.0280",
+    "fr": "Agrandissement",
+    "en": "Enlargement",
+    "es": "Ampliación"
+  },
+  {
+    "key": "ui.0281",
+    "fr": "Intensité de l'accent",
+    "en": "Accent intensity",
+    "es": "Intensidad del resalte"
+  },
+  {
+    "key": "ui.0282",
+    "fr": "Contour plus fin",
+    "en": "Thinner outline",
+    "es": "Contorno más fino"
+  },
+  {
+    "key": "ui.0283",
+    "fr": "Position du halo",
+    "en": "Halo position",
+    "es": "Posición del halo"
+  },
+  {
+    "key": "ui.0284",
+    "fr": "Décalage appliqué hors curseur texte.",
+    "en": "Offset applied outside the text cursor.",
+    "es": "Desplazamiento aplicado fuera del cursor de texto."
+  },
+  {
+    "key": "ui.0285",
+    "fr": "Décalage horizontal",
+    "en": "Horizontal offset",
+    "es": "Desplazamiento horizontal"
+  },
+  {
+    "key": "ui.0286",
+    "fr": "Décalage vertical",
+    "en": "Vertical offset",
+    "es": "Desplazamiento vertical"
+  },
+  {
+    "key": "ui.0287",
+    "fr": "Halo décalé hors de l'écran ? Ctrl + Alt + H le recentre depuis n'importe où.",
+    "en": "Halo outside the screen? Ctrl + Alt + H recenters it from anywhere.",
+    "es": "¿El halo está fuera de la pantalla? Ctrl + Alt + H lo centra desde cualquier lugar."
+  },
+  {
+    "key": "ui.0288",
+    "fr": "Traînée activée",
+    "en": "Trail enabled",
+    "es": "Estela activada"
+  },
+  {
+    "key": "ui.0289",
+    "fr": "Mouvement et logo",
+    "en": "Motion and logo",
+    "es": "Movimiento y logotipo"
+  },
+  {
+    "key": "ui.0290",
+    "fr": "Survole la zone pour dessiner ta propre traînée.",
+    "en": "Move over the area to draw your own trail.",
+    "es": "Mueve el cursor por la zona para dibujar tu propia estela."
+  },
+  {
+    "key": "ui.0291",
+    "fr": "Style de traînée",
+    "en": "Trail style",
+    "es": "Estilo de estela"
+  },
+  {
+    "key": "ui.0292",
+    "fr": "Huit signatures visuelles.",
+    "en": "Eight visual styles.",
+    "es": "Ocho estilos visuales."
+  },
+  {
+    "key": "ui.0293",
+    "fr": "Persistance",
+    "en": "Lifetime",
+    "es": "Persistencia"
+  },
+  {
+    "key": "ui.0294",
+    "fr": "Couleurs",
+    "en": "Colors",
+    "es": "Colores"
+  },
+  {
+    "key": "ui.0295",
+    "fr": "Unie, dégradé ou arc-en-ciel animé.",
+    "en": "Solid, gradient or animated rainbow.",
+    "es": "Color sólido, degradado o arcoíris animado."
+  },
+  {
+    "key": "ui.0296",
+    "fr": "Première couleur",
+    "en": "First color",
+    "es": "Primer color"
+  },
+  {
+    "key": "ui.0297",
+    "fr": "Seconde couleur",
+    "en": "Second color",
+    "es": "Segundo color"
+  },
+  {
+    "key": "ui.0298",
+    "fr": "Mouvement souple",
+    "en": "Smooth motion",
+    "es": "Movimiento suave"
+  },
+  {
+    "key": "ui.0299",
+    "fr": "Souplesse : Ligne, Pointillés et Lumière.",
+    "en": "Smoothness: Line, Dashed and Light.",
+    "es": "Suavidad: Línea, Discontinuo y Luz."
+  },
+  {
+    "key": "ui.0300",
+    "fr": "Densité",
+    "en": "Density",
+    "es": "Densidad"
+  },
+  {
+    "key": "ui.0301",
+    "fr": "Espacement",
+    "en": "Spacing",
+    "es": "Espaciado"
+  },
+  {
+    "key": "ui.0302",
+    "fr": "Dispersion",
+    "en": "Spread",
+    "es": "Dispersión"
+  },
+  {
+    "key": "ui.0303",
+    "fr": "Souplesse",
+    "en": "Smoothness",
+    "es": "Suavidad"
+  },
+  {
+    "key": "ui.0304",
+    "fr": "Épaisseur dynamique",
+    "en": "Dynamic thickness",
+    "es": "Grosor dinámico"
+  },
+  {
+    "key": "ui.0305",
+    "fr": "Réagit à la vitesse de la souris",
+    "en": "Responds to mouse speed",
+    "es": "Responde a la velocidad del ratón"
+  },
+  {
+    "key": "ui.0306",
+    "fr": "Logo personnalisé",
+    "en": "Custom logo",
+    "es": "Logotipo personalizado"
+  },
+  {
+    "key": "ui.0307",
+    "fr": "Un PNG transparent dans ta traînée.",
+    "en": "A transparent PNG in your trail.",
+    "es": "Un PNG transparente en tu estela."
+  },
+  {
+    "key": "ui.0308",
+    "fr": "Aucun logo — une étoile est utilisée.",
+    "en": "No logo — a star is used.",
+    "es": "Sin logotipo: se utiliza una estrella."
+  },
+  {
+    "key": "ui.0309",
+    "fr": "Logo : ",
+    "en": "Logo: ",
+    "es": "Logotipo: "
+  },
+  {
+    "key": "ui.0310",
+    "fr": "Importer un PNG",
+    "en": "Import a PNG",
+    "es": "Importar un PNG"
+  },
+  {
+    "key": "ui.0311",
+    "fr": "Images PNG (*.png)|*.png",
+    "en": "PNG images (*.png)|*.png",
+    "es": "Imágenes PNG (*.png)|*.png"
+  },
+  {
+    "key": "ui.0312",
+    "fr": "Retirer",
+    "en": "Remove",
+    "es": "Quitar"
+  },
+  {
+    "key": "ui.0313",
+    "fr": "Taille du logo",
+    "en": "Logo size",
+    "es": "Tamaño del logotipo"
+  },
+  {
+    "key": "ui.0314",
+    "fr": "Un logo tous les",
+    "en": "One logo every",
+    "es": "Un logotipo cada"
+  },
+  {
+    "key": "ui.0315",
+    "fr": "Rotation du logo",
+    "en": "Rotate logo",
+    "es": "Girar el logotipo"
+  },
+  {
+    "key": "ui.0316",
+    "fr": "Une signature plus vivante",
+    "en": "A livelier visual style",
+    "es": "Un estilo visual más dinámico"
+  },
+  {
+    "key": "ui.0317",
+    "fr": "Clique (gauche ou droit) dans la zone pour tester.",
+    "en": "Click (left or right) in the area to test.",
+    "es": "Haz clic (izquierdo o derecho) en la zona para probar."
+  },
+  {
+    "key": "ui.0318",
+    "fr": "Animation",
+    "en": "Animation",
+    "es": "Animación"
+  },
+  {
+    "key": "ui.0319",
+    "fr": "Lisible, sans bloquer les clics Windows.",
+    "en": "Easy to see, without blocking Windows clicks.",
+    "es": "Visible, sin bloquear los clics de Windows."
+  },
+  {
+    "key": "ui.0320",
+    "fr": "Amplitude",
+    "en": "Amplitude",
+    "es": "Amplitud"
+  },
+  {
+    "key": "ui.0321",
+    "fr": "Durée",
+    "en": "Duration",
+    "es": "Duración"
+  },
+  {
+    "key": "ui.0322",
+    "fr": "Détection automatique",
+    "en": "Automatic detection",
+    "es": "Detección automática"
+  },
+  {
+    "key": "ui.0323",
+    "fr": "Animation déclenchée à chaque clic réel",
+    "en": "Animation triggered by every real click",
+    "es": "Animación activada con cada clic real"
+  },
+  {
+    "key": "ui.0324",
+    "fr": "Distingue le clic gauche du clic droit.",
+    "en": "Distinguish left and right clicks.",
+    "es": "Distingue los clics izquierdo y derecho."
+  },
+  {
+    "key": "ui.0325",
+    "fr": "Clic gauche",
+    "en": "Left click",
+    "es": "Clic izquierdo"
+  },
+  {
+    "key": "ui.0326",
+    "fr": "Clic droit",
+    "en": "Right click",
+    "es": "Clic derecho"
+  },
+  {
+    "key": "ui.0327",
+    "fr": "Sons",
+    "en": "Sounds",
+    "es": "Sonidos"
+  },
+  {
+    "key": "ui.0328",
+    "fr": "Un retour sonore, désactivable à tout moment.",
+    "en": "Audio feedback you can turn off at any time.",
+    "es": "Respuesta sonora que puedes desactivar en cualquier momento."
+  },
+  {
+    "key": "ui.0329",
+    "fr": "Sons de clic",
+    "en": "Click sounds",
+    "es": "Sonidos de clic"
+  },
+  {
+    "key": "ui.0330",
+    "fr": "Son Windows ou fichier WAV personnel",
+    "en": "Windows sound or your own WAV file",
+    "es": "Sonido de Windows o tu propio archivo WAV"
+  },
+  {
+    "key": "ui.0331",
+    "fr": "Son : Windows par défaut",
+    "en": "Sound: Windows default",
+    "es": "Sonido: predeterminado de Windows"
+  },
+  {
+    "key": "ui.0332",
+    "fr": "Son : ",
+    "en": "Sound: ",
+    "es": "Sonido: "
+  },
+  {
+    "key": "ui.0333",
+    "fr": "Importer un WAV",
+    "en": "Import a WAV",
+    "es": "Importar un WAV"
+  },
+  {
+    "key": "ui.0334",
+    "fr": "Audio WAV (*.wav)|*.wav",
+    "en": "WAV audio (*.wav)|*.wav",
+    "es": "Audio WAV (*.wav)|*.wav"
+  },
+  {
+    "key": "ui.0335",
+    "fr": "Par défaut",
+    "en": "Default",
+    "es": "Predeterminado"
+  },
+  {
+    "key": "ui.0336",
+    "fr": "Tout restaurer",
+    "en": "Restore all",
+    "es": "Restaurar todo"
+  },
+  {
+    "key": "ui.0337",
+    "fr": "Affectations",
+    "en": "Assignments",
+    "es": "Asignaciones"
+  },
+  {
+    "key": "ui.0338",
+    "fr": "Appui court et appui long : une action pour chacun. Le comportement Windows reste normal par défaut.",
+    "en": "Short click and long press: an action for each. Windows behavior stays unchanged by default.",
+    "es": "Clic corto y pulsación larga: una acción para cada uno. El comportamiento de Windows se conserva de forma predeterminada."
+  },
+  {
+    "key": "ui.0339",
+    "fr": "Inverser X1 et X2 sur ma souris",
+    "en": "Swap X1 and X2 labels",
+    "es": "Intercambiar etiquetas X1 y X2"
+  },
+  {
+    "key": "ui.0340",
+    "fr": "Adapte les libellés à ta souris, sans changer les actions actuelles.",
+    "en": "Match labels to your mouse without changing current actions.",
+    "es": "Adapta las etiquetas a tu ratón sin cambiar las acciones actuales."
+  },
+  {
+    "key": "ui.0341",
+    "fr": "Si tu as déjà échangé les actions pour compenser : active cette option. Les actions physiques restent identiques, et les menus X1/X2 affichent désormais leur véritable rôle. Cyan = bouton configuré ; vert = dernier bouton détecté.",
+    "en": "If you already swapped actions to compensate, enable this option. Physical actions stay unchanged, and the X1/X2 menus show their actual role. Cyan = configured button; green = last detected button.",
+    "es": "Si ya intercambiaste las acciones para compensarlo, activa esta opción. Las acciones físicas se mantienen y los menús X1/X2 muestran su función real. Cian = botón configurado; verde = último botón detectado."
+  },
+  {
+    "key": "ui.0342",
+    "fr": "Bouton gauche",
+    "en": "Left button",
+    "es": "Botón izquierdo"
+  },
+  {
+    "key": "ui.0343",
+    "fr": "Bouton droit",
+    "en": "Right button",
+    "es": "Botón derecho"
+  },
+  {
+    "key": "ui.0344",
+    "fr": "Molette (clic)",
+    "en": "Wheel (click)",
+    "es": "Rueda (clic)"
+  },
+  {
+    "key": "ui.0345",
+    "fr": "Latéral X1 (arrière)",
+    "en": "Side X1 (back)",
+    "es": "Lateral X1 (atrás)"
+  },
+  {
+    "key": "ui.0346",
+    "fr": "Latéral X2 (avant)",
+    "en": "Side X2 (forward)",
+    "es": "Lateral X2 (adelante)"
+  },
+  {
+    "key": "ui.0347",
+    "fr": "Bouton",
+    "en": "Button",
+    "es": "Botón"
+  },
+  {
+    "key": "ui.0348",
+    "fr": "Appui court",
+    "en": "Short click",
+    "es": "Clic corto"
+  },
+  {
+    "key": "ui.0349",
+    "fr": "Appui long",
+    "en": "Long press",
+    "es": "Pulsación larga"
+  },
+  {
+    "key": "ui.0350",
+    "fr": ", appui court",
+    "en": ", short click",
+    "es": ", clic corto"
+  },
+  {
+    "key": "ui.0351",
+    "fr": "Indisponible sur les clics principaux",
+    "en": "Unavailable on primary buttons",
+    "es": "No disponible en botones principales"
+  },
+  {
+    "key": "ui.0352",
+    "fr": ", appui long",
+    "en": ", long press",
+    "es": ", pulsación larga"
+  },
+  {
+    "key": "ui.0353",
+    "fr": "Durée de l'appui long",
+    "en": "Long-press duration",
+    "es": "Duración de la pulsación larga"
+  },
+  {
+    "key": "ui.0354",
+    "fr": "Un bouton qui a un appui long n'envoie son clic Windows qu'au relâchement. L'appui long est réservé à la molette, X1 et X2 ; gauche et droit restent toujours immédiats.",
+    "en": "A button assigned a long-press action sends its Windows click only when released. Long presses are limited to the middle button, X1 and X2; left and right clicks remain immediate.",
+    "es": "Un botón con una acción de pulsación larga envía el clic de Windows solo al soltarlo. Las pulsaciones largas se limitan a la rueda, X1 y X2; los clics izquierdo y derecho siguen siendo inmediatos."
+  },
+  {
+    "key": "ui.0355",
+    "fr": "Détection et secours",
+    "en": "Detection and recovery",
+    "es": "Detección y recuperación"
+  },
+  {
+    "key": "ui.0356",
+    "fr": "Identifie un bouton puis affecte-lui une action.",
+    "en": "Identify a button, then assign an action.",
+    "es": "Identifica un botón y asígnale una acción."
+  },
+  {
+    "key": "ui.0357",
+    "fr": "Détecter mon bouton",
+    "en": "Detect my button",
+    "es": "Detectar mi botón"
+  },
+  {
+    "key": "ui.0358",
+    "fr": "Appuie maintenant sur un bouton de la souris…",
+    "en": "Press a mouse button now…",
+    "es": "Pulsa ahora un botón del ratón…"
+  },
+  {
+    "key": "ui.0359",
+    "fr": "Préréglages",
+    "en": "Presets",
+    "es": "Preajustes"
+  },
+  {
+    "key": "ui.0360",
+    "fr": "X1 dessin · X2 annuler",
+    "en": "X1 draw · X2 undo",
+    "es": "X1 dibujar · X2 deshacer"
+  },
+  {
+    "key": "ui.0361",
+    "fr": "X1 dessin · X2 outil suivant",
+    "en": "X1 draw · X2 next tool",
+    "es": "X1 dibujar · X2 siguiente"
+  },
+  {
+    "key": "ui.0362",
+    "fr": "X2 outil suivant · appui long : précédent",
+    "en": "X2 next tool · hold: previous",
+    "es": "X2 siguiente · mantener: anterior"
+  },
+  {
+    "key": "ui.0363",
+    "fr": "Restaurer les 5 boutons",
+    "en": "Reset all 5 buttons",
+    "es": "Restablecer los 5 botones"
+  },
+  {
+    "key": "ui.0364",
+    "fr": "Bouton bloqué ? Ctrl + Alt + R rend immédiatement leur comportement Windows aux 5 boutons.",
+    "en": "Button stuck? Ctrl + Alt + R immediately restores Windows behavior for all 5 buttons.",
+    "es": "¿Un botón bloqueado? Ctrl + Alt + R restaura al instante el comportamiento de Windows en los 5 botones."
+  },
+  {
+    "key": "ui.0365",
+    "fr": "Un bouton sans réaction (souvent un bouton DPI) est géré par la souris elle-même : Windows ne le voit pas, Haloryva ne peut pas l'utiliser.",
+    "en": "A button that does not respond (often a DPI button) is managed by the mouse itself: Windows cannot see it, so Haloryva cannot use it.",
+    "es": "Un botón que no responde (a menudo el de DPI) lo gestiona el propio ratón: Windows no lo detecta y Haloryva no puede usarlo."
+  },
+  {
+    "key": "ui.0366",
+    "fr": "Changer d'outil de dessin : affecte « Outil de dessin suivant » à X1, X2 ou la molette — son nom s'affiche quelques secondes en haut à gauche de l'écran.",
+    "en": "To change drawing tools, assign “Next drawing tool” to X1, X2 or the middle button. The tool name appears briefly at the top left of the screen.",
+    "es": "Para cambiar de herramienta, asigna «Siguiente herramienta de dibujo» a X1, X2 o la rueda. El nombre aparece brevemente en la esquina superior izquierda."
+  },
+  {
+    "key": "ui.0367",
+    "fr": "Choisir les outils à faire défiler",
+    "en": "Choose tools to cycle through",
+    "es": "Elegir herramientas del recorrido"
+  },
+  {
+    "key": "ui.0368",
+    "fr": "Un appui long sur un clic principal retarde ce clic jusqu'au relâchement : le glisser-déposer et la sélection à la souris ne fonctionneront plus avec ce bouton. Ctrl + Alt + R rétablit les boutons. Continuer ?",
+    "en": "A long press on a primary button delays its click until release: dragging and mouse selection will no longer work with that button. Ctrl + Alt + R resets the buttons. Continue?",
+    "es": "Una pulsación larga en un botón principal retrasa el clic hasta soltarlo: arrastrar y seleccionar ya no funcionarán con ese botón. Ctrl + Alt + R restablece los botones. ¿Continuar?"
+  },
+  {
+    "key": "ui.0369",
+    "fr": "Confirmer l'appui long",
+    "en": "Confirm long press",
+    "es": "Confirmar pulsación larga"
+  },
+  {
+    "key": "ui.0370",
+    "fr": "Ce réglage remplace un clic principal. Ctrl + Alt + R rétablit les boutons. Continuer ?",
+    "en": "This setting replaces a primary click. Ctrl + Alt + R resets the buttons. Continue?",
+    "es": "Este ajuste sustituye un clic principal. Ctrl + Alt + R restablece los botones. ¿Continuar?"
+  },
+  {
+    "key": "ui.0371",
+    "fr": "Confirmer l'affectation",
+    "en": "Confirm assignment",
+    "es": "Confirmar asignación"
+  },
+  {
+    "key": "ui.0372",
+    "fr": "Arrêter le dessin",
+    "en": "Stop drawing",
+    "es": "Detener el dibujo"
+  },
+  {
+    "key": "ui.0375",
+    "fr": "Outils",
+    "en": "Tools",
+    "es": "Herramientas"
+  },
+  {
+    "key": "ui.0376",
+    "fr": "Choisis un outil, puis « Dessiner sur le Bureau ». Clic droit ou Échap : arrêter.",
+    "en": "Choose a tool, then “Draw on desktop”. Right click or Escape to stop.",
+    "es": "Elige una herramienta y pulsa «Dibujar en el escritorio». Clic derecho o Esc para detener."
+  },
+  {
+    "key": "ui.0377",
+    "fr": "Auto-formes : trace un cercle, un rectangle, un triangle ou une ligne à main levée puis relâche — la forme est régularisée (le tracé d'origine reste restaurable). Changer d'outil à la souris : page Boutons souris.",
+    "en": "Auto shapes: draw a circle, rectangle, triangle or line freehand, then release to refine the shape (you can restore the original stroke). To switch tools with the mouse, use the Mouse buttons page.",
+    "es": "Formas automáticas: dibuja a mano alzada un círculo, rectángulo, triángulo o línea y suelta para ajustar la forma (puedes restaurar el trazo original). Para cambiar de herramienta con el ratón, ve a Botones del ratón."
+  },
+  {
+    "key": "ui.0378",
+    "fr": "Trait",
+    "en": "Stroke",
+    "es": "Trazo"
+  },
+  {
+    "key": "ui.0379",
+    "fr": "Couleur et épaisseur, indépendantes du viseur.",
+    "en": "Color and thickness, independent of the drawing cursor.",
+    "es": "Color y grosor independientes del cursor de dibujo."
+  },
+  {
+    "key": "ui.0380",
+    "fr": "Couleur du trait",
+    "en": "Stroke color",
+    "es": "Color del trazo"
+  },
+  {
+    "key": "ui.0381",
+    "fr": "Historique",
+    "en": "History",
+    "es": "Historial"
+  },
+  {
+    "key": "ui.0382",
+    "fr": "Annule, rétablis, efface ou exporte.",
+    "en": "Undo, redo, clear or export.",
+    "es": "Deshacer, rehacer, borrar o exportar."
+  },
+  {
+    "key": "ui.0383",
+    "fr": " traits",
+    "en": " strokes",
+    "es": " trazos"
+  },
+  {
+    "key": "ui.0384",
+    "fr": " trait",
+    "en": " stroke",
+    "es": " trazo"
+  },
+  {
+    "key": "ui.0385",
+    "fr": " rétablissable",
+    "en": " available to redo",
+    "es": " para rehacer"
+  },
+  {
+    "key": "ui.0386",
+    "fr": "Annuler",
+    "en": "Undo",
+    "es": "Deshacer"
+  },
+  {
+    "key": "ui.0387",
+    "fr": "Rétablir",
+    "en": "Redo",
+    "es": "Rehacer"
+  },
+  {
+    "key": "ui.0388",
+    "fr": "Tout effacer",
+    "en": "Clear all",
+    "es": "Borrar todo"
+  },
+  {
+    "key": "ui.0390",
+    "fr": "Restaurer le trait original",
+    "en": "Restore original stroke",
+    "es": "Restaurar el trazo original"
+  },
+  {
+    "key": "ui.0395",
+    "fr": "Intensité du lissage",
+    "en": "Smoothing strength",
+    "es": "Intensidad del suavizado"
+  },
+  {
+    "key": "ui.0396",
+    "fr": "50 % : lissage net conseillé · 100 % : très fort. Appliqué au relâchement du clic ; les formes reconnues gardent leurs angles.",
+    "en": "50%: recommended smoothing · 100%: very strong. Applied when the mouse is released; recognized shapes keep their corners.",
+    "es": "50 %: suavizado recomendado · 100 %: muy intenso. Se aplica al soltar el botón; las formas reconocidas conservan sus esquinas."
+  },
+  {
+    "key": "ui.0397",
+    "fr": "Viseur de dessin",
+    "en": "Drawing cursor",
+    "es": "Cursor de dibujo"
+  },
+  {
+    "key": "ui.0398",
+    "fr": "Le pointeur affiché pendant que tu dessines.",
+    "en": "The pointer displayed while you draw.",
+    "es": "El puntero que se muestra al dibujar."
+  },
+  {
+    "key": "ui.0399",
+    "fr": "Mixte",
+    "en": "Combined",
+    "es": "Mixto"
+  },
+  {
+    "key": "ui.0400",
+    "fr": "Point",
+    "en": "Dot",
+    "es": "Punto"
+  },
+  {
+    "key": "ui.0401",
+    "fr": "Lier au stylo",
+    "en": "Link to pen",
+    "es": "Vincular al lápiz"
+  },
+  {
+    "key": "ui.0402",
+    "fr": "Reprend la couleur du trait",
+    "en": "Use the stroke color",
+    "es": "Usar el color del trazo"
+  },
+  {
+    "key": "ui.0403",
+    "fr": "Couleur du viseur",
+    "en": "Cursor color",
+    "es": "Color del cursor"
+  },
+  {
+    "key": "ui.0404",
+    "fr": "Masquer pendant le tracé",
+    "en": "Hide while drawing",
+    "es": "Ocultar al dibujar"
+  },
+  {
+    "key": "ui.0405",
+    "fr": "Le viseur revient au relâchement",
+    "en": "The cursor returns when you release",
+    "es": "El cursor vuelve al soltar"
+  },
+  {
+    "key": "ui.0408",
+    "fr": "Autres outils",
+    "en": "Other tools",
+    "es": "Otras herramientas"
+  },
+  {
+    "key": "ui.0409",
+    "fr": "Même sélection pour suivant et précédent.",
+    "en": "The same selection for next and previous.",
+    "es": "La misma selección para avanzar y retroceder."
+  },
+  {
+    "key": "ui.0410",
+    "fr": "Inclure ",
+    "en": "Include ",
+    "es": "Incluir "
+  },
+  {
+    "key": "ui.0411",
+    "fr": " dans le défilement",
+    "en": " in the cycle",
+    "es": " en el recorrido"
+  },
+  {
+    "key": "ui.0412",
+    "fr": "Outil parcouru par les boutons suivant et précédent.",
+    "en": "Tool included in next/previous button cycling.",
+    "es": "Herramienta incluida al avanzar o retroceder con los botones."
+  },
+  {
+    "key": "ui.0416",
+    "fr": " outils dans le défilement",
+    "en": " tools in the cycle",
+    "es": " herramientas en el recorrido"
+  },
+  {
+    "key": "ui.0417",
+    "fr": " outil dans le défilement",
+    "en": " tool in the cycle",
+    "es": " herramienta en el recorrido"
+  },
+  {
+    "key": "ui.0418",
+    "fr": "Les boutons parcourent uniquement les outils activés, dans l'ordre affiché : colonne de gauche puis colonne de droite. Avec deux outils, ils alternent entre les deux.",
+    "en": "Buttons cycle only through enabled tools, in display order: left column, then right column. With two tools, they alternate between them.",
+    "es": "Los botones recorren solo las herramientas activadas, en el orden mostrado: columna izquierda y luego derecha. Con dos herramientas, alternan entre ellas."
+  },
+  {
+    "key": "ui.0419",
+    "fr": "Tous les outils restent accessibles dans l'onglet Dessiner. Le trait en cours conserve son outil ; le changement s'applique au suivant.",
+    "en": "All tools remain available on the Draw tab. The current stroke keeps its tool; the change applies to the next stroke.",
+    "es": "Todas las herramientas siguen disponibles en la pestaña Dibujar. El trazo actual conserva su herramienta; el cambio se aplica al siguiente."
+  },
+  {
+    "key": "ui.0421",
+    "fr": "Configurer les boutons souris",
+    "en": "Configure mouse buttons",
+    "es": "Configurar botones del ratón"
+  },
+  {
+    "key": "ui.0422",
+    "fr": "Affiche tes raccourcis pendant une démo.",
+    "en": "Show your shortcuts during a demo.",
+    "es": "Muestra tus atajos durante una demostración."
+  },
+  {
+    "key": "ui.0423",
+    "fr": "Afficher les raccourcis",
+    "en": "Show shortcuts",
+    "es": "Mostrar atajos"
+  },
+  {
+    "key": "ui.0424",
+    "fr": "Uniquement les combinaisons Ctrl / Alt / Win",
+    "en": "Only Ctrl / Alt / Win combinations",
+    "es": "Solo combinaciones Ctrl / Alt / Win"
+  },
+  {
+    "key": "ui.0425",
+    "fr": "Style des touches",
+    "en": "Key style",
+    "es": "Estilo de teclas"
+  },
+  {
+    "key": "ui.0426",
+    "fr": "Confidentialité : le texte tapé n'est jamais affiché, seulement les raccourcis.",
+    "en": "Privacy: typed text is never displayed, only shortcuts.",
+    "es": "Privacidad: nunca se muestra el texto escrito, solo los atajos."
+  },
+  {
+    "key": "ui.0427",
+    "fr": "Une loupe flottante à côté du pointeur.",
+    "en": "A floating magnifier next to the pointer.",
+    "es": "Una lupa flotante junto al puntero."
+  },
+  {
+    "key": "ui.0428",
+    "fr": "Loupe manuelle",
+    "en": "Manual magnifier",
+    "es": "Lupa manual"
+  },
+  {
+    "key": "ui.0429",
+    "fr": "Toujours visible près du pointeur",
+    "en": "Always visible near the pointer",
+    "es": "Siempre visible cerca del puntero"
+  },
+  {
+    "key": "ui.0430",
+    "fr": "Taille",
+    "en": "Size",
+    "es": "Tamaño"
+  },
+  {
+    "key": "ui.0431",
+    "fr": "Grossissement",
+    "en": "Magnification",
+    "es": "Aumento"
+  },
+  {
+    "key": "ui.0433",
+    "fr": "Zoom ponctuel au clic",
+    "en": "Temporary zoom on click",
+    "es": "Zoom temporal al hacer clic"
+  },
+  {
+    "key": "ui.0434",
+    "fr": "La loupe apparaît un instant à chaque clic",
+    "en": "The magnifier briefly appears with each click",
+    "es": "La lupa aparece brevemente con cada clic"
+  },
+  {
+    "key": "ui.0435",
+    "fr": "Attire l'attention sur l'application en cours.",
+    "en": "Draw attention to the current application.",
+    "es": "Dirige la atención a la aplicación actual."
+  },
+  {
+    "key": "ui.0436",
+    "fr": "Assombrir le reste du Bureau",
+    "en": "Dim the rest of the desktop",
+    "es": "Oscurecer el resto del escritorio"
+  },
+  {
+    "key": "ui.0437",
+    "fr": "Seule la fenêtre au premier plan reste claire",
+    "en": "Only the foreground window stays bright",
+    "es": "Solo la ventana activa permanece clara"
+  },
+  {
+    "key": "ui.0438",
+    "fr": "Secouer pour retrouver",
+    "en": "Shake to find",
+    "es": "Agitar para encontrar"
+  },
+  {
+    "key": "ui.0439",
+    "fr": "Agite la souris : le halo grossit un instant",
+    "en": "Shake the mouse to briefly enlarge the halo",
+    "es": "Agita el ratón para ampliar el halo un instante"
+  },
+  {
+    "key": "ui.0440",
+    "fr": "Raccourcis de présentation",
+    "en": "Presentation shortcuts",
+    "es": "Atajos de presentación"
+  },
+  {
+    "key": "ui.0441",
+    "fr": "Bascule chaque outil sans ouvrir le Studio.",
+    "en": "Toggle each tool without opening the Studio.",
+    "es": "Activa o desactiva cada herramienta sin abrir el Studio."
+  },
+  {
+    "key": "ui.0442",
+    "fr": "Zoom au clic",
+    "en": "Zoom on click",
+    "es": "Zoom al hacer clic"
+  },
+  {
+    "key": "ui.0443",
+    "fr": "Onde de clic manuelle",
+    "en": "Manual click ripple",
+    "es": "Onda de clic manual"
+  },
+  {
+    "key": "ui.0449",
+    "fr": "Apparence du Studio",
+    "en": "Studio appearance",
+    "es": "Apariencia del Studio"
+  },
+  {
+    "key": "ui.0450",
+    "fr": "Choisis l'ambiance de couleur de l'interface.",
+    "en": "Choose the interface color theme.",
+    "es": "Elige el tema de color de la interfaz."
+  },
+  {
+    "key": "ui.0451",
+    "fr": "Le thème change uniquement l'interface du Studio, pas les couleurs du halo ni des traînées.",
+    "en": "The theme changes only the Studio interface, not the colors of the halo or trails.",
+    "es": "El tema solo cambia la interfaz del Studio, no los colores del halo ni de las estelas."
+  },
+  {
+    "key": "ui.0452",
+    "fr": "Performance et démarrage",
+    "en": "Performance and startup",
+    "es": "Rendimiento e inicio"
+  },
+  {
+    "key": "ui.0453",
+    "fr": "Réglages locaux, aucune connexion externe.",
+    "en": "Local settings, no external connection.",
+    "es": "Ajustes locales, sin conexión externa."
+  },
+  {
+    "key": "ui.0454",
+    "fr": "Démarrage avec Windows",
+    "en": "Start with Windows",
+    "es": "Iniciar con Windows"
+  },
+  {
+    "key": "ui.0455",
+    "fr": "Lance Haloryva à la connexion",
+    "en": "Launch Haloryva when you sign in",
+    "es": "Iniciar Haloryva al iniciar sesión"
+  },
+  {
+    "key": "ui.0456",
+    "fr": "Mode fluide",
+    "en": "Smooth mode",
+    "es": "Modo fluido"
+  },
+  {
+    "key": "ui.0457",
+    "fr": "Effets allégés pour les PC modestes",
+    "en": "Lighter effects for less powerful PCs",
+    "es": "Efectos ligeros para equipos modestos"
+  },
+  {
+    "key": "ui.0458",
+    "fr": "Rafraîchissement cible",
+    "en": "Target frame rate",
+    "es": "Frecuencia de actualización"
+  },
+  {
+    "key": "ui.0459",
+    "fr": "ips",
+    "en": "fps",
+    "es": "fps"
+  },
+  {
+    "key": "ui.0463",
+    "fr": "Profil JSON|*.json",
+    "en": "JSON profile|*.json",
+    "es": "Perfil JSON|*.json"
+  },
+  {
+    "key": "ui.0465",
+    "fr": "Export impossible",
+    "en": "Export failed",
+    "es": "Error al exportar"
+  },
+  {
+    "key": "ui.0467",
+    "fr": "Import impossible",
+    "en": "Import failed",
+    "es": "Error al importar"
+  },
+  {
+    "key": "ui.0470",
+    "fr": "Réinitialiser tous les réglages et affectations ?",
+    "en": "Reset all settings and assignments?",
+    "es": "¿Restablecer todos los ajustes y asignaciones?"
+  },
+  {
+    "key": "ui.0471",
+    "fr": "Confirmer",
+    "en": "Confirm",
+    "es": "Confirmar"
+  },
+  {
+    "key": "ui.0472",
+    "fr": "À propos",
+    "en": "About",
+    "es": "Acerca de"
+  },
+  {
+    "key": "ui.0473",
+    "fr": "Haloryva Studio · Windows 64 bits",
+    "en": "Haloryva Studio · 64-bit Windows",
+    "es": "Haloryva Studio · Windows de 64 bits"
+  },
+  {
+    "key": "ui.0474",
+    "fr": "Copier les informations de version",
+    "en": "Copy version information",
+    "es": "Copiar información de versión"
+  },
+  {
+    "key": "ui.0475",
+    "fr": "\r\nSystème : ",
+    "en": "\r\nSystem: ",
+    "es": "\r\nSistema: "
+  },
+  {
+    "key": "ui.0477",
+    "fr": "Ctrl + 1 à 8 : changer de page · Échap : fermer le Studio (Haloryva reste actif près de l'horloge).",
+    "en": "Ctrl + 1 to 8: change page · Escape: close the Studio (Haloryva stays active near the clock).",
+    "es": "Ctrl + 1 a 8: cambiar de página · Esc: cerrar el Studio (Haloryva sigue activo junto al reloj)."
+  },
+  {
+    "key": "ui.0478",
+    "fr": " (hexadécimal)",
+    "en": " (hexadecimal)",
+    "es": " (hexadecimal)"
+  },
+  {
+    "key": "ui.0479",
+    "fr": "Effets en pause",
+    "en": "Effects paused",
+    "es": "Efectos en pausa"
+  },
+  {
+    "key": "ui.0480",
+    "fr": "TABLEAU DE BORD",
+    "en": "DASHBOARD",
+    "es": "PANEL GENERAL"
+  },
+  {
+    "key": "ui.0481",
+    "fr": "Molette",
+    "en": "Wheel",
+    "es": "Rueda"
+  },
+  {
+    "key": "ui.0482",
+    "fr": "Latéral X1",
+    "en": "Side X1",
+    "es": "Lateral X1"
+  },
+  {
+    "key": "ui.0483",
+    "fr": "Latéral X2",
+    "en": "Side X2",
+    "es": "Lateral X2"
+  },
+  {
+    "key": "ui.0484",
+    "fr": "Comportement Windows",
+    "en": "Windows behavior",
+    "es": "Comportamiento de Windows"
+  },
+  {
+    "key": "ui.0485",
+    "fr": "Appui long : ",
+    "en": "Long press: ",
+    "es": "Pulsación larga: "
+  },
+  {
+    "key": "ui.0486",
+    "fr": "En direct",
+    "en": "Live",
+    "es": "En directo"
+  },
+  {
+    "key": "ui.0487",
+    "fr": "Clic gauche / droit pour tester",
+    "en": "Left / right click to test",
+    "es": "Clic izquierdo / derecho para probar"
+  },
+  {
+    "key": "ui.0488",
+    "fr": "Survole pour piloter l'aperçu",
+    "en": "Move here to control the preview",
+    "es": "Mueve aquí el cursor para ver la vista previa"
+  },
+  {
+    "key": "ui.0489",
+    "fr": "Édite ton texte avec précision.",
+    "en": "Edit your text precisely.",
+    "es": "Edita tu texto con precisión."
+  },
+  {
+    "key": "ui.0490",
+    "fr": "Un curseur visible, partout.",
+    "en": "A visible pointer, everywhere.",
+    "es": "Un cursor visible en todas partes."
+  },
+  {
+    "key": "ui.0491",
+    "fr": "Le halo te suit en douceur et reste lisible",
+    "en": "The halo follows smoothly and stays visible",
+    "es": "El halo te sigue suavemente y permanece visible"
+  },
+  {
+    "key": "ui.0492",
+    "fr": "sur tous les fonds, clairs comme sombres.",
+    "en": "on every background, light or dark.",
+    "es": "sobre cualquier fondo, claro u oscuro."
+  },
+  {
+    "key": "ui.0493",
+    "fr": "Traînée désactivée",
+    "en": "Trail disabled",
+    "es": "Estela desactivada"
+  },
+  {
+    "key": "ui.0494",
+    "fr": "Animations de clic désactivées",
+    "en": "Click animations disabled",
+    "es": "Animaciones de clic desactivadas"
+  },
+  {
+    "key": "ui.0496",
+    "fr": "Une maintenance de Haloryva est en cours. Ferme son assistant avant de lancer l'application.",
+    "en": "Haloryva maintenance is in progress. Close the maintenance assistant before starting the application.",
+    "es": "Hay un mantenimiento de Haloryva en curso. Cierra el asistente antes de iniciar la aplicación."
+  },
+  {
+    "key": "ui.0497",
+    "fr": "Haloryva ou une ancienne application d'effets de curseur est déjà active. Ferme l'autre application avant de lancer Haloryva, depuis son icône près de l'horloge.",
+    "en": "Haloryva or another pointer-effects application is already running. Close the other application from its icon near the clock before starting Haloryva.",
+    "es": "Haloryva u otra aplicación de efectos del cursor ya está activa. Ciérrala desde su icono junto al reloj antes de iniciar Haloryva."
+  },
+  {
+    "key": "ui.0498",
+    "fr": "Session d'essai ou diagnostic refusé : ",
+    "en": "Test or diagnostic session refused: ",
+    "es": "Sesión de prueba o diagnóstico rechazada: "
+  },
+  {
+    "key": "ui.0500",
+    "fr": "par ",
+    "en": "by ",
+    "es": "por "
+  },
+  {
+    "key": "ui.0501",
+    "fr": "Roue chromatique. Flèches gauche droite : teinte. Haut bas : luminosité.",
+    "en": "Color wheel. Left/right arrows: hue. Up/down: brightness.",
+    "es": "Rueda de color. Flechas izquierda/derecha: tono. Arriba/abajo: luminosidad."
+  },
+  {
+    "key": "ui.0502",
+    "fr": "Teinte ",
+    "en": "Hue ",
+    "es": "Tono "
+  },
+  {
+    "key": "ui.0518",
+    "fr": "Haloryva · Annotation texte",
+    "en": "Haloryva · Text annotation",
+    "es": "Haloryva · Anotación de texto"
+  },
+  {
+    "key": "ui.0519",
+    "fr": "Ajouter au Bureau",
+    "en": "Add to desktop",
+    "es": "Añadir al escritorio"
+  },
+  {
+    "key": "ui.0520",
+    "fr": "Ajouter une annotation",
+    "en": "Add an annotation",
+    "es": "Añadir una anotación"
+  },
+  {
+    "key": "ui.0521",
+    "fr": "Le texte s'affiche à l'endroit cliqué. Entrée pour valider, Échap pour annuler.",
+    "en": "Text appears where you clicked. Enter to confirm, Escape to cancel.",
+    "es": "El texto aparece donde hiciste clic. Intro para confirmar, Esc para cancelar."
+  },
+  {
+    "key": "ui.0523",
+    "fr": "OUTIL DE DESSIN",
+    "en": "DRAWING TOOL",
+    "es": "HERRAMIENTA DE DIBUJO"
+  },
+  {
+    "key": "ui.0020",
+    "fr": " · build ",
+    "en": " · build ",
+    "es": " · compilación "
+  },
+  {
+    "key": "ui.0078",
+    "fr": "Logo",
+    "en": "Logo",
+    "es": "Logotipo"
+  },
+  {
+    "key": "ui.0080",
+    "fr": "Flash",
+    "en": "Flash",
+    "es": "Destello"
+  },
+  {
+    "key": "ui.0084",
+    "fr": "Minimal",
+    "en": "Minimal",
+    "es": "Minimalista"
+  },
+  {
+    "key": "ui.0476",
+    "fr": "\r\n.NET : ",
+    "en": "\r\n.NET: ",
+    "es": "\r\n.NET: "
+  },
+  {
+    "key": "history.preview6",
+    "fr": "Préversion : nom d’outil lisible, indicateur adapté aux outils choisis et pluriels corrigés",
+    "en": "Preview: readable tool names, indicator matching selected tools and corrected plurals",
+    "es": "Versión preliminar: nombres de herramientas legibles, indicador adaptado a la selección y plurales corregidos"
+  },
+  {
+    "key": "language.card",
+    "fr": "Langue de l'application",
+    "en": "Application language",
+    "es": "Idioma de la aplicación"
+  },
+  {
+    "key": "language.helper",
+    "fr": "Français, anglais ou espagnol. Application au prochain lancement.",
+    "en": "French, English or Spanish. Applied the next time you start the app.",
+    "es": "Francés, inglés o español. Se aplica al volver a iniciar la aplicación."
+  },
+  {
+    "key": "drawing.redoCount",
+    "fr": "{0} à rétablir",
+    "en": "{0} available to redo",
+    "es": "{0} para rehacer"
+  },
+  {
+    "key": "text.cancel",
+    "fr": "Annuler la saisie",
+    "en": "Cancel",
+    "es": "Cancelar"
+  },
+  {
+    "key": "text.input",
+    "fr": "Texte de l'annotation",
+    "en": "Annotation text",
+    "es": "Texto de la anotación"
+  },
+  {
+    "key": "dialog.cancel",
+    "fr": "Annuler",
+    "en": "Cancel",
+    "es": "Cancelar"
+  },
+  {
+    "key": "msix8.0",
+    "fr": "Préversion : démarrage MSIX et reprise indépendante des réglages",
+    "en": "Preview: MSIX startup and independent settings migration",
+    "es": "Vista previa: inicio MSIX y migración independiente de ajustes"
+  },
+  {
+    "key": "msix8.1",
+    "fr": "Vérification du démarrage…",
+    "en": "Checking startup…",
+    "es": "Comprobando el inicio…"
+  },
+  {
+    "key": "msix8.2",
+    "fr": "Démarrage désactivé dans Windows.",
+    "en": "Startup is disabled in Windows.",
+    "es": "El inicio está desactivado en Windows."
+  },
+  {
+    "key": "msix8.3",
+    "fr": "Ce réglage est géré par Windows.",
+    "en": "This setting is managed by Windows.",
+    "es": "Windows administra este ajuste."
+  },
+  {
+    "key": "msix8.4",
+    "fr": "État du démarrage indisponible.",
+    "en": "Startup status is unavailable.",
+    "es": "El estado del inicio no está disponible."
+  },
+  {
+    "key": "msix8.5",
+    "fr": "Une entrée de démarrage classique existe. Vérifie que l'ancien démarrage est désactivé avant d'activer celui du Store. Continuer ?",
+    "en": "A desktop startup entry exists. Check that the previous startup entry is disabled before enabling the Store version. Continue?",
+    "es": "Existe una entrada de inicio de la versión clásica. Comprueba que esté desactivada antes de activar la versión de la Store. ¿Continuar?"
+  },
+  {
+    "key": "msix8.6",
+    "fr": "Reprendre mes réglages 2.7.0",
+    "en": "Import my 2.7.0 settings",
+    "es": "Importar mis ajustes de 2.7.0"
+  },
+  {
+    "key": "msix8.7",
+    "fr": "Les réglages actuels seront sauvegardés avant leur remplacement.",
+    "en": "Your current settings will be backed up before replacement.",
+    "es": "Se guardará una copia de los ajustes actuales antes de sustituirlos."
+  },
+  {
+    "key": "msix8.8",
+    "fr": "Copier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés.",
+    "en": "Copy the 2.7.0 settings and readable custom PNG/WAV files (up to 10 MiB each)? The previous installation and its startup settings will remain unchanged.",
+    "es": "¿Copiar los ajustes de 2.7.0 y los archivos PNG/WAV personalizados legibles (máximo 10 MiB por archivo)? La instalación anterior y su inicio no cambiarán."
+  },
+  {
+    "key": "msix8.9",
+    "fr": "Certains fichiers personnalisés ne peuvent pas être copiés. Garder leurs références externes et continuer ?",
+    "en": "Some custom files cannot be copied. Keep their external references and continue?",
+    "es": "No se pueden copiar algunos archivos personalizados. ¿Conservar las referencias externas y continuar?"
+  },
+  {
+    "key": "msix8.10",
+    "fr": "Réglages copiés ; l'ancienne installation est conservée.",
+    "en": "Settings copied; the previous installation is unchanged.",
+    "es": "Ajustes copiados; se conserva la instalación anterior."
+  },
+  {
+    "key": "msix8.11",
+    "fr": "Le démarrage automatique se règle séparément.",
+    "en": "Automatic startup is configured separately.",
+    "es": "El inicio automático se configura por separado."
+  },
+  {
+    "key": "msix8.12",
+    "fr": "Fichier local requis.",
+    "en": "A local file is required.",
+    "es": "Se necesita un archivo local."
+  },
+  {
+    "key": "msix8.13",
+    "fr": "Chemin de fichier indirect refusé.",
+    "en": "Indirect file paths are not supported for this import.",
+    "es": "No se admiten rutas indirectas para esta importación."
+  },
+  {
+    "key": "msix8.14",
+    "fr": "Le fichier trouvé ne correspond pas au profil attendu.",
+    "en": "The file does not match the expected profile location.",
+    "es": "El archivo no corresponde a la ubicación de perfil esperada."
+  },
+  {
+    "key": "msix8.15",
+    "fr": "Le fichier est trop volumineux.",
+    "en": "The file is too large.",
+    "es": "El archivo es demasiado grande."
+  },
+  {
+    "key": "msix8.16",
+    "fr": "Aucun profil valide à reprendre.",
+    "en": "No valid profile is available to import.",
+    "es": "No hay ningún perfil válido para importar."
+  },
+  {
+    "key": "msix8.17",
+    "fr": "La source doit rester indépendante.",
+    "en": "The source must remain independent.",
+    "es": "El origen debe permanecer independiente."
+  },
+  {
+    "key": "msix8.18",
+    "fr": "Des réglages existent déjà.",
+    "en": "Settings already exist.",
+    "es": "Ya existen ajustes."
+  },
+  {
+    "key": "msix8.19",
+    "fr": "Les réglages ont changé. Réessaie l'import.",
+    "en": "Settings have changed. Try the import again.",
+    "es": "Los ajustes han cambiado. Repite la importación."
+  }
+]
