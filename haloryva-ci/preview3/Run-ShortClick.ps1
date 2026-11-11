@@ -25,7 +25,7 @@ try {
     [IO.File]::WriteAllLines($rsp,$compilerArgs,(New-Object Text.UTF8Encoding($true)))
     & $compiler ('@'+$rsp) 2>&1 | Out-File (Join-Path $out 'compile.log')
     if($LASTEXITCODE -ne 0) { throw 'Test driver compilation failed.' }
-    $child=Start-Process -FilePath (Join-Path $out 'Recipe.exe') -ArgumentList ('short-click '+$run+' '+$Observer) -PassThru -WindowStyle Hidden
+    $child=Start-Process -FilePath (Join-Path $out 'Recipe.exe') -ArgumentList ('short-click '+$run+' '+$Observer+' --silent') -PassThru -WindowStyle Hidden
     if(!$child.WaitForExit(90000)) { $child.Kill(); throw 'Targeted driver timed out: NOT validated.' }
     if($child.ExitCode -ne 0) { throw "Targeted driver failed with exit code $($child.ExitCode)." }
     if((Get-FileHash -LiteralPath (Join-Path $out 'Haloryva.exe')).Hash -ne $expected) { throw 'Tested binary changed.' }

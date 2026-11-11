@@ -31,6 +31,8 @@ internal static class Recipe
     [DllImport("user32.dll")] static extern short GetAsyncKeyState(int key);
     delegate bool EnumWindow(IntPtr hwnd,IntPtr param);
     [DllImport("user32.dll")] static extern bool EnumChildWindows(IntPtr hwnd,EnumWindow callback,IntPtr param);
+    [DllImport("user32.dll")] static extern bool EnumWindows(EnumWindow callback,IntPtr param);
+    [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr window);
     [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern int GetWindowText(IntPtr hwnd,StringBuilder text,int size);
     [DllImport("user32.dll")] static extern bool SetProcessDPIAware();
     [DllImport("user32.dll", SetLastError=true)] static extern uint SendInput(uint count, INPUT[] values, int size);
@@ -52,6 +54,26 @@ internal static class Recipe
     static void Set(object obj,string name,object value) { obj.GetType().GetField(name,Flags).SetValue(obj,value); }
     static object Call(object obj,string name,params object[] args) { return obj.GetType().GetMethod(name,Flags).Invoke(obj,args); }
     static object Static(string type,string name,params object[] args) { return app.GetType("CursorFlow."+type).GetMethod(name,Flags).Invoke(null,args); }
+    static IntPtr FindTargetWindow()
+    {
+        IntPtr found=IntPtr.Zero;
+        EnumWindows(delegate(IntPtr hwnd,IntPtr unused) {
+            uint pid; GetWindowThreadProcessId(hwnd,out pid);
+            if(pid!=(uint)target.Id || !IsWindowVisible(hwnd)) return true;
+            var title=new StringBuilder(256); GetWindowText(hwnd,title,title.Capacity);
+            if(title.ToString()=="Haloryva — cible de recette automatique") { found=hwnd; return false; }
+            return true;
+        },IntPtr.Zero);
+        return found;
+    }
+    static void FocusState(string label)
+    {
+        IntPtr foreground=GetForegroundWindow(); uint owner;
+        GetWindowThreadProcessId(foreground,out owner);
+        var title=new StringBuilder(256); GetWindowText(foreground,title,title.Capacity);
+        Write("FOCUS "+label+" targetHwnd="+targetWindow.ToInt64().ToString("X")+" targetPid="+(target==null?0:target.Id)+
+            " foregroundHwnd="+foreground.ToInt64().ToString("X")+" foregroundPid="+owner+" title="+title);
+    }
     static void FocusGuard() { if(target==null || target.HasExited || GetForegroundWindow()!=targetWindow) throw new Exception("ABORT: test target lost foreground; no further inputs."); }
     static void Input(INPUT input) { FocusGuard(); if(SendInput(1,new[]{input},Marshal.SizeOf(typeof(INPUT)))!=1) throw new Exception("SendInput refused: "+Marshal.GetLastWin32Error()); }
     static void Mouse(uint flags,uint data=0) { Input(new INPUT {data=new UNION {mouse=new MOUSE {flags=flags,data=data}}}); heldMouse=(flags==2||flags==8||flags==32||flags==128)?flags*2:0; heldData=data; }
@@ -128,10 +150,17 @@ internal static class Recipe
         object hooks=Get(controller,"hooks");
         Check((bool)Get(hooks,"Installed"),"Real hooks installed");
         target=Process.Start(new ProcessStartInfo(Application.ExecutablePath,"target \""+Path.Combine(folder,"target-trace.log")+"\" "+(observe?"on":"off")){UseShellExecute=false});
-        for(int n=0;n<40 && target.MainWindowHandle==IntPtr.Zero;n++) { await Task.Delay(100); target.Refresh(); }
-        targetWindow=target.MainWindowHandle;
-        SetForegroundWindow(targetWindow);
-        for(int n=0;n<150 && GetForegroundWindow()!=targetWindow;n++) await Task.Delay(100);
+        // MainWindowHandle may identify the child's console on ARM emulation.
+        // Select our visible WinForms target by its owning PID and exact title instead.
+        for(int n=0;n<100 && targetWindow==IntPtr.Zero;n++) { await Task.Delay(100); targetWindow=FindTargetWindow(); }
+        if(targetWindow==IntPtr.Zero) throw new Exception("Target WinForms window not found; no input generated.");
+        FocusState("before-acquisition");
+        for(int n=0;n<75 && GetForegroundWindow()!=targetWindow;n++) {
+            SetForegroundWindow(targetWindow); PostMessage(targetWindow,0x8002,IntPtr.Zero,IntPtr.Zero);
+            await Task.Delay(200);
+        }
+        await Task.Delay(300);
+        FocusState("ready-check");
         FocusGuard();
         Check(Query(9)==13579,"Target responds");
         Check(Query(8)==(observe?1:0),"Requested observer state confirmed");
@@ -212,7 +241,7 @@ internal static class Recipe
         }
         protected override void OnShown(EventArgs e) {
             if(observerEnabled) { observerProc=Observe; observer=SetWindowsHookEx(14,observerProc,GetModuleHandle(null),0); }
-            Trace("OBSERVER requested="+observerEnabled+" installed="+(observer!=IntPtr.Zero));
+            Trace("OBSERVER requested="+observerEnabled+" installed="+(observer!=IntPtr.Zero)+" targetHwnd="+Handle.ToInt64().ToString("X"));
             base.OnShown(e);
         }
         protected override void OnFormClosed(FormClosedEventArgs e) {
@@ -222,6 +251,7 @@ internal static class Recipe
         public Target(string tracePath,bool enabled) { observerEnabled=enabled; if(tracePath!=null) trace=new StreamWriter(tracePath,false,Encoding.UTF8); Text="Haloryva — cible de recette automatique"; StartPosition=FormStartPosition.Manual; Location=new Point(160,160); ClientSize=new Size(700,450); BackColor=Color.WhiteSmoke; Shown+=delegate { Activate(); }; }
         protected override void WndProc(ref Message m) {
             int msg=m.Msg;
+            if(msg==0x8002) { Activate(); m.Result=IntPtr.Zero; return; }
             if(msg==0x8001) { int q=(int)m.WParam; m.Result=(IntPtr)(q==9?13579:q==8?(observer!=IntPtr.Zero?1:0):q==7?unpaired:q==0?downs:q==1?ups:q==2?chars:last); return; }
             if(msg==0x201 || msg==0x204 || msg==0x207 || msg==0x20b || msg==0x203 || msg==0x206 || msg==0x209 || msg==0x20d) downs++;
             if(msg==0x202 || msg==0x205 || msg==0x208 || msg==0x20c) ups++;
