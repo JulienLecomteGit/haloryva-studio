@@ -14,6 +14,7 @@ $contracts=@(Get-ChildItem -LiteralPath $contractRoot -Filter '*.winmd' -Recurse
 if(!$contracts.Count) { throw 'Installed SDK contracts missing' }
 $refs=@($winmd.FullName,$bridge)+$contracts+@(Get-ChildItem -LiteralPath $facades -Filter '*.dll' | ForEach-Object FullName)
 $code=@'
+using System;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.Storage;

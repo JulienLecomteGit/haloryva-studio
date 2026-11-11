@@ -1,0 +1,23 @@
+name: Haloryva preview.8 MSIX integration build
+on:
+  push:
+    branches: ['haloryva-tests-preview8']
+    paths: ['haloryva-ci/preview8/src/**', 'haloryva-ci/preview8/assets/**', 'haloryva-ci/preview8/languages/**', 'haloryva-ci/preview8/Build-Preview8.ps1', 'haloryva-ci/preview8/source-origin.json', '.github/workflows/haloryva-preview8-build.yml']
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2025
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build isolated targeted preview
+        shell: powershell
+        run: ./haloryva-ci/preview8/Build-Preview8.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Haloryva-2.7.1-preview.8-build
+          path: ${{ runner.temp }}/haloryva-preview8-build/
+          retention-days: 30
+          if-no-files-found: error
