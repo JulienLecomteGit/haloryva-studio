@@ -469,7 +469,7 @@ internal static class Recipe
                 for(int tool=0;tool<10;tool++)
                 {
                     Rectangle titleArea=new Rectangle(10,10,(int)Math.Round(218*scale),(int)Math.Round(34*scale));
-                    Font font=(Font)Static("PremiumPalette","Font",19.5f*scale,2);
+                    Font font=(Font)app.GetType("CursorFlow.PremiumPalette").GetMethod("Font",Flags,null,new[]{typeof(float),typeof(int)},null).Invoke(null,new object[]{19.5f*scale,2});
                     using(var titleImage=new Bitmap(titleArea.Right+10,titleArea.Bottom+10))
                     using(var g=Graphics.FromImage(titleImage))
                     {
