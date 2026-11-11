@@ -1,4 +1,4 @@
-param([switch]$BuildAndCheckExtraction)
+﻿param([switch]$BuildAndCheckExtraction)
 $ErrorActionPreference='Stop'
 if(!$BuildAndCheckExtraction){throw 'Explicit installer build and extraction authorization required'}
 if($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_ENVIRONMENT -ne 'github-hosted' -or !$env:RUNNER_TEMP){throw 'GitHub-hosted only. Never run on the principal PC.'}
