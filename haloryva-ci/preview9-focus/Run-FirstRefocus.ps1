@@ -5,10 +5,10 @@ $out=Join-Path $env:RUNNER_TEMP ('preview9-live-focus-'+$TraceMode)
 if(Test-Path -LiteralPath $out){throw 'Fresh output required'}
 New-Item -ItemType Directory -Path $out|Out-Null
 $name='HaloryvaStudio.MsixLifecycleTest'
-$expected='5A7CF59D6C4638F68474EBCCC9D4FDCEC610638D0EBCD612B2B5828B7411EE87'
+$expected='B19528E2C077AA52B5BE5D293853E142ECD243DE39F1A87176A14A1A9DCF91D8'
 $package=Join-Path $env:RUNNER_TEMP 'haloryva-preview9-msix/Haloryva-test-2.7.1.90.msix'
 $packageProof=Get-Content -LiteralPath (Join-Path $env:RUNNER_TEMP 'haloryva-preview9-msix/package-provenance.json') -Raw|ConvertFrom-Json
-if((Get-FileHash -LiteralPath $package).Hash -cne $packageProof.PackageSHA256 -or $packageProof.ExecutableSHA256 -cne $expected -or $packageProof.BuildCommit -cne '0175bc2fbb1e8b77a099e10d59818580715fa67c'){throw 'Frozen preview.9 package mismatch'}
+if((Get-FileHash -LiteralPath $package).Hash -cne $packageProof.PackageSHA256 -or $packageProof.ExecutableSHA256 -cne $expected -or $packageProof.BuildCommit -cne '4ed3f2ad13594bba2a5425db564cfaf3ff1c5521'){throw 'Frozen preview.9 package mismatch'}
 $script:launchArguments=if($TraceMode -eq 'on'){'--startup-refresh-trace'}else{''}
 $registered=$null;$child=$null
 $report=[ordered]@{Version='2.7.1-preview.9';Status='started';ExecutableSHA256=$expected;PackageSHA256=(Get-FileHash -LiteralPath $package).Hash;Actual270Installed=$false;FixturesOnly=$true;Scope='Preview.9 first live refocus only';TraceMode=$TraceMode;RealLogonExecuted=$false;ApplicationRelaunched=$false;ActivationMessagesInjected=$false;RegistryWrittenByDriver=$false;Rebuilt=$false;Signed=$false;ReleasePublished=$false;Historical195Executed=$false;AcquiredSuitesRerun=$false;Checks=@();Dialogs=@()}
@@ -109,6 +109,7 @@ try {
  Assert ([RootFocus]::Confirm($settingsHandle) -and ![RootFocus]::Confirm($studio) -and [SettingsUi]::State($found) -eq 'Off' -and (Read-State) -eq 1) 'real-disabled-by-user-while-studio-in-background'
  [SettingsUi]::Dump($settingsRoot)|Set-Content -LiteralPath (Join-Path $out 'windows-before-refocus.txt') -Encoding UTF8
  # Keep Windows Settings open. Require foreground HWND and actual GUI active HWND.
+ $report.FirstReturnStartedUTC=[DateTime]::UtcNow.ToString('o')
  $focused=$false
  for($i=0;$i -lt 20;$i++){
   try{[SettingsUi]::Focus($studio)}catch{}
@@ -141,7 +142,9 @@ try {
  if($TraceMode -eq 'on'){
   if(!(Test-Path -LiteralPath $traceFile)){throw 'Requested diagnostic trace missing'}
   $trace=Get-Content -LiteralPath $traceFile -Raw -Encoding UTF8
-  Assert ($trace -match 'read_publish\t\d+\t1') 'trace-confirms-real-disabled-by-user-read'
+  $afterReturn=@((Get-Content -LiteralPath $traceFile -Encoding UTF8)|Where-Object {([DateTime]($_ -split '\t')[0]).ToUniversalTime() -ge ([DateTime]$report.FirstReturnStartedUTC).ToUniversalTime()})
+  Assert (($afterReturn -match '\tnative_foreground\t').Count -gt 0) 'native-foreground-event-observed-on-first-return'
+  Assert (($afterReturn -match '\tread_publish\t\d+\t1').Count -gt 0) 'trace-confirms-real-disabled-by-user-read'
   Start-Sleep -Milliseconds 3200
   $stableTrace=(Get-FileHash -LiteralPath $traceFile).Hash
   Start-Sleep -Milliseconds 1100
@@ -166,6 +169,10 @@ finally{
   if(Test-Path -LiteralPath $data){Copy-Item -LiteralPath $data -Destination (Join-Path $out 'synthetic-msix-data') -Recurse}
   if(!$child){try{Remove-AppxPackage -Package $registered.PackageFullName -ErrorAction Stop;$report.TestPackageRemoved=$true}catch{$report.CleanupError=$_.ToString()}}
  }
+ $savedLogs=Join-Path $out 'synthetic-msix-data/Logs'
+ $savedTrace=Join-Path $savedLogs 'startup-refresh-recipe.tsv'
+ if(Test-Path -LiteralPath $savedTrace){$report['SavedTrace']=Get-Content -LiteralPath $savedTrace -Raw -Encoding UTF8}
+ if(Test-Path -LiteralPath $savedLogs){$report['SavedLogNames']=@(Get-ChildItem -LiteralPath $savedLogs -File|Select-Object -ExpandProperty Name)}
  $report|ConvertTo-Json -Depth 10|Set-Content -LiteralPath (Join-Path $out 'result.json') -Encoding UTF8
  $report|ConvertTo-Json -Depth 10|Write-Output
  Get-ChildItem -LiteralPath $out -Filter '*tree.txt'|ForEach-Object {Get-Content -LiteralPath $_.FullName}

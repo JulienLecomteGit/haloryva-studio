@@ -7,7 +7,34 @@ permissions:
   contents: read
   actions: read
 jobs:
+  package:
+    runs-on: windows-2025
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.9-build
+          run-id: 43032731854
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview9-build/
+      - uses: actions/download-artifact@v4
+        with:
+          name: preview8-startup-ui-evidence
+          run-id: 43017325667
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/preview8-frozen/
+      - name: Package frozen preview.9 with preserved test manifest
+        shell: powershell
+        run: ./haloryva-ci/preview9-focus/Package-Preview9.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Haloryva-preview9-msix-test
+          path: ${{ runner.temp }}/haloryva-preview9-msix/
+          retention-days: 30
   first-refocus:
+    needs: package
     runs-on: windows-11-arm
     timeout-minutes: 10
     strategy:
@@ -20,8 +47,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: Haloryva-preview9-msix-test
-          run-id: 43030441632
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           path: ${{ runner.temp }}/haloryva-preview9-msix/
       - name: First confirmed refocus on the frozen binary
         shell: powershell
