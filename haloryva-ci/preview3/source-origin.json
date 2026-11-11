@@ -1,0 +1,187 @@
+{
+  "Origin": "Read-only snapshot of Haloryva-2.7.1-travail sources used for preview.2; only GlobalHooks.cs and Brand.cs intentionally changed for preview.3",
+  "Date": "2026-11-11",
+  "OriginalPreview2SHA256": "F655930368239905C2DAED1948C22ECC9E7256782C4EC2454E539780C0BD0D2E",
+  "Files": [
+    {
+      "path": "src/Annotations.cs",
+      "gitSha": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66",
+      "sha256": "E240BFF4AEA4F7AB0B11B2250F5FC8A8F5F6C489555B18FCBD6C76C080CC8496",
+      "size": 5759
+    },
+    {
+      "path": "src/Brand.cs",
+      "gitSha": "eb48f066c6e372d378cac36f5411dda69cd86575",
+      "sha256": "B6F740C69B8B70AA627328F417D781B445AF2270D470064BBB1C166881A75127",
+      "size": 7135
+    },
+    {
+      "path": "src/ColorWheelPopup.cs",
+      "gitSha": "310f0c43aaceebd6930974845d5aa17957ea05ba",
+      "sha256": "4C61BC0C618E504D6609A823351EB751D3197FC3DEDDEDDAACF568FCB9FC1D3C",
+      "size": 10727
+    },
+    {
+      "path": "src/Config.cs",
+      "gitSha": "5c9e80b9967576edf669ac11dc87077c7d1936c6",
+      "sha256": "359387B961DAC7A40B72EDC8FC3DB1B6FE467A28679BBCB8CA2D8C682CD66273",
+      "size": 17568
+    },
+    {
+      "path": "src/Controller.cs",
+      "gitSha": "5cba720469d42a067fc24da297ea967ea685ae85",
+      "sha256": "EDCEADC4F0D8D6CCEACCFE8418C1319FCCA30B4A6984054141D1592B05C2FA6D",
+      "size": 46071
+    },
+    {
+      "path": "src/DrawingGeometry.cs",
+      "gitSha": "152be1f87728b7d71cfee264b1ff98de96409b16",
+      "sha256": "CE400617A316A70F1B14BCDE3CA8C1387344E28D1E624E42E4AA3C54C88FE25D",
+      "size": 18998
+    },
+    {
+      "path": "src/EffectDiagnostics.cs",
+      "gitSha": "de19fc05fdf4425a3b0b61c505a56bd12488fd82",
+      "sha256": "797271B20687A605C985627DF782D16DABFB7228A516616A361C7329D18CA7B4",
+      "size": 7115
+    },
+    {
+      "path": "src/ErrorReporting.cs",
+      "gitSha": "252c1a666c73378fa3256364802749f29af31565",
+      "sha256": "046E5FAF483912B6B51B2B028A1DE22E1E77EB8E06137109CF39F9504C4F544A",
+      "size": 3978
+    },
+    {
+      "path": "src/FrameBounds.cs",
+      "gitSha": "8c7c04fa382b310d8333f9688e499cd73bcc8602",
+      "sha256": "D083BF4AA6E8B41BA9BD4D389163E722463A84747B2251CAD77B56223235745A",
+      "size": 1613
+    },
+    {
+      "path": "src/FramePump.cs",
+      "gitSha": "935ff42e4081a91a2d85a7f771d1bc6f3538e942",
+      "sha256": "2B42058033BED569A06871680C5F3D3EED96D3844F77861169FAC5D0B0F3A97E",
+      "size": 6196
+    },
+    {
+      "path": "src/GlobalHooks.cs",
+      "gitSha": "bf2c455c89db126fcb3fd9559af0f07216b6cecc",
+      "sha256": "C8FBB6560FBB51BDB1FCBB3847284A5BD2871E885BA5C3BDE56275C0DB67A01E",
+      "size": 9762
+    },
+    {
+      "path": "src/InputPipeline.cs",
+      "gitSha": "c201a63dd9dfde8d402785dd9404edcc45c19287",
+      "sha256": "BAD968C9749AD19324762560E9C03E16AEC5AC6602481C0A1D77389EE127A7B9",
+      "size": 13772
+    },
+    {
+      "path": "src/InputState.cs",
+      "gitSha": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f",
+      "sha256": "BCE38EF4E48F8DA7BC588F4AC7391A9CB73AFDA67A243FE634ED398551BF4E22",
+      "size": 6189
+    },
+    {
+      "path": "src/KeyboardPolicy.cs",
+      "gitSha": "9d0b136a80cadb131385aef683fa7a3096ceb882",
+      "sha256": "DC7542E144032506440AA0D4856791DC624C3F67DA30F711C9B73A3B5E3ABFE2",
+      "size": 1503
+    },
+    {
+      "path": "src/PremiumStudioForm.cs",
+      "gitSha": "3633dd7e2d5c66627be67e572fe8ee1020f6f7af",
+      "sha256": "D491D0B7EC332D60FB3903FB16B349206FDCEB2C765B68D11C03DD51BA2C15BE",
+      "size": 83708
+    },
+    {
+      "path": "src/PremiumWidgets.cs",
+      "gitSha": "5907e96a3e90cb57b1dd721da8b9ec2a18105e43",
+      "sha256": "AA87BC1F27C060B11FFB431F8B0F8177B83918C1957CAD1FEC363A84402F97B0",
+      "size": 109088
+    },
+    {
+      "path": "src/Program.cs",
+      "gitSha": "e7851e7672ddb5411d90b5ed2b1bccf2d8410ef1",
+      "sha256": "CFF5BC9CDBAF622AF8614918B6A4674142F7736EE352551F8489809A30CD78AB",
+      "size": 3247
+    },
+    {
+      "path": "src/SelfTest.cs",
+      "gitSha": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf",
+      "sha256": "E1A6656666103765E18A08A47528E2A17C8FF4D83469AFEC4A15486EC6D7D711",
+      "size": 15050
+    },
+    {
+      "path": "src/Splash.cs",
+      "gitSha": "321a6a3e689426f2480d0d5ba7135d03240d9a7a",
+      "sha256": "C319281F03727874684BDDDD6B6C69CB95A73918575285545D1D9DB6194B9D2E",
+      "size": 9324
+    },
+    {
+      "path": "src/StudioControls.cs",
+      "gitSha": "cce7c20c38020c7c9287f734fbbf29c3c0afda19",
+      "sha256": "CFB302E46D30FC475E21DB6951F42CE3349076CB149486CEBCF24CFDBBADC947",
+      "size": 9351
+    },
+    {
+      "path": "src/StudioTheme.cs",
+      "gitSha": "4b7c5e76700644f5ac376ab0dc7fdc8ce90f04d0",
+      "sha256": "028A58F9E46D26A3D502E1A41DB035D66E1548457551322FE232951AAFA12AE1",
+      "size": 29076
+    },
+    {
+      "path": "src/TextPrompt.cs",
+      "gitSha": "0b0147cea970202e225f749c533c9febb911d3ad",
+      "sha256": "3F322DC2A9DBB1ACBCE05FEF52741F4580C0805D36B52E0AD792C18CCECD3A30",
+      "size": 4467
+    },
+    {
+      "path": "src/ToolToast.cs",
+      "gitSha": "58252968c512a0d8aa67017046a6d8809b857fe7",
+      "sha256": "69DBA3E4F85AAC44DFE48DA6C20D6C0F9ED36AA85A733725CF37E06E685273C8",
+      "size": 19837
+    },
+    {
+      "path": "src/TrailDiagnostics.cs",
+      "gitSha": "240b7ed0c4152d62e72889de3f5d77d8bd3198c3",
+      "sha256": "D6ACA66BEBFE56DA247E9EAB22DBB11BE5C11FAB81F577515833E70C49B36470",
+      "size": 7903
+    },
+    {
+      "path": "src/TrailEngine.cs",
+      "gitSha": "ac1a37037c3052097cfb05f1ac2575fde01f905a",
+      "sha256": "00A237B0762B40B50DC51AFFA4F9DDF5F0A3025291BDC50C9FF8FFCAA86E677B",
+      "size": 11001
+    },
+    {
+      "path": "src/TrailSelfTest.cs",
+      "gitSha": "b58ad2f7ec84a03ce529806c784ca505ac605365",
+      "sha256": "A24848CBF1FBF086779950913734CE2D3F3DAA3BD496309E982BAB0CDDFC58A0",
+      "size": 10772
+    },
+    {
+      "path": "src/Visuals.cs",
+      "gitSha": "deb1961f3ee9d695af554dc1efb8e860679ca0aa",
+      "sha256": "AE04DEFD8755D4FEABA09A55F7A31EFF5390EFC5FEC033F1B4B4C47028FEE401",
+      "size": 47150
+    },
+    {
+      "path": "src/WinNative.cs",
+      "gitSha": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46",
+      "sha256": "78CD836411C3CD71858387D93C617BD7B82824A7A453BDF2DA670BAF09E6E1F2",
+      "size": 10827
+    },
+    {
+      "path": "assets/app.manifest",
+      "gitSha": "efe344ab5adb62649ed61625ba63d3ebe311cede",
+      "sha256": "7977EF6C649A2F60B1D79C923CF453B405B378E55A77CC65DDB705E101870E91",
+      "size": 648
+    },
+    {
+      "path": "assets/Haloryva.ico",
+      "gitSha": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec",
+      "sha256": "7B0DAA920CD5CFDADEBF530ABD69AA301ABF2069847D3E5F691E707D9CEF100C",
+      "size": 61099
+    }
+  ]
+}

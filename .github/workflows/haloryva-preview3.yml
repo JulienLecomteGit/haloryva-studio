@@ -1,0 +1,45 @@
+name: Haloryva preview.3 targeted short-click
+on:
+  push:
+    branches: ['haloryva-tests-preview3']
+    paths: ['haloryva-ci/preview3/**', '.github/workflows/haloryva-preview3.yml']
+permissions:
+  contents: read
+jobs:
+  build-preview3:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build separate preview.3 only - no legacy tests
+        shell: powershell
+        run: ./haloryva-ci/preview3/Build-Preview3.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.3-build
+          path: ${{ runner.temp }}/haloryva-preview3-build/
+          retention-days: 14
+  short-click:
+    needs: build-preview3
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2025, windows-11-arm]
+        observer: ['off', 'on']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.3-build
+          path: ${{ runner.temp }}/haloryva-preview3-build/
+      - name: Targeted short-click and adjacent long-action controls
+        shell: powershell
+        run: ./haloryva-ci/preview3/Run-ShortClick.ps1 -Observer '${{ matrix.observer }}'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview3-${{ matrix.os }}-observer-${{ matrix.observer }}-evidence
+          path: ${{ runner.temp }}/haloryva-preview3-${{ matrix.observer }}/
+          retention-days: 14
