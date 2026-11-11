@@ -1,0 +1,119 @@
+HALORYVA STUDIO 2.7.1 — INSTALLATION ET DESINSTALLATION FINALES
+11 novembre 2026 — installateur exact du run 43088395238
+
+RESULTAT
+Cycle réel d’installation puis de désinstallation réussi sur Windows GitHub isolé.
+28/28 vérifications, dont 5 préalables sur l’environnement, les fichiers et le pilote.
+13/13 réglages conservés après installation et après désinstallation.
+Les 3 fichiers de profil sont identiques à l’octet près entre la fin d’installation
+et la fin de désinstallation.
+Une seule exécution de Haloryva : --selftest déclenché automatiquement par le setup,
+avec parent installateur observé et sortie 0.
+0 compilation de l’application, du setup ou du pilote.
+0 relance des 195 contrôles ; 0 lancement normal de Haloryva.
+Aucune anomalie produit constatée dans ce périmètre.
+
+IDENTITE FIGEE
+Installateur : HaloryvaSetup_2.7.1.exe
+SHA-256 : BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1
+Application : Haloryva.exe, version fichier 2.7.1.11
+SHA-256 : 1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81
+Origine : run 43088395238, archive 13886898481, recette 4da5e2c9f55b51ef7f1b7963133dc7c2ccf95bb4.
+Ces empreintes ont été confirmées avant le cycle, sur les copies installées,
+et sur les fichiers d’entrée à la fin. Aucun binaire modifié ou reconstruit.
+
+PREUVES
+Run réussi dès cette tentative :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43090537264
+Job :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43090537264/job/130766103100
+Commit du pilote : 56b0c15b993660e3e15a3c4a6ff830c5cb66212c
+Archive de résultats et profils synthétiques :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43090537264/artifacts/13888452170
+Nom : HaloryvaSetup-2.7.1-installation-desinstallation-preuves
+Taille ZIP : 6559 octets
+SHA-256 ZIP : sha256:d41ca61e7ebad208bf7eee069445010c518321f8daf7525652582637ea686b9a
+Expiration planifiée : 9 février 2027.
+Résultats bruts conservés dans resultats.json.
+Recette : 2026-11-11T19:48:58.5807666Z → 2026-11-11T19:49:24.6062425Z.
+
+ENVIRONNEMENT
+Microsoft Windows 11 Enterprise ARM64, build 26200, image 20261101.203.1.
+Runner GitHub windows-11-arm ; application et installateur x64 en émulation.
+Compte jetable runneradmin, session interactive 2.
+Il ne s’agit pas d’une validation sur un PC Windows x64 physique ni d’un compte standard non élevé.
+
+OPERATIONS REELLEMENT EXECUTEES
+1. Vérification d’un environnement sans Haloryva ni installation précédente.
+2. Création d’un profil fictif préexistant, d’une sauvegarde et d’un fichier témoin.
+3. Lancement de l’installateur original ; identification de sa copie de maintenance
+   par parent, titre, chemin, empreinte et propriétaire de fenêtre.
+4. Commande du bouton Installer dans la vraie fenêtre du setup.
+5. Autotest automatique : processus 1944, parent installateur 1476,
+   ligne --selftest réellement observée, sortie 0.
+6. Installation réelle, transaction validée, fermeture normale du setup avec sortie 0.
+7. Vérification de Haloryva.exe installé, du désinstalleur, de l’inscription Windows 2.7.1,
+   des raccourcis Bureau/menu Démarrer et de la conservation des réglages.
+8. Lancement du désinstalleur installé avec --uninstall, option d’effacement des réglages laissée décochée.
+9. Désinstallation réelle, fermeture normale avec sortie 0.
+10. Exécutables, inscription Windows, raccourcis et logo fourni supprimés.
+11. Réglages conservés et aucun processus Haloryva/Setup restant.
+
+REGLAGES ET FICHIERS
+13 champs contrôlés :
+UiLanguage=es ; Enabled=true ; DrawingToolCycle=[Stylo, Rectangle] ;
+AnnotationTool=Rectangle ; AnnotationColor=#137AC4 ; AnnotationThickness=9 ;
+DrawSmoothMode=Formes assistées ; DrawSmoothStrength=65 ;
+ButtonX1=Outil de dessin suivant ; ButtonX2=Outil de dessin précédent ;
+LongPressMs=550 ; RingRadius=44 ; LaunchAtLogin=false.
+Aucune différence de valeur après installation ou désinstallation.
+
+L’installateur réécrit settings.json : son empreinte change pendant l’installation,
+mais les 13 valeurs restent inchangées. Il n’est pas présenté comme identique
+à l’octet près entre AVANT et APRES installation.
+Après installation puis après désinstallation :
+settings.json : 39A64800F20435DD8422E769F6442EA573217404F06B7D25809ACEEEF15D3E1C
+settings.json.bak : E6F662D6892F4C07FCF0B2E59A0A24F3DF3DBBAE528833B7799598C3E2603DEC
+fixture-note.txt : 3D491880ACB2EE36E1AA5BDB5D05C72EFB9FD6073B35E4DB3E2173E2B215AD65
+Ces trois fichiers sont tout le contenu restant du dossier Haloryva après désinstallation.
+La sauvegarde et le fichier témoin restent aussi identiques à leurs originaux.
+Le fichier technique operation.lock reste dans Haloryva.Maintenance ;
+aucun processus Haloryva/Setup ne reste actif. Les copies de maintenance
+temporaires ne sont pas le désinstalleur enregistré, qui a bien été supprimé.
+Le démarrage automatique est resté désactivé ; une ancienne entrée Run activée
+n’est pas couverte par ce cas.
+
+PILOTE SANS COMPILATION
+La recette preview.9 est réutilisée, avec les identités du fichier final.
+L’ancien auxiliaire C# Add-Type n’est pas utilisé.
+Les commandes de fenêtre viennent des composants .NET déjà compilés présents
+dans Windows ; UIAutomation vérifie PID, titre et dimensions ; WMI observe
+le processus Haloryva ; Process.Handle reste conservé jusqu’à la lecture du code de sortie.
+Aucun compilateur, téléchargement d’outil, modification de protection ou connexion de compte.
+Les commandes sont ciblées sur la fenêtre vérifiée du setup : cette recette
+ne mesure pas le clic physique ni le focus sur le bureau.
+Pas de capture demandée ou fabriquée, pas d’auxiliaire de capture compilé.
+
+LIMITES / NON EXECUTE
+- Profil de test synthétique ; pas de vraie installation 2.7.0 ni de mise à jour depuis celle-ci.
+- Pas de relancement normal, rechargement visuel des réglages ou réinstallation après désinstallation.
+- Pas de redémarrage, vraie ouverture de session, validation native Windows 11 x64.
+- Pas de MSIX, nouvelle recette de gestes/Sonidos, 195 contrôles ou autotest séparé.
+- Pas de signature, release GitHub, publication Store ou abonnement.
+La validation du cycle EXE n’est pas une certification Microsoft Store.
+
+PRESERVATION
+26 branches antérieures inchangées : main, tous les candidats, préversions et bilans conservés.
+656 fichiers préexistants identiques par objet Git.
+Installateur et application conservés exactement.
+Aucune installation de Haloryva, aucun réglage système ni logiciel modifié sur le PC principal.
+La demande complémentaire de raccourcis est traitée séparément : création autorisée
+d’un dossier GIT sur le Bureau contenant des liens GitHub/Microsoft, sans exécution
+d’installateur et sans modification des comptes. Aucun chemin personnel n’est publié ici.
+
+PROCHAINE ETAPE
+Actualiser le bilan global 2.7.1 et le dossier Microsoft Store avec cette nouvelle preuve,
+sans relancer de test. Distinguer la validation acquise du cycle EXE des travaux
+encore nécessaires pour la distribution Store et la signature.
+Le produit Microsoft 9NJ14SZJP55B est réservé et en brouillon d’après le dossier conservé :
+aucun paquet Store n’a été déposé ou publié par cette tâche.

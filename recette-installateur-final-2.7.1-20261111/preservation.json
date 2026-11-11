@@ -1,0 +1,218 @@
+{
+  "branches": [
+    {
+      "name": "haloryva-2.7.0-c4",
+      "commit": {
+        "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/678c637b4c87b07ebc6b615154ffc2122c320a06"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-candidat-2.7.1-historique",
+      "commit": {
+        "sha": "fa3c0ed958c5382e6b69832ea4c054f21b47f506",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/fa3c0ed958c5382e6b69832ea4c054f21b47f506"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-candidat-2.7.1",
+      "commit": {
+        "sha": "25f6f03216c4f89988bf82521edc0938c458e35f",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/25f6f03216c4f89988bf82521edc0938c458e35f"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-installateur-final-2.7.1",
+      "commit": {
+        "sha": "7d61f7115e4e57962947ba474c0accc810dc1e33",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/7d61f7115e4e57962947ba474c0accc810dc1e33"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-preparation-exe-preview9",
+      "commit": {
+        "sha": "c158d3fa27e1cd3e1dbeeb3655a4682b820e034d",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/c158d3fa27e1cd3e1dbeeb3655a4682b820e034d"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-preparation-livraison-2.7.1",
+      "commit": {
+        "sha": "9482b046fa6fc096fd5942482c3ddff8516dcbcc",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/9482b046fa6fc096fd5942482c3ddff8516dcbcc"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-preparation-msix-preview7",
+      "commit": {
+        "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-preparation-store-preview5",
+      "commit": {
+        "sha": "f07890303144653049a05069841838ecd9b9d73d",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/f07890303144653049a05069841838ecd9b9d73d"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-preparation-store-preview7",
+      "commit": {
+        "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-preparation-store-preview8",
+      "commit": {
+        "sha": "bf8892413e6d686feb2884d26e118eff94d32723",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/bf8892413e6d686feb2884d26e118eff94d32723"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-preparation-store-preview9",
+      "commit": {
+        "sha": "dca613b3714ccc85a2d1930f1a0cb5e23e91388c",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/dca613b3714ccc85a2d1930f1a0cb5e23e91388c"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-installateur-preview9",
+      "commit": {
+        "sha": "18a647ed7c22c6f4d19159721bc2ce844d8455a9",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/18a647ed7c22c6f4d19159721bc2ce844d8455a9"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview2",
+      "commit": {
+        "sha": "8d84f31157ebfc1e09144811b6b112247f926f81",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/8d84f31157ebfc1e09144811b6b112247f926f81"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview3",
+      "commit": {
+        "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview4",
+      "commit": {
+        "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview5-msix",
+      "commit": {
+        "sha": "cfdb260c50bf771843065eff8eefadae24899f06",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/cfdb260c50bf771843065eff8eefadae24899f06"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview5",
+      "commit": {
+        "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview6",
+      "commit": {
+        "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview7-msix",
+      "commit": {
+        "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/6689a23a953c5c553d6706e0c845467d7c8592e0"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview7",
+      "commit": {
+        "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview8-focus",
+      "commit": {
+        "sha": "638e2044e6c988b784941329316aa53b99005e8a",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/638e2044e6c988b784941329316aa53b99005e8a"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview8-import",
+      "commit": {
+        "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/78c8063e7109e8e8529f82adf8f37d075fe20420"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview8",
+      "commit": {
+        "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/61db4b63737c3907216c9d4bee2bc8485662f2aa"
+      },
+      "protected": false
+    },
+    {
+      "name": "haloryva-tests-preview9",
+      "commit": {
+        "sha": "d1afe7b5a155355bbf60645a4ad04c7f963bfb87",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/d1afe7b5a155355bbf60645a4ad04c7f963bfb87"
+      },
+      "protected": false
+    },
+    {
+      "name": "main",
+      "commit": {
+        "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+      },
+      "protected": false
+    },
+    {
+      "name": "release/2.7.0-stable",
+      "commit": {
+        "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/d80b33ea17bf6d667322adc60bdde31ac9039980"
+      },
+      "protected": false
+    }
+  ],
+  "all26BranchesUnchanged": true,
+  "existingFilesUnchanged": 656,
+  "SetupSHA256": "BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1",
+  "ApplicationSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+  "AnyCompilation": false,
+  "DesktopShortcutsSeparatelyAuthorized": true
+}
