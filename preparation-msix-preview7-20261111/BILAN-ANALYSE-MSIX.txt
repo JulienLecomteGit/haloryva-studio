@@ -1,0 +1,121 @@
+HALORYVA STUDIO — EXAMEN DÉMARRAGE ET MIGRATION / MISE À JOUR
+11 novembre 2026 — aucun test exécuté
+
+CONCLUSION
+Une simple modification du manifeste ne suffit pas. Le démarrage doit être
+découplé de la sauvegarde générale des préférences ; le stockage doit devenir
+explicitement propre au paquet ; migration et mise à jour doivent avoir
+leurs propres critères. Les solutions précises sont préparées dans ce dossier.
+Aucune perte de réglages ou panne de démarrage n'a été reproduite aujourd'hui :
+les constats ci-dessous résultent de la lecture du code et de la documentation.
+
+A. DÉMARRAGE AUTOMATIQUE : QUATRE POINTS CONCRETS
+
+A1. Le mécanisme actuel écrit HKCU Run.
+Config.cs:305-330, ConfigStore.ApplyAutoStart, écrit une commande contenant le
+chemin absolu de Haloryva.exe et --silent. Le manifeste de recette n'a aucune
+extension windows.startupTask. Le retour true après relecture de la valeur
+ne prouve pas que Windows lancera le paquet à la connexion.
+Correction : un adaptateur StartupTask pour le paquet ; conserver la voie
+Run uniquement pour les lancements non empaquetés, sur action utilisateur.
+Aucun repli Run si une API MSIX échoue.
+
+A2. L'interrupteur reflète le JSON, pas l'état de Windows.
+Controller.cs:170 initialise lastAutoStart à partir de LaunchAtLogin.
+PremiumStudioForm.cs:1245 affiche cette préférence. Aucun contrôle de l'état
+StartupTask ni rafraîchissement après désactivation dans Windows n'existe.
+Correction : afficher un état Windows distinct de la préférence historique ;
+gérer Disabled, Enabled, DisabledByUser, DisabledByPolicy, EnabledByPolicy.
+Respecter le refus de l'utilisateur et les stratégies ; ne pas tenter de les
+annuler. L'état système est lu au lancement et au retour dans les préférences.
+
+A3. Un import peut provoquer une écriture de démarrage.
+PremiumStudioForm.cs:1269 appelle ReplaceOptions ; Controller.cs:466-470
+appelle Changed ; Changed:303-309 appelle ApplyAutoStart si le booléen diffère.
+C'est un chemin d'effets de bord certain dans le code, dont l'effet final
+sous MSIX n'a pas été exécuté. Importer des couleurs/boutons ne doit pas
+activer ou désactiver une tâche Windows.
+Correction : retirer ce traitement de Changed et le placer dans une commande
+dédiée à l'interrupteur. Import, normalisation et reprise de profil n'appellent
+aucune modification du démarrage.
+
+A4. Le lancement silencieux existe déjà mais doit être conservé.
+Program.cs:52-53 supprime le splash avec --silent ; Controller.cs:185-186
+supprime l'ouverture du Studio. Le futur manifeste transmettra cet argument
+via uap10:Parameters sur l'extension de démarrage.
+Le lancement par le menu Démarrer garde son comportement normal.
+Ne pas ajouter un lanceur auxiliaire ni des arguments non documentés.
+Une activation réelle à la connexion reste à prouver après implémentation.
+
+B. MIGRATION : UN RISQUE QUE LA RECETTE PRÉCÉDENTE NE COUVRAIT PAS
+
+B1. Le dossier courant est choisi implicitement.
+Config.cs:225-229 utilise LocalApplicationData/Haloryva, comme les sources
+2.7.0 (Config.cs:213-217). La recette preview.7 a observé un profil privé dans
+LocalCache/Local/Haloryva, sans installation EXE préexistante.
+Microsoft précise que, pour les applications virtualisées sur Windows récents,
+l'accès AppData peut ouvrir un fichier réel existant si aucune copie privée
+n'existe ; ce fichier n'est alors pas virtualisé. Une nouvelle installation
+vide ne permet donc pas de conclure à l'indépendance de tous les anciens profils.
+C'est une inférence de risque à partir du code et de la règle documentée,
+pas une modification observée du profil de l'utilisateur.
+Source : https://learn.microsoft.com/en-us/windows/msix/desktop/desktop-to-uwp-behind-the-scenes
+
+Conséquence à prévenir : Load/Save peut réparer/renommer un JSON invalide,
+remplacer settings.json et produire .bak. Ne pas appeler ces fonctions sur
+le dossier 2.7.0 dans le futur MSIX.
+Correction proposée : écrire uniquement dans
+ApplicationData.Current.LocalFolder.Path/Haloryva (LocalState du paquet).
+Les sources de migration sont ouvertes en lecture seule, puis copiées vers
+cette destination ; aucun lien partagé avec l'ancienne installation.
+
+B2. Le profil empaqueté existant doit rester prioritaire.
+S'il existe déjà un profil sous LocalState, aucune migration automatique.
+S'il n'existe pas, mais que le MÊME paquet a un profil dans son ancien
+LocalCache/Local/Haloryva, le reprendre avant de proposer des réglages 2.7.0.
+Ne pas scanner ou copier les autres familles Preview2/3/4/5/6/7.
+Un fichier invalide local n'est pas assimilé à un profil absent.
+La proposition conserve la langue, le cycle d'outils et les autres valeurs,
+avec les normalisations existantes documentées et sans activation automatique.
+
+B3. Coexistence et fichiers personnalisés doivent être pris en compte.
+Program.cs:31 et le Program.cs 2.7.0:30 ont le même nom de mutex :
+Local\CursorFlow_Windows64_Studio. Le conserver pour éviter deux moteurs ;
+sa visibilité entre installation classique et paquet reste à vérifier.
+Le verrou de maintenance de 2.7.0 doit être lu à son emplacement réel, sans
+le créer ni le modifier depuis le paquet.
+Le désinstalleur 2.7.0 supprime certains fichiers Logo/Setup et peut, sur
+option explicite, supprimer ses réglages. Il ne faut donc pas promettre une
+reprise des PNG/WAV personnalisés indépendante de cette installation en
+copiant uniquement les chemins. Prévoir leur copie consentie ou signaler
+clairement ceux qui restent externes. Ne jamais désinstaller 2.7.0 automatiquement.
+
+C. MISE À JOUR : UNE PREUVE ENCORE DISTINCTE
+La recette preview.7 installe un seul paquet, le relance sept fois puis le
+retire. Elle ne déploie pas une seconde version au-dessus de la première.
+Les noms Preview5UnsignedTest/Preview6UnsignedTest/Preview7UnsignedTest
+diffèrent : leurs succès ne prouvent pas une mise à jour d'une même famille.
+La version Store finale aura aussi une identité distincte des prototypes.
+Correction de préparation : identité d'essai CONSTANTE pour deux versions
+strictement croissantes, même Publisher/architecture, même dossier de données.
+Fermer proprement, mettre à jour sans désinstallation préalable, vérifier
+langue/outils, état de démarrage, profil et nouvelle version réellement active.
+Une désinstallation/réinstallation ou une réinitialisation n'est pas une mise
+à jour avec conservation des données.
+Source : https://learn.microsoft.com/en-us/powershell/module/appx/add-appxpackage?view=windowsserver2025-ps
+
+PREUVES DÉJÀ ACQUISES, CONSERVÉES
+Binaire preview.7 :
+B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604
+MSIX : run 43004393887, sept activations/arrêts code 0, langues visibles,
+profils complets conservés pour FR/EN/ES ; x64 émulé sur Windows 11 ARM64.
+Ces résultats restent valables dans leur périmètre ; pas de répétition.
+Native/visuel : six variantes réussies réparties sur 42957475470 et 43001652792,
+sans changement du binaire ; les 195 contrôles historiques restent acquis.
+Aucun compte rendu de succès ajouté pour les corrections proposées ici.
+
+SOURCE 2.7.0 LUE
+Branche release/2.7.0-stable au commit d80b33ea17bf6d667322adc60bdde31ac9039980.
+Brand.cs confirme la version 2.7.0. Aucun accès à l'installation réelle sur
+le PC, au registre ou au fichier de réglages personnel de l'utilisateur.
+Les ancres exactes et les documents officiels figurent dans preuves-et-sources.json.

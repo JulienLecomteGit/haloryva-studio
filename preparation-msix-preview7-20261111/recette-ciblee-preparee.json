@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "version_under_analysis": "2.7.1-preview.7",
+  "scope": "Future targeted startup, migration and update validation; no execution in this task",
+  "executed_count": 0,
+  "all_cases_executed": false,
+  "new_preview_created": false,
+  "historical195_to_rerun": false,
+  "native_gestures_to_rerun": false,
+  "allowed_future_executable_changes": "only after a new user instruction; this document authorizes none",
+  "cases": [
+    {
+      "id": "S1",
+      "status": "prepared_not_executed",
+      "scope": "MSIX initial startup state",
+      "environment": "Windows 11 GitHub",
+      "acceptance_criterion": "New package; Enabled=false; read actual task state and UI; no Run write; ordinary Start launch shows Studio."
+    },
+    {
+      "id": "S2",
+      "status": "prepared_not_executed",
+      "scope": "Explicit enable / disable",
+      "environment": "Windows 11 GitHub",
+      "acceptance_criterion": "Operate the dedicated control; actual StartupTask state follows successful requests; no force or Registry fallback; retain --silent for startup only."
+    },
+    {
+      "id": "S3",
+      "status": "prepared_not_executed",
+      "scope": "DisabledByUser and refresh",
+      "environment": "Windows 11 GitHub where Startup settings UI is available",
+      "acceptance_criterion": "Disable this test task using Windows' supported UI; refocus preferences; display false/disabled-by-user and do not re-enable. If UI unavailable, mark not executed, not pass."
+    },
+    {
+      "id": "S4",
+      "status": "prepared_not_executed",
+      "scope": "Policy and API-error states",
+      "environment": "Isolated service doubles in GitHub",
+      "acceptance_criterion": "Inject DisabledByPolicy, EnabledByPolicy and Unknown; lock/describe controls correctly. This is simulated policy coverage, not an OS policy test."
+    },
+    {
+      "id": "S5",
+      "status": "prepared_not_executed",
+      "scope": "No startup side effects from profiles",
+      "environment": "Windows 11 GitHub plus instrumented service",
+      "acceptance_criterion": "Import profiles with LaunchAtLogin true/false; load, normalize, change color and reopen preferences; task state unchanged and zero OS-mutation requests. Explicit switch action remains separate."
+    },
+    {
+      "id": "S6",
+      "status": "prepared_not_executed",
+      "scope": "Actual Windows logon",
+      "environment": "Distinct authorized Windows session; orchestration not yet established",
+      "acceptance_criterion": "After opt-in, log on to a new session; task starts exactly one process with --silent, no splash/Studio. After opt-out, no process starts. Manual --silent launch or API enable alone cannot satisfy this case."
+    },
+    {
+      "id": "M1",
+      "status": "prepared_not_executed",
+      "scope": "Explicit 2.7.0 settings copy",
+      "environment": "Windows 11 GitHub disposable environment",
+      "acceptance_criterion": "Place known non-personal 2.7.0-format profile in actual legacy directory; import by app UI; verify original file bytes/path intact and independent target in LocalState; compare fields with expected defaults for new keys. This fixture alone does not prove an installed-2.7.0 migration."
+    },
+    {
+      "id": "M2",
+      "status": "prepared_not_executed",
+      "scope": "Invalid / oversized source",
+      "environment": "Isolated migration cases in GitHub",
+      "acceptance_criterion": "Main invalid with valid .bak, both invalid, inaccessible, and >1,000,000-byte input: correct recovery/refusal, bounded read, no rename/delete/write to any source."
+    },
+    {
+      "id": "M3",
+      "status": "prepared_not_executed",
+      "scope": "Same-family old LocalCache priority",
+      "environment": "Windows 11 GitHub",
+      "acceptance_criterion": "Old same-family LocalCache profile and different legacy profile both present: take package profile; preserve language/tool cycle; do not scan other preview identities."
+    },
+    {
+      "id": "M4",
+      "status": "prepared_not_executed",
+      "scope": "Existing destination / repeat",
+      "environment": "Isolated migration cases in GitHub",
+      "acceptance_criterion": "Existing LocalState main or backup prevents automatic overwrite; corrupt destination uses local recovery, not silent legacy fallback; second launch does not repeat migration. Explicit trial/diagnostic path guards reject overlapping LocalState, same-family LocalCache and legacy roots; no migration or startup mutation occurs in those modes."
+    },
+    {
+      "id": "M5",
+      "status": "prepared_not_executed",
+      "scope": "Interrupted import / concurrent save",
+      "environment": "Isolated migration cases in GitHub",
+      "acceptance_criterion": "Injected failure before commit leaves originals/current profile intact; pending old saves cannot overwrite committed import; retry does not duplicate or overwrite unexpectedly."
+    },
+    {
+      "id": "M6",
+      "status": "prepared_not_executed",
+      "scope": "Personal image / sound assets",
+      "environment": "Isolated non-personal fixtures in GitHub",
+      "acceptance_criterion": "Referenced PNG/WAV copied only with consent; hashes match, new paths inside package data; missing/too-large/unsupported file shown before commit; raw source profile unchanged and preset status coherent."
+    },
+    {
+      "id": "C1",
+      "status": "prepared_not_executed",
+      "scope": "Legacy coexistence / maintenance",
+      "environment": "Windows 11 GitHub with preserved 2.7.0 executable available",
+      "acceptance_criterion": "Use exact preserved 2.7.0 binary and recorded hash; verify one shared instance lock and read-only real maintenance lock. Refuse second engine without forced stop or changes to old Run/installation. Missing trusted binary or blocked launch => not executed; no reconstruction of stable or protection bypass."
+    },
+    {
+      "id": "U1",
+      "status": "prepared_not_executed",
+      "scope": "Preview7 wrapper A to new-binary wrapper B",
+      "environment": "Windows 11 GitHub same disposable package family",
+      "acceptance_criterion": "Same Name/Publisher/architecture/AppId, increasing package version; close A cleanly, update directly, no Remove-AppxPackage between A/B. Observe B version, LocalCache->LocalState migration, languages/tools/all fields, original source intact."
+    },
+    {
+      "id": "U2",
+      "status": "prepared_not_executed",
+      "scope": "Wrapper B to wrapper C, same new binary",
+      "environment": "Windows 11 GitHub same family",
+      "acceptance_criterion": "Only package version increases; EXE hash identical B/C. Keep profile and TaskId; verify LocalState data and startup state preserved, no migration replay or enable reset; restart and clean shutdown."
+    },
+    {
+      "id": "U3",
+      "status": "prepared_not_executed",
+      "scope": "Busy application / failed deployment",
+      "environment": "Windows 11 GitHub",
+      "acceptance_criterion": "Refuse update on unclosed app or use supported deferred deployment; never force kill. Failure is recorded as failure, existing registration/profile preserved; no uninstall/reinstall workaround."
+    },
+    {
+      "id": "M7",
+      "status": "prepared_not_executed",
+      "scope": "Actual installed 2.7.0 migration",
+      "environment": "Distinct disposable Windows environment, only after explicit test authorization",
+      "acceptance_criterion": "Install the exact preserved 2.7.0 package if permitted; configure non-personal profile, quit normally, migrate into new MSIX and inspect original installation, preferences and custom assets. Do not substitute fixture M1 for this result; if protections block, stop and record not executed."
+    }
+  ],
+  "environment_rules": [
+    "GitHub-hosted disposable machines or separately authorized distinct Windows environment only",
+    "No local execution, install or configuration on the user's PC",
+    "No protection bypass, no signing, no certificate creation",
+    "Do not change system policy to fabricate policy-state tests",
+    "No installer or SDK installation unless separately authorized; use existing runner tools first",
+    "No logoff/reboot of a runner unless a reliable distinct-session continuation has been established and authorized",
+    "No workflows or dispatch created by this preparation"
+  ],
+  "update_fixture": {
+    "identity_proposed_not_created": "HaloryvaStudio.MsixLifecycleTest",
+    "task_id_proposed": "HaloryvaStudioStartup",
+    "publisher": "same unsigned test Publisher for A/B/C; never production identity",
+    "architecture": "x64",
+    "app_id": "Haloryva",
+    "package_versions_proposed_test_only": [
+      "2.7.1.70",
+      "2.7.1.80",
+      "2.7.1.81"
+    ],
+    "A_binary_sha256": "B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604",
+    "B_binary_sha256": null,
+    "C_binary_rule": "same as B; no third compilation",
+    "no_uninstall_between_versions": true
+  },
+  "evidence_requirements": [
+    "actual OS/build/architecture, test identity and package version",
+    "EXE SHA256 before/after packaging and installed execution",
+    "real app-data path and startup state; personal paths redacted from public logs",
+    "original legacy/profile SHA before/after, destination SHA and semantic field comparison",
+    "explicit expected changes: defaults for absent 2.7.0 fields, accepted asset path changes; no startup activation from import",
+    "clean exit code; actual update or explicitly not executed",
+    "separate actual OS results from service-double simulations",
+    "no complete personal profile/screenshot content in public logs"
+  ],
+  "existing_proof_reused": {
+    "preview7_msix_run": 43004393887,
+    "native_runs": [
+      42957475470,
+      43001652792
+    ],
+    "current_msix_launches": 7,
+    "coverage_warning": "No prior run validates real logon, installed legacy migration or same-identity update."
+  }
+}

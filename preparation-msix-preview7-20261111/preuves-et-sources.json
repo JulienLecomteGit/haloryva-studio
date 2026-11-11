@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "status": "static_review_and_prepared_corrections_not_implemented",
+  "base_documentation_commit": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c",
+  "application_commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+  "stable270_commit": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+  "documentation_branch": "haloryva-preparation-msix-preview7",
+  "preview7_binary": {
+    "SHA256": "B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604",
+    "BuildCommit": "466c8addab0de12de47d6a22c53773152b91d323",
+    "BuildRun": 42957075701,
+    "Artifact": {
+      "id": 13826914087,
+      "name": "Haloryva-2.7.1-preview.7-build",
+      "size_in_bytes": 227488,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13826914087",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13826914087/zip",
+      "expired": false,
+      "created_at": "2026-11-11T04:07:01Z",
+      "expires_at": "2026-12-11T04:07:00Z",
+      "updated_at": "2026-11-11T04:07:01Z",
+      "digest": "sha256:125274e40b8782a442c712743bb7d48b15bd24dd802e5451651bbe3e05dffa8e",
+      "workflow_run": {
+        "id": 42957075701,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview7",
+        "head_sha": "466c8addab0de12de47d6a22c53773152b91d323"
+      }
+    },
+    "FrozenInAllSixTestArchives": true,
+    "RebuiltInTests": false,
+    "SourceCheck": {
+      "files": 32,
+      "differences": []
+    }
+  },
+  "evidence_reused": [
+    {
+      "type": "preview7 native and visual",
+      "commit": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa",
+      "path": "preuves-preview7-visuel-20261111/resultats-consolides.json",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa/preuves-preview7-visuel-20261111/resultats-consolides.json"
+    },
+    {
+      "type": "preview7 MSIX",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "preuves-preview7-msix-20261111/resultats-consolides.json",
+      "run": 43004393887,
+      "job": 130468142849,
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/preuves-preview7-msix-20261111/resultats-consolides.json"
+    },
+    {
+      "type": "global dossier",
+      "commit": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c",
+      "path": "preparation-store-preview7-20261111/BILAN-GLOBAL-preview7.txt",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/a2361882d9d1fe21f6b626fe3bedc05fbf74a37c/preparation-store-preview7-20261111/BILAN-GLOBAL-preview7.txt"
+    }
+  ],
+  "source_anchors": [
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/Config.cs",
+      "line": 225,
+      "reason": "Profile directory and Load/Save/Import/ApplyAutoStart",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/Config.cs#L225"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/Controller.cs",
+      "line": 163,
+      "reason": "Constructor, startup bool and --silent",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/Controller.cs#L163"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/Controller.cs",
+      "line": 300,
+      "reason": "Changed applies auto-start",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/Controller.cs#L300"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/Controller.cs",
+      "line": 466,
+      "reason": "ReplaceOptions calls Changed",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/Controller.cs#L466"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/PremiumStudioForm.cs",
+      "line": 1244,
+      "reason": "Startup control and JSON import",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/PremiumStudioForm.cs#L1244"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/PremiumStudioForm.cs",
+      "line": 702,
+      "reason": "Generic toggle commits synchronously",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/PremiumStudioForm.cs#L702"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/Program.cs",
+      "line": 15,
+      "reason": "Initial language, maintenance, mutex and silent launch",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/Program.cs#L15"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/TrailDiagnostics.cs",
+      "line": 14,
+      "reason": "Trial path resolution and source copy",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/TrailDiagnostics.cs#L14"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/Build-Preview7.ps1",
+      "line": 33,
+      "reason": "C# 5 compiler references",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/Build-Preview7.ps1#L33"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/Inputs/msix-layout/AppxManifest.xml",
+      "line": 1,
+      "reason": "Base MSIX manifest without startupTask",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/Inputs/msix-layout/AppxManifest.xml#L1"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7-msix/Run-Msix.ps1",
+      "line": 1,
+      "reason": "Existing lifecycle recipe",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7-msix/Run-Msix.ps1#L1"
+    },
+    {
+      "version": "stable270",
+      "commit": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+      "path": "Haloryva_Windows64/src/Config.cs",
+      "line": 213,
+      "reason": "Legacy profile directory",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/d80b33ea17bf6d667322adc60bdde31ac9039980/Haloryva_Windows64/src/Config.cs#L213"
+    },
+    {
+      "version": "stable270",
+      "commit": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+      "path": "Haloryva_Windows64/src/Program.cs",
+      "line": 16,
+      "reason": "Legacy maintenance and mutex",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/d80b33ea17bf6d667322adc60bdde31ac9039980/Haloryva_Windows64/src/Program.cs#L16"
+    },
+    {
+      "version": "stable270",
+      "commit": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+      "path": "Haloryva_Windows64/src/Brand.cs",
+      "line": 1,
+      "reason": "Version 2.7.0",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/d80b33ea17bf6d667322adc60bdde31ac9039980/Haloryva_Windows64/src/Brand.cs#L1"
+    },
+    {
+      "version": "stable270",
+      "commit": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+      "path": "Haloryva_Windows64/installer/SetupWork.cs",
+      "line": 305,
+      "reason": "Uninstaller optional settings removal and asset paths",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/d80b33ea17bf6d667322adc60bdde31ac9039980/Haloryva_Windows64/installer/SetupWork.cs#L305"
+    },
+    {
+      "version": "preview7",
+      "commit": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+      "path": "haloryva-ci/preview7/src/EffectDiagnostics.cs",
+      "line": 25,
+      "reason": "Protected profile roots must include new package storage paths",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/6689a23a953c5c553d6706e0c845467d7c8592e0/haloryva-ci/preview7/src/EffectDiagnostics.cs#L25"
+    }
+  ],
+  "official_sources": [
+    {
+      "id": "S01",
+      "topic": "AppData/registry behavior",
+      "url": "https://learn.microsoft.com/en-us/windows/msix/desktop/desktop-to-uwp-behind-the-scenes",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S02",
+      "topic": "StartupTask API",
+      "url": "https://learn.microsoft.com/en-us/uwp/api/windows.applicationmodel.startuptask?view=winrt-26100",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S03",
+      "topic": "StartupTask state values",
+      "url": "https://learn.microsoft.com/en-us/uwp/api/windows.applicationmodel.startuptaskstate?view=winrt-26100",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S04",
+      "topic": "StartupTask XML",
+      "url": "https://learn.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-desktop-startuptask",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S05",
+      "topic": "Extension command line parameters",
+      "url": "https://learn.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-desktop-extension",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S06",
+      "topic": "Current process package identity",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefullname",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S07",
+      "topic": "Known folder flags",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/shlobj_core/ne-shlobj_core-known_folder_flag",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S08",
+      "topic": "Package local data",
+      "url": "https://learn.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder?view=winrt-26100",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S09",
+      "topic": "Package local cache",
+      "url": "https://learn.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder?view=winrt-26100",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S10",
+      "topic": "Desktop Framework WinRT await references",
+      "url": "https://devblogs.microsoft.com/oldnewthing/20210519-00/?p=105229/",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S11",
+      "topic": "Current Framework WinRT setup",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/winrt-apis-desktop-apps",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S12",
+      "topic": "Same-family package update",
+      "url": "https://learn.microsoft.com/en-us/powershell/module/appx/add-appxpackage?view=windowsserver2025-ps",
+      "read_on": "2026-11-11"
+    },
+    {
+      "id": "S13",
+      "topic": "Reset/repair distinction",
+      "url": "https://learn.microsoft.com/en-us/windows/msix/desktop/managing-your-msix-reset-and-repair",
+      "read_on": "2026-11-11"
+    }
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "status": "static_confirmed",
+      "finding": "HKCU Run mechanism and no startupTask declaration"
+    },
+    {
+      "id": "A2",
+      "status": "static_confirmed",
+      "finding": "Startup switch reflects stored bool, no actual packaged task-state refresh"
+    },
+    {
+      "id": "A3",
+      "status": "static_confirmed_call_chain_not_runtime_reproduction",
+      "finding": "Import -> ReplaceOptions -> Changed -> ApplyAutoStart"
+    },
+    {
+      "id": "B1",
+      "status": "risk_inferred_from_code_and_official_behavior_not_observed_data_loss",
+      "finding": "Implicit AppData path does not prove independence when legacy files exist"
+    },
+    {
+      "id": "B2",
+      "status": "prepared_migration_requirement",
+      "finding": "Same-family profile priority, no destructive legacy Load"
+    },
+    {
+      "id": "B3",
+      "status": "static_confirmed_paths_with_runtime_gap",
+      "finding": "Shared mutex name, legacy maintenance path, assets referenced by path"
+    },
+    {
+      "id": "C1",
+      "status": "existing_coverage_gap",
+      "finding": "Seven relaunches of one package do not test same-family update"
+    }
+  ],
+  "proposed_changes_not_applied": {
+    "new_sources": [
+      "PackageContext.cs",
+      "ProfilePaths.cs",
+      "StartupSettings.cs",
+      "ProfileMigration.cs"
+    ],
+    "adapted_future_sources": [
+      "Config.cs",
+      "Program.cs",
+      "Controller.cs",
+      "PremiumStudioForm.cs",
+      "TrailDiagnostics.cs",
+      "languages/strings.json",
+      "EffectDiagnostics.cs"
+    ],
+    "new_package_fragments": [
+      "desktop:startupTask with uap10:Parameters --silent",
+      "same-family A/B/C lifecycle fixture"
+    ],
+    "write_destination_proposed": "ApplicationData.Current.LocalFolder.Path/Haloryva",
+    "existing_same_family_source": "ApplicationData.Current.LocalCacheFolder.Path/Local/Haloryva",
+    "legacy_source": "current user's actual LocalAppData/Haloryva, read only, explicit import",
+    "startup_setting": "OS snapshot controls UI; JSON legacy bool never activates task through import"
+  },
+  "not_executed": {
+    "tests": true,
+    "build": true,
+    "new_preview": true,
+    "app_source_modifications": true,
+    "workflow_modifications": true,
+    "local_commands": true,
+    "local_file_writes": true,
+    "local_registry_read": true,
+    "local_registry_write": true,
+    "local_profile_read": true,
+    "local_installation": true,
+    "artifact_download": true,
+    "signing": true,
+    "release_publication": true,
+    "store_submission": true
+  },
+  "preservation_before": {
+    "branches": [
+      {
+        "name": "haloryva-2.7.0-c4",
+        "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+      },
+      {
+        "name": "haloryva-preparation-store-preview5",
+        "sha": "f07890303144653049a05069841838ecd9b9d73d"
+      },
+      {
+        "name": "haloryva-preparation-store-preview7",
+        "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+      },
+      {
+        "name": "haloryva-tests-preview2",
+        "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+      },
+      {
+        "name": "haloryva-tests-preview3",
+        "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+      },
+      {
+        "name": "haloryva-tests-preview4",
+        "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+      },
+      {
+        "name": "haloryva-tests-preview5-msix",
+        "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+      },
+      {
+        "name": "haloryva-tests-preview5",
+        "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+      },
+      {
+        "name": "haloryva-tests-preview6",
+        "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+      },
+      {
+        "name": "haloryva-tests-preview7-msix",
+        "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+      },
+      {
+        "name": "haloryva-tests-preview7",
+        "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+      },
+      {
+        "name": "main",
+        "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+      },
+      {
+        "name": "release/2.7.0-stable",
+        "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+      }
+    ],
+    "base_tree": "bd424e29842fcf7b5f8a20b329fcd13942e1beaf",
+    "existing_blob_count": 357,
+    "last_workflow_run": 43004393887
+  },
+  "limits": [
+    "Prepared code snippets are not complete, compiled or applied patches.",
+    "SDK/.NET Framework projection availability not executed; no tool installation authorized here.",
+    "Real logon and installed legacy migration require separate targeted execution after authorization.",
+    "Neither observed old evidence nor this static review proves future correction behavior."
+  ]
+}

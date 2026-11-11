@@ -1,0 +1,177 @@
+HALORYVA — FRAGMENTS D'INTÉGRATION À REVOIR DANS LA FUTURE PREVIEW
+11 novembre 2026 — TEXTE UNIQUEMENT, NON APPLIQUÉ ET NON COMPILÉ
+Ces fragments fixent les interfaces et les points d'insertion ; ils ne forment
+pas encore un correctif autonome. Les contraintes de CORRECTIONS-PRECISES.txt
+restent applicables (concurrence, erreurs, traduction et récupération).
+
+1. MANIFESTE FUTUR — FRAGMENT
+Ajouter les déclarations au Package, en conservant les namespaces existants :
+xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
+IgnorableNamespaces="uap rescap desktop uap10"
+
+Sous Application Id="Haloryva", conserver les VisualElements puis ajouter :
+<Extensions>
+  <desktop:Extension Category="windows.startupTask"
+                     Executable="Haloryva.exe"
+                     EntryPoint="Windows.FullTrustApplication"
+                     uap10:Parameters="--silent">
+    <desktop:StartupTask TaskId="HaloryvaStudioStartup"
+                         Enabled="false"
+                         DisplayName="Haloryva Studio" />
+  </desktop:Extension>
+</Extensions>
+
+Ne pas modifier le manifeste partagé Inputs/msix-layout de preview.7.
+Créer le modèle propre à la future recette et préserver les trois Resources.
+Le schéma documente uap10:Parameters pour les extensions des applications de
+bureau avec identité ; sa transmission effective sera un critère de recette.
+https://learn.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-desktop-extension
+
+2. CONTRATS DE SERVICES — SIGNATURES PROPOSÉES, C# 5
+// Pas de référence WinRT dans les classes de hooks ou le moteur de dessin.
+internal enum StartupAvailability
+{
+    Disabled, Enabled, DisabledByUser, DisabledByPolicy,
+    EnabledByPolicy, Unknown
+}
+internal sealed class StartupSnapshot
+{
+    internal StartupAvailability Availability;
+    internal bool? EffectiveEnabled; // null lorsque la lecture est impossible
+    internal bool CanChange;
+    internal string MessageKey;      // clé traduite ; pas de texte technique brut
+}
+internal interface IStartupSettings
+{
+    System.Threading.Tasks.Task<StartupSnapshot> ReadAsync();
+    System.Threading.Tasks.Task<StartupSnapshot> ChangeFromUserAsync(bool desired);
+}
+
+Points obligatoires de l'adaptateur empaqueté :
+- vérifier PackageContext.Packaged ; aucune utilisation en session d'essai ;
+- sérialiser les demandes à l'aide d'un verrou asynchrone ;
+- appeler GetAsync avec le TaskId constant ;
+- traiter les cinq valeurs de StartupTaskState sans convertir toute valeur
+  inconnue en Disabled ;
+- conserver les états de refus ; journal technique via ErrorReporting ;
+- après modification, relire State et renvoyer le résultat obtenu.
+
+Noyau logique à intégrer dans cet adaptateur :
+var task = await Windows.ApplicationModel.StartupTask.GetAsync(
+    "HaloryvaStudioStartup");
+var state = task.State;
+if (state == Windows.ApplicationModel.StartupTaskState.Disabled && desired)
+{
+    await task.RequestEnableAsync();
+}
+else if (state == Windows.ApplicationModel.StartupTaskState.Enabled && !desired)
+{
+    task.Disable();
+}
+// Les autres états ne sont pas forcés. Relire et traduire task.State.
+// Une exception donne Unknown, jamais un repli dans HKCU Run.
+
+L'enrobage ci-dessus (verrou, mapping, exceptions, durée de vie) est requis
+avant emploi ; le fragment seul n'est pas le service final.
+
+3. CONTROLLER / STUDIO — CHANGEMENT PRÉCIS
+Supprimer dans la copie future de Controller.Changed le bloc :
+if (lastAutoStart != Options.LaunchAtLogin) { ... ApplyAutoStart ... }
+Supprimer lastAutoStart lorsqu'aucun autre usage ne subsiste.
+
+Ajouter au contrôleur :
+- StartupSnapshot StartupStatus { get; private set; }
+- Task RefreshStartupStatusAsync() : lecture seule + SettingsChanged.
+- Task RequestStartupChangeAsync(bool desired) : seule voie d'écriture système.
+  Attendre l'adaptateur, publier l'état ; en cas de résultat confirmé,
+  actualiser LaunchAtLogin et demander la sauvegarde générale.
+  Une erreur ne remplace pas les préférences en mémoire par une valeur supposée.
+- flag de demande en cours, clôture/désabonnement propres à Exit.
+
+Dans PremiumStudioForm.PagePreferences, remplacer la ligne Toggle de démarrage
+par une ligne spécifique dont le callback attend RequestStartupChangeAsync.
+Son actualisation visuelle est protégée par refreshing, comme les autres
+contrôles, afin que la lecture de l'état ne déclenche pas une nouvelle demande.
+Le callback Activated lit l'état sans provoquer une boucle de RefreshStates.
+Afficher « Vérification… » puis l'état, ne pas montrer cfg.LaunchAtLogin comme
+une validation de Windows. Aucun appel de démarrage dans ReplaceOptions.
+
+Messages à ajouter au catalogue FR / EN / ES :
+Vérification du démarrage… | Checking startup… | Comprobando el inicio…
+Démarrage désactivé dans Windows. | Startup is disabled in Windows. | El inicio está desactivado en Windows.
+Ce réglage est géré par Windows. | This setting is managed by Windows. | Windows administra este ajuste.
+État du démarrage indisponible. | Startup status is unavailable. | El estado del inicio no está disponible.
+Réglages copiés ; l'ancienne installation est conservée. | Settings copied; the previous installation is unchanged. | Ajustes copiados; la instalación anterior se conserva.
+Le démarrage automatique se règle séparément. | Automatic startup is configured separately. | El inicio automático se configura por separado.
+
+4. CHEMINS — PSEUDO-CODE D'ORDONNANCEMENT
+ParseLaunchArgumentsWithoutIO()
+  -> reconnaître session d'essai et --silent sans lecture des réglages réels.
+ProbePackageIdentity()
+  -> Packaged / Unpackaged / Error ; Error interdit l'écriture.
+SelectProfilePathWithoutCreatingDirectories()
+  -> essai explicite > LocalState paquet > dossier classique.
+ReadLanguageWithoutRepair()
+  -> lire seulement ; français si absent ; erreur du contexte traitée.
+CheckLegacyMaintenanceReadOnly()
+AcquireExistingSharedMutex()
+  -> si autre instance : aucune migration/écriture ; message pour lancement
+     interactif, sortie discrète en --silent, pas de deuxième moteur.
+InitializeRequestedTrialOrDiagnostics()
+  -> garder les gardes existantes et la priorité de session d'essai ; ajouter
+     les racines du paquet à Overlaps dans EffectDiagnostics.Initialize.
+PrepareSamePackageStorageMigration()
+  -> seulement empaqueté, hors essai, destination absente.
+OfferExplicitLegacyImportIfNeeded()
+  -> interactif uniquement ; pas de migration externe silencieuse.
+InitializeLanguageFromSelectedProfile()
+CreateControllerAndNormalUI()
+  -> seulement après le commit d'une migration acceptée.
+RefreshStartupStatusAsyncAfterUIContextExists()
+  -> lecture seule ; aucun .Result dans Main ou le contrôleur.
+
+Ces étapes doivent conserver les retours selftest existants sans les appeler
+dans cette tâche. Les diagnostics ne doivent pas lire/copier un profil réel
+avant validation de leur mode et de leur dossier.
+Le verrou de maintenance reste un verrou de l'installeur classique ;
+l'application ne le crée pas. Le mutex d'instance actuel reste inchangé.
+
+5. COPIE DE PROFIL — CONTRAT
+ReadCandidate(path) : lecture bornée et validation en mémoire ; aucun Move,
+Delete, Save, ApplyAutoStart ou Repair sur le chemin source.
+PrepareMigration(candidate, target, consent) : plan sans écriture ; profil
+normalisé, copies PNG/WAV éventuelles, différences attendues.
+CommitMigration(plan) : exclusivement destination autorisée, fichier temporaire
+unique puis File.Move sans écrasement pour premier profil ; File.Replace avec
+sauvegarde pour un remplacement expressément confirmé.
+La destination doit encore être absente ou correspondre à la version attendue
+au moment du commit. En cas de concurrence, abandonner au lieu d'écraser.
+Les preuves de copie enregistrent empreinte source/destination et différences
+connues ; aucun contenu de profil personnel ni chemin utilisateur dans les
+journaux publics GitHub.
+
+Une erreur ne répare ni ne renomme settings.json 2.7.0.
+Un principal invalide et une .bak valide ne permettent de copier que la .bak,
+avec information de récupération. Si tout est invalide : ne pas importer.
+Conserver une copie brute du fichier importé dans le nouveau dossier.
+Les fichiers de reprise ne remplacent pas les sauvegardes exportées hors paquet.
+
+6. COMPILATION FUTURE — DÉPENDANCES À RÉSOUDRE SUR GITHUB
+Le build actuel appelle csc.exe /langversion:5 et ne référence aucun contrat
+WinRT. Ajouter des références explicites compatibles .NET Framework :
+Windows.winmd (SDK sélectionné) et System.Runtime.WindowsRuntime.dll pour
+await ; relever aussi les façades requises par le compilateur installé.
+Ne pas prendre la première DLL trouvée arbitrairement : relever version/chemin
+et refuser un ensemble incompatible. L'exemple Microsoft décrit ces références :
+https://devblogs.microsoft.com/oldnewthing/20210519-00/?p=105229/
+
+La documentation actuelle propose aussi Microsoft.Windows.SDK.Contracts pour
+les projets .NET Framework. Ce dossier retient d'abord les références déjà
+installées sur GitHub afin de préserver la chaîne existante et d'éviter un
+changement de projet/outillage sans nécessité démontrée.
+https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/winrt-apis-desktop-apps
+
+Disponibilité effective de ces références : NON VÉRIFIÉE par exécution ici.
+Aucun NuGet, SDK ou autre logiciel installé/téléchargé dans cette tâche.
+Ne pas remplacer cette étape par une migration générale vers .NET moderne.

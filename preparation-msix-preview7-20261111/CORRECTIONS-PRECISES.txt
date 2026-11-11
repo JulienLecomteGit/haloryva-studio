@@ -1,0 +1,257 @@
+HALORYVA — CONTRAT DE CORRECTION POUR LA FUTURE PRÉVERSION
+11 novembre 2026 — préparé, non implémenté / compilé / testé
+
+1. CONTEXTE ET STOCKAGE EXPLICITES
+
+Ajouter PackageContext.cs (détection seule) et ProfilePaths.cs.
+Détecter l'identité par GetCurrentPackageFullName :
+- APPMODEL_ERROR_NO_PACKAGE : voie classique ;
+- taille demandée puis retour succès : voie empaquetée ;
+- autre erreur : état indéterminé, aucun repli en écriture sur les anciens
+  réglages. Afficher une erreur claire et arrêter l'initialisation.
+Ne pas déduire l'identité du nom du fichier, de son dossier ou d'une variable
+d'environnement. L'identité utilisée doit être celle du processus courant.
+
+Résolution du dossier :
+- Session d'essai explicite : TrailTrial.DirectoryPath, toujours prioritaire.
+- Processus sans paquet : dossier historique LocalApplicationData/Haloryva.
+- Processus empaqueté : ApplicationData.Current.LocalFolder.Path/Haloryva.
+Ce dernier chemin est LocalState de la famille courante, sans numéro de version.
+Ne jamais construire le dossier à partir du PackageFullName versionné.
+Si LocalFolder échoue, arrêter ; ne pas écrire à côté de l'EXE ou dans le
+dossier 2.7.0. Ne pas créer un dossier pendant la simple détection/lecture.
+
+Choix proposé : LocalState pour les préférences durables ; LocalCache reste
+une SOURCE DE REPRISE de l'ancien stockage du même paquet. Ce changement de
+stockage impose la reprise décrite en section 3. Il ne constitue pas une
+preuve que LocalCache perdait les données aux mises à jour.
+ApplicationData.LocalFolder / LocalCacheFolder :
+https://learn.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder
+https://learn.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder
+
+ConfigStore.DirectoryPath délègue à ProfilePaths. Ses Save/Load/ReadLanguage,
+le dossier Logs et le bouton « Ouvrir le dossier » restent cohérents.
+Dans Program, sélectionner le contexte avant ReadLanguage, sans sauvegarde.
+La préparation d'une session d'essai conserve sa priorité et ses refus de
+chemins existants ; adapter TrailTrial uniquement aux nouveaux emplacements.
+Ne jamais laisser une session d'essai ou de diagnostic déclencher migration
+ou modification StartupTask. Étendre aussi les gardes de chemins de
+EffectDiagnostics.Initialize aux racines LocalState, ancien LocalCache et
+profils classiques résolus ; conserver l'observation et son format inchangés.
+
+2. DÉMARRAGE AUTOMATIQUE
+
+Ajouter IStartupSettings et deux adaptateurs :
+- PackagedStartupSettings : StartupTask.GetAsync("HaloryvaStudioStartup"),
+  lecture de State, RequestEnableAsync(), Disable().
+- LegacyStartupSettings : reprendre le code Run existant, hors paquet seulement.
+Un fournisseur d'essai injecté ne touche ni StartupTask ni Run.
+
+Ajouter au NOUVEAU manifeste, sous l'application Haloryva :
+desktop:Extension windows.startupTask, Executable="Haloryva.exe",
+EntryPoint="Windows.FullTrustApplication", uap10:Parameters="--silent".
+desktop:StartupTask TaskId="HaloryvaStudioStartup", Enabled="false",
+DisplayName="Haloryva Studio".
+Déclarer desktop/uap10 dans les namespaces et IgnorableNamespaces.
+Ne pas ajouter --silent au lancement ordinaire de l'application.
+Ne pas ajouter ImmediateRegistration, élévation, tâche planifiée ou service.
+Conserver TaskId entre versions ; identité de test distincte de la production.
+
+Controller.Changed :
+retirer le bloc lastAutoStart / ApplyAutoStart. Cette méthode gère seulement
+l'état de l'application, le rendu et la sauvegarde différée.
+ReplaceOptions / import ne doivent jamais modifier les paramètres Windows.
+
+Nouvelle commande RequestStartupChangeAsync(bool desired), appelée uniquement
+par l'interrupteur dédié des préférences, sur le thread d'interface.
+Ne pas utiliser le Toggle générique qui appelle immédiatement CommitSettings
+et ne sait pas attendre le résultat. Créer une ligne dédiée conservant le
+style existant, avec indicateur de demande en cours et message d'état.
+Pas de .Wait(), .Result ou boucle d'attente dans l'interface / le rendu.
+Sérialiser les demandes ; désactiver temporairement cet interrupteur seulement.
+Après réponse, relire l'état réel et rafraîchir les contrôles ; gérer fermeture
+de la fenêtre/processus sans rappel sur un contrôle détruit.
+
+Table d'état du paquet :
+Disabled        : arrêté ; activation possible après clic explicite.
+Enabled         : actif ; désactivation possible après clic explicite.
+DisabledByUser  : arrêté ; expliquer que la réactivation se fait dans Windows.
+DisabledByPolicy: arrêté ; réglage verrouillé, expliquer la restriction.
+EnabledByPolicy : actif ; réglage verrouillé, ne pas promettre sa désactivation.
+Unknown/Error   : indisponible ; pas de succès fictif, pas de repli Run.
+Ne pas modifier les valeurs internes de Windows (StartupApproved, etc.).
+
+Au lancement et lorsque les préférences reprennent le focus, lire l'état.
+Un rafraîchissement ne doit pas lancer RequestEnableAsync ou Disable.
+Le champ JSON LaunchAtLogin est conservé pour compatibilité et reprise des
+anciens profils. En contexte MSIX il ne constitue pas la vérité système :
+- import/reprise : conserver la valeur du fichier mais n'appliquer aucune action ;
+- affichage : utiliser StartupSnapshot, pas cfg.LaunchAtLogin ;
+- clic explicite réussi : enregistrer le résultat obtenu dans LaunchAtLogin ;
+- simple lecture/retour de focus : ne pas réécrire le profil pour forcer sa
+  concordance avec Windows.
+Cela préserve les profils et respecte les changements externes de Windows.
+
+Coexistence du démarrage :
+ne pas supprimer ni désactiver l'ancienne entrée Haloryva/CursorFlow.
+Une valeur Run présente n'établit pas à elle seule qu'elle est active (elle
+peut avoir été désactivée dans Windows). Présenter une information exacte,
+pas une détection « active » supposée. Lors du passage depuis 2.7.0, guider
+l'utilisateur pour arrêter son ancien démarrage avant d'activer celui du Store.
+La future recette doit observer le cas ancien démarrage présent.
+Le mutex commun reste la protection contre deux moteurs ; ne pas le remplacer
+par un mutex différent par famille de paquet.
+
+3. REPRISE DES RÉGLAGES : DEUX CHEMINS DIFFÉRENTS
+
+A. Ancienne version du MÊME paquet
+Avant la création des hooks, des timers et toute sauvegarde normale :
+1) Si LocalState/Haloryva contient settings.json OU .bak, garder cette source
+   et la récupération locale existante. Un fichier invalide n'autorise pas
+   à récupérer silencieusement un autre profil plus ancien.
+2) Sinon examiner UNIQUEMENT
+   ApplicationData.Current.LocalCacheFolder.Path/Local/Haloryva/settings.json
+   et .bak, correspondant à la famille courante.
+3) Lire le principal valide, sinon la sauvegarde valide ; ne déplacer/réparer
+   aucun des fichiers sources. Si tous sont invalides/inaccessibles : signaler,
+   préserver les sources et proposer un import explicite.
+4) Valider et copier vers LocalState par fichier temporaire unique puis
+   déplacement atomique sans écrasement. Relire le fichier final.
+5) Garder la source intacte. Une destination maintenant présente rend cette
+   migration idempotente. Un petit journal de migration dans le nouveau
+   dossier indique source logique et empreinte, jamais un faux succès.
+Ne pas importer automatiquement une autre identité PreviewNUnsignedTest.
+
+B. Installation 2.7.0 classique
+Proposition : reprise guidée, déclenchée par une seule action utilisateur,
+avant l'initialisation normale lors du premier lancement interactif.
+- Si aucun profil du paquet n'existe, rechercher seulement le dossier
+  historique de l'utilisateur courant ; ne pas lire d'autres comptes.
+- Résoudre le LocalAppData non empaqueté avec SHGetKnownFolderPath et
+  KF_FLAG_NO_PACKAGE_REDIRECTION ; cela fournit un chemin, pas une garantie
+  générale de contournement de la virtualisation de toutes les ouvertures.
+- La présence préalable de données LocalCache de ce paquet est traitée en A,
+  avec priorité. Ouvrir le candidat en lecture seule et vérifier le chemin
+  réel obtenu via le handle avant de le considérer comme source classique.
+  Si le chemin réel appartient au paquet ou est inattendu : refuser cette
+  source et proposer l'import JSON choisi par l'utilisateur.
+- Ne pas employer ConfigStore.Load sur ce dossier : Load peut déplacer les
+  fichiers invalides. Un lecteur de migration distinct ne fait que lire.
+- Proposition d'interface : « Reprendre mes réglages 2.7.0 » et
+  « Commencer avec les réglages par défaut ». Expliquer que l'ancienne
+  installation et son démarrage ne seront pas modifiés.
+- Si l'utilisateur commence avec les valeurs par défaut, ne pas réimporter
+  2.7.0 au prochain lancement ; un import manuel reste possible ensuite.
+- Un lancement --silent ne présente pas ce dialogue et ne déclenche pas
+  de migration externe ; l'action reste disponible au prochain accès Studio
+  tant que le choix n'a pas été fait. Enregistrer ce statut séparément,
+  sans confondre « profil par défaut créé » et « migration refusée ».
+- L'import ultérieur d'un profil remplaçant des réglages déjà établis exige
+  la confirmation dans l'application et une sauvegarde du profil courant.
+
+Transaction de copie :
+a) Mutex d'instance obtenu ; maintenance 2.7.0 non active ; source en lecture
+   seule, au plus 1 000 000 octets, lecture bornée à partir du handle.
+b) Lire une fois, vérifier JSON via les règles de Config.Deserialize sans
+   toucher à l'original. Préserver une copie brute de récupération dans le
+   nouveau dossier avant toute conversion. Des champs ajoutés depuis 2.7.0
+   reçoivent les valeurs par défaut existantes : français, cycle complet.
+c) Construire le nouveau profil en mémoire. Les identités d'outils restent
+   celles déjà stockées ; aucune traduction des clés/valeurs métier.
+d) Préparer les éventuels fichiers personnels (voir section 4).
+e) Écrire/relire le JSON temporaire dans la destination. Commit atomique ;
+   si remplacement explicite, sauvegarde de l'ancien profil. Échec = aucun
+   changement du profil actif ni des fichiers source.
+f) Après succès seulement, remplacer Options et informer l'utilisateur.
+   Au premier lancement, faire ceci avant timers/hooks. Pour un import depuis
+   le Studio, sérialiser avec les sauvegardes différées ; aucune ancienne
+   sauvegarde en attente ne doit réécrire le nouveau profil.
+g) Aucune activation automatique, suppression de l'EXE, modification Run,
+   désinstallation ni arrêt forcé de 2.7.0.
+
+Verrou de maintenance :
+lire operation.lock au LocalAppData réel/Haloryva.Maintenance (lecture seule,
+sans création), pas uniquement à un emplacement éventuellement redirigé.
+Un fichier présent et non verrouillé ne bloque pas ; un verrou actif reporte
+la migration. Garder l'exclusion d'instance commune pendant tout le commit.
+Ne jamais ouvrir l'ancien assistant de maintenance depuis la migration.
+
+4. LOGOS ET SONS
+
+Les champs TrailLogoPath et CustomSound peuvent pointer vers le dossier qui
+sera supprimé lors d'une désinstallation 2.7.0. La reprise doit les inventorier.
+Proposition : le bouton de reprise annonce aussi la copie des PNG/WAV lisibles
+vers LocalState/Haloryva/ImportedAssets, avec noms basés sur leur empreinte.
+Ne copier que ces fichiers explicitement référencés, jamais un répertoire entier.
+Limite de préparation proposée : 10 Mio par fichier ; PNG/WAV uniquement,
+fichiers locaux ordinaires, aucun exécutable, pas de téléchargement réseau.
+Un fichier absent, trop grand, non pris en charge ou inaccessible est présenté
+avant validation : choisir de garder sa référence externe ou d'utiliser le
+repli déjà prévu par Haloryva. Aucun effacement silencieux du choix.
+Ne pas réécrire le chemin source. Le nouveau JSON seul vise la copie.
+La copie peut modifier la signature du préréglage : recalculer sa cohérence
+avec la méthode existante, ou retirer son statut « inchangé », sans altérer
+les réglages d'effets. À vérifier dans le cas dédié.
+Aucune copie des exports PNG, historiques de maintenance ou diagnostics.
+
+5. MISE À JOUR DU PAQUET
+
+Identité finale et TaskId doivent rester constants entre versions du produit.
+La version croît ; les chemins de réglages ne contiennent pas cette version.
+Le binaire reste en lecture seule dans le paquet ; aucun auto-remplacement
+par l'application. Le Store prendra en charge ses mises à jour.
+Ne pas migrer depuis 2.7.0 à chaque lancement si un profil du paquet existe.
+Ne pas déduire la disponibilité d'une mise à jour du nom preview.N.
+
+Préparer la recette future avec UNE NOUVELLE identité réservée aux tests
+(par exemple HaloryvaStudio.MsixLifecycleTest, non créée aujourd'hui).
+Deux versions d'essai croissantes sous cette même identité.
+A : enveloppe du binaire preview.7 déjà validé, SHA inchangé.
+B : enveloppe de la future préversion, SHA distinct et identifié.
+Pas de retrait de A avant B. Conserver Name, Publisher, architecture et AppId.
+Le Publisher non signé de recette n'est jamais celui du Store final.
+Arrêter A proprement avant la mise à jour ; ne pas employer un arrêt forcé.
+Après B : identité/famille/version, langue, outils, tous les autres champs,
+reprise de LocalCache vers LocalState, source restée intacte, relancement.
+Ce scénario vérifie le chemin de migration entre implémentations. Ajouter
+ensuite un passage B -> version de paquet suivante contenant le même nouveau
+binaire pour isoler la conservation LocalState/StartupTask pendant une mise
+à jour ordinaire, sans changer les données ni l'état de démarrage.
+Ce troisième paquet ne demande pas une troisième compilation.
+
+La réparation, la réinitialisation et la désinstallation sont des opérations
+distinctes. Ne pas proposer « désinstaller puis réinstaller » comme procédure
+normale de mise à jour ; prévoir l'export JSON avant une suppression volontaire.
+Réinitialiser efface les données de l'application selon Microsoft :
+https://learn.microsoft.com/en-us/windows/msix/desktop/managing-your-msix-reset-and-repair
+
+6. FICHIERS À TOUCHER DANS LA FUTURE PRÉVERSION UNIQUEMENT
+Ajouter :
+- PackageContext.cs / ProfilePaths.cs : identité et destinations.
+- StartupSettings.cs : états et adaptateurs, sans appels depuis les hooks.
+- ProfileMigration.cs : préparation et commit de copies, lecteur non destructif.
+Adapter :
+- Config.cs : DirectoryPath ; garder la voie Run isolée de la voie MSIX.
+- Program.cs : ordre d'initialisation, maintenance, migration avant contrôleur.
+- Controller.cs : commande de démarrage séparée, état lu, import sérialisé.
+- PremiumStudioForm.cs : ligne de démarrage dédiée et reprise de profil.
+- TrailDiagnostics.cs : résolution des emplacements, aucune nouvelle mesure.
+- EffectDiagnostics.cs : ajouter les nouvelles racines protégées au contrôle
+  Overlaps, sans toucher au contenu des mesures ou au moteur.
+- languages/strings.json : messages nouveaux FR/EN/ES.
+- Nouveau script de compilation : références WinRT ; aucune dépendance téléchargée
+  par défaut ; prérequis manquant signalé, jamais installé sur le PC utilisateur.
+- Nouveau manifeste/kit MSIX : extension, copies de paquet A/B/C et preuves.
+Ne pas modifier GlobalHooks, InputPipeline, DrawingGeometry, ni les algorithmes
+de dessin/lissage. Version/historique seulement au moment de créer la preview.
+
+7. LIMITES EXPLICITES DE CETTE PRÉPARATION
+Projection WinRT avec csc C# 5/.NET Framework, résolution des références SDK,
+fragment de manifeste et comportements proposés : non compilés / non testés.
+Le prochain travail commencera par vérifier les outils DÉJÀ disponibles sur
+la machine GitHub, sans installer de logiciel sur le PC principal.
+La recette de tâche et de --silent ne prouve pas, seule, un lancement réel à
+une nouvelle connexion Windows. Cette étape exige une session distincte
+orchestrée dans un environnement Windows autorisé ; ne pas déconnecter ou
+redémarrer le poste de l'utilisateur, ni promettre cette preuve dans un job
+éphémère si sa continuité n'est pas assurée.

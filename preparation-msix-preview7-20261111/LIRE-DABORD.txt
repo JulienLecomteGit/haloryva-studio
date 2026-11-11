@@ -1,0 +1,30 @@
+HALORYVA STUDIO — PRÉPARATION DES CORRECTIONS MSIX
+11 novembre 2026 — examen statique uniquement
+
+Base applicative figée : preview.7, 6689a23a953c5c553d6706e0c845467d7c8592e0
+Base documentaire : a2361882d9d1fe21f6b626fe3bedc05fbf74a37c
+Dossier ajouté sur une branche distincte : haloryva-preparation-msix-preview7.
+
+À lire :
+1. BILAN-ANALYSE-MSIX.txt : constats, conséquences et preuves réutilisées.
+2. CORRECTIONS-PRECISES.txt : comportement retenu pour l'implémentation future.
+3. BROUILLONS-INTEGRATION.txt : contrats, fragments C#/XML et points d'insertion.
+4. recette-ciblee-preparee.json : critères de vérification, tous NON EXÉCUTÉS.
+5. preuves-et-sources.json : références immuables, sources Microsoft et état.
+
+Cette préparation ne crée pas preview.8, ne modifie aucun source applicatif,
+manifeste actif, pilote ou workflow, ne fabrique aucun binaire. Les extraits
+dans .txt sont des propositions d'intégration, pas un correctif appliqué ou
+compilé. Aucun test, téléchargement d'artefact, exécution locale, installation,
+changement système, signature, release ou soumission.
+
+Recommandation concrète pour la prochaine préversion :
+- démarrage MSIX via StartupTask, désactivé par défaut et réglé explicitement ;
+- préférences MSIX dans LocalState/Haloryva, indépendante de l'installation EXE ;
+- reprise automatique de l'ancien stockage du MÊME paquet, s'il existe ;
+- reprise des réglages 2.7.0 par une action explicite, sans toucher aux originaux ;
+- mise à jour testée avec une identité de recette constante et deux versions.
+
+Aucune nouvelle décision de licence ou de distribution. Le petit sous-titre
+espagnol V7-ES-SON reste suivi dans le dossier Store précédent ; ce travail
+porte seulement sur les deux points MSIX demandés.
