@@ -1,0 +1,25 @@
+HALORYVA — REGLES STORE RECONSULTEES LE 11 NOVEMBRE 2026
+Aucune consultation du compte privé Partner Center, aucune soumission.
+
+Paquet, identité, numérotation, vérification et signature :
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+Le manifeste doit correspondre à l'identité Partner Center.
+Le format de version Store Windows 10/11 documenté réserve le quatrième composant ; la proposition de production retient zéro.
+L'historique du produit reste à vérifier avant de choisir la version finale.
+Microsoft signe les MSIX/AppX lors de la publication après certification.
+Cette voie ne nécessite pas l'achat d'un certificat CA pour soumettre le MSIX.
+La signature d'un EXE/MSI diffusé séparément est distincte ; le Store ne le re-signe pas.
+
+Images :
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images
+Au moins une capture ; PNG, maximum 50 Mo ; Desktop au moins 1366×768.
+Les images doivent représenter le produit. La proposition 1920×1080 est un choix de préparation, pas une nouvelle exigence.
+
+Politique :
+https://learn.microsoft.com/en-us/windows/apps/publish/store-policies
+Version consultée 7.20, publiée le 15 septembre 2026, effective le 22 octobre 2026.
+Section 10.5.1 : politique de confidentialité et URL nécessaires aux produits Win32/Desktop Bridge.
+La description doit refléter honnêtement les fonctionnalités et limitations ; les langues déclarées doivent être couvertes.
+
+Ces lectures documentaires ne certifient ni le produit ni les informations du compte.
+Aucun prix, accès gratuit à un service ou éligibilité du compte n'est présumé.

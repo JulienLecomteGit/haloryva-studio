@@ -1,0 +1,161 @@
+{
+  "status": "DRAFT_NOT_A_SUBMISSION_MANIFEST",
+  "preparation_date": "2026-11-11",
+  "product_name_proposed": "Haloryva Studio",
+  "name_reserved": null,
+  "partner_center_account_checked": false,
+  "partner_center_product_id": null,
+  "package_identity_name": null,
+  "package_publisher": null,
+  "publisher_display_name": null,
+  "package_family_name": null,
+  "final_package_version": null,
+  "version_proposal_if_first_final_2_7_1_package": "2.7.1.0",
+  "version_proposal_requires_partner_center_history_check": true,
+  "package_architecture_proposed": "x64",
+  "min_windows_version_final": null,
+  "max_windows_version_tested_final": null,
+  "app_language_current": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "supported_languages_final": null,
+  "price_requested": "free",
+  "category_proposed": "Productivity",
+  "markets": null,
+  "age_rating": null,
+  "privacy_policy_url": null,
+  "support_url": null,
+  "support_url_proposed": "https://github.com/JulienLecomteGit/haloryva-studio/issues",
+  "privacy_contact": null,
+  "license_policy": "Keep existing rights; no new open source license.",
+  "rights_notice_existing": "© 2026 Julien Lecomte — droits réservés.",
+  "terms_approved": false,
+  "store_assets_approved": false,
+  "restricted_capability_requested": "runFullTrust",
+  "restricted_capability_approved": false,
+  "wack_executed": false,
+  "submitted": false,
+  "signed_this_task": false,
+  "published_this_task": false,
+  "forbidden_test_identity_for_final_submission": {
+    "name": "HaloryvaStudio.MsixLifecycleTest",
+    "publisher": "CN=JulienLecomteGit, OID.2.25.311729368913984317654407730594956997722=1",
+    "versions": [
+      "2.7.1.70",
+      "2.7.1.80",
+      "2.7.1.81",
+      "2.7.1.90"
+    ],
+    "family": "HaloryvaStudio.MsixLifecycleTest_6f9y2rm4h9xya",
+    "reason": "Identité d'essai non signée ; ne pas soumettre. L'ancienne identité Preview7UnsignedTest reste également exclue."
+  },
+  "source_preview": "2.7.1-preview.9",
+  "source_commit": "a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5",
+  "source_executable_sha256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+  "name_reservation_status": "not_checked",
+  "language_change_application": "next_application_launch",
+  "tested_environments": [
+    {
+      "purpose": "native_targeted_recipe",
+      "os": "Windows Server 2025 Datacenter",
+      "build": 26100,
+      "architecture": "x64"
+    },
+    {
+      "purpose": "MSIX_lifecycle_and_persistence",
+      "os": "Windows 11 Enterprise",
+      "build": 26200,
+      "architecture": "ARM64",
+      "executable_architecture": "x64",
+      "execution": "emulation"
+    }
+  ],
+  "native_windows11_x64_validation": false,
+  "windows10_validation": false,
+  "auto_start_msix_validation": {
+    "studio_enable_disable": {
+      "validated": true,
+      "evidence_version": "preview.8",
+      "run": 43017766592
+    },
+    "retained_after_same_identity_update": {
+      "validated": true,
+      "evidence_version": "preview.8",
+      "run": 43017766592
+    },
+    "windows_disable_and_application_relaunch": {
+      "validated": true,
+      "evidence_version": "preview.8",
+      "run": 43021089861
+    },
+    "first_live_refocus": {
+      "validated": true,
+      "evidence_version": "preview.9",
+      "run": 43035528813,
+      "job": 130573406999,
+      "checks_passed": 7,
+      "checks_total": 7
+    },
+    "diagnostic_mode_closure": {
+      "validated": false,
+      "run": 43035528813,
+      "job": 130573407015,
+      "status": "cancelled_missing_final_result"
+    },
+    "actual_windows_logon_validated": false
+  },
+  "real_270_migration_validation": false,
+  "same_identity_update_validation": {
+    "actual_update_passed": true,
+    "profile93_fields": "prior_preview8_candidate_only",
+    "startup_state": "final_preview8_binary",
+    "store_production_identity": false,
+    "evidence_versions": "preview.7 -> preview.8; no new preview.9 update test"
+  },
+  "privacy_text_status": "draft_updated_for_preview9_contact_url_EN_ES_and_approval_pending",
+  "listing_languages_prepared": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "final_store_screenshots_prepared": false,
+  "documentation_base_commit": "18a647ed7c22c6f4d19159721bc2ce844d8455a9",
+  "legacy_fixture_import_with_consent_and_png_wav": true,
+  "legacy_coexistence_validation": false,
+  "production_package_prepared": false,
+  "release_readiness": "not_ready_for_final_public_release",
+  "store_blocking_groups": [
+    "D1",
+    "D3",
+    "D4",
+    "D5",
+    "D6"
+  ],
+  "conditional_legacy_group": "D2",
+  "public_stable_version_proposed": "2.7.1",
+  "public_stable_binary_prepared": false,
+  "compiled_informational_version": "2.7.1-preview.9",
+  "compiled_file_version": "2.7.1.9",
+  "assembly_version": "2.7.1.0",
+  "test_msix_version": "2.7.1.90",
+  "classic_installer": {
+    "name": "HaloryvaSetup_2.7.1-preview.9.exe",
+    "sha256": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394",
+    "build_and_extraction_run": 43060226353,
+    "lifecycle_run": 43065284869,
+    "checks_passed": 27,
+    "checks_total": 27,
+    "profile_fields_preserved": 13,
+    "profile_type": "synthetic_no_installed_270",
+    "signed": false,
+    "real_install_uninstall": true,
+    "normal_app_launch_tested": false
+  },
+  "common_finalization_group": "D0",
+  "external_exe_signature_group": "X1",
+  "evidence_versions_mixed": true,
+  "legacy_fixture_import_evidence_version": "preview.8",
+  "legacy_fixture_import_evidence_run": 43020483264
+}

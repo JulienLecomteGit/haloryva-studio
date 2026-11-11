@@ -1,0 +1,16 @@
+HALORYVA STUDIO — DOSSIER CONSOLIDE PREVIEW.9
+11 novembre 2026 — documentation uniquement, aucune autorisation d'exécution.
+
+Lire BILAN-GLOBAL-preview9.txt, VERSIONNEMENT.txt et FINITIONS-AVANT-DIFFUSION.txt.
+DOSSIER-MICROSOFT-STORE.txt prépare la voie MSIX ; l'installateur EXE GitHub est un livrable distinct.
+Les anciens dossiers restent conservés. Ce dossier actualise leur état sans réécrire leurs résultats historiques.
+
+Etat : application corrigée ET recompilée en 2.7.1-preview.9, installateur réel testé.
+Cible de travail pour la stable : 2.7.1, non fabriquée comme version finale et non publiée.
+La preview.9 actuelle ne devient pas une stable par le simple renommage d'un fichier.
+Aucun test, compilation, changement applicatif, signature ou soumission dans cette actualisation.
+Les instructions de recette ci-jointes sont des propositions pour une étape ultérieure, pas des commandes à lancer.
+
+Base documentaire : 18a647ed7c22c6f4d19159721bc2ce844d8455a9.
+Seule la branche haloryva-preparation-store-preview9 reçoit ce nouveau dossier.
+21 branches préexistantes et 521 fichiers préexistants sont à préserver à l'identique.

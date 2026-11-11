@@ -1,0 +1,418 @@
+{
+  "date": "2026-11-11",
+  "documentation_base_commit": "18a647ed7c22c6f4d19159721bc2ce844d8455a9",
+  "sources": [
+    {
+      "path": "bilan-preview9-20261111/BILAN-preview9.txt",
+      "git_blob_sha": "c8a104bdf4e4bddbf2e5c2011114abefc1efcd80",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/bilan-preview9-20261111/BILAN-preview9.txt"
+    },
+    {
+      "path": "bilan-preview9-20261111/couverture-msix.json",
+      "git_blob_sha": "d80cd4f59ed15c8ed2b7b899c9f5c142df58306e",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/bilan-preview9-20261111/couverture-msix.json"
+    },
+    {
+      "path": "preparation-exe-preview9-20261111/BILAN-CLOTURE.txt",
+      "git_blob_sha": "1fd8c51903bb2a8bf1fad4c0b27166b2da9d22bc",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-exe-preview9-20261111/BILAN-CLOTURE.txt"
+    },
+    {
+      "path": "fabrication-installateur-preview9-20261111/BILAN-INSTALLATEUR.txt",
+      "git_blob_sha": "756c052b643ff5b5f3ce7e5615edb1b382ad6de7",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/fabrication-installateur-preview9-20261111/BILAN-INSTALLATEUR.txt"
+    },
+    {
+      "path": "recette-installateur-preview9-20261111/BILAN-INSTALLATION-DESINSTALLATION.txt",
+      "git_blob_sha": "5e3ab583de495ed5eb8588558d107a89ab1be3ae",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/recette-installateur-preview9-20261111/BILAN-INSTALLATION-DESINSTALLATION.txt"
+    },
+    {
+      "path": "recette-installateur-preview9-20261111/resultats.json",
+      "git_blob_sha": "0acc045db01436665f09ca0905317e24f4a5fa57",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/recette-installateur-preview9-20261111/resultats.json"
+    },
+    {
+      "path": "recette-installateur-preview9-20261111/historique.json",
+      "git_blob_sha": "cf754512ad4185060147d14b142bde0081a5c83f",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/recette-installateur-preview9-20261111/historique.json"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/BILAN-GLOBAL-preview8.txt",
+      "git_blob_sha": "1f65956c9ef3f1597d3e450919d6b99f9f0658b9",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/BILAN-GLOBAL-preview8.txt"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/CERTIFICATION-et-CAPTURES.txt",
+      "git_blob_sha": "56ecedfc9920bfe92dbef54a9bf09dbfce5515cd",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/CERTIFICATION-et-CAPTURES.txt"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/CONFIDENTIALITE-brouillon.txt",
+      "git_blob_sha": "915eee130d446b216e816f7dc7a7c583e7d00d09",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/CONFIDENTIALITE-brouillon.txt"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/DOSSIER-MICROSOFT-STORE.txt",
+      "git_blob_sha": "ed94c94b76e75276e8ea8912408fa32204b0cf1e",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/DOSSIER-MICROSOFT-STORE.txt"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/FICHES-STORE-fr-en-es.txt",
+      "git_blob_sha": "c854d732a44e78763dc7259f6212b3ad0fe70f1d",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/FICHES-STORE-fr-en-es.txt"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/FINITIONS-AVANT-STORE.txt",
+      "git_blob_sha": "dcc31caad0834074cbbc989c940611aeced21f04",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/FINITIONS-AVANT-STORE.txt"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/LIRE-DABORD.txt",
+      "git_blob_sha": "54fc6e70a4484c65864443746bf1d31d0f01d309",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/LIRE-DABORD.txt"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/couverture-msix.json",
+      "git_blob_sha": "b908c5b1d71fca520abd6164feb49135a57fb34e",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/couverture-msix.json"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/identite-store.a-renseigner.json",
+      "git_blob_sha": "b8fb3030306a783f0f42ef32823f74d22ea78684",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/identite-store.a-renseigner.json"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/preservation.json",
+      "git_blob_sha": "7500852d0377b3d08b008ce74a632a57fd1c36ae",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/preservation.json"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/preuves-et-sources.json",
+      "git_blob_sha": "47142290c6aa3dfe00c69a7d0c004843f8f240ff",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/preuves-et-sources.json"
+    },
+    {
+      "path": "preparation-store-preview8-20261111/progression-chiffree.json",
+      "git_blob_sha": "9594d86cd5dbe60278fc161df81d6a048dc3486a",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/preparation-store-preview8-20261111/progression-chiffree.json"
+    },
+    {
+      "path": "haloryva-ci/preview9/src/Brand.cs",
+      "git_blob_sha": "14511359c3e75b0a33e45368b5102c34bbc2123e",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/haloryva-ci/preview9/src/Brand.cs"
+    },
+    {
+      "path": "haloryva-ci/preview9/source-origin.json",
+      "git_blob_sha": "8580551361647dbe39d69fedcdc4e184de0628ae",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/haloryva-ci/preview9/source-origin.json"
+    },
+    {
+      "path": "haloryva-ci/preview9-focus/Package-Preview9.ps1",
+      "git_blob_sha": "e304aab9698a0a35cb5d39befb24f7784e2ab873",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/haloryva-ci/preview9-focus/Package-Preview9.ps1"
+    },
+    {
+      "path": "BILAN-preview3-clic-court-20261111.txt",
+      "git_blob_sha": "23448007fbabd3598c97e5794b6555625bd4a245",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/BILAN-preview3-clic-court-20261111.txt"
+    },
+    {
+      "path": "BILAN-preview4-placement-20261111.txt",
+      "git_blob_sha": "64b428b12c69eb0198857cae5c95667779f5f683",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/BILAN-preview4-placement-20261111.txt"
+    },
+    {
+      "path": "BILAN-preview5-defilement-20261111.txt",
+      "git_blob_sha": "67241c3210e08c451f56069e33bdfb28fe9467fa",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/BILAN-preview5-defilement-20261111.txt"
+    },
+    {
+      "path": "BILAN-preview6-langues-MSIX-20261111.txt",
+      "git_blob_sha": "9401aea2596d69e44a2cd62bd8e424d0ec821e8f",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/BILAN-preview6-langues-MSIX-20261111.txt"
+    },
+    {
+      "path": "BILAN-preview7-indicateur-pluriels-20261111.txt",
+      "git_blob_sha": "608b11f1c14f04a385f6054858fe29028e0133f5",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/BILAN-preview7-indicateur-pluriels-20261111.txt"
+    },
+    {
+      "path": "bilan-preview8-20261111/BILAN-preview8-20261111.txt",
+      "git_blob_sha": "4d78d019ea03dce3f0e8d9f5d9b95566b26ff94f",
+      "url": "https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/bilan-preview8-20261111/BILAN-preview8-20261111.txt"
+    }
+  ],
+  "application": {
+    "version": "2.7.1-preview.9",
+    "file_version": "2.7.1.9",
+    "assembly_version": "2.7.1.0",
+    "build_commit": "a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5",
+    "build_run": 43035196363,
+    "sha256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC"
+  },
+  "setup": {
+    "name": "HaloryvaSetup_2.7.1-preview.9.exe",
+    "build_run": 43060226353,
+    "artifact_id": 13872288880,
+    "sha256": "3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394"
+  },
+  "msix": {
+    "version": "2.7.1.90",
+    "identity": "HaloryvaStudio.MsixLifecycleTest",
+    "sha256": "A6D0A75878175AF51B29D167A612300A0811E0AF238D9D0489927DC1E24A3926",
+    "production": false
+  },
+  "direct_preview9_runs": [
+    {
+      "run": 43035528813,
+      "normal_job": 130573406999,
+      "normal_result": "success",
+      "checks_passed": 7,
+      "diagnostic_job": 130573407015,
+      "diagnostic_result": "cancelled",
+      "diagnostic_assertions_inferred": 9
+    },
+    {
+      "run": 43039812497,
+      "purpose": "read_only_closure_evidence",
+      "application_tests_executed": false
+    },
+    {
+      "run": 43060226353,
+      "purpose": "installer_build_and_extract",
+      "conclusion": "success",
+      "application_executed": false
+    },
+    {
+      "run": 43065284869,
+      "purpose": "real_installer_lifecycle",
+      "conclusion": "success",
+      "checks_passed": 27,
+      "checks_total": 27,
+      "profile_fields": 13
+    }
+  ],
+  "installer_history": [
+    {
+      "Run": 43062677711,
+      "Outcome": "Driver rejected short TEMP path vs long worker path before Installer click; no application execution."
+    },
+    {
+      "Run": 43063068133,
+      "Outcome": "Driver could not confirm foreground before Installer click; no application execution."
+    },
+    {
+      "Run": 43063629872,
+      "Outcome": "Foreground diagnosis identified Microsoft account runner window covering setup; no application execution or account interaction."
+    },
+    {
+      "Run": 43064809038,
+      "Outcome": "Real installation committed and automatic selftest observed with exit 0. Driver lost exit-code access after normal setup closure; uninstall not executed. Preserved as partial evidence, not complete validation."
+    },
+    {
+      "Run": 43065284869,
+      "Outcome": "Complete real install/uninstall cycle, 27/27 checks, setup exits 0, automatic selftest 0, settings preserved."
+    }
+  ],
+  "installer_last_artifact": {
+    "id": 13874957559,
+    "name": "preview9-installer-lifecycle-evidence",
+    "size_in_bytes": 237016,
+    "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13874957559",
+    "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13874957559/zip",
+    "expired": false,
+    "created_at": "2026-11-11T17:10:12Z",
+    "expires_at": "2026-12-11T17:10:11Z",
+    "updated_at": "2026-11-11T17:10:12Z",
+    "digest": "sha256:d5c7a28e70047a3fa4b1a9aa81814b8e2a8c7fde225a167a00debfe85398f04c",
+    "workflow_run": {
+      "id": 43065284869,
+      "repository_id": 1450529585,
+      "head_repository_id": 1450529585,
+      "head_branch": "haloryva-tests-installateur-preview9",
+      "head_sha": "450bb3614c19cc47dff4fd11d2982585de57dcf8"
+    }
+  },
+  "source_comparison": {
+    "preview8_to_9": [
+      {
+        "file": "Annotations.cs",
+        "before": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66",
+        "after": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+      },
+      {
+        "file": "Brand.cs",
+        "before": "32bfe66030179a8f62cd8addd8d83344a7a8ba27",
+        "after": "14511359c3e75b0a33e45368b5102c34bbc2123e"
+      },
+      {
+        "file": "ColorWheelPopup.cs",
+        "before": "b6b0f526361d8771d1ce42a2935d664075174144",
+        "after": "b6b0f526361d8771d1ce42a2935d664075174144"
+      },
+      {
+        "file": "Config.cs",
+        "before": "d4b5facee8d7374b813f62881e5c37aa62019d06",
+        "after": "d4b5facee8d7374b813f62881e5c37aa62019d06"
+      },
+      {
+        "file": "Controller.cs",
+        "before": "892902a69262a43aea3555acf28e01e2dee49bbd",
+        "after": "68df9227b3697d52eaf75bc8fcd4d9a49e049032"
+      },
+      {
+        "file": "DrawingGeometry.cs",
+        "before": "152be1f87728b7d71cfee264b1ff98de96409b16",
+        "after": "152be1f87728b7d71cfee264b1ff98de96409b16"
+      },
+      {
+        "file": "EffectDiagnostics.cs",
+        "before": "599b0e40ddb66606e70b4a8d58a5a25f6951bbb0",
+        "after": "599b0e40ddb66606e70b4a8d58a5a25f6951bbb0"
+      },
+      {
+        "file": "ErrorReporting.cs",
+        "before": "92eb1ef6f221c1f0dd03c9bf0f2c7839acb711c3",
+        "after": "92eb1ef6f221c1f0dd03c9bf0f2c7839acb711c3"
+      },
+      {
+        "file": "FrameBounds.cs",
+        "before": "8c7c04fa382b310d8333f9688e499cd73bcc8602",
+        "after": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+      },
+      {
+        "file": "FramePump.cs",
+        "before": "935ff42e4081a91a2d85a7f771d1bc6f3538e942",
+        "after": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+      },
+      {
+        "file": "GlobalHooks.cs",
+        "before": "f159a03fed9066e75decf1a657bb5e2fa4f17e88",
+        "after": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+      },
+      {
+        "file": "InputPipeline.cs",
+        "before": "c201a63dd9dfde8d402785dd9404edcc45c19287",
+        "after": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+      },
+      {
+        "file": "InputState.cs",
+        "before": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f",
+        "after": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+      },
+      {
+        "file": "KeyboardPolicy.cs",
+        "before": "9d0b136a80cadb131385aef683fa7a3096ceb882",
+        "after": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+      },
+      {
+        "file": "Localization.cs",
+        "before": "8b8dd12322656b5a73b4b10d8e8a5d6cc32ce6bd",
+        "after": "8b8dd12322656b5a73b4b10d8e8a5d6cc32ce6bd"
+      },
+      {
+        "file": "PackageContext.cs",
+        "before": "5c57976eab39ae023faf5240bc90d94e0402f66c",
+        "after": "5c57976eab39ae023faf5240bc90d94e0402f66c"
+      },
+      {
+        "file": "PremiumStudioForm.cs",
+        "before": "b7bdcde4e447404a32e4e83fdac6f70e6fe49f11",
+        "after": "505e0a2773e8458b2ec935e29bb46fb1ec0ce85f"
+      },
+      {
+        "file": "PremiumWidgets.cs",
+        "before": "2f7d97aa8121d47cf4bb2883e37fa3f042e9f2ea",
+        "after": "2f7d97aa8121d47cf4bb2883e37fa3f042e9f2ea"
+      },
+      {
+        "file": "ProfileMigration.cs",
+        "before": "c72c554f9585d68e249500745b6d9c743725377d",
+        "after": "c72c554f9585d68e249500745b6d9c743725377d"
+      },
+      {
+        "file": "Program.cs",
+        "before": "08bed548abdb702c96863e32c0d6e7108c82b75b",
+        "after": "08bed548abdb702c96863e32c0d6e7108c82b75b"
+      },
+      {
+        "file": "SelfTest.cs",
+        "before": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf",
+        "after": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+      },
+      {
+        "file": "Splash.cs",
+        "before": "b9b79950ebb867a5dcaa6dd2f96d165bbc8e6c43",
+        "after": "b9b79950ebb867a5dcaa6dd2f96d165bbc8e6c43"
+      },
+      {
+        "file": "StartupSettings.cs",
+        "before": "0132c8f27a812ddd903aec1af8d983c1eaa72f6b",
+        "after": "0132c8f27a812ddd903aec1af8d983c1eaa72f6b"
+      },
+      {
+        "file": "StudioControls.cs",
+        "before": "caa9cf4bda5d361f42dc68fef03decf2087aacf3",
+        "after": "caa9cf4bda5d361f42dc68fef03decf2087aacf3"
+      },
+      {
+        "file": "StudioTheme.cs",
+        "before": "eb84acea0710a79b71de885766a0f0c750ec619c",
+        "after": "eb84acea0710a79b71de885766a0f0c750ec619c"
+      },
+      {
+        "file": "TextPrompt.cs",
+        "before": "af7d55dfaf26f908b5c1ebb0ee1c516e99e0a5e3",
+        "after": "af7d55dfaf26f908b5c1ebb0ee1c516e99e0a5e3"
+      },
+      {
+        "file": "ToolToast.cs",
+        "before": "c0042ba4188f4be78834d8fdeb87618fff734e9d",
+        "after": "c0042ba4188f4be78834d8fdeb87618fff734e9d"
+      },
+      {
+        "file": "TrailDiagnostics.cs",
+        "before": "45aa3ab34c08abaef658b2f1f3a247a25375bd25",
+        "after": "45aa3ab34c08abaef658b2f1f3a247a25375bd25"
+      },
+      {
+        "file": "TrailEngine.cs",
+        "before": "ac1a37037c3052097cfb05f1ac2575fde01f905a",
+        "after": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+      },
+      {
+        "file": "TrailSelfTest.cs",
+        "before": "b58ad2f7ec84a03ce529806c784ca505ac605365",
+        "after": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+      },
+      {
+        "file": "Visuals.cs",
+        "before": "deb1961f3ee9d695af554dc1efb8e860679ca0aa",
+        "after": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+      },
+      {
+        "file": "WinNative.cs",
+        "before": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46",
+        "after": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+      }
+    ],
+    "unchanged_cs": 29,
+    "changed_cs": [
+      "Brand.cs",
+      "Controller.cs",
+      "PremiumStudioForm.cs"
+    ],
+    "added_cs": [
+      "StartupRefreshTrace.cs"
+    ],
+    "assets_catalogue_identical": true
+  },
+  "evidence_inheritance": "Older evidence is attributed to the actual older binary; no claim that all tests ran on preview.9.",
+  "actual_logon_executed": false,
+  "real_270_installation_migration_executed": false,
+  "new_tests_this_document_update": 0,
+  "new_builds": 0,
+  "new_workflows": 0,
+  "new_captures": 0
+}

@@ -1,0 +1,70 @@
+HALORYVA STUDIO — CERTIFICATION ET VISUELS PREVIEW.9
+11 novembre 2026 — plan préparé, aucune exécution nouvelle
+
+ÉTAT
+0 rapport WACK et 0 certification Microsoft documentés.
+Les MSIX de test installés/lancés ne remplacent ni le paquet final ni sa certification.
+Le run global rouge 43014976009 n'est pas présenté comme une validation entière.
+Ses phases migration/mise à jour positives restent consultables séparément.
+Le binaire preview.9 n'est pas reconstruit pour ce dossier.
+Le setup EXE a son propre cycle réussi ; il ne remplace pas la certification MSIX.
+Les quatre captures de son assistant sont des preuves techniques, pas un jeu Store.
+L'identité de production et la version stable doivent être arrêtées avant la fabrication finale.
+
+CAPTURES
+Les 174 PNG preview.7 comprennent des rendus de cartes et des captures de recette ;
+84 ont été examinés, pas 174. Les 84 captures de pages ne sont pas un jeu Store approuvé.
+Les bureaux 1024×768 ne satisfont pas le minimum Desktop Store indiqué ci-dessous.
+Aucune nouvelle capture produite ; les dialogues MSIX FR/EN/ES ne bénéficient pas
+d'une revue visuelle complète du simple fait que leur traduction est présente.
+
+Exigences consultées : au moins une capture pour la soumission ; format PNG,
+au plus 50 Mo, Desktop au moins 1366×768. Prévoir des images adaptées à chaque
+fiche linguistique. Proposition de travail : quatre scènes réelles en 1920×1080
+par langue (12 images préparables ultérieurement, zéro créée ici).
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images
+
+Scènes proposées : présentation annotée ; sélection de deux outils ;
+personnalisation/effets ; préférences/langue. Éviter les informations personnelles
+et les noms d'identité de test. Ne pas agrandir une capture de recette pour la faire
+passer pour une capture native. Conserver les exports et originaux.
+Le sous-texte espagnol Son tronqué reste une finition connue à traiter séparément.
+
+ÉTAPES FUTURES, NON LANCÉES
+1. Fermer les points techniques bloquants du bilan dans un environnement distinct autorisé.
+2. Renseigner l'identité exacte Partner Center et figer le périmètre OS/architecture/version.
+3. Préparer le paquet de production et ses ressources, puis effectuer WACK sur ce paquet.
+4. Examiner les résultats et obtenir l'accord de soumission ; certification Microsoft ensuite.
+5. Microsoft gère la signature Store après certification ; le résultat n'est pas présumé.
+Aucune relance générale des 195 contrôles n'est incluse dans ce plan.
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+
+DRAFT REVIEWER NOTES — ADAPT TO FINAL PACKAGE BEFORE SUBMISSION
+Haloryva Studio is a desktop presentation and annotation utility. It runs without
+a Haloryva account and uses a notification-area icon. Closing the Studio window
+can leave the effects engine running; use the tray Quit command to exit normally.
+The runFullTrust capability supports global input shortcuts and mouse-button actions,
+transparent drawing overlays, local preferences and user-selected file exports.
+No administrative elevation, driver or background service is intended.
+
+Suggested review flow:
+- Launch the app normally and open the Studio.
+- Select two drawing tools, use the configured button actions, draw and undo/redo.
+- Export the annotations as a transparent PNG to a user-chosen location.
+- Select French, English or Spanish; restart the app to apply the saved language.
+- The startup option is opt-in. Windows controls the effective permission; the app
+  must respect a user-disabled task rather than re-enable it from an imported profile.
+- For legacy settings, the explicit copy action offers consent; accepted supported
+  PNG/WAV files are copied to package data while original files remain unchanged.
+  This does not uninstall the legacy application or transfer its startup registration.
+- Quit normally from the notification-area menu.
+
+Internal limitations before these notes may accompany a submission:
+Confirmed first live refocus passed in normal preview.9 mode. Actual Windows logon remains unvalidated. Legacy import
+evidence uses synthetic 2.7.0-format files, not an installed 2.7.0 application.
+No Store production identity or certification is available yet. Do not include
+unsigned test installation instructions in the customer-facing listing.
+
+Sources Microsoft relues le 11 novembre 2026. Aucun nouveau rapport WACK,
+aucune capture, aucun téléchargement local et aucune soumission dans cette actualisation.
+La future recette du livrable final doit cibler les écarts ; aucune relance générale des 195 contrôles.

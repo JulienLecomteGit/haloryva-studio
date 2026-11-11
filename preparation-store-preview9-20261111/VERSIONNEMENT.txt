@@ -1,0 +1,67 @@
+HALORYVA — COMPRENDRE LES CORRECTIONS, LA COMPILATION ET LES NUMEROS
+11 novembre 2026 — constat et proposition, aucun fichier exécutable modifié.
+
+POURQUOI TESTER LE MEME BINAIRE ?
+Les corrections sont déjà dans les sources de la préversion, puis dans un EXE compilé.
+Le dernier EXE preview.9 a été fabriqué par le run 43035196363, après le correctif du retour au Studio.
+Il ne s'agit pas du binaire stable 2.7.0 resté inchangé.
+Une fois ce candidat choisi, nous avons figé son empreinte pour pouvoir attribuer les résultats au même fichier.
+Fabriquer HaloryvaSetup consiste ensuite à compiler l'assistant qui embarque cet EXE existant.
+Le dernier essai a installé puis désinstallé cet assistant, pas recompilé Haloryva.
+Les difficultés du pilote d'essai ont été corrigées dans le pilote ; elles ne justifiaient pas de modifier le produit.
+
+Les changements déjà intégrés sont cumulatifs :
+- preview.2 : hooks séparés du rendu ; outil, couleur et épaisseur figés au départ d'un trait.
+- preview.3 : correction du rejeu du clic court ; essais avec/sans observateur.
+- preview.4 : placement initial du Studio corrigé.
+- preview.5 : choix mémorisé des outils parcourus par les boutons.
+- preview.6 : français/anglais/espagnol avec choix mémorisé.
+- preview.7 : nom d'outil visible, indicateur adapté à la sélection, pluriels EN/ES.
+- preview.8 : intégration du démarrage MSIX et reprise des réglages avec consentement.
+- preview.9 : actualisation effective au premier retour au Studio.
+Les preuves anciennes restent attachées aux binaires réellement testés. Toutes les campagnes n'ont pas été rejouées sur preview.9.
+Cela ne signifie ni « tous les audits intégralement clôturés », ni « toutes les finitions terminées ».
+Une troncature cosmétique espagnole et les limites de validation décrites au bilan restent ouvertes.
+
+NUMEROS CONSTATES
+Stable de référence conservée : 2.7.0.
+Version informative actuelle : 2.7.1-preview.9.
+AssemblyVersion : 2.7.1.0 ; version de fichier Windows : 2.7.1.9.
+Brand.Version et une partie de l'affichage interne : 2.7.1.
+L'historique interne contient encore un libellé de préversion.
+Nom de l'installateur : HaloryvaSetup_2.7.1-preview.9.exe.
+Version du paquet MSIX D'ESSAI : 2.7.1.90.
+Ce dernier numéro et cette identité d'essai ne constituent pas une version Store publiée.
+
+CIBLE PROPOSEE POUR LA DIFFUSION
+Nom public de la version stable : 2.7.1.
+Nom prévu de l'installateur final : HaloryvaSetup_2.7.1.exe.
+Le 9 de preview.9 est le numéro de préversion, pas la prochaine version publique 2.7.9.
+Une éventuelle nouvelle correction avant gel prendra une nouvelle préversion ; elle ne remplacera pas preview.9.
+Cette numérotation poursuit celle du projet ; elle ne prétend pas appliquer une convention SemVer stricte à une API publique.
+Les fonctionnalités supplémentaires n'obligent pas à changer ici la cible déjà préparée en 2.7.1.
+
+Pour le MSIX Store : proposition 2.7.1.0, à confirmer contre l'historique réel de l'identité Partner Center.
+La famille d'essai est distincte : elle ne doit pas être reprise pour une livraison de production.
+Ne jamais effectuer un retour de version dans une même famille pour faire correspondre artificiellement ces numéros.
+Le quatrième composant du paquet Store et la révision du fichier EXE sont deux métadonnées différentes.
+
+FABRICATION FINALE ENCORE A FAIRE, APRES ACCORD
+1. Arrêter une liste unique de finitions et les métadonnées finales.
+2. Corriger, si retenu, le seul sous-texte espagnol connu ; finaliser les mentions de version et l'historique.
+3. Compiler une fois le candidat final sous une nouvelle identité de fichier, en conservant preview.9.
+4. Vérifier les écarts avec preview.9, les métadonnées et les seules surfaces touchées.
+5. Construire EXE et MSIX autour du même nouvel EXE final, puis qualifier ces nouveaux emballages.
+Un changement de métadonnée compilée change l'empreinte : les preuves preview.9 restent utiles mais ne doivent pas être réétiquetées comme tests exacts du nouveau fichier.
+Aucune relance générale des 195 contrôles n'est incluse dans cette proposition.
+Rien de cette fabrication finale n'a été exécuté aujourd'hui.
+
+PROVENANCE
+Sources Brand et provenance : https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/haloryva-ci/preview9/src/Brand.cs
+https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/haloryva-ci/preview9/source-origin.json
+Compilation : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43035196363
+Bilan du correctif : https://github.com/JulienLecomteGit/haloryva-studio/blob/18a647ed7c22c6f4d19159721bc2ce844d8455a9/bilan-preview9-20261111/BILAN-preview9.txt
+Fabrication de l'assistant : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43060226353
+Cycle réel : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43065284869
+Documentation Microsoft du format de version du paquet :
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements

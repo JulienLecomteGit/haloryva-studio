@@ -1,0 +1,112 @@
+HALORYVA STUDIO — BILAN GLOBAL 2.7.1-preview.9
+11 novembre 2026 — preuves existantes seulement ; aucun test relancé.
+
+CONCLUSION
+Preview.9 est un programme corrigé et recompilé, ensuite figé pour les essais.
+Le défaut du premier retour au Studio est corrigé en mode normal.
+L'installateur preview.9 a été fabriqué avec cet EXE inchangé ; son extraction puis un cycle réel d'installation/désinstallation avec conservation des réglages sont validés.
+Cela clôt la recette ciblée de l'assistant EXE dans l'environnement testé.
+Cela ne clôt pas le démarrage MSIX lors d'une vraie connexion Windows ni la préparation/certification Store.
+La cible stable reste 2.7.1 proposée, non encore fabriquée avec des métadonnées finales.
+Voir VERSIONNEMENT.txt pour la distinction EXE / installateur / paquet / version publique.
+
+POINT CHIFFRE, SANS POURCENTAGE GLOBAL TROMPEUR
+- Preview.9, premier retour normal : 7/7 assertions, même processus, profil inchangé, actualisation observée en 137 ms.
+- Installateur : 1 fabrication/extraction réussie ; EXE embarqué et extrait identique.
+- Cycle installation/désinstallation : 27/27 assertions, dont 4 préalables d'environnement/intégrité.
+  13 champs de profil conservés ; 3 fichiers du profil identiques après désinstallation.
+- Historique du pilote installateur : 5 runs, 3 arrêts avant installation, 1 installation suivie d'un défaut de collecte du code de sortie, 1 cycle complet réussi.
+  2 autotests applicatifs automatiques observés au total, tous deux sortis avec code 0 ; aucun autotest séparé.
+- Plan MSIX hérité : 17 scénarios, 6 complets, 8 partiels, 3 non exécutés (C1, M7, S6).
+  Le cycle EXE n'augmente pas ces comptes MSIX. « Complet » désigne le critère documenté, parfois couvert par plusieurs versions.
+- Import preview.8 : 17/17 assertions ; désactivation Windows preview.8 : 5/5.
+- Preview.7 : 3 langues, 10 outils ; 174 PNG produits, 84 examinés ; 7 cycles MSIX propres.
+- Les 195 contrôles historiques restent attachés à leur exécution d'origine.
+- 0 paquet de production Store, 0 rapport WACK, 0 certification Store documentés.
+- Dans CETTE actualisation : 0 test, 0 compilation, 0 changement de binaire, 0 signature, 0 publication, 0 modification du PC.
+Les différents nombres ne s'additionnent pas en une couverture unique du produit.
+
+BINAIRE COURANT
+Application : 2.7.1-preview.9 ; fichier 2.7.1.9 ; compilation https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43035196363
+Commit : a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5
+SHA256 : 678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC
+MSIX d'essai 2.7.1.90 : A6D0A75878175AF51B29D167A612300A0811E0AF238D9D0489927DC1E24A3926
+Identité : HaloryvaStudio.MsixLifecycleTest ; jamais une identité de soumission.
+Installateur : HaloryvaSetup_2.7.1-preview.9.exe ; SHA256 3FC34DB4BE84B242AD439FE400B4F0C302995AAF5CF46AA89E535824EB845394
+L'application et l'installateur restent non signés.
+
+CORRECTIONS INTEGREES
+Hooks/rendu séparés, réglages figés pendant un trait, clic court corrigé, placement initial du Studio,
+choix d'outils mémorisé, FR/EN/ES, noms d'outils et indicateur, pluriels, intégration MSIX et migration,
+puis correction du retour de focus preview.9.
+Comparaison des sources courantes : 29 fichiers C# de preview.8 identiques dans preview.9.
+Brand.cs, Controller.cs et PremiumStudioForm.cs changent ; StartupRefreshTrace.cs est ajouté.
+Catalogue et ressources restent identiques. Les essais hérités ne sont pas déclarés exécutés sur le nouvel EXE.
+
+ACQUIS DIRECTS SUR PREVIEW.9
+1. Premier retour au Studio : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43035528813
+Job normal 130573406999 réussi : état Windows DisabledByUser respecté immédiatement, même processus,
+pas de fichier de diagnostic, arrêt 0 et retrait du paquet.
+Le job diagnostic 130573407015 reste interrompu. Neuf assertions sont déduites du marqueur placé après elles,
+mais aucun résultat JSON final ni arrêt/retrait normal n'est confirmé pour ce job.
+L'examen conservé n'attribue pas le blocage à Haloryva ou à la désinstallation MSIX.
+Le pilote diagnostic n'a pas été corrigé/rejoué ; sa limite reste séparée des résultats du nouvel installateur.
+
+2. Fabrication/extraction : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43060226353
+Seul l'assistant a été compilé. Les trois fichiers extraits correspondent au contenu incorporé.
+Haloryva n'a pas été recompilé ni exécuté lors de cette fabrication.
+
+3. Installation/désinstallation : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43065284869
+Windows 11 Enterprise ARM64 build 26200, EXE x64 émulé, profil fictif préexistant.
+Installation et désinstallation réelles, commandes des boutons par messages externes à la fenêtre identifiée.
+Ce n'est pas une recette des clics physiques ni du focus sur le bureau GitHub.
+Installation, autotest automatique et désinstallation : sorties 0.
+Application et désinstalleur installés : empreintes attendues ; inscription Windows et deux raccourcis corrects.
+13 champs conservés, dont UiLanguage=es, DrawingToolCycle=[Stylo,Rectangle], couleur, épaisseur et actions.
+settings.json est réécrit à l'installation sans changement de ces valeurs ; il reste ensuite identique après désinstallation.
+settings.json.bak et le fichier témoin sont conservés. Application, désinstalleur, raccourcis, entrée Windows et logo fourni retirés.
+Le dossier de profil reste présent par choix. operation.lock technique reste dans le dossier de maintenance ; aucun processus Haloryva/Setup ne reste.
+Le démarrage classique est resté désactivé : cela ne valide pas une entrée Run activée ni une connexion.
+Quatre captures de l'assistant ont été produites ; aucune revue visuelle supplémentaire ici.
+
+ACQUIS HERITES, NON REJOUES
+Preview.8 : import par vrais dialogues avec consentement et PNG/WAV non personnels, sources préservées ;
+désactivation dans Windows respectée au relancement ; commandes StartupTask et mises à jour de même famille.
+Le cycle A→B→C avec 93 champs porte en partie sur un candidat antérieur preview.8 ; le run global 43014976009 reste en échec malgré six contrôles de migration/mise à jour réussis.
+Les 30 assertions composants comprennent 14 simulations d'états et un service fictif : ce ne sont pas 30 validations Windows réelles.
+Preview.7 et précédentes : langues, outils, rendu, défilement, clics, appuis longs, AltGr, dessin, historique et export selon leurs bilans.
+Le dernier défaut S3 observé dans preview.8 est corrigé dans preview.9 ; les anciens échecs ne sont pas effacés.
+
+BLOCAGES AVANT DIFFUSION
+D0 commun : fabriquer et qualifier le livrable final 2.7.1, après gel des finitions et métadonnées ; preview.9 reste une préversion.
+D1 qualité MSIX : S6, vraie ouverture de session avec démarrage autorisé puis désactivé, non exécutée.
+D3 Store : identité Partner Center, historique des versions et métadonnées finales non vérifiés.
+D4 Store : politique de confidentialité/contact/support et droits des ressources à finaliser.
+D5 Store : captures finales de soumission à préparer/approuver.
+D6 Store : paquet de production, rapport WACK et certification non acquis.
+D2 conditionnel : passage/coexistence depuis une vraie installation 2.7.0, avant d'en annoncer la validation.
+X1 voie EXE : aucune signature de l'EXE GitHub ni garantie d'acceptation par les protections du PC principal.
+La signature Store du MSIX ne signe pas cet EXE ; ce point ne bloque pas la voie Store MSIX elle-même.
+Détails, portée et critères de fermeture : FINITIONS-AVANT-DIFFUSION.txt.
+
+NON BLOQUANTS A EUX SEULS / LIMITES
+Troncature mineure espagnole Son à 1024×768 ; finition connue, aucun contrôle masqué.
+Clôture du pilote diagnostic S3 incomplète : problème de preuve séparé, sans défaut produit démontré.
+Windows 11 x64 natif, compte standard non élevé, multi-écrans, DPI complet et claviers EN/ES non intégralement qualifiés.
+Dialogues d'erreur MSIX et revue visuelle FR/EN/ES de toutes les nouvelles surfaces incomplets.
+Aucun nouvel échec produit découvert dans cette lecture ; aucune correction de code autorisée par le présent bilan.
+Aucune preuve de mise à jour d'une installation réelle 2.7.0, de vraie connexion Windows ou de certification ne doit être déduite du cycle EXE.
+
+PROCHAINE ACTION UTILE
+Récupérer en lecture seule les informations d'identité et l'historique du produit Partner Center, si le compte/produit existe déjà,
+puis arrêter une liste fermée de finitions pour une seule fabrication finale 2.7.1.
+Cela évite de fabriquer un paquet de production avec une identité inventée.
+Si ces informations ne sont pas disponibles, les laisser explicitement manquantes ; ne créer aucun compte, abonnement ou produit sans accord.
+Pour S6, seule une session Windows distincte persistante et accessible depuis l'extérieur apportera la preuve manquante ; aucun équipement disponible n'est présumé.
+Le plan existant ne doit pas être transformé en validation par un lancement manuel --silent.
+
+CONSERVATION
+Nouveau dossier isolé sur haloryva-preparation-store-preview9, base 18a647ed7c22c6f4d19159721bc2ce844d8455a9.
+21 branches et 521 fichiers préexistants préservés. Aucun binaire, pilote ou workflow modifié.
+Les archives binaires GitHub ont une rétention annoncée jusqu'au 11 décembre 2026 ; identifiants et textes ne remplacent pas ces archives.
+Voir preuves-et-sources.json, progression-chiffree.json, couverture-msix.json et preservation.json.

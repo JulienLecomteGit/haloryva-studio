@@ -1,0 +1,163 @@
+HALORYVA STUDIO — TEXTES DE FICHE STORE PREVIEW.9
+Brouillons actualisés le 11 novembre 2026 — aucune fiche soumise.
+FR/EN/ES sont intégrés et ont des preuves fonctionnelles et MSIX existantes.
+Ces textes décrivent la version préparée ; version finale, OS, visuels et
+coordonnées doivent encore être confirmés avant soumission.
+Le changement de langue prend effet au prochain lancement de l'application.
+
+FRANÇAIS — fr-FR
+Titre : Haloryva Studio
+Résumé :
+Rendez votre curseur visible et annotez votre écran pendant vos présentations.
+
+Description :
+Haloryva Studio vous aide à guider le regard pendant une démonstration, un cours
+ou une présentation. Personnalisez le halo du curseur, ses traînées et les effets
+de clic, puis dessinez directement sur votre écran.
+
+Choisissez parmi dix outils : stylo, surligneur, ligne, rectangle, ellipse,
+flèche, flèche libre, auto-formes, numéro et texte. Ajustez la couleur,
+l'épaisseur et le lissage, annulez ou rétablissez un trait, puis exportez vos
+annotations en PNG sur fond transparent.
+
+Attribuez des actions aux boutons de votre souris, avec un appui court et un
+appui long. Sélectionnez les outils que vous souhaitez parcourir : deux outils
+favoris suffisent pour alterner entre eux, sans parcourir toute la liste.
+
+Le Studio rassemble les réglages de présentation, la loupe, le focus et
+l'affichage des raccourcis. Les profils s'enregistrent localement et peuvent
+être exportés ou importés au format JSON. L'application peut rester accessible
+depuis son icône près de l'horloge lorsque vous fermez le Studio.
+
+Choisissez le français, l'anglais ou l'espagnol dans les préférences. Votre
+choix est mémorisé et s'applique au prochain lancement de l'application.
+
+Fonctionnalités :
+- Interface en français, anglais et espagnol.
+- Halo du curseur, traînées et effets de clic personnalisables.
+- Dix outils d'annotation, lissage et formes assistées.
+- Liste personnelle des outils parcourus par les boutons.
+- Actions par appui court ou long ; annuler et rétablir.
+- Export PNG des annotations et sauvegarde des profils.
+
+Nouveautés proposées pour la version finale issue de preview.9 :
+Interface en trois langues avec choix mémorisé. Choisissez les outils parcourus
+par les boutons et suivez un indicateur adapté à votre sélection. Noms d'outils
+plus lisibles et pluriels anglais/espagnols corrigés. Corrections du clic court
+et du placement du Studio ; réglages conservés pendant chaque trait.
+Reprise volontaire des anciens réglages, avec copie consentie des PNG/WAV personnalisés.
+Le Studio actualise l'état du démarrage lorsque vous revenez depuis les paramètres Windows.
+
+Mots-clés proposés (7) :
+présentation ; annotation ; curseur ; dessin ; halo ; démonstration ; formation
+
+ENGLISH — en-US — DRAFT
+Title: Haloryva Studio
+Short description:
+Make your pointer easy to follow and annotate your screen during presentations.
+
+Description:
+Haloryva Studio helps you guide attention during a demo, a lesson or a
+presentation. Customize the pointer halo, trails and click effects, then draw
+directly on your screen.
+
+Choose from ten tools: pen, highlighter, line, rectangle, ellipse, arrow,
+freehand arrow, auto shapes, number and text. Adjust color, thickness and
+smoothing, undo or redo a stroke, and export your annotations as a PNG with
+a transparent background.
+
+Assign actions to your mouse buttons for both short clicks and long presses.
+Choose which drawing tools the buttons cycle through: select two favorites
+to switch between them without cycling through the full list.
+
+The Studio brings together presentation settings, a magnifier, a focus effect
+and shortcut display. Profiles are saved locally and can be exported or
+imported as JSON. After you close the Studio window, the app can remain
+available from its icon near the clock.
+
+Choose French, English or Spanish in the preferences. Your choice is saved
+and takes effect the next time you start the app.
+
+Features:
+- Interface in French, English and Spanish.
+- Customizable pointer halo, trails and click effects.
+- Ten annotation tools, smoothing and assisted shapes.
+- A personal selection of tools to cycle through with mouse buttons.
+- Short-click and long-press actions; undo and redo.
+- PNG annotation export and saved settings profiles.
+
+Proposed release notes:
+Choose a saved interface language: French, English or Spanish. Select the tools
+your buttons cycle through, with an indicator that follows your selection.
+Clearer tool names and corrected English/Spanish plurals. Fixes for short
+clicks and Studio placement; consistent settings throughout each stroke.
+Optionally copy legacy settings and custom PNG/WAV files with your consent.
+The Studio refreshes startup status when you return from Windows settings.
+
+Suggested keywords (7):
+presentation; annotation; pointer; drawing; halo; demonstration; teaching
+
+ESPAÑOL — es-ES — BORRADOR
+Título: Haloryva Studio
+Descripción breve:
+Haz que tu cursor sea fácil de seguir y anota en pantalla durante tus presentaciones.
+
+Descripción:
+Haloryva Studio te ayuda a guiar la atención durante una demostración, una clase
+o una presentación. Personaliza el halo del cursor, las estelas y los efectos
+de clic, y dibuja directamente en la pantalla.
+
+Elige entre diez herramientas: lápiz, resaltador, línea, rectángulo, elipse,
+flecha, flecha a mano alzada, formas automáticas, número y texto. Ajusta el color,
+el grosor y el suavizado, utiliza las opciones de deshacer y rehacer y exporta tus anotaciones
+como PNG con fondo transparente.
+
+Asigna acciones a los botones del ratón para clics cortos y pulsaciones largas.
+Elige las herramientas de dibujo que recorrerán los botones: selecciona dos
+favoritas para alternar entre ellas sin pasar por toda la lista.
+
+El Studio reúne los ajustes de presentación, una lupa, un efecto de enfoque
+y la visualización de atajos. Los perfiles se guardan localmente y se pueden
+exportar o importar en formato JSON. Al cerrar la ventana del Studio, puedes
+seguir accediendo a la aplicación desde su icono junto al reloj.
+
+Elige francés, inglés o español en las preferencias. La selección se guarda
+y se aplica la próxima vez que inicies la aplicación.
+
+Funciones:
+- Interfaz en francés, inglés y español.
+- Halo del cursor, estelas y efectos de clic personalizables.
+- Diez herramientas de anotación, suavizado y formas asistidas.
+- Selección personal de herramientas para recorrer con los botones del ratón.
+- Acciones de clic corto y pulsación larga; deshacer y rehacer.
+- Exportación de anotaciones a PNG y perfiles de ajustes guardados.
+
+Novedades propuestas:
+Elige el idioma de la interfaz: francés, inglés o español. La selección se
+guarda. Escoge las herramientas que recorrerán los botones, con un indicador
+adaptado a tu selección. Nombres más legibles y plurales corregidos en inglés
+y español. Correcciones del clic corto y de la posición del Studio; ajustes
+constantes durante cada trazo.
+Copia opcional de ajustes anteriores y archivos PNG/WAV personalizados con tu consentimiento.
+El Studio actualiza el estado del inicio automático cuando vuelves desde la configuración de Windows.
+
+Palabras clave propuestas (7):
+presentación; anotación; cursor; dibujo; halo; demostración; formación
+
+CHAMPS COMMUNS NON DÉCIDÉS
+Disponibilité du nom ; identité éditeur vérifiée ; version finale ; URL de
+confidentialité et contact ; classification IARC ; marchés ; limites OS finales.
+Aucun texte ne doit promettre certification, signature, fonctionnement sur
+toutes les applications ou compatibilité avec des écrans protégés non testés.
+
+NOTE INTERNE PREVIEW.9 — À RETIRER DE LA FICHE CLIENT
+Les preuves d'import héritées de preview.8 sont réelles avec des profils
+synthétiques au format 2.7.0. Elles ne permettent pas d'annoncer une migration
+certifiée depuis une installation 2.7.0. Le démarrage à la connexion ne figure pas
+comme promesse validée dans ces textes : la session Windows réelle reste à contrôler.
+Langues et gestes : preuves héritées des préversions, pas nouvelle campagne générale.
+Les nouveaux messages MSIX n'ont pas tous été revus visuellement en FR/EN/ES.
+Fiches, marchés et coordonnées restent soumis à validation ; aucune fiche publiée.
+
+Etat interne de diffusion : cible proposée 2.7.1, non soumise. S3 acquis en mode normal
+preview.9 ; S6 non exécuté. Le cycle de l'installateur EXE ne certifie pas le MSIX Store.

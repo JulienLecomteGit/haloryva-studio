@@ -1,0 +1,73 @@
+HALORYVA STUDIO — DOSSIER MICROSOFT STORE PREVIEW.9
+11 novembre 2026 — préparation documentaire, aucune soumission.
+
+DECISIONS CONSERVEES
+Application gratuite, dépôt GitHub public, droits actuels conservés.
+© 2026 Julien Lecomte — droits réservés. Aucun choix MIT/GPL ajouté.
+Canal visé pour une installation publique simple : Microsoft Store / MSIX.
+L'installateur EXE GitHub est distinct et reste non signé.
+Nom proposé Haloryva Studio, catégorie Productivité, interface FR/EN/ES.
+Choix de langue mémorisé et appliqué au prochain lancement complet de l'application.
+Compte Partner Center, réservation, marchés, classification et coordonnées non vérifiés, pas présumés absents.
+
+VERSION ET ARCHITECTURE
+Application Win32/WinForms .NET Framework, EXE x64 ; aucun ARM64 natif fabriqué.
+Candidate actuelle 2.7.1-preview.9 ; fichier 2.7.1.9 ; SHA256 678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC.
+Cible stable proposée 2.7.1 ; MSIX de production proposé 2.7.1.0 seulement après contrôle de l'historique Partner Center.
+Ne pas soumettre la famille HaloryvaStudio.MsixLifecycleTest ni le paquet d'essai 2.7.1.90.
+Le manifeste final doit utiliser l'identité effective du produit réservé.
+Cible proposée Windows 11 Desktop x64 ; preuves Windows 11 ARM64 en émulation et Windows Server x64 à distinguer.
+Ni Windows 10, ni Windows 11 x64 natif ne sont validés par ces campagnes.
+Avertissement de compilation CS1701 WinRT/.NET conservé dans le bilan ; aucune nouvelle compilation ici.
+
+PREUVES EXISTANTES AJOUTEES
+S3 preview.9 : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43035528813
+Job normal : 7/7, vrai premier retour, respect DisabledByUser, même processus, profil inchangé, arrêt et retrait normaux.
+Le job diagnostic de cette campagne reste cancelled ; son analyse ultérieure ne le transforme pas en réussite.
+
+Installateur : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43060226353
+Fabrication et extraction réussies ; EXE embarqué identique.
+Cycle réel : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43065284869
+27/27 assertions, installation/autotest/désinstallation sortis avec code 0.
+13 réglages du profil fictif conservés ; 3 fichiers identiques après désinstallation.
+Ce cycle qualifie l'assistant EXE dans l'environnement testé. Il ne valide ni la désinstallation du paquet Store,
+ni une mise à jour depuis une installation réelle 2.7.0, ni le démarrage à la connexion.
+
+HERITAGE PREVIEW.8
+Import par interface, consentement, PNG/WAV et indépendance des sources : run 43020483264, 17/17.
+Désactivation depuis Windows et respect au relancement : run 43021089861, 5/5.
+Commandes StartupTask et conservation après mise à jour : run 43017766592.
+Les profils d'import sont synthétiques. Les scénarios ne sont pas déclarés rejoués sur preview.9.
+
+COMPORTEMENTS A DECRIRE AU CERTIFICATEUR
+Le paquet utilise LocalState/Haloryva ; reprise d'une ancienne configuration de même famille depuis LocalCache.
+La copie d'un profil classique et des ressources PNG/WAV est consentie, indépendante et ne désinstalle pas la version classique.
+Démarrage par StartupTask, désactivé par défaut ; choix Windows respecté même si un profil contient LaunchAtLogin=true.
+L'actualisation au retour au Studio est acquise. L'exécution lors d'une vraie nouvelle connexion Windows reste à valider.
+Ne pas annoncer de migration « certifiée depuis 2.7.0 » ni de démarrage « entièrement validé » avant fermeture des points correspondants.
+
+CAPACITE runFullTrust — JUSTIFICATION PREPAREE
+Evénements globaux souris/clavier pour effets et actions de boutons, superpositions d'annotation,
+icône de notification, préférences locales et exports choisis par l'utilisateur.
+Aucun pilote, service ni demande d'élévation n'est prévu pour ces fonctions.
+Justification à joindre au paquet final ; autorisation de capacité et certification non présumées.
+Aucun ajout d'allowElevation.
+
+ETAT DE SOUMISSION
+D0 finalisation stable ; D1 vraie session ; D3 identité ; D4 confidentialité/support/droits ;
+D5 captures ; D6 paquet de production et certification : ouverts.
+D2 migration/coexistence réelle 2.7.0 : conditionnel à cette promesse.
+La clôture du pilote diagnostic est un point de preuve distinct, pas un défaut produit établi.
+Voir FINITIONS-AVANT-DIFFUSION.txt et les critères de portée.
+
+SIGNATURE
+Pour le canal MSIX/AppX Store, Microsoft applique sa signature lors de la publication après certification.
+Cela ne signe pas l'installateur EXE hors Store. Le setup preview.9 reste non signé.
+Aucun certificat acheté, aucune signature, souscription ou publication dans cette tâche.
+Référence officielle vérifiée le 11 novembre 2026 :
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+
+SUITE CONCRETE
+Renseigner l'identité existante et l'historique des versions en lecture seule avant de préparer le paquet final.
+Les champs réellement manquants restent null dans identite-store.a-renseigner.json.
+Aucune création de compte, réservation, paiement ou soumission implicite.

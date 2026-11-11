@@ -1,0 +1,69 @@
+HALORYVA PREVIEW.9 — POINTS OUVERTS ET PORTEE DES BLOCAGES
+11 novembre 2026 — propositions uniquement, aucun test lancé.
+
+Il s'agit de décisions, preuves et livrables manquants, pas d'une liste de nouveaux bugs.
+Le défaut S3 de retour au Studio et le cycle EXE installation/désinstallation ne sont plus des travaux manquants.
+
+D0 — Livrable stable 2.7.1 (commun EXE / MSIX)
+Bloque l'annonce « version stable finale disponible ».
+Preview.9 corrigée et testée existe, mais ses métadonnées compilées et son historique portent encore la préversion.
+Préparer une seule passe finale : mention de version, historique des nouveautés, éventuelle finition espagnole connue.
+Après accord : nouvelle compilation conservant preview.9, vérification des seuls écarts et fabrication des emballages avec provenance.
+Le choix public proposé est 2.7.1 ; le numéro exact Store dépend de D3. Un renommage d'EXE ne clôt pas D0.
+
+D1 — Vraie connexion Windows, qualité du démarrage MSIX
+Bloque notre validation définitive de cette fonction et le feu vert Store complet prévu.
+S3 est acquis en mode normal preview.9 ; ne pas le refaire pour fermer S6.
+S6 doit établir un vrai nouvel identifiant de connexion, un seul démarrage silencieux après opt-in, puis aucun lancement après désactivation Windows.
+Lancement manuel --silent, réouverture du Studio ou reprise d'une session existante ne suffisent pas.
+Le runner actuel n'a pas de continuité extérieure préparée après fermeture de session.
+Solution : Windows 11 distinct persistant déjà disponible/autorisé, avec accès extérieur ; disponibilité non établie.
+Aucune souscription, installation d'agent ou modification d'autologon n'est proposée comme action implicite.
+
+D2 — Installation 2.7.0 réelle (conditionnel)
+Bloque la promesse d'une migration/coexistence entièrement validée depuis une installation 2.7.0.
+Ne bloque pas à lui seul une première installation Store limitée au périmètre acquis.
+Les profils synthétiques d'import et le cycle EXE preview.9 ne remplacent pas C1/M7.
+Il faudrait, après accord distinct, utiliser l'installateur stable exact sur un Windows de test ; pas de reconstruction de la stable ni contournement des protections.
+
+D3 — Identité et métadonnées Partner Center (Store)
+Bloque la constitution du paquet final conforme à l'identité réservée.
+Compte/nom réservé/produit non vérifiés : leur absence n'est pas présumée.
+A relever en lecture seule : Name, Publisher, nom éditeur, historique des versions, langues, architecture, OS, marchés et classification.
+Ne pas réutiliser HaloryvaStudio.MsixLifecycleTest ou sa version 2.7.1.90.
+Prochaine action prioritaire : renseigner les valeurs réelles dans identite-store.a-renseigner.json ; ne pas publier.
+
+D4 — Confidentialité, support, droits (Store)
+Brouillon conservé et actualisé avec la conservation volontaire des réglages de l'EXE.
+Restent contact, texte approuvé, versions linguistiques nécessaires, URL publique et droits des ressources.
+Aucune nouvelle licence : droits actuels réservés, dépôt public maintenu.
+La préparation des textes est distincte de leur approbation et de leur hébergement.
+
+D5 — Images finales Store
+Aucun jeu de captures final approuvé. 174 PNG de recette preview.7 ne sont pas 174 images Store.
+Les quatre captures de l'installateur preview.9 ne remplacent pas des scènes du produit final en FR/EN/ES.
+Préparer ultérieurement les scènes listées dans CERTIFICATION-et-CAPTURES.txt, sur le livrable choisi.
+
+D6 — Production et certification (Store)
+Paquet de production, contrôle WACK et certification Microsoft non documentés.
+Les installations non signées de la famille de test ne valent pas certification.
+A préparer après D3 et le gel final ; rapport à examiner avant toute soumission autorisée.
+
+X1 — Signature de l'EXE hors Store
+L'installateur GitHub actuel est non signé. L'essai sur GitHub ne prouve pas son acceptation par Smart App Control sur le PC principal.
+Il n'existe pas ici de solution de signature EXE déjà validée ni de promesse de confiance universelle.
+La voie MSIX Store peut rester le canal simple pour le public ; sa signature ne se transmet pas à l'EXE séparé.
+Une publication GitHub non signée est techniquement distincte de l'objectif d'EXE signé/simple à installer.
+Aucune signature ou baisse de protection n'est effectuée.
+
+FINITIONS ET RISQUES SANS BLOCAGE AUTOMATIQUE
+F3 : sous-texte espagnol de Son tronqué à 1024×768 ; proposition déjà préparée « Sonido opcional, fácil de desactivar. ».
+F8/F9 : Windows 11 x64 natif, compte standard, DPI complet, multi-écrans et gestes/claviers physiques restent des limites à annoncer honnêtement.
+S4/M2/M4/M5/M6/U3/S5 : cas partiels détaillés dans la matrice ; absence de preuve ne signifie pas bug.
+Clôture du pilote diagnostic S3 : correction préparée, non exécutée ; son résultat global cancelled reste conservé.
+F10 : archives à conserver avant expiration annoncée le 11 décembre ; aucun téléchargement local ici.
+
+PROCHAINE ETAPE PROPOSEE
+Lecture des informations Partner Center existantes et liste fermée des finitions finales 2.7.1.
+Puis choisir le moyen autorisé de satisfaire S6 ; ne pas relancer les acquis en attendant.
+Aucun changement de version, compilation, test ou publication n'est autorisé par ce document.

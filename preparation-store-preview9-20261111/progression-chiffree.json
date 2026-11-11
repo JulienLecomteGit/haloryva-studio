@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-11",
+  "global_completion_percentage": null,
+  "reason": "Les assertions, scénarios de tailles différentes, versions héritées et prérequis Store ne constituent pas un pourcentage global.",
+  "preview9_direct": {
+    "normal_first_refocus": {
+      "passed": 7,
+      "total": 7,
+      "run": 43035528813,
+      "job": 130573406999,
+      "observed_ms": 137
+    },
+    "diagnostic_first_refocus": {
+      "functional_assertions_inferred": 9,
+      "inferred_from_marker": true,
+      "job_status": "cancelled",
+      "normal_cleanup_confirmed": false
+    },
+    "installer_build_extraction": {
+      "successful_runs": 1,
+      "run": 43060226353,
+      "application_recompiled": false
+    },
+    "installer_lifecycle": {
+      "passed": 27,
+      "total": 27,
+      "includes_preflight": 4,
+      "run": 43065284869,
+      "profile_fields": 13,
+      "profile_files_preserved": 3
+    },
+    "installer_driver_history": {
+      "runs": 5,
+      "stopped_before_install": 3,
+      "installed_but_driver_exit_collection_failed": 1,
+      "complete_cycles": 1,
+      "automatic_selftests_executed": 2,
+      "automatic_selftests_passed": 2,
+      "external195_runs": 0
+    }
+  },
+  "msix_plan_coverage": {
+    "total": 17,
+    "complete": 6,
+    "partial": 8,
+    "observed_failure": 0,
+    "not_executed": 3
+  },
+  "inherited_preview8": {
+    "import_passed": 17,
+    "import_total": 17,
+    "windows_disable_passed": 5,
+    "windows_disable_total": 5,
+    "component_assertions": 30,
+    "includes_simulated_states": 14,
+    "includes_fake_startup_service": 1,
+    "migration_update_checks": 6,
+    "profile_fields_compared": 93,
+    "lifecycle_run_overall_success": false
+  },
+  "inherited_preview7": {
+    "languages": 3,
+    "tools": 10,
+    "png_generated": 174,
+    "png_visually_reviewed": 84,
+    "msix_clean_cycles": 7
+  },
+  "readiness": {
+    "common_finalization": [
+      "D0"
+    ],
+    "store_technical": [
+      "D1"
+    ],
+    "store_preparation_certification": [
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "conditional_legacy": [
+      "D2"
+    ],
+    "external_exe": [
+      "X1"
+    ],
+    "production_store_packages": 0,
+    "wack_reports": 0,
+    "store_certifications": 0
+  },
+  "current_task": {
+    "tests": 0,
+    "builds": 0,
+    "binary_changes": 0,
+    "workflow_changes": 0,
+    "local_file_writes": 0,
+    "system_changes": 0,
+    "signatures": 0,
+    "release_publications": 0,
+    "store_submissions": 0,
+    "subscriptions": 0
+  }
+}
