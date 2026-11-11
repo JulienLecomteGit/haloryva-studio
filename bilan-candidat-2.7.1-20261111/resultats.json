@@ -1,0 +1,723 @@
+{
+  "scope": "F01-F03: candidate compilation, metadata, and four requested visual captures only",
+  "preparedCommit": "9482b046fa6fc096fd5942482c3ddff8516dcbcc",
+  "buildCommit": "a541362298cbcb7283481a31651149def29804ed",
+  "captureDriverCommit": "968d487b91a3ae9b4b65c2701ce3bbd6e9462957",
+  "buildRun": 43080695119,
+  "buildJob": 130732160407,
+  "successfulCaptureRun": 43081072953,
+  "applicationBuildCount": 1,
+  "productVersion": "2.7.1",
+  "fileVersion": "2.7.1.10",
+  "assemblyVersion": "2.7.1.0",
+  "buildDate": "11/11/2026",
+  "builtAtParis": "2026-11-11T19:45:16.7316841+01:00",
+  "builtAtUTC": "2026-11-11T18:45:16.7316841+00:00",
+  "sha256": "22A2EFBDA164B7682051F0212EABB6CF1B1F0BE5E4C123FB926E78BB0E6255A0",
+  "metadataChecks": {
+    "ProductName": true,
+    "ProductVersion": true,
+    "FileVersion": true,
+    "AssemblyVersion": true,
+    "BrandVersion": true,
+    "ActualParisBuildDate": true,
+    "FirstHistoryVersion": true,
+    "FirstHistoryDate": true,
+    "NoSignature": true,
+    "CatalogMatchesPreparedSource": true
+  },
+  "environment": "GitHub-hosted Windows Server 2025 Datacenter x64, build 26100, interactive session 2, image 20261103.298.1; actual 1024x768 desktop",
+  "firstRun": {
+    "status": "failure",
+    "build": "success",
+    "reason": "Capture-driver reflection AmbiguousMatchException selecting PremiumPalette.Font; all three capture sessions stopped before measurements. No application defect inferred.",
+    "driverOnlyFix": "Explicit overload Font(float,int); frozen binary reused, no application rebuild or metadata-suite replay."
+  },
+  "targetedCaptures": [
+    {
+      "language": "fr",
+      "Status": "passed",
+      "Language": "fr",
+      "Assertions": 7,
+      "Measurements": [
+        {
+          "Label": "Version",
+          "Text": "Version 2.7.1 · build 11/11/2026 · Windows x64",
+          "TextWidth": 247,
+          "TextHeight": 15,
+          "AvailableWidth": 680,
+          "AvailableHeight": 20,
+          "Region": "{X=253,Y=287,Width=680,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History heading",
+          "Text": "HISTORIQUE DES VERSIONS",
+          "TextWidth": 147,
+          "TextHeight": 13,
+          "AvailableWidth": 784,
+          "AvailableHeight": 18,
+          "Region": "{X=149,Y=383,Width=784,Height=18}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "New history text",
+          "Text": "Langues, outils choisis et corrections de fiabilité",
+          "TextWidth": 258,
+          "TextHeight": 15,
+          "AvailableWidth": 634,
+          "AvailableHeight": 20,
+          "Region": "{X=211,Y=407,Width=634,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History version",
+          "Text": "2.7.1",
+          "TextWidth": 29,
+          "TextHeight": 13,
+          "AvailableWidth": 50,
+          "AvailableHeight": 20,
+          "Region": "{X=149,Y=407,Width=50,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History date",
+          "Text": "11/11/2026",
+          "TextWidth": 63,
+          "TextHeight": 13,
+          "AvailableWidth": 84,
+          "AvailableHeight": 20,
+          "Region": "{X=849,Y=407,Width=84,Height=20}",
+          "Visible": true,
+          "Fits": true
+        }
+      ],
+      "Captures": [
+        "fr-version-historique-1024x768.png"
+      ],
+      "Execution": "Actual compiled UI loaded by a capture driver; not Program.Main or an installed application",
+      "Historical195Executed": false,
+      "SelfTestsExecuted": false,
+      "Installed": false,
+      "Signed": false,
+      "Published": false,
+      "process": {
+        "Version": "2.7.1",
+        "Language": "fr",
+        "Status": "passed",
+        "Historical195Executed": false,
+        "SelfTestsExecuted": false,
+        "Installed": false,
+        "Signed": false,
+        "Published": false,
+        "RebuiltInCapture": false,
+        "SHA256": "22A2EFBDA164B7682051F0212EABB6CF1B1F0BE5E4C123FB926E78BB0E6255A0",
+        "BuildDate": "11/11/2026",
+        "ExitCode": 0,
+        "Captures": [
+          "fr-version-historique-1024x768.png"
+        ],
+        "CaptureHashes": [
+          {
+            "SHA256": "E4E92F329A9CCE0D392053D9D36EF6E54AD3F8BA81A517040B20F60196EBB705",
+            "File": "fr-version-historique-1024x768.png"
+          }
+        ]
+      }
+    },
+    {
+      "language": "en",
+      "Status": "passed",
+      "Language": "en",
+      "Assertions": 7,
+      "Measurements": [
+        {
+          "Label": "Version",
+          "Text": "Version 2.7.1 · build 11/11/2026 · Windows x64",
+          "TextWidth": 247,
+          "TextHeight": 15,
+          "AvailableWidth": 680,
+          "AvailableHeight": 20,
+          "Region": "{X=253,Y=287,Width=680,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History heading",
+          "Text": "VERSION HISTORY",
+          "TextWidth": 99,
+          "TextHeight": 13,
+          "AvailableWidth": 784,
+          "AvailableHeight": 18,
+          "Region": "{X=149,Y=383,Width=784,Height=18}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "New history text",
+          "Text": "Languages, selected tools and reliability fixes",
+          "TextWidth": 242,
+          "TextHeight": 15,
+          "AvailableWidth": 634,
+          "AvailableHeight": 20,
+          "Region": "{X=211,Y=407,Width=634,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History version",
+          "Text": "2.7.1",
+          "TextWidth": 29,
+          "TextHeight": 13,
+          "AvailableWidth": 50,
+          "AvailableHeight": 20,
+          "Region": "{X=149,Y=407,Width=50,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History date",
+          "Text": "11/11/2026",
+          "TextWidth": 63,
+          "TextHeight": 13,
+          "AvailableWidth": 84,
+          "AvailableHeight": 20,
+          "Region": "{X=849,Y=407,Width=84,Height=20}",
+          "Visible": true,
+          "Fits": true
+        }
+      ],
+      "Captures": [
+        "en-version-historique-1024x768.png"
+      ],
+      "Execution": "Actual compiled UI loaded by a capture driver; not Program.Main or an installed application",
+      "Historical195Executed": false,
+      "SelfTestsExecuted": false,
+      "Installed": false,
+      "Signed": false,
+      "Published": false,
+      "process": {
+        "Version": "2.7.1",
+        "Language": "en",
+        "Status": "passed",
+        "Historical195Executed": false,
+        "SelfTestsExecuted": false,
+        "Installed": false,
+        "Signed": false,
+        "Published": false,
+        "RebuiltInCapture": false,
+        "SHA256": "22A2EFBDA164B7682051F0212EABB6CF1B1F0BE5E4C123FB926E78BB0E6255A0",
+        "BuildDate": "11/11/2026",
+        "ExitCode": 0,
+        "Captures": [
+          "en-version-historique-1024x768.png"
+        ],
+        "CaptureHashes": [
+          {
+            "SHA256": "6CFB045AE5D51FA7DB5A2C6421FB9896F6636B9B612F44765AC0D7ABB432FDE9",
+            "File": "en-version-historique-1024x768.png"
+          }
+        ]
+      }
+    },
+    {
+      "language": "es",
+      "Status": "passed",
+      "Language": "es",
+      "Assertions": 10,
+      "Measurements": [
+        {
+          "Label": "Sonidos title",
+          "Text": "Sonidos",
+          "TextWidth": 69,
+          "TextHeight": 21,
+          "AvailableWidth": 311,
+          "AvailableHeight": 24,
+          "Region": "{X=622,Y=439,Width=311,Height=24}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "Sonidos subtitle",
+          "Text": "Sonido opcional, fácil de desactivar.",
+          "TextWidth": 196,
+          "TextHeight": 15,
+          "AvailableWidth": 311,
+          "AvailableHeight": 20,
+          "Region": "{X=622,Y=462,Width=311,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "Version",
+          "Text": "Versión 2.7.1 · compilación 11/11/2026 · Windows x64",
+          "TextWidth": 286,
+          "TextHeight": 15,
+          "AvailableWidth": 680,
+          "AvailableHeight": 20,
+          "Region": "{X=253,Y=287,Width=680,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History heading",
+          "Text": "HISTORIAL DE VERSIONES",
+          "TextWidth": 137,
+          "TextHeight": 13,
+          "AvailableWidth": 784,
+          "AvailableHeight": 18,
+          "Region": "{X=149,Y=383,Width=784,Height=18}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "New history text",
+          "Text": "Idiomas, herramientas elegidas y mejoras de fiabilidad",
+          "TextWidth": 292,
+          "TextHeight": 15,
+          "AvailableWidth": 634,
+          "AvailableHeight": 20,
+          "Region": "{X=211,Y=407,Width=634,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History version",
+          "Text": "2.7.1",
+          "TextWidth": 29,
+          "TextHeight": 13,
+          "AvailableWidth": 50,
+          "AvailableHeight": 20,
+          "Region": "{X=149,Y=407,Width=50,Height=20}",
+          "Visible": true,
+          "Fits": true
+        },
+        {
+          "Label": "History date",
+          "Text": "11/11/2026",
+          "TextWidth": 63,
+          "TextHeight": 13,
+          "AvailableWidth": 84,
+          "AvailableHeight": 20,
+          "Region": "{X=849,Y=407,Width=84,Height=20}",
+          "Visible": true,
+          "Fits": true
+        }
+      ],
+      "Captures": [
+        "es-sonidos-1024x768.png",
+        "es-version-historique-1024x768.png"
+      ],
+      "Execution": "Actual compiled UI loaded by a capture driver; not Program.Main or an installed application",
+      "Historical195Executed": false,
+      "SelfTestsExecuted": false,
+      "Installed": false,
+      "Signed": false,
+      "Published": false,
+      "process": {
+        "Version": "2.7.1",
+        "Language": "es",
+        "Status": "passed",
+        "Historical195Executed": false,
+        "SelfTestsExecuted": false,
+        "Installed": false,
+        "Signed": false,
+        "Published": false,
+        "RebuiltInCapture": false,
+        "SHA256": "22A2EFBDA164B7682051F0212EABB6CF1B1F0BE5E4C123FB926E78BB0E6255A0",
+        "BuildDate": "11/11/2026",
+        "ExitCode": 0,
+        "Captures": [
+          "es-sonidos-1024x768.png",
+          "es-version-historique-1024x768.png"
+        ],
+        "CaptureHashes": [
+          {
+            "SHA256": "A3BA9F3586963875AC6175A35D7AF60A6794C2600B7245DF9B1E4F1E3E22D8E4",
+            "File": "es-sonidos-1024x768.png"
+          },
+          {
+            "SHA256": "049A79ACFDF7169AEB7458B6F032B88B501335DF26F73EA55E2997587124F171",
+            "File": "es-version-historique-1024x768.png"
+          }
+        ]
+      }
+    }
+  ],
+  "manualVisualReview": {
+    "performed": true,
+    "targetedViews": 4,
+    "allRequestedTextVisible": true,
+    "sonidosSubtitle": "Sonido opcional, fácil de desactivar.",
+    "newHistoryLanguages": [
+      "fr",
+      "en",
+      "es"
+    ],
+    "dateAndVersionConsistent": true
+  },
+  "additionalObservation": {
+    "id": "V01",
+    "status": "observed, not corrected",
+    "description": "The old 2.6.3 history row is partly clipped at the bottom; older rows are outside the fixed AboutBlock bounds in all three captures.",
+    "origin": "Inherited: PremiumStudioForm.cs unchanged from preview.9. AboutBlock height S(286); history starts y=S(152), row step S(24); sixth row ends at S(292).",
+    "impact": "Older history readability only. Requested new 2.7.1 row and version/date remain fully visible. Overall interface is not declared free of all visual defects.",
+    "recommendedNextStep": "Review and correct only history layout in a new candidate before final installer, then capture only About/version in FR/EN/ES."
+  },
+  "preservation": {
+    "priorBranches": [
+      {
+        "name": "haloryva-2.7.0-c4",
+        "commit": {
+          "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/678c637b4c87b07ebc6b615154ffc2122c320a06"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-exe-preview9",
+        "commit": {
+          "sha": "c158d3fa27e1cd3e1dbeeb3655a4682b820e034d",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/c158d3fa27e1cd3e1dbeeb3655a4682b820e034d"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-livraison-2.7.1",
+        "commit": {
+          "sha": "9482b046fa6fc096fd5942482c3ddff8516dcbcc",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/9482b046fa6fc096fd5942482c3ddff8516dcbcc"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-msix-preview7",
+        "commit": {
+          "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview5",
+        "commit": {
+          "sha": "f07890303144653049a05069841838ecd9b9d73d",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/f07890303144653049a05069841838ecd9b9d73d"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview7",
+        "commit": {
+          "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview8",
+        "commit": {
+          "sha": "bf8892413e6d686feb2884d26e118eff94d32723",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/bf8892413e6d686feb2884d26e118eff94d32723"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview9",
+        "commit": {
+          "sha": "dca613b3714ccc85a2d1930f1a0cb5e23e91388c",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/dca613b3714ccc85a2d1930f1a0cb5e23e91388c"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-installateur-preview9",
+        "commit": {
+          "sha": "18a647ed7c22c6f4d19159721bc2ce844d8455a9",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/18a647ed7c22c6f4d19159721bc2ce844d8455a9"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview2",
+        "commit": {
+          "sha": "8d84f31157ebfc1e09144811b6b112247f926f81",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/8d84f31157ebfc1e09144811b6b112247f926f81"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview3",
+        "commit": {
+          "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview4",
+        "commit": {
+          "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview5-msix",
+        "commit": {
+          "sha": "cfdb260c50bf771843065eff8eefadae24899f06",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/cfdb260c50bf771843065eff8eefadae24899f06"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview5",
+        "commit": {
+          "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview6",
+        "commit": {
+          "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview7-msix",
+        "commit": {
+          "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/6689a23a953c5c553d6706e0c845467d7c8592e0"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview7",
+        "commit": {
+          "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8-focus",
+        "commit": {
+          "sha": "638e2044e6c988b784941329316aa53b99005e8a",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/638e2044e6c988b784941329316aa53b99005e8a"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8-import",
+        "commit": {
+          "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/78c8063e7109e8e8529f82adf8f37d075fe20420"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8",
+        "commit": {
+          "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/61db4b63737c3907216c9d4bee2bc8485662f2aa"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview9",
+        "commit": {
+          "sha": "d1afe7b5a155355bbf60645a4ad04c7f963bfb87",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/d1afe7b5a155355bbf60645a4ad04c7f963bfb87"
+        },
+        "protected": false
+      },
+      {
+        "name": "main",
+        "commit": {
+          "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+        },
+        "protected": false
+      },
+      {
+        "name": "release/2.7.0-stable",
+        "commit": {
+          "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/d80b33ea17bf6d667322adc60bdde31ac9039980"
+        },
+        "protected": false
+      }
+    ],
+    "existingFilesUnchanged": 586,
+    "newCiFiles": 12,
+    "mainUnchanged": true,
+    "preparedSourceUnchanged": true,
+    "allPriorBinariesUnmodified": true,
+    "localMachineChanged": false
+  },
+  "notExecuted": [
+    "195 historical checks",
+    "Haloryva self-tests",
+    "prior functional suites",
+    "normal Program.Main launch qualification",
+    "installer build or installation",
+    "MSIX build or validation",
+    "real Windows 11 sign-in",
+    "signing",
+    "release or Store submission",
+    "subscription"
+  ],
+  "artifacts": {
+    "buildRun": [
+      {
+        "id": 13885180531,
+        "name": "Haloryva-2.7.1-captures-fr",
+        "size_in_bytes": 398126,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13885180531",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13885180531/zip",
+        "expired": false,
+        "created_at": "2026-11-11T18:45:48Z",
+        "expires_at": "2027-02-09T18:44:59Z",
+        "updated_at": "2026-11-11T18:45:48Z",
+        "digest": "sha256:8329d8d26dcbec9723a623eab0c18dc090efb7c506e9293c52047c486a83cbb9",
+        "workflow_run": {
+          "id": 43080695119,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-candidat-2.7.1",
+          "head_sha": "a541362298cbcb7283481a31651149def29804ed"
+        }
+      },
+      {
+        "id": 13883553673,
+        "name": "Haloryva-2.7.1-candidate-build",
+        "size_in_bytes": 478943,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13883553673",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13883553673/zip",
+        "expired": false,
+        "created_at": "2026-11-11T18:45:24Z",
+        "expires_at": "2027-02-09T18:44:59Z",
+        "updated_at": "2026-11-11T18:45:24Z",
+        "digest": "sha256:8c40cbfa4c6160f73a7f145057695b0c148889abd1c610b78185cd2cf7755e22",
+        "workflow_run": {
+          "id": 43080695119,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-candidat-2.7.1",
+          "head_sha": "a541362298cbcb7283481a31651149def29804ed"
+        }
+      },
+      {
+        "id": 13883398893,
+        "name": "Haloryva-2.7.1-captures-en",
+        "size_in_bytes": 399113,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13883398893",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13883398893/zip",
+        "expired": false,
+        "created_at": "2026-11-11T18:45:49Z",
+        "expires_at": "2027-02-09T18:44:59Z",
+        "updated_at": "2026-11-11T18:45:49Z",
+        "digest": "sha256:ea3afc462f8243fc2d6f54b227a7bb26d17c91d6b5a2966416ac9fd351ef5221",
+        "workflow_run": {
+          "id": 43080695119,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-candidat-2.7.1",
+          "head_sha": "a541362298cbcb7283481a31651149def29804ed"
+        }
+      },
+      {
+        "id": 13883358909,
+        "name": "Haloryva-2.7.1-captures-es",
+        "size_in_bytes": 405376,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13883358909",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13883358909/zip",
+        "expired": false,
+        "created_at": "2026-11-11T18:45:52Z",
+        "expires_at": "2027-02-09T18:44:59Z",
+        "updated_at": "2026-11-11T18:45:52Z",
+        "digest": "sha256:24e3eb4092c8abb76d3e1971da9746b88fa9e1849ce16363663b3d374998f4b7",
+        "workflow_run": {
+          "id": 43080695119,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-candidat-2.7.1",
+          "head_sha": "a541362298cbcb7283481a31651149def29804ed"
+        }
+      }
+    ],
+    "captureRun": [
+      {
+        "id": 13885295769,
+        "name": "Haloryva-2.7.1-captures-r2-es",
+        "size_in_bytes": 543400,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13885295769",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13885295769/zip",
+        "expired": false,
+        "created_at": "2026-11-11T18:47:55Z",
+        "expires_at": "2027-02-09T18:47:22Z",
+        "updated_at": "2026-11-11T18:47:55Z",
+        "digest": "sha256:4d15ba30d80b812e16e49229f3f767236038694be135302e0552edc533c2b9ad",
+        "workflow_run": {
+          "id": 43081072953,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-candidat-2.7.1",
+          "head_sha": "968d487b91a3ae9b4b65c2701ce3bbd6e9462957"
+        }
+      },
+      {
+        "id": 13884791389,
+        "name": "Haloryva-2.7.1-captures-r2-fr",
+        "size_in_bytes": 398850,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13884791389",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13884791389/zip",
+        "expired": false,
+        "created_at": "2026-11-11T18:47:42Z",
+        "expires_at": "2027-02-09T18:47:22Z",
+        "updated_at": "2026-11-11T18:47:42Z",
+        "digest": "sha256:33b11cb075130e2ecbc50d5da9012247617bdccdea6e3e78ae7fc6d551b38ef7",
+        "workflow_run": {
+          "id": 43081072953,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-candidat-2.7.1",
+          "head_sha": "968d487b91a3ae9b4b65c2701ce3bbd6e9462957"
+        }
+      },
+      {
+        "id": 13883782644,
+        "name": "Haloryva-2.7.1-captures-r2-en",
+        "size_in_bytes": 399487,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13883782644",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13883782644/zip",
+        "expired": false,
+        "created_at": "2026-11-11T18:47:47Z",
+        "expires_at": "2027-02-09T18:47:22Z",
+        "updated_at": "2026-11-11T18:47:47Z",
+        "digest": "sha256:dbe0f407071db8ae72848326fb717c4a4fe7757d4236cb2511680cc631f4f4d5",
+        "workflow_run": {
+          "id": 43081072953,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-candidat-2.7.1",
+          "head_sha": "968d487b91a3ae9b4b65c2701ce3bbd6e9462957"
+        }
+      }
+    ]
+  },
+  "captureStorage": "Original PNGs retained in GitHub Actions artifacts and displayed for review. Additional public-repository image copy was rejected by automatic authorization review; no PNG was added to the Git tree.",
+  "limitations": [
+    "This is scoped candidate validation, not complete Windows 11 or Microsoft Store qualification.",
+    "Artifact expiry scheduled for 2027-02-09; retain frozen binary and stamped Brand.cs for future packaging before expiry.",
+    "One inherited CS1701 compiler warning; no compilation error."
+  ],
+  "installerStatus": "Not fabricated; results presented first as requested."
+}

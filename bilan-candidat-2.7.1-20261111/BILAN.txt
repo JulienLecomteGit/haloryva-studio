@@ -1,0 +1,112 @@
+HALORYVA STUDIO — BILAN DU CANDIDAT 2.7.1
+11 novembre 2026 — compilation GitHub et captures ciblées F01 à F03
+
+RESULTAT
+1 compilation de l’application ; 10/10 vérifications de métadonnées réussies.
+4/4 vues demandées produites et réellement examinées : Sonidos ES à 1024×768,
+puis version/date et première entrée d’historique FR, EN et ES.
+Les lots F01, F02 et F03 sont validés dans ce périmètre.
+Aucun installateur final fabriqué. Une observation visuelle héritée reste signalée ci-dessous.
+
+BINAIRE A CONSERVER
+Produit : 2.7.1
+Version de fichier : 2.7.1.10
+Version d’assembly : 2.7.1.0
+Date affichée : 11/11/2026
+Instant de fabrication : 2026-11-11T19:45:16.7316841+01:00 (Europe/Paris)
+Instant UTC : 2026-11-11T18:45:16.7316841+00:00
+SHA-256 Haloryva.exe :
+22A2EFBDA164B7682051F0212EABB6CF1B1F0BE5E4C123FB926E78BB0E6255A0
+Source préparée : 9482b046fa6fc096fd5942482c3ddff8516dcbcc
+Commit de fabrication : a541362298cbcb7283481a31651149def29804ed
+Source : livraison-2.7.1-preparation/ ; 36 entrées contrôlées.
+La date est inscrite seulement dans la copie de fabrication du runner.
+Cette copie estampillée est archivée avec le binaire ; la source préparée garde son marqueur.
+Aucune autre préversion ni aucun binaire existant n’est remplacé.
+
+PREUVES
+Compilation :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43080695119/job/130732160407
+Archive de fabrication, binaire et sources estampillées :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43080695119/artifacts/13883553673
+Captures finales :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43081072953
+Archives FR / EN / ES :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43081072953/artifacts/13884791389
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43081072953/artifacts/13883782644
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43081072953/artifacts/13885295769
+Expiration planifiée des archives : 9 février 2027.
+resultats.json contient les mesures, empreintes, identifiants, garde-fous et limites.
+build-provenance.json conserve le résultat exact de la fabrication.
+
+F01 — SONIDOS ESPAGNOL
+Texte constaté : « Sonido opcional, fácil de desactivar. »
+Écran réel 1024×768, fenêtre non redimensionnée par le pilote.
+Texte mesuré : 196 pixels ; zone disponible : 311 pixels.
+Titre et sous-titre visibles, sans points de suspension ni coupure.
+Image : es-sonidos-1024x768.png.
+
+F02 — METADONNEES
+Nom produit, version produit, version fichier, assembly, Brand.Version,
+date de fabrication, première version et date d’historique, absence de signature
+et catalogue embarqué identique au catalogue préparé : 10/10.
+1 avertissement CS1701 lié à la référence System.Runtime/WinRT, déjà présent dans la recette héritée.
+0 erreur de compilation. Aucune signature ajoutée.
+
+F03 — PREMIERE LIGNE D’HISTORIQUE ET VERSION
+FR : Langues, outils choisis et corrections de fiabilité
+EN : Languages, selected tools and reliability fixes
+ES : Idiomas, herramientas elegidas y mejoras de fiabilidad
+La nouvelle ligne, son badge 2.7.1, sa date et les informations de version sont
+lisibles dans les trois captures. 17 zones de texte mesurées, toutes visibles
+et compatibles avec leur rectangle. Cette mesure complète la revue réelle des PNG.
+Les 12 anciennes entrées sources ne sont pas modifiées.
+
+INCIDENT DU PREMIER PILOTE — CONSERVE, PAS MASQUE
+Le run 43080695119 est globalement en échec, mais son job build a réussi.
+Les trois pilotes ont échoué sur AmbiguousMatchException en sélectionnant
+PremiumPalette.Font, qui possède plusieurs surcharges. Haloryva a affiché
+son interface ; le pilote s’est arrêté avant les mesures ciblées.
+Correction limitée à une nouvelle copie du pilote : sélection explicite de Font(float, int).
+Le run 43081072953 réussit dans les trois langues, avec le même SHA-256 de Haloryva.
+Il ne contient aucun job de compilation de l’application ni rejeu des dix métadonnées.
+Seuls les petits pilotes de capture sont compilés.
+Les échecs et leurs archives restent conservés.
+
+OBSERVATION V01 — ANCIEN HISTORIQUE ROGNE
+Dans les trois images À propos, la ligne ancienne 2.6.3 est partiellement coupée ;
+les entrées encore plus anciennes dépassent la zone du contrôle.
+Le code hérité fixe AboutBlock à S(286), alors que la sixième ligne finit à S(292).
+PremiumStudioForm.cs est identique à preview.9 : ce défaut n’est pas introduit par F01-F03.
+Il ne touche pas la nouvelle entrée 2.7.1, mais empêche de déclarer l’historique complet lisible.
+Pas de correction dans cette tâche. Recommandation : ajuster uniquement la hauteur
+de l’historique à son contenu dans un candidat distinct, puis contrôler uniquement
+les trois vues À propos avant le gel de l’installateur.
+Ce point est une finition d’affichage, pas une preuve de défaillance de l’installation.
+
+ENVIRONNEMENT ET LIMITES
+Windows Server 2025 Datacenter x64 hébergé par GitHub, build 26100,
+image 20261103.298.1, session interactive 2, résolution réelle 1024×768.
+Le pilote charge le vrai binaire et son CursorController pour afficher le Studio.
+Navigation native limitée aux pages nécessaires ; profils synthétiques neufs.
+Ce n’est ni une installation, ni une qualification du point d’entrée Program.Main,
+ni une vraie ouverture de session Windows 11, ni une recette MSIX.
+Les anciens acquis ne sont pas remis en jeu par cette recette limitée.
+Les blocages Store/diffusion précédemment documentés ne sont pas clos ici.
+
+PRESERVATION
+23 branches antérieures inchangées, dont main, toutes les préversions et la copie préparée.
+586 fichiers préexistants conservés par identité d’objet Git.
+Aucune modification locale du PC, aucun logiciel installé, aucun paramètre système changé.
+0 relance des 195 contrôles ; 0 autotest Haloryva ; 0 ancienne recette générale.
+0 installateur, 0 MSIX, 0 signature, 0 release, 0 soumission Store, 0 abonnement.
+Les PNG restent dans les archives de recette. Leur copie supplémentaire dans le dépôt public
+a été refusée par le contrôle automatique d’autorisation (images du bureau entier) ;
+aucun PNG n’est ajouté au dépôt.
+
+PROCHAINE ACTION PROPOSEE
+Décider de la finition V01 avant de fabriquer l’installateur final.
+Si correction autorisée : nouvelle copie/candidat, ancien EXE préservé, puis seules
+les captures À propos FR/EN/ES nécessaires ; aucun rejeu des contrôles acquis.
+Pour tout emballage futur du candidat actuel, réutiliser l’EXE et le Brand.cs estampillé
+de l’archive de fabrication, jamais la source qui contient __DATE_FABRICATION__.
