@@ -1,0 +1,4 @@
+src/*.cs text eol=lf
+*.ps1 text eol=lf
+languages/*.json text eol=lf
+assets/* -text

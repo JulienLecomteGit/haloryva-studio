@@ -1,0 +1,7219 @@
+{
+  "Status": "Source inventory; runtime and visual checks pending",
+  "RequestedLanguages": [
+    "fr",
+    "en",
+    "es"
+  ],
+  "SourceLabels": [
+    {
+      "key": null,
+      "fr": "Haloryva Studio",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 10
+        },
+        {
+          "file": "Brand.cs",
+          "line": 13
+        },
+        {
+          "file": "Brand.cs",
+          "line": 23
+        },
+        {
+          "file": "ErrorReporting.cs",
+          "line": 82
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 324
+        },
+        {
+          "file": "Program.cs",
+          "line": 24
+        },
+        {
+          "file": "Program.cs",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "key": "ui.0001",
+      "fr": "Effets de curseur, annotations et présentation d'écran pour Windows",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Julien Lecomte",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 12
+        },
+        {
+          "file": "Brand.cs",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "© 2026 Julien Lecomte",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 14
+        },
+        {
+          "file": "Brand.cs",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Haloryva",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 24
+        },
+        {
+          "file": "Config.cs",
+          "line": 224
+        },
+        {
+          "file": "Config.cs",
+          "line": 309
+        },
+        {
+          "file": "Config.cs",
+          "line": 310
+        },
+        {
+          "file": "Config.cs",
+          "line": 311
+        },
+        {
+          "file": "Controller.cs",
+          "line": 450
+        },
+        {
+          "file": "Controller.cs",
+          "line": 460
+        },
+        {
+          "file": "Controller.cs",
+          "line": 856
+        },
+        {
+          "file": "Controller.cs",
+          "line": 881
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 135
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 136
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 242
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 243
+        },
+        {
+          "file": "Program.cs",
+          "line": 39
+        },
+        {
+          "file": "Splash.cs",
+          "line": 108
+        },
+        {
+          "file": "Splash.cs",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "key": "ui.0005",
+      "fr": "Effets, annotations et présentation du curseur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 29
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 138
+        }
+      ]
+    },
+    {
+      "key": "ui.0006",
+      "fr": "Application locale · aucune donnée envoyée",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "key": "ui.0007",
+      "fr": "Préversion : choix mémorisé des outils parcourus par les boutons",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "key": "ui.0008",
+      "fr": "269 ms, souplesse continue et orientation X1/X2 personnalisable",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "key": "ui.0009",
+      "fr": "Fluidité : traînée persistante, surface stable, cadence et mesures",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "key": "ui.0010",
+      "fr": "Routage des boutons, installation précompilée et maintenance vérifiée",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "key": "ui.0011",
+      "fr": "Option : halo agrandi sur curseur texte",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "key": "ui.0012",
+      "fr": "Fiabilité : boutons, réglages, installateur avec retour arrière",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "key": "ui.0013",
+      "fr": "Exe d'installation autonome, signature et paquet Store préparés",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "key": "ui.0014",
+      "fr": "Inscription dans Applications installées et désinstallateur graphique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "key": "ui.0015",
+      "fr": "Logo, crédits, splash et installateur graphique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "key": "ui.0016",
+      "fr": "Correctif : appui long réservé à la molette, X1 et X2",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "key": "ui.0017",
+      "fr": "Appui long sur 5 boutons, roue de couleur, menus réorganisés",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "key": "ui.0018",
+      "fr": "Affichage d'outil plus sobre",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "key": "ui.0019",
+      "fr": "Cycle des outils de dessin avec annonce en haut à gauche",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "key": "ui.0020",
+      "fr": " · build ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 53
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 244
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": " · Windows x64",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Brand.cs",
+          "line": 53
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 244
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#22D3EE",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "ColorWheelPopup.cs",
+          "line": 32
+        },
+        {
+          "file": "StudioTheme.cs",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "key": "ui.0023",
+      "fr": "Roue chromatique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "ColorWheelPopup.cs",
+          "line": 35
+        },
+        {
+          "file": "ColorWheelPopup.cs",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "X2",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "ColorWheelPopup.cs",
+          "line": 42
+        },
+        {
+          "file": "ColorWheelPopup.cs",
+          "line": 42
+        },
+        {
+          "file": "ColorWheelPopup.cs",
+          "line": 42
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 781
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 781
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 781
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1550
+        }
+      ]
+    },
+    {
+      "key": "ui.0025",
+      "fr": "Couleur (hexadécimal)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "ColorWheelPopup.cs",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "HEX",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "ColorWheelPopup.cs",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "key": "ui.0027",
+      "fr": "Cercle",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 24
+        },
+        {
+          "file": "Config.cs",
+          "line": 175
+        },
+        {
+          "file": "Config.cs",
+          "line": 175
+        },
+        {
+          "file": "Config.cs",
+          "line": 194
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#38D6FF",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 27
+        },
+        {
+          "file": "Config.cs",
+          "line": 190
+        }
+      ]
+    },
+    {
+      "key": "ui.0029",
+      "fr": "Unie",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 43
+        },
+        {
+          "file": "Config.cs",
+          "line": 149
+        },
+        {
+          "file": "Config.cs",
+          "line": 149
+        },
+        {
+          "file": "Config.cs",
+          "line": 177
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 890
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 945
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#AC68FF",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 44
+        },
+        {
+          "file": "Config.cs",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "key": "ui.0031",
+      "fr": "Particules",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 46
+        },
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Config.cs",
+          "line": 196
+        },
+        {
+          "file": "Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 938
+        }
+      ]
+    },
+    {
+      "key": "ui.0032",
+      "fr": "Dégradé",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 56
+        },
+        {
+          "file": "Config.cs",
+          "line": 149
+        },
+        {
+          "file": "Config.cs",
+          "line": 177
+        },
+        {
+          "file": "Config.cs",
+          "line": 177
+        },
+        {
+          "file": "Config.cs",
+          "line": 179
+        },
+        {
+          "file": "Config.cs",
+          "line": 195
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 827
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 890
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 895
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 945
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 949
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1201
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#2BD9F4",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 57
+        },
+        {
+          "file": "Config.cs",
+          "line": 191
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#A475FF",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 58
+        },
+        {
+          "file": "Config.cs",
+          "line": 192
+        }
+      ]
+    },
+    {
+      "key": "ui.0035",
+      "fr": "Ondes",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 64
+        },
+        {
+          "file": "Config.cs",
+          "line": 178
+        },
+        {
+          "file": "Config.cs",
+          "line": 178
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 987
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 987
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#49E6B2",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 66
+        },
+        {
+          "file": "Config.cs",
+          "line": 188
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#FFB46D",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 67
+        },
+        {
+          "file": "Config.cs",
+          "line": 189
+        }
+      ]
+    },
+    {
+      "key": "ui.0038",
+      "fr": "Verre",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 74
+        },
+        {
+          "file": "Config.cs",
+          "line": 179
+        },
+        {
+          "file": "Config.cs",
+          "line": 179
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1201
+        }
+      ]
+    },
+    {
+      "key": "tool.pen",
+      "fr": "Stylo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 80
+        },
+        {
+          "file": "Config.cs",
+          "line": 180
+        },
+        {
+          "file": "Config.cs",
+          "line": 180
+        },
+        {
+          "file": "Controller.cs",
+          "line": 633
+        },
+        {
+          "file": "Controller.cs",
+          "line": 652
+        },
+        {
+          "file": "Controller.cs",
+          "line": 660
+        },
+        {
+          "file": "Controller.cs",
+          "line": 669
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1146
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 13
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#20DCE7",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 83
+        },
+        {
+          "file": "Config.cs",
+          "line": 169
+        }
+      ]
+    },
+    {
+      "key": "ui.0041",
+      "fr": "Croix + anneau",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 84
+        },
+        {
+          "file": "Config.cs",
+          "line": 168
+        },
+        {
+          "file": "Config.cs",
+          "line": 168
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1151
+        }
+      ]
+    },
+    {
+      "key": "drawing.assisted.title",
+      "fr": "Formes assistées",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 90
+        },
+        {
+          "file": "Config.cs",
+          "line": 167
+        },
+        {
+          "file": "Controller.cs",
+          "line": 387
+        },
+        {
+          "file": "Controller.cs",
+          "line": 388
+        },
+        {
+          "file": "Controller.cs",
+          "line": 668
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1114
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1143
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1144
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1146
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#FF5DA2",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 92
+        },
+        {
+          "file": "Config.cs",
+          "line": 193
+        }
+      ]
+    },
+    {
+      "key": "action.normal",
+      "fr": "Normal",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 95
+        },
+        {
+          "file": "Config.cs",
+          "line": 96
+        },
+        {
+          "file": "Config.cs",
+          "line": 97
+        },
+        {
+          "file": "Config.cs",
+          "line": 98
+        },
+        {
+          "file": "Config.cs",
+          "line": 99
+        },
+        {
+          "file": "Config.cs",
+          "line": 104
+        },
+        {
+          "file": "Config.cs",
+          "line": 105
+        },
+        {
+          "file": "Config.cs",
+          "line": 106
+        },
+        {
+          "file": "Config.cs",
+          "line": 107
+        },
+        {
+          "file": "Config.cs",
+          "line": 108
+        },
+        {
+          "file": "Config.cs",
+          "line": 116
+        },
+        {
+          "file": "Config.cs",
+          "line": 124
+        },
+        {
+          "file": "Config.cs",
+          "line": 125
+        },
+        {
+          "file": "Config.cs",
+          "line": 197
+        },
+        {
+          "file": "Config.cs",
+          "line": 198
+        },
+        {
+          "file": "Config.cs",
+          "line": 199
+        },
+        {
+          "file": "Config.cs",
+          "line": 200
+        },
+        {
+          "file": "Config.cs",
+          "line": 201
+        },
+        {
+          "file": "Config.cs",
+          "line": 202
+        },
+        {
+          "file": "Config.cs",
+          "line": 203
+        },
+        {
+          "file": "Config.cs",
+          "line": 204
+        },
+        {
+          "file": "Config.cs",
+          "line": 205
+        },
+        {
+          "file": "Config.cs",
+          "line": 206
+        },
+        {
+          "file": "Config.cs",
+          "line": 207
+        },
+        {
+          "file": "Config.cs",
+          "line": 208
+        },
+        {
+          "file": "Config.cs",
+          "line": 209
+        },
+        {
+          "file": "Config.cs",
+          "line": 210
+        },
+        {
+          "file": "Config.cs",
+          "line": 211
+        },
+        {
+          "file": "Config.cs",
+          "line": 215
+        },
+        {
+          "file": "Config.cs",
+          "line": 216
+        },
+        {
+          "file": "Controller.cs",
+          "line": 501
+        },
+        {
+          "file": "Controller.cs",
+          "line": 520
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1047
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1049
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1083
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1084
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1095
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1559
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1560
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1561
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1561
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1605
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1609
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1610
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1612
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1613
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Aurora",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 111
+        },
+        {
+          "file": "Config.cs",
+          "line": 173
+        },
+        {
+          "file": "Config.cs",
+          "line": 173
+        },
+        {
+          "file": "StudioTheme.cs",
+          "line": 29
+        },
+        {
+          "file": "StudioTheme.cs",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "key": "action.toggleDrawing",
+      "fr": "Dessin : activer / arrêter",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 116
+        },
+        {
+          "file": "Controller.cs",
+          "line": 530
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 836
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1061
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1062
+        }
+      ]
+    },
+    {
+      "key": "action.nextTool",
+      "fr": "Outil de dessin suivant",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 117
+        },
+        {
+          "file": "Controller.cs",
+          "line": 531
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1062
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1063
+        }
+      ]
+    },
+    {
+      "key": "action.previousTool",
+      "fr": "Outil de dessin précédent",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 117
+        },
+        {
+          "file": "Controller.cs",
+          "line": 532
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1063
+        }
+      ]
+    },
+    {
+      "key": "action.undo",
+      "fr": "Annuler le dernier trait",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 117
+        },
+        {
+          "file": "Controller.cs",
+          "line": 533
+        },
+        {
+          "file": "Controller.cs",
+          "line": 898
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 836
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1061
+        }
+      ]
+    },
+    {
+      "key": "action.redo",
+      "fr": "Rétablir un trait",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 118
+        },
+        {
+          "file": "Controller.cs",
+          "line": 534
+        },
+        {
+          "file": "Controller.cs",
+          "line": 899
+        }
+      ]
+    },
+    {
+      "key": "action.clear",
+      "fr": "Effacer les dessins",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 118
+        },
+        {
+          "file": "Controller.cs",
+          "line": 535
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 836
+        }
+      ]
+    },
+    {
+      "key": "action.toggleTrail",
+      "fr": "Traînée : activer / arrêter",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 118
+        },
+        {
+          "file": "Controller.cs",
+          "line": 536
+        }
+      ]
+    },
+    {
+      "key": "action.toggleHalo",
+      "fr": "Halo : activer / arrêter",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 119
+        },
+        {
+          "file": "Controller.cs",
+          "line": 537
+        }
+      ]
+    },
+    {
+      "key": "action.pauseEffects",
+      "fr": "Effets : pause / reprise",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 119
+        },
+        {
+          "file": "Controller.cs",
+          "line": 538
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 836
+        }
+      ]
+    },
+    {
+      "key": "action.clickEffect",
+      "fr": "Effet de clic",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 119
+        },
+        {
+          "file": "Controller.cs",
+          "line": 539
+        }
+      ]
+    },
+    {
+      "key": "action.nextTrail",
+      "fr": "Traînée suivante",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 120
+        },
+        {
+          "file": "Controller.cs",
+          "line": 540
+        }
+      ]
+    },
+    {
+      "key": "action.openSettings",
+      "fr": "Ouvrir les réglages",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 120
+        },
+        {
+          "file": "Controller.cs",
+          "line": 545
+        }
+      ]
+    },
+    {
+      "key": "ui.0058",
+      "fr": "Arc-en-ciel",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 149
+        },
+        {
+          "file": "Config.cs",
+          "line": 177
+        },
+        {
+          "file": "Controller.cs",
+          "line": 817
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 831
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 890
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 945
+        }
+      ]
+    },
+    {
+      "key": "ui.0059",
+      "fr": "Dynamique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 149
+        },
+        {
+          "file": "Controller.cs",
+          "line": 817
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 890
+        }
+      ]
+    },
+    {
+      "key": "ui.0060",
+      "fr": "Désactivé",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 167
+        },
+        {
+          "file": "Controller.cs",
+          "line": 662
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1144
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1138
+        }
+      ]
+    },
+    {
+      "key": "ui.0061",
+      "fr": "Lissage léger",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 167
+        },
+        {
+          "file": "Config.cs",
+          "line": 167
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1144
+        }
+      ]
+    },
+    {
+      "key": "ui.0062",
+      "fr": "Croix",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 168
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1151
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1151
+        }
+      ]
+    },
+    {
+      "key": "ui.0063",
+      "fr": "Anneau",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 168
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 987
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1151
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1151
+        }
+      ]
+    },
+    {
+      "key": "ui.0064",
+      "fr": "Point central",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 168
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1151
+        }
+      ]
+    },
+    {
+      "key": "ui.0065",
+      "fr": "Sunset",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 173
+        },
+        {
+          "file": "StudioTheme.cs",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "key": "ui.0066",
+      "fr": "Émeraude",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 173
+        },
+        {
+          "file": "StudioTheme.cs",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "key": "ui.0067",
+      "fr": "Néon",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 173
+        },
+        {
+          "file": "Config.cs",
+          "line": 179
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 827
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1201
+        },
+        {
+          "file": "StudioTheme.cs",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "key": "ui.0068",
+      "fr": "Glacier",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 173
+        },
+        {
+          "file": "StudioTheme.cs",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "key": "ui.0069",
+      "fr": "Carré arrondi",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 175
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        }
+      ]
+    },
+    {
+      "key": "tool.ellipse",
+      "fr": "Ellipse",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 175
+        },
+        {
+          "file": "Config.cs",
+          "line": 180
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 13
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "key": "ui.0071",
+      "fr": "Réticule",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 175
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        }
+      ]
+    },
+    {
+      "key": "tool.line",
+      "fr": "Ligne",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 938
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "key": "ui.0073",
+      "fr": "Points",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 938
+        }
+      ]
+    },
+    {
+      "key": "ui.0074",
+      "fr": "Pointillés",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 938
+        }
+      ]
+    },
+    {
+      "key": "ui.0075",
+      "fr": "Lumière",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 827
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 938
+        }
+      ]
+    },
+    {
+      "key": "ui.0076",
+      "fr": "Étoiles",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 831
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 938
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Kawaii",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 938
+        }
+      ]
+    },
+    {
+      "key": "ui.0078",
+      "fr": "Logo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 176
+        },
+        {
+          "file": "Controller.cs",
+          "line": 541
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 938
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 969
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1693
+        }
+      ]
+    },
+    {
+      "key": "ui.0079",
+      "fr": "Anneau simple",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 178
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 987
+        }
+      ]
+    },
+    {
+      "key": "ui.0080",
+      "fr": "Flash",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 178
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 987
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 987
+        }
+      ]
+    },
+    {
+      "key": "ui.0081",
+      "fr": "Étincelles",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 178
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 987
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 987
+        }
+      ]
+    },
+    {
+      "key": "ui.0082",
+      "fr": "Classique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 179
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1201
+        }
+      ]
+    },
+    {
+      "key": "ui.0083",
+      "fr": "Touches",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 179
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1201
+        }
+      ]
+    },
+    {
+      "key": "ui.0084",
+      "fr": "Minimal",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 179
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 825
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1201
+        }
+      ]
+    },
+    {
+      "key": "tool.highlighter",
+      "fr": "Surligneur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 180
+        },
+        {
+          "file": "Controller.cs",
+          "line": 633
+        },
+        {
+          "file": "Controller.cs",
+          "line": 652
+        },
+        {
+          "file": "Controller.cs",
+          "line": 660
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 13
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "key": "ui.0086",
+      "fr": "Ligne droite",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 180
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "key": "tool.rectangle",
+      "fr": "Rectangle",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 180
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 13
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "key": "ui.0088",
+      "fr": "Flèche droite",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 181
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "key": "tool.freeArrow",
+      "fr": "Flèche libre",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 181
+        },
+        {
+          "file": "Controller.cs",
+          "line": 634
+        },
+        {
+          "file": "Controller.cs",
+          "line": 653
+        },
+        {
+          "file": "Controller.cs",
+          "line": 661
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 14
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "key": "ui.0090",
+      "fr": "Forme libre",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 181
+        },
+        {
+          "file": "Controller.cs",
+          "line": 387
+        },
+        {
+          "file": "Controller.cs",
+          "line": 634
+        },
+        {
+          "file": "Controller.cs",
+          "line": 653
+        },
+        {
+          "file": "Controller.cs",
+          "line": 661
+        },
+        {
+          "file": "Controller.cs",
+          "line": 669
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1114
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1146
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "key": "tool.number",
+      "fr": "Numéro",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 181
+        },
+        {
+          "file": "Controller.cs",
+          "line": 421
+        },
+        {
+          "file": "Controller.cs",
+          "line": 625
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 14
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "key": "tool.text",
+      "fr": "Texte",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 181
+        },
+        {
+          "file": "Controller.cs",
+          "line": 675
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 14
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "yyyyMMdd-HHmmss",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 247
+        }
+      ]
+    },
+    {
+      "key": "ui.0094",
+      "fr": "Réglages illisibles : la dernière sauvegarde valide a été restaurée.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 253
+        }
+      ]
+    },
+    {
+      "key": "ui.0095",
+      "fr": "Réglages illisibles : valeurs par défaut utilisées. L'ancien fichier est conservé dans le dossier Haloryva.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 256
+        }
+      ]
+    },
+    {
+      "key": "ui.0096",
+      "fr": "Configuration vide",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 262
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "N",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 279
+        }
+      ]
+    },
+    {
+      "key": "ui.0098",
+      "fr": "Réglages non enregistrés : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 284
+        }
+      ]
+    },
+    {
+      "key": "ui.0099",
+      "fr": "Le fichier de réglages est trop volumineux.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 293
+        }
+      ]
+    },
+    {
+      "key": "ui.0100",
+      "fr": "Clé de démarrage Windows absente.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 303
+        }
+      ]
+    },
+    {
+      "key": "ui.0101",
+      "fr": "Démarrage Haloryva refusé : une ancienne application d'effets démarre déjà avec Windows. Désactive d'abord son démarrage automatique.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 306
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "\"",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 309
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1269
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1269
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "\" --silent",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 309
+        }
+      ]
+    },
+    {
+      "key": "ui.0104",
+      "fr": "Le réglage de démarrage Windows n'a pas été confirmé.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 312
+        }
+      ]
+    },
+    {
+      "key": "ui.0105",
+      "fr": "Modification du démarrage Windows impossible : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Config.cs",
+          "line": 318
+        }
+      ]
+    },
+    {
+      "key": "buttons.noLongAction",
+      "fr": "Aucun",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 103
+        },
+        {
+          "file": "Controller.cs",
+          "line": 513
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 296
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 297
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1047
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1049
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1061
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1061
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1062
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1062
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1074
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1083
+        }
+      ]
+    },
+    {
+      "key": "ui.0107",
+      "fr": "Les raccourcis souris/clavier globaux n'ont pas pu démarrer : boutons et dessin indisponibles. Relance Haloryva.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 181
+        }
+      ]
+    },
+    {
+      "key": "ui.0108",
+      "fr": "Gauche",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 207
+        },
+        {
+          "file": "Controller.cs",
+          "line": 472
+        },
+        {
+          "file": "Controller.cs",
+          "line": 488
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1549
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1550
+        }
+      ]
+    },
+    {
+      "key": "ui.0109",
+      "fr": "Droit",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 207
+        },
+        {
+          "file": "Controller.cs",
+          "line": 207
+        },
+        {
+          "file": "Controller.cs",
+          "line": 473
+        },
+        {
+          "file": "Controller.cs",
+          "line": 489
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1549
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1550
+        }
+      ]
+    },
+    {
+      "key": "ui.0110",
+      "fr": "Le dessin a été interrompu car l’application était occupée. Tu peux reprendre le tracé.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 227
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "SHOW_SETTINGS",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 242
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "USER_INTERFACE",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 242
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "ZORDER_ANNOTATION_OK",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 271
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "ZORDER_ANNOTATION_FAILED",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 271
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "win32=",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 271
+        },
+        {
+          "file": "Controller.cs",
+          "line": 277
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "ZORDER_EFFECTS_OK",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 277
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "ZORDER_EFFECTS_FAILED",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 277
+        }
+      ]
+    },
+    {
+      "key": "ui.0118",
+      "fr": "Aucun dessin à exporter.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 450
+        }
+      ]
+    },
+    {
+      "key": "ui.0119",
+      "fr": "Image PNG transparente|*.png",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 455
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Haloryva_annotations.png",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 456
+        }
+      ]
+    },
+    {
+      "key": "ui.0121",
+      "fr": "Export impossible : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 460
+        }
+      ]
+    },
+    {
+      "key": "ui.0122",
+      "fr": "Milieu",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 474
+        },
+        {
+          "file": "Controller.cs",
+          "line": 490
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1550
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "X1",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 475
+        },
+        {
+          "file": "Controller.cs",
+          "line": 491
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1550
+        }
+      ]
+    },
+    {
+      "key": "ui.0124",
+      "fr": "Windows a refusé le rejeu du clic. Aucune protection n'a été contournée.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 505
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Ctrl + ",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 750
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Alt + ",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 750
+        }
+      ]
+    },
+    {
+      "key": "ui.0127",
+      "fr": "Maj + ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 750
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Win + ",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 750
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "INACTIVE",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 829
+        }
+      ]
+    },
+    {
+      "key": "ui.0130",
+      "fr": "Fermeture annulée : les réglages ne sont pas sauvegardés.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 850
+        }
+      ]
+    },
+    {
+      "key": "ui.0131",
+      "fr": "Écriture des mesures impossible : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 856
+        }
+      ]
+    },
+    {
+      "key": "ui.0132",
+      "fr": "Haloryva — effets du curseur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 888
+        }
+      ]
+    },
+    {
+      "key": "tray.effects",
+      "fr": "Effets actifs",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 891
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1372
+        },
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1375
+        }
+      ]
+    },
+    {
+      "key": "tray.annotationMode",
+      "fr": "Mode annotation (Ctrl+Alt+D)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 892
+        }
+      ]
+    },
+    {
+      "key": "tray.settings",
+      "fr": "Réglages...",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 894
+        }
+      ]
+    },
+    {
+      "key": "tray.recenterHalo",
+      "fr": "Recentrer le halo (Ctrl+Alt+H)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 895
+        }
+      ]
+    },
+    {
+      "key": "tray.clear",
+      "fr": "Effacer les annotations",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 900
+        }
+      ]
+    },
+    {
+      "key": "tray.export",
+      "fr": "Exporter les dessins en PNG...",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 901
+        }
+      ]
+    },
+    {
+      "key": "tray.quit",
+      "fr": "Quitter Haloryva",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Controller.cs",
+          "line": 903
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Unknown",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "ErrorReporting.cs",
+          "line": 22
+        },
+        {
+          "file": "ErrorReporting.cs",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Logs",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "ErrorReporting.cs",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "UI",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "ErrorReporting.cs",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "key": "ui.0143",
+      "fr": "Une erreur est survenue dans Haloryva. Si elle persiste, ferme puis relance l’application.\n\nUn journal technique local est disponible dans le dossier Logs des réglages, si Windows autorise son écriture.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "ErrorReporting.cs",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Studio",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 137
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 243
+        },
+        {
+          "file": "Splash.cs",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "key": "profile.custom",
+      "fr": "Personnalisé",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 205
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 670
+        }
+      ]
+    },
+    {
+      "key": "ui.0146",
+      "fr": "PROFIL ACTIF",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 223
+        }
+      ]
+    },
+    {
+      "key": "ui.0147",
+      "fr": "Version ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 244
+        }
+      ]
+    },
+    {
+      "key": "ui.0148",
+      "fr": "Création : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 245
+        }
+      ]
+    },
+    {
+      "key": "ui.0149",
+      "fr": " · Tous droits réservés",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 246
+        }
+      ]
+    },
+    {
+      "key": "ui.0150",
+      "fr": "HISTORIQUE DES VERSIONS",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 251
+        }
+      ]
+    },
+    {
+      "key": "nav.home",
+      "fr": "Accueil",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "key": "nav.halo",
+      "fr": "Halo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 299
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 816
+        }
+      ]
+    },
+    {
+      "key": "nav.trails",
+      "fr": "Traînées",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "key": "nav.clicks",
+      "fr": "Clics",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "key": "nav.mouseButtons",
+      "fr": "Boutons souris",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "key": "nav.drawing",
+      "fr": "Dessin",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "key": "nav.presentation",
+      "fr": "Présentation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 299
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 829
+        }
+      ]
+    },
+    {
+      "key": "nav.preferences",
+      "fr": "Préférences",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "key": "ui.0159",
+      "fr": "Tout ton studio en un coup d'œil : modules, styles et raccourcis.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 302
+        }
+      ]
+    },
+    {
+      "key": "ui.0160",
+      "fr": "Un halo précis et lumineux qui rend ton pointeur visible partout.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 303
+        }
+      ]
+    },
+    {
+      "key": "ui.0161",
+      "fr": "Une signature de mouvement fluide à chaque déplacement.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 304
+        }
+      ]
+    },
+    {
+      "key": "ui.0162",
+      "fr": "Des animations nettes pour rendre chaque clic lisible.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 305
+        }
+      ]
+    },
+    {
+      "key": "ui.0163",
+      "fr": "Chaque bouton physique peut déclencher une action Haloryva.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 306
+        }
+      ]
+    },
+    {
+      "key": "ui.0164",
+      "fr": "Annote ton écran librement — les formes se régularisent toutes seules.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 307
+        }
+      ]
+    },
+    {
+      "key": "ui.0165",
+      "fr": "Touches, loupe et focus pour présenter et expliquer.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 308
+        }
+      ]
+    },
+    {
+      "key": "ui.0166",
+      "fr": "Performance, profils et informations sur l'application.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 309
+        }
+      ]
+    },
+    {
+      "key": "group.effects",
+      "fr": "EFFETS",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 311
+        }
+      ]
+    },
+    {
+      "key": "group.workshop",
+      "fr": "ATELIER",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 311
+        }
+      ]
+    },
+    {
+      "key": "group.system",
+      "fr": "SYSTÈME",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 311
+        }
+      ]
+    },
+    {
+      "key": "drawing.tab.draw",
+      "fr": "Dessiner",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 344
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 662
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1107
+        }
+      ]
+    },
+    {
+      "key": "window.minimize",
+      "fr": "Réduire",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 347
+        }
+      ]
+    },
+    {
+      "key": "window.maximize",
+      "fr": "Agrandir",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 348
+        }
+      ]
+    },
+    {
+      "key": "window.closeHint",
+      "fr": "Fermer (Haloryva reste actif près de l'horloge)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 349
+        }
+      ]
+    },
+    {
+      "key": "ui.0174",
+      "fr": "Replier",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 382
+        }
+      ]
+    },
+    {
+      "key": "ui.0175",
+      "fr": "Déplier",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 516
+        }
+      ]
+    },
+    {
+      "key": "ui.0176",
+      "fr": "Replier le menu",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 516
+        }
+      ]
+    },
+    {
+      "key": "ui.0177",
+      "fr": "Dernier bouton détecté : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 647
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 677
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1057
+        }
+      ]
+    },
+    {
+      "key": "ui.0178",
+      "fr": "Dessin actif",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 662
+        }
+      ]
+    },
+    {
+      "key": "ui.0179",
+      "fr": "Dessiner sur le Bureau",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 788
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 810
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1103
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1105
+        }
+      ]
+    },
+    {
+      "key": "ui.0180",
+      "fr": "Mettre en pause",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 789
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 808
+        }
+      ]
+    },
+    {
+      "key": "ui.0181",
+      "fr": "Ton curseur, version studio.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 804
+        }
+      ]
+    },
+    {
+      "key": "ui.0182",
+      "fr": "Effets en pause.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 804
+        }
+      ]
+    },
+    {
+      "key": "ui.0183",
+      "fr": " modules actifs",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 806
+        }
+      ]
+    },
+    {
+      "key": "ui.0184",
+      "fr": " module actif",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 806
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "  ·  ",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 806
+        }
+      ]
+    },
+    {
+      "key": "ui.0186",
+      "fr": " annotations",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 806
+        }
+      ]
+    },
+    {
+      "key": "ui.0187",
+      "fr": " annotation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 806
+        }
+      ]
+    },
+    {
+      "key": "ui.0188",
+      "fr": " à l'écran",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 806
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1125
+        }
+      ]
+    },
+    {
+      "key": "ui.0189",
+      "fr": "  ·  dessin en cours",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 806
+        }
+      ]
+    },
+    {
+      "key": "ui.0190",
+      "fr": "Rien ne s'affiche à l'écran. Réactive les effets en un clic.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 807
+        }
+      ]
+    },
+    {
+      "key": "ui.0191",
+      "fr": "Réactiver les effets",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 808
+        }
+      ]
+    },
+    {
+      "key": "ui.0192",
+      "fr": "Reprendre le dessin",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 810
+        }
+      ]
+    },
+    {
+      "key": "ui.0193",
+      "fr": "Modules",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 814
+        }
+      ]
+    },
+    {
+      "key": "ui.0194",
+      "fr": "Active, coupe ou ouvre un module en un clic.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 814
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": " · ",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 816
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 817
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 818
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1126
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": " px",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 816
+        }
+      ]
+    },
+    {
+      "key": "ui.0197",
+      "fr": "Traînée",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 817
+        }
+      ]
+    },
+    {
+      "key": "ui.0198",
+      "fr": "Clics animés",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 818
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 982
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": " ms",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 818
+        }
+      ]
+    },
+    {
+      "key": "ui.0200",
+      "fr": "Touches à l'écran",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 819
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1199
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1217
+        }
+      ]
+    },
+    {
+      "key": "ui.0201",
+      "fr": "Style ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 819
+        }
+      ]
+    },
+    {
+      "key": "ui.0202",
+      "fr": "Loupe",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 820
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1205
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1217
+        }
+      ]
+    },
+    {
+      "key": "ui.0203",
+      "fr": "Grossissement ×",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 820
+        }
+      ]
+    },
+    {
+      "key": "ui.0204",
+      "fr": "Fenêtre active",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 821
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1211
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1217
+        }
+      ]
+    },
+    {
+      "key": "ui.0205",
+      "fr": "Le reste du Bureau est assombri",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 821
+        }
+      ]
+    },
+    {
+      "key": "ui.0206",
+      "fr": "Styles instantanés",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 824
+        }
+      ]
+    },
+    {
+      "key": "ui.0207",
+      "fr": "Un profil complet en un clic.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 824
+        }
+      ]
+    },
+    {
+      "key": "ui.0208",
+      "fr": "Halo net, sans traînée",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 825
+        }
+      ]
+    },
+    {
+      "key": "ui.0209",
+      "fr": "Halo lumineux + traînée lumière",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 827
+        }
+      ]
+    },
+    {
+      "key": "ui.0210",
+      "fr": "Clics + raccourcis affichés",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 829
+        }
+      ]
+    },
+    {
+      "key": "ui.0211",
+      "fr": "Créatif",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 831
+        }
+      ]
+    },
+    {
+      "key": "ui.0212",
+      "fr": "Étoiles arc-en-ciel",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 831
+        }
+      ]
+    },
+    {
+      "key": "ui.0213",
+      "fr": "Raccourcis essentiels",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 834
+        }
+      ]
+    },
+    {
+      "key": "ui.0214",
+      "fr": "Utilisables depuis n'importe quelle application.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 834
+        }
+      ]
+    },
+    {
+      "key": "ui.0215",
+      "fr": "Recentrer le halo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 836
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 924
+        }
+      ]
+    },
+    {
+      "key": "ui.0216",
+      "fr": "Secours boutons souris",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 836
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Ctrl",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1219
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1219
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Alt",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1219
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1219
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "D",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "M",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        }
+      ]
+    },
+    {
+      "key": "ui.0221",
+      "fr": "Retour",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 837
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "C",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "H",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "R",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 838
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Ring",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 862
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Trail",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 862
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Click",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 863
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Key",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 863
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "LeftColor",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 864
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "RightColor",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 864
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "CustomSound",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 864
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "=",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 865
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "|",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 866
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 892
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 946
+        },
+        {
+          "file": "StudioTheme.cs",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "key": "ui.0234",
+      "fr": "Halo activé",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 871
+        }
+      ]
+    },
+    {
+      "key": "ui.0235",
+      "fr": "Apparence",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 872
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 931
+        }
+      ]
+    },
+    {
+      "key": "ui.0236",
+      "fr": "Comportement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 872
+        }
+      ]
+    },
+    {
+      "key": "ui.0237",
+      "fr": "Aperçu en direct",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 875
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 934
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 983
+        }
+      ]
+    },
+    {
+      "key": "ui.0238",
+      "fr": "Le rendu réel du halo, sans déplacer celui de ton écran.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 875
+        }
+      ]
+    },
+    {
+      "key": "ui.0239",
+      "fr": "Mode texte (curseur I)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 877
+        }
+      ]
+    },
+    {
+      "key": "ui.0240",
+      "fr": "Mode pointeur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 877
+        }
+      ]
+    },
+    {
+      "key": "ui.0241",
+      "fr": "Forme et taille",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 882
+        }
+      ]
+    },
+    {
+      "key": "ui.0242",
+      "fr": "La silhouette du halo.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 882
+        }
+      ]
+    },
+    {
+      "key": "ui.0243",
+      "fr": "Forme",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        }
+      ]
+    },
+    {
+      "key": "ui.0244",
+      "fr": "Carré",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 883
+        }
+      ]
+    },
+    {
+      "key": "ui.0245",
+      "fr": "Diamètre",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 885
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1156
+        }
+      ]
+    },
+    {
+      "key": "ui.0246",
+      "fr": "Épaisseur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 886
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 940
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1118
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1157
+        }
+      ]
+    },
+    {
+      "key": "ui.0247",
+      "fr": "Opacité",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 887
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 942
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1158
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "%",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 887
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 899
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 917
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 918
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 919
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 942
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 957
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1147
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1158
+        }
+      ]
+    },
+    {
+      "key": "ui.0249",
+      "fr": "Couleur et ambiance",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 889
+        }
+      ]
+    },
+    {
+      "key": "ui.0250",
+      "fr": "Roue chromatique, palette rapide et HEX précis.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 889
+        }
+      ]
+    },
+    {
+      "key": "ui.0251",
+      "fr": "Mode de couleur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 890
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#22D3EE|#F472B6",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 892
+        }
+      ]
+    },
+    {
+      "key": "ui.0253",
+      "fr": "Couleur principale",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 893
+        }
+      ]
+    },
+    {
+      "key": "ui.0254",
+      "fr": "Couleur secondaire",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 894
+        }
+      ]
+    },
+    {
+      "key": "ui.0255",
+      "fr": "Lumière et animation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 897
+        }
+      ]
+    },
+    {
+      "key": "ui.0256",
+      "fr": "Glow, néon et pulsation.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 897
+        }
+      ]
+    },
+    {
+      "key": "ui.0257",
+      "fr": "Flou lumineux",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 898
+        }
+      ]
+    },
+    {
+      "key": "ui.0258",
+      "fr": "Intensité du glow",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 899
+        }
+      ]
+    },
+    {
+      "key": "ui.0259",
+      "fr": "Halo néon",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 900
+        }
+      ]
+    },
+    {
+      "key": "ui.0260",
+      "fr": "Éclairage secondaire diffus",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 900
+        }
+      ]
+    },
+    {
+      "key": "ui.0261",
+      "fr": "Pulsation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 901
+        }
+      ]
+    },
+    {
+      "key": "ui.0262",
+      "fr": "Respiration douce du contour",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 901
+        }
+      ]
+    },
+    {
+      "key": "ui.0263",
+      "fr": "Vitesse de pulsation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 902
+        }
+      ]
+    },
+    {
+      "key": "ui.0264",
+      "fr": "Comportement intelligent",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 906
+        }
+      ]
+    },
+    {
+      "key": "ui.0265",
+      "fr": "Disparaît au repos, revient au mouvement.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 906
+        }
+      ]
+    },
+    {
+      "key": "ui.0266",
+      "fr": "Disparition automatique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 907
+        }
+      ]
+    },
+    {
+      "key": "ui.0267",
+      "fr": "Fondu après inactivité de la souris",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 907
+        }
+      ]
+    },
+    {
+      "key": "ui.0268",
+      "fr": "Délai d'inactivité",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 908
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "s",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 908
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1126
+        }
+      ]
+    },
+    {
+      "key": "ui.0270",
+      "fr": "Durée du fondu",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 909
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "ms",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 909
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 941
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 990
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1053
+        }
+      ]
+    },
+    {
+      "key": "ui.0272",
+      "fr": "Curseur texte",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 911
+        }
+      ]
+    },
+    {
+      "key": "ui.0273",
+      "fr": "Recentrage précis et discret pendant la saisie.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 911
+        }
+      ]
+    },
+    {
+      "key": "ui.0274",
+      "fr": "Centrer sur le curseur texte",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 912
+        }
+      ]
+    },
+    {
+      "key": "ui.0275",
+      "fr": "Ignore le décalage dans les champs",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 912
+        }
+      ]
+    },
+    {
+      "key": "ui.0276",
+      "fr": "Accent texte",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 914
+        }
+      ]
+    },
+    {
+      "key": "ui.0277",
+      "fr": "Contour fin et lumineux sur le I",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 914
+        }
+      ]
+    },
+    {
+      "key": "ui.0278",
+      "fr": "Agrandir le halo sur texte",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 916
+        }
+      ]
+    },
+    {
+      "key": "ui.0279",
+      "fr": "Dégage la lecture et la sélection",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 916
+        }
+      ]
+    },
+    {
+      "key": "ui.0280",
+      "fr": "Agrandissement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 917
+        }
+      ]
+    },
+    {
+      "key": "ui.0281",
+      "fr": "Intensité de l'accent",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 918
+        }
+      ]
+    },
+    {
+      "key": "ui.0282",
+      "fr": "Contour plus fin",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 919
+        }
+      ]
+    },
+    {
+      "key": "ui.0283",
+      "fr": "Position du halo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 921
+        }
+      ]
+    },
+    {
+      "key": "ui.0284",
+      "fr": "Décalage appliqué hors curseur texte.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 921
+        }
+      ]
+    },
+    {
+      "key": "ui.0285",
+      "fr": "Décalage horizontal",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 922
+        }
+      ]
+    },
+    {
+      "key": "ui.0286",
+      "fr": "Décalage vertical",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 923
+        }
+      ]
+    },
+    {
+      "key": "ui.0287",
+      "fr": "Halo décalé hors de l'écran ? Ctrl + Alt + H le recentre depuis n'importe où.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 925
+        }
+      ]
+    },
+    {
+      "key": "ui.0288",
+      "fr": "Traînée activée",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 930
+        }
+      ]
+    },
+    {
+      "key": "ui.0289",
+      "fr": "Mouvement et logo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 931
+        }
+      ]
+    },
+    {
+      "key": "ui.0290",
+      "fr": "Survole la zone pour dessiner ta propre traînée.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 934
+        }
+      ]
+    },
+    {
+      "key": "ui.0291",
+      "fr": "Style de traînée",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 937
+        }
+      ]
+    },
+    {
+      "key": "ui.0292",
+      "fr": "Huit signatures visuelles.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 937
+        }
+      ]
+    },
+    {
+      "key": "ui.0293",
+      "fr": "Persistance",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 941
+        }
+      ]
+    },
+    {
+      "key": "ui.0294",
+      "fr": "Couleurs",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 944
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 993
+        }
+      ]
+    },
+    {
+      "key": "ui.0295",
+      "fr": "Unie, dégradé ou arc-en-ciel animé.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 944
+        }
+      ]
+    },
+    {
+      "key": "ui.0296",
+      "fr": "Première couleur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 947
+        }
+      ]
+    },
+    {
+      "key": "ui.0297",
+      "fr": "Seconde couleur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 948
+        }
+      ]
+    },
+    {
+      "key": "ui.0298",
+      "fr": "Mouvement souple",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 953
+        }
+      ]
+    },
+    {
+      "key": "ui.0299",
+      "fr": "Souplesse : Ligne, Pointillés et Lumière.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 953
+        }
+      ]
+    },
+    {
+      "key": "ui.0300",
+      "fr": "Densité",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 954
+        }
+      ]
+    },
+    {
+      "key": "ui.0301",
+      "fr": "Espacement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 955
+        }
+      ]
+    },
+    {
+      "key": "ui.0302",
+      "fr": "Dispersion",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 956
+        }
+      ]
+    },
+    {
+      "key": "ui.0303",
+      "fr": "Souplesse",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 957
+        }
+      ]
+    },
+    {
+      "key": "ui.0304",
+      "fr": "Épaisseur dynamique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 958
+        }
+      ]
+    },
+    {
+      "key": "ui.0305",
+      "fr": "Réagit à la vitesse de la souris",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 958
+        }
+      ]
+    },
+    {
+      "key": "ui.0306",
+      "fr": "Logo personnalisé",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 960
+        }
+      ]
+    },
+    {
+      "key": "ui.0307",
+      "fr": "Un PNG transparent dans ta traînée.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 960
+        }
+      ]
+    },
+    {
+      "key": "ui.0308",
+      "fr": "Aucun logo — une étoile est utilisée.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 962
+        }
+      ]
+    },
+    {
+      "key": "ui.0309",
+      "fr": "Logo : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 962
+        }
+      ]
+    },
+    {
+      "key": "ui.0310",
+      "fr": "Importer un PNG",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 963
+        }
+      ]
+    },
+    {
+      "key": "ui.0311",
+      "fr": "Images PNG (*.png)|*.png",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 968
+        }
+      ]
+    },
+    {
+      "key": "ui.0312",
+      "fr": "Retirer",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 972
+        }
+      ]
+    },
+    {
+      "key": "ui.0313",
+      "fr": "Taille du logo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 975
+        }
+      ]
+    },
+    {
+      "key": "ui.0314",
+      "fr": "Un logo tous les",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 976
+        }
+      ]
+    },
+    {
+      "key": "ui.0315",
+      "fr": "Rotation du logo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 977
+        }
+      ]
+    },
+    {
+      "key": "ui.0316",
+      "fr": "Une signature plus vivante",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 977
+        }
+      ]
+    },
+    {
+      "key": "ui.0317",
+      "fr": "Clique (gauche ou droit) dans la zone pour tester.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 983
+        }
+      ]
+    },
+    {
+      "key": "ui.0318",
+      "fr": "Animation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 986
+        }
+      ]
+    },
+    {
+      "key": "ui.0319",
+      "fr": "Lisible, sans bloquer les clics Windows.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 986
+        }
+      ]
+    },
+    {
+      "key": "ui.0320",
+      "fr": "Amplitude",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 989
+        }
+      ]
+    },
+    {
+      "key": "ui.0321",
+      "fr": "Durée",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 990
+        }
+      ]
+    },
+    {
+      "key": "ui.0322",
+      "fr": "Détection automatique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 991
+        }
+      ]
+    },
+    {
+      "key": "ui.0323",
+      "fr": "Animation déclenchée à chaque clic réel",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 991
+        }
+      ]
+    },
+    {
+      "key": "ui.0324",
+      "fr": "Distingue le clic gauche du clic droit.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 993
+        }
+      ]
+    },
+    {
+      "key": "ui.0325",
+      "fr": "Clic gauche",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 994
+        }
+      ]
+    },
+    {
+      "key": "ui.0326",
+      "fr": "Clic droit",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 995
+        }
+      ]
+    },
+    {
+      "key": "ui.0327",
+      "fr": "Sons",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 997
+        }
+      ]
+    },
+    {
+      "key": "ui.0328",
+      "fr": "Un retour sonore, désactivable à tout moment.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 997
+        }
+      ]
+    },
+    {
+      "key": "ui.0329",
+      "fr": "Sons de clic",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 998
+        }
+      ]
+    },
+    {
+      "key": "ui.0330",
+      "fr": "Son Windows ou fichier WAV personnel",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 998
+        }
+      ]
+    },
+    {
+      "key": "ui.0331",
+      "fr": "Son : Windows par défaut",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1000
+        }
+      ]
+    },
+    {
+      "key": "ui.0332",
+      "fr": "Son : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1000
+        }
+      ]
+    },
+    {
+      "key": "ui.0333",
+      "fr": "Importer un WAV",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1001
+        }
+      ]
+    },
+    {
+      "key": "ui.0334",
+      "fr": "Audio WAV (*.wav)|*.wav",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1006
+        }
+      ]
+    },
+    {
+      "key": "ui.0335",
+      "fr": "Par défaut",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1010
+        }
+      ]
+    },
+    {
+      "key": "ui.0336",
+      "fr": "Tout restaurer",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1016
+        }
+      ]
+    },
+    {
+      "key": "ui.0337",
+      "fr": "Affectations",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1021
+        }
+      ]
+    },
+    {
+      "key": "ui.0338",
+      "fr": "Appui court et appui long : une action pour chacun. Le comportement Windows reste normal par défaut.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1021
+        }
+      ]
+    },
+    {
+      "key": "ui.0339",
+      "fr": "Inverser X1 et X2 sur ma souris",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1025
+        }
+      ]
+    },
+    {
+      "key": "ui.0340",
+      "fr": "Adapte les libellés à ta souris, sans changer les actions actuelles.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1026
+        }
+      ]
+    },
+    {
+      "key": "ui.0341",
+      "fr": "Si tu as déjà échangé les actions pour compenser : active cette option. Les actions physiques restent identiques, et les menus X1/X2 affichent désormais leur véritable rôle. Cyan = bouton configuré ; vert = dernier bouton détecté.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1028
+        }
+      ]
+    },
+    {
+      "key": "ui.0342",
+      "fr": "Bouton gauche",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1029
+        }
+      ]
+    },
+    {
+      "key": "ui.0343",
+      "fr": "Bouton droit",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1029
+        }
+      ]
+    },
+    {
+      "key": "ui.0344",
+      "fr": "Molette (clic)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1029
+        }
+      ]
+    },
+    {
+      "key": "ui.0345",
+      "fr": "Latéral X1 (arrière)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1029
+        }
+      ]
+    },
+    {
+      "key": "ui.0346",
+      "fr": "Latéral X2 (avant)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1029
+        }
+      ]
+    },
+    {
+      "key": "ui.0347",
+      "fr": "Bouton",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1030
+        }
+      ]
+    },
+    {
+      "key": "ui.0348",
+      "fr": "Appui court",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1030
+        }
+      ]
+    },
+    {
+      "key": "ui.0349",
+      "fr": "Appui long",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1030
+        }
+      ]
+    },
+    {
+      "key": "ui.0350",
+      "fr": ", appui court",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1036
+        }
+      ]
+    },
+    {
+      "key": "ui.0351",
+      "fr": "Indisponible sur les clics principaux",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1042
+        }
+      ]
+    },
+    {
+      "key": "ui.0352",
+      "fr": ", appui long",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1047
+        }
+      ]
+    },
+    {
+      "key": "ui.0353",
+      "fr": "Durée de l'appui long",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1053
+        }
+      ]
+    },
+    {
+      "key": "ui.0354",
+      "fr": "Un bouton qui a un appui long n'envoie son clic Windows qu'au relâchement. L'appui long est réservé à la molette, X1 et X2 ; gauche et droit restent toujours immédiats.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1054
+        }
+      ]
+    },
+    {
+      "key": "ui.0355",
+      "fr": "Détection et secours",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1056
+        }
+      ]
+    },
+    {
+      "key": "ui.0356",
+      "fr": "Identifie un bouton puis affecte-lui une action.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1056
+        }
+      ]
+    },
+    {
+      "key": "ui.0357",
+      "fr": "Détecter mon bouton",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1058
+        }
+      ]
+    },
+    {
+      "key": "ui.0358",
+      "fr": "Appuie maintenant sur un bouton de la souris…",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1059
+        }
+      ]
+    },
+    {
+      "key": "ui.0359",
+      "fr": "Préréglages",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1060
+        }
+      ]
+    },
+    {
+      "key": "ui.0360",
+      "fr": "X1 dessin · X2 annuler",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1061
+        }
+      ]
+    },
+    {
+      "key": "ui.0361",
+      "fr": "X1 dessin · X2 outil suivant",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1062
+        }
+      ]
+    },
+    {
+      "key": "ui.0362",
+      "fr": "X2 outil suivant · appui long : précédent",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1063
+        }
+      ]
+    },
+    {
+      "key": "ui.0363",
+      "fr": "Restaurer les 5 boutons",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1064
+        }
+      ]
+    },
+    {
+      "key": "ui.0364",
+      "fr": "Bouton bloqué ? Ctrl + Alt + R rend immédiatement leur comportement Windows aux 5 boutons.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1065
+        }
+      ]
+    },
+    {
+      "key": "ui.0365",
+      "fr": "Un bouton sans réaction (souvent un bouton DPI) est géré par la souris elle-même : Windows ne le voit pas, Haloryva ne peut pas l'utiliser.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1066
+        }
+      ]
+    },
+    {
+      "key": "ui.0366",
+      "fr": "Changer d'outil de dessin : affecte « Outil de dessin suivant » à X1, X2 ou la molette — son nom s'affiche quelques secondes en haut à gauche de l'écran.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1067
+        }
+      ]
+    },
+    {
+      "key": "ui.0367",
+      "fr": "Choisir les outils à faire défiler",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1068
+        }
+      ]
+    },
+    {
+      "key": "ui.0368",
+      "fr": "Un appui long sur un clic principal retarde ce clic jusqu'au relâchement : le glisser-déposer et la sélection à la souris ne fonctionneront plus avec ce bouton. Ctrl + Alt + R rétablit les boutons. Continuer ?",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1085
+        }
+      ]
+    },
+    {
+      "key": "ui.0369",
+      "fr": "Confirmer l'appui long",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1086
+        }
+      ]
+    },
+    {
+      "key": "ui.0370",
+      "fr": "Ce réglage remplace un clic principal. Ctrl + Alt + R rétablit les boutons. Continuer ?",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1096
+        }
+      ]
+    },
+    {
+      "key": "ui.0371",
+      "fr": "Confirmer l'affectation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1097
+        }
+      ]
+    },
+    {
+      "key": "ui.0372",
+      "fr": "Arrêter le dessin",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1105
+        }
+      ]
+    },
+    {
+      "key": "drawing.tab.settings",
+      "fr": "Réglages",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1107
+        }
+      ]
+    },
+    {
+      "key": "drawing.tab.cycle",
+      "fr": "Défilement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1107
+        }
+      ]
+    },
+    {
+      "key": "ui.0375",
+      "fr": "Outils",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1112
+        }
+      ]
+    },
+    {
+      "key": "ui.0376",
+      "fr": "Choisis un outil, puis « Dessiner sur le Bureau ». Clic droit ou Échap : arrêter.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1112
+        }
+      ]
+    },
+    {
+      "key": "ui.0377",
+      "fr": "Auto-formes : trace un cercle, un rectangle, un triangle ou une ligne à main levée puis relâche — la forme est régularisée (le tracé d'origine reste restaurable). Changer d'outil à la souris : page Boutons souris.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1115
+        }
+      ]
+    },
+    {
+      "key": "ui.0378",
+      "fr": "Trait",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1117
+        }
+      ]
+    },
+    {
+      "key": "ui.0379",
+      "fr": "Couleur et épaisseur, indépendantes du viseur.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1117
+        }
+      ]
+    },
+    {
+      "key": "ui.0380",
+      "fr": "Couleur du trait",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1119
+        }
+      ]
+    },
+    {
+      "key": "ui.0381",
+      "fr": "Historique",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1121
+        }
+      ]
+    },
+    {
+      "key": "ui.0382",
+      "fr": "Annule, rétablis, efface ou exporte.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1121
+        }
+      ]
+    },
+    {
+      "key": "ui.0383",
+      "fr": " traits",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1125
+        }
+      ]
+    },
+    {
+      "key": "ui.0384",
+      "fr": " trait",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1125
+        }
+      ]
+    },
+    {
+      "key": "ui.0385",
+      "fr": " rétablissable",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1126
+        }
+      ]
+    },
+    {
+      "key": "ui.0386",
+      "fr": "Annuler",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1128
+        },
+        {
+          "file": "TextPrompt.cs",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "key": "ui.0387",
+      "fr": "Rétablir",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1129
+        }
+      ]
+    },
+    {
+      "key": "ui.0388",
+      "fr": "Tout effacer",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1132
+        }
+      ]
+    },
+    {
+      "key": "drawing.exportPng",
+      "fr": "Exporter PNG",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1133
+        }
+      ]
+    },
+    {
+      "key": "ui.0390",
+      "fr": "Restaurer le trait original",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1137
+        }
+      ]
+    },
+    {
+      "key": "drawing.assisted.subtitle",
+      "fr": "Cercles, rectangles, triangles et lignes.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1143
+        }
+      ]
+    },
+    {
+      "key": "drawing.smoothing.raw",
+      "fr": "Brut",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1144
+        }
+      ]
+    },
+    {
+      "key": "drawing.smoothing.light",
+      "fr": "Lissage",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1144
+        }
+      ]
+    },
+    {
+      "key": "tool.autoShapes",
+      "fr": "Auto-formes",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1144
+        },
+        {
+          "file": "ToolToast.cs",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "key": "ui.0395",
+      "fr": "Intensité du lissage",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1147
+        }
+      ]
+    },
+    {
+      "key": "ui.0396",
+      "fr": "50 % : lissage net conseillé · 100 % : très fort. Appliqué au relâchement du clic ; les formes reconnues gardent leurs angles.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1148
+        }
+      ]
+    },
+    {
+      "key": "ui.0397",
+      "fr": "Viseur de dessin",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1150
+        }
+      ]
+    },
+    {
+      "key": "ui.0398",
+      "fr": "Le pointeur affiché pendant que tu dessines.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1150
+        }
+      ]
+    },
+    {
+      "key": "ui.0399",
+      "fr": "Mixte",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1151
+        }
+      ]
+    },
+    {
+      "key": "ui.0400",
+      "fr": "Point",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1151
+        }
+      ]
+    },
+    {
+      "key": "ui.0401",
+      "fr": "Lier au stylo",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1153
+        }
+      ]
+    },
+    {
+      "key": "ui.0402",
+      "fr": "Reprend la couleur du trait",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1153
+        }
+      ]
+    },
+    {
+      "key": "ui.0403",
+      "fr": "Couleur du viseur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1154
+        }
+      ]
+    },
+    {
+      "key": "ui.0404",
+      "fr": "Masquer pendant le tracé",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1159
+        }
+      ]
+    },
+    {
+      "key": "ui.0405",
+      "fr": "Le viseur revient au relâchement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1159
+        }
+      ]
+    },
+    {
+      "key": "drawing.cycle.title",
+      "fr": "Outils à faire défiler",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1165
+        }
+      ]
+    },
+    {
+      "key": "drawing.cycle.minimumHint",
+      "fr": "Garde au moins un outil activé.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1165
+        }
+      ]
+    },
+    {
+      "key": "ui.0408",
+      "fr": "Autres outils",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1166
+        }
+      ]
+    },
+    {
+      "key": "ui.0409",
+      "fr": "Même sélection pour suivant et précédent.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1166
+        }
+      ]
+    },
+    {
+      "key": "ui.0410",
+      "fr": "Inclure ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1179
+        }
+      ]
+    },
+    {
+      "key": "ui.0411",
+      "fr": " dans le défilement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1179
+        }
+      ]
+    },
+    {
+      "key": "ui.0412",
+      "fr": "Outil parcouru par les boutons suivant et précédent.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1183
+        }
+      ]
+    },
+    {
+      "key": "drawing.cycle.minimumNotice",
+      "fr": "Au moins un outil doit rester sélectionné.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1184
+        }
+      ]
+    },
+    {
+      "key": "drawing.cycle.buttonsTitle",
+      "fr": "Défilement par boutons",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1187
+        }
+      ]
+    },
+    {
+      "key": "drawing.cycle.savedHint",
+      "fr": "Choix enregistré automatiquement.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1187
+        }
+      ]
+    },
+    {
+      "key": "ui.0416",
+      "fr": " outils dans le défilement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1190
+        }
+      ]
+    },
+    {
+      "key": "ui.0417",
+      "fr": " outil dans le défilement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1190
+        }
+      ]
+    },
+    {
+      "key": "ui.0418",
+      "fr": "Les boutons parcourent uniquement les outils activés, dans l'ordre affiché : colonne de gauche puis colonne de droite. Avec deux outils, ils alternent entre les deux.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1191
+        }
+      ]
+    },
+    {
+      "key": "ui.0419",
+      "fr": "Tous les outils restent accessibles dans l'onglet Dessiner. Le trait en cours conserve son outil ; le changement s'applique au suivant.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1192
+        }
+      ]
+    },
+    {
+      "key": "drawing.cycle.includeAll",
+      "fr": "Inclure tous les outils",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1193
+        }
+      ]
+    },
+    {
+      "key": "ui.0421",
+      "fr": "Configurer les boutons souris",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1195
+        }
+      ]
+    },
+    {
+      "key": "ui.0422",
+      "fr": "Affiche tes raccourcis pendant une démo.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1199
+        }
+      ]
+    },
+    {
+      "key": "ui.0423",
+      "fr": "Afficher les raccourcis",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1200
+        }
+      ]
+    },
+    {
+      "key": "ui.0424",
+      "fr": "Uniquement les combinaisons Ctrl / Alt / Win",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1200
+        }
+      ]
+    },
+    {
+      "key": "ui.0425",
+      "fr": "Style des touches",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1201
+        }
+      ]
+    },
+    {
+      "key": "ui.0426",
+      "fr": "Confidentialité : le texte tapé n'est jamais affiché, seulement les raccourcis.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1203
+        }
+      ]
+    },
+    {
+      "key": "ui.0427",
+      "fr": "Une loupe flottante à côté du pointeur.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1205
+        }
+      ]
+    },
+    {
+      "key": "ui.0428",
+      "fr": "Loupe manuelle",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1206
+        }
+      ]
+    },
+    {
+      "key": "ui.0429",
+      "fr": "Toujours visible près du pointeur",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1206
+        }
+      ]
+    },
+    {
+      "key": "ui.0430",
+      "fr": "Taille",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1207
+        }
+      ]
+    },
+    {
+      "key": "ui.0431",
+      "fr": "Grossissement",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1208
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "×",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1208
+        }
+      ]
+    },
+    {
+      "key": "ui.0433",
+      "fr": "Zoom ponctuel au clic",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1209
+        }
+      ]
+    },
+    {
+      "key": "ui.0434",
+      "fr": "La loupe apparaît un instant à chaque clic",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1209
+        }
+      ]
+    },
+    {
+      "key": "ui.0435",
+      "fr": "Attire l'attention sur l'application en cours.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1211
+        }
+      ]
+    },
+    {
+      "key": "ui.0436",
+      "fr": "Assombrir le reste du Bureau",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1212
+        }
+      ]
+    },
+    {
+      "key": "ui.0437",
+      "fr": "Seule la fenêtre au premier plan reste claire",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1212
+        }
+      ]
+    },
+    {
+      "key": "ui.0438",
+      "fr": "Secouer pour retrouver",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1213
+        }
+      ]
+    },
+    {
+      "key": "ui.0439",
+      "fr": "Agite la souris : le halo grossit un instant",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1213
+        }
+      ]
+    },
+    {
+      "key": "ui.0440",
+      "fr": "Raccourcis de présentation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1215
+        }
+      ]
+    },
+    {
+      "key": "ui.0441",
+      "fr": "Bascule chaque outil sans ouvrir le Studio.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1215
+        }
+      ]
+    },
+    {
+      "key": "ui.0442",
+      "fr": "Zoom au clic",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1217
+        }
+      ]
+    },
+    {
+      "key": "ui.0443",
+      "fr": "Onde de clic manuelle",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1217
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "L",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "F",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "K",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1218
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Z",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1219
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "X",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1219
+        }
+      ]
+    },
+    {
+      "key": "ui.0449",
+      "fr": "Apparence du Studio",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1229
+        }
+      ]
+    },
+    {
+      "key": "ui.0450",
+      "fr": "Choisis l'ambiance de couleur de l'interface.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1229
+        }
+      ]
+    },
+    {
+      "key": "ui.0451",
+      "fr": "Le thème change uniquement l'interface du Studio, pas les couleurs du halo ni des traînées.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1235
+        }
+      ]
+    },
+    {
+      "key": "ui.0452",
+      "fr": "Performance et démarrage",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1237
+        }
+      ]
+    },
+    {
+      "key": "ui.0453",
+      "fr": "Réglages locaux, aucune connexion externe.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1237
+        }
+      ]
+    },
+    {
+      "key": "ui.0454",
+      "fr": "Démarrage avec Windows",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1238
+        }
+      ]
+    },
+    {
+      "key": "ui.0455",
+      "fr": "Lance Haloryva à la connexion",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1238
+        }
+      ]
+    },
+    {
+      "key": "ui.0456",
+      "fr": "Mode fluide",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1239
+        }
+      ]
+    },
+    {
+      "key": "ui.0457",
+      "fr": "Effets allégés pour les PC modestes",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1239
+        }
+      ]
+    },
+    {
+      "key": "ui.0458",
+      "fr": "Rafraîchissement cible",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1240
+        }
+      ]
+    },
+    {
+      "key": "ui.0459",
+      "fr": "ips",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1240
+        }
+      ]
+    },
+    {
+      "key": "profile.title",
+      "fr": "Profils et sauvegardes",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1242
+        }
+      ]
+    },
+    {
+      "key": "profile.subtitle",
+      "fr": "Compatible avec tes anciens réglages JSON.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1242
+        }
+      ]
+    },
+    {
+      "key": "profile.export",
+      "fr": "Exporter mon profil",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1243
+        }
+      ]
+    },
+    {
+      "key": "ui.0463",
+      "fr": "Profil JSON|*.json",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1247
+        },
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1259
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Haloryva_profil.json",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1247
+        }
+      ]
+    },
+    {
+      "key": "ui.0465",
+      "fr": "Export impossible",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1251
+        }
+      ]
+    },
+    {
+      "key": "profile.import",
+      "fr": "Importer un profil",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1255
+        }
+      ]
+    },
+    {
+      "key": "ui.0467",
+      "fr": "Import impossible",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1263
+        }
+      ]
+    },
+    {
+      "key": "profile.openFolder",
+      "fr": "Ouvrir le dossier des réglages",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1267
+        }
+      ]
+    },
+    {
+      "key": "profile.reset",
+      "fr": "Réinitialiser la configuration",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1272
+        }
+      ]
+    },
+    {
+      "key": "ui.0470",
+      "fr": "Réinitialiser tous les réglages et affectations ?",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1274
+        }
+      ]
+    },
+    {
+      "key": "ui.0471",
+      "fr": "Confirmer",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1274
+        }
+      ]
+    },
+    {
+      "key": "ui.0472",
+      "fr": "À propos",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1278
+        }
+      ]
+    },
+    {
+      "key": "ui.0473",
+      "fr": "Haloryva Studio · Windows 64 bits",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1278
+        }
+      ]
+    },
+    {
+      "key": "ui.0474",
+      "fr": "Copier les informations de version",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1280
+        }
+      ]
+    },
+    {
+      "key": "ui.0475",
+      "fr": "\r\nSystème : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1282
+        }
+      ]
+    },
+    {
+      "key": "ui.0476",
+      "fr": "\r\n.NET : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1282
+        }
+      ]
+    },
+    {
+      "key": "ui.0477",
+      "fr": "Ctrl + 1 à 8 : changer de page · Échap : fermer le Studio (Haloryva reste actif près de l'horloge).",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumStudioForm.cs",
+          "line": 1284
+        }
+      ]
+    },
+    {
+      "key": "ui.0478",
+      "fr": " (hexadécimal)",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 960
+        }
+      ]
+    },
+    {
+      "key": "ui.0479",
+      "fr": "Effets en pause",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1372
+        }
+      ]
+    },
+    {
+      "key": "ui.0480",
+      "fr": "TABLEAU DE BORD",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1481
+        }
+      ]
+    },
+    {
+      "key": "ui.0481",
+      "fr": "Molette",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1549
+        }
+      ]
+    },
+    {
+      "key": "ui.0482",
+      "fr": "Latéral X1",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1549
+        }
+      ]
+    },
+    {
+      "key": "ui.0483",
+      "fr": "Latéral X2",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1549
+        }
+      ]
+    },
+    {
+      "key": "ui.0484",
+      "fr": "Comportement Windows",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1612
+        }
+      ]
+    },
+    {
+      "key": "ui.0485",
+      "fr": "Appui long : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1616
+        }
+      ]
+    },
+    {
+      "key": "ui.0486",
+      "fr": "En direct",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1745
+        }
+      ]
+    },
+    {
+      "key": "ui.0487",
+      "fr": "Clic gauche / droit pour tester",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1746
+        }
+      ]
+    },
+    {
+      "key": "ui.0488",
+      "fr": "Survole pour piloter l'aperçu",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1746
+        }
+      ]
+    },
+    {
+      "key": "ui.0489",
+      "fr": "Édite ton texte avec précision.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1758
+        }
+      ]
+    },
+    {
+      "key": "ui.0490",
+      "fr": "Un curseur visible, partout.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1758
+        }
+      ]
+    },
+    {
+      "key": "ui.0491",
+      "fr": "Le halo te suit en douceur et reste lisible",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1762
+        }
+      ]
+    },
+    {
+      "key": "ui.0492",
+      "fr": "sur tous les fonds, clairs comme sombres.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1763
+        }
+      ]
+    },
+    {
+      "key": "ui.0493",
+      "fr": "Traînée désactivée",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1778
+        }
+      ]
+    },
+    {
+      "key": "ui.0494",
+      "fr": "Animations de clic désactivées",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "PremiumWidgets.cs",
+          "line": 1786
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Haloryva.Maintenance",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Program.cs",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "key": "ui.0496",
+      "fr": "Une maintenance de Haloryva est en cours. Ferme son assistant avant de lancer l'application.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Program.cs",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "key": "ui.0497",
+      "fr": "Haloryva ou une ancienne application d'effets de curseur est déjà active. Ferme l'autre application avant de lancer Haloryva, depuis son icône près de l'horloge.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Program.cs",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "key": "ui.0498",
+      "fr": "Session d'essai ou diagnostic refusé : ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Program.cs",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "UNHANDLED",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "Program.cs",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "key": "ui.0500",
+      "fr": "par ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "Splash.cs",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "key": "ui.0501",
+      "fr": "Roue chromatique. Flèches gauche droite : teinte. Haut bas : luminosité.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "StudioControls.cs",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "key": "ui.0502",
+      "fr": "Teinte ",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "StudioControls.cs",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "°",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioControls.cs",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#22D3EE|#966CFF",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#FB923C|#EC4899",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#34D399|#38BDF8",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#F472B6|#A855F7",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#7DD3FC|#6366F1",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#38BDF8",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#966CFF",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#F472B6",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#FB7185",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#FBBF24",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#34D399",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "#F8FAFC",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Segoe UI Semibold",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "key": null,
+      "fr": "Segoe UI",
+      "classification": "invariant_identity_format_or_protocol",
+      "source": [
+        {
+          "file": "StudioTheme.cs",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "key": "ui.0518",
+      "fr": "Haloryva · Annotation texte",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "TextPrompt.cs",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "key": "ui.0519",
+      "fr": "Ajouter au Bureau",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "TextPrompt.cs",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "key": "ui.0520",
+      "fr": "Ajouter une annotation",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "TextPrompt.cs",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "key": "ui.0521",
+      "fr": "Le texte s'affiche à l'endroit cliqué. Entrée pour valider, Échap pour annuler.",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "TextPrompt.cs",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "key": "tool.arrow",
+      "fr": "Flèche",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "ToolToast.cs",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "key": "ui.0523",
+      "fr": "OUTIL DE DESSIN",
+      "classification": "translated",
+      "source": [
+        {
+          "file": "ToolToast.cs",
+          "line": 336
+        }
+      ]
+    }
+  ],
+  "ExcludedScopes": "Test assertion text, diagnostic CSV schema and internal exception/log strings in unchanged engine files; Windows native controls follow OS language."
+}
