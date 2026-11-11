@@ -1,0 +1,3 @@
+src/*.cs -text
+assets/* -text
+languages/*.json -text
