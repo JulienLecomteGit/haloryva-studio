@@ -1,0 +1,171 @@
+HALORYVA STUDIO — BILAN MSIX PREVIEW.5
+Date : 11 novembre 2026
+Statut : recette MSIX ciblée réussie sur GitHub. Aucune diffusion.
+
+1. Résultat
+Le paquet MSIX de test contenant l'exécutable preview.5 déjà validé a été
+créé, installé, activé trois fois et désinstallé sur une machine GitHub
+Windows 11 Enterprise ARM64. Les trois arrêts sont normaux (code 0).
+Le choix Stylo / Rectangle / Auto-formes, les affectations des boutons et
+les réglages de dessin sont conservés après deux relancements du paquet.
+Aucune anomalie applicative constatée dans le périmètre exécuté.
+
+Run réussi :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42946758266
+Job : 130281308480
+Commit du pilote : 1834331217591f6480b7e6938677c8fd8aa8c243
+Branche distincte : haloryva-tests-preview5-msix
+
+2. Binaire strictement conservé
+Version : 2.7.1-preview.5, 388096 octets.
+Compilation d'origine : run 42944347258, commit
+92302dbca043f87794a7eab8e792ff56e74c531c.
+SHA256 :
+E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40
+
+Aucune recompilation, modification des sources applicatives ou signature.
+Empreinte vérifiée avant empaquetage, dans l'archive MSIX, après installation,
+après chaque lancement, et sur l'exécutable téléchargé à la fin.
+L'artefact a également été lu en mémoire pour contrôler indépendamment les
+empreintes du fichier exécutable et du MSIX.
+
+Paquet de test :
+Haloryva-2.7.1-preview.5-test-unsigned.msix, 241871 octets.
+SHA256 :
+AE938759B122925AF6244885C72E8E4C0695A93E37E3073148C69D22B82F2FD7
+Identité : HaloryvaStudio.Preview5UnsignedTest
+Version MSIX : 2.7.1.5 ; architecture : x64.
+Identité complète :
+HaloryvaStudio.Preview5UnsignedTest_2.7.1.5_x64__6f9y2rm4h9xya
+Publisher de test :
+CN=JulienLecomteGit, OID.2.25.311729368913984317654407730594956997722=1
+
+3. Vérifications réellement exécutées
+- MakeAppx : structure du paquet valide.
+- Absence de signature dans le paquet de test vérifiée.
+- Installation avec le mécanisme AllowUnsigned documenté pour les essais Windows 11.
+- Identité du processus correspondant au paquet confirmée à chaque activation AppsFolder.
+- Disponibilité du signal d'arrêt attendue avec délai borné ; aucun arrêt forcé
+  dans le run réussi.
+- Cycle 1 : prêt vers 7,447 s, lancement et arrêt terminés vers 9,731 s, sortie 0.
+- Cycle 2 : prêt vers 3,645 s, terminé vers 3,761 s, sortie 0.
+- Cycle 3 : prêt vers 3,631 s, terminé vers 3,719 s, sortie 0.
+Ces durées sont des diagnostics du runner, pas une mesure de performance utilisateur.
+- Désinstallation effectuée ; absence d'enregistrement du paquet pour
+  l'utilisateur d'essai confirmée (CleanupPackageRemoved=true).
+
+Mémorisation :
+- Premier lancement : profil neuf, dix outils par défaut correctement enregistrés.
+- Profil créé dans les données de cette identité MSIX :
+  LocalCache\Local\Haloryva\settings.json.
+- Application arrêtée, le pilote copie le JSON réellement produit lors de la
+  recette UI native preview.5 (run 42944347258, variante sans observateur).
+  Ce JSON contient Stylo, Rectangle et Forme libre (libellé UI : Auto-formes).
+- Second lancement : l'application empaquetée charge ce choix et le sauvegarde.
+- Troisième lancement : réutilisation directe de la sortie du deuxième,
+  sans changement de contenu par le pilote.
+- Aux deux relancements : choix et ordre des outils, outil actif, couleur,
+  épaisseur, mode de lissage, actions molette/X1/X2 courtes et longues,
+  et orientation des boutons conservés.
+- Affectation X2 : appui court = suivant ; appui long = précédent.
+- Le fichier est réellement réécrit par l'application à chaque arrêt :
+  date volontairement ancienne avant lancement, date actuelle après fermeture.
+- Le contenu complet du profil reste identique octet pour octet avant et après
+  les deux relancements, pas seulement les champs contrôlés.
+
+SHA256 du profil source, du profil après cycle 2 et du profil après cycle 3 :
+E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696
+Taille : 2085 octets.
+La conservation de la sélection est donc validée dans le processus réellement
+empaqueté, en complément des essais de gestes déjà réalisés sur preview.5.
+
+4. Échec initial du pilote et correction
+Premier run :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42946291492
+Commit : 26121086c6235477c1f7a578d0f2484e5e5681a3
+Job : 130279808279 ; statut global ÉCHEC.
+Installation, identité du processus, premier lancement et arrêt code 0 réussis,
+puis arrêt sur la comparaison de la liste par défaut.
+Le paquet a bien été désinstallé pendant le nettoyage de ce premier essai.
+
+Inspection du profil-initial.json :
+les dix noms étaient corrects, y compris Flèche droite, Flèche libre et Numéro.
+Le pilote PowerShell était en UTF-8 sans BOM ; Windows PowerShell le lisait
+avec son encodage ANSI. Sa valeur attendue contenait donc des accents mal lus.
+La lecture du manifeste sans -Encoding UTF8 corrompait aussi les libellés français
+du paquet temporaire (par exemple « PrÃ©version »).
+
+Correction limitée au kit de recette :
+- script enregistré avec une marque UTF-8 reconnue par Windows PowerShell ;
+- lecture explicite du manifeste en UTF-8 ;
+- journal de la liste réelle et de la liste attendue.
+Les assertions n'ont pas été assouplies.
+Le manifeste du second paquet a été inspecté : accents et tiret corrects.
+Le binaire, les sources applicatives et le manifeste modèle du dépôt sont inchangés.
+Le paquet temporaire a été régénéré, puis le cycle complet relancé sur un runner neuf.
+Cette reprise était nécessaire pour terminer les étapes non exécutées au premier essai.
+Aucun des 195 contrôles historiques n'a été invoqué.
+
+5. Environnement et limites
+Exécuté : Windows 11 Enterprise build 26200, ARM64,
+image GitHub windows-11-arm 20261101.203.1 ; processus x64 émulé.
+Le pilote exige un runner GitHub hébergé ; il refuse le PC local et les runners
+personnels. MakeAppx et les composants Windows déjà présents ont été utilisés.
+Aucun certificat ajouté, aucune modification de protection ou mode développeur.
+
+Il s'agit d'un paquet de TEST non signé, avec une identité distincte.
+Ce résultat ne valide ni signature de production, ni identité Store finale,
+ni certification Microsoft Store, ni installation publique par double-clic.
+
+NON EXÉCUTÉ dans cette recette :
+- nouveaux gestes/clics ou sélection dans l'UI du processus empaqueté ;
+  les données viennent de la recette native précédente puis sont effectivement
+  chargées et sauvegardées par l'application MSIX ;
+- mise à jour depuis une version distribuée ou migration depuis la stable 2.7.0 ;
+- Windows 11 x64 physique, écrans multiples et DPI variés ;
+- suites complètes précédentes, les 195 contrôles historiques.
+Les résultats antérieurs restent attribués à leurs essais et binaires respectifs.
+
+6. Préservation
+Branches contrôlées et conservées :
+main : 9e900eeaa62dcd2812a6aa0d3f251ad019ef3686
+haloryva-tests-preview2 : 8d84f31157ebfc1e09144811b6b112247f926f81
+haloryva-tests-preview3 : c74f4d66c6a7f742e338408e427e29da3fa02eb5
+haloryva-tests-preview4 : e7eefcf5aa8d1f1df97567fbff56e40965d8b69f
+haloryva-tests-preview5 : 67b7efebe4efcfc24168d6f92bd0e1f2277aa58f
+
+Seuls le nouveau dossier de pilote, son workflow et les preuves/bilan sont ajoutés
+sur haloryva-tests-preview5-msix. Les fichiers antérieurs sont intacts.
+Aucune écriture de fichier ou installation d'Haloryva sur le PC utilisateur ;
+les archives GitHub ont été examinées en mémoire.
+Aucune release, publication Store, signature, fusion vers main ou changement de licence.
+
+7. Preuves conservées
+Premier essai : artifact 13822183806, run 42946291492.
+Essai réussi : artifact 13822194484, run 42946758266.
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42946758266/artifacts/13822194484
+Échéance annoncée des artefacts : 25 novembre 2026.
+Le binaire et le paquet restent dans les artefacts de test, pas dans une release.
+
+JSON, profils, manifestes temporaires et journaux des deux essais sont conservés
+durablement avec ce bilan dans preuves-preview5-msix-20261111/.
+Les empreintes d'origine figurent dans artifact-file-manifest.json.
+Les copies textuelles peuvent avoir leur encodage normalisé en UTF-8 dans Git ;
+les empreintes citées sont celles des fichiers originaux des artefacts.
+
+Sources techniques :
+https://learn.microsoft.com/en-us/windows/msix/package/unsigned-package
+https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-5.1
+
+8. Prochaine action proposée
+Consolider la validation finale et préparer le dossier Microsoft Store à partir
+des résultats existants : identité définitive, éléments de présentation,
+conditions d'utilisation et points réellement encore non validés.
+Conserver les droits actuels tant qu'aucune autre licence n'est décidée.
+Ne pas confondre cette préparation avec une autorisation de signer ou publier.
+
+Prompt :
+« Prépare le bilan global de preview.5 et le dossier Microsoft Store à partir
+des résultats existants. Distingue ce qui est validé des points restant à traiter.
+Préserve toutes les préversions, main et mon PC. Ne relance pas les tests acquis,
+ne signe pas et ne publie rien. »

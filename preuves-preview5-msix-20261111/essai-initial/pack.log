@@ -1,0 +1,30 @@
+Microsoft (R) MakeAppx Tool
+
+Version 10.0.26100.9457
+
+Copyright (C) Microsoft. All rights reserved.
+
+
+
+The path (/p) parameter is: "\\?\C:\a\_temp\haloryva-preview5-msix\Haloryva-2.7.1-preview.5-test-unsigned.msix"
+
+The content directory (/d) parameter is: "\\?\C:\a\_temp\haloryva-preview5-msix\layout"
+
+Enumerating files from directory "\\?\C:\a\_temp\haloryva-preview5-msix\layout"
+
+Packing 5 file(s) in "\\?\C:\a\_temp\haloryva-preview5-msix\layout" (content directory) to "\\?\C:\a\_temp\haloryva-preview5-msix\Haloryva-2.7.1-preview.5-test-unsigned.msix" (output file name).
+
+Memory limit defaulting to 8584693760 bytes.
+
+Using "\\?\C:\a\_temp\haloryva-preview5-msix\layout\AppxManifest.xml" as the manifest for the package.
+
+Processing "\\?\C:\a\_temp\haloryva-preview5-msix\layout\Assets\Square44x44Logo.png" as a payload file.  Its path in the package will be "Assets\Square44x44Logo.png".
+
+Processing "\\?\C:\a\_temp\haloryva-preview5-msix\layout\Assets\Square150x150Logo.png" as a payload file.  Its path in the package will be "Assets\Square150x150Logo.png".
+
+Processing "\\?\C:\a\_temp\haloryva-preview5-msix\layout\Assets\StoreLogo.png" as a payload file.  Its path in the package will be "Assets\StoreLogo.png".
+
+Processing "\\?\C:\a\_temp\haloryva-preview5-msix\layout\Haloryva.exe" as a payload file.  Its path in the package will be "Haloryva.exe".
+
+Package creation succeeded.
+

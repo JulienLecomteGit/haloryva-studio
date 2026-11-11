@@ -1,0 +1,37 @@
+{
+    "Mode":  "msix",
+    "Version":  "2.7.1-preview.5",
+    "Status":  "failed-or-environment-blocked",
+    "Rebuilt":  false,
+    "OriginalArtifactRun":  42944347258,
+    "Steps":  [
+                  "MSIX test package created and structure validated",
+                  "unsigned MSIX installed; binary unchanged",
+                  "packaged launch 1 identity confirmed and clean shutdown"
+              ],
+    "Launches":  [
+                     {
+                         "Cycle":  1,
+                         "IdentityConfirmed":  true,
+                         "Ready":  true,
+                         "ExitNormal":  true,
+                         "InputInjected":  false,
+                         "ProcessId":  10208,
+                         "ReadyElapsedMs":  8161,
+                         "ExitCode":  0,
+                         "ElapsedMs":  9703
+                     }
+                 ],
+    "Tests195Repeated":  false,
+    "Signed":  false,
+    "ReleasePublished":  false,
+    "SHA256":  "E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40",
+    "SourceProfileSHA256":  "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+    "PackageVersion":  "2.7.1.5",
+    "PackageArchitecture":  "x64",
+    "ProductionIdentity":  false,
+    "MSIXSHA256":  "3947C757FBD65501D27F853FA63B5718F1487C2D11E881F000CFA72931FC8F19",
+    "PackedBinarySHA256":  "E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40",
+    "Error":  "Fresh MSIX did not retain the complete default cycle.",
+    "CleanupPackageRemoved":  true
+}

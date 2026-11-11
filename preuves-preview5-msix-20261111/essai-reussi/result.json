@@ -1,0 +1,84 @@
+{
+    "Mode":  "msix",
+    "Version":  "2.7.1-preview.5",
+    "Status":  "unsigned-test-identity-passed-NOT-production-signature",
+    "Rebuilt":  false,
+    "OriginalArtifactRun":  42944347258,
+    "Steps":  [
+                  "MSIX test package created and structure validated",
+                  "unsigned MSIX installed; binary unchanged",
+                  "packaged launch 1 identity confirmed and clean shutdown",
+                  "default 10-tool profile created under package data; exact saved native-UI profile prepared for relaunch",
+                  "packaged launch 2 identity confirmed and clean shutdown",
+                  "packaged relaunch 2 retained tool cycle, button assignments and drawing settings; complete profile bytes unchanged",
+                  "packaged launch 3 identity confirmed and clean shutdown",
+                  "packaged relaunch 3 retained tool cycle, button assignments and drawing settings; complete profile bytes unchanged",
+                  "package removed for test user"
+              ],
+    "Launches":  [
+                     {
+                         "Cycle":  1,
+                         "IdentityConfirmed":  true,
+                         "Ready":  true,
+                         "ExitNormal":  true,
+                         "InputInjected":  false,
+                         "ProcessId":  3084,
+                         "ReadyElapsedMs":  7447,
+                         "ExitCode":  0,
+                         "ElapsedMs":  9731,
+                         "DefaultTenTools":  true
+                     },
+                     {
+                         "Cycle":  2,
+                         "IdentityConfirmed":  true,
+                         "Ready":  true,
+                         "ExitNormal":  true,
+                         "InputInjected":  false,
+                         "ProfileBeforeSHA256":  "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+                         "ProcessId":  6264,
+                         "ReadyElapsedMs":  3645,
+                         "ExitCode":  0,
+                         "ElapsedMs":  3761,
+                         "ProfileAfterSHA256":  "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+                         "ProfileRewrittenByApp":  true,
+                         "SelectionRetained":  true,
+                         "SelectedTools":  [
+                                               "Stylo",
+                                               "Rectangle",
+                                               "Forme libre"
+                                           ]
+                     },
+                     {
+                         "Cycle":  3,
+                         "IdentityConfirmed":  true,
+                         "Ready":  true,
+                         "ExitNormal":  true,
+                         "InputInjected":  false,
+                         "ProfileBeforeSHA256":  "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+                         "ProcessId":  5568,
+                         "ReadyElapsedMs":  3631,
+                         "ExitCode":  0,
+                         "ElapsedMs":  3719,
+                         "ProfileAfterSHA256":  "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+                         "ProfileRewrittenByApp":  true,
+                         "SelectionRetained":  true,
+                         "SelectedTools":  [
+                                               "Stylo",
+                                               "Rectangle",
+                                               "Forme libre"
+                                           ]
+                     }
+                 ],
+    "Tests195Repeated":  false,
+    "Signed":  false,
+    "ReleasePublished":  false,
+    "SHA256":  "E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40",
+    "SourceProfileSHA256":  "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+    "PackageVersion":  "2.7.1.5",
+    "PackageArchitecture":  "x64",
+    "ProductionIdentity":  false,
+    "MSIXSHA256":  "AE938759B122925AF6244885C72E8E4C0695A93E37E3073148C69D22B82F2FD7",
+    "PackedBinarySHA256":  "E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40",
+    "ProfileRelativePath":  "LocalCache\\Local\\Haloryva\\settings.json",
+    "CleanupPackageRemoved":  true
+}

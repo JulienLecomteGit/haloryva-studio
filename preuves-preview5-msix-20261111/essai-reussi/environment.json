@@ -1,0 +1,9 @@
+{
+    "Caption":  "Microsoft Windows 11 Enterprise",
+    "Build":  "26200",
+    "OSArchitecture":  "ARM 64-bit Processor",
+    "RunnerArch":  "ARM64",
+    "Interactive":  true,
+    "Session":  2,
+    "Image":  "20261101.203.1"
+}

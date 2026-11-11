@@ -1,0 +1,23 @@
+2026-11-11T02:29:49.8720921Z LAUNCH cycle=1 runnerSession=2
+2026-11-11T02:29:51.3098657Z IDENTITY cycle=1 pid=10208 session=2 package=HaloryvaStudio.Preview5UnsignedTest_2.7.1.5_x64__6f9y2rm4h9xya event=Local\HaloryvaStudio.Exit.10208
+2026-11-11T02:29:55.9271001Z POLL cycle=1 elapsedMs=6052 cpuSeconds=0.421875 responding=True nativeEventCode=2 managedEvent=System.Management.Automation.MethodInvocationException: Exception calling "OpenExisting" with "1" argument(s): "No handle of the given name exists." ---> System.Threading.WaitHandleCannotBeOpenedException: No handle of the given name exists.    at System.Threading.EventWaitHandle.OpenExisting(String name, EventWaitHandleRights rights)    at CallSite.Target(Closure , CallSite , Type , Object )    --- End of inner exception stack trace ---    at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)    at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)    at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)    at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+2026-11-11T02:29:55.9523334Z WINDOW hwnd=60134 visible=False class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:29:55.9560704Z WINDOW hwnd=401DA visible=False class=IME text=Default IME
+2026-11-11T02:29:56.9892723Z POLL cycle=1 elapsedMs=7105 cpuSeconds=0.609375 responding=True nativeEventCode=2 managedEvent=System.Management.Automation.MethodInvocationException: Exception calling "OpenExisting" with "1" argument(s): "No handle of the given name exists." ---> System.Threading.WaitHandleCannotBeOpenedException: No handle of the given name exists.    at System.Threading.EventWaitHandle.OpenExisting(String name, EventWaitHandleRights rights)    at CallSite.Target(Closure , CallSite , Type , Object )    --- End of inner exception stack trace ---    at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)    at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)    at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)    at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+2026-11-11T02:29:57.9964486Z POLL cycle=1 elapsedMs=8136 cpuSeconds=0.8125 responding=True nativeEventCode=0 managedEvent=opened
+2026-11-11T02:29:58.0036913Z WINDOW hwnd=502B4 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:29:58.0036913Z WINDOW hwnd=4021E visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:29:58.0036913Z WINDOW hwnd=60134 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:29:58.0036913Z WINDOW hwnd=200EC visible=False class=WindowsForms10.Window.20008.app.0.34f5582_r11_ad1 text=Haloryva Studio
+2026-11-11T02:29:58.0036913Z WINDOW hwnd=6029E visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:29:58.0121518Z WINDOW hwnd=A0244 visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:29:58.0121518Z WINDOW hwnd=901C0 visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:29:58.0121518Z WINDOW hwnd=5003A visible=False class=GDI+ Hook Window Class text=GDI+ Window (Haloryva.exe)
+2026-11-11T02:29:58.0121518Z WINDOW hwnd=602C8 visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:29:58.0178251Z WINDOW hwnd=702C4 visible=False class=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0 text=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0
+2026-11-11T02:29:58.0178251Z WINDOW hwnd=A0040 visible=False class=MSCTFIME UI text=MSCTFIME UI
+2026-11-11T02:29:58.0203362Z WINDOW hwnd=401DA visible=False class=IME text=Default IME
+2026-11-11T02:29:58.0203362Z WINDOW hwnd=8012A visible=False class=IME text=Default IME
+2026-11-11T02:29:58.0203362Z SIGNAL cycle=1 nativeResult=0
+2026-11-11T02:29:59.5634124Z EXIT cycle=1 code=0 elapsedMs=9704
+2026-11-11T02:29:59.5791450Z PROFILE found=C:\Users\runneradmin\AppData\Local\Packages\HaloryvaStudio.Preview5UnsignedTest_6f9y2rm4h9xya\LocalCache\Local\Haloryva\settings.json

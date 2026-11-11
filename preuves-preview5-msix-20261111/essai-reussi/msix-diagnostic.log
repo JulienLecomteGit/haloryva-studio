@@ -1,0 +1,164 @@
+2026-11-11T02:33:53.7367912Z LAUNCH cycle=1 runnerSession=2
+2026-11-11T02:33:54.9425445Z IDENTITY cycle=1 pid=3084 session=2 package=HaloryvaStudio.Preview5UnsignedTest_2.7.1.5_x64__6f9y2rm4h9xya event=Local\HaloryvaStudio.Exit.3084
+2026-11-11T02:33:59.8892115Z POLL cycle=1 elapsedMs=6154 cpuSeconds=0.546875 responding=True nativeEventCode=2 managedEvent=System.Management.Automation.MethodInvocationException: Exception calling "OpenExisting" with "1" argument(s): "No handle of the given name exists." ---> System.Threading.WaitHandleCannotBeOpenedException: No handle of the given name exists.    at System.Threading.EventWaitHandle.OpenExisting(String name, EventWaitHandleRights rights)    at CallSite.Target(Closure , CallSite , Type , Object )    --- End of inner exception stack trace ---    at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)    at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)    at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)    at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+2026-11-11T02:34:00.1431842Z WINDOW hwnd=70250 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:00.1431842Z WINDOW hwnd=301E4 visible=False class=GDI+ Hook Window Class text=GDI+ Window (Haloryva.exe)
+2026-11-11T02:34:00.1431842Z WINDOW hwnd=201EA visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:00.1431842Z WINDOW hwnd=402C6 visible=False class=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0 text=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0
+2026-11-11T02:34:00.1431842Z WINDOW hwnd=501E2 visible=False class=MSCTFIME UI text=MSCTFIME UI
+2026-11-11T02:34:00.1431842Z WINDOW hwnd=20256 visible=False class=IME text=Default IME
+2026-11-11T02:34:00.1431842Z WINDOW hwnd=40014 visible=False class=IME text=Default IME
+2026-11-11T02:34:01.1588470Z POLL cycle=1 elapsedMs=7432 cpuSeconds=0.671875 responding=True nativeEventCode=0 managedEvent=opened
+2026-11-11T02:34:01.1588470Z WINDOW hwnd=70250 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:01.1588470Z WINDOW hwnd=301E4 visible=False class=GDI+ Hook Window Class text=GDI+ Window (Haloryva.exe)
+2026-11-11T02:34:01.1588470Z WINDOW hwnd=201EA visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:01.1588470Z WINDOW hwnd=402C6 visible=False class=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0 text=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0
+2026-11-11T02:34:01.1588470Z WINDOW hwnd=501E2 visible=False class=MSCTFIME UI text=MSCTFIME UI
+2026-11-11T02:34:01.1588470Z WINDOW hwnd=20256 visible=False class=IME text=Default IME
+2026-11-11T02:34:01.1588470Z WINDOW hwnd=40014 visible=False class=IME text=Default IME
+2026-11-11T02:34:01.1749594Z SIGNAL cycle=1 nativeResult=0
+2026-11-11T02:34:03.4594847Z EXIT cycle=1 code=0 elapsedMs=9731
+2026-11-11T02:34:03.4813323Z PROFILE found=C:\Users\runneradmin\AppData\Local\Packages\HaloryvaStudio.Preview5UnsignedTest_6f9y2rm4h9xya\LocalCache\Local\Haloryva\settings.json
+2026-11-11T02:34:03.6198538Z DEFAULT actual=Stylo|Surligneur|Ligne droite|Rectangle|Ellipse|Flèche droite|Flèche libre|Forme libre|Numéro|Texte expected=Stylo|Surligneur|Ligne droite|Rectangle|Ellipse|Flèche droite|Flèche libre|Forme libre|Numéro|Texte
+2026-11-11T02:34:03.6652061Z LAUNCH cycle=2 runnerSession=2
+2026-11-11T02:34:04.1896938Z IDENTITY cycle=2 pid=6264 session=2 package=HaloryvaStudio.Preview5UnsignedTest_2.7.1.5_x64__6f9y2rm4h9xya event=Local\HaloryvaStudio.Exit.6264
+2026-11-11T02:34:07.2043640Z POLL cycle=2 elapsedMs=3545 cpuSeconds=1.546875 responding=True nativeEventCode=0 managedEvent=opened
+2026-11-11T02:34:07.2043640Z WINDOW hwnd=202E8 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2043640Z WINDOW hwnd=202F2 visible=False class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2139414Z WINDOW hwnd=50276 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2139414Z WINDOW hwnd=40278 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2167660Z WINDOW hwnd=301E0 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2167660Z WINDOW hwnd=30148 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2202921Z WINDOW hwnd=40064 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2209520Z WINDOW hwnd=40034 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2209520Z WINDOW hwnd=5002E visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2209520Z WINDOW hwnd=4020C visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2209520Z WINDOW hwnd=400A6 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2209520Z WINDOW hwnd=202DC visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2295334Z WINDOW hwnd=202E0 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2295334Z WINDOW hwnd=300EE visible=True class=WindowsForms10.Window.20008.app.0.34f5582_r11_ad1 text=Haloryva Studio
+2026-11-11T02:34:07.2295334Z WINDOW   hwnd=302DA visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2333032Z WINDOW   hwnd=202E6 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Effets actifs
+2026-11-11T02:34:07.2333032Z WINDOW   hwnd=202E4 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Dessiner
+2026-11-11T02:34:07.2360273Z WINDOW   hwnd=202E2 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2379349Z WINDOW   hwnd=202DE visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2379349Z WINDOW   hwnd=702BE visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2399457Z WINDOW   hwnd=5029E visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2399457Z WINDOW   hwnd=702A6 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Accueil
+2026-11-11T02:34:07.2399457Z WINDOW   hwnd=4001E visible=True class=WindowsForms10.STATIC.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2399457Z WINDOW   hwnd=400A4 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Halo
+2026-11-11T02:34:07.2399457Z WINDOW   hwnd=4010E visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Traînées
+2026-11-11T02:34:07.2399457Z WINDOW   hwnd=300F2 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Clics
+2026-11-11T02:34:07.2399457Z WINDOW   hwnd=3019E visible=True class=WindowsForms10.STATIC.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2501212Z WINDOW   hwnd=4007C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Dessin
+2026-11-11T02:34:07.2518797Z WINDOW   hwnd=4012C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Présentation
+2026-11-11T02:34:07.2518797Z WINDOW   hwnd=501EC visible=True class=WindowsForms10.STATIC.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2518797Z WINDOW   hwnd=30282 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Boutons souris
+2026-11-11T02:34:07.2518797Z WINDOW   hwnd=701D0 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Préférences
+2026-11-11T02:34:07.2518797Z WINDOW   hwnd=60260 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2597762Z WINDOW   hwnd=502B6 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2597762Z WINDOW   hwnd=50280 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2597762Z WINDOW   hwnd=301DC visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2597762Z WINDOW   hwnd=401BC visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Dessiner sur le Bureau
+2026-11-11T02:34:07.2597762Z WINDOW   hwnd=30152 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Mettre en pause
+2026-11-11T02:34:07.2667572Z WINDOW   hwnd=502BC visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=5002C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=5006C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=40154 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=40046 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=40010 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=3016C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=40156 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=30174 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=401BE visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2677702Z WINDOW   hwnd=3016E visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2831387Z WINDOW   hwnd=401DE visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2831387Z WINDOW   hwnd=301CA visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2831387Z WINDOW   hwnd=102FC visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2879706Z WINDOW   hwnd=102FE visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2879706Z WINDOW   hwnd=10300 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2879706Z WINDOW   hwnd=10302 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2879706Z WINDOW   hwnd=10304 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2879706Z WINDOW hwnd=202F0 visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2879706Z WINDOW hwnd=202EA visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2879706Z WINDOW hwnd=202F8 visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:07.2879706Z WINDOW hwnd=40012 visible=False class=GDI+ Hook Window Class text=GDI+ Window (Haloryva.exe)
+2026-11-11T02:34:07.2993847Z WINDOW hwnd=40274 visible=False class=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0 text=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0
+2026-11-11T02:34:07.2999028Z WINDOW hwnd=70036 visible=False class=MSCTFIME UI text=MSCTFIME UI
+2026-11-11T02:34:07.2999028Z WINDOW hwnd=301EA visible=False class=IME text=Default IME
+2026-11-11T02:34:07.2999028Z WINDOW hwnd=202F4 visible=False class=IME text=Default IME
+2026-11-11T02:34:07.2999028Z SIGNAL cycle=2 nativeResult=0
+2026-11-11T02:34:07.4199662Z EXIT cycle=2 code=0 elapsedMs=3761
+2026-11-11T02:34:07.4573682Z PROFILE_VALIDATED stage=launch-2 cycle=Stylo|Rectangle|Forme libre shortX2=Outil de dessin suivant longX2=Outil de dessin précédent
+2026-11-11T02:34:07.4573682Z PROFILE roundtrip cycle=2 selectionRetained=true rewrittenByApp=True exactBytesRetained=true
+2026-11-11T02:34:07.4733060Z LAUNCH cycle=3 runnerSession=2
+2026-11-11T02:34:08.0011145Z IDENTITY cycle=3 pid=5568 session=2 package=HaloryvaStudio.Preview5UnsignedTest_2.7.1.5_x64__6f9y2rm4h9xya event=Local\HaloryvaStudio.Exit.5568
+2026-11-11T02:34:11.0089426Z POLL cycle=3 elapsedMs=3528 cpuSeconds=1.578125 responding=True nativeEventCode=0 managedEvent=opened
+2026-11-11T02:34:11.0120349Z WINDOW hwnd=202FC visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0120349Z WINDOW hwnd=501DE visible=False class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0120349Z WINDOW hwnd=302DC visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0120349Z WINDOW hwnd=302E6 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0120349Z WINDOW hwnd=302DE visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0120349Z WINDOW hwnd=402DA visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0228887Z WINDOW hwnd=500A4 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0228887Z WINDOW hwnd=400F2 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0228887Z WINDOW hwnd=5007C visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0284994Z WINDOW hwnd=40282 visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0284994Z WINDOW hwnd=6029E visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0284994Z WINDOW hwnd=501BC visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0284994Z WINDOW hwnd=401DC visible=False class=WindowsForms10.tooltips_class32.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0284994Z WINDOW hwnd=40174 visible=True class=WindowsForms10.Window.20008.app.0.34f5582_r11_ad1 text=Haloryva Studio
+2026-11-11T02:34:11.0284994Z WINDOW   hwnd=5016C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0284994Z WINDOW   hwnd=50010 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Effets actifs
+2026-11-11T02:34:11.0388261Z WINDOW   hwnd=50046 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Dessiner
+2026-11-11T02:34:11.0388261Z WINDOW   hwnd=50154 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0420667Z WINDOW   hwnd=40152 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0420667Z WINDOW   hwnd=60280 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0448955Z WINDOW   hwnd=70260 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0448955Z WINDOW   hwnd=801D0 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Accueil
+2026-11-11T02:34:11.0448955Z WINDOW   hwnd=601EC visible=True class=WindowsForms10.STATIC.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0448955Z WINDOW   hwnd=5012C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Halo
+2026-11-11T02:34:11.0448955Z WINDOW   hwnd=4019E visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Traînées
+2026-11-11T02:34:11.0448955Z WINDOW   hwnd=5010E visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Clics
+2026-11-11T02:34:11.0545588Z WINDOW   hwnd=5001E visible=True class=WindowsForms10.STATIC.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0545588Z WINDOW   hwnd=802A6 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Dessin
+2026-11-11T02:34:11.0545588Z WINDOW   hwnd=802BE visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Présentation
+2026-11-11T02:34:11.0545588Z WINDOW   hwnd=302E2 visible=True class=WindowsForms10.STATIC.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0545588Z WINDOW   hwnd=302E4 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Boutons souris
+2026-11-11T02:34:11.0616106Z WINDOW   hwnd=302E0 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Préférences
+2026-11-11T02:34:11.0616106Z WINDOW   hwnd=500A6 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0616106Z WINDOW   hwnd=5020C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0616106Z WINDOW   hwnd=6002E visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0616106Z WINDOW   hwnd=50034 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0616106Z WINDOW   hwnd=50064 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Dessiner sur le Bureau
+2026-11-11T02:34:11.0616106Z WINDOW   hwnd=40148 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=Mettre en pause
+2026-11-11T02:34:11.0705856Z WINDOW   hwnd=401E0 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0705856Z WINDOW   hwnd=50278 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0705856Z WINDOW   hwnd=60276 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0705856Z WINDOW   hwnd=302F8 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0705856Z WINDOW   hwnd=302F2 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0784324Z WINDOW   hwnd=302F0 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0784324Z WINDOW   hwnd=302E8 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0784324Z WINDOW   hwnd=302EA visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0784324Z WINDOW   hwnd=302EC visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0784324Z WINDOW   hwnd=302EE visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0866756Z WINDOW   hwnd=90250 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0866756Z WINDOW   hwnd=302FA visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0866756Z WINDOW   hwnd=302F6 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0866756Z WINDOW   hwnd=10308 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0866756Z WINDOW   hwnd=1030A visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0866756Z WINDOW   hwnd=1030C visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0951929Z WINDOW   hwnd=1030E visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0951929Z WINDOW   hwnd=10310 visible=True class=WindowsForms10.Window.8.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0951929Z WINDOW hwnd=602BC visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0951929Z WINDOW hwnd=401CA visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.0951929Z WINDOW hwnd=202FE visible=False class=WindowsForms10.Window.0.app.0.34f5582_r11_ad1 text=
+2026-11-11T02:34:11.1023616Z WINDOW hwnd=20304 visible=False class=GDI+ Hook Window Class text=GDI+ Window (Haloryva.exe)
+2026-11-11T02:34:11.1042525Z WINDOW hwnd=400EE visible=False class=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0 text=.NET-BroadcastEventWindow.4.0.0.0.34f5582.0
+2026-11-11T02:34:11.1042525Z WINDOW hwnd=20302 visible=False class=MSCTFIME UI text=MSCTFIME UI
+2026-11-11T02:34:11.1042525Z WINDOW hwnd=400F0 visible=False class=IME text=Default IME
+2026-11-11T02:34:11.1042525Z WINDOW hwnd=501BE visible=False class=IME text=Default IME
+2026-11-11T02:34:11.1042525Z SIGNAL cycle=3 nativeResult=0
+2026-11-11T02:34:11.1972695Z EXIT cycle=3 code=0 elapsedMs=3719
+2026-11-11T02:34:11.1972695Z PROFILE_VALIDATED stage=launch-3 cycle=Stylo|Rectangle|Forme libre shortX2=Outil de dessin suivant longX2=Outil de dessin précédent
+2026-11-11T02:34:11.2104195Z PROFILE roundtrip cycle=3 selectionRetained=true rewrittenByApp=True exactBytesRetained=true

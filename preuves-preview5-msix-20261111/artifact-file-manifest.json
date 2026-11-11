@@ -1,0 +1,149 @@
+[
+  {
+    "ArtifactId": 13822183806,
+    "Run": 42946291492,
+    "OriginalPath": "environment.json",
+    "OriginalSHA256": "9BC5E4C911333EDB977E4339AC33B7CA1C674E5D08379F55AB50ACBD51376320",
+    "Bytes": 238
+  },
+  {
+    "ArtifactId": 13822183806,
+    "Run": 42946291492,
+    "OriginalPath": "layout/AppxManifest.xml",
+    "OriginalSHA256": "7E4F04F29B571F3E3654EC736D563683F8021E866FE0724D19CC557BCE629E96",
+    "Bytes": 1649
+  },
+  {
+    "ArtifactId": 13822183806,
+    "Run": 42946291492,
+    "OriginalPath": "msix-diagnostic.log",
+    "OriginalSHA256": "C784F50B96F90C212DC4C7533C66EB7D27D275B64913464C4CF8BACC8F3F01CD",
+    "Bytes": 4433
+  },
+  {
+    "ArtifactId": 13822183806,
+    "Run": 42946291492,
+    "OriginalPath": "pack.log",
+    "OriginalSHA256": "D77EFDB76914D9E9C350504C81B0479E059BDB25B911FF1F4CE28DC279CC34B5",
+    "Bytes": 2856
+  },
+  {
+    "ArtifactId": 13822183806,
+    "Run": 42946291492,
+    "OriginalPath": "package.json",
+    "OriginalSHA256": "02ECF2F47D602643C446882C702A93CE6D2F307DD322FFADE807919738E6E6CE",
+    "Bytes": 371
+  },
+  {
+    "ArtifactId": 13822183806,
+    "Run": 42946291492,
+    "OriginalPath": "profile-initial.json",
+    "OriginalSHA256": "7BFCCFA11BA488DD8F1EEFFA1CF7662AA8EE0E11BD833107AFF98D42E09E4455",
+    "Bytes": 2101
+  },
+  {
+    "ArtifactId": 13822183806,
+    "Run": 42946291492,
+    "OriginalPath": "profile-native-ui-evidence.json",
+    "OriginalSHA256": "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+    "Bytes": 2085
+  },
+  {
+    "ArtifactId": 13822183806,
+    "Run": 42946291492,
+    "OriginalPath": "result.json",
+    "OriginalSHA256": "B8053CC7DDF2597265F6BD9B0EF67C3A4D2E484793B6149F3FA76A5E7480061C",
+    "Bytes": 1602
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "build-provenance.json",
+    "OriginalSHA256": "7DC951B6C52082E90CCE0E1F2922ABECC61B80A029608A093900CD0607B118F3",
+    "Bytes": 7736
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "environment.json",
+    "OriginalSHA256": "9BC5E4C911333EDB977E4339AC33B7CA1C674E5D08379F55AB50ACBD51376320",
+    "Bytes": 238
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "Haloryva-2.7.1-preview.5-test-unsigned.msix",
+    "OriginalSHA256": "AE938759B122925AF6244885C72E8E4C0695A93E37E3073148C69D22B82F2FD7",
+    "Bytes": 241871
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "layout/AppxManifest.xml",
+    "OriginalSHA256": "C3A1FFCBC49D3409E63030824BC4BC1E60A2F8EFB4F5DCFDB3B715A947F69193",
+    "Bytes": 1633
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "layout/Haloryva.exe",
+    "OriginalSHA256": "E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40",
+    "Bytes": 388096
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "msix-diagnostic.log",
+    "OriginalSHA256": "65D2800CBEA352E297679625B915BBCEFAEE18839020D06D88E42FF24877C926",
+    "Bytes": 20915
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "pack.log",
+    "OriginalSHA256": "98822A3A06E1BABA8777F8DE42A5ECCB0A1077AC96351B2B4E2688BAED9D1829",
+    "Bytes": 2856
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "package.json",
+    "OriginalSHA256": "02ECF2F47D602643C446882C702A93CE6D2F307DD322FFADE807919738E6E6CE",
+    "Bytes": 371
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "profile-after-launch-2.json",
+    "OriginalSHA256": "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+    "Bytes": 2085
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "profile-after-launch-3.json",
+    "OriginalSHA256": "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+    "Bytes": 2085
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "profile-initial.json",
+    "OriginalSHA256": "7BFCCFA11BA488DD8F1EEFFA1CF7662AA8EE0E11BD833107AFF98D42E09E4455",
+    "Bytes": 2101
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "profile-native-ui-evidence.json",
+    "OriginalSHA256": "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+    "Bytes": 2085
+  },
+  {
+    "ArtifactId": 13822194484,
+    "Run": 42946758266,
+    "OriginalPath": "result.json",
+    "OriginalSHA256": "688B2644EDD9BEEF89451599FB3FD00036326D8E40A178134E8C41895EAF8461",
+    "Bytes": 4461
+  }
+]
