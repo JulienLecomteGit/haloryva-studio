@@ -1,0 +1,35 @@
+name: Haloryva preview.6 targeted languages
+on:
+  push:
+    branches: ['haloryva-tests-preview6']
+    paths: ['haloryva-ci/preview6-validation/**', '.github/workflows/haloryva-preview6-validation.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  language:
+    name: Language ${{ matrix.language }} observer ${{ matrix.observer }}
+    runs-on: windows-2025
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['fr', 'en', 'es']
+        observer: ['off', 'on']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.6-build
+          run-id: 42951517482
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview6-build/
+      - name: Native UI, saved language, held stroke and restart
+        shell: powershell
+        run: ./haloryva-ci/preview6-validation/Run-Languages.ps1 -Language ${{ matrix.language }} -Observer ${{ matrix.observer }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview6-language-${{ matrix.language }}-${{ matrix.observer }}-evidence
+          path: ${{ runner.temp }}/haloryva-preview6-language/${{ matrix.language }}-${{ matrix.observer }}/
+          retention-days: 30
