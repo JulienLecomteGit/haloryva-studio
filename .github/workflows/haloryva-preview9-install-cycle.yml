@@ -1,0 +1,29 @@
+name: Haloryva preview.9 real installer lifecycle
+on:
+  push:
+    branches: ['haloryva-tests-installateur-preview9']
+    paths: ['haloryva-ci/preview9-install-cycle/**', '.github/workflows/haloryva-preview9-install-cycle.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  install-uninstall:
+    runs-on: windows-11-arm
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: HaloryvaSetup-2.7.1-preview.9-candidate
+          run-id: 43060226353
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/preview9-frozen-installer/
+      - name: Install then uninstall frozen setup, preserving synthetic settings
+        shell: powershell
+        run: ./haloryva-ci/preview9-install-cycle/Run-InstallCycle.ps1 -AuthorizedInstallCycle
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview9-installer-lifecycle-evidence
+          path: ${{ runner.temp }}/preview9-install-cycle/
+          retention-days: 30
