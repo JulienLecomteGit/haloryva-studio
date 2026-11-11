@@ -11,12 +11,12 @@ namespace CursorFlow
         private readonly InputMailbox mailbox = new InputMailbox(8192);
         private readonly Action<InputCommand> consume;
         private readonly Thread worker;
+        private readonly Thread replayWorker;
+        private readonly AutoResetEvent replayReady = new AutoResetEvent(false);
+        private readonly System.Collections.Concurrent.ConcurrentQueue<string> replays = new System.Collections.Concurrent.ConcurrentQueue<string>();
         private readonly ManualResetEvent ready = new ManualResetEvent(false);
         private readonly Stopwatch clock = Stopwatch.StartNew();
         private readonly InputRouter router;
-        // Owned only by the input thread. A hook records replay work and returns first.
-        private readonly System.Collections.Generic.Queue<string> replays = new System.Collections.Generic.Queue<string>();
-        private bool replaying;
         private volatile InputSnapshot snapshot;
         private volatile bool stopped, installed;
         private uint threadId;
@@ -35,6 +35,7 @@ namespace CursorFlow
         {
             snapshot = initial; this.consume = consume; this.observationOnly = observationOnly;
             router = new InputRouter(mailbox, Replay, delegate { return clock.ElapsedMilliseconds; });
+            replayWorker = new Thread(RunReplays) { IsBackground = true, Name = "Haloryva-rejeu" };
             worker = new Thread(Run) { IsBackground = true, Name = "Haloryva-entrees" };
             worker.SetApartmentState(ApartmentState.STA);
             worker.Start();
@@ -46,6 +47,7 @@ namespace CursorFlow
             System.Windows.Forms.Timer poll = null;
             try
             {
+                replayWorker.Start();
                 threadId = GetCurrentThreadId();
                 // Force creation of the thread message queue before publishing readiness.
                 MSG msg; PeekMessage(out msg, IntPtr.Zero, 0, 0, 0);
@@ -57,7 +59,7 @@ namespace CursorFlow
                 installed = mouseHook != IntPtr.Zero && keyboardHook != IntPtr.Zero;
                 if (!installed) throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error(), "Installation des hooks impossible");
                 poll = new System.Windows.Forms.Timer { Interval = 10 };
-                poll.Tick += delegate { router.Update(snapshot); router.Poll(); FlushReplays(); Interlocked.Increment(ref polls); };
+                poll.Tick += delegate { router.Update(snapshot); router.Poll(); Interlocked.Increment(ref polls); };
                 poll.Start(); ready.Set();
                 if (!stopped) Application.Run();
             }
@@ -65,7 +67,8 @@ namespace CursorFlow
             finally
             {
                 installed = false;
-                replays.Clear();
+                stopped = true;
+                replayReady.Set();
                 if (poll != null) poll.Dispose();
                 if (mouseHook != IntPtr.Zero) Native.UnhookWindowsHookEx(mouseHook);
                 if (keyboardHook != IntPtr.Zero) Native.UnhookWindowsHookEx(keyboardHook);
@@ -92,29 +95,35 @@ namespace CursorFlow
         }
         private void Replay(string button)
         {
-            if (!stopped) replays.Enqueue(button);
+            // Never call SendInput on the hook thread: even outside a callback it
+            // can stall delivery of the next physical input while replay is in flight.
+            if (stopped) return;
+            replays.Enqueue(button);
+            replayReady.Set();
         }
-        private void FlushReplays()
+        private void RunReplays()
         {
-            // Run from the input thread's normal timer message, never from MouseCallback.
-            // SendInput inside that callback can delay suppression of the original UP.
-            // Keep FIFO order and a bounded batch so new physical input is not starved.
-            if (replaying || stopped) return;
-            replaying = true;
             try
             {
-                for (int i = 0; i < 32 && !stopped && replays.Count > 0; i++)
+                while (!stopped)
                 {
-                    string button = replays.Dequeue();
-                    try
+                    replayReady.WaitOne();
+                    string button;
+                    while (!stopped && replays.TryDequeue(out button))
                     {
-                        if (!Native.SendMouseClick(button))
-                            Interlocked.Exchange(ref callbackError, new InvalidOperationException("Rejeu refusé par Windows"));
+                        // Single consumer preserves release order. The native wrapper
+                        // emits one tagged DOWN/UP pair; the hook remains free to return.
+                        try
+                        {
+                            if (!Native.SendMouseClick(button))
+                                Interlocked.Exchange(ref callbackError, new InvalidOperationException("Rejeu refusé par Windows"));
+                        }
+                        catch (Exception ex) { Interlocked.Exchange(ref callbackError, ex); }
                     }
-                    catch (Exception ex) { Interlocked.Exchange(ref callbackError, ex); }
                 }
             }
-            finally { replaying = false; }
+            catch (Exception ex) { Interlocked.Exchange(ref callbackError, ex); }
+            finally { string unused; while (replays.TryDequeue(out unused)) { } }
         }
         private static bool OwnWindow(int x, int y, InputSnapshot state)
         {
@@ -182,8 +191,12 @@ namespace CursorFlow
         {
             if (Interlocked.Exchange(ref disposed, 1) != 0) return;
             stopped = true;
+            replayReady.Set();
             if (threadId != 0) PostThreadMessage(threadId, 0x0012, IntPtr.Zero, IntPtr.Zero);
-            if (Thread.CurrentThread != worker && worker.Join(2000)) ready.Dispose();
+            bool hookEnded = Thread.CurrentThread != worker && worker.Join(2000);
+            bool replayEnded = !replayWorker.IsAlive || (Thread.CurrentThread != replayWorker && replayWorker.Join(2000));
+            if (hookEnded) ready.Dispose();
+            if (hookEnded && replayEnded) replayReady.Dispose();
             mailbox.Clear();
         }
         [StructLayout(LayoutKind.Sequential)] private struct MSG

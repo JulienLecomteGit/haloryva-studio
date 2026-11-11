@@ -114,7 +114,14 @@ internal static class Recipe
                     if(target!=null && !target.HasExited) PostMessage(target.MainWindowHandle,0x0010,IntPtr.Zero,IntPtr.Zero);
                     // Release only our generated keys/buttons; target focus failures stop before more gestures.
                     Cursor.Position=original;
-                    if(controller!=null) Call(controller,"Exit");
+                    if(controller!=null) {
+                        object testHooks=Get(controller,"hooks");
+                        var replayThread=(Thread)Get(testHooks,"replayWorker");
+                        Call(controller,"Exit");
+                        bool ended=!replayThread.IsAlive && !(bool)Get(testHooks,"WorkerAlive");
+                        assertions++; Write((ended?"PASS ":"FAIL ")+"Both input workers stopped on shutdown");
+                        if(!ended) code=1;
+                    }
                     Application.ExitThread();
                 }
             },null);
@@ -205,16 +212,16 @@ internal static class Recipe
             }
             await Task.Delay(450);
             d=Query(0); u=Query(1); bool oldRing=(bool)Get(config,"Ring");
-            for(int n=0;n<3;n++) { Mouse(down[b],data[b]); await Task.Delay(50); Mouse(up[b],data[b]); await Task.Delay(40); }
+            for(int n=0;n<10;n++) { Mouse(down[b],data[b]); await Task.Delay(50); Mouse(up[b],data[b]); await Task.Delay(40); }
             await Task.Delay(400);
-            Write("RESULT burst "+buttons[b]+" clicks=3 downDelta="+(Query(0)-d)+" upDelta="+(Query(1)-u)+" unpaired="+Query(7));
-            Check(Query(0)==d+3 && Query(1)==u+3 && (bool)Get(config,"Ring")==oldRing && Query(7)==0,"Three rapid short clicks "+buttons[b]);
+            Write("RESULT burst "+buttons[b]+" clicks=10 downDelta="+(Query(0)-d)+" upDelta="+(Query(1)-u)+" unpaired="+Query(7));
+            Check(Query(0)==d+10 && Query(1)==u+10 && (bool)Get(config,"Ring")==oldRing && Query(7)==0,"Ten rapid short clicks "+buttons[b]);
             d=Query(0); u=Query(1); oldRing=(bool)Get(config,"Ring");
             Mouse(down[b],data[b]); await Task.Delay(650); Mouse(up[b],data[b]); await Task.Delay(250);
             Write("RESULT long-control "+buttons[b]+" downDelta="+(Query(0)-d)+" upDelta="+(Query(1)-u)+" ringChanged="+((bool)Get(config,"Ring")!=oldRing));
             Check(Query(0)==d && Query(1)==u && (bool)Get(config,"Ring")!=oldRing && Query(7)==0,"Long action preserved "+buttons[b]);
         }
-        Write("CASES short=18 longControls=3 baseline=3 direct=3 observer="+observe);
+        Write("CASES short=39 longControls=3 baseline=3 direct=3 observer="+observe);
         Write("NOT_RUN legacy 195 assertions; AltGr, drawing, MSIX, physical-device validation");
     }
     sealed class Target : Form

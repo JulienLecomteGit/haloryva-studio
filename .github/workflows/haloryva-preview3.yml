@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2025, windows-11-arm]
+        os: [windows-2025] # Windows 11 ARM gestures blocked by the hosted image Microsoft account window.
         observer: ['off', 'on']
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
