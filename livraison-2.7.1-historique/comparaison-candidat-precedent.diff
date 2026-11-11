@@ -1,0 +1,10 @@
+--- livraison-2.7.1-preparation/src/PremiumStudioForm.cs
++++ livraison-2.7.1-historique/src/PremiumStudioForm.cs
+@@ AboutBlock() @@
+-            Height = PremiumPalette.S(286); BackColor = PremiumPalette.Surface;
++            Height = PremiumPalette.S(128) + (Brand.History.Length + 1) * PremiumPalette.S(24) + PremiumPalette.S(14); BackColor = PremiumPalette.Surface;
+--- livraison-2.7.1-preparation/src/Brand.cs
++++ livraison-2.7.1-historique/src/Brand.cs
+@@ AssemblyFileVersion @@
+-[assembly: AssemblyFileVersion("2.7.1.10")]
++[assembly: AssemblyFileVersion("2.7.1.11")]
