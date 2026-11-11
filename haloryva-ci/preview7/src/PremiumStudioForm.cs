@@ -1122,7 +1122,7 @@ namespace CursorFlow
             Label count = StatusLabel(history, "", PremiumPalette.Subtle);
             sync.Add(delegate
             {
-                count.Text = engine.StrokeCount + (engine.StrokeCount > 1 ? L.T(" traits") : L.T(" trait")) + L.T(" à l'écran") +
+                count.Text = L.Count(engine.StrokeCount, " trait", " traits") + L.T(" à l'écran") +
                     (engine.RedoCount > 0 ? " · " + L.Format("{0} à rétablir", engine.RedoCount) : "");
             });
             PremiumButton undo = new PremiumButton(L.T("Annuler"), ButtonKind.Secondary, "undo");
