@@ -1,0 +1,51 @@
+name: Haloryva preview.3 AltGr drawing and MSIX
+on:
+  push:
+    branches: ['haloryva-tests-preview3']
+    paths: ['haloryva-ci/preview3-validation/**', '.github/workflows/haloryva-preview3-validation.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  features-x64:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.3-build
+          run-id: 42931395281
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview3-build/
+      - name: Existing preview.3 - AltGr and drawing only
+        shell: powershell
+        run: ./haloryva-ci/preview3-validation/Run-Features.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview3-altgr-drawing-evidence
+          path: ${{ runner.temp }}/haloryva-preview3-features/
+          retention-days: 14
+  msix-windows11:
+    needs: features-x64
+    if: ${{ always() && !cancelled() }}
+    runs-on: windows-11-arm
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-preview.3-build
+          run-id: 42931395281
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview3-build/
+      - name: Existing preview.3 - MSIX lifecycle and settings persistence
+        shell: powershell
+        run: ./haloryva-ci/preview3-validation/Run-Msix.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview3-msix-evidence
+          path: ${{ runner.temp }}/haloryva-preview3-msix/
+          retention-days: 14
