@@ -1,0 +1,53 @@
+{
+  "Version": "2.7.1",
+  "FileVersion": "2.7.1.11",
+  "AssemblyVersion": "2.7.1.0",
+  "BuildDate": "11/11/2026",
+  "BaseCommit": "fa3c0ed958c5382e6b69832ea4c054f21b47f506",
+  "ApplicationBuildCommit": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624",
+  "ApplicationBuildRun": 43086180391,
+  "ApplicationArtifactId": 13886896454,
+  "ApplicationArtifactName": "Haloryva-2.7.1-file11-history-build",
+  "ApplicationSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+  "StampedBrandSHA256": "6D0083AAE493A420627ED183A0BACC0FA34AB81C7F1A39A6E2FA1ECC8E7E775A",
+  "ArchivedIconBlob": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec",
+  "OutputName": "HaloryvaSetup_2.7.1.exe",
+  "SourceInputs": [
+    {
+      "Path": "Haloryva_Windows64/installer/FileTransaction.cs",
+      "GitBlobSHA": "e62a96b4828964630c143536d65cd2e3febf9e4a"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/MigrationPreview.cs",
+      "GitBlobSHA": "76720c4e641189ad3996568c1cf6880da58188c0"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/RegistryJournal.cs",
+      "GitBlobSHA": "4d042012a14551283ae8f93f46c2e911b40e4b91"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/SetupForm.cs",
+      "GitBlobSHA": "d5f8aebfd2940482a61b6d491cfc933431aa414e"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/SetupWork.cs",
+      "GitBlobSHA": "4e531293914254014929852471eec5130fd24b52"
+    },
+    {
+      "Path": "Haloryva_Windows64/assets/setup.manifest",
+      "GitBlobSHA": "dfaed5194219463d266da1428b7fbdd453924cd9"
+    },
+    {
+      "Path": "Haloryva_Windows64/assets/haloryva_demo.png",
+      "GitBlobSHA": "73ab07759047f3678aa56199b753b31b887a7536"
+    }
+  ],
+  "CompileApplication": false,
+  "ExecuteApplication": false,
+  "ApplicationSelfTests": false,
+  "InstallerSelfTest": false,
+  "ExtractionOnly": true,
+  "Install": false,
+  "Sign": false,
+  "Publish": false
+}

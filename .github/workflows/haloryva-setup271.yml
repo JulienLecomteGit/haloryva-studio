@@ -1,0 +1,39 @@
+name: Haloryva final 2.7.1 installer metadata and extraction only
+on:
+  push:
+    branches: ['haloryva-installateur-final-2.7.1']
+    paths: ['.github/workflows/haloryva-setup271.yml', 'haloryva-ci/installer271/**']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  package-only:
+    runs-on: windows-2025
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-file11-history-build
+          run-id: 43086180391
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/haloryva-final271-frozen/
+      - name: Compile installer only and verify metadata and early extraction
+        shell: powershell
+        run: ./haloryva-ci/installer271/Build-InstallerOnly.ps1 -BuildAndCheckExtraction
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HaloryvaSetup-2.7.1
+          path: |
+            ${{ runner.temp }}/haloryva-final271-installer/HaloryvaSetup_2.7.1.exe
+            ${{ runner.temp }}/haloryva-final271-installer/SHA256SUMS.txt
+            ${{ runner.temp }}/haloryva-final271-installer/installer-provenance.json
+          retention-days: 90
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: HaloryvaSetup-2.7.1-preuves-fabrication
+          path: ${{ runner.temp }}/haloryva-final271-installer/
+          retention-days: 90
+          if-no-files-found: error
