@@ -86,10 +86,10 @@ function Close-Setup([string]$phase) {
  Start-Sleep -Seconds 3
  $worker.Refresh()
  [SetupUi]::Capture($worker.MainWindowHandle,(Join-Path $out ($phase+'-completed.png')))
- # Standard Escape closes the completed form without checking "launch now".
- [SetupUi]::Escape($worker.MainWindowHandle)
+ # Normal WM_CLOSE closes the completed form without requesting a normal app launch.
+ [SetupUi]::CloseNormally($worker.MainWindowHandle)
  if(!$worker.WaitForExit(15000)){throw ($phase+' worker did not close normally')}
- Check ($phase+'-normal-exit') ($worker.ExitCode -eq 0) ([ordered]@{WorkerPid=$worker.Id;ExitCode=$worker.ExitCode;Closure='Escape on completed real GUI; no normal app launch requested'})
+ Check ($phase+'-normal-exit') ($worker.ExitCode -eq 0) ([ordered]@{WorkerPid=$worker.Id;ExitCode=$worker.ExitCode;Closure='Normal WM_CLOSE on completed real GUI; no normal app launch requested'})
 }
 try {
  $os=Get-CimInstance Win32_OperatingSystem
@@ -120,6 +120,7 @@ try {
  [IO.File]::WriteAllText((Join-Path $target 'fixture-note.txt'),'Synthetic preservation sentinel; no personal data.',(New-Object Text.UTF8Encoding($false)))
  $before=Profile-Map; $report.ProfileBefore=$before
  Copy-Item -LiteralPath $settings -Destination (Join-Path $out 'profile-before.json')
+ $report.UiAutomation='Targeted external mouse messages to the verified setup window; normal WM_CLOSE after completion. Not physical-desktop click validation. No interaction with the Microsoft account window.'
  $report.Phase='install';Save-Report
  Start-Setup $setup $false
  $report.InstallExecuted=$true;Save-Report
@@ -159,7 +160,7 @@ try {
  if($selfOk){$selfOk=$starts[0].ParentPid -eq $report.installWorker.Pid -and $stops[0].Pid -eq $starts[0].Pid -and $stops[0].ExitStatus -eq 0}
  if($selfOk -and ![string]::IsNullOrEmpty($starts[0].CommandLine)){$selfOk=$starts[0].CommandLine -match '(?:^|\s)--selftest(?:\s|$)'}
  Check 'automatic-installation-selftest' $selfOk ([ordered]@{Events=@($trace.Snapshot());Meaning='Only application invocation allowed by installer source before commit; WMI records observed child start and zero exit. No separate selftest invoked.'})
- Check 'no-normal-app-left-running' (@(Get-Process -Name Haloryva -ErrorAction SilentlyContinue).Count -eq 0) 'Completed setup closed with Escape'
+ Check 'no-normal-app-left-running' (@(Get-Process -Name Haloryva -ErrorAction SilentlyContinue).Count -eq 0) 'Completed setup closed through normal WM_CLOSE'
  Copy-Item -LiteralPath $settings -Destination (Join-Path $out 'profile-after-install.json')
  $report.Phase='uninstall';Save-Report
  # Execute precisely the installed, validated Windows uninstall entry. Keep RemoveSettings unchecked.
@@ -193,7 +194,6 @@ try {
 } catch {
  $report.Status='failed';$report.Error=$_.Exception.ToString();$report.ErrorPosition=$_.InvocationInfo.PositionMessage
  Write-Host ('FAILURE: '+$report.Error+' '+$report.ErrorPosition)
- try {[SetupUi]::CaptureDesktop((Join-Path $out 'failure-desktop.png'))}catch{Write-Host ('Desktop capture failed: '+$_)}
  try {if($null -ne $worker){$worker.Refresh();if(!$worker.HasExited -and $worker.MainWindowHandle -ne [IntPtr]::Zero){[SetupUi]::Capture($worker.MainWindowHandle,(Join-Path $out 'failure.png'))}}}catch{Write-Host ('Capture failed: '+$_)}
  throw
 } finally {

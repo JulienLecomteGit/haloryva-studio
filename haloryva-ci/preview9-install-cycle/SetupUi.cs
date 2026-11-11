@@ -42,76 +42,57 @@ public sealed class AppTrace : IDisposable {
     public void Dispose() { starts.Stop(); stops.Stop(); starts.Dispose(); stops.Dispose(); }
 }
 public static class SetupUi {
+    [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left, Top, Right, Bottom; }
     [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)]
     static extern uint GetLongPathName(string shortPath,System.Text.StringBuilder longPath,uint size);
+    [DllImport("user32.dll")] public static extern bool GetClientRect(IntPtr h,out Rect r);
+    [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h,out Rect r);
+    [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr h);
+    [DllImport("user32.dll")] public static extern bool IsHungAppWindow(IntPtr h);
+    [DllImport("user32.dll",SetLastError=true)] static extern IntPtr SendMessageTimeout(IntPtr h,uint m,IntPtr w,IntPtr l,uint flags,uint timeout,out IntPtr result);
+    [DllImport("user32.dll",SetLastError=true)] static extern bool PostMessage(IntPtr h,uint m,IntPtr w,IntPtr l);
+    [DllImport("user32.dll")] static extern bool PrintWindow(IntPtr h,IntPtr dc,uint flags);
     public static string CanonicalPath(string path) {
         var buffer=new System.Text.StringBuilder(32768);
         uint count=GetLongPathName(path,buffer,(uint)buffer.Capacity);
         if(count==0 || count>=buffer.Capacity) throw new Exception("Cannot normalize existing path: "+path);
         return System.IO.Path.GetFullPath(buffer.ToString()).TrimEnd(System.IO.Path.DirectorySeparatorChar);
     }
-
-    [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left, Top, Right, Bottom; }
-    [StructLayout(LayoutKind.Sequential)] public struct Point { public int X,Y; }
-    [DllImport("user32.dll")] public static extern bool GetClientRect(IntPtr h, out Rect r);
-    [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr h, ref Point p);
-    [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out Rect r);
-    [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
-    [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
-    [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr h);
-    [DllImport("user32.dll")] public static extern bool IsHungAppWindow(IntPtr h);
-    [DllImport("user32.dll")] public static extern bool SetCursorPos(int x,int y);
-    [DllImport("user32.dll")] static extern void mouse_event(uint f,uint x,uint y,uint data,UIntPtr extra);
-    [DllImport("user32.dll")] static extern void keybd_event(byte vk,byte scan,uint flags,UIntPtr extra);
-    [DllImport("user32.dll")] static extern bool ShowWindow(IntPtr h,int command);
-    [DllImport("user32.dll")] static extern bool SetWindowPos(IntPtr h,IntPtr after,int x,int y,int cx,int cy,uint flags);
-    [DllImport("user32.dll")] static extern IntPtr WindowFromPoint(Point p);
-    [DllImport("user32.dll")] static extern IntPtr GetAncestor(IntPtr h,uint flags);
-    [DllImport("user32.dll",CharSet=CharSet.Unicode)] static extern int GetWindowText(IntPtr h,System.Text.StringBuilder b,int size);
-    [DllImport("user32.dll")] static extern int GetSystemMetrics(int index);
-    public static string Describe(IntPtr h) {
-        var b=new System.Text.StringBuilder(500);GetWindowText(h,b,b.Capacity);
-        return h.ToInt64().ToString("X")+" "+b.ToString();
+    static void Ready(IntPtr h) {
+        if(!IsWindowVisible(h)||IsHungAppWindow(h))throw new Exception("Verified setup window unavailable");
     }
-    public static void Focus(IntPtr h) {
-        ShowWindow(h,9);Thread.Sleep(250);
-        if(!IsWindowVisible(h) || IsHungAppWindow(h)) throw new Exception("Setup window unavailable: "+Describe(h));
-        SetForegroundWindow(h);Thread.Sleep(250);
-        if(GetForegroundWindow()==h)return;
-        // Raise only this verified setup window, then use an ordinary click on its neutral title area.
-        // No focus-policy, security, registry or system-setting changes.
-        SetWindowPos(h,IntPtr.Zero,0,0,0,0,0x43);Thread.Sleep(250);
-        Rect r;if(!GetWindowRect(h,out r))throw new Exception("Window bounds unavailable");
-        Point p=new Point {X=r.Left+45,Y=r.Top+35};
-        if(GetAncestor(WindowFromPoint(p),2)!=h)
-            throw new Exception("Setup title is obscured; foreground="+Describe(GetForegroundWindow()));
-        SetCursorPos(p.X,p.Y);Thread.Sleep(100);
-        mouse_event(2,0,0,0,UIntPtr.Zero);Thread.Sleep(80);mouse_event(4,0,0,0,UIntPtr.Zero);
-        Thread.Sleep(300);
-        if(GetForegroundWindow()!=h)
-            throw new Exception("Setup foreground not confirmed; target="+Describe(h)+" foreground="+Describe(GetForegroundWindow()));
+    static void Send(IntPtr h,uint message,IntPtr w,IntPtr l) {
+        IntPtr result;
+        if(SendMessageTimeout(h,message,w,l,2,3000,out result)==IntPtr.Zero)
+            throw new Exception("Targeted setup message failed: "+Marshal.GetLastWin32Error());
     }
-    public static void CaptureDesktop(string file) {
-        using(var b=new Bitmap(GetSystemMetrics(0),GetSystemMetrics(1)))
-        using(var g=Graphics.FromImage(b)) {g.CopyFromScreen(0,0,0,0,b.Size);b.Save(file,ImageFormat.Png);}
+    // External window messages exercise the real form and its real install job.
+    // This is targeted GUI automation, not a physical-desktop click validation.
+    // Only the hash-verified setup worker HWND is supplied by the PowerShell driver.
+    public static void Click(IntPtr h,int designX,int designY) {
+        Ready(h);Rect r;if(!GetClientRect(h,out r))throw new Exception("GetClientRect failed");
+        int x=(int)Math.Round(designX*(r.Right-r.Left)/860.0);
+        int y=(int)Math.Round(designY*(r.Bottom-r.Top)/560.0);
+        IntPtr point=new IntPtr((y<<16)|(x&65535));
+        Send(h,0x200,IntPtr.Zero,point);
+        Send(h,0x201,new IntPtr(1),point);
+        Thread.Sleep(80);
+        Send(h,0x202,IntPtr.Zero,point);
     }
-    public static void Click(IntPtr h, int designX, int designY) {
-        Focus(h); Rect r; if(!GetClientRect(h,out r)) throw new Exception("GetClientRect failed");
-        Point p=new Point { X=(int)Math.Round(designX*(r.Right-r.Left)/860.0), Y=(int)Math.Round(designY*(r.Bottom-r.Top)/560.0) };
-        if(!ClientToScreen(h,ref p)) throw new Exception("ClientToScreen failed");
-        SetCursorPos(p.X,p.Y); Thread.Sleep(120);
-        mouse_event(2,0,0,0,UIntPtr.Zero); Thread.Sleep(80); mouse_event(4,0,0,0,UIntPtr.Zero);
-    }
-    // Escape uses the installer's normal close path; it never requests a normal app launch.
-    public static void Escape(IntPtr h) {
-        Focus(h); keybd_event(0x1B,0,0,UIntPtr.Zero); Thread.Sleep(60); keybd_event(0x1B,0,2,UIntPtr.Zero);
+    public static void CloseNormally(IntPtr h) {
+        Ready(h);
+        // Normal WM_CLOSE; the installer's existing critical-section close guard remains active.
+        // Does not invoke Finish/LaunchRequested; no normal Haloryva launch is requested.
+        if(!PostMessage(h,0x10,IntPtr.Zero,IntPtr.Zero))throw new Exception("Normal close request failed");
     }
     public static void Capture(IntPtr h,string file) {
-        Focus(h); Thread.Sleep(200); Rect r;
-        if(!GetWindowRect(h,out r)) throw new Exception("GetWindowRect failed");
+        Ready(h);Rect r;if(!GetWindowRect(h,out r))throw new Exception("GetWindowRect failed");
         using(var b=new Bitmap(r.Right-r.Left,r.Bottom-r.Top))
         using(var g=Graphics.FromImage(b)) {
-            g.CopyFromScreen(r.Left,r.Top,0,0,b.Size); b.Save(file,ImageFormat.Png);
+            IntPtr dc=g.GetHdc();bool ok;
+            try {ok=PrintWindow(h,dc,2);}finally{g.ReleaseHdc(dc);}
+            if(!ok)throw new Exception("Capture of the verified setup window failed");
+            b.Save(file,ImageFormat.Png);
         }
     }
 }
