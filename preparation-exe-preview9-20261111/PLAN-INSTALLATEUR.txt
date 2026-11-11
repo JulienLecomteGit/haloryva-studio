@@ -1,0 +1,84 @@
+HALORYVA PREVIEW.9 — PROCHAINE ÉTAPE : INSTALLATEUR .EXE
+11 novembre 2026 — préparé, non compilé, non installé
+
+ACTION PROPOSÉE
+Fabriquer sur GitHub HaloryvaSetup_2.7.1-preview.9.exe en y incorporant l'EXE
+preview.9 déjà compilé. Compiler uniquement l'enveloppe d'installation.
+Puis exécuter uniquement son mode --extract dans le runner et comparer les
+trois fichiers extraits aux fichiers incorporés. Ne pas lancer Haloryva, installer
+l'application, exécuter ses autotests ou signer/publier ce candidat.
+
+ENTRÉES FIGÉES
+Application : SHA-256 678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC.
+Compilation application : a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5, run 43035196363.
+Archive : 13862528027, Haloryva-2.7.1-preview.9-build.
+Expiration annoncée : 11 décembre 2026. Si indisponible, ne pas reconstruire
+silencieusement l'application : retrouver d'abord une copie de même empreinte.
+9 fichiers d'entrée du constructeur sont épinglés par leur empreinte Git dans
+installer-inputs.json. Aucun fichier source de preview.9 ne doit être modifié.
+
+BASE EXISTANTE ET ADAPTATIONS PRÉPARÉES
+Le dépôt contient un installateur C# autonome avec ressources payload/* ; aucun
+nouveau logiciel de fabrication n'est nécessaire au runner repéré.
+L'assistant exige déjà un binaire précompilé et vérifie son empreinte.
+Le mode --extract retourne avant les opérations d'installation, de maintenance
+et de démarrage de l'application. Il est donc adapté au seul contrôle du paquet.
+
+Le script préparé travaille sur des COPIES dans le dossier temporaire GitHub :
+- reprendre Brand.cs de preview.9 pour version, dessin du logo et droits ;
+- remplacer son unique dépendance L.T(" · build ") par le texte français équivalent
+  dans la copie de l'installateur. Le constructeur n'intègre pas le moteur de langues
+  de l'application ; copier Brand.cs tel quel créerait une référence L manquante ;
+- séparer version numérique 2.7.1 et affichage 2.7.1-preview.9 dans cette copie,
+  afin d'étiqueter explicitement la préversion sans casser VerifyPayload ;
+- adapter les cinq affichages de version de SetupForm et les deux références
+  DisplayVersion de SetupWork ; la comparaison d'AssemblyVersion reste numérique ;
+- porter le manifeste du setup à 2.7.1.9 en gardant asInvoker et uiAccess=false ;
+- incorporer exactement Haloryva.exe, Haloryva.sha256 et haloryva_demo.png ;
+- conserver les autres mécanismes de l'installateur existant et les droits actuels.
+L'interface de cet assistant reste française. Le programme incorporé conserve bien
+les trois langues FR/EN/ES ; cela ne rend pas automatiquement l'assistant trilingue.
+
+FICHIERS PRÊTS POUR LA PROCHAINE DEMANDE
+- installer-inputs.json : références et empreintes de départ.
+- Build-InstallerOnly.prepared.ps1 : recette de compilation et extraction seules.
+  Elle refuse l'exécution locale et exige -BuildAndCheckExtraction.
+- haloryva-preview9-installer.yml.template : modèle volontairement HORS du dossier
+  .github/workflows. Il n'est pas actif et ne peut pas démarrer à ce stade.
+Après demande explicite de fabrication, copier ce modèle vers
+.github/workflows/haloryva-preview9-installer.yml sur cette seule branche de
+préparation. Son déclenchement fera uniquement la fabrication et l'extraction prévues.
+
+CE QUI SERA VÉRIFIÉ LORS DE CETTE PROCHAINE ÉTAPE
+1. Hash et provenance de l'application téléchargée, version informative preview.9.
+2. Empreintes des neuf sources de packaging préservées.
+3. Compilation du seul setup avec les outils installés sur windows-2025.
+4. Métadonnées preview.9 et absence de signature Authenticode du setup.
+5. Extraction uniquement, code de sortie, trois noms de ressources attendus.
+6. Identité de chaque ressource extraite, notamment hash exact de Haloryva.exe.
+7. Provenance de fabrication et empreinte propre du nouvel installateur.
+Ces vérifications ne sont PAS exécutées aujourd'hui. Les transformations de texte,
+leurs points d'ancrage et le chemin --extract ont seulement été relus statiquement.
+Aucune promesse de compilation réussie avant l'exécution de cette nouvelle recette.
+
+CE QUI N'EST PAS COUVERT PAR LA FABRICATION
+- Installation ou désinstallation classique, mise à jour d'un ancien setup,
+  conservation réelle des réglages et des raccourcis sur un poste de test.
+- Exécution non empaquetée de ce binaire final dans son installation classique.
+- Démarrage à une vraie connexion Windows ou certification Microsoft Store.
+- Compatibilité avec toutes les politiques de protection Windows.
+- Signature ou publication. Aucun contournement de blocage Windows prévu.
+
+POINT IMPORTANT POUR LA FUTURE RECETTE D'INSTALLATION
+Le setup existant lance Haloryva.exe --selftest à la ligne de vérification de
+RunReal. Le mode --extract prévu ne passe pas par là. Ne pas lancer le mode normal
+du setup en prétendant n'exécuter aucun autotest acquis : ce périmètre devra être
+explicité pour une future recette d'installation autorisée.
+Les 195 contrôles externes ne font partie d'aucune recette préparée ici.
+Le test d'extraction préparé n'est pas une validation d'installation.
+
+LIVRABLE ATTENDU APRÈS LA PROCHAINE ÉTAPE
+Un installateur de préversion non signé, son empreinte et son rapport d'extraction,
+déposés uniquement comme artefact de travail GitHub. Ce ne sera pas encore une
+release ni une version finale approuvée pour diffusion. Aucun lancement sur le PC
+principal n'est nécessaire pour cette fabrication.

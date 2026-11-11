@@ -1,0 +1,2099 @@
+{
+  "Date": "2026-11-11",
+  "BaseCommit": "d1afe7b5a155355bbf60645a4ad04c7f963bfb87",
+  "PreparationBranch": "haloryva-preparation-exe-preview9",
+  "ProtectedBranches": [
+    {
+      "Name": "haloryva-2.7.0-c4",
+      "SHA": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+    },
+    {
+      "Name": "haloryva-preparation-msix-preview7",
+      "SHA": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+    },
+    {
+      "Name": "haloryva-preparation-store-preview5",
+      "SHA": "f07890303144653049a05069841838ecd9b9d73d"
+    },
+    {
+      "Name": "haloryva-preparation-store-preview7",
+      "SHA": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+    },
+    {
+      "Name": "haloryva-preparation-store-preview8",
+      "SHA": "bf8892413e6d686feb2884d26e118eff94d32723"
+    },
+    {
+      "Name": "haloryva-tests-preview2",
+      "SHA": "8d84f31157ebfc1e09144811b6b112247f926f81"
+    },
+    {
+      "Name": "haloryva-tests-preview3",
+      "SHA": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+    },
+    {
+      "Name": "haloryva-tests-preview4",
+      "SHA": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+    },
+    {
+      "Name": "haloryva-tests-preview5-msix",
+      "SHA": "cfdb260c50bf771843065eff8eefadae24899f06"
+    },
+    {
+      "Name": "haloryva-tests-preview5",
+      "SHA": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+    },
+    {
+      "Name": "haloryva-tests-preview6",
+      "SHA": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+    },
+    {
+      "Name": "haloryva-tests-preview7-msix",
+      "SHA": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+    },
+    {
+      "Name": "haloryva-tests-preview7",
+      "SHA": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+    },
+    {
+      "Name": "haloryva-tests-preview8-focus",
+      "SHA": "638e2044e6c988b784941329316aa53b99005e8a"
+    },
+    {
+      "Name": "haloryva-tests-preview8-import",
+      "SHA": "78c8063e7109e8e8529f82adf8f37d075fe20420"
+    },
+    {
+      "Name": "haloryva-tests-preview8",
+      "SHA": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+    },
+    {
+      "Name": "haloryva-tests-preview9",
+      "SHA": "d1afe7b5a155355bbf60645a4ad04c7f963bfb87"
+    },
+    {
+      "Name": "main",
+      "SHA": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+    },
+    {
+      "Name": "release/2.7.0-stable",
+      "SHA": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+    }
+  ],
+  "ProtectedFiles": [
+    {
+      "Path": ".gitattributes",
+      "SHA": "d90cbc7b44965bed6818fb7aae80ce7d67858caf"
+    },
+    {
+      "Path": ".github/ISSUE_TEMPLATE/amelioration.yml",
+      "SHA": "c71201f144a7457a0bc8b049cb67ec1b98bb9c67"
+    },
+    {
+      "Path": ".github/ISSUE_TEMPLATE/anomalie.yml",
+      "SHA": "26e53addd1f1f802a5697601cd043cfa09e209ee"
+    },
+    {
+      "Path": ".github/ISSUE_TEMPLATE/config.yml",
+      "SHA": "3ba13e0cec6cbbfd462e9ebf529dd2093148cd69"
+    },
+    {
+      "Path": ".github/pull_request_template.md",
+      "SHA": "a93fb0a90066859b7d5b9f8f341505a133a76df5"
+    },
+    {
+      "Path": ".github/workflows/haloryva-cloud.yml",
+      "SHA": "9ce927ccbc0c89b30175fa86bbefa90e27ec68ff"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview3-placement.yml",
+      "SHA": "e2dd5392a77d5e2accb37c8627a39a98f4c8e03d"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview3-studio.yml",
+      "SHA": "87897cf94fe034cfb68e82f04641a481b91d8b7b"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview3-tools.yml",
+      "SHA": "7f3e7c3bb32ad14154057eb89e07f09c082faa77"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview3-validation.yml",
+      "SHA": "d1fa36b4f58ba1d2a935a3c82ff7869204999830"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview3.yml",
+      "SHA": "8758d2a35844f0390d0de67c1b42ddfeddfefc41"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview4.yml",
+      "SHA": "ba721c256c3537abba326523c7c3f0b9d583e5f9"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview5-msix.yml",
+      "SHA": "3235f7c37470271b00740aad500966b3a1175260"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview5-reload.yml",
+      "SHA": "e3cc23d569cd0ecbec7f05209981bd5dd34f7d3f"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview5.yml",
+      "SHA": "e8082072d00725bd7a7df8bfde1557c91d1723f1"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview6-build.yml",
+      "SHA": "3c3c8dab6efefcf481fdbad0bf21403f8030c898"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview6-msix.yml",
+      "SHA": "13ca44be7da6d42abab7ec1770ae2aea6ee9c6f1"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview6-validation.yml",
+      "SHA": "608d382d7071d86615e52639fbbe0970e1608305"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview7-build.yml",
+      "SHA": "0f8436b2f7ff057afbaaf8dbd8f54270964c8584"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview7-msix.yml",
+      "SHA": "c5f74ae4bf162ac2cecb635292322481ed2277ab"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview7-validation.yml",
+      "SHA": "1de64423789903c753c6dc0d76c0e94065edb3ef"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-build.yml",
+      "SHA": "da31aa85108f552f7515881a8ea2abb7fbb580f6"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-evidence.yml",
+      "SHA": "fb6b0c97ac290938fc3e7ea1e2e24ad8f4877ddc"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-import-ui.yml",
+      "SHA": "8dba2f8d998fcd94b709ffd4bb256153ef589135"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-live-focus.yml",
+      "SHA": "5923c796125ddb269b11f20b18b23b97058a0842"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-msix.yml",
+      "SHA": "43ba67d1e9f6f404ccd8b867a3764c5ff0f52aa1"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-preflight.yml",
+      "SHA": "fadcbc0e8ec38b1ec502b0c4fe9aeca263d36fd5"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-startup-ui.yml",
+      "SHA": "ad63bb1a50cdb551deb182d4f685adb30956a12b"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-targeted.yml",
+      "SHA": "df6b56cc2685295e02405f59fa7c7e5d31207432"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview8-windows-startup.yml",
+      "SHA": "495d5b0550e201ec63e4a653bc17abb66a14565b"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview9-build.yml",
+      "SHA": "1fb89d9325bfc5ed53b7f999818ac6396a7ab83c"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview9-evidence.yml",
+      "SHA": "e05f23b6bac6c15372edad7dc8fa5a79c3eb8a6e"
+    },
+    {
+      "Path": ".github/workflows/haloryva-preview9-focus.yml",
+      "SHA": "8056ba7070e7d6b99cf3c9631f3b177de1133c22"
+    },
+    {
+      "Path": ".gitignore",
+      "SHA": "15f056871d280d8616473f0782e6cd9b39702b38"
+    },
+    {
+      "Path": "BILAN-diagnostics-cloud-20261111.txt",
+      "SHA": "06a1ee37937180689c1fdb8e85140e66a6a120c1"
+    },
+    {
+      "Path": "BILAN-preview3-AltGr-dessin-MSIX-20261111.txt",
+      "SHA": "99e89bca86cc0c5042edba21d8090598989ebf85"
+    },
+    {
+      "Path": "BILAN-preview3-clic-court-20261111.txt",
+      "SHA": "23448007fbabd3598c97e5794b6555625bd4a245"
+    },
+    {
+      "Path": "BILAN-preview3-outils-annuler-export-20261111.txt",
+      "SHA": "8964f2fcf2ebd08c39bfd48a47c7598827fe4da1"
+    },
+    {
+      "Path": "BILAN-preview3-studio-lissage-formes-20261111.txt",
+      "SHA": "4dd2889816a9e26504dda2b2a71348a8e7b9e2df"
+    },
+    {
+      "Path": "BILAN-preview4-placement-20261111.txt",
+      "SHA": "64b428b12c69eb0198857cae5c95667779f5f683"
+    },
+    {
+      "Path": "BILAN-preview5-MSIX-20261111.txt",
+      "SHA": "26e4aebed4d9a3c6cb072aafa8129efff16b39aa"
+    },
+    {
+      "Path": "BILAN-preview5-defilement-20261111.txt",
+      "SHA": "67241c3210e08c451f56069e33bdfb28fe9467fa"
+    },
+    {
+      "Path": "BILAN-preview6-langues-MSIX-20261111.txt",
+      "SHA": "9401aea2596d69e44a2cd62bd8e424d0ec821e8f"
+    },
+    {
+      "Path": "BILAN-preview7-MSIX-20261111.txt",
+      "SHA": "ed71c611ad4b959ddc9cb4307e67379082c30746"
+    },
+    {
+      "Path": "BILAN-preview7-indicateur-pluriels-20261111.txt",
+      "SHA": "608b11f1c14f04a385f6054858fe29028e0133f5"
+    },
+    {
+      "Path": "CHANGELOG.md",
+      "SHA": "4522c4cb99465a0380e36994e8e6110fdf3708a3"
+    },
+    {
+      "Path": "Haloryva_Windows64/assets/Haloryva.ico",
+      "SHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "Haloryva_Windows64/assets/Haloryva.png",
+      "SHA": "afb0c17f0a7c7e3f768883ee427977c845a8696c"
+    },
+    {
+      "Path": "Haloryva_Windows64/assets/app.manifest",
+      "SHA": "8d04e9e242e7ad704f28423d22dedc48d2351d40"
+    },
+    {
+      "Path": "Haloryva_Windows64/assets/haloryva_demo.png",
+      "SHA": "73ab07759047f3678aa56199b753b31b887a7536"
+    },
+    {
+      "Path": "Haloryva_Windows64/assets/setup.manifest",
+      "SHA": "dfaed5194219463d266da1428b7fbdd453924cd9"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/FileTransaction.cs",
+      "SHA": "e62a96b4828964630c143536d65cd2e3febf9e4a"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/MigrationPreview.cs",
+      "SHA": "76720c4e641189ad3996568c1cf6880da58188c0"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/RegistryJournal.cs",
+      "SHA": "4d042012a14551283ae8f93f46c2e911b40e4b91"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/SetupForm.cs",
+      "SHA": "d5f8aebfd2940482a61b6d491cfc933431aa414e"
+    },
+    {
+      "Path": "Haloryva_Windows64/installer/SetupWork.cs",
+      "SHA": "4e531293914254014929852471eec5130fd24b52"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Annotations.cs",
+      "SHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Brand.cs",
+      "SHA": "8b3881d4db35566b32e0a05267e3dd9027f5112c"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/ColorWheelPopup.cs",
+      "SHA": "310f0c43aaceebd6930974845d5aa17957ea05ba"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Config.cs",
+      "SHA": "5c9e80b9967576edf669ac11dc87077c7d1936c6"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Controller.cs",
+      "SHA": "99a53f8d130bbcbfbafc86c9ea925958a3a269bc"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/DrawingGeometry.cs",
+      "SHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/EffectDiagnostics.cs",
+      "SHA": "de19fc05fdf4425a3b0b61c505a56bd12488fd82"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/FrameBounds.cs",
+      "SHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/FramePump.cs",
+      "SHA": "906e7ee972738e8fa8f416310f9f367f4d061397"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/InputState.cs",
+      "SHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/PremiumStudioForm.cs",
+      "SHA": "3633dd7e2d5c66627be67e572fe8ee1020f6f7af"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/PremiumWidgets.cs",
+      "SHA": "5907e96a3e90cb57b1dd721da8b9ec2a18105e43"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Program.cs",
+      "SHA": "94c02cb2e7d8b6de789c146c6c141dded052c187"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/SelfTest.cs",
+      "SHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Splash.cs",
+      "SHA": "321a6a3e689426f2480d0d5ba7135d03240d9a7a"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/StudioControls.cs",
+      "SHA": "cce7c20c38020c7c9287f734fbbf29c3c0afda19"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/StudioTheme.cs",
+      "SHA": "4b7c5e76700644f5ac376ab0dc7fdc8ce90f04d0"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/TextPrompt.cs",
+      "SHA": "0b0147cea970202e225f749c533c9febb911d3ad"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/ToolToast.cs",
+      "SHA": "58252968c512a0d8aa67017046a6d8809b857fe7"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/TrailDiagnostics.cs",
+      "SHA": "240b7ed0c4152d62e72889de3f5d77d8bd3198c3"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/TrailEngine.cs",
+      "SHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/TrailSelfTest.cs",
+      "SHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Visuals.cs",
+      "SHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "Haloryva_Windows64/src/WinNative.cs",
+      "SHA": "625ef713eed3952f9a839401bcc8b0d9aab3863f"
+    },
+    {
+      "Path": "Haloryva_Windows64/tests/maintenance/ProtocolTests.cs",
+      "SHA": "f6bf44d5df7e208cf3f7991cb66948cee26f3877"
+    },
+    {
+      "Path": "PREPARATION-STORE-preview6-20261111.txt",
+      "SHA": "75809a31e703dedb333913c53fb3d4cc2d4bcc29"
+    },
+    {
+      "Path": "README.md",
+      "SHA": "d1061ae6785d7662e71dadd9500b05bb43d12f6f"
+    },
+    {
+      "Path": "bilan-preview8-20261111/BILAN-preview8-20261111.txt",
+      "SHA": "4d78d019ea03dce3f0e8d9f5d9b95566b26ff94f"
+    },
+    {
+      "Path": "bilan-preview8-20261111/couverture-ciblee.json",
+      "SHA": "51ee46dd429e199026eba57faccf61abb23f78df"
+    },
+    {
+      "Path": "bilan-preview8-20261111/preservation.json",
+      "SHA": "62b7defe4dd4496d726da1f6cba09cce5a8004a6"
+    },
+    {
+      "Path": "bilan-preview8-20261111/preuves.json",
+      "SHA": "639e73fb962921585bea55e539e0c7c5f22129e0"
+    },
+    {
+      "Path": "bilan-preview8-complements-20261111/BILAN-import-Windows.txt",
+      "SHA": "31043580aba9c2f260f5f651cbf8f1851d6b22a3"
+    },
+    {
+      "Path": "bilan-preview8-complements-20261111/couverture.json",
+      "SHA": "bcf8c67f5074807ca9c6b47f828edc1441092088"
+    },
+    {
+      "Path": "bilan-preview8-complements-20261111/preuves.json",
+      "SHA": "ae2ff9740e2c91990072b75258e612dc0eecd072"
+    },
+    {
+      "Path": "bilan-preview8-demarrage-20261111/BILAN-demarrage-preview8.txt",
+      "SHA": "b2e55e526ad07a7156cfeba65b06219513aa3ed8"
+    },
+    {
+      "Path": "bilan-preview8-demarrage-20261111/PISTE-correction.txt",
+      "SHA": "256bcfee8926b1dc358a0acb6c4a7840a2b70827"
+    },
+    {
+      "Path": "bilan-preview8-demarrage-20261111/PROPOSITION-session-Windows.txt",
+      "SHA": "01836e429d3575f672796332293f03b91a9d15d2"
+    },
+    {
+      "Path": "bilan-preview8-demarrage-20261111/couverture-msix.json",
+      "SHA": "b84c5830be053104de8dbf1f4c9f4870e9e0d22a"
+    },
+    {
+      "Path": "bilan-preview8-demarrage-20261111/preservation.json",
+      "SHA": "3efafc17b78435acb933441ee30be49d7579018d"
+    },
+    {
+      "Path": "bilan-preview8-demarrage-20261111/preuves.json",
+      "SHA": "ee780dabbad0e44c520e3e2722120f4f3def4636"
+    },
+    {
+      "Path": "bilan-preview9-20261111/BILAN-preview9.txt",
+      "SHA": "c8a104bdf4e4bddbf2e5c2011114abefc1efcd80"
+    },
+    {
+      "Path": "bilan-preview9-20261111/couverture-msix.json",
+      "SHA": "d80cd4f59ed15c8ed2b7b899c9f5c142df58306e"
+    },
+    {
+      "Path": "bilan-preview9-20261111/diagnostic-premier-retour.tsv",
+      "SHA": "56b8648c7c4bfd3b21186405aa468c2f8f4672ba"
+    },
+    {
+      "Path": "bilan-preview9-20261111/preservation.json",
+      "SHA": "f241416ea4b282f81ea44d57588c911080a02470"
+    },
+    {
+      "Path": "bilan-preview9-20261111/preuves.json",
+      "SHA": "88346702d64742430e6c45383c53b0c15e82eff7"
+    },
+    {
+      "Path": "docs/DIFFUSION.md",
+      "SHA": "674d12694aba4ada6ff781007c5eb3babe8ba1b7"
+    },
+    {
+      "Path": "docs/Haloryva_Banniere_V01.png",
+      "SHA": "ac02acc6f4ad0cb1645b9d459ace566fa76db1a2"
+    },
+    {
+      "Path": "docs/Haloryva_Logo_V01.png",
+      "SHA": "40615ef1992e5fcf3703092b8a53a2affd2a43cf"
+    },
+    {
+      "Path": "docs/INSTALLATION.md",
+      "SHA": "ad58314a596e0fc5e63e0b395d4939a704a50d41"
+    },
+    {
+      "Path": "docs/VALIDATION_2.6.6.md",
+      "SHA": "b89623b9bdbf000d855acbfa4beefe2e45a93fed"
+    },
+    {
+      "Path": "haloryva-ci/Inputs/Haloryva.sha256",
+      "SHA": "aef31e2af1728437c6fa295a6b9ad68cf1012e48"
+    },
+    {
+      "Path": "haloryva-ci/Inputs/msix-layout/AppxManifest.xml",
+      "SHA": "e990d8fd2873252bffba44bce8937985c20a4f92"
+    },
+    {
+      "Path": "haloryva-ci/Inputs/msix-layout/Assets/Square150x150Logo.png",
+      "SHA": "d65cdd6c9ab12116aa7a4ab318408fc8f11bec1e"
+    },
+    {
+      "Path": "haloryva-ci/Inputs/msix-layout/Assets/Square44x44Logo.png",
+      "SHA": "925c2a51c8fc484953480766ccbb06b7c0d7d01a"
+    },
+    {
+      "Path": "haloryva-ci/Inputs/msix-layout/Assets/StoreLogo.png",
+      "SHA": "3a0b8aa6dfbcac9442b82b44c6f7127d757112c5"
+    },
+    {
+      "Path": "haloryva-ci/Inputs/msix-layout/Haloryva.exe",
+      "SHA": "e0708f5d179f4fb9015f7f00b3c906a74341767a"
+    },
+    {
+      "Path": "haloryva-ci/Recipe-Cloud.cs",
+      "SHA": "d000aed790edb912e4541bd9521c8091f30bbf96"
+    },
+    {
+      "Path": "haloryva-ci/Run-Cloud.ps1",
+      "SHA": "4e541cb3c1f6c7acfc25be0c95d9d9296caf3747"
+    },
+    {
+      "Path": "haloryva-ci/preview3-placement/Check-Placement.ps1",
+      "SHA": "875ee6305e9d85454ae5187378fb99269e9e49b5"
+    },
+    {
+      "Path": "haloryva-ci/preview3-studio/README.md",
+      "SHA": "3bc458ef5070316a1abd7b2eb4ee9882892a88a9"
+    },
+    {
+      "Path": "haloryva-ci/preview3-studio/Recipe-Studio.cs",
+      "SHA": "0eb5ea437403bc4931dc8d7ca05fd1ec70ed504b"
+    },
+    {
+      "Path": "haloryva-ci/preview3-studio/Run-Studio.ps1",
+      "SHA": "7ce06f050ac25e74d7916ab7a9ab49d329e94b97"
+    },
+    {
+      "Path": "haloryva-ci/preview3-tools/README.md",
+      "SHA": "1fa63912ca1e102ca4fa37917c47b75f218be947"
+    },
+    {
+      "Path": "haloryva-ci/preview3-tools/Recipe-Tools.cs",
+      "SHA": "35d4737ccd7d2294c63e6876ed730cebc602835a"
+    },
+    {
+      "Path": "haloryva-ci/preview3-tools/Run-Tools.ps1",
+      "SHA": "14778112c2243a658b2175949d143794fd304661"
+    },
+    {
+      "Path": "haloryva-ci/preview3-validation/Recipe-Features.cs",
+      "SHA": "3311782f308d89771ddd6559206cea2e495c4a2a"
+    },
+    {
+      "Path": "haloryva-ci/preview3-validation/Run-Features.ps1",
+      "SHA": "545ddcb768a4bf2249c7fe0483ec90af6c2c8a6e"
+    },
+    {
+      "Path": "haloryva-ci/preview3-validation/Run-Msix.ps1",
+      "SHA": "cb12b873647bef6d2f1aeed5682ea8120c45b7c0"
+    },
+    {
+      "Path": "haloryva-ci/preview3/.gitattributes",
+      "SHA": "7d0bfc4c686b4ad1639a189935d873fe556f133c"
+    },
+    {
+      "Path": "haloryva-ci/preview3/Build-Preview3.ps1",
+      "SHA": "e083e32318d1c988dcd936110caea878a787c68d"
+    },
+    {
+      "Path": "haloryva-ci/preview3/Recipe-ShortClick.cs",
+      "SHA": "3de91f956721162cc96957588c9ccaaf2a3e522b"
+    },
+    {
+      "Path": "haloryva-ci/preview3/Run-ShortClick.ps1",
+      "SHA": "3161859707d73d2c11e80f8c588bc65421299850"
+    },
+    {
+      "Path": "haloryva-ci/preview3/assets/Haloryva.ico",
+      "SHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "haloryva-ci/preview3/assets/app.manifest",
+      "SHA": "efe344ab5adb62649ed61625ba63d3ebe311cede"
+    },
+    {
+      "Path": "haloryva-ci/preview3/source-origin.json",
+      "SHA": "851c933ba95a1ef1226bf83a198a692ad4b9e490"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/Annotations.cs",
+      "SHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/Brand.cs",
+      "SHA": "df165c98ee62bcfbd2f98acac420f3e400e5ccd3"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/ColorWheelPopup.cs",
+      "SHA": "310f0c43aaceebd6930974845d5aa17957ea05ba"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/Config.cs",
+      "SHA": "5c9e80b9967576edf669ac11dc87077c7d1936c6"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/Controller.cs",
+      "SHA": "5cba720469d42a067fc24da297ea967ea685ae85"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/DrawingGeometry.cs",
+      "SHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/EffectDiagnostics.cs",
+      "SHA": "de19fc05fdf4425a3b0b61c505a56bd12488fd82"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/ErrorReporting.cs",
+      "SHA": "252c1a666c73378fa3256364802749f29af31565"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/FrameBounds.cs",
+      "SHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/FramePump.cs",
+      "SHA": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/GlobalHooks.cs",
+      "SHA": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/InputPipeline.cs",
+      "SHA": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/InputState.cs",
+      "SHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/KeyboardPolicy.cs",
+      "SHA": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/PremiumStudioForm.cs",
+      "SHA": "3633dd7e2d5c66627be67e572fe8ee1020f6f7af"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/PremiumWidgets.cs",
+      "SHA": "5907e96a3e90cb57b1dd721da8b9ec2a18105e43"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/Program.cs",
+      "SHA": "e7851e7672ddb5411d90b5ed2b1bccf2d8410ef1"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/SelfTest.cs",
+      "SHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/Splash.cs",
+      "SHA": "321a6a3e689426f2480d0d5ba7135d03240d9a7a"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/StudioControls.cs",
+      "SHA": "cce7c20c38020c7c9287f734fbbf29c3c0afda19"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/StudioTheme.cs",
+      "SHA": "4b7c5e76700644f5ac376ab0dc7fdc8ce90f04d0"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/TextPrompt.cs",
+      "SHA": "0b0147cea970202e225f749c533c9febb911d3ad"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/ToolToast.cs",
+      "SHA": "58252968c512a0d8aa67017046a6d8809b857fe7"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/TrailDiagnostics.cs",
+      "SHA": "240b7ed0c4152d62e72889de3f5d77d8bd3198c3"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/TrailEngine.cs",
+      "SHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/TrailSelfTest.cs",
+      "SHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/Visuals.cs",
+      "SHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "haloryva-ci/preview3/src/WinNative.cs",
+      "SHA": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+    },
+    {
+      "Path": "haloryva-ci/preview4/.gitattributes",
+      "SHA": "7d0bfc4c686b4ad1639a189935d873fe556f133c"
+    },
+    {
+      "Path": "haloryva-ci/preview4/Build-Preview4.ps1",
+      "SHA": "1294dd47cbf483cdc4bd07edc10089d1417723c9"
+    },
+    {
+      "Path": "haloryva-ci/preview4/Check-Placement.ps1",
+      "SHA": "6745f93f228df922d91764a7c48f0a52e6b6730e"
+    },
+    {
+      "Path": "haloryva-ci/preview4/README.txt",
+      "SHA": "07a72224054749a8be2f362c43a604b9fb70f121"
+    },
+    {
+      "Path": "haloryva-ci/preview4/Recipe-Studio.cs",
+      "SHA": "c2bbc51492c43ba325c2f1230eae24ef5c0b204b"
+    },
+    {
+      "Path": "haloryva-ci/preview4/Run-Studio.ps1",
+      "SHA": "66990d184b7bab798845ca39ffe351a8738baf5e"
+    },
+    {
+      "Path": "haloryva-ci/preview4/assets/Haloryva.ico",
+      "SHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "haloryva-ci/preview4/assets/app.manifest",
+      "SHA": "efe344ab5adb62649ed61625ba63d3ebe311cede"
+    },
+    {
+      "Path": "haloryva-ci/preview4/source-origin.json",
+      "SHA": "12d9b43e4901a5003259bcfa8a6e65d2671f639a"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/Annotations.cs",
+      "SHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/Brand.cs",
+      "SHA": "0c58dad654ec8d91e3c86458a79e26293b7ec98d"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/ColorWheelPopup.cs",
+      "SHA": "310f0c43aaceebd6930974845d5aa17957ea05ba"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/Config.cs",
+      "SHA": "5c9e80b9967576edf669ac11dc87077c7d1936c6"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/Controller.cs",
+      "SHA": "5cba720469d42a067fc24da297ea967ea685ae85"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/DrawingGeometry.cs",
+      "SHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/EffectDiagnostics.cs",
+      "SHA": "de19fc05fdf4425a3b0b61c505a56bd12488fd82"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/ErrorReporting.cs",
+      "SHA": "252c1a666c73378fa3256364802749f29af31565"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/FrameBounds.cs",
+      "SHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/FramePump.cs",
+      "SHA": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/GlobalHooks.cs",
+      "SHA": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/InputPipeline.cs",
+      "SHA": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/InputState.cs",
+      "SHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/KeyboardPolicy.cs",
+      "SHA": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/PremiumStudioForm.cs",
+      "SHA": "20a1866e3bb5f74c5c376f89e4c39431fea4ae0b"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/PremiumWidgets.cs",
+      "SHA": "5907e96a3e90cb57b1dd721da8b9ec2a18105e43"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/Program.cs",
+      "SHA": "e7851e7672ddb5411d90b5ed2b1bccf2d8410ef1"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/SelfTest.cs",
+      "SHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/Splash.cs",
+      "SHA": "321a6a3e689426f2480d0d5ba7135d03240d9a7a"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/StudioControls.cs",
+      "SHA": "cce7c20c38020c7c9287f734fbbf29c3c0afda19"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/StudioTheme.cs",
+      "SHA": "4b7c5e76700644f5ac376ab0dc7fdc8ce90f04d0"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/TextPrompt.cs",
+      "SHA": "0b0147cea970202e225f749c533c9febb911d3ad"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/ToolToast.cs",
+      "SHA": "58252968c512a0d8aa67017046a6d8809b857fe7"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/TrailDiagnostics.cs",
+      "SHA": "240b7ed0c4152d62e72889de3f5d77d8bd3198c3"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/TrailEngine.cs",
+      "SHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/TrailSelfTest.cs",
+      "SHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/Visuals.cs",
+      "SHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "haloryva-ci/preview4/src/WinNative.cs",
+      "SHA": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+    },
+    {
+      "Path": "haloryva-ci/preview5-msix/README.txt",
+      "SHA": "6b209be0ef0598a935effb5a5a77390bf41d7575"
+    },
+    {
+      "Path": "haloryva-ci/preview5-msix/Run-Msix.ps1",
+      "SHA": "19e36907ce5c1a18be8de949125025db3ed42ad5"
+    },
+    {
+      "Path": "haloryva-ci/preview5-reload/Recipe-Cycle.cs",
+      "SHA": "618aaa6c4c29cf719200817f2f811e5d513da3d9"
+    },
+    {
+      "Path": "haloryva-ci/preview5-reload/Run-Reload.ps1",
+      "SHA": "6212c42f6a4ae8cf1b6be8588341d73757a5b07a"
+    },
+    {
+      "Path": "haloryva-ci/preview5/.gitattributes",
+      "SHA": "7d0bfc4c686b4ad1639a189935d873fe556f133c"
+    },
+    {
+      "Path": "haloryva-ci/preview5/Build-Preview5.ps1",
+      "SHA": "ad1710f5be0190b7bf4ce361b05801db2dd71317"
+    },
+    {
+      "Path": "haloryva-ci/preview5/README.txt",
+      "SHA": "1d24063bf9244f3639d431cb6a1d99a3f0123e31"
+    },
+    {
+      "Path": "haloryva-ci/preview5/Recipe-Cycle.cs",
+      "SHA": "618aaa6c4c29cf719200817f2f811e5d513da3d9"
+    },
+    {
+      "Path": "haloryva-ci/preview5/Run-Cycle.ps1",
+      "SHA": "1ef5e8240d92984a07b734ffba7089f2565d727a"
+    },
+    {
+      "Path": "haloryva-ci/preview5/assets/Haloryva.ico",
+      "SHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "haloryva-ci/preview5/assets/app.manifest",
+      "SHA": "efe344ab5adb62649ed61625ba63d3ebe311cede"
+    },
+    {
+      "Path": "haloryva-ci/preview5/source-origin.json",
+      "SHA": "a677c14c5e888702f30258593d036cf25f14391a"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/Annotations.cs",
+      "SHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/Brand.cs",
+      "SHA": "6c8672fe65f6170a8e3a2bbbbedf27d01c94ebc3"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/ColorWheelPopup.cs",
+      "SHA": "310f0c43aaceebd6930974845d5aa17957ea05ba"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/Config.cs",
+      "SHA": "5f718147a4335dea4299dc59b7cc4aa9e6b41b98"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/Controller.cs",
+      "SHA": "fb142632c1bfe188d19adeabd91c415cdaeab770"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/DrawingGeometry.cs",
+      "SHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/EffectDiagnostics.cs",
+      "SHA": "de19fc05fdf4425a3b0b61c505a56bd12488fd82"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/ErrorReporting.cs",
+      "SHA": "252c1a666c73378fa3256364802749f29af31565"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/FrameBounds.cs",
+      "SHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/FramePump.cs",
+      "SHA": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/GlobalHooks.cs",
+      "SHA": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/InputPipeline.cs",
+      "SHA": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/InputState.cs",
+      "SHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/KeyboardPolicy.cs",
+      "SHA": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/PremiumStudioForm.cs",
+      "SHA": "89327b62841a88d76927dee98ae6e0806394195e"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/PremiumWidgets.cs",
+      "SHA": "5907e96a3e90cb57b1dd721da8b9ec2a18105e43"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/Program.cs",
+      "SHA": "e7851e7672ddb5411d90b5ed2b1bccf2d8410ef1"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/SelfTest.cs",
+      "SHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/Splash.cs",
+      "SHA": "321a6a3e689426f2480d0d5ba7135d03240d9a7a"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/StudioControls.cs",
+      "SHA": "cce7c20c38020c7c9287f734fbbf29c3c0afda19"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/StudioTheme.cs",
+      "SHA": "4b7c5e76700644f5ac376ab0dc7fdc8ce90f04d0"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/TextPrompt.cs",
+      "SHA": "0b0147cea970202e225f749c533c9febb911d3ad"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/ToolToast.cs",
+      "SHA": "58252968c512a0d8aa67017046a6d8809b857fe7"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/TrailDiagnostics.cs",
+      "SHA": "240b7ed0c4152d62e72889de3f5d77d8bd3198c3"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/TrailEngine.cs",
+      "SHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/TrailSelfTest.cs",
+      "SHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/Visuals.cs",
+      "SHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "haloryva-ci/preview5/src/WinNative.cs",
+      "SHA": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+    },
+    {
+      "Path": "haloryva-ci/preview6-msix/README.txt",
+      "SHA": "836055a80a1bb3f408b250c67bba734631d6f460"
+    },
+    {
+      "Path": "haloryva-ci/preview6-msix/Run-Msix.ps1",
+      "SHA": "766493d203036a85392848752be985a4b48649f6"
+    },
+    {
+      "Path": "haloryva-ci/preview6-validation/README.txt",
+      "SHA": "01c8dbc0eda342951a30a636ae0a5a44c134ed19"
+    },
+    {
+      "Path": "haloryva-ci/preview6-validation/Recipe-Languages.cs",
+      "SHA": "101160e0b5264955afd917491e2527f62c4f99df"
+    },
+    {
+      "Path": "haloryva-ci/preview6-validation/Run-Languages.ps1",
+      "SHA": "33f7ddd33f3c713aa62365236687751a25c962e3"
+    },
+    {
+      "Path": "haloryva-ci/preview6/.gitattributes",
+      "SHA": "06d5b700fc3d984b58288d0fcb9f12b85a91e6fd"
+    },
+    {
+      "Path": "haloryva-ci/preview6/Build-Preview6.ps1",
+      "SHA": "094c80675c10d44ac5f5689563fbbe1aaf69422e"
+    },
+    {
+      "Path": "haloryva-ci/preview6/README.txt",
+      "SHA": "1b5b268ac93cd3f7e8ea7b7bc38543947e3c8134"
+    },
+    {
+      "Path": "haloryva-ci/preview6/assets/Haloryva.ico",
+      "SHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "haloryva-ci/preview6/assets/app.manifest",
+      "SHA": "efe344ab5adb62649ed61625ba63d3ebe311cede"
+    },
+    {
+      "Path": "haloryva-ci/preview6/languages/coverage.json",
+      "SHA": "090a81211c2e195aec5de89da37ec807d299dd27"
+    },
+    {
+      "Path": "haloryva-ci/preview6/languages/strings.json",
+      "SHA": "9a6124acff083ea3b42282b44ee832be7576fcdb"
+    },
+    {
+      "Path": "haloryva-ci/preview6/source-origin.json",
+      "SHA": "baee1dfa961dc1d2f79182e94b2133d9a6c9110d"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/Annotations.cs",
+      "SHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/Brand.cs",
+      "SHA": "50c56a3e4d93f59505f67ca7e56ddbe4b8e3c1e3"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/ColorWheelPopup.cs",
+      "SHA": "b6b0f526361d8771d1ce42a2935d664075174144"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/Config.cs",
+      "SHA": "6ca3c8d5500ab809286bb87cc50d12f7a08127b3"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/Controller.cs",
+      "SHA": "94fb0608e5b2c0ed1ce5ad621eea84761de1e283"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/DrawingGeometry.cs",
+      "SHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/EffectDiagnostics.cs",
+      "SHA": "de19fc05fdf4425a3b0b61c505a56bd12488fd82"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/ErrorReporting.cs",
+      "SHA": "92eb1ef6f221c1f0dd03c9bf0f2c7839acb711c3"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/FrameBounds.cs",
+      "SHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/FramePump.cs",
+      "SHA": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/GlobalHooks.cs",
+      "SHA": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/InputPipeline.cs",
+      "SHA": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/InputState.cs",
+      "SHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/KeyboardPolicy.cs",
+      "SHA": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/Localization.cs",
+      "SHA": "62e56d854a16ed2838774150246c155fe0763e72"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/PremiumStudioForm.cs",
+      "SHA": "f44d7ba83deda177bb3a9645cee4a7714a541c9e"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/PremiumWidgets.cs",
+      "SHA": "2f7d97aa8121d47cf4bb2883e37fa3f042e9f2ea"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/Program.cs",
+      "SHA": "ef66df6b1f8a364b4c664a2368eb0004e7c6923e"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/SelfTest.cs",
+      "SHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/Splash.cs",
+      "SHA": "b9b79950ebb867a5dcaa6dd2f96d165bbc8e6c43"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/StudioControls.cs",
+      "SHA": "caa9cf4bda5d361f42dc68fef03decf2087aacf3"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/StudioTheme.cs",
+      "SHA": "eb84acea0710a79b71de885766a0f0c750ec619c"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/TextPrompt.cs",
+      "SHA": "af7d55dfaf26f908b5c1ebb0ee1c516e99e0a5e3"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/ToolToast.cs",
+      "SHA": "3b8195ebb01103b90544f28bcc1babfd851fe81d"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/TrailDiagnostics.cs",
+      "SHA": "240b7ed0c4152d62e72889de3f5d77d8bd3198c3"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/TrailEngine.cs",
+      "SHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/TrailSelfTest.cs",
+      "SHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/Visuals.cs",
+      "SHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "haloryva-ci/preview6/src/WinNative.cs",
+      "SHA": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+    },
+    {
+      "Path": "haloryva-ci/preview7-msix/README.txt",
+      "SHA": "c6d10e288688a283e56752774f283b241fb2169b"
+    },
+    {
+      "Path": "haloryva-ci/preview7-msix/Run-Msix.ps1",
+      "SHA": "8f622ba682148b294da8ffa7d8979d5c3176187d"
+    },
+    {
+      "Path": "haloryva-ci/preview7-validation/README.txt",
+      "SHA": "426be37f072fcf529626ebd24a6eeee3a24e7577"
+    },
+    {
+      "Path": "haloryva-ci/preview7-validation/Recipe-Visual.cs",
+      "SHA": "553f959e7920b3d1dfeb2ade3ddc12450406f1df"
+    },
+    {
+      "Path": "haloryva-ci/preview7-validation/Run-Visual.ps1",
+      "SHA": "c080268554b36242b16fec5caa5f67b39524e350"
+    },
+    {
+      "Path": "haloryva-ci/preview7/.gitattributes",
+      "SHA": "5e94d6f09f3a11b3d184d4ef3da74074b22aa92a"
+    },
+    {
+      "Path": "haloryva-ci/preview7/Build-Preview7.ps1",
+      "SHA": "423da8fd249d2b1b5bcf0b8130554bfbd52af354"
+    },
+    {
+      "Path": "haloryva-ci/preview7/README.txt",
+      "SHA": "ecbb99d03cb03465dafe83c50a884623b455445d"
+    },
+    {
+      "Path": "haloryva-ci/preview7/assets/Haloryva.ico",
+      "SHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "haloryva-ci/preview7/assets/app.manifest",
+      "SHA": "efe344ab5adb62649ed61625ba63d3ebe311cede"
+    },
+    {
+      "Path": "haloryva-ci/preview7/languages/strings.json",
+      "SHA": "2d5d7accff724dc16a957ca646a0da771747b3f2"
+    },
+    {
+      "Path": "haloryva-ci/preview7/source-origin.json",
+      "SHA": "ca93ddb65acf8be02a3a0fb2f4d112e3656c6d59"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/Annotations.cs",
+      "SHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/Brand.cs",
+      "SHA": "dec138fee991ad83748b85e2c876f364308c8d1b"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/ColorWheelPopup.cs",
+      "SHA": "b6b0f526361d8771d1ce42a2935d664075174144"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/Config.cs",
+      "SHA": "6ca3c8d5500ab809286bb87cc50d12f7a08127b3"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/Controller.cs",
+      "SHA": "4008069e8f046b358b5cab3198c62334b01dd6e3"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/DrawingGeometry.cs",
+      "SHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/EffectDiagnostics.cs",
+      "SHA": "de19fc05fdf4425a3b0b61c505a56bd12488fd82"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/ErrorReporting.cs",
+      "SHA": "92eb1ef6f221c1f0dd03c9bf0f2c7839acb711c3"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/FrameBounds.cs",
+      "SHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/FramePump.cs",
+      "SHA": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/GlobalHooks.cs",
+      "SHA": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/InputPipeline.cs",
+      "SHA": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/InputState.cs",
+      "SHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/KeyboardPolicy.cs",
+      "SHA": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/Localization.cs",
+      "SHA": "8b8dd12322656b5a73b4b10d8e8a5d6cc32ce6bd"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/PremiumStudioForm.cs",
+      "SHA": "9ee79878621e027e35e87240dd8b8d7ec3c3df1a"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/PremiumWidgets.cs",
+      "SHA": "2f7d97aa8121d47cf4bb2883e37fa3f042e9f2ea"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/Program.cs",
+      "SHA": "ef66df6b1f8a364b4c664a2368eb0004e7c6923e"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/SelfTest.cs",
+      "SHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/Splash.cs",
+      "SHA": "b9b79950ebb867a5dcaa6dd2f96d165bbc8e6c43"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/StudioControls.cs",
+      "SHA": "caa9cf4bda5d361f42dc68fef03decf2087aacf3"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/StudioTheme.cs",
+      "SHA": "eb84acea0710a79b71de885766a0f0c750ec619c"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/TextPrompt.cs",
+      "SHA": "af7d55dfaf26f908b5c1ebb0ee1c516e99e0a5e3"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/ToolToast.cs",
+      "SHA": "c0042ba4188f4be78834d8fdeb87618fff734e9d"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/TrailDiagnostics.cs",
+      "SHA": "240b7ed0c4152d62e72889de3f5d77d8bd3198c3"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/TrailEngine.cs",
+      "SHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/TrailSelfTest.cs",
+      "SHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/Visuals.cs",
+      "SHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "haloryva-ci/preview7/src/WinNative.cs",
+      "SHA": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+    },
+    {
+      "Path": "haloryva-ci/preview8-import-ui/Native.cs",
+      "SHA": "5fec9cfb15e5d5e253d3bae03bcd5f7c85dbb47c"
+    },
+    {
+      "Path": "haloryva-ci/preview8-import-ui/Run-Import.ps1",
+      "SHA": "8b717dbd16091b1c825a637faec5f77f9b86f97b"
+    },
+    {
+      "Path": "haloryva-ci/preview8-live-focus/LIRE-DABORD.txt",
+      "SHA": "47af0b5c74b6ad616f33c6e62ed1b5288cc951c5"
+    },
+    {
+      "Path": "haloryva-ci/preview8-live-focus/RootFocus.cs",
+      "SHA": "2760005cb5c120252b40a56f54f64ff15ccbbd78"
+    },
+    {
+      "Path": "haloryva-ci/preview8-live-focus/Run-LiveFocus.ps1",
+      "SHA": "725119d9f3a4422cb835b1d3adfa204c0fa20c30"
+    },
+    {
+      "Path": "haloryva-ci/preview8-msix/Package-Diagnostics.cs",
+      "SHA": "92f50f460a616d24fef8a94ae445c819065a11c0"
+    },
+    {
+      "Path": "haloryva-ci/preview8-msix/Run-Msix.ps1",
+      "SHA": "f892c06a2a057f7f04179155d266f50fcd19f65b"
+    },
+    {
+      "Path": "haloryva-ci/preview8-preflight/Check-References.ps1",
+      "SHA": "bb0f992ac1836c1a75b60b8a3f12a89b8ad09964"
+    },
+    {
+      "Path": "haloryva-ci/preview8-startup-ui/Run-Startup-UI.ps1",
+      "SHA": "6662a30b78ec1404f331457e90dc0e044621bd1a"
+    },
+    {
+      "Path": "haloryva-ci/preview8-targeted/Run-Targeted.ps1",
+      "SHA": "c2eab3032f054e4d72c68a003b64df92aaf1b791"
+    },
+    {
+      "Path": "haloryva-ci/preview8-targeted/Targeted.cs",
+      "SHA": "8cb924a1ca2c4a4ec412a95fab5b3ff2fcd2c91c"
+    },
+    {
+      "Path": "haloryva-ci/preview8-windows-startup/Native.cs",
+      "SHA": "d4d0b6e0d6190c2267f4bd9af001008d1d4faf11"
+    },
+    {
+      "Path": "haloryva-ci/preview8-windows-startup/Run-WindowsStartup.ps1",
+      "SHA": "02e65bc3f428cddb32440205dc1d5c46d5560c52"
+    },
+    {
+      "Path": "haloryva-ci/preview8-windows-startup/SettingsUi.cs",
+      "SHA": "a1f172da53237ff2eb6eace654c77d5148edec6a"
+    },
+    {
+      "Path": "haloryva-ci/preview8/Build-Preview8.ps1",
+      "SHA": "7210b2baa4cb3c28b65639e3c441219d9fbc50d1"
+    },
+    {
+      "Path": "haloryva-ci/preview8/assets/Haloryva.ico",
+      "SHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "haloryva-ci/preview8/assets/app.manifest",
+      "SHA": "efe344ab5adb62649ed61625ba63d3ebe311cede"
+    },
+    {
+      "Path": "haloryva-ci/preview8/languages/strings.json",
+      "SHA": "1b3e19f0252eccc44c22095d74a3b64d4bb3016f"
+    },
+    {
+      "Path": "haloryva-ci/preview8/source-origin.json",
+      "SHA": "c53f4b25158fa33f9c3b7faedef74cb41d2e7032"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/Annotations.cs",
+      "SHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/Brand.cs",
+      "SHA": "32bfe66030179a8f62cd8addd8d83344a7a8ba27"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/ColorWheelPopup.cs",
+      "SHA": "b6b0f526361d8771d1ce42a2935d664075174144"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/Config.cs",
+      "SHA": "d4b5facee8d7374b813f62881e5c37aa62019d06"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/Controller.cs",
+      "SHA": "892902a69262a43aea3555acf28e01e2dee49bbd"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/DrawingGeometry.cs",
+      "SHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/EffectDiagnostics.cs",
+      "SHA": "599b0e40ddb66606e70b4a8d58a5a25f6951bbb0"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/ErrorReporting.cs",
+      "SHA": "92eb1ef6f221c1f0dd03c9bf0f2c7839acb711c3"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/FrameBounds.cs",
+      "SHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/FramePump.cs",
+      "SHA": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/GlobalHooks.cs",
+      "SHA": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/InputPipeline.cs",
+      "SHA": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/InputState.cs",
+      "SHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/KeyboardPolicy.cs",
+      "SHA": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/Localization.cs",
+      "SHA": "8b8dd12322656b5a73b4b10d8e8a5d6cc32ce6bd"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/PackageContext.cs",
+      "SHA": "5c57976eab39ae023faf5240bc90d94e0402f66c"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/PremiumStudioForm.cs",
+      "SHA": "b7bdcde4e447404a32e4e83fdac6f70e6fe49f11"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/PremiumWidgets.cs",
+      "SHA": "2f7d97aa8121d47cf4bb2883e37fa3f042e9f2ea"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/ProfileMigration.cs",
+      "SHA": "c72c554f9585d68e249500745b6d9c743725377d"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/Program.cs",
+      "SHA": "08bed548abdb702c96863e32c0d6e7108c82b75b"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/SelfTest.cs",
+      "SHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/Splash.cs",
+      "SHA": "b9b79950ebb867a5dcaa6dd2f96d165bbc8e6c43"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/StartupSettings.cs",
+      "SHA": "0132c8f27a812ddd903aec1af8d983c1eaa72f6b"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/StudioControls.cs",
+      "SHA": "caa9cf4bda5d361f42dc68fef03decf2087aacf3"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/StudioTheme.cs",
+      "SHA": "eb84acea0710a79b71de885766a0f0c750ec619c"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/TextPrompt.cs",
+      "SHA": "af7d55dfaf26f908b5c1ebb0ee1c516e99e0a5e3"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/ToolToast.cs",
+      "SHA": "c0042ba4188f4be78834d8fdeb87618fff734e9d"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/TrailDiagnostics.cs",
+      "SHA": "45aa3ab34c08abaef658b2f1f3a247a25375bd25"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/TrailEngine.cs",
+      "SHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/TrailSelfTest.cs",
+      "SHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/Visuals.cs",
+      "SHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "haloryva-ci/preview8/src/WinNative.cs",
+      "SHA": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+    },
+    {
+      "Path": "haloryva-ci/preview9-focus/LIRE-DABORD.txt",
+      "SHA": "b86fef0018078c4da81fdfec78f587c17e68c24b"
+    },
+    {
+      "Path": "haloryva-ci/preview9-focus/Package-Preview9.ps1",
+      "SHA": "e304aab9698a0a35cb5d39befb24f7784e2ab873"
+    },
+    {
+      "Path": "haloryva-ci/preview9-focus/Run-FirstRefocus.ps1",
+      "SHA": "2c54041d86b21aafb9528dcfc4a9e0f252a580dd"
+    },
+    {
+      "Path": "haloryva-ci/preview9/Build-Preview9.ps1",
+      "SHA": "0414b5d10f222746625475a3ff4fc85e2b39c6c1"
+    },
+    {
+      "Path": "haloryva-ci/preview9/README.txt",
+      "SHA": "addd388e9cc102bcc9416c17b32358fd614b16e0"
+    },
+    {
+      "Path": "haloryva-ci/preview9/assets/Haloryva.ico",
+      "SHA": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec"
+    },
+    {
+      "Path": "haloryva-ci/preview9/assets/app.manifest",
+      "SHA": "efe344ab5adb62649ed61625ba63d3ebe311cede"
+    },
+    {
+      "Path": "haloryva-ci/preview9/languages/strings.json",
+      "SHA": "1b3e19f0252eccc44c22095d74a3b64d4bb3016f"
+    },
+    {
+      "Path": "haloryva-ci/preview9/source-origin.json",
+      "SHA": "8580551361647dbe39d69fedcdc4e184de0628ae"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/Annotations.cs",
+      "SHA": "be6211cd0d653ad6321d2a66f3369d2f8dd20f66"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/Brand.cs",
+      "SHA": "14511359c3e75b0a33e45368b5102c34bbc2123e"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/ColorWheelPopup.cs",
+      "SHA": "b6b0f526361d8771d1ce42a2935d664075174144"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/Config.cs",
+      "SHA": "d4b5facee8d7374b813f62881e5c37aa62019d06"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/Controller.cs",
+      "SHA": "68df9227b3697d52eaf75bc8fcd4d9a49e049032"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/DrawingGeometry.cs",
+      "SHA": "152be1f87728b7d71cfee264b1ff98de96409b16"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/EffectDiagnostics.cs",
+      "SHA": "599b0e40ddb66606e70b4a8d58a5a25f6951bbb0"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/ErrorReporting.cs",
+      "SHA": "92eb1ef6f221c1f0dd03c9bf0f2c7839acb711c3"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/FrameBounds.cs",
+      "SHA": "8c7c04fa382b310d8333f9688e499cd73bcc8602"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/FramePump.cs",
+      "SHA": "935ff42e4081a91a2d85a7f771d1bc6f3538e942"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/GlobalHooks.cs",
+      "SHA": "f159a03fed9066e75decf1a657bb5e2fa4f17e88"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/InputPipeline.cs",
+      "SHA": "c201a63dd9dfde8d402785dd9404edcc45c19287"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/InputState.cs",
+      "SHA": "70124a1f6a3416d1e1736783f8803c7dbf2fe02f"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/KeyboardPolicy.cs",
+      "SHA": "9d0b136a80cadb131385aef683fa7a3096ceb882"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/Localization.cs",
+      "SHA": "8b8dd12322656b5a73b4b10d8e8a5d6cc32ce6bd"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/PackageContext.cs",
+      "SHA": "5c57976eab39ae023faf5240bc90d94e0402f66c"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/PremiumStudioForm.cs",
+      "SHA": "505e0a2773e8458b2ec935e29bb46fb1ec0ce85f"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/PremiumWidgets.cs",
+      "SHA": "2f7d97aa8121d47cf4bb2883e37fa3f042e9f2ea"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/ProfileMigration.cs",
+      "SHA": "c72c554f9585d68e249500745b6d9c743725377d"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/Program.cs",
+      "SHA": "08bed548abdb702c96863e32c0d6e7108c82b75b"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/SelfTest.cs",
+      "SHA": "a90f8d0ec1a0e10865aef3acc714e406bb0e45bf"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/Splash.cs",
+      "SHA": "b9b79950ebb867a5dcaa6dd2f96d165bbc8e6c43"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/StartupRefreshTrace.cs",
+      "SHA": "2040e7bc9204638dc4229ee03b103e8ed2704b26"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/StartupSettings.cs",
+      "SHA": "0132c8f27a812ddd903aec1af8d983c1eaa72f6b"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/StudioControls.cs",
+      "SHA": "caa9cf4bda5d361f42dc68fef03decf2087aacf3"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/StudioTheme.cs",
+      "SHA": "eb84acea0710a79b71de885766a0f0c750ec619c"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/TextPrompt.cs",
+      "SHA": "af7d55dfaf26f908b5c1ebb0ee1c516e99e0a5e3"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/ToolToast.cs",
+      "SHA": "c0042ba4188f4be78834d8fdeb87618fff734e9d"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/TrailDiagnostics.cs",
+      "SHA": "45aa3ab34c08abaef658b2f1f3a247a25375bd25"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/TrailEngine.cs",
+      "SHA": "ac1a37037c3052097cfb05f1ac2575fde01f905a"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/TrailSelfTest.cs",
+      "SHA": "b58ad2f7ec84a03ce529806c784ca505ac605365"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/Visuals.cs",
+      "SHA": "deb1961f3ee9d695af554dc1efb8e860679ca0aa"
+    },
+    {
+      "Path": "haloryva-ci/preview9/src/WinNative.cs",
+      "SHA": "503c43f462d3f1fe8083785bc69ea8b95ea3bb46"
+    },
+    {
+      "Path": "preparation-msix-preview7-20261111/BILAN-ANALYSE-MSIX.txt",
+      "SHA": "01faf439317ac1dea0a32955c0e5b8daba64b043"
+    },
+    {
+      "Path": "preparation-msix-preview7-20261111/BROUILLONS-INTEGRATION.txt",
+      "SHA": "66330368451055c1b84d19bf62ddd587f7ed6f42"
+    },
+    {
+      "Path": "preparation-msix-preview7-20261111/CORRECTIONS-PRECISES.txt",
+      "SHA": "44ff376cff6f2d8422b5253c62f9ca809a05faef"
+    },
+    {
+      "Path": "preparation-msix-preview7-20261111/LIRE-DABORD.txt",
+      "SHA": "503c3b5367b76ac4dcad5d3fcdb4393dfd2703ec"
+    },
+    {
+      "Path": "preparation-msix-preview7-20261111/preuves-et-sources.json",
+      "SHA": "504a471d7c72cedf06236c9fe7bb0e2d05d67e15"
+    },
+    {
+      "Path": "preparation-msix-preview7-20261111/recette-ciblee-preparee.json",
+      "SHA": "1d29b49eede9b9080af0030f6d8b35aaee0cdf10"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/BILAN-GLOBAL-preview5.txt",
+      "SHA": "8d7590de632b21905eeadc7ffa9ef1c3c8eaed72"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/CERTIFICATION-et-CAPTURES.txt",
+      "SHA": "9348d402f6008780ab6a40a9197c2f6a8fbb6788"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/CONFIDENTIALITE-brouillon.txt",
+      "SHA": "6d9121c33cee4ae6344746007befa6b96cf9d2e8"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/DOSSIER-MICROSOFT-STORE.txt",
+      "SHA": "3989518ae8db3970f3bbc2a7c13a65ad976ece72"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/FICHES-STORE-fr-en-es.txt",
+      "SHA": "4ba6776f5639460293a6226b1c9e8f58ef7aeeea"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/LANGUES-PREPARATION.txt",
+      "SHA": "c8acffaef8bc382ff0d9bfb002013c8c2af8018c"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/LIRE-DABORD.txt",
+      "SHA": "b43e55d3d8f11218b96445db5da3f03d08d3661b"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/identite-store.a-renseigner.json",
+      "SHA": "66d360c19df25a0f6c110690291ed31977d55d82"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/langues/catalogue-initial.fr-en-es.json",
+      "SHA": "b36f34141857d9132fe32764f2f68795b8f81fe0"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/langues/inventaire.json",
+      "SHA": "342052509b4b1ab938ab31093bf2fcb1b4a6973d"
+    },
+    {
+      "Path": "preparation-store-preview5-20261111/preuves-et-sources.json",
+      "SHA": "32039a130765d6046c2cbe3142ae25b804882c43"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/BILAN-GLOBAL-preview7.txt",
+      "SHA": "c225a003ec0f5e726c3b79feff7f843ff8b46742"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/CERTIFICATION-et-CAPTURES.txt",
+      "SHA": "295c4de641e527f77be7808e98e3f4fba0132a4b"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/CONFIDENTIALITE-brouillon.txt",
+      "SHA": "99d102eb9332226242eb5b89b318a945f6c07caa"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/DOSSIER-MICROSOFT-STORE.txt",
+      "SHA": "3ef3906a5a96a7548f0e86691e4b3410ed1ae6db"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/FICHES-STORE-fr-en-es.txt",
+      "SHA": "cd7453dc9ce01343c7ca3627d40c74fc00045464"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/FINITIONS-AVANT-STORE.txt",
+      "SHA": "5e39fd344a2a18905cf7f091f510eed053bc1f2b"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/LIRE-DABORD.txt",
+      "SHA": "c79622a75dad59962cb4079d39865457aa38a97e"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/identite-store.a-renseigner.json",
+      "SHA": "1840b39c127306d21655a9bd9502238c0971faa2"
+    },
+    {
+      "Path": "preparation-store-preview7-20261111/preuves-et-sources.json",
+      "SHA": "b69a46ae596e6108e22bf393cc6c0cd275d049f0"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/BILAN-GLOBAL-preview8.txt",
+      "SHA": "1f65956c9ef3f1597d3e450919d6b99f9f0658b9"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/CERTIFICATION-et-CAPTURES.txt",
+      "SHA": "56ecedfc9920bfe92dbef54a9bf09dbfce5515cd"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/CONFIDENTIALITE-brouillon.txt",
+      "SHA": "915eee130d446b216e816f7dc7a7c583e7d00d09"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/DOSSIER-MICROSOFT-STORE.txt",
+      "SHA": "ed94c94b76e75276e8ea8912408fa32204b0cf1e"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/FICHES-STORE-fr-en-es.txt",
+      "SHA": "c854d732a44e78763dc7259f6212b3ad0fe70f1d"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/FINITIONS-AVANT-STORE.txt",
+      "SHA": "dcc31caad0834074cbbc989c940611aeced21f04"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/LIRE-DABORD.txt",
+      "SHA": "54fc6e70a4484c65864443746bf1d31d0f01d309"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/couverture-msix.json",
+      "SHA": "b908c5b1d71fca520abd6164feb49135a57fb34e"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/identite-store.a-renseigner.json",
+      "SHA": "b8fb3030306a783f0f42ef32823f74d22ea78684"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/preservation.json",
+      "SHA": "7500852d0377b3d08b008ce74a632a57fd1c36ae"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/preuves-et-sources.json",
+      "SHA": "47142290c6aa3dfe00c69a7d0c004843f8f240ff"
+    },
+    {
+      "Path": "preparation-store-preview8-20261111/progression-chiffree.json",
+      "SHA": "9594d86cd5dbe60278fc161df81d6a048dc3486a"
+    },
+    {
+      "Path": "preparation.json",
+      "SHA": "daba6d26f42d775d59aad6ee4fdff1ea597b466f"
+    },
+    {
+      "Path": "preuves-preview4-placement-20261111/build-provenance.json",
+      "SHA": "fc69d7d6ba4c45c3ca3df3d41736c34567b51737"
+    },
+    {
+      "Path": "preuves-preview4-placement-20261111/environment.json",
+      "SHA": "6fa3c6aed13ff6055c9ba086c2c19ed5e29167ea"
+    },
+    {
+      "Path": "preuves-preview4-placement-20261111/placement-result.json",
+      "SHA": "fbc3ece2bd628cbc192a7fff7bf2eda3b3aea12e"
+    },
+    {
+      "Path": "preuves-preview4-placement-20261111/recipe.log",
+      "SHA": "089826ba7d7007f7ea8efaccba9a6229a9d1d0be"
+    },
+    {
+      "Path": "preuves-preview4-placement-20261111/studio-result.json",
+      "SHA": "58351741ee75a816b9c3a0443188a1ad7d4f4a1f"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/artifact-file-manifest.json",
+      "SHA": "db317dbb1af0c6a3eec61a7e94b8d355d5a7a2b3"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/build-provenance.json",
+      "SHA": "171e385595cded443983e0cf1388b49b51bc8f14"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/environment.json",
+      "SHA": "6fa3c6aed13ff6055c9ba086c2c19ed5e29167ea"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/feature-off/recipe.log",
+      "SHA": "49d3382b05c81b9da7503ec234c30cb8e3d23872"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/feature-off/result.json",
+      "SHA": "85f6aa2d41833e5999a1c830e4bc943593aadedb"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/feature-off/settings.json",
+      "SHA": "5455f28179c5666962aa2640f9a9c022b074c4a0"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/feature-on/recipe.log",
+      "SHA": "e8458bd564cae14b239a410985e2f96c9b7412db"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/feature-on/result.json",
+      "SHA": "b9f11b303f641b46accc959ee18671d081da2e6d"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/feature-on/settings.json",
+      "SHA": "cdf3f3edc00fc879ac89500512f4a69d32c5da60"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/reload-off/recipe.log",
+      "SHA": "c29d091ac0f0b6e7dd92c2ff4bdea08e042b8f7a"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/reload-off/result.json",
+      "SHA": "f45202311b5acb2166f686e8f8a2a721c62a9d0e"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/reload-off/settings.json",
+      "SHA": "5455f28179c5666962aa2640f9a9c022b074c4a0"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/reload-on/recipe.log",
+      "SHA": "04736dd64cca5d3ff199ed0095e7a2a281740453"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/reload-on/result.json",
+      "SHA": "994db9e027f939977daf27fc88cd066e25935ca6"
+    },
+    {
+      "Path": "preuves-preview5-defilement-20261111/reload-on/settings.json",
+      "SHA": "cdf3f3edc00fc879ac89500512f4a69d32c5da60"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/artifact-file-manifest.json",
+      "SHA": "eff6e3928acabda44cafa357edf3ae880877e383"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-initial/environment.json",
+      "SHA": "2bdc7fbffc34776353108163c2aa1cb037744f92"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-initial/layout/AppxManifest.xml",
+      "SHA": "3fa3c64fe2c4b7d46e23fb442a8c78ac2267db00"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-initial/msix-diagnostic.log",
+      "SHA": "78712ab6a3f941cbc2e75860a9d296e0059c9e44"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-initial/pack.log",
+      "SHA": "02559b44675860c8e4c2df508abe91585ba76f01"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-initial/package.json",
+      "SHA": "a0d21c81e19e7ada5a0c84565ace52806f2fa42b"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-initial/profile-initial.json",
+      "SHA": "45bb4cb14e71878e141bf89d6b2e64dc8f8d2ddf"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-initial/profile-native-ui-evidence.json",
+      "SHA": "5455f28179c5666962aa2640f9a9c022b074c4a0"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-initial/result.json",
+      "SHA": "662d2a98d9a99ff084f8385caffeabef7cf9353d"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/build-provenance.json",
+      "SHA": "171e385595cded443983e0cf1388b49b51bc8f14"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/environment.json",
+      "SHA": "2bdc7fbffc34776353108163c2aa1cb037744f92"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/layout/AppxManifest.xml",
+      "SHA": "5a53c5cd34804932eac52bff0f808fec6727e97b"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/msix-diagnostic.log",
+      "SHA": "9b54539ae21fbf17e4c11e4a7a4fc4be9c110e1a"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/pack.log",
+      "SHA": "f92f837c30166e9ff14ef7da3d7dea50145feeee"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/package.json",
+      "SHA": "a0d21c81e19e7ada5a0c84565ace52806f2fa42b"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/profile-after-launch-2.json",
+      "SHA": "5455f28179c5666962aa2640f9a9c022b074c4a0"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/profile-after-launch-3.json",
+      "SHA": "5455f28179c5666962aa2640f9a9c022b074c4a0"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/profile-initial.json",
+      "SHA": "45bb4cb14e71878e141bf89d6b2e64dc8f8d2ddf"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/profile-native-ui-evidence.json",
+      "SHA": "5455f28179c5666962aa2640f9a9c022b074c4a0"
+    },
+    {
+      "Path": "preuves-preview5-msix-20261111/essai-reussi/result.json",
+      "SHA": "02a8bf6d5afdb715cbeb3bf891ff1bf05ec73a00"
+    },
+    {
+      "Path": "preuves-preview6-20261111/resultats-consolides.json",
+      "SHA": "cc4561b6509ac5a8f530ebe924f7a0501598afe9"
+    },
+    {
+      "Path": "preuves-preview7-msix-20261111/resultats-consolides.json",
+      "SHA": "ce21ed2685535ebc8aeedbadbeef5a795d8f8610"
+    },
+    {
+      "Path": "preuves-preview7-visuel-20261111/resultats-consolides.json",
+      "SHA": "2723288074b67e6152bfe92c350135b83ec81876"
+    },
+    {
+      "Path": "releases/2.6.6/LIRE_AVANT_INSTALLATION.txt",
+      "SHA": "09b6df575599817a38c710cf2167fb523b61f062"
+    },
+    {
+      "Path": "releases/2.6.6/NOTES_VERSION.md",
+      "SHA": "fccf6c7a4580379b125a7898d4d043fc78ccf41d"
+    },
+    {
+      "Path": "releases/2.6.6/SHA256SUMS.txt",
+      "SHA": "a43cb811908a10c14c3821880907f2d6a15b6486"
+    },
+    {
+      "Path": "releases/2.6.6/manifest.json",
+      "SHA": "e11ed2752097ef05bed69299445567422760e3a7"
+    }
+  ],
+  "FrozenApplicationSHA256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
+  "ExecutedNow": {
+    "ExistingArchiveInspection": true,
+    "ArchiveInspectionRun": 43039812497,
+    "Archives": 2,
+    "ZipEntries": 13,
+    "ApplicationTests": 0,
+    "ApplicationLaunches": 0,
+    "Compilations": 0,
+    "Installations": 0,
+    "Signatures": 0,
+    "Releases": 0,
+    "Subscriptions": 0,
+    "LocalPCWrites": 0
+  },
+  "PreparedNotExecuted": [
+    "Installer-only compiler recipe",
+    "Extraction-only verification",
+    "Inactive workflow template"
+  ],
+  "OriginalDriverChanged": false,
+  "OriginalPreviewSourcesChanged": false
+}

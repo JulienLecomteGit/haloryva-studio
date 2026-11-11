@@ -1,0 +1,111 @@
+HALORYVA PREVIEW.9 — EXAMEN DE LA CLÔTURE DU PILOTE
+11 novembre 2026 — preuves existantes uniquement
+
+CONCLUSION
+Le blocage exact ne peut pas être attribué à une opération unique avec les preuves
+conservées. Le défaut certain du pilote est la sauvegarde trop tardive du résultat,
+après des opérations de clôture sans jalons persistants. Aucun nouveau défaut
+fonctionnel de Haloryva n'est démontré par cet examen.
+Les neuf assertions du parcours diagnostic précèdent le fichier
+studio-after-refocus.txt retrouvé. Le job reste cancelled : cette déduction
+ne remplace pas le résultat JSON final manquant ni une preuve d'arrêt normal.
+Le mode normal reste acquis : 7/7 assertions, arrêt normal et paquet retiré.
+
+TRAVAIL RÉELLEMENT EFFECTUÉ AUJOURD'HUI
+- 2 archives existantes inspectées et leurs SHA-256 vérifiés.
+- 13 entrées de ZIP inventoriées, sans extraction ni exécution de Haloryva.
+- 1 traitement GitHub de lecture des preuves :
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43039812497
+- Le compilateur déjà présent sur le runner windows-2025 a été repéré, pas lancé.
+- 0 test applicatif relancé, 0 compilation, 0 installation, 0 signature, 0 release.
+Le nouveau run n'est pas une nouvelle recette du démarrage.
+Les scripts de fabrication joints sont seulement préparés et n'ont pas été exécutés.
+
+IDENTITÉ DES PREUVES
+Run original : 43035528813.
+Pilote original : commit 3f1d4fc32a7dfc2ae5529c3c45896ff9bb434615,
+haloryva-ci/preview9-focus/Run-FirstRefocus.ps1.
+Mode diagnostic : job 130573407015, archive 13863825999,
+SHA-256 b54917d0d841e2432eb2efc78ee0fdd299033deefa3eb0ca4bcf3e0be448efb6.
+Mode normal : job 130573406999, archive 13862837786,
+SHA-256 0efbe3c42f71e2cb5b1f357c51d0cbb4901702cbfceeade02faaf7e6d15ce443.
+
+FAITS SUPPLÉMENTAIRES
+Le mode diagnostic contient :
+- studio-after-refocus.txt : 6562 octets, SHA-256
+  6ABC6734295FF03560FF1046D16457A224A54F474BAA85D571D882B4FC00D074.
+- settings.json ET settings.json.bak : même empreinte que le profil normal,
+  F47AACF7C397714236D0E518456CE862E7EEEE67D1A74F0CB22AB1CA52E30E31.
+  La valeur LaunchAtLogin=true et la langue fr sont conservées.
+  Ce sont les profils synthétiques du runner, pas les réglages du PC utilisateur.
+- 41 lignes de traces, avec quatre lectures publiées de DisabledByUser au retour.
+- Aucun result.json ni functional-result-before-cleanup.json.
+Le profil courant et le relevé du Studio portent le même temps stocké dans le ZIP ;
+la sauvegarde .bak est antérieure. Cela est compatible avec une sauvegarde de
+clôture, sans prouver le code de sortie du processus. Les heures ZIP sont grossières
+et sans fuseau d'origine ; elles ne servent pas à inventer une chronologie UTC précise.
+
+LOCALISATION PAR LECTURE DU PILOTE FIGÉ
+Ligne 157 : relevé Studio, après les neuf assertions — fichier retrouvé.
+Ligne 158 : fermeture de Paramètres Windows par UI Automation — aucun jalon après.
+Ligne 159, fonction ligne 54 : demande d'arrêt et attente de 15 s — résultat absent.
+Ligne 164 : dans finally, nouveau relevé/fermeture de Paramètres — appel non borné.
+Ligne 166 : seconde tentative d'arrêt dans finally — pas de résultat persistant.
+Ligne 170 : copie récursive du profil — des fichiers sont retrouvés, fin non attestée.
+Ligne 172 : premier JSON dit « before-cleanup » — absent ; il est déjà placé
+après les fermetures et la copie récursive.
+Lignes 174–184 : retrait du paquet par Start-Job / Wait-Job 60 s / Stop-Job —
+aucune preuve que cette phase ait commencé, terminé ou causé l'attente.
+Ligne 191 : result.json final — absent.
+Ligne 194 : arrêt de transcription — marque de fin absente dans le mode diagnostic.
+
+INTERPRÉTATION ET LIMITES
+La copie du profil peut provenir du bloc finally déclenché lors de l'interruption.
+Elle ne démontre donc pas que la clôture normale a réussi avant l'annulation.
+De même, l'absence de sortie PowerShell après une interruption ne prouve pas que
+le bloc finally n'a pas tourné. Microsoft documente ce comportement de pipeline.
+GitHub documente l'envoi de signaux d'annulation et la terminaison éventuelle de
+l'arbre de processus. Cela explique pourquoi un artefact peut subsister sans
+rapport final complet ; cela ne désigne pas le premier appel qui s'est bloqué.
+Références :
+https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-5.1
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-cancellation
+
+CORRECTION PRÉCISE DU PILOTE À PRÉVOIR — NON APPLIQUÉE, NON TESTÉE
+1. Avant la ligne 157, enregistrer immédiatement le résultat des assertions,
+   séparément de la clôture. Le dernier résultat acquis ne doit plus dépendre du
+   relevé des fenêtres, de l'arrêt ou du nettoyage.
+2. Écrire un petit jalon daté avant/après chaque phase (Settings, arrêt, copie,
+   retrait du paquet). Garder des fichiers séparés « functional » et « cleanup ».
+   Utiliser une écriture directe dans le dossier de preuve ; ne pas dépendre du
+   seul transcript ni attendre le bloc finally pour enregistrer les résultats.
+3. Remplacer les appels UI Automation de clôture sans limite par une commande
+   de fermeture normale non bloquante, avec HWND et PID déjà vérifiés, puis une
+   observation bornée. Aucun arrêt forcé de Paramètres Windows.
+4. Conserver la demande d'arrêt coopérative de Haloryva, identifier PID/chemin
+   exacts, enregistrer demande/expiration/code de sortie. Ne pas forcer son arrêt.
+5. Copier seulement les quelques preuves nommées, sans récursion sur tout le profil,
+   avec erreurs et fin de copie explicites. Un problème de collecte ne doit pas
+   effacer la réussite des assertions précédentes.
+6. Isoler le retrait du paquet dans un auxiliaire possédant une limite contrôlée
+   depuis l'extérieur. Un Wait-Job borné ne borne pas nécessairement les opérations
+   suivantes. À expiration, interrompre uniquement l'auxiliaire créé par le pilote,
+   conserver les preuves et déclarer le nettoyage incomplet.
+7. Un superviseur doit pouvoir écrire et téléverser le bilan de clôture même si un
+   auxiliaire ne répond pas. Ne pas transformer un nettoyage incomplet en réussite.
+Cette liste est une proposition revue dans le code, pas un correctif déjà validé.
+Aucun pilote existant n'est modifié, aucun test acquis n'est rejoué.
+
+IMPACT SUR LA SUITE
+La fabrication d'un installateur d'essai peut être préparée indépendamment de
+ce blocage de collecte : elle ne requiert ni ouverture du Studio ni installation.
+Elle ne vaut pas autorisation de diffusion. Connexion Windows réelle, recette
+d'installation classique et autres limites du dossier Store restent distinctes.
+PLAN-INSTALLATEUR.txt précise la prochaine action concrète.
+
+CONSERVATION
+Nouvelle branche : haloryva-preparation-exe-preview9.
+Les 19 branches déjà présentes, dont preview.9, main et la stable, sont préservées.
+L'EXE figé reste 678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC.
+Aucun accès d'exécution ni nouvelle écriture sur le PC principal.
+Aucun abonnement, logiciel installé, signature ou publication d'application.
