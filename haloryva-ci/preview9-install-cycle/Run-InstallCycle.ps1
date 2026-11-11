@@ -12,7 +12,7 @@ if(Test-Path -LiteralPath $out){throw 'Fresh evidence directory required'}
 New-Item -ItemType Directory -Path $out|Out-Null
 $results=New-Object 'Collections.Generic.List[object]'
 $report=[ordered]@{Version='2.7.1-preview.9';Commit=$env:GITHUB_SHA;Run=$env:GITHUB_RUN_ID;Status='running';Phase='preflight';StartedUtc=[DateTime]::UtcNow.ToString('o');SetupSHA256=$expectedSetup;ApplicationSHA256=$expectedApp;SourceArtifactRun=43060226353;SourceArtifactId=13872288880;Profile='synthetic pre-existing settings, no real 2.7.0 installation';InstallExecuted=$false;UninstallExecuted=$false;ApplicationRecompiled=$false;InstallerRecompiled=$false;Historical195Executed=$false;SeparateSelftestInvoked=$false;Signed=$false;Published=$false;Checks=@();AppEvents=@()}
-$trace=$null; $worker=$null; $wscript=$null
+$trace=$null; $worker=$null; $wscript=$null; $exitMonitor=$null
 function Save-Report {
  $report.Checks=@($results.ToArray())
  if($null -ne $trace){$report.AppEvents=@($trace.Snapshot())}
@@ -73,7 +73,7 @@ function Start-Setup([string]$file,[bool]$uninstall) {
   $candidate=[Diagnostics.Process]::GetProcessById($info.ProcessId);$candidate.Refresh()
   if($candidate.MainWindowHandle -eq [IntPtr]::Zero){return $false}
   if(!$candidate.MainWindowTitle.StartsWith('Haloryva Studio')){throw 'Unexpected setup title'}
-  $script:worker=$candidate;return $true
+  $script:worker=$candidate;$script:exitMonitor=New-Object SetupExitMonitor([uint32]$candidate.Id);return $true
  } 35
  $phase=if($uninstall){'uninstall'}else{'install'}
  $report[($phase+'Worker')]=[ordered]@{Pid=$worker.Id;LauncherPid=$launcherId;Path=$worker.Path;Title=$worker.MainWindowTitle}
@@ -89,7 +89,9 @@ function Close-Setup([string]$phase) {
  # Normal WM_CLOSE closes the completed form without requesting a normal app launch.
  [SetupUi]::CloseNormally($worker.MainWindowHandle)
  if(!$worker.WaitForExit(15000)){throw ($phase+' worker did not close normally')}
- Check ($phase+'-normal-exit') ($worker.ExitCode -eq 0) ([ordered]@{WorkerPid=$worker.Id;ExitCode=$worker.ExitCode;Closure='Normal WM_CLOSE on completed real GUI; no normal app launch requested'})
+ $exitCode=$script:exitMonitor.ReadExitedCode()
+ $script:exitMonitor.Dispose();$script:exitMonitor=$null
+ Check ($phase+'-normal-exit') ($exitCode -eq 0) ([ordered]@{WorkerPid=$worker.Id;ExitCode=$exitCode;ExitEvidence='Native process handle retained before GUI command';Closure='Normal WM_CLOSE on completed real GUI; no normal app launch requested'})
 }
 try {
  $os=Get-CimInstance Win32_OperatingSystem
@@ -200,5 +202,6 @@ try {
  $report.FinishedUtc=[DateTime]::UtcNow.ToString('o');Save-Report
  Write-Host 'RESULTS_JSON_BEGIN';Write-Host ($report|ConvertTo-Json -Depth 12 -Compress);Write-Host 'RESULTS_JSON_END'
  if($null -ne $trace){$trace.Dispose()}
+ if($null -ne $exitMonitor){$exitMonitor.Dispose()}
  if($null -ne $wscript){[void][Runtime.InteropServices.Marshal]::FinalReleaseComObject($wscript)}
 }

@@ -96,3 +96,22 @@ public static class SetupUi {
         }
     }
 }
+
+public sealed class SetupExitMonitor : IDisposable {
+    IntPtr handle;
+    [DllImport("kernel32.dll",SetLastError=true)] static extern IntPtr OpenProcess(uint access,bool inherit,uint pid);
+    [DllImport("kernel32.dll",SetLastError=true)] static extern bool GetExitCodeProcess(IntPtr process,out uint code);
+    [DllImport("kernel32.dll")] static extern uint WaitForSingleObject(IntPtr handle,uint milliseconds);
+    [DllImport("kernel32.dll")] static extern bool CloseHandle(IntPtr handle);
+    public SetupExitMonitor(uint pid) {
+        // Retain query/synchronize access while the process is still alive.
+        handle=OpenProcess(0x00101000,false,pid);
+        if(handle==IntPtr.Zero)throw new Exception("Cannot observe setup process exit: "+Marshal.GetLastWin32Error());
+    }
+    public uint ReadExitedCode() {
+        if(handle==IntPtr.Zero||WaitForSingleObject(handle,0)!=0)throw new Exception("Setup process exit not confirmed");
+        uint code;if(!GetExitCodeProcess(handle,out code))throw new Exception("Setup exit code unavailable: "+Marshal.GetLastWin32Error());
+        return code;
+    }
+    public void Dispose() {if(handle!=IntPtr.Zero){CloseHandle(handle);handle=IntPtr.Zero;}}
+}
