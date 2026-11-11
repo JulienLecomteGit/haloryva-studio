@@ -6,7 +6,8 @@ New-Item -ItemType Directory -Path $out | Out-Null
 $origin=Get-Content -LiteralPath (Join-Path $PSScriptRoot 'source-origin.json') -Raw | ConvertFrom-Json
 foreach($item in $origin.Files) {
     if($item.path -notin @('src/Brand.cs','src/GlobalHooks.cs')) {
-        if((Get-FileHash -LiteralPath (Join-Path $PSScriptRoot $item.path)).Hash -ne $item.sha256) { throw "Unexpected source change: $($item.path)" }
+        $actual=(Get-FileHash -LiteralPath (Join-Path $PSScriptRoot $item.path)).Hash
+        if($actual -ne $item.sha256) { throw "Unexpected source change: $($item.path) expected=$($item.sha256) actual=$actual" }
     }
 }
 $original=Join-Path $PSScriptRoot '../Inputs/msix-layout/Haloryva.exe'
