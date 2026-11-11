@@ -1,0 +1,38 @@
+name: Haloryva 2.7.1 targeted captures of frozen candidate
+on:
+  push:
+    branches: ['haloryva-candidat-2.7.1']
+    paths: ['.github/workflows/haloryva-candidate271-captures.yml', 'haloryva-ci/candidate271-captures-r2/**']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  captures:
+    runs-on: windows-2025
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [fr, en, es]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Haloryva-2.7.1-candidate-build
+          run-id: 43080695119
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/haloryva-candidate271-build/
+      - name: Capture four requested views from frozen executable
+        shell: powershell
+        run: ./haloryva-ci/candidate271-captures-r2/Run-Captures.ps1 -Language ${{ matrix.language }}
+      - name: Deliver original PNGs for read-only visual review
+        if: always()
+        shell: powershell
+        run: ./haloryva-ci/candidate271-captures-r2/Emit-Captures.ps1 -Language ${{ matrix.language }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Haloryva-2.7.1-captures-r2-${{ matrix.language }}
+          path: ${{ runner.temp }}/haloryva-candidate271-captures/${{ matrix.language }}/
+          retention-days: 90
+          if-no-files-found: error
