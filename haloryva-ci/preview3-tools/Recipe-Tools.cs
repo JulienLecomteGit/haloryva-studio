@@ -114,7 +114,7 @@ internal static class Recipe
             controller=Activator.CreateInstance(app.GetType("CursorFlow.CursorController"),true);
             SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
             SynchronizationContext.Current.Post(async delegate {
-                try { await Functional(); Write(code==0?"COMPLETE remaining tools/history/export checks passed":"COMPLETE with failures; renderer-only fallbacks do not validate the dialog"); }
+                try { await Functional(); Write("COMPLETE remaining tools/history/export checks passed"); }
                 catch(Exception ex) { code=1; Write("ERROR "+ex); }
                 finally {
                     foreach(ushort key in heldKeys) SendInput(1,new[]{new INPUT {type=1,data=new UNION {key=new KEY {vk=key,flags=2u|(key==0xa5?1u:0u)}}}},Marshal.SizeOf(typeof(INPUT)));
@@ -356,8 +356,12 @@ internal static class Recipe
                 else {
                     Check(edit!=null && save!=null && close!=null,"Native Save dialog exposes filename, Save and Cancel");
                     var value=(System.Windows.Automation.ValuePattern)edit.GetCurrentPattern(System.Windows.Automation.ValuePattern.Pattern);
-                    edit.SetFocus();
-                    value.SetValue(path);
+                    edit.SetFocus(); Thread.Sleep(100);
+                    // ValuePattern.SetValue changes visible text on this native dialog without
+                    // updating IFileDialog's accepted filename. Type normally so EN_CHANGE is raised.
+                    DialogInputs(dialog,new[]{K(0xa2,false,false),K(0x41,false,false),K(0x41,true,false),K(0xa2,true,false)});
+                    foreach(char ch in path) { DialogInputs(dialog,new[]{K(ch,false,true),K(ch,true,true)}); Thread.Sleep(5); }
+                    Thread.Sleep(100);
                     Check(value.Current.Value==path,"Save filename matches the isolated Unicode path");
                 }
                 uint owner; GetWindowThreadProcessId(dialog,out owner);
@@ -388,9 +392,7 @@ internal static class Recipe
                 testDialog.Filter="Image PNG transparente|*.png"; testDialog.FileName="Haloryva_annotations.png";
                 DialogResult result=testDialog.ShowDialog();
                 Write("EXPORT PROBE result="+result+" filename="+testDialog.FileName+" expected="+path);
-                if(result!=DialogResult.OK || testDialog.FileName!=path) {
-                    code=1; Write("FAIL Diagnostic standalone SaveFileDialog did not accept intended path");
-                }
+                Check(result==DialogResult.OK && testDialog.FileName==path,"Standalone dialog accepts the actual intended filename before application export");
             }
         } else Call(controller,"ExportDrawings");
         Write("EXPORT controller action returned fileExists="+File.Exists(path));
@@ -398,18 +400,7 @@ internal static class Recipe
         await RefocusTarget();
         if(!cancel && !empty && !probe) {
             foreach(string file in Directory.GetFiles(folder)) Write("EXPORT observedFile="+Path.GetFileName(file)+" bytes="+new FileInfo(file).Length);
-            bool actual=File.Exists(path) && new FileInfo(path).Length>100;
-            if(actual) Check(true,"Actual PNG export created: "+name);
-            else {
-                assertions++; code=1; Write("FAIL Actual dialog export missing; renderer-only diagnostic follows: "+name);
-                foreach(string rootDir in new[]{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),AppDomain.CurrentDomain.BaseDirectory}) {
-                    foreach(string file in Directory.GetFiles(rootDir,"*.png")) Write("EXPORT otherLocation="+file+" bytes="+new FileInfo(file).Length);
-                }
-                // Explicit fallback for independent history/render checks. Does NOT validate the failed dialog export.
-                path=Path.Combine(folder,"renderer-only-"+name);
-                Call(Get(controller,"overlay"),"ExportAnnotations",path);
-                Check(File.Exists(path),"Renderer-only diagnostic PNG created");
-            }
+            Check(File.Exists(path) && new FileInfo(path).Length>100,"Actual PNG export created: "+name);
         }
         return path;
     }
