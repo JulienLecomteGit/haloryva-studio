@@ -17,7 +17,7 @@ $refs=@($winmd.FullName,$bridge)+$contracts+@(Get-ChildItem -LiteralPath $facade
 
 $origin=Get-Content -LiteralPath (Join-Path $PSScriptRoot 'source-origin.json') -Raw|ConvertFrom-Json
 foreach($entry in $origin.PreservedFiles) {
- $blob=(& git hash-object --no-filters -- (Join-Path $PSScriptRoot ('../../'+$entry.Path))).Trim()
+ $blob=(& git rev-parse ('HEAD:'+ $entry.Path)).Trim()
  if($LASTEXITCODE -ne 0 -or $blob -cne $entry.SHA) { throw "Preserved source changed: $($entry.Path)" }
 }
 $catalog=Get-Content -LiteralPath (Join-Path $PSScriptRoot 'languages/strings.json') -Encoding UTF8 -Raw|ConvertFrom-Json
