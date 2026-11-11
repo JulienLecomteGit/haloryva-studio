@@ -1,0 +1,133 @@
+HALORYVA STUDIO preview.7 — BILAN MSIX CIBLÉ
+11 novembre 2026
+
+RÉSULTAT : RÉUSSI, dès la première exécution.
+Le binaire preview.7 déjà validé a été empaqueté sans recompilation
+ni signature, installé uniquement sur la machine de test GitHub,
+lancé sept fois par Windows, puis retiré du compte de test.
+
+Run : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43004393887
+Job : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43004393887/job/130468142849
+Commit du pilote : 771b08b1846622446271a6ef6b3a0c2331efb802
+Branche d'essai séparée : haloryva-tests-preview7-msix
+Branche preview.7 conservée : haloryva-tests-preview7,
+commit 5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa.
+
+BINAIRE CONSERVÉ
+Version produit : 2.7.1-preview.7 ; version fichier : 2.7.1.7.
+Compilation d'origine : run 42957075701
+Commit source : 466c8addab0de12de47d6a22c53773152b91d323
+SHA256 Haloryva.exe :
+B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604
+
+L'empreinte est identique :
+- avant l'empaquetage ;
+- dans le fichier MSIX ;
+- dans le dossier installé sur le runner ;
+- après chacun des sept lancements ;
+- dans l'artefact source téléchargé après l'ensemble de la recette.
+
+ENVIRONNEMENT RÉEL
+Microsoft Windows 11 Enterprise, build 26200, architecture ARM64.
+Image GitHub : 20261101.203.1 ; session interactive 2.
+Le binaire x64 existant a fonctionné par émulation sur ce Windows 11 ARM64.
+Cette exécution n'est pas un essai sur Windows 11 x64 natif.
+
+Identité distincte : HaloryvaStudio.Preview7UnsignedTest.
+Version du paquet : 2.7.1.7 ; architecture : x64.
+Paquet : Haloryva-2.7.1-preview.7-test-unsigned.msix
+SHA256 du MSIX :
+F6783C3D121DD0FE8ED9540C24CACAB2EBAAF55AE27542F19139FF8AD8029BC0
+
+Le pilote utilise le mécanisme officiel Windows 11 pour les paquets d'essai
+non signés : identité avec OID spécifique et Add-AppxPackage -AllowUnsigned.
+Aucun certificat créé ou installé, aucune signature, aucun changement du
+mode développeur ou des protections Windows.
+Référence Microsoft :
+https://learn.microsoft.com/en-us/windows/msix/package/unsigned-package
+
+ESSAIS EXÉCUTÉS
+1. MakeAppx : structure du paquet validée.
+2. Absence de signature AppxSignature.p7x vérifiée.
+3. Installation du paquet sur le runner, identité et binaire vérifiés.
+4. Sept lancements du véritable exécutable depuis shell:AppsFolder :
+   - lancement neuf : français et dix outils par défaut ;
+   - profil français validé, puis redémarrage ;
+   - profil anglais validé, puis redémarrage ;
+   - profil espagnol validé, puis redémarrage.
+5. Identité MSIX du processus confirmée à chacun des sept lancements.
+6. Langue de l'interface observée dans les contrôles visibles :
+   Accueil / Préférences ; Home / Preferences ; Inicio / Preferencias.
+7. Sept arrêts normaux : mécanisme d'arrêt propre à Haloryva,
+   attente bornée, code de sortie 0 pour chaque processus.
+   Aucun arrêt forcé n'a été nécessaire.
+8. Après chaque lancement utilisant un profil préparé :
+   - langue conservée ;
+   - outils conservés : Stylo et Rectangle ;
+   - tous les autres champs conservés ;
+   - fichier réécrit par l'application lors de l'arrêt ;
+   - octets du fichier identiques avant et après.
+9. Paquet retiré ; absence d'enregistrement pour le compte de test vérifiée.
+
+Les profils proviennent des essais natifs preview.7 réussis du run
+43001652792. Ils sont réutilisés, pas recréés par une nouvelle recette.
+Leurs empreintes ont été figées avant l'essai :
+FR A6A902FA46C0F2B1501CEA72B85C6B724F354C6A409AA30EE0D0211CDE7DF7BC
+EN EE3AE40697CCFC614E7EAD459A68C252DE45397929210B62650223C888615C15
+ES 8D2BB7BDF7210CC95124C0C1911F13CD455974E9FDA9EC5318CAF69FB9086B4F
+
+Après la première exécution de chaque langue, le lancement suivant reprend
+directement le fichier laissé par l'application : aucun remplacement des
+réglages entre ces deux lancements.
+Chemin relatif dans les données du paquet :
+LocalCache\Local\Haloryva\settings.json
+
+NOTE SUR LE DIAGNOSTIC D'ARRÊT
+Au premier démarrage, un sondage a constaté que l'événement d'arrêt n'était
+pas encore créé. Le pilote a attendu l'initialisation dans son délai prévu,
+puis a confirmé sa disponibilité et obtenu un arrêt normal.
+Ce message transitoire n'est pas un échec du test ni un contournement.
+Les durées du journal incluent des attentes du pilote ; ce ne sont pas
+des mesures de performance de démarrage.
+
+NON RELANCÉS
+- Les 195 contrôles historiques.
+- Les contrôles natifs déjà acquis de preview.7 (gestes, dessin, pluriels,
+  rendu d'outil, défilement et revue visuelle).
+- Aucun nouvel envoi de clics ou de touches : InputInjected=false pour les
+  sept lancements MSIX.
+Les tests MSIX de preview.6 ne suffisaient pas à qualifier le nouveau
+binaire : cette recette porte uniquement sur son intégration au paquet.
+
+PRÉSERVATION
+Les onze branches présentes avant ce travail, dont main, stable 2.7.0 et
+les préversions 2 à 7, conservent leur commit.
+Les 343 fichiers déjà présents dans l'arbre preview.7 sont inchangés.
+Seuls un nouveau pilote, son workflow, sa notice et ce bilan sont ajoutés
+sur la branche d'essai MSIX séparée.
+Aucune commande ni application exécutée sur le PC principal.
+Aucune installation, modification système ou écriture de fichier sur le PC.
+Aucune release, aucun tag de diffusion, aucune fusion dans main,
+aucune signature et aucune soumission Microsoft Store.
+
+LIMITES ET SUITE
+Cet essai valide lancement, arrêt normal et conservation des réglages avec
+une identité de test non signée. Il ne vaut pas validation de la signature,
+de l'identité de production ou certification Microsoft Store.
+La réserve cosmétique de la revue précédente reste inchangée :
+le sous-titre espagnol de la carte Sons est abrégé à 1024 x 768.
+
+Prochaine étape proposée : consolider le bilan global preview.7 et mettre
+à jour le dossier Microsoft Store à partir des preuves existantes, en
+distinguant validation acquise, réserve cosmétique et exigences de diffusion.
+Aucune nouvelle exécution des tests acquis n'est nécessaire pour cette
+mise à jour documentaire.
+
+PREUVES CONSERVÉES
+Artefact GitHub : preview7-msix-evidence, ID 13847911234
+Expiration annoncée : 2026-12-11T10:33:31Z
+SHA256 ZIP : 05aa723ffdc2610802c805b47b5348d06ea048b0ad9bd73399bda4405241fe7d
+Il contient le MSIX d'essai, les diagnostics, les profils de test et les
+comptes rendus. Ce paquet d'essai n'est pas destiné à la diffusion.
+Les résultats structurés durables sont également conservés dans
+preuves-preview7-msix-20261111/resultats-consolides.json.
