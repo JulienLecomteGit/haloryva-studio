@@ -1,4 +1,4 @@
-param([ValidateSet('on','off')][string]$TraceMode='off')
+﻿param([ValidateSet('on','off')][string]$TraceMode='off')
 $ErrorActionPreference='Stop'
 if($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_ENVIRONMENT -ne 'github-hosted' -or !$env:RUNNER_TEMP){throw 'GitHub-hosted only; no local execution'}
 $out=Join-Path $env:RUNNER_TEMP ('preview9-live-focus-'+$TraceMode)
