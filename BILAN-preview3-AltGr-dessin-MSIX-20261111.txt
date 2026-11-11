@@ -1,0 +1,104 @@
+HALORYVA STUDIO — PREVIEW.3 : ALTGR, DESSIN ET MSIX
+Recette du 11 novembre 2026 — résultats exécutés, pas seulement préparés.
+Cette recette ciblée est réussie. Validation complète avant diffusion encore à terminer.
+
+BINAIRE CONSERVÉ
+Version : 2.7.1-preview.3
+SHA256 : 4170BEFEC193F5049051D73744CFCAD6D300240CE840E791E2C469A7CECAB13C
+Artifact d'origine : run 42931395281, artifact 13815992726.
+C'est le même binaire que celui des essais de clics courts réussis précédemment.
+Aucune recompilation, modification du binaire ou signature.
+Empreinte vérifiée par chaque pilote ; également après les gestes et dans le dossier d'installation MSIX.
+
+GESTES — RÉUSSITE SUR WINDOWS SERVER 2025 X64
+Run : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42934182084
+Job : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42934182084/job/130240033678
+Commit du pilote : 430aaafebb5c8e034ab0084194c8ec9ce156d490
+50 vérifications réussies, préconditions et arrêt des fils d'exécution compris.
+Ce sont les contrôles de cette recette, pas la suite historique de 195.
+
+AltGr :
+- disposition française chargée sur la VM GitHub, disposition initiale rétablie à la fermeture ;
+- @, € et # saisis réellement dans une zone de texte d'un processus cible distinct ;
+- ces caractères ne sont pas affichés par le panneau de touches de Haloryva, même activé ;
+- AltGr+M ne met pas les effets en pause ; AltGr+D ne bascule pas le dessin ;
+- AltGr+C ne supprime pas les deux dessins déjà créés ;
+- Ctrl gauche + Alt gauche + M fonctionne, dans les deux sens ;
+- Ctrl+Alt+D démarre le dessin ; Ctrl+Alt+C efface effectivement les dessins ; Échap quitte le dessin.
+
+Dessin et réglages pendant un trait :
+- premier trait : Stylo, rouge, épaisseur 4 ;
+- pendant l'appui, modification des réglages en Rectangle, bleu, épaisseur 12 ;
+- le trait actif conserve ses trois propriétés et reste le même objet ;
+- 14 points reçus depuis les déplacements natifs SendInput ; trait terminé une seule fois ;
+- aucun appui ni relâchement de dessin ne fuit vers la fenêtre cible ;
+- second trait : rectangle bleu d'épaisseur 12, avec deux points définissant ses coins ;
+- les deux traits restent présents après Échap ;
+- outil, couleur et épaisseur conservés après sauvegarde/rechargement du profil isolé.
+
+Rendu réellement observé :
+- capture avant : 5 pixels rouges, 2 bleus selon les seuils du pilote ;
+- capture après : 479 pixels rouges, 4820 bleus ;
+- capture inspectée visuellement : texte @€#, trait rouge et rectangle bleu visibles ;
+- fichiers drawing-before.png et drawing-after.png conservés dans les preuves du job.
+La capture a été lue en mémoire pour inspection, sans écriture sur le PC utilisateur.
+
+MSIX — RÉUSSITE SUR WINDOWS 11 ENTERPRISE ARM64, EXÉCUTABLE X64 ÉMULÉ
+Job : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42933311984/job/130237335499
+Run global 42933311984 : échec de son premier pilote de gestes, mais job MSIX réussi.
+Le MSIX n'a pas été relancé lors des corrections suivantes du seul pilote de gestes :
+son script et le binaire étaient inchangés. Son absence dans les runs suivants est explicitement marquée skipped.
+
+- structure du paquet validée par MakeAppx ;
+- identité de test distincte : HaloryvaStudio.Preview3UnsignedTest, version 2.7.1.3 ;
+- paquet non signé installé avec le mécanisme Windows de test autorisé ;
+- identité du processus vérifiée à chaque lancement ;
+- premier signal d'arrêt disponible vers 6,54 s ; arrêt normal code 0 vers 7,62 s ;
+- second lancement et arrêt normal code 0 vers 3,74 s ;
+- profil créé sous le LocalCache de l'identité MSIX ;
+- entre les lancements, le pilote prépare Rectangle / #0000FF / épaisseur 12 dans ce seul profil d'essai ;
+- après redémarrage, les valeurs sont conservées et le fichier est réécrit par l'application :
+  persistance retenue et sauvegarde effective vérifiées ;
+- désinstallation et absence d'enregistrement du paquet confirmées.
+Aucun certificat ajouté, aucune signature, aucun changement de protection ou mode développeur.
+
+CORRECTIONS DU PILOTE, APPLICATION INCHANGÉE
+Run 42933311984 : le pilote attendait par erreur une bascule des effets pour Ctrl+Alt+C.
+Ce raccourci efface les dessins ; le contrôle a été corrigé et AltGr+C vérifié sur des traits existants.
+Run 42933781119 : le déplacement par repositionnement du curseur ne produisait qu'un point dans ce test.
+Le pilote utilise désormais des événements SendInput de déplacement absolu.
+Avec ce changement du seul pilote, les mouvements, les traits et le rendu sont effectivement validés.
+Les assertions sur le nombre de points et les propriétés n'ont pas été assouplies.
+Les deux essais initiaux et leurs journaux restent conservés.
+
+PRÉSERVATION
+main : 9e900eeaa62dcd2812a6aa0d3f251ad019ef3686, inchangé.
+Branche preview.2 : 8d84f31157ebfc1e09144811b6b112247f926f81, inchangée.
+Sources applicatives et binaire preview.3 inchangés ; ajout des seuls pilotes, workflow et bilan.
+Aucune écriture locale, installation sur le PC principal, modification système locale, signature, release ou fusion vers main.
+Aucun des 195 contrôles historiques relancé. Les essais de clic court précédemment réussis n'ont pas été rejoués.
+
+PREUVES CONSERVÉES
+Gestes/captures : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42934182084/artifacts/13817118669
+MSIX/profil/journaux : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42933311984/artifacts/13816514745
+Artifacts de cette recette conservés jusqu'au 25 novembre 2026. Le présent bilan et les pilotes restent dans Git.
+Dossier : haloryva-ci/preview3-validation.
+Workflow : .github/workflows/haloryva-preview3-validation.yml.
+
+LIMITES / NON EXÉCUTÉ
+Gestes sur Windows 11 x64 natif, clavier/souris physiques, écrans multiples et différents DPI.
+Tous les autres outils de dessin, annuler/rétablir, export et parcours utilisateur complets.
+Mise à jour depuis la stable, migration/désinstallation des versions distribuées.
+Signature de production, paquet définitif Microsoft Store, certification Store.
+Le MSIX de test non signé ne constitue pas une validation de diffusion ni de signature.
+La fenêtre Microsoft account du runner ARM empêche la recette des gestes dans cet environnement ;
+le cycle MSIX testé ici n'a nécessité aucune interaction avec cette fenêtre.
+
+SOURCES TECHNIQUES UTILISÉES POUR LE PILOTE
+https://raw.githubusercontent.com/actions/download-artifact/v4/README.md
+https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-loadkeyboardlayoutw
+https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-activatekeyboardlayout
+
+PROCHAINE ÉTAPE PROPOSÉE
+Compléter sur GitHub les autres outils de dessin, annuler/rétablir et export, sur le même binaire.
+Conserver la recette Windows 11/matériel réel et la préparation Store comme étapes distinctes avant diffusion.
