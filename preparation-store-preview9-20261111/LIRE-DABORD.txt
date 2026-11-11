@@ -16,13 +16,16 @@ Seule la branche haloryva-preparation-store-preview9 reçoit ce nouveau dossier.
 21 branches préexistantes et 521 fichiers préexistants sont à préserver à l'identique.
 
 AJOUT — LECTURE PARTNER CENTER ET LISTE FERMEE
-LECTURE-PARTNER-CENTER.txt contient la lecture effective du compte : aucun espace développeur Windows accessible ; inscription proposée.
+LECTURE-PARTNER-CENTER.txt contient le résultat de l’inscription Windows gratuite, de la réservation et de la lecture de l’identité.
 FINITIONS-FERMEES-2.7.1.txt ferme le périmètre des retouches proposées ; aucune exécution.
-POINT-AVANCEMENT.txt explique les camemberts demandés (75 % / 50 % par comptage de jalons).
+POINT-AVANCEMENT.txt actualise le comptage de jalons : 75 % application/installateur et 58,3 % avec le Store.
+Le camembert local antérieur à 50 % reste une photographie historique non régénérée.
 AVANCEMENT-PAR-JALONS.json conserve leur base de calcul et les limites.
 
 AJOUT — BROUILLON DU MANIFESTE
 production-msix/AppxManifest.xml.template prépare le paquet de production sans modifier les recettes existantes.
 production-msix/LIRE-LE-BROUILLON.txt distingue les champs connus, proposés et encore inconnus.
-Nom public prévu 2.7.1 ; installateur HaloryvaSetup_2.7.1.exe ; paquet Store proposé 2.7.1.0.
-Identité du produit et historique des versions non obtenus. Ne pas empaqueter ce modèle incomplet.
+Version publique prévue 2.7.1 ; installateur HaloryvaSetup_2.7.1.exe ; premier paquet Store retenu 2.7.1.0.
+Identité officielle obtenue ; produit 9NJ14SZJP55B réservé, aucun paquet déposé.
+La borne Windows minimale 10.0.22000.0 est proposée pour Windows 11, à confirmer avant production.
+Ce modèle reste un brouillon non compilé et non qualifié, sans nouvelle autorisation d’exécution.

@@ -41,7 +41,7 @@ Une éventuelle nouvelle correction avant gel prendra une nouvelle préversion ;
 Cette numérotation poursuit celle du projet ; elle ne prétend pas appliquer une convention SemVer stricte à une API publique.
 Les fonctionnalités supplémentaires n'obligent pas à changer ici la cible déjà préparée en 2.7.1.
 
-Pour le MSIX Store : proposition 2.7.1.0, à confirmer contre l'historique réel de l'identité Partner Center.
+Pour le MSIX Store : 2.7.1.0 retenu pour le nouveau produit 9NJ14SZJP55B, sans paquet antérieur.
 La famille d'essai est distincte : elle ne doit pas être reprise pour une livraison de production.
 Ne jamais effectuer un retour de version dans une même famille pour faire correspondre artificiellement ces numéros.
 Le quatrième composant du paquet Store et la révision du fichier EXE sont deux métadonnées différentes.
@@ -69,6 +69,6 @@ https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app
 PRECISION — BROUILLON DE PRODUCTION
 Le versionnement prévu reste 2.7.1 (public/informatif), 2.7.1.0 (AssemblyVersion) et
 2.7.1.10 (FileVersion proposé, à avancer si une compilation intermédiaire consomme ce numéro).
-Le paquet Store proposé 2.7.1.0 figure dans production-msix/AppxManifest.xml.template.
-Le compte Partner Center a été lu, mais son espace Windows n’est pas accessible ; l’historique reste inconnu.
-Le numéro de paquet n’est donc pas encore confirmé pour dépôt. Aucun exécutable existant n’est modifié.
+Le paquet Store 2.7.1.0 figure dans production-msix/AppxManifest.xml.template avec l’identité Microsoft exacte.
+Le programme Windows est activé et Haloryva Studio réservé ; aucun paquet antérieur pour ce nouveau produit.
+Le numéro du premier paquet est donc arrêté. Aucun paquet n’est fabriqué/déposé ; aucun exécutable existant n’est modifié.

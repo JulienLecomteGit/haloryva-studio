@@ -2,16 +2,16 @@
   "status": "DRAFT_NOT_A_SUBMISSION_MANIFEST",
   "preparation_date": "2026-11-11",
   "product_name_proposed": "Haloryva Studio",
-  "name_reserved": null,
+  "name_reserved": "Haloryva Studio",
   "partner_center_account_checked": true,
-  "partner_center_product_id": null,
-  "package_identity_name": null,
-  "package_publisher": null,
-  "publisher_display_name": null,
-  "package_family_name": null,
-  "final_package_version": null,
+  "partner_center_product_id": "9NJ14SZJP55B",
+  "package_identity_name": "JulienLecomte.HaloryvaStudio",
+  "package_publisher": "CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1",
+  "publisher_display_name": "Julien Lecomte",
+  "package_family_name": "JulienLecomte.HaloryvaStudio_twtgq1d174ne0",
+  "final_package_version": "2.7.1.0",
   "version_proposal_if_first_final_2_7_1_package": "2.7.1.0",
-  "version_proposal_requires_partner_center_history_check": true,
+  "version_proposal_requires_partner_center_history_check": false,
   "package_architecture_proposed": "x64",
   "min_windows_version_final": null,
   "max_windows_version_tested_final": null,
@@ -54,7 +54,7 @@
   "source_preview": "2.7.1-preview.9",
   "source_commit": "a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5",
   "source_executable_sha256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
-  "name_reservation_status": "not_verified_no_accessible_windows_product",
+  "name_reservation_status": "reserved_for_this_application",
   "language_change_application": "next_application_launch",
   "tested_environments": [
     {
@@ -160,33 +160,57 @@
   "legacy_fixture_import_evidence_run": 43020483264,
   "partner_center_read_attempt": {
     "date": "2026-11-11",
-    "requested_access": "read_only",
-    "status": "portal_read_windows_workspace_unavailable",
+    "requested_access": "Authorized Windows developer enrollment and product reservation, followed by read-only product inspection.",
+    "status": "product_identity_and_new_product_history_obtained",
     "portal_opened": true,
     "account_exists": true,
-    "product_exists": null,
-    "windows_program_enrollment_status": "not_shown_as_enrolled_in_connected_account",
+    "product_exists": true,
+    "windows_program_enrollment_status": "active",
+    "developer_account_created_this_task": true,
+    "microsoft_sign_in_account_created": false,
+    "identity_verification_completed_by_user": true,
+    "developer_agreement_accepted_by_user": true,
+    "name_reserved_this_task": true,
+    "product_created_this_task": true,
+    "subscription_created": false,
+    "payment_made": false,
+    "credential_entry_by_agent": false,
+    "fields_obtained": [
+      "name_reserved",
+      "package_identity_name",
+      "package_publisher",
+      "publisher_display_name",
+      "package_family_name",
+      "store_id",
+      "store_url",
+      "new_product_no_packages"
+    ],
     "observed_pages": [
       {
-        "url": "https://partner.microsoft.com/en-us/dashboard/home",
-        "observation": "No application workspace displayed; navigation contains Home and Help + support."
+        "url": "https://storedeveloper.microsoft.com/fr-FR/onboarding",
+        "observation": "All four steps completed; account created and verified. Individual route displayed Gratuit."
       },
       {
-        "url": "https://partner.microsoft.com/dashboard/v2/account-settings/myaccess",
-        "observation": "No accessible workspace listed."
+        "url": "https://partner.microsoft.com/fr-FR/dashboard/apps-and-games/overview",
+        "observation": "Windows Apps and Games workspace accessible; zero products before reservation."
       },
       {
-        "url": "https://partner.microsoft.com/dashboard/v2/account-settings/partner-programs",
-        "observation": "Windows shown under Other programs with Get started and invitation to register as an app developer."
+        "url": "https://partner.microsoft.com/fr-FR/dashboard/products/9NJ14SZJP55B/overview",
+        "observation": "Haloryva Studio, Application MSIX ou PWA, À l’état de brouillon, Démarrer la soumission not used."
+      },
+      {
+        "url": "https://partner.microsoft.com/fr-FR/dashboard/products/9NJ14SZJP55B/identity",
+        "observation": "Official Name, Publisher, PublisherDisplayName, PFN, Store ID and assigned Store URL read."
+      },
+      {
+        "url": "https://partner.microsoft.com/fr-FR/dashboard/products/9NJ14SZJP55B/names",
+        "observation": "Haloryva Studio — Élément réservé pour cette application; three-month submission notice."
+      },
+      {
+        "url": "https://partner.microsoft.com/fr-FR/dashboard/apps/9NJ14SZJP55B/managepackages",
+        "observation": "Current packages page has no package rows. Newly created product, no submission started or upload performed."
       }
-    ],
-    "inference": "The connected account does not expose an enrolled Windows developer workspace. Product identity and package history cannot be read here; another account is not ruled out.",
-    "account_created": false,
-    "program_enrollment_started": false,
-    "name_reserved_this_task": false,
-    "subscription_created": false,
-    "credential_entry_by_agent": false,
-    "product_fields_obtained": []
+    ]
   },
   "closed_finishing_list": "FINITIONS-FERMEES-2.7.1.txt",
   "partner_center_missing_details_document": "LECTURE-PARTNER-CENTER.txt",
@@ -209,14 +233,44 @@
       "status": "login_origin_approval_required",
       "resolved": true,
       "resolution": "Explicit user approval obtained before reopening the official Microsoft sign-in flow."
+    },
+    {
+      "date": "2026-11-11",
+      "requested_access": "read_only",
+      "status": "portal_read_windows_workspace_unavailable",
+      "portal_opened": true,
+      "account_exists": true,
+      "product_exists": null,
+      "windows_program_enrollment_status": "not_shown_as_enrolled_in_connected_account",
+      "observed_pages": [
+        {
+          "url": "https://partner.microsoft.com/en-us/dashboard/home",
+          "observation": "No application workspace displayed; navigation contains Home and Help + support."
+        },
+        {
+          "url": "https://partner.microsoft.com/dashboard/v2/account-settings/myaccess",
+          "observation": "No accessible workspace listed."
+        },
+        {
+          "url": "https://partner.microsoft.com/dashboard/v2/account-settings/partner-programs",
+          "observation": "Windows shown under Other programs with Get started and invitation to register as an app developer."
+        }
+      ],
+      "inference": "The connected account does not expose an enrolled Windows developer workspace. Product identity and package history cannot be read here; another account is not ruled out.",
+      "account_created": false,
+      "program_enrollment_started": false,
+      "name_reserved_this_task": false,
+      "subscription_created": false,
+      "credential_entry_by_agent": false,
+      "product_fields_obtained": []
     }
   ],
   "publisher_display_name_proposed": "Julien Lecomte",
   "last_submitted_package_version": null,
-  "package_history_status": "unavailable_not_equivalent_to_no_previous_package",
+  "package_history_status": "no_package_new_product_no_submission",
   "production_manifest_draft": {
     "path": "production-msix/AppxManifest.xml.template",
-    "status": "DRAFT_INCOMPLETE_NOT_PACKAGED",
+    "status": "DRAFT_OFFICIAL_IDENTITY_FILLED_OS_BOUNDS_PROPOSED",
     "product_display_name_proposed": "Haloryva Studio",
     "publisher_display_name_proposed": "Julien Lecomte",
     "package_version_proposed": "2.7.1.0",
@@ -226,10 +280,10 @@
       "en-US",
       "es-ES"
     ],
-    "identity_name_pending": true,
-    "identity_publisher_pending": true,
-    "publisher_display_name_requires_exact_store_match": true,
-    "min_windows_version_pending": true,
+    "identity_name_pending": false,
+    "identity_publisher_pending": false,
+    "publisher_display_name_requires_exact_store_match": false,
+    "min_windows_version_pending": false,
     "min_windows_version_proposed_if_windows11_only": "10.0.22000.0",
     "max_windows_version_tested_draft": "10.0.26100.0",
     "max_version_reason": "Retained from the existing test manifest, not a new qualification claim.",
@@ -245,7 +299,32 @@
     "schema_validation_executed": false,
     "tests_executed": false,
     "signed": false,
-    "submitted": false
+    "submitted": false,
+    "identity_values_verified": true,
+    "package_version_selected": "2.7.1.0",
+    "package_history_checked": true,
+    "remaining_placeholder": null,
+    "minimum_windows_version_not_finalized": true,
+    "min_windows_version_draft": "10.0.22000.0",
+    "min_windows_version_is_proposal": true
   },
-  "final_file_version_proposed": "2.7.1.10"
+  "final_file_version_proposed": "2.7.1.10",
+  "name_reserved_date": "2026-11-11",
+  "package_version_decision": "Selected for the first production package of the newly reserved product; not built or uploaded.",
+  "product_state": "draft",
+  "product_type": "MSIX_or_PWA_application",
+  "store_url_assigned": "https://apps.microsoft.com/detail/9NJ14SZJP55B",
+  "store_listing_public": false,
+  "developer_program": "Windows_individual",
+  "developer_program_active": true,
+  "developer_agreement_accepted_by_user": true,
+  "developer_agreement_accepted_by_agent": false,
+  "developer_registration_fee_paid": 0,
+  "store_identity_group_status": "D3_identity_and_history_closed_other_submission_metadata_pending",
+  "reservation_notice": {
+    "observed_text_summary": "Submit this product to the Store within three months or lose the name reservation.",
+    "exact_expiration_displayed": false,
+    "three_month_anniversary_inferred": "2027-02-11",
+    "no_automatic_submission_authorized": true
+  }
 }

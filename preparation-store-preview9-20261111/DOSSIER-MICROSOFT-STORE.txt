@@ -8,15 +8,15 @@ Canal visé pour une installation publique simple : Microsoft Store / MSIX.
 L'installateur EXE GitHub est distinct et reste non signé.
 Nom proposé Haloryva Studio, catégorie Productivité, interface FR/EN/ES.
 Choix de langue mémorisé et appliqué au prochain lancement complet de l'application.
-Compte Partner Center consulté ; aucun espace développeur Windows accessible dans la session connectée.
-Programs propose l’inscription Windows avec Get started. Produit, réservation, historique, marchés et coordonnées non vérifiés.
+Programme Windows individuel activé gratuitement après vérification et contrat réalisés par l’utilisateur.
+Haloryva Studio réservé ; identité relevée ; aucun paquet déposé. Marchés, classification et coordonnées publiques Store restent à finaliser.
 
 VERSION ET ARCHITECTURE
 Application Win32/WinForms .NET Framework, EXE x64 ; aucun ARM64 natif fabriqué.
 Candidate actuelle 2.7.1-preview.9 ; fichier 2.7.1.9 ; SHA256 678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC.
-Cible stable proposée 2.7.1 ; MSIX de production proposé 2.7.1.0 seulement après contrôle de l'historique Partner Center.
+Cible stable 2.7.1 ; premier MSIX de production retenu 2.7.1.0, nouveau produit sans paquet antérieur.
 Ne pas soumettre la famille HaloryvaStudio.MsixLifecycleTest ni le paquet d'essai 2.7.1.90.
-Le manifeste final doit utiliser l'identité effective du produit réservé.
+Le brouillon utilise l’identité officielle JulienLecomte.HaloryvaStudio / CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1.
 Cible proposée Windows 11 Desktop x64 ; preuves Windows 11 ARM64 en émulation et Windows Server x64 à distinguer.
 Ni Windows 10, ni Windows 11 x64 natif ne sont validés par ces campagnes.
 Avertissement de compilation CS1701 WinRT/.NET conservé dans le bilan ; aucune nouvelle compilation ici.
@@ -55,8 +55,9 @@ Justification à joindre au paquet final ; autorisation de capacité et certific
 Aucun ajout d'allowElevation.
 
 ETAT DE SOUMISSION
-D0 finalisation stable ; D1 vraie session ; D3 identité ; D4 confidentialité/support/droits ;
+D0 finalisation stable ; D1 vraie session ; D3 métadonnées de diffusion restantes ; D4 confidentialité/support/droits ;
 D5 captures ; D6 paquet de production et certification : ouverts.
+D3 identité/nom/historique : acquis. Cela ne décide pas les bornes Windows, marchés ou classification.
 D2 migration/coexistence réelle 2.7.0 : conditionnel à cette promesse.
 La clôture du pilote diagnostic est un point de preuve distinct, pas un défaut produit établi.
 Voir FINITIONS-AVANT-DIFFUSION.txt et les critères de portée.
@@ -68,29 +69,29 @@ Aucun certificat acheté, aucune signature, souscription ou publication dans cet
 Référence officielle vérifiée le 11 novembre 2026 :
 https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
 
-BROUILLON DE MANIFESTE PREPARE
-production-msix/AppxManifest.xml.template : version proposée 2.7.1.0, x64, FR/EN/ES,
+BROUILLON DU MANIFESTE COMPLETE AVEC L'IDENTITE MICROSOFT
+production-msix/AppxManifest.xml.template : paquet 2.7.1.0, x64, FR/EN/ES,
 une application et un StartupTask désactivé par défaut, runFullTrust seul.
-Nom public proposé Haloryva Studio ; éditeur proposé Julien Lecomte.
-Identité Microsoft et limite Windows finale explicitement en attente ; modèle non empaquetable en l'état.
-Voir production-msix/LIRE-LE-BROUILLON.txt : aucune validation de schéma, compilation ou recette nouvelle.
-Ne pas utiliser les identités d'essai ; le brouillon ne modifie pas les manifests historiques.
+Nom réservé Haloryva Studio ; éditeur affiché Julien Lecomte.
+Name : JulienLecomte.HaloryvaStudio.
+Publisher : CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1.
+PFN : JulienLecomte.HaloryvaStudio_twtgq1d174ne0.
+Store ID : 9NJ14SZJP55B.
+Borne Windows minimale proposée dans le brouillon : 10.0.22000.0 (Windows 11).
+Le choix final reste à qualifier. Aucun contrôle de schéma, empaquetage ou exécution nouvelle.
 
-LECTURE PARTNER CENTER EFFECTUEE
-Après accord explicite pour la connexion Microsoft, le portail officiel a été consulté en lecture seule.
-Home et My access ne présentent aucun espace d'applications accessible.
-Programs présente Windows sous Other programs avec Get started et invitation à s'inscrire.
-Aucune inscription n'a été lancée. Aucun produit Haloryva n'a été accessible dans ce compte.
-L'existence d'un produit dans un autre compte n'est pas exclue.
-Les champs Microsoft et la dernière version déposée restent inconnus ; « aucun paquet » n'est pas déduit.
-Les blocages D3 et J10 restent ouverts malgré le brouillon.
-Le refus initial de l'outil d'accès à la connexion a été levé après l'autorisation explicite.
-Voir LECTURE-PARTNER-CENTER.txt et identite-store.a-renseigner.json pour les observations précises.
+COMPTE ET PRODUIT
+Inscription Windows gratuite terminée ; identité personnelle et contrat traités par l'utilisateur.
+Produit MSIX ou PWA créé après confirmation de disponibilité du nom ; état de brouillon.
+Aucun paquet antérieur : espace vide avant création, aucune soumission démarrée et page Current packages sans entrée.
+Le numéro du premier paquet peut donc être fixé à 2.7.1.0.
+Le lien attribué https://apps.microsoft.com/detail/9NJ14SZJP55B n'annonce aucune fiche publiée.
+Réservation le 11 novembre 2026 ; Microsoft affiche un délai de trois mois sans soumission.
+Voir LECTURE-PARTNER-CENTER.txt pour les preuves visibles et limites.
+Le jalon J10 est clos ; D3 demeure partiel pour les autres métadonnées de diffusion.
 
 SUITE CONCRETE
-Si ce compte est celui destiné à Haloryva, l'accès développeur Windows et la réservation seront
-la prochaine étape, sur autorisation distincte. Si le produit existe ailleurs, reprendre la lecture dans ce compte.
-L'assistant renseignera les champs techniques depuis le produit ; l'utilisateur n'a pas à les deviner.
-Version stable prévue 2.7.1 ; paquet Store 2.7.1.0 proposé, conditionné à l'historique réel.
-FINITIONS-FERMEES-2.7.1.txt conserve six lots, non appliqués.
-Aucun compte créé, contrat accepté, paiement, inscription, compilation, test, signature ou soumission.
+Finaliser les bornes Windows et les informations publiques de la fiche : marchés/classification,
+contact et URL de confidentialité/support, textes et images approuvés.
+La liste de finitions F01–F06 reste fermée ; seule la partie identité du brouillon F05 est maintenant renseignée.
+Aucun paiement, compilation, test, signature, installation, dépôt de paquet ou publication.

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   BROUILLON UNIQUEMENT. Ne pas empaqueter, signer ou soumettre.
-  Identite Microsoft et limite Windows finales non obtenues.
-  Version 2.7.1.0 proposee : confirmer l'historique de la famille de production.
-  Noms publics proposes : verifier les valeurs exactes du produit reserve.
+  Identite Microsoft relevee le 11 novembre 2026 ; borne Windows 11 proposee, qualification finale en attente.
+  Version 2.7.1.0 retenue pour le premier paquet ; produit neuf sans paquet depose.
+  Nom reserve et editeur confirmes dans Partner Center.
   Voir LIRE-LE-BROUILLON.txt. Aucun nouveau test ou controle de schema execute.
 -->
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -12,8 +12,8 @@
   xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap desktop uap10 rescap">
-  <Identity Name="__PARTNER_CENTER_IDENTITY_NAME__"
-    Publisher="__PARTNER_CENTER_IDENTITY_PUBLISHER__"
+  <Identity Name="JulienLecomte.HaloryvaStudio"
+    Publisher="CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1"
     Version="2.7.1.0" ProcessorArchitecture="x64" />
   <Properties>
     <DisplayName>Haloryva Studio</DisplayName>
@@ -22,9 +22,9 @@
     <Description>Effets et annotations du curseur</Description>
   </Properties>
   <Dependencies>
-    <!-- Minimum final non decide. Maximum conserve du manifeste d'essai. -->
+    <!-- Minimum Windows 11 propose, non qualifie sur toutes ses versions. Maximum conserve du manifeste d’essai. -->
     <TargetDeviceFamily Name="Windows.Desktop"
-      MinVersion="__MIN_WINDOWS_VERSION__" MaxVersionTested="10.0.26100.0" />
+      MinVersion="10.0.22000.0" MaxVersionTested="10.0.26100.0" />
   </Dependencies>
   <Resources>
     <Resource Language="fr-FR" />

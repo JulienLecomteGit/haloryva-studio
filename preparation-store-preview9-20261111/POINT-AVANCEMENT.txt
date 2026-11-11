@@ -2,7 +2,7 @@ HALORYVA — POINT D'AVANCEMENT DEMANDE PAR L'UTILISATEUR
 11 novembre 2026 — comptage de jalons, aucun test supplémentaire.
 
 Application et installateur : 6 jalons clos sur 8, soit 75 %.
-Parcours complet incluant Microsoft Store : 6 jalons clos sur 12, soit 50 %.
+Parcours complet incluant Microsoft Store : 7 jalons clos sur 12, soit 58,3 %.
 Les 8 premiers jalons sont inclus dans les 12, ce ne sont pas deux ensembles à additionner.
 
 Méthode choisie pour cet affichage : un jalon = un point ; seules les étapes closes comptent.
@@ -39,8 +39,8 @@ Preuve/périmètre : Aucun binaire public 2.7.1 final fabriqué avec ces finitio
 J9 — OUVERT — Démarrage lors d’une vraie session Windows
 Preuve/périmètre : S6 non exécuté ; environnement distinct persistant non disponible/autorisé à ce jour.
 
-J10 — OUVERT — Identité du produit Microsoft Store vérifiée
-Preuve/périmètre : Accès UI arrêté avant le portail : URL du navigateur Windows non identifiée avec assez de certitude.
+J10 — CLOS — Identité du produit Microsoft Store vérifiée
+Preuve/périmètre : programme Windows individuel créé et vérifié, nom réservé, identité officielle relevée, nouveau produit sans paquet déposé.
 
 J11 — OUVERT — Confidentialité, coordonnées et captures Store
 Preuve/périmètre : Brouillons disponibles ; approbation, coordonnées/URL et captures finales manquantes.
@@ -51,5 +51,6 @@ Preuve/périmètre : Aucun paquet de production, rapport WACK ou résultat de ce
 Limites hors acquis : signature EXE séparée, migration réelle 2.7.0 et qualification Windows 11 x64 native complète.
 La cible de livraison reste 2.7.1 ; la preview.9 est déjà corrigée et testée, mais n'est pas encore le livrable final.
 
-Le camembert du chat est la représentation de ce seul indice documentaire.
+Le camembert local antérieur représente la photographie précédente (6/12 = 50 %), conservée sans régénération.
+Le présent document actualise le même indice après fermeture de J10 (7/12 = 58,3 %).
 Aucune exécution de Haloryva, compilation, recette, signature ou publication n'a été réalisée pour le produire.

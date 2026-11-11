@@ -20,10 +20,10 @@
     ]
   },
   "complete_route_including_store": {
-    "closed": 6,
+    "closed": 7,
     "total": 12,
-    "percentage": 50,
-    "remaining_percentage": 50,
+    "percentage": 58.3,
+    "remaining_percentage": 41.7,
     "criteria": [
       "J1",
       "J2",
@@ -112,9 +112,9 @@
     {
       "id": "J10",
       "label": "Identité du produit Microsoft Store vérifiée",
-      "closed": false,
+      "closed": true,
       "scope": "store_extra",
-      "evidence": "Portail consulté après autorisation. Windows proposé à l’inscription, aucun espace de produits accessible dans ce compte. Identité non obtenue ; brouillon du manifeste seulement."
+      "evidence": "11 novembre 2026 : programme Windows individuel activé gratuitement, Haloryva Studio réservé, identité officielle relevée, produit neuf sans paquet. Aucune soumission."
     },
     {
       "id": "J11",
@@ -130,5 +130,11 @@
       "scope": "store_extra",
       "evidence": "Aucun paquet de production, rapport WACK ou résultat de certification."
     }
-  ]
+  ],
+  "previous_snapshot": {
+    "closed": 6,
+    "total": 12,
+    "percentage": 50,
+    "note": "Earlier local pie chart retained as historical snapshot; not regenerated in this task."
+  }
 }

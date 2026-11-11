@@ -9,7 +9,7 @@ Bloque l'annonce « version stable finale disponible ».
 Preview.9 corrigée et testée existe, mais ses métadonnées compilées et son historique portent encore la préversion.
 Préparer une seule passe finale : mention de version, historique des nouveautés, éventuelle finition espagnole connue.
 Après accord : nouvelle compilation conservant preview.9, vérification des seuls écarts et fabrication des emballages avec provenance.
-Le choix public proposé est 2.7.1 ; le numéro exact Store dépend de D3. Un renommage d'EXE ne clôt pas D0.
+Le choix public est 2.7.1 ; le premier paquet Store est fixé à 2.7.1.0. Un renommage d’EXE ne clôt pas D0.
 
 D1 — Vraie connexion Windows, qualité du démarrage MSIX
 Bloque notre validation définitive de cette fonction et le feu vert Store complet prévu.
@@ -26,12 +26,13 @@ Ne bloque pas à lui seul une première installation Store limitée au périmèt
 Les profils synthétiques d'import et le cycle EXE preview.9 ne remplacent pas C1/M7.
 Il faudrait, après accord distinct, utiliser l'installateur stable exact sur un Windows de test ; pas de reconstruction de la stable ni contournement des protections.
 
-D3 — Identité et métadonnées Partner Center (Store)
-Bloque la constitution du paquet final conforme à l'identité réservée.
-Compte/nom réservé/produit non vérifiés : leur absence n'est pas présumée.
-A relever en lecture seule : Name, Publisher, nom éditeur, historique des versions, langues, architecture, OS, marchés et classification.
+D3 — Identité acquise ; métadonnées de diffusion à finir (Store)
+CLOS pour l'accès Windows, le nom réservé, Name, Publisher, éditeur, PFN et absence de paquet antérieur.
+Produit 9NJ14SZJP55B créé en brouillon le 11 novembre 2026 ; premier paquet retenu 2.7.1.0.
+Valeurs officielles reportées dans identite-store.a-renseigner.json et production-msix/AppxManifest.xml.template.
+RESTENT les bornes OS finales, les marchés/classification et la validation des autres métadonnées de soumission.
+Le brouillon propose MinVersion=10.0.22000.0 pour Windows 11 ; cette borne et le paquet ne sont pas qualifiés pour diffusion.
 Ne pas réutiliser HaloryvaStudio.MsixLifecycleTest ou sa version 2.7.1.90.
-Prochaine action prioritaire : renseigner les valeurs réelles dans identite-store.a-renseigner.json ; ne pas publier.
 
 D4 — Confidentialité, support, droits (Store)
 Brouillon conservé et actualisé avec la conservation volontaire des réglages de l'EXE.
@@ -64,6 +65,6 @@ Clôture du pilote diagnostic S3 : correction préparée, non exécutée ; son r
 F10 : archives à conserver avant expiration annoncée le 11 décembre ; aucun téléchargement local ici.
 
 PROCHAINE ETAPE PROPOSEE
-Lecture des informations Partner Center existantes et liste fermée des finitions finales 2.7.1.
-Puis choisir le moyen autorisé de satisfaire S6 ; ne pas relancer les acquis en attendant.
+Identité Partner Center acquise et liste fermée préparée. Finaliser les métadonnées, coordonnées et contenus publics restant ouverts.
+Choisir également le moyen autorisé de satisfaire S6 ; ne pas relancer les acquis en attendant.
 Aucun changement de version, compilation, test ou publication n'est autorisé par ce document.

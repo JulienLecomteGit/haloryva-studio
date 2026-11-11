@@ -1,47 +1,64 @@
-HALORYVA — CONSULTATION PARTNER CENTER ET CHAMPS DU PRODUIT
-11 novembre 2026 — consultation en lecture seule ; aucun changement de compte.
+HALORYVA — PROGRAMME WINDOWS ACTIVE ET IDENTITE RELEVEE
+11 novembre 2026 — inscription/réservation autorisées ; lecture des informations du produit.
 
-RESULTAT ACTUEL, APRES AUTORISATION DE CONNEXION
-Le portail officiel a pu être ouvert dans une session déjà connectée.
-Accueil : aucun espace d'applications affiché ; menu Home / Help + support.
-My access : aucun espace de travail accessible listé.
-Programs : Windows est affiché sous Other programs, avec Get started et invitation à s'inscrire comme développeur.
-Le lien Get started n'a pas été activé. Aucune inscription ni réservation n'a été lancée.
+RESULTAT
+Parcours officiel https://storedeveloper.microsoft.com/ : Développeur individuel, Gratuit.
+L'utilisateur a réalisé les vérifications personnelles, confirmé son profil et accepté lui-même le contrat développeur.
+Microsoft a affiché « Votre compte a bien été créé et vérifié » et « Votre compte de développeur est prêt ».
+Il s'agit de l'activation d'un compte développeur Windows avec le compte Microsoft déjà existant.
+Aucun nouveau compte Microsoft de connexion, paiement, achat de certificat ou abonnement payant.
 
-Conclusion limitée au compte connecté : aucun espace développeur Windows inscrit n'est accessible.
-Cette observation ne prouve pas l'absence d'un produit dans un autre compte.
-L'identité du produit et l'historique des paquets restent inaccessibles, et ne sont pas inventés.
-Le compte Partner Center existe ; le produit Haloryva Studio n'a pas pu être vérifié.
-Aucun identifiant de connexion, courriel personnel, cookie ou secret n'est recopié dans ce dossier.
+L'espace Applications et jeux était vide (0 produit) avant la réservation.
+L'assistant a vérifié la disponibilité puis réservé Haloryva Studio, conformément à la demande.
+Type : Application MSIX ou PWA. Statut : À l'état de brouillon.
+Aucune soumission démarrée, aucun paquet téléversé, aucune publication.
 
-LES CINQ CHAMPS, COMPLETES AVEC LEUR STATUT REEL
-Nom réservé : non vérifiable dans le compte connecté. Nom souhaité déjà renseigné : Haloryva Studio.
-Package/Identity/Name : non obtenu ; seul Microsoft fournit la valeur exacte après accès au produit.
-Package/Identity/Publisher : non obtenu ; ne pas déduire un CN du nom GitHub ou de l'auteur.
-Nom d'éditeur affiché : Julien Lecomte proposé, d'après les sources existantes ; valeur Store non vérifiée.
-Dernière version de paquet déposée : inconnue. Ne pas remplacer cette inconnue par « aucun paquet ».
+LES CINQ CHAMPS MAINTENANT RENSEIGNES
+Nom réservé : Haloryva Studio
+Package/Identity/Name : JulienLecomte.HaloryvaStudio
+Package/Identity/Publisher : CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1
+Package/Properties/PublisherDisplayName : Julien Lecomte
+Dernière version de paquet déposée : aucun paquet pour ce nouveau produit.
+Ce dernier constat repose sur la création du produit dans un espace vide, l'absence de soumission
+et la page Current packages sans entrée ; il ne concerne pas les anciennes familles MSIX d'essai.
 
-URLS CONSULTEES EN LECTURE SEULE
-https://partner.microsoft.com/en-us/dashboard/home
-https://partner.microsoft.com/dashboard/v2/account-settings/myaccess
-https://partner.microsoft.com/dashboard/v2/account-settings/partner-programs
+AUTRES VALEURS UTILES
+Store ID : 9NJ14SZJP55B
+Package Family Name : JulienLecomte.HaloryvaStudio_twtgq1d174ne0
+URL attribuée : https://apps.microsoft.com/detail/9NJ14SZJP55B
+Cette URL identifie le produit réservé ; aucune disponibilité publique n'est annoncée.
+La famille de production est distincte de HaloryvaStudio.MsixLifecycleTest.
 
-BROUILLON LIVRE
-production-msix/AppxManifest.xml.template reprend une seule application Haloryva et son démarrage facultatif.
-Les valeurs techniques déjà connues sont renseignées ; l'identité Microsoft et la limite OS finale restent marquées.
-production-msix/LIRE-LE-BROUILLON.txt distingue propositions, valeurs héritées et informations manquantes.
-Aucun script, workflow ou binaire n'utilise ce modèle. Aucun paquet n'est créé.
+RESERVATION
+Page Gérer les noms : Haloryva Studio — Élément réservé pour cette application.
+Microsoft avertit qu'une soumission doit intervenir dans les trois mois pour conserver la réservation.
+Réservation réalisée le 11 novembre 2026 ; le 11 février 2027 est la date indicative déduite de ce délai,
+pas une date d'expiration précise affichée par le portail.
+Cette échéance n'autorise aucune soumission automatique ni précipitée.
 
-PROCHAINE ACTION
-Vérifier si le compte connecté est bien celui destiné à publier Haloryva.
-Si un autre compte détient déjà le produit, l'utilisateur peut s'y connecter lui-même ; la lecture pourra reprendre.
-Sinon, l'étape nécessaire est l'inscription au programme Windows puis la réservation du nom.
-Cela exige une nouvelle autorisation et l'intervention personnelle de l'utilisateur pour les conditions et toute vérification d'identité.
-Aucun compte, inscription, paiement, contrat ou produit n'est créé dans cette tâche.
-L'utilisateur n'a pas à deviner les cinq champs techniques : l'assistant les relèvera sur le produit dès qu'il sera accessible.
+SOURCES DIRECTES CONSULTEES
+https://partner.microsoft.com/fr-FR/dashboard/apps-and-games/overview
+https://partner.microsoft.com/fr-FR/dashboard/products/9NJ14SZJP55B/overview
+https://partner.microsoft.com/fr-FR/dashboard/products/9NJ14SZJP55B/identity
+https://partner.microsoft.com/fr-FR/dashboard/products/9NJ14SZJP55B/names
+https://partner.microsoft.com/fr-FR/dashboard/apps/9NJ14SZJP55B/managepackages
 
-HISTORIQUE CONSERVE
-Première tentative : navigateur Windows non sélectionnable avec une adresse suffisamment certaine.
-Deuxième tentative : origine de connexion Microsoft refusée par le contrôle automatique.
-Après autorisation explicite de l'utilisateur, la consultation officielle a réussi.
-Le blocage actuel est donc l'absence d'un espace Windows accessible dans ce compte, et non un refus persistant de l'outil.
+BROUILLON ACTUALISE
+production-msix/AppxManifest.xml.template utilise désormais l'identité officielle, sans identité de test.
+Version publique prévue : 2.7.1 ; premier paquet Store retenu : 2.7.1.0.
+MinVersion=10.0.22000.0 est renseigné comme proposition Windows 11 ; la borne définitive reste à qualifier avant empaquetage.
+Les autres limites de qualification, finitions, confidentialité, visuels et certification restent ouvertes.
+Aucun test, compilation, signature ou paquet de production réalisé.
+
+CONFIDENTIALITE
+Aucun document d'identité, selfie, adresse personnelle, téléphone, courriel privé, secret de connexion,
+SID de compte ou identifiant d'authentification n'est recopié dans le dossier.
+Seules les informations publiques destinées à l'identité du produit et le résultat des étapes sont conservés.
+
+HISTORIQUE
+Les premières consultations n'avaient pas donné accès à un espace Windows inscrit.
+Cette limite est maintenant levée par l'inscription explicitement autorisée.
+Les anciennes observations et leurs fichiers restent disponibles dans l'historique Git.
+
+REFERENCE DU PARCOURS GRATUIT
+https://learn.microsoft.com/en-us/windows/apps/publish/whats-new-individual-developer

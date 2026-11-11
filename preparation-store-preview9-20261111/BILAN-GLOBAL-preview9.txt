@@ -80,7 +80,7 @@ Le dernier défaut S3 observé dans preview.8 est corrigé dans preview.9 ; les 
 BLOCAGES AVANT DIFFUSION
 D0 commun : fabriquer et qualifier le livrable final 2.7.1, après gel des finitions et métadonnées ; preview.9 reste une préversion.
 D1 qualité MSIX : S6, vraie ouverture de session avec démarrage autorisé puis désactivé, non exécutée.
-D3 Store : compte consulté, mais espace développeur Windows non accessible ; identité du produit et historique des paquets non obtenus.
+D3 Store : identité et historique acquis ; bornes OS et autres métadonnées de diffusion restent à finaliser.
 D4 Store : politique de confidentialité/contact/support et droits des ressources à finaliser.
 D5 Store : captures finales de soumission à préparer/approuver.
 D6 Store : paquet de production, rapport WACK et certification non acquis.
@@ -98,11 +98,8 @@ Aucun nouvel échec produit découvert dans cette lecture ; aucune correction de
 Aucune preuve de mise à jour d'une installation réelle 2.7.0, de vraie connexion Windows ou de certification ne doit être déduite du cycle EXE.
 
 PROCHAINE ACTION UTILE
-La lecture du compte Partner Center est réalisée ; Programs propose une inscription Windows et aucun espace de produits n’est accessible.
-Déterminer si ce compte doit être inscrit au programme Windows ou si le produit est dans un autre compte, avant de reprendre ses données.
-La liste fermée de six finitions est déjà préparée ; son exécution reste soumise à accord.
-Cela évite de fabriquer un paquet de production avec une identité inventée.
-Si ces informations ne sont pas disponibles, les laisser explicitement manquantes ; ne créer aucun compte, abonnement ou produit sans accord.
+Le programme Windows et le produit 9NJ14SZJP55B existent désormais. L'identité est renseignée.
+La liste fermée de six finitions est préparée ; terminer les métadonnées et contenus publics avant la production finale.
 Pour S6, seule une session Windows distincte persistante et accessible depuis l'extérieur apportera la preuve manquante ; aucun équipement disponible n'est présumé.
 Le plan existant ne doit pas être transformé en validation par un lancement manuel --silent.
 
@@ -112,19 +109,18 @@ Nouveau dossier isolé sur haloryva-preparation-store-preview9, base 18a647ed7c2
 Les archives binaires GitHub ont une rétention annoncée jusqu'au 11 décembre 2026 ; identifiants et textes ne remplacent pas ces archives.
 Voir preuves-et-sources.json, progression-chiffree.json, couverture-msix.json et preservation.json.
 
-COMPLEMENT DOCUMENTAIRE — AVANCEMENT ET DERNIERES FINITIONS
-A la demande de l'utilisateur, POINT-AVANCEMENT.txt et AVANCEMENT-PAR-JALONS.json
-comptent les étapes closes : 6/8 pour application/installateur et 6/12 avec le Store.
-Cet indice à poids égaux ne remplace pas les limites de couverture et ne mesure pas le temps restant.
-Le pourcentage global de qualité reste non calculé.
-La première consultation Partner Center avait échoué avant le portail ; elle est désormais suivie d’une lecture effective du compte.
-Le programme Windows n’y est pas accessible comme programme inscrit ; aucun produit ni historique n’a pu être consulté.
-Une liste fermée de six lots de finition 2.7.1 est préparée, sans code modifié.
-Aucun nouveau test, aucune compilation, signature, installation ni publication.
-Seul le camembert demandé a été ajouté localement dans le dossier de visualisation du chat.
-
-AJOUT — MANIFESTE DE PRODUCTION EN BROUILLON
-production-msix/AppxManifest.xml.template préparé ; il ne constitue pas un paquet ni une validation.
-Identité Microsoft et limite OS finales en attente ; version 2.7.1.0 proposée uniquement.
-Aucun test, compilation, changement binaire, signature, publication ou installation dans cette étape.
-Les jalons restent 6/8 et 6/12 : un brouillon ne clôt ni la production finale ni l’identité Store.
+COMPLEMENT — INSCRIPTION WINDOWS ET BROUILLON DE PRODUCTION
+Programme Windows individuel activé gratuitement ; contrôles personnels et contrat effectués par l'utilisateur.
+Haloryva Studio réservé dans la catégorie Application MSIX ou PWA ; produit 9NJ14SZJP55B à l'état de brouillon.
+Identité officielle :
+Name JulienLecomte.HaloryvaStudio
+Publisher CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1
+PublisherDisplayName Julien Lecomte
+PFN JulienLecomte.HaloryvaStudio_twtgq1d174ne0
+Nouveau produit sans paquet déposé ; premier paquet retenu 2.7.1.0, stable publique 2.7.1.
+Manifeste de production en brouillon complété ; MinVersion 10.0.22000.0 proposé pour Windows 11, non qualifié.
+Aucune soumission démarrée ; aucune compilation, recette, signature, installation ou publication.
+J10 est clos : 6/8 = 75 % pour application/installateur ; 7/12 = 58,3 % avec le Store.
+Comptage à poids égaux, pas une mesure du temps restant ni de qualité. Le pourcentage global de qualité reste non calculé.
+Le camembert local précédent 50 % reste conservé comme photographie historique, sans modification du PC.
+D3 reste partiel pour les autres métadonnées ; D0/D1/D4/D5/D6 et les limites antérieures ne sont pas déclarés clos.

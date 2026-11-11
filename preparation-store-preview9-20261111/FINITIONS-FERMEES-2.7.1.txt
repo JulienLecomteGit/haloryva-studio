@@ -49,13 +49,15 @@ L'autotest déclenché par l'installation appartient à cette future recette ; a
 L'installateur EXE n'est pas rendu signé par ce lot.
 
 F05 — Manifeste et emballage MSIX de production
-Renseigner uniquement les valeurs réelles du produit Partner Center : Name, Publisher et nom éditeur.
-Version proposée 2.7.1.0, conditionnée par l'historique du produit ; ne jamais forcer un retour de version.
+Identité officielle maintenant renseignée dans production-msix/AppxManifest.xml.template :
+JulienLecomte.HaloryvaStudio ; CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1 ; Julien Lecomte.
+Premier paquet retenu 2.7.1.0 : nouveau produit 9NJ14SZJP55B sans paquet antérieur ; ne jamais forcer un retour de version.
 Ne pas reprendre HaloryvaStudio.MsixLifecycleTest ni son identité d'essai non signée.
 Confirmer architecture/OS/langues, ressources visuelles et description runFullTrust.
 Conserver la tâche unique de démarrage et son choix désactivé par défaut ; aucune modification fonctionnelle proposée.
 Critère futur : contrôle du paquet réel et rapport de certification local, puis examen avant soumission.
-Les champs manquants de Partner Center empêchent de finaliser ce lot.
+La confirmation des bornes Windows proposées et la qualification/production du paquet empêchent encore de finaliser ce lot.
+La réservation et le renseignement du modèle ne valent pas validation du futur paquet.
 
 F06 — Documents et fiche de diffusion
 Finaliser FR/EN/ES, historique complet, instructions d'installation/désinstallation et limites connues.

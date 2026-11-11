@@ -2,13 +2,16 @@ HALORYVA STUDIO — MANIFESTE DE PRODUCTION EN BROUILLON
 11 novembre 2026 — texte préparé seulement, non empaqueté et non validé par MakeAppx/WACK.
 
 FICHIER
-AppxManifest.xml.template est un modèle documentaire incomplet.
-Son extension .template et trois marqueurs explicites empêchent de le confondre avec un manifeste prêt à livrer.
+AppxManifest.xml.template est un modèle documentaire avec identité officielle et bornes OS proposées.
+Son extension .template et son en-tête signalent son statut de brouillon non qualifié pour diffusion.
 Il n'est copié dans aucun layout et aucun script de compilation ou de recette n'est modifié.
 
 DEJA RENSEIGNE
-Nom souhaité Haloryva Studio ; éditeur affiché proposé Julien Lecomte, repris de Brand.Author.
-Version de paquet proposée 2.7.1.0, architecture x64, interface français / anglais / espagnol.
+Nom réservé Haloryva Studio ; éditeur confirmé Julien Lecomte.
+Identity Name : JulienLecomte.HaloryvaStudio.
+Identity Publisher : CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1.
+Valeurs relevées sur la page officielle Product identity le 11 novembre 2026.
+Version de premier paquet retenue 2.7.1.0, architecture x64, interface français / anglais / espagnol.
 Une seule application Id=Haloryva, Haloryva.exe, Windows.FullTrustApplication.
 Un seul StartupTask HaloryvaStudioStartup, Enabled=false, argument --silent.
 Capacité runFullTrust uniquement ; aucun allowElevation, service ou pilote ajouté.
@@ -17,23 +20,23 @@ Ces chemins existent dans le modèle d'essai conservé ; ils ne constituent pas 
 Les déclarations de langue ne créent pas de traduction nouvelle : les traductions sont déjà dans Haloryva.
 Les descriptions du manifeste restent françaises ; les fiches Store FR/EN/ES sont un document distinct.
 
-INFORMATIONS BLOQUANTES, NON DEVINEES
-__PARTNER_CENTER_IDENTITY_NAME__ : recopier Package/Identity/Name du produit effectivement réservé.
-__PARTNER_CENTER_IDENTITY_PUBLISHER__ : recopier Package/Identity/Publisher exactement.
-__MIN_WINDOWS_VERSION__ : arrêter la borne OS finale en fonction du périmètre de diffusion qualifié.
-Le nom réservé et PublisherDisplayName doivent aussi correspondre exactement aux valeurs de Partner Center.
-Le nom public souhaité et le nom de l'auteur n'établissent pas une réservation ni une identité Microsoft.
-L'historique des paquets demeure inconnu ; 2.7.1.0 n'est pas encore un numéro de dépôt confirmé.
+BORNE RENSEIGNEE COMME PROPOSITION
+MinVersion=10.0.22000.0 : première version Windows 11, proposée pour une diffusion Windows 11 uniquement.
+La borne définitive reste à arrêter en fonction du périmètre qualifié ; cette valeur ne prouve aucune compatibilité nouvelle.
+Les champs Microsoft, le nom réservé et PublisherDisplayName sont désormais renseignés exactement.
+Aucun paquet antérieur : produit créé aujourd'hui, sans soumission ni dépôt.
+La version 2.7.1.0 est retenue pour le premier paquet ; aucun fichier MSIX n'est fabriqué.
 
 BORNE WINDOWS ET PORTÉE
 Cible proposée : Windows 11 Desktop, binaire x64.
-Si la cible Windows 11 dès sa première version est retenue, la proposition MinVersion est 10.0.22000.0.
+Le brouillon renseigne MinVersion=10.0.22000.0 comme proposition Windows 11, sans annoncer un support validé de toutes ses versions.
 Cette proposition ne certifie pas la compatibilité de toutes les versions Windows 11.
 La borne d'essai 10.0.19041.0 n'est pas recopiée comme engagement de prise en charge de Windows 10.
 MaxVersionTested=10.0.26100.0 est conservé du manifeste d'essai existant.
 La preuve MSIX disponible sur Windows 11 Enterprise build 26200 utilise un Windows ARM64 avec EXE x64 émulé.
 Aucune validation nouvelle de Windows 11 x64 natif, du démarrage lors d'une vraie connexion ou de ces bornes n'a été exécutée ici.
-Ces choix doivent être finalisés avant la fabrication de production ; le modèle reste volontairement incomplet.
+Ces choix doivent être finalisés avant la fabrication de production ; le modèle reste explicitement un brouillon.
+Aucun marqueur d’identité ou d’OS fictif ne reste ; cela ne remplace pas la validation du manifeste.
 
 ORIGINE DU MODELE
 Base de structure : haloryva-ci/Inputs/msix-layout/AppxManifest.xml.
@@ -50,13 +53,13 @@ Installateur prévu : HaloryvaSetup_2.7.1.exe.
 AssemblyVersion prévu : 2.7.1.0.
 FileVersion proposé : 2.7.1.10, prochaine révision après le fichier preview.9 2.7.1.9,
 sous réserve qu'aucune nouvelle préversion n'ait été compilée entre-temps.
-Paquet Store proposé : 2.7.1.0, seulement après lecture de l'historique de la famille réelle.
+Premier paquet Store retenu : 2.7.1.0 ; le nouveau produit ne comporte aucun paquet antérieur.
 Le paquet d'essai 2.7.1.90 a une identité distincte ; il n'impose pas de produire un paquet Store 2.7.1.91.
 Ne jamais abaisser une version dans une même famille pour la faire correspondre au nom public.
 Aucune de ces métadonnées n'est appliquée aux fichiers exécutables existants.
 
 AVANT UNE FUTURE FABRICATION, APRES ACCORD SEPARE
-Accès au produit Store, reprise exacte de l'identité et vérification des versions.
+Identité et absence de paquet antérieur sont relevées ; vérifier seulement qu'aucun dépôt intermédiaire ne change cette situation avant la fabrication.
 Finitions fermées F01–F06 et bornes Windows arrêtées.
 Nouvel EXE stable avec provenance ; même EXE final pour l'installateur et le paquet Store.
 Préparer le layout avec les ressources applicatives nécessaires, sans pilotes de recette.
