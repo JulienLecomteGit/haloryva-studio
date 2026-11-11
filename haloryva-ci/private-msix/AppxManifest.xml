@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap desktop uap10 rescap">
+  <Identity Name="JulienLecomte.HaloryvaStudio"
+    Publisher="CN=2B9D024C-A1E6-44DF-B0A6-4C0CA61BFFD1"
+    Version="2.7.1.0" ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>Haloryva Studio</DisplayName>
+    <PublisherDisplayName>Julien Lecomte</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>Effets et annotations du curseur</Description>
+  </Properties>
+  <Dependencies>
+    
+    <TargetDeviceFamily Name="Windows.Desktop"
+      MinVersion="10.0.26200.0" MaxVersionTested="10.0.26200.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="fr-FR" />
+    <Resource Language="en-US" />
+    <Resource Language="es-ES" />
+  </Resources>
+  <Applications>
+    <Application Id="Haloryva" Executable="Haloryva.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Haloryva Studio" Description="Effets et annotations du curseur"
+        BackgroundColor="transparent" Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png" />
+      <Extensions>
+        <desktop:Extension Category="windows.startupTask" Executable="Haloryva.exe"
+          EntryPoint="Windows.FullTrustApplication" uap10:Parameters="--silent">
+          <desktop:StartupTask TaskId="HaloryvaStudioStartup" Enabled="false"
+            DisplayName="Haloryva Studio" />
+        </desktop:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
