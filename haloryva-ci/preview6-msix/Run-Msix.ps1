@@ -51,10 +51,13 @@ try {
         $xml.Package.Identity.Version='2.7.1.6'
         $xml.Package.Properties.DisplayName='Haloryva Studio — preview.6 MSIX test'
         $ns=$xml.DocumentElement.NamespaceURI
-        $xml.Package.Resources.RemoveAll()
+        # Keep the XmlElement: PowerShell's XML adapter exposes an emptied element as a string.
+        $resources=$xml.SelectSingleNode("/*[local-name()='Package']/*[local-name()='Resources']")
+        if(!$resources) { throw 'MSIX Resources element missing.' }
+        $resources.RemoveAll()
         foreach($language in @('fr-fr','en-us','es-es')) {
             $node=$xml.CreateElement('Resource',$ns); $node.SetAttribute('Language',$language)
-            [void]$xml.Package.Resources.AppendChild($node)
+            [void]$resources.AppendChild($node)
         }
         $xml.Package.Applications.Application.VisualElements.SetAttribute('DisplayName','Haloryva Studio — preview.6 test')
         $xml.Save($manifest)
