@@ -4,12 +4,12 @@ $out=Join-Path $env:RUNNER_TEMP 'haloryva-preview9-msix'
 if(Test-Path -LiteralPath $out){throw 'Fresh output required'}
 New-Item -ItemType Directory -Path $out|Out-Null
 $build=Join-Path $env:RUNNER_TEMP 'haloryva-preview9-build'
-$expected='B19528E2C077AA52B5BE5D293853E142ECD243DE39F1A87176A14A1A9DCF91D8'
+$expected='678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC'
 $old=Join-Path $env:RUNNER_TEMP 'preview8-frozen/Haloryva-test-2.7.1.80.msix'
 if((Get-FileHash -LiteralPath $old).Hash -cne 'D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9'){throw 'Previous manifest package differs'}
 $exe=Join-Path $build 'Haloryva.exe'
 $proof=Get-Content -LiteralPath (Join-Path $build 'build-provenance.json') -Raw|ConvertFrom-Json
-if((Get-FileHash -LiteralPath $exe).Hash -cne $expected -or $proof.SHA256 -cne $expected -or $proof.Commit -cne '4ed3f2ad13594bba2a5425db564cfaf3ff1c5521' -or $proof.Version -cne '2.7.1-preview.9'){throw 'Frozen preview.9 build differs'}
+if((Get-FileHash -LiteralPath $exe).Hash -cne $expected -or $proof.SHA256 -cne $expected -or $proof.Commit -cne 'a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5' -or $proof.Version -cne '2.7.1-preview.9'){throw 'Frozen preview.9 build differs'}
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $layout=Join-Path $out 'layout'
 [IO.Compression.ZipFile]::ExtractToDirectory($old,$layout)
@@ -38,4 +38,4 @@ try{
  try{$actual=[BitConverter]::ToString($hasher.ComputeHash($stream)).Replace('-','')}finally{$stream.Dispose();$hasher.Dispose()}
  if($actual -cne $expected){throw 'Packaged EXE changed'}
 }finally{$zip.Dispose()}
-[ordered]@{Version='2.7.1-preview.9';PackageVersion='2.7.1.90';ExecutableSHA256=$expected;PackageSHA256=(Get-FileHash -LiteralPath $package).Hash;BuildCommit='4ed3f2ad13594bba2a5425db564cfaf3ff1c5521';CompiledHere=$false;Signed=$false;Published=$false;PriorIdentityUnchanged=$true;Historical195Executed=$false}|ConvertTo-Json|Tee-Object -FilePath (Join-Path $out 'package-provenance.json')
+[ordered]@{Version='2.7.1-preview.9';PackageVersion='2.7.1.90';ExecutableSHA256=$expected;PackageSHA256=(Get-FileHash -LiteralPath $package).Hash;BuildCommit='a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5';CompiledHere=$false;Signed=$false;Published=$false;PriorIdentityUnchanged=$true;Historical195Executed=$false}|ConvertTo-Json|Tee-Object -FilePath (Join-Path $out 'package-provenance.json')

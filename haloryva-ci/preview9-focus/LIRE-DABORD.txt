@@ -1,10 +1,13 @@
-Premier retour au Studio sur preview.9 uniquement.
-EXE figé : 5A7CF59D6C4638F68474EBCCC9D4FDCEC610638D0EBCD612B2B5828B7411EE87
-Compilation acquise run 43029558353, aucune recompilation pendant les essais.
-MSIX d'essai version 2.7.1.90, même identité/manifeste que preview.8 hors version et EXE.
-Deux Windows 11 GitHub distincts, trace diagnostique activée et désactivée.
-Les 6 critères externes du premier retour restent ceux qui échouaient sur preview.8.
-Aucun second aller-retour ni relancement de l'application comme solution de secours.
-Contrôles supplémentaires : trace d'état lorsque demandée, arrêt des relectures bornées,
-absence de fichier diagnostique en mode normal.
-Aucune ancienne suite, 195 contrôles, session Windows réelle, signature ou publication.
+Premier retour au Studio sur preview.9 uniquement, candidat compilé a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5.
+EXE figé : 678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC
+Compilation run 43035196363, aucune recompilation pendant les essais.
+MSIX d'essai version 2.7.1.90, manifeste preview.8 conservé hors version et EXE.
+Deux Windows 11 GitHub distincts, diagnostic activé et désactivé.
+Les 6 critères fonctionnels restent inchangés. Aucun second aller-retour ni relance.
+Diagnostic : transition du vrai premier plan, état Windows lu après le premier retour,
+fin des relectures StartupTask bornées ; absence de journal en mode normal.
+La fenêtre de premier plan est échantillonnée toutes les 100 ms tant que le Studio
+est visible ; aucune lecture StartupTask continue. Aucun hook natif supplémentaire.
+Le retrait du paquet d'essai est borné à 60 s ; preuve fonctionnelle sauvée avant ce retrait.
+Les candidats initiaux et échecs sont conservés dans l'historique et les artefacts.
+Pas d'ancienne suite, de 195 contrôles, de connexion Windows réelle, signature ou release.

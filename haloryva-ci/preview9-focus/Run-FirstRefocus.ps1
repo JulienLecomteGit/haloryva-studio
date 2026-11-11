@@ -5,10 +5,10 @@ $out=Join-Path $env:RUNNER_TEMP ('preview9-live-focus-'+$TraceMode)
 if(Test-Path -LiteralPath $out){throw 'Fresh output required'}
 New-Item -ItemType Directory -Path $out|Out-Null
 $name='HaloryvaStudio.MsixLifecycleTest'
-$expected='B19528E2C077AA52B5BE5D293853E142ECD243DE39F1A87176A14A1A9DCF91D8'
+$expected='678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC'
 $package=Join-Path $env:RUNNER_TEMP 'haloryva-preview9-msix/Haloryva-test-2.7.1.90.msix'
 $packageProof=Get-Content -LiteralPath (Join-Path $env:RUNNER_TEMP 'haloryva-preview9-msix/package-provenance.json') -Raw|ConvertFrom-Json
-if((Get-FileHash -LiteralPath $package).Hash -cne $packageProof.PackageSHA256 -or $packageProof.ExecutableSHA256 -cne $expected -or $packageProof.BuildCommit -cne '4ed3f2ad13594bba2a5425db564cfaf3ff1c5521'){throw 'Frozen preview.9 package mismatch'}
+if((Get-FileHash -LiteralPath $package).Hash -cne $packageProof.PackageSHA256 -or $packageProof.ExecutableSHA256 -cne $expected -or $packageProof.BuildCommit -cne 'a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5'){throw 'Frozen preview.9 package mismatch'}
 $script:launchArguments=if($TraceMode -eq 'on'){'--startup-refresh-trace'}else{''}
 $registered=$null;$child=$null
 $report=[ordered]@{Version='2.7.1-preview.9';Status='started';ExecutableSHA256=$expected;PackageSHA256=(Get-FileHash -LiteralPath $package).Hash;Actual270Installed=$false;FixturesOnly=$true;Scope='Preview.9 first live refocus only';TraceMode=$TraceMode;RealLogonExecuted=$false;ApplicationRelaunched=$false;ActivationMessagesInjected=$false;RegistryWrittenByDriver=$false;Rebuilt=$false;Signed=$false;ReleasePublished=$false;Historical195Executed=$false;AcquiredSuitesRerun=$false;Checks=@();Dialogs=@()}
@@ -143,12 +143,13 @@ try {
   if(!(Test-Path -LiteralPath $traceFile)){throw 'Requested diagnostic trace missing'}
   $trace=Get-Content -LiteralPath $traceFile -Raw -Encoding UTF8
   $afterReturn=@((Get-Content -LiteralPath $traceFile -Encoding UTF8)|Where-Object {([DateTime]($_ -split '\t')[0]).ToUniversalTime() -ge ([DateTime]$report.FirstReturnStartedUTC).ToUniversalTime()})
-  Assert (($afterReturn -match '\tnative_foreground\t').Count -gt 0) 'native-foreground-event-observed-on-first-return'
+  Assert (($afterReturn -match '\tforeground_observed\t0\t1').Count -gt 0) 'real-foreground-transition-observed-on-first-return'
   Assert (($afterReturn -match '\tread_publish\t\d+\t1').Count -gt 0) 'trace-confirms-real-disabled-by-user-read'
   Start-Sleep -Milliseconds 3200
-  $stableTrace=(Get-FileHash -LiteralPath $traceFile).Hash
+  $stableReads=@((Get-Content -LiteralPath $traceFile -Encoding UTF8)|Where-Object {$_ -match '\tread_begin\t'}).Count
   Start-Sleep -Milliseconds 1100
-  Assert ((Get-FileHash -LiteralPath $traceFile).Hash -ceq $stableTrace) 'bounded-refresh-stops-without-permanent-polling'
+  $laterReads=@((Get-Content -LiteralPath $traceFile -Encoding UTF8)|Where-Object {$_ -match '\tread_begin\t'}).Count
+  Assert ($laterReads -eq $stableReads) 'bounded-refresh-stops-without-continuous-startup-reads'
   $report.DiagnosticTrace.Text=Get-Content -LiteralPath $traceFile -Raw -Encoding UTF8
  }else{
   Assert (!(Test-Path -LiteralPath $traceFile)) 'normal-mode-no-diagnostic-file'
@@ -167,7 +168,21 @@ finally{
  if($registered){
   $data=Join-Path $env:LOCALAPPDATA ('Packages\'+$registered.PackageFamilyName+'\LocalState\Haloryva')
   if(Test-Path -LiteralPath $data){Copy-Item -LiteralPath $data -Destination (Join-Path $out 'synthetic-msix-data') -Recurse}
-  if(!$child){try{Remove-AppxPackage -Package $registered.PackageFullName -ErrorAction Stop;$report.TestPackageRemoved=$true}catch{$report.CleanupError=$_.ToString()}}
+  # Save functional evidence before package cleanup, which stalled in a prior runner.
+  $report|ConvertTo-Json -Depth 10|Set-Content -LiteralPath (Join-Path $out 'functional-result-before-cleanup.json') -Encoding UTF8
+  if(!$child){
+   $cleanupJob=Start-Job -ScriptBlock {param($packageName) Remove-AppxPackage -Package $packageName -ErrorAction Stop} -ArgumentList $registered.PackageFullName
+   try{
+    if(Wait-Job -Job $cleanupJob -Timeout 60){
+     Receive-Job -Job $cleanupJob -ErrorAction Stop|Out-Null
+     $report.TestPackageRemoved=!(Get-AppxPackage -Name $name)
+    }else{
+     $report.CleanupError='Test package removal exceeded 60 seconds on this ephemeral runner'
+     Stop-Job -Job $cleanupJob
+    }
+   }catch{$report.CleanupError=$_.ToString()}
+   finally{Remove-Job -Job $cleanupJob -Force}
+  }
  }
  $savedLogs=Join-Path $out 'synthetic-msix-data/Logs'
  $savedTrace=Join-Path $savedLogs 'startup-refresh-recipe.tsv'
