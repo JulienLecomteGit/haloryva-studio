@@ -1,0 +1,75 @@
+HALORYVA STUDIO — DÉCISIONS DE DIFFUSION PREVIEW.8
+11 novembre 2026 — aucune exécution autorisée par ce document
+
+5 groupes ouverts bloquent le feu vert actuel (D1,D3,D4,D5,D6).
+D2 est un groupe conditionnel supplémentaire lié à la promesse de compatibilité 2.7.0.
+Il s'agit de groupes de travail, pas de six bugs identifiés.
+Les exigences de Microsoft sont distinguées de notre exigence de recette fonctionnelle.
+
+D1 — Démarrage MSIX en situation de session réelle
+Nature : technical_release_readiness
+Effet : Bloque notre validation définitive de l'option de démarrage et donc le feu vert complet prévu.
+Déjà acquis : Commandes du Studio, conservation après mise à jour, désactivation dans Windows et respect après relancement.
+Reste : S6 : activation puis nouvelle session Windows, lancement unique et silencieux ; désactivation puis session sans lancement. S3 : retour de focus réellement confirmé et rafraîchissement immédiat. Ni une activation API ni un relancement de l'application ne suffisent.
+Prochaine action proposée : Préparer une continuation de session dans un environnement Windows distinct autorisé, sans l'exécuter ; conserver le binaire.
+
+D2 — Passage depuis une installation réelle 2.7.0
+Nature : conditional_legacy_compatibility
+Effet : Bloque la promesse de migration/coexistence validée pour les utilisateurs 2.7.0 ; ne bloque pas à lui seul une première installation Store à périmètre explicitement limité.
+Déjà acquis : M1/M6 sur profil synthétique et mise à jour de paquets de même famille ; aucune installation 2.7.0.
+Reste : C1 et M7 : binaire/installateur stable exact, verrou commun et maintenance, import après installation réelle, ancienne installation et démarrage intacts.
+Prochaine action proposée : Préparer la recette distincte avec la stable préservée, après autorisation explicite d'installation dans cet environnement.
+
+D3 — Identité et fiche Partner Center
+Nature : store_submission_prerequisite
+Effet : Bloque la préparation de la soumission ou la mise à disposition Store.
+Déjà acquis : Brouillons FR/EN/ES et choix GitHub public, application gratuite, droits actuels conservés.
+Reste : Vérifier le compte et le nom réservé ; obtenir Name/Publisher exacts et historique des versions ; confirmer version finale, OS/architecture, marchés, classification et coordonnées.
+Prochaine action proposée : Renseigner les valeurs manquantes du fichier d'identité depuis Partner Center, en lecture seule. Aucun compte ni produit présumé absent.
+
+D4 — Confidentialité, contact et droits des ressources
+Nature : store_submission_prerequisite
+Effet : Bloque la préparation de la soumission ou la mise à disposition Store.
+Déjà acquis : Brouillon actualisé pour les copies locales et le choix de démarrage Windows. Aucune modification de licence.
+Reste : Approuver le texte, compléter le contact et le support ; prévoir une URL accessible et les versions adaptées FR/EN/ES ; confirmer les droits des ressources embarquées.
+Prochaine action proposée : Faire approuver les textes et coordonnées avant tout hébergement. Ne pas publier le brouillon comme politique définitive.
+
+D5 — Captures finales pour les fiches Store
+Nature : store_submission_prerequisite
+Effet : Bloque la préparation de la soumission ou la mise à disposition Store.
+Déjà acquis : 174 PNG de recette preview.7 produits, 84 examinés ; les captures de bureau 1024×768 ne constituent pas le jeu Store.
+Reste : Images du produit final conformes aux dimensions Store et aux langues des fiches ; aucune image finale de soumission approuvée.
+Prochaine action proposée : Préparer ultérieurement des captures réelles, par exemple 1920×1080, sans agrandir artificiellement les captures de recette ni relancer leurs contrôles.
+
+D6 — Paquet de production et certification
+Nature : store_submission_and_release_prerequisite
+Effet : Bloque la préparation de la soumission ou la mise à disposition Store.
+Déjà acquis : Installation, lancement/arrêt et mises à jour réels de paquets MSIX d'essai non signés ; justification runFullTrust préparée.
+Reste : Paquet avec identité Partner Center, version et manifeste finaux ; vérification WACK puis soumission/certification après accord. Aucun rapport WACK ni certification Store acquis.
+Prochaine action proposée : Préparer le paquet de production seulement lorsque l'identité est connue et le périmètre autorisé. Le Store signera le MSIX après certification ; aucun certificat à acheter pour cette voie.
+
+FINITIONS SANS BLOCAGE AUTOMATIQUE
+- F3/V7-ES-SON : sous-texte espagnol tronqué à 1024×768 ; proposition déjà préparée
+  « Sonido opcional, fácil de desactivar. ». Pas de modification dans preview.8.
+- F8 : Windows 11 x64 natif conseillé avant diffusion large ; DPI et multi-écrans
+  à valider si leur prise en charge est annoncée. Les facteurs 150/200 % des anciennes
+  cartes de noms ne prouvent pas le DPI du Studio complet.
+- F9 : gestes physiques et dispositions clavier EN/ES non acquis ; AltGr antérieur
+  sur disposition française ne prouve pas toutes les dispositions.
+- S4, M2, M4, M5, M6, U3 et parcours S5 restants : détail dans couverture-msix.json.
+  Une erreur reproductible découverte ultérieurement imposerait sa propre correction ciblée.
+- Nouveaux dialogues MSIX : revue visuelle FR/EN/ES à compléter ; catalogue traduit
+  ne signifie pas que chaque dialogue a été capturé dans les trois langues.
+- F10 : conserver les archives de preuve avant leur expiration du 11 décembre 2026.
+  Risque de perte d'archives, pas défaut de fonctionnement. Copie future à autoriser ;
+  les identifiants et comptes rendus versionnés ne remplacent pas les archives binaires.
+
+CORRESPONDANCE AVEC LE DOSSIER PREVIEW.7
+F1 → commandes/API/mise à jour et désactivation Windows acquises ; D1 résiduel.
+F2 → copies consenties et mises à jour de même famille acquises ; D2 résiduel.
+F3 → finition espagnole toujours ouverte.
+F4 → D3 ; F5 → D4 ; F6 → D5 ; F7 → D6.
+F8/F9/F10 → recommandations/limites ci-dessus.
+Aucun nouveau choix MIT/GPL ; droits actuels conservés comme demandé.
+La certification Store et la signature d'une éventuelle distribution EXE GitHub sont
+des sujets distincts. Aucun exécutable GitHub signé n'est préparé ni promis ici.

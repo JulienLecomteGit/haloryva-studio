@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "operation": "add_documentation_only",
+  "base_commit": "78c8063e7109e8e8529f82adf8f37d075fe20420",
+  "base_tree": "9f4c0c35f5a94563ea61b84e3dabf428d548b1e0",
+  "base_blob_count": 426,
+  "preexisting_branches": [
+    {
+      "name": "haloryva-2.7.0-c4",
+      "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+    },
+    {
+      "name": "haloryva-preparation-msix-preview7",
+      "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+    },
+    {
+      "name": "haloryva-preparation-store-preview5",
+      "sha": "f07890303144653049a05069841838ecd9b9d73d"
+    },
+    {
+      "name": "haloryva-preparation-store-preview7",
+      "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+    },
+    {
+      "name": "haloryva-tests-preview2",
+      "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+    },
+    {
+      "name": "haloryva-tests-preview3",
+      "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+    },
+    {
+      "name": "haloryva-tests-preview4",
+      "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+    },
+    {
+      "name": "haloryva-tests-preview5-msix",
+      "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+    },
+    {
+      "name": "haloryva-tests-preview5",
+      "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+    },
+    {
+      "name": "haloryva-tests-preview6",
+      "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+    },
+    {
+      "name": "haloryva-tests-preview7-msix",
+      "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+    },
+    {
+      "name": "haloryva-tests-preview7",
+      "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+    },
+    {
+      "name": "haloryva-tests-preview8-import",
+      "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420"
+    },
+    {
+      "name": "haloryva-tests-preview8",
+      "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+    },
+    {
+      "name": "main",
+      "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+    },
+    {
+      "name": "release/2.7.0-stable",
+      "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+    }
+  ],
+  "allowed_new_directory": "preparation-store-preview8-20261111",
+  "new_branch": "haloryva-preparation-store-preview8",
+  "preexisting_files_to_modify": 0,
+  "application_source_changes": 0,
+  "binary_changes": 0,
+  "workflow_changes": 0,
+  "local_file_writes": 0,
+  "local_execution": false,
+  "tests_launched": false,
+  "signing": false,
+  "release": false,
+  "workflow_trigger_review": {
+    "files": 24,
+    "all_push_triggers_restricted_to_preexisting_test_branches": true,
+    "new_documentation_branch_matches_none": true
+  },
+  "verification_status": "Pre-commit tree compared against baseline: all 426 prior blobs identical, 12 new documentation files only; all 16 prior branches unchanged. Final branch/action verification follows the documentation commit.",
+  "pre_commit_verification": {
+    "existing_blobs_checked": 426,
+    "existing_blobs_changed": 0,
+    "existing_branches_checked": 16,
+    "existing_branches_changed": 0,
+    "new_files": [
+      "preparation-store-preview8-20261111/BILAN-GLOBAL-preview8.txt",
+      "preparation-store-preview8-20261111/CERTIFICATION-et-CAPTURES.txt",
+      "preparation-store-preview8-20261111/CONFIDENTIALITE-brouillon.txt",
+      "preparation-store-preview8-20261111/DOSSIER-MICROSOFT-STORE.txt",
+      "preparation-store-preview8-20261111/FICHES-STORE-fr-en-es.txt",
+      "preparation-store-preview8-20261111/FINITIONS-AVANT-STORE.txt",
+      "preparation-store-preview8-20261111/LIRE-DABORD.txt",
+      "preparation-store-preview8-20261111/couverture-msix.json",
+      "preparation-store-preview8-20261111/identite-store.a-renseigner.json",
+      "preparation-store-preview8-20261111/preservation.json",
+      "preparation-store-preview8-20261111/preuves-et-sources.json",
+      "preparation-store-preview8-20261111/progression-chiffree.json"
+    ],
+    "tree_verified": "62ec60a7716be5449eef70a562f8db9da97619f6"
+  }
+}

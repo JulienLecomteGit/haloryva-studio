@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-11",
+  "global_completion_percentage": null,
+  "percentage_omitted_reason": "Scénarios de tailles différentes, acquis sur plusieurs versions et prérequis Store non pondérés : pas de pourcentage global fiable.",
+  "latest_existing_campaigns": {
+    "runs": 2,
+    "successful_runs": 2,
+    "failed_runs": 0,
+    "assertion_executions": 22,
+    "passed_assertion_executions": 22,
+    "import_assertions": 17,
+    "windows_disable_assertions": 5,
+    "scope": "Comprend les contrôles préalables du hash ; 22 assertions ne sont pas 22 scénarios fonctionnels distincts.",
+    "final_binary_used": true,
+    "simulated_startup_states": 0,
+    "legacy_profile": "synthetic_270_format_no_installed_270"
+  },
+  "msix_plan_coverage": {
+    "total": 17,
+    "complete": 5,
+    "partial": 9,
+    "not_executed": 3
+  },
+  "prior_candidate": {
+    "component_assertions_passed": 30,
+    "simulated_state_assertions_included": 14,
+    "fake_startup_service_assertions_included": 1,
+    "real_file_and_path_assertions_included": 15,
+    "lifecycle_passed_checks": 6,
+    "profile_fields_compared": 93,
+    "lifecycle_run_overall_success": false
+  },
+  "final_binary_prior_startup": {
+    "command_assertions_passed": 4,
+    "update_retained_actual_windows_state": true,
+    "actual_windows_logon": false
+  },
+  "inherited_preview7": {
+    "languages": 3,
+    "tools": 10,
+    "native_configurations": 6,
+    "button_cases": 66,
+    "title_render_cases": 90,
+    "plural_states": 18,
+    "scroll_routes": 36,
+    "page_captures": 84,
+    "png_generated": 174,
+    "png_visually_reviewed": 84,
+    "msix_clean_launch_exit_cycles": 7,
+    "reexecuted_on_preview8": false
+  },
+  "store_readiness": {
+    "blocking_groups": 5,
+    "of_which_technical_quality": 1,
+    "of_which_store_production": 4,
+    "additional_conditional_legacy_group": 1,
+    "production_package_documented": 0,
+    "wack_reports_documented": 0,
+    "store_certifications_documented": 0,
+    "final_store_screenshot_sets_approved": 0
+  },
+  "current_task": {
+    "tests_executed": 0,
+    "historical195_executed": 0,
+    "builds": 0,
+    "binary_changes": 0,
+    "workflow_changes": 0,
+    "local_modifications": 0,
+    "signatures": 0,
+    "releases": 0,
+    "store_submissions": 0
+  }
+}

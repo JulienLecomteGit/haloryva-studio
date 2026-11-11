@@ -1,0 +1,131 @@
+HALORYVA STUDIO — BILAN GLOBAL 2.7.1-preview.8
+11 novembre 2026 — consolidation de preuves existantes, aucun nouveau test
+
+CONCLUSION
+Les deux derniers parcours ciblés sont réussis : import avec consentement et fichiers
+PNG/WAV, puis désactivation depuis la vraie interface Windows, respectée après relancement.
+Le binaire final reste figé. Le dossier Store progresse ; aucune certification ni validation
+complète du démarrage à la connexion ou du passage depuis une installation 2.7.0 n'est acquise.
+
+POINT CHIFFRÉ
+- 2 campagnes complémentaires réussies sur 2 ; 0 échec dans ces deux campagnes.
+- 22 assertions réussies sur 22 : 17 import + 5 désactivation Windows.
+  Ce nombre inclut les vérifications préalables d'intégrité : ce ne sont pas 22 scénarios distincts.
+- Plan MSIX de 17 scénarios larges : 5 entièrement couverts, 9 partiellement couverts,
+  3 non exécutés. Avant les compléments : 4 complets, 9 partiels, 4 non exécutés.
+  S3 passe de non exécuté à partiel ; M1 de partiel à complet sur son périmètre de profil synthétique.
+  M6 reste partiel : les PNG/WAV valides sont acquis, les dialogues d'erreur restent à exercer.
+- Acquis précédents preview.8 : 30 assertions composants (dont 14 états simulés et
+  1 contrôle avec service de démarrage fictif), 6 vérifications de cycle MSIX et
+  93 champs de profil comparés sur le candidat antérieur ; 4 commandes de démarrage
+  réelles sur le binaire final. Ces nombres ne s'additionnent pas en une couverture unique.
+- Héritage preview.7 : 3 langues, 10 outils, 6 configurations de recette,
+  66 cas de boutons, 90 rendus de noms, 18 états de pluriels, 36 parcours de défilement.
+  174 PNG produits ; 84 examinés visuellement. 7 cycles MSIX lancement/arrêt propre.
+  Ces preuves restent attachées à preview.7 ; elles n'ont pas été rejouées sur preview.8.
+- 5 groupes bloquent encore notre feu vert Store : 1 groupe de validation fonctionnelle
+  et 4 groupes de préparation/certification Store. Un 6e groupe est conditionnel :
+  la migration/coexistence réellement installée 2.7.0, si cette compatibilité est annoncée.
+- 0 paquet de production, 0 rapport WACK, 0 certification Store documentés.
+- Pendant cette actualisation : 0 test, 0 compilation, 0 changement de binaire,
+  0 signature, 0 publication d'application, 0 modification du PC.
+Les 195 contrôles historiques restent acquis à leur version d'origine ; aucun n'a été relancé.
+Aucun pourcentage global n'est donné : les scénarios n'ont pas la même taille et les
+prérequis administratifs ne se mesurent pas comme des tests fonctionnels.
+
+BINAIRE ET PAQUETS
+EXE final : CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512
+Compilation déjà réussie : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43017117882
+Source de compilation : bba2ca20b5a6723550221ee770c620ff326bbac7
+MSIX B : D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9
+MSIX C : 08B68E89F32032C970B4B36EFFDE868772A10A0ECCFF542CF4BED810F57AAE73
+B/C contiennent le même EXE final ; seules leurs versions de paquet diffèrent, 2.7.1.80/81.
+Identité temporaire : HaloryvaStudio.MsixLifecycleTest_6f9y2rm4h9xya.
+Ces paquets non signés d'essai ne sont pas des paquets prêts à déposer au Store.
+
+IMPORT — ACQUIS DIRECT SUR LE BINAIRE FINAL
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43020483264
+17/17 assertions. Dialogue réel : Annuler au premier lancement, Refuser puis Accepter
+depuis « Reprendre mes réglages 2.7.0 », puis annuler le remplacement d'un profil existant.
+Aucune copie d'assets en cas d'annulation/refus ; refus mémorisé.
+Après consentement : PNG et WAV copiés exactement (SHA identiques) dans ImportedAssets,
+chemins indépendants, copie brute de récupération dans la destination ; sources inchangées
+jusqu'après l'arrêt normal. Les réglages attendus sont repris et le préréglage adapté.
+Les champs récents absents du profil ancien prennent leurs défauts : français et dix outils.
+Le profil importé porte LaunchAtLogin=true mais Windows reste désactivé (State=0).
+La boîte de dialogue est réellement celle de l'application ; les boutons Yes/No/Cancel
+proviennent du Windows de test anglophone.
+
+Périmètre exact : profil synthétique au format 2.7.0, PNG/WAV non personnels.
+Aucune installation réelle 2.7.0 ; aucune preuve nouvelle du sélecteur JSON générique,
+ni des dialogues pour assets absents/illisibles/trop gros. La copie d'un WAV valide
+ne constitue pas une recette de restitution audio de tous les formats WAV.
+
+DÉSACTIVATION WINDOWS — ACQUIS DIRECT SUR LE BINAIRE FINAL
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43021089861
+5/5 assertions. La vraie page Windows Applications de démarrage est ouverte ;
+le seul interrupteur Haloryva Studio Lifecycle Test passe de On à Off.
+State=1 (DisabledByUser) est observé en lecture seule. Après fermeture normale
+et relancement de Haloryva, le contrôle du Studio est désactivé et le démarrage
+reste interdit malgré LaunchAtLogin=true dans le profil. Aucun état Windows simulé,
+aucune écriture directe de Registre par le pilote.
+
+Limite distincte : LiveFocusConfirmed=false et LiveControlDisabled=false avant
+relancement. Le retour réel du focus n'est pas établi ; le rafraîchissement immédiat
+n'est donc pas validé. Cette trace ne suffit pas à attribuer un défaut à l'application.
+Un relancement de Haloryva n'est pas une nouvelle connexion à Windows.
+
+ENVIRONNEMENT ET RÉUTILISATION
+Les deux campagnes complémentaires et la commande de démarrage finale utilisent
+Windows 11 Enterprise ARM64, build 26200, avec EXE x64 émulé.
+La recette de composants utilise Windows Server 2025 x64, build 26100.
+Windows 11 x64 natif n'est pas validé par ces campagnes.
+La compilation conserve l'avertissement CS1701 de référence System.Runtime ; les appels
+WinRT de démarrage ont ensuite été exercés réellement. Il n'est pas masqué, mais aucun
+échec d'exécution ne lui est attribué dans les preuves retenues.
+
+Le candidat antérieur preview.8 a pour SHA :
+7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E
+Les 30 assertions (https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43014257655) et la comparaison des 93 champs
+(https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43014976009) portent sur ce candidat.
+Le seul changement applicatif vers le binaire final ajoute RefreshStartupStatusAsync
+dans l'événement Shown du Studio. Les composants de migration restent identiques.
+Ces preuves sont héritées avec cette limite, et non rebaptisées « tests du binaire final ».
+
+Le run 43014976009 est globalement en ÉCHEC : son auxiliaire de démarrage ne trouve pas
+le TaskId (0x80070057). Six vérifications indépendantes de migration/mise à jour passent :
+A→B→C sans désinstallation, 93 champs préservés, priorité LocalCache, sources intactes,
+refus d'un retour de version préservant profil et paquet. Quatre arrêts normaux.
+Le défaut du pilote ne transforme ni le run entier en réussite, ni ces six preuves en échecs.
+La voie réelle du Studio est ensuite validée par https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43017766592 :
+4 commandes, états Windows 0→2→0→2, conservation à la mise à jour, puis désactivation.
+Le --silent lancé manuellement n'est jamais présenté comme une connexion réelle.
+
+CE QUI BLOQUE ENCORE
+D1 — Notre validation fonctionnelle définitive : session Windows réelle avec/sans
+démarrage autorisé et rafraîchissement après retour de focus confirmé.
+D3 — Identité Partner Center et métadonnées finales à vérifier/renseigner.
+D4 — Confidentialité/contact/support et droits des ressources à finaliser ; URL manquante.
+D5 — Captures finales conformes à la fiche Store, non préparées.
+D6 — Paquet de production, contrôle WACK et certification Microsoft non exécutés.
+D2 conditionnel — Installation 2.7.0 réelle et coexistence : requis avant d'annoncer
+un passage entièrement validé depuis cette version. Les profils de test ne le prouvent pas.
+Ces conditions concernent la nouvelle diffusion ; la stable 2.7.0 existante reste intacte.
+
+FINITIONS ET RISQUES RÉSIDUELS
+Une troncature mineure connue subsiste sur le sous-titre espagnol de la carte Son
+à 1024×768 (V7-ES-SON), sans commande masquée : finition conseillée, non bloquante seule.
+Contrôles complémentaires conseillés : Windows 11 x64 natif, DPI du Studio entier,
+multi-écrans, boutons physiques et claviers EN/ES ; limiter les promesses aux preuves.
+Les cas d'erreur/concurrence et de mise à jour pendant application ouverte restent
+partiels dans couverture-msix.json ; absence de test ne signifie pas anomalie constatée.
+La revue visuelle complète des nouveaux dialogues MSIX FR/EN/ES reste à compléter.
+Aucun correctif ni nouvelle préversion n'est créé sur la seule base de ces inconnues.
+
+CONSERVATION
+Base 78c8063e7109e8e8529f82adf8f37d075fe20420 : 426 fichiers existants conservés.
+16 branches préexistantes à préserver, dont main, stable et toutes les préversions.
+Le dossier nouveau est isolé dans haloryva-preparation-store-preview8. Les anciens bilans restent inchangés.
+Les preuves textuelles et identifiants sont versionnés ; les archives GitHub preview.8
+consultées expirent le 11 décembre 2026. Aucun nouveau téléchargement effectué.
+Voir preuves-et-sources.json et preservation.json pour la provenance exacte.

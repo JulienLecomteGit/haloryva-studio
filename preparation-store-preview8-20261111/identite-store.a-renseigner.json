@@ -1,0 +1,111 @@
+{
+  "status": "DRAFT_NOT_A_SUBMISSION_MANIFEST",
+  "preparation_date": "2026-11-11",
+  "product_name_proposed": "Haloryva Studio",
+  "name_reserved": null,
+  "partner_center_account_checked": false,
+  "partner_center_product_id": null,
+  "package_identity_name": null,
+  "package_publisher": null,
+  "publisher_display_name": null,
+  "package_family_name": null,
+  "final_package_version": null,
+  "version_proposal_if_first_final_2_7_1_package": "2.7.1.0",
+  "version_proposal_requires_partner_center_history_check": true,
+  "package_architecture_proposed": "x64",
+  "min_windows_version_final": null,
+  "max_windows_version_tested_final": null,
+  "app_language_current": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "supported_languages_final": null,
+  "price_requested": "free",
+  "category_proposed": "Productivity",
+  "markets": null,
+  "age_rating": null,
+  "privacy_policy_url": null,
+  "support_url": null,
+  "support_url_proposed": "https://github.com/JulienLecomteGit/haloryva-studio/issues",
+  "privacy_contact": null,
+  "license_policy": "Keep existing rights; no new open source license.",
+  "rights_notice_existing": "© 2026 Julien Lecomte — droits réservés.",
+  "terms_approved": false,
+  "store_assets_approved": false,
+  "restricted_capability_requested": "runFullTrust",
+  "restricted_capability_approved": false,
+  "wack_executed": false,
+  "submitted": false,
+  "signed_this_task": false,
+  "published_this_task": false,
+  "forbidden_test_identity_for_final_submission": {
+    "name": "HaloryvaStudio.MsixLifecycleTest",
+    "publisher": "CN=JulienLecomteGit, OID.2.25.311729368913984317654407730594956997722=1",
+    "versions": [
+      "2.7.1.70",
+      "2.7.1.80",
+      "2.7.1.81"
+    ],
+    "family": "HaloryvaStudio.MsixLifecycleTest_6f9y2rm4h9xya",
+    "reason": "Identité d'essai non signée ; ne pas soumettre. L'ancienne identité Preview7UnsignedTest reste également exclue."
+  },
+  "source_preview": "2.7.1-preview.8",
+  "source_commit": "bba2ca20b5a6723550221ee770c620ff326bbac7",
+  "source_executable_sha256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+  "name_reservation_status": "not_checked",
+  "language_change_application": "next_application_launch",
+  "tested_environments": [
+    {
+      "purpose": "native_targeted_recipe",
+      "os": "Windows Server 2025 Datacenter",
+      "build": 26100,
+      "architecture": "x64"
+    },
+    {
+      "purpose": "MSIX_lifecycle_and_persistence",
+      "os": "Windows 11 Enterprise",
+      "build": 26200,
+      "architecture": "ARM64",
+      "executable_architecture": "x64",
+      "execution": "emulation"
+    }
+  ],
+  "native_windows11_x64_validation": false,
+  "windows10_validation": false,
+  "auto_start_msix_validation": {
+    "studio_enable_disable_final_binary": true,
+    "retained_after_same_identity_update_final_binary": true,
+    "disabled_by_user_in_windows_ui_final_binary": true,
+    "respected_on_application_relaunch_final_binary": true,
+    "live_refocus_refresh_validated": false,
+    "actual_windows_logon_validated": false
+  },
+  "real_270_migration_validation": false,
+  "same_identity_update_validation": {
+    "actual_update_passed": true,
+    "profile93_fields": "prior_preview8_candidate_only",
+    "startup_state": "final_preview8_binary",
+    "store_production_identity": false
+  },
+  "privacy_text_status": "draft_updated_for_preview8_contact_url_EN_ES_and_approval_pending",
+  "listing_languages_prepared": [
+    "fr-FR",
+    "en-US",
+    "es-ES"
+  ],
+  "final_store_screenshots_prepared": false,
+  "documentation_base_commit": "78c8063e7109e8e8529f82adf8f37d075fe20420",
+  "legacy_fixture_import_with_consent_and_png_wav": true,
+  "legacy_coexistence_validation": false,
+  "production_package_prepared": false,
+  "release_readiness": "not_ready_full_store_signoff",
+  "store_blocking_groups": [
+    "D1",
+    "D3",
+    "D4",
+    "D5",
+    "D6"
+  ],
+  "conditional_legacy_group": "D2"
+}

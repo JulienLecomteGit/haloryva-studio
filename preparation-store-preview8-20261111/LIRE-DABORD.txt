@@ -1,0 +1,25 @@
+HALORYVA STUDIO — DOSSIER GLOBAL PREVIEW.8
+Actualisation documentaire du 11 novembre 2026
+État : préversion techniquement avancée, pas encore prête pour une diffusion Store définitive.
+
+BILAN-GLOBAL-preview8.txt donne le point chiffré et le résultat des dernières preuves.
+FINITIONS-AVANT-STORE.txt sépare les blocages, la compatibilité 2.7.0 conditionnelle et les finitions.
+DOSSIER-MICROSOFT-STORE.txt, CERTIFICATION-et-CAPTURES.txt et identite-store.a-renseigner.json préparent la soumission.
+CONFIDENTIALITE-brouillon.txt et FICHES-STORE-fr-en-es.txt sont des brouillons à approuver.
+progression-chiffree.json et couverture-msix.json donnent les décomptes et critères précis.
+preuves-et-sources.json relie les faits aux campagnes et aux versions exécutées.
+preservation.json consigne le périmètre documentaire et les références de départ.
+
+Nouvelle branche documentaire : haloryva-preparation-store-preview8
+Base immuable : 78c8063e7109e8e8529f82adf8f37d075fe20420
+Tous les dossiers précédents restent conservés. Ce dossier actualise leurs conclusions :
+l'import par consentement avec PNG/WAV et la désactivation par Windows ont maintenant
+des preuves directes. Les anciennes mentions « non exécuté » restent des états historiques.
+Aucun test, compilation, signature, installation, téléchargement d'archive ou mise en ligne
+de l'application n'est réalisé dans cette actualisation. Aucun fichier local modifié.
+Les engagements de préservation ne signifient pas que le dossier est confidentiel :
+les nouveaux documents sont conservés dans la branche documentaire du dépôt public.
+
+Prochaine étape proposée : préparer uniquement les deux recettes restantes de démarrage
+(session réelle et retour de focus confirmé) et la liste des informations Partner Center.
+Cette proposition n'autorise aucune exécution, installation ou publication.

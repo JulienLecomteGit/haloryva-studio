@@ -1,0 +1,77 @@
+HALORYVA STUDIO — DOSSIER MICROSOFT STORE PREVIEW.8
+Actualisation du 11 novembre 2026 — brouillon, aucune soumission
+
+DÉCISIONS CONSERVÉES
+Application gratuite ; dépôt GitHub public ; diffusion visée par Microsoft Store/MSIX.
+Droits actuels conservés : © 2026 Julien Lecomte — droits réservés.
+Le caractère public du dépôt ne vaut pas adoption d'une licence MIT ou GPL.
+Nom proposé Haloryva Studio, catégorie proposée Productivité, interface FR/EN/ES.
+Marchés, classification, nom réservé et coordonnées restent à confirmer.
+Compte Partner Center non vérifié : ne pas interpréter cela comme une absence de compte.
+Le choix de langue est mémorisé et s'applique au prochain lancement de l'application.
+
+PRODUIT ET PÉRIMÈTRE TECHNIQUE
+Application Win32/WinForms, .NET Framework, EXE x64. Pas de binaire ARM64 natif préparé.
+Cible proposée Windows 11 Desktop x64 ; bornes finales du manifeste à fixer.
+Le minimum technique 19041 du prototype ne constitue pas une validation Windows 10.
+Des campagnes MSIX s'exécutent sous Windows 11 ARM64 en émulation x64 ; la recette
+native antérieure est sur Windows Server x64, pas sur Windows 11 x64 natif.
+Identité/Publisher, version du paquet, OS et ressources doivent correspondre au
+produit réservé dans Partner Center ; renseigner identite-store.a-renseigner.json.
+Proposition 2.7.1.0 seulement après vérification de l'historique des versions du produit.
+Les versions 2.7.1.80/81 et l'identité HaloryvaStudio.MsixLifecycleTest sont des essais.
+
+PREUVES AJOUTÉES AU DOSSIER
+Import : 17 assertions réussies, dialogues réels Annuler/Refuser/Accepter, PNG/WAV
+copiés avec intégrité, sources intactes, réglages et nouveaux défauts cohérents ;
+LaunchAtLogin=true importé n'active pas Windows. Profil synthétique, pas installation 2.7.0.
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43020483264
+Désactivation : 5 assertions réussies, vraie page Windows, état DisabledByUser,
+respect au relancement malgré l'ancien booléen du profil. Focus immédiat non confirmé.
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43021089861
+Binaire final commun : CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512
+Ces preuves complètent le bilan existant sans nouvelle compilation.
+Les commandes d'activation/désactivation du Studio et la conservation après mise à jour
+sont aussi acquises sur ce binaire (run 43017766592). La connexion Windows réelle reste ouverte.
+
+COMPORTEMENTS À DÉCRIRE AU CERTIFICATEUR
+Le paquet conserve ses réglages dans LocalState/Haloryva.
+Une ancienne configuration de la même famille MSIX a priorité pour la reprise.
+La reprise des réglages de la version classique est un choix explicite ; elle copie
+dans la destination, conserve les sources et n'uninstalle pas l'ancienne application.
+PNG/WAV lisibles : copie consentie et bornée à 10 Mio par fichier ; avertissements
+prévus pour les références non reprises, dont tous les dialogues ne sont pas encore validés.
+Démarrage désactivé par défaut, demande explicite par contrôle dédié ; respect du
+choix Windows. Les imports/changements ordinaires de réglages ne doivent pas activer
+la tâche. L'intégration StartupTask existe ; son lancement effectif à la connexion
+n'est pas encore acquis. Ne pas annoncer « démarrage entièrement certifié ».
+
+CAPACITÉ runFullTrust — JUSTIFICATION PRÉPARÉE
+L'application de bureau utilise des événements globaux de souris/clavier pour ses
+raccourcis, effets et annotations, avec superpositions, icône de notification,
+réglages locaux et export de fichiers choisi par l'utilisateur.
+Aucun pilote/service ou élévation administrateur n'est prévu pour ces fonctions.
+Déclarer la capacité nécessaire et fournir l'explication à Microsoft ; aucun accord
+sur la capacité ni certification n'est présumé. Pas d'ajout d'allowElevation.
+
+PRÉREQUIS DE SOUMISSION
+Les quatre groupes de production Store restent ouverts :
+D3 identité/métadonnées ; D4 confidentialité/contact/droits ; D5 captures ;
+D6 paquet final et vérification/certification.
+D1 reste notre condition de validation fonctionnelle. D2 dépend de l'annonce d'un
+passage pleinement validé depuis l'installation 2.7.0.
+Voir FINITIONS-AVANT-STORE.txt pour les critères de fermeture sans reprendre les acquis.
+
+SIGNATURE ET SOURCES OFFICIELLES
+Pour la voie MSIX/AppX Store, un certificat commercial de signature n'est pas nécessaire :
+Microsoft signe le paquet lors de sa mise à disposition après certification.
+Cela ne signe pas l'EXE diffusé séparément sur GitHub. Aucun certificat, signature
+ou publication n'est créé dans cette tâche.
+Identité, paquet et WACK :
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+Confidentialité Win32/Desktop Bridge et métadonnées :
+https://learn.microsoft.com/en-us/windows/apps/publish/store-policies
+Captures :
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images
+Pages consultées le 11 novembre 2026. Les informations privées Partner Center n'ont
+pas été consultées. Aucun site, compte, nom réservé, fiche soumise ou paiement créé.

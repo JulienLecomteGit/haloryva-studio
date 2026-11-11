@@ -1,0 +1,857 @@
+{
+  "schema_version": 2,
+  "date": "2026-11-11",
+  "version": "2.7.1-preview.8",
+  "status": "documentation_only_no_release_approval",
+  "documentation_branch": "haloryva-preparation-store-preview8",
+  "base_commit": "78c8063e7109e8e8529f82adf8f37d075fe20420",
+  "this_task": {
+    "tests_executed": 0,
+    "historical195_executed": 0,
+    "builds": 0,
+    "binary_changes": 0,
+    "workflow_changes": 0,
+    "local_modifications": 0,
+    "signatures": 0,
+    "releases": 0,
+    "store_submissions": 0
+  },
+  "final_binary": {
+    "sha256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+    "build_commit": "bba2ca20b5a6723550221ee770c620ff326bbac7",
+    "build_run": 43017117882
+  },
+  "existing_extra_evidence": {
+    "schema_version": 1,
+    "version": "2.7.1-preview.8",
+    "date": "2026-11-11",
+    "branch": "haloryva-tests-preview8-import",
+    "finalExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+    "frozenMSIXSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+    "sourceArtifact": {
+      "run": 43017325667,
+      "id": 13853108416
+    },
+    "import": {
+      "run": 43020483264,
+      "status": "success",
+      "results": [
+        {
+          "Version": "2.7.1-preview.8",
+          "Status": "import-ui-passed",
+          "ExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+          "PackageSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+          "Actual270Installed": false,
+          "FixturesOnly": true,
+          "Rebuilt": false,
+          "Signed": false,
+          "ReleasePublished": false,
+          "Historical195Executed": false,
+          "AcquiredSuitesRerun": false,
+          "Checks": [
+            {
+              "Id": "frozen-installed-exe",
+              "Passed": true
+            },
+            {
+              "Id": "cancel-keeps-pending",
+              "Passed": true
+            },
+            {
+              "Id": "cancel-no-asset-copy",
+              "Passed": true
+            },
+            {
+              "Id": "cancel-original-unchanged",
+              "Passed": true
+            },
+            {
+              "Id": "refusal-remembered",
+              "Passed": true
+            },
+            {
+              "Id": "refusal-no-asset-copy",
+              "Passed": true
+            },
+            {
+              "Id": "refusal-no-startup-change",
+              "Passed": true
+            },
+            {
+              "Id": "accepted-fixture-settings",
+              "Passed": true
+            },
+            {
+              "Id": "new-fields-defaults",
+              "Passed": true
+            },
+            {
+              "Id": "independent-asset-paths",
+              "Passed": true
+            },
+            {
+              "Id": "png-and-wav-copied-exactly",
+              "Passed": true
+            },
+            {
+              "Id": "preset-cleared-for-new-paths",
+              "Passed": true
+            },
+            {
+              "Id": "all-source-bytes-unchanged",
+              "Passed": true
+            },
+            {
+              "Id": "raw-recovery-copy",
+              "Passed": true
+            },
+            {
+              "Id": "import-true-does-not-enable-windows",
+              "Passed": true
+            },
+            {
+              "Id": "cancel-preserves-existing-profile",
+              "Passed": true
+            },
+            {
+              "Id": "source-unchanged-after-normal-exit",
+              "Passed": true
+            }
+          ],
+          "Dialogs": [
+            {
+              "RealWin32Dialog": true,
+              "AnswerId": 2,
+              "Stage": "initial-cancel",
+              "Text": "Haloryva Studio\n&Yes\n&No\nCancel\nCopier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés."
+            },
+            {
+              "RealWin32Dialog": true,
+              "AnswerId": 7,
+              "Stage": "explicit-refuse",
+              "Text": "Haloryva Studio\n&Yes\n&No\nCancel\nCopier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés."
+            },
+            {
+              "RealWin32Dialog": true,
+              "AnswerId": 6,
+              "Stage": "explicit-consent",
+              "Text": "Haloryva Studio\n&Yes\n&No\nCancel\nCopier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés."
+            },
+            {
+              "RealWin32Dialog": true,
+              "AnswerId": 2,
+              "Stage": "cancel-existing-profile-replacement",
+              "Text": "Haloryva Studio\n&Yes\n&No\nCancel\nCopier les réglages 2.7.0 et les PNG/WAV personnalisés lisibles (10 Mio maximum par fichier) ? L'ancienne installation et son démarrage resteront inchangés.\n\nLes réglages actuels seront sauvegardés avant leur remplacement."
+            }
+          ],
+          "Environment": {
+            "Architecture": "ARM64",
+            "Build": "26200",
+            "OS": "Microsoft Windows 11 Enterprise",
+            "Image": "20261101.203.1"
+          },
+          "Fixture": {
+            "WAV": "60C0B6C740C791F5D9C1B7D688AA4E6719B93C8F4E7C4B7919AB86AD78B74068",
+            "AbsentNewFields": [
+              "UiLanguage",
+              "DrawingToolCycle"
+            ],
+            "SourceSHA256": "B685A1846C22696F76B6E76A68101FE84CE39EF7B721BF8886C473B39A1E8FBF",
+            "PNG": "FFC591E7489EC8754636564F5BF019520F45AA43F876C355FD533AB6803ADE40",
+            "Kind": "synthetic-270-format-no-installed-270"
+          },
+          "ImportedSummary": {
+            "LaunchAtLoginStored": true,
+            "Language": "fr",
+            "Tools": [
+              "Stylo",
+              "Surligneur",
+              "Ligne droite",
+              "Rectangle",
+              "Ellipse",
+              "Flèche droite",
+              "Flèche libre",
+              "Forme libre",
+              "Numéro",
+              "Texte"
+            ],
+            "Thickness": 8,
+            "PNGTargetSHA256": "FFC591E7489EC8754636564F5BF019520F45AA43F876C355FD533AB6803ADE40",
+            "WAVTargetSHA256": "60C0B6C740C791F5D9C1B7D688AA4E6719B93C8F4E7C4B7919AB86AD78B74068",
+            "ProfileSHA256": "5BF7D4A569F7FB41FBE454F5D00165DCDE4835FB8FD23FD98CC509D752A02FA8",
+            "WindowsStartupState": 0
+          },
+          "TestPackageRemoved": true
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 13855181243,
+          "name": "preview8-import-ui-evidence",
+          "size_in_bytes": 8128,
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13855181243",
+          "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13855181243/zip",
+          "expired": false,
+          "created_at": "2026-11-11T12:28:46Z",
+          "expires_at": "2026-12-11T12:28:45Z",
+          "updated_at": "2026-11-11T12:28:46Z",
+          "digest": "sha256:680edb8239849d98e8fadc4da284cdb570087d4609dfcfd762a8e72884ff9868",
+          "workflow_run": {
+            "id": 43020483264,
+            "repository_id": 1450529585,
+            "head_repository_id": 1450529585,
+            "head_branch": "haloryva-tests-preview8-import",
+            "head_sha": "ee449ff6d356929ad4592a4e599a7a6a0cfccd0c"
+          }
+        }
+      ]
+    },
+    "windowsStartup": {
+      "run": 43021089861,
+      "status": "success",
+      "results": [
+        {
+          "Version": "2.7.1-preview.8",
+          "Status": "windows-startup-disable-passed",
+          "ExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+          "PackageSHA256": "D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9",
+          "Actual270Installed": false,
+          "FixturesOnly": true,
+          "Rebuilt": false,
+          "Signed": false,
+          "ReleasePublished": false,
+          "Historical195Executed": false,
+          "AcquiredSuitesRerun": false,
+          "Checks": [
+            {
+              "Id": "frozen-installed-exe",
+              "Passed": true
+            },
+            {
+              "Id": "windows-toggle-on-before-action",
+              "Passed": true
+            },
+            {
+              "Id": "windows-disabled-by-user-real-state",
+              "Passed": true
+            },
+            {
+              "Id": "relaunch-respects-disabled-by-user",
+              "Passed": true
+            },
+            {
+              "Id": "historical-json-does-not-override-windows",
+              "Passed": true
+            }
+          ],
+          "Dialogs": [],
+          "Environment": {
+            "Architecture": "ARM64",
+            "Build": "26200",
+            "OS": "Microsoft Windows 11 Enterprise",
+            "Image": "20261101.203.1"
+          },
+          "Setup": {
+            "StartupEnabledForWindowsDisable": true,
+            "PriorS2SuiteRerun": false
+          },
+          "WindowsSettingsOpened": true,
+          "WindowsControlBefore": "name=Haloryva Studio Lifecycle Test id=2277e2a9382cef8d_ToggleSwitch type=ControlType.Button enabled=True offscreen=False toggle=On",
+          "WindowsControlAfter": "name=Haloryva Studio Lifecycle Test id=2277e2a9382cef8d_ToggleSwitch type=ControlType.Button enabled=True offscreen=False toggle=Off",
+          "StateAfterWindowsAction": 1,
+          "LiveFocusConfirmed": false,
+          "LiveControlDisabled": false,
+          "LiveState": 1,
+          "StoredLaunchAtLoginBeforeRestart": true,
+          "TestPackageRemoved": true
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 13854413758,
+          "name": "preview8-windows-startup-evidence",
+          "size_in_bytes": 7286,
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13854413758",
+          "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13854413758/zip",
+          "expired": false,
+          "created_at": "2026-11-11T12:33:16Z",
+          "expires_at": "2026-12-11T12:33:16Z",
+          "updated_at": "2026-11-11T12:33:16Z",
+          "digest": "sha256:2e9f67bd92b6389394e47791daed613c7d3f2de3d3ad209b2619ce5e63b9145f",
+          "workflow_run": {
+            "id": 43021089861,
+            "repository_id": 1450529585,
+            "head_repository_id": 1450529585,
+            "head_branch": "haloryva-tests-preview8-import",
+            "head_sha": "43f5a6862b7abc48b61c998e1081914d1dc0e62b"
+          }
+        }
+      ]
+    },
+    "executedOnlyNewScope": true,
+    "olderSuitesExecuted": false,
+    "actual270Installed": false,
+    "realWindowsSettingsUsed": true,
+    "registryMutationByDriver": false,
+    "simulatedStartupStateUsed": false,
+    "limits": {
+      "liveRefocusConfirmed": false,
+      "liveRefreshValidated": false,
+      "actualWindowsLogonExecuted": false,
+      "actualInstalled270MigrationExecuted": false,
+      "oversizeAssetConsentDialogExecuted": false,
+      "unreadableAssetConsentDialogExecuted": false,
+      "genericJSONFilePickerPathExecuted": false,
+      "physicalMouseInputRecipe": false
+    },
+    "preservation": {
+      "protectedBranches": [
+        {
+          "name": "haloryva-2.7.0-c4",
+          "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+        },
+        {
+          "name": "haloryva-preparation-msix-preview7",
+          "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+        },
+        {
+          "name": "haloryva-preparation-store-preview5",
+          "sha": "f07890303144653049a05069841838ecd9b9d73d"
+        },
+        {
+          "name": "haloryva-preparation-store-preview7",
+          "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+        },
+        {
+          "name": "haloryva-tests-preview2",
+          "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+        },
+        {
+          "name": "haloryva-tests-preview3",
+          "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+        },
+        {
+          "name": "haloryva-tests-preview4",
+          "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+        },
+        {
+          "name": "haloryva-tests-preview5-msix",
+          "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+        },
+        {
+          "name": "haloryva-tests-preview5",
+          "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+        },
+        {
+          "name": "haloryva-tests-preview6",
+          "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+        },
+        {
+          "name": "haloryva-tests-preview7-msix",
+          "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+        },
+        {
+          "name": "haloryva-tests-preview7",
+          "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+        },
+        {
+          "name": "haloryva-tests-preview8",
+          "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+        },
+        {
+          "name": "main",
+          "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+        },
+        {
+          "name": "release/2.7.0-stable",
+          "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+        }
+      ],
+      "unchangedPriorFiles": 416,
+      "localComputerReadOrWriteOperations": 0,
+      "productionSourceChanges": 0,
+      "binaryRebuilds": 0,
+      "signatureCreated": false,
+      "releasePublished": false,
+      "storePublished": false
+    }
+  },
+  "prior_component_evidence": {
+    "run": 43014257655,
+    "conclusion": "success",
+    "binary": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+    "assertions": 30,
+    "simulated_state_assertions": 14,
+    "results": [
+      {
+        "Version": "2.7.1-preview.8",
+        "Mode": "unit",
+        "Passed": true,
+        "Checks": [
+          {
+            "Id": "M1-language-tools",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M1-fields",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M1-source-unchanged",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M4-refuse-overwrite",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M2-backup-no-repair",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M2-invalid-refused",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M2-limit",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M5-concurrent-destination",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M5-rollback-source-target",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M1-270-defaults",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M6-asset-plan",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M6-image-copy",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M6-preset-missing-reference",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-0",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-0",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-1",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-1",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-2",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-2",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-3",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-3",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-4",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-4",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state--1",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission--1",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-99",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-99",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "M4-protected-roots",
+            "Kind": "isolated-path-policy",
+            "Passed": true
+          },
+          {
+            "Id": "S5-import-no-startup-calls",
+            "Kind": "real-controller-fake-startup",
+            "Passed": true
+          },
+          {
+            "Id": "M1-controller-source-intact",
+            "Kind": "real-controller-isolated-files",
+            "Passed": true
+          }
+        ],
+        "Historical195Executed": false
+      },
+      {
+        "Version": "2.7.1-preview.8",
+        "SHA256": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+        "BuildRun": 43013253531,
+        "RecipeRun": "43014257655",
+        "Status": "targeted-passed",
+        "OS": "Microsoft Windows Server 2025 Datacenter",
+        "Build": "26100",
+        "Arch": "X64",
+        "Image": "20261103.298.1",
+        "Historical195Executed": false,
+        "Signed": false,
+        "Published": false,
+        "DriverSHA256": "A6BDE68F85757463075773B33387EAF04FE568DFADA6D0A0F8CF7EE0D69E48C4",
+        "Assertions": 30,
+        "SimulatedAssertions": 14
+      }
+    ],
+    "executed_on_final_binary": false
+  },
+  "prior_lifecycle_evidence": {
+    "run": 43014976009,
+    "conclusion": "failure",
+    "qualification": "migration/update checks passed; secondary-app startup helper failed",
+    "binary": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+    "passed_independent_lifecycle_checks": 6,
+    "profile_fields_compared": 93,
+    "clean_launch_exit_cycles": 4,
+    "executed_on_final_binary": false,
+    "full_evidence_path": "bilan-preview8-20261111/preuves.json"
+  },
+  "final_studio_startup_evidence": {
+    "id": 43017766592,
+    "status": "success",
+    "results": [
+      {
+        "Status": "startup-ui-passed",
+        "Version": "2.7.1-preview.8",
+        "ExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+        "Rebuilt": false,
+        "Signed": false,
+        "Published": false,
+        "Historical195Executed": false,
+        "RealLogonExecuted": false,
+        "Checks": [
+          {
+            "LaunchAtLogin": true,
+            "Kind": "real-studio-keyboard-command-and-confirmed-settings",
+            "Id": "S2-studio-enable",
+            "Passed": true
+          },
+          {
+            "LaunchAtLogin": false,
+            "Kind": "real-studio-keyboard-command-and-confirmed-settings",
+            "Id": "S2-studio-disable",
+            "Passed": true
+          },
+          {
+            "LaunchAtLogin": true,
+            "Kind": "real-studio-keyboard-command-and-confirmed-settings",
+            "Id": "U2-studio-enabled-before-update",
+            "Passed": true
+          },
+          {
+            "LaunchAtLogin": false,
+            "Kind": "real-studio-keyboard-command-and-confirmed-settings",
+            "Id": "U2-studio-retained-and-disable",
+            "Passed": true
+          }
+        ],
+        "States": [
+          {
+            "Stage": "opened-2.7.1.80",
+            "RegistryReadOnly": {
+              "UserEnabledStartupOnce": 0,
+              "ShowNotification": 1,
+              "State": 0
+            }
+          },
+          {
+            "Found": true,
+            "Stage": "control-found",
+            "Enabled": true
+          },
+          {
+            "Stage": "S2-studio-enable",
+            "RegistryReadOnly": {
+              "State": 2,
+              "UserEnabledStartupOnce": 1
+            }
+          },
+          {
+            "Stage": "S2-studio-disable",
+            "RegistryReadOnly": {
+              "State": 0,
+              "LastDisabledTime": 1794398976,
+              "UserEnabledStartupOnce": 1
+            }
+          },
+          {
+            "Stage": "U2-studio-enabled-before-update",
+            "RegistryReadOnly": {
+              "State": 2,
+              "LastDisabledTime": 1794398976,
+              "UserEnabledStartupOnce": 1
+            }
+          },
+          {
+            "Stage": "opened-2.7.1.81",
+            "RegistryReadOnly": {
+              "State": 2,
+              "LastDisabledTime": 1794398976,
+              "UserEnabledStartupOnce": 1
+            }
+          },
+          {
+            "Found": true,
+            "Stage": "control-found",
+            "Enabled": true
+          },
+          {
+            "Stage": "U2-studio-retained-and-disable",
+            "RegistryReadOnly": {
+              "State": 0,
+              "LastDisabledTime": 1794398982,
+              "UserEnabledStartupOnce": 1
+            }
+          }
+        ],
+        "Environment": {
+          "Caption": "Microsoft Windows 11 Enterprise",
+          "Arch": "ARM64",
+          "Build": "26200",
+          "Image": "20261101.203.1"
+        },
+        "Family": "HaloryvaStudio.MsixLifecycleTest_6f9y2rm4h9xya",
+        "CleanupPackageRemoved": true
+      }
+    ],
+    "executed_on_final_binary": true,
+    "physical_mouse_gesture_validated": false,
+    "real_logon_validated": false
+  },
+  "source_diff_justifying_targeted_reuse": {
+    "file": "haloryva-ci/preview8/src/PremiumStudioForm.cs",
+    "before": "Shown += delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); };",
+    "after": "Shown += async delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); await engine.RefreshStartupStatusAsync(); };",
+    "baseBinary": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+    "finalBinary": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512"
+  },
+  "inherited_preview7": {
+    "source_path": "preparation-store-preview7-20261111/preuves-et-sources.json",
+    "source_commit": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c",
+    "binary": "B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604",
+    "native_totals": {
+      "Configurations": 6,
+      "TargetedAssertionExecutions": 1371,
+      "TitleRenderCases": 90,
+      "NativeButtonCases": 66,
+      "PluralStates": 18,
+      "ScrollRoutes": 36,
+      "ScrollCaptures": 84
+    },
+    "visual_review": {
+      "generated": 174,
+      "inspected": 84,
+      "missing_scroll_zone_images_inspected": 48,
+      "findings": [
+        {
+          "id": "V7-ES-SON",
+          "severity": "minor",
+          "file": "scroll-page-3-section-0-y416-es.png",
+          "finding": "Le sous-titre de la carte Sonidos est terminé par une ellipse à 1024×768 : «Respuesta sonora que puedes desactivar en cualquier mo...». Les commandes et leur aide restent lisibles. Texte déjà présent dans preview.6, zone jusqu’ici non capturée."
+        }
+      ],
+      "reviewed_file_list_source": "https://github.com/JulienLecomteGit/haloryva-studio/blob/5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa/preuves-preview7-visuel-20261111/resultats-consolides.json"
+    },
+    "warning": "Acquis des anciennes versions, non rejoués sur preview.8. Le run 42957475470 est globalement rouge malgré ses trois jobs observer-on réussis."
+  },
+  "source_reports": [
+    {
+      "commit": "61db4b63737c3907216c9d4bee2bc8485662f2aa",
+      "path": "bilan-preview8-20261111/BILAN-preview8-20261111.txt"
+    },
+    {
+      "commit": "78c8063e7109e8e8529f82adf8f37d075fe20420",
+      "path": "bilan-preview8-complements-20261111/BILAN-import-Windows.txt"
+    },
+    {
+      "commit": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43",
+      "path": "preparation-msix-preview7-20261111/recette-ciblee-preparee.json"
+    },
+    {
+      "commit": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c",
+      "path": "preparation-store-preview7-20261111/BILAN-GLOBAL-preview7.txt"
+    }
+  ],
+  "store_gates": [
+    {
+      "id": "D1",
+      "title": "Démarrage MSIX en situation de session réelle",
+      "kind": "technical_release_readiness",
+      "blocks_store_signoff": true,
+      "conditional": false,
+      "remaining": "S6 : activation puis nouvelle session Windows, lancement unique et silencieux ; désactivation puis session sans lancement. S3 : retour de focus réellement confirmé et rafraîchissement immédiat. Ni une activation API ni un relancement de l'application ne suffisent.",
+      "already_acquired": "Commandes du Studio, conservation après mise à jour, désactivation dans Windows et respect après relancement.",
+      "reason": "Condition de notre validation fonctionnelle définitive ; pas un formulaire supplémentaire imposé par Microsoft.",
+      "next_action": "Préparer une continuation de session dans un environnement Windows distinct autorisé, sans l'exécuter ; conserver le binaire."
+    },
+    {
+      "id": "D2",
+      "title": "Passage depuis une installation réelle 2.7.0",
+      "kind": "conditional_legacy_compatibility",
+      "blocks_store_signoff": false,
+      "conditional": true,
+      "condition": "Bloque la promesse de migration/coexistence validée pour les utilisateurs 2.7.0 ; ne bloque pas à lui seul une première installation Store à périmètre explicitement limité.",
+      "remaining": "C1 et M7 : binaire/installateur stable exact, verrou commun et maintenance, import après installation réelle, ancienne installation et démarrage intacts.",
+      "already_acquired": "M1/M6 sur profil synthétique et mise à jour de paquets de même famille ; aucune installation 2.7.0.",
+      "next_action": "Préparer la recette distincte avec la stable préservée, après autorisation explicite d'installation dans cet environnement."
+    },
+    {
+      "id": "D3",
+      "title": "Identité et fiche Partner Center",
+      "kind": "store_submission_prerequisite",
+      "blocks_store_signoff": true,
+      "conditional": false,
+      "remaining": "Vérifier le compte et le nom réservé ; obtenir Name/Publisher exacts et historique des versions ; confirmer version finale, OS/architecture, marchés, classification et coordonnées.",
+      "already_acquired": "Brouillons FR/EN/ES et choix GitHub public, application gratuite, droits actuels conservés.",
+      "next_action": "Renseigner les valeurs manquantes du fichier d'identité depuis Partner Center, en lecture seule. Aucun compte ni produit présumé absent."
+    },
+    {
+      "id": "D4",
+      "title": "Confidentialité, contact et droits des ressources",
+      "kind": "store_submission_prerequisite",
+      "blocks_store_signoff": true,
+      "conditional": false,
+      "remaining": "Approuver le texte, compléter le contact et le support ; prévoir une URL accessible et les versions adaptées FR/EN/ES ; confirmer les droits des ressources embarquées.",
+      "already_acquired": "Brouillon actualisé pour les copies locales et le choix de démarrage Windows. Aucune modification de licence.",
+      "next_action": "Faire approuver les textes et coordonnées avant tout hébergement. Ne pas publier le brouillon comme politique définitive."
+    },
+    {
+      "id": "D5",
+      "title": "Captures finales pour les fiches Store",
+      "kind": "store_submission_prerequisite",
+      "blocks_store_signoff": true,
+      "conditional": false,
+      "remaining": "Images du produit final conformes aux dimensions Store et aux langues des fiches ; aucune image finale de soumission approuvée.",
+      "already_acquired": "174 PNG de recette preview.7 produits, 84 examinés ; les captures de bureau 1024×768 ne constituent pas le jeu Store.",
+      "next_action": "Préparer ultérieurement des captures réelles, par exemple 1920×1080, sans agrandir artificiellement les captures de recette ni relancer leurs contrôles."
+    },
+    {
+      "id": "D6",
+      "title": "Paquet de production et certification",
+      "kind": "store_submission_and_release_prerequisite",
+      "blocks_store_signoff": true,
+      "conditional": false,
+      "remaining": "Paquet avec identité Partner Center, version et manifeste finaux ; vérification WACK puis soumission/certification après accord. Aucun rapport WACK ni certification Store acquis.",
+      "already_acquired": "Installation, lancement/arrêt et mises à jour réels de paquets MSIX d'essai non signés ; justification runFullTrust préparée.",
+      "next_action": "Préparer le paquet de production seulement lorsque l'identité est connue et le périmètre autorisé. Le Store signera le MSIX après certification ; aucun certificat à acheter pour cette voie."
+    }
+  ],
+  "official_sources": [
+    {
+      "subject": "package_identity_WACK_store_signing",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements",
+      "reviewed_on": "2026-11-11"
+    },
+    {
+      "subject": "screenshots",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/screenshots-and-images",
+      "reviewed_on": "2026-11-11"
+    },
+    {
+      "subject": "privacy_win32_metadata",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/store-policies",
+      "reviewed_on": "2026-11-11"
+    }
+  ],
+  "retention": {
+    "preview8_artifact_expiry": "2026-12-11",
+    "archives_downloaded_this_task": false,
+    "warning": "GitHub artifacts expire; committed text is durable but is not a replacement for the original binaries, logs and images."
+  },
+  "run_metadata_rechecked_without_dispatch": [
+    {
+      "id": 43020483264,
+      "conclusion": "success",
+      "status": "completed",
+      "head_sha": "ee449ff6d356929ad4592a4e599a7a6a0cfccd0c",
+      "html_url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43020483264"
+    },
+    {
+      "id": 43021089861,
+      "conclusion": "success",
+      "status": "completed",
+      "head_sha": "43f5a6862b7abc48b61c998e1081914d1dc0e62b",
+      "html_url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43021089861"
+    },
+    {
+      "id": 43017766592,
+      "conclusion": "success",
+      "status": "completed",
+      "head_sha": "b4717793a33c019356954034e2f7e855aae6cc44",
+      "html_url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43017766592"
+    },
+    {
+      "id": 43017117882,
+      "conclusion": "success",
+      "status": "completed",
+      "head_sha": "bba2ca20b5a6723550221ee770c620ff326bbac7",
+      "html_url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43017117882"
+    }
+  ]
+}
