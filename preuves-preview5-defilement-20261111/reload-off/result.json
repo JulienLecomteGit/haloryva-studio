@@ -1,0 +1,23 @@
+{
+    "Version":  "2.7.1-preview.5",
+    "Suite":  "cycle",
+    "Observer":  "off",
+    "Status":  "reload-passed",
+    "Legacy195Executed":  false,
+    "Installed":  false,
+    "Signed":  false,
+    "ReleasePublished":  false,
+    "SavedProfileSHA256":  "E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696",
+    "PreviousFeaturePhaseSucceeded":  true,
+    "SHA256":  "E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40",
+    "BuildRun":  "42944347258",
+    "TestRun":  "42944896117",
+    "DriverCommit":  "d3304ae06f842c683a4faff6dc2cbd47dcd755ca",
+    "RebuiltInTest":  false,
+    "Phases":  [
+                   {
+                       "Phase":  "reload",
+                       "ExitCode":  0
+                   }
+               ]
+}

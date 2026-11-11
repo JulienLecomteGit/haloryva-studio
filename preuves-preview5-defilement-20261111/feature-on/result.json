@@ -1,0 +1,24 @@
+{
+    "Version":  "2.7.1-preview.5",
+    "Suite":  "cycle",
+    "Observer":  "on",
+    "Status":  "failed-or-environment-blocked",
+    "Legacy195Executed":  false,
+    "Installed":  false,
+    "Signed":  false,
+    "ReleasePublished":  false,
+    "SHA256":  "E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40",
+    "BuildRun":  "42944347258",
+    "RebuiltInTest":  false,
+    "Phases":  [
+                   {
+                       "Phase":  "features",
+                       "ExitCode":  0
+                   },
+                   {
+                       "Phase":  "reload",
+                       "ExitCode":  1
+                   }
+               ],
+    "Error":  "Targeted phase reload failed with exit code 1."
+}

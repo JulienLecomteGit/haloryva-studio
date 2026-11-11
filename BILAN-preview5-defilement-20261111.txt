@@ -1,0 +1,161 @@
+HALORYVA STUDIO — BILAN PREVIEW.5 / OUTILS À FAIRE DÉFILER
+Date : 11 novembre 2026
+Statut : fonction ajoutée ; recette ciblée réussie ; aucune diffusion.
+
+1. Fonction disponible
+Dessin > Défilement permet d'activer les outils inclus dans les actions
+« Outil de dessin suivant » et « Outil de dessin précédent ».
+- Deux outils sélectionnés : alternance uniquement entre ces deux outils.
+- Un seul : il reste actif dans les deux sens. Le dernier outil ne peut être désactivé.
+- Ordre fixe : celui affiché dans le Studio, colonne gauche puis droite.
+- Choix automatiquement mémorisé, également inclus dans export/import du profil.
+- Tous les outils restent accessibles directement dans l'onglet Dessiner.
+- Si l'outil direct est hors sélection : suivant rejoint le premier sélectionné,
+  précédent rejoint le dernier.
+- Les anciens profils gardent tous les outils ; listes vides/nulles/inconnues
+  reviennent à la liste complète. Doublons et noms inconnus sont éliminés.
+- « Inclure tous les outils » restaure le cycle complet.
+- Liens réciproques entre Boutons souris et Dessin > Défilement.
+- Un changement par bouton pendant un trait ne transforme pas le trait commencé ;
+  l'outil nouvellement sélectionné s'applique au trait suivant.
+
+2. Version et périmètre
+Branche : haloryva-tests-preview5
+Source/compilation : 92302dbca043f87794a7eab8e792ff56e74c531c
+Base conservée : preview.4, e7eefcf5aa8d1f1df97567fbff56e40965d8b69f
+Binaire unique : 2.7.1-preview.5, 388096 octets.
+SHA256 : E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40
+Cette empreinte est identique dans tous les artefacts inspectés.
+Aucune recompilation après les premiers essais.
+
+Seuls quatre fichiers applicatifs changent :
+- Config.cs : DrawingToolCycle et normalisation rétrocompatible ;
+- Controller.cs : défilement dans cette liste, indicateur correspondant à l'outil réel ;
+- PremiumStudioForm.cs : onglet Défilement et liens de navigation ;
+- Brand.cs : FileVersion 2.7.1.5, InformationalVersion 2.7.1-preview.5.
+Les 24 autres sources et les deux ressources sont identiques à preview.4.
+Les hooks, le pipeline d'entrées, la capture du trait et le rendu ne changent pas.
+La correction du placement initial de preview.4 est conservée.
+La compilation contrôle les SHA Git de la base et refuse toute autre différence.
+
+3. Essais réellement exécutés
+Run initial : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42944347258
+- Compilation réussie : job 130273417440.
+- Variante observateur désactivé : job 130273567103, phase features :
+  215 assertions PASS, sortie 0.
+- Variante observateur activé : job 130273566801, phase features :
+  215 assertions PASS, sortie 0.
+- Le statut global de ce run est ÉCHEC à cause de la phase reload du pilote,
+  expliquée ci-dessous. Il ne faut pas le présenter comme un run entièrement vert.
+
+Fonctionnalités vérifiées :
+- ouverture centrée du Studio ;
+- ancien profil JSON, défauts, normalisation, indépendance des listes par profil ;
+- affectations via contrôles du Studio, molette/X1/X2 ;
+- défilement complet des 10 outils par défaut ;
+- sélection réelle par clics de deux outils, puis un, puis trois ;
+- sens suivant/précédent, bouclage, entrée depuis un outil hors sélection ;
+- nom/indice du véritable outil dans l'indicateur flottant ;
+- clic court et appui long, dont maintien 1100 ms sans répétition parasite ;
+- pas de clic natif transmis à la cible pour ces actions affectées ;
+- activation du mode Formes assistées en atteignant Auto-formes ;
+- changement X1 pendant un trait tenu : identité, outil, couleur, épaisseur
+  conservés ; trait enregistré une fois ; nouveau trait avec Rectangle ;
+- utilisation du clavier (Espace) pour un interrupteur ;
+- restauration de tous les outils, réouverture, sauvegarde différée et export/import.
+
+4. Échec du pilote, correction et rechargement validé
+Le mode d'essai TrailTrial exige un dossier neuf. Le premier pilote tentait
+de relancer Initialize avec le dossier déjà rempli par la phase features :
+« Choisis un dossier NEUF, distinct de l'installation, pour cet essai. »
+L'arrêt survenait avant la création du contrôleur de la seconde phase.
+Une assertion d'identité du binaire avait réussi dans chaque tentative avortée ;
+ces deux assertions ne sont pas ajoutées au total de recette réussie.
+
+Correction du pilote uniquement :
+- nouveau dossier d'essai, sans changement de l'application ;
+- récupération du JSON effectivement sauvegardé par la phase features ;
+- copie exacte dans ce nouveau dossier, empreinte SHA256 vérifiée ;
+- chargement par ConfigStore.Load et le contrôleur de production dans un
+  nouveau processus, sans réinitialiser les réglages ;
+- conservation des barrières d'essai et de l'original.
+
+Run de rechargement :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42944896117
+Commit du pilote testé : d3304ae06f842c683a4faff6dc2cbd47dcd755ca
+- Sans observateur : job 130275220762, 45 assertions PASS, sortie 0.
+- Avec observateur : job 130275220566, 45 assertions PASS, sortie 0.
+- Run entièrement réussi, même binaire que le run initial.
+- Sélection Stylo/Rectangle/Auto-formes retrouvée dans les dix interrupteurs.
+- Affectations court/suivant et long/précédent retrouvées et réexercées avec succès.
+- Arrêt propre des deux workers d'entrée.
+
+Empreintes des profils avant copie, après copie, et après rechargement/arrêt :
+sans observateur : E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696
+avec observateur : A0C71F158358E3CA89DECA62453E41AAD5E051F47AB9D545B0168CF264289238
+
+Total des phases réussies : (215 + 45) x 2 = 520 assertions.
+Ces assertions comprennent préparation, vérifications intermédiaires et arrêt ;
+ce ne sont pas 520 scénarios indépendants ni les 195 contrôles historiques.
+Les 215 assertions fonctionnelles n'ont pas été relancées pour réparer reload.
+Le kit principal reçoit le pilote corrigé et le passage du chemin de profil ;
+ce raccordement combiné est préparé pour les futures exécutions, sans nouvelle
+exécution complète après intégration. Les résultats ci-dessus sont ceux des
+deux runs précisément référencés. Commit final avec [skip ci] pour figer le binaire.
+
+5. Preuves et conservation
+Environnement réel : Windows Server 2025 Datacenter x64, build 26100,
+image GitHub 20261103.298.1, bureau interactif 1024 x 768.
+Le pilote charge l'assemblage réel et instancie le contrôleur de production.
+Il utilise l'introspection pour localiser les contrôles, observer le moteur et
+préparer certains réglages ; les interactions testées sont des entrées natives.
+Les changements d'outil pendant le trait passent par le bouton X1 natif.
+Le test de rechargement porte sur le contrôleur dans un nouveau processus,
+avec copie exacte du profil sauvegardé, pas sur une installation MSIX.
+La capture à deux outils a été inspectée : Stylo et Rectangle actifs,
+les huit autres désactivés, onglet et fenêtre entièrement visibles.
+Capture originale : cycle-two-tools.png
+SHA256 : 333A4518E66307F0DCE07ABFFC29187E21DA850E0B22AED2ADDB06CBCEDD1742
+
+Artefacts GitHub (échéance annoncée : 25 novembre 2026) :
+13821833032 : Haloryva-2.7.1-preview.5-build
+13822490430 : preview5-cycle-off-evidence
+13822311852 : preview5-cycle-on-evidence
+13821722940 : preview5-reload-off-evidence
+13822287743 : preview5-reload-on-evidence
+
+Les JSON de résultats et de provenance, profils enregistrés et journaux
+des quatre phases sont conservés à la racine dans
+preuves-preview5-defilement-20261111/, y compris l'échec initial du pilote.
+Les fichiers extraits sont enregistrés en texte UTF-8 ; leurs empreintes d'origine
+sont listées dans artifact-file-manifest.json. Captures et exécutable restent
+dans les artefacts temporaires ; aucune release ni diffusion de l'application.
+
+6. Préservation et non-exécuté
+Branches inchangées :
+main : 9e900eeaa62dcd2812a6aa0d3f251ad019ef3686
+haloryva-tests-preview2 : 8d84f31157ebfc1e09144811b6b112247f926f81
+haloryva-tests-preview3 : c74f4d66c6a7f742e338408e427e29da3fa02eb5
+haloryva-tests-preview4 : e7eefcf5aa8d1f1df97567fbff56e40965d8b69f
+
+Aucune écriture de fichier ni lancement d'Haloryva sur le PC utilisateur ;
+artefacts lus en mémoire. Aucune installation, signature, modification système,
+publication/release, changement de licence ou fusion dans main.
+Tous les résultats antérieurs sont conservés.
+Aucun des 195 contrôles historiques n'a été relancé.
+
+NON EXÉCUTÉ : MSIX preview.5, Store, Windows 11 physique, configurations multi-écran
+et DPI variés, suites complètes antérieures de clic/AltGr/lissage/formes/export.
+Les anciens résultats restent ceux de leurs binaires respectifs.
+Aucune anomalie applicative constatée dans le périmètre ciblé ; cela ne remplace
+pas la recette du paquet MSIX final.
+
+7. Prochaine action
+Tester le MSIX de preview.5 sur GitHub en réutilisant le binaire E259BC...,
+avec les contrôles de mémorisation pertinents, sans publication ni installation
+sur le PC utilisateur. Conserver la sélection de licence et les droits actuels.
+
+Prompt :
+« Teste le MSIX de preview.5 sur GitHub avec le binaire déjà validé, y compris
+la conservation du choix des outils. Préserve toutes les préversions, main
+et mon PC. Ne relance pas les 195 contrôles et ne publie rien. Présente-moi le bilan. »

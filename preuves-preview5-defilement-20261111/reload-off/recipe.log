@@ -1,0 +1,62 @@
+2026-11-11T02:16:58.4324336Z ENV GitHub-hosted; mode=reload; pid=660
+2026-11-11T02:16:58.4422565Z PASS Expected preview.5 assembly identity
+2026-11-11T02:16:58.4422565Z TEST observer=False assembly=2.7.1-preview.5
+2026-11-11T02:16:58.4799935Z PASS Saved profile from successful native feature phase exists
+2026-11-11T02:16:58.4940949Z PASS Fresh profile contains exactly the previously persisted JSON bytes
+2026-11-11T02:16:58.4940949Z PERSISTENCE sourceSHA256=E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696 copiedSHA256=E1B1BB340B23633B3693198C2DD110236964E08945BA5DDA91036FA7EE9A4696
+2026-11-11T02:16:59.3837660Z PASS Real hooks installed
+2026-11-11T02:16:59.5164831Z FOCUS before-acquisition targetHwnd=102B2 targetPid=8872 foregroundHwnd=102B2 foregroundPid=8872 title=Haloryva — cible de recette automatique
+2026-11-11T02:16:59.8302076Z FOCUS ready-check targetHwnd=102B2 targetPid=8872 foregroundHwnd=102B2 foregroundPid=8872 title=Haloryva — cible de recette automatique
+2026-11-11T02:16:59.8302076Z PASS Target responds
+2026-11-11T02:16:59.8302076Z PASS Requested observer state confirmed
+2026-11-11T02:16:59.8302076Z PASS Neutral input 1
+2026-11-11T02:16:59.8302076Z PASS Neutral input 2
+2026-11-11T02:16:59.8302076Z PASS Neutral input 4
+2026-11-11T02:16:59.8302076Z PASS Neutral input 5
+2026-11-11T02:16:59.8302076Z PASS Neutral input 6
+2026-11-11T02:16:59.8302076Z PASS Neutral input 16
+2026-11-11T02:16:59.8302076Z PASS Neutral input 17
+2026-11-11T02:16:59.8302076Z PASS Neutral input 18
+2026-11-11T02:16:59.8302076Z PASS Neutral input 91
+2026-11-11T02:16:59.8302076Z PASS Neutral input 92
+2026-11-11T02:16:59.8402611Z MOVE SendInput requested=350,350 cursor={X=350,Y=350}
+2026-11-11T02:17:00.3121839Z PASS Studio window opened from preview.5 binary
+2026-11-11T02:17:00.3121839Z PLACEMENT initial bounds={X=20,Y=20,Width=984,Height=680} work={X=0,Y=0,Width=1024,Height=720} driverMovedWindow=false
+2026-11-11T02:17:00.3121839Z PASS Studio stays within working area: initial
+2026-11-11T02:17:00.3121839Z PASS Studio starts centered: initial
+2026-11-11T02:17:00.6102511Z PASS New process loads the persisted tool selection [Stylo, Rectangle, Forme libre]
+2026-11-11T02:17:00.6102511Z PASS New process loads short and long button assignments
+2026-11-11T02:17:00.7334948Z UI CLICK type=PremiumNavButton text=Dessin accessible=Dessin point={X=58,Y=344}
+2026-11-11T02:17:01.0277423Z PASS Visible navigation reaches page 5
+2026-11-11T02:17:01.2186925Z UI CLICK type=TabStrip text= accessible= point={X=445,Y=219}
+2026-11-11T02:17:01.5297569Z PASS Visible drawing tab switches to 2
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Stylo
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Surligneur
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Ligne droite
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Rectangle
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Ellipse
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Flèche droite
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Flèche libre
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Forme libre
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Numéro
+2026-11-11T02:17:01.5617243Z PASS Reloaded UI reflects persisted selection: Texte
+2026-11-11T02:17:01.8121990Z UI CLICK type=TabStrip text= accessible= point={X=193,Y=219}
+2026-11-11T02:17:02.1154554Z PASS Visible drawing tab switches to 0
+2026-11-11T02:17:02.3159866Z UI CLICK type=PremiumChoiceGrid text= accessible= point={X=224,Y=373}
+2026-11-11T02:17:02.6140101Z PASS Visible choice selected: Stylo
+2026-11-11T02:17:02.6140101Z PASS Studio tool reaches engine: Stylo
+2026-11-11T02:17:02.9030490Z UI CLICK type=PremiumButton text=Dessiner sur le Bureau accessible=Dessiner sur le Bureau point={X=836,Y=146}
+2026-11-11T02:17:03.2063519Z PASS Draw command hides Studio and starts drawing
+2026-11-11T02:17:03.5046257Z PASS Native button 2 hold=45 selects Rectangle
+2026-11-11T02:17:03.5046257Z PASS Mapped button emits no native click or unpaired event
+2026-11-11T02:17:03.5046257Z PASS Toast identifies the actual selected tool
+2026-11-11T02:17:04.4069116Z PASS Native button 2 hold=650 selects Stylo
+2026-11-11T02:17:04.4072234Z PASS Mapped button emits no native click or unpaired event
+2026-11-11T02:17:04.4072234Z PASS Toast identifies the actual selected tool
+2026-11-11T02:17:04.4427132Z PASS Escape stops drawing and restores Studio
+2026-11-11T02:17:04.5530053Z CASES freshProcessReload=true persistedNativeShortLong=true
+2026-11-11T02:17:04.5530053Z NOT_RUN legacy195, complete prior suites, MSIX, physical devices, multiple screens/DPI
+2026-11-11T02:17:04.5530053Z COMPLETE targeted cycle phase=reload passed
+2026-11-11T02:17:04.6568464Z PASS Both input workers stopped on shutdown
+2026-11-11T02:17:04.6588572Z SUMMARY assertions=45 exit=0 observer=False
+2026-11-11T02:17:04.6588572Z EXIT 0

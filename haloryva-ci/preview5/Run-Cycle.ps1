@@ -33,9 +33,10 @@ try {
     & $compiler ('@'+$rsp) 2>&1 | Out-File (Join-Path $out 'compile.log')
     if($LASTEXITCODE -ne 0) { throw 'Test driver compilation failed.' }
     $env:HALORYVA_RECIPE_SUITE=$Suite
+    $savedProfile=Join-Path $env:LOCALAPPDATA ('RecipeHaloryvaRuns/'+$run+'/profile/settings.json')
     $report.Phases=@()
     foreach($phase in @('features','reload')) {
-        $child=Start-Process -FilePath (Join-Path $out 'Recipe.exe') -ArgumentList ($phase+' '+$run+' '+$Observer+' --silent') -PassThru -WindowStyle Hidden
+        $child=Start-Process -FilePath (Join-Path $out 'Recipe.exe') -ArgumentList ($phase+' '+$run+' '+$Observer+' "'+$savedProfile+'"') -PassThru -WindowStyle Hidden
         if(!$child.WaitForExit(240000)) { $child.Kill(); throw "Targeted phase $phase timed out: NOT validated." }
         $report.Phases+=@{Phase=$phase;ExitCode=$child.ExitCode}
         if($child.ExitCode -ne 0) { throw "Targeted phase $phase failed with exit code $($child.ExitCode)." }

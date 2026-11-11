@@ -44,3 +44,17 @@ Aucun des 195 contrôles, aucune ancienne suite complète n'est invoqué.
 Pas de lancement local, signature, publication/release, MSIX ou modification système.
 
 Résultats : à consulter dans le bilan à la racine une fois les runs terminés.
+
+MISE À JOUR APRÈS RECETTE DU 11/11/2026
+Fonction : 215 assertions réussies par variante dans le run 42944347258.
+Le premier rechargement demandait à tort un dossier TrailTrial déjà existant :
+échec du pilote avant chargement de l'application, conservé dans les preuves.
+Le run 42944896117 valide le rechargement corrigé : 45 assertions par variante,
+sur le même binaire E259BC782D8ED909912A397F83F508AC254AC6483DBF0787B7917A6C68F90B40.
+Les profils originaux sont copiés octet pour octet vers un nouveau dossier d'essai ;
+le contrôleur de production charge les réglages avec ConfigStore.Load.
+Le pilote corrigé testé et le passage du chemin enregistré sont reportés ici
+pour les futures exécutions combinées. Ce raccordement complet features+reload
+n'a pas été relancé après correction : les deux phases ont été validées dans
+les deux runs distincts, sans recompiler preview.5 ni répéter les 215 assertions.
+Le commit de bilan utilise [skip ci] pour conserver l'unique binaire déjà testé.

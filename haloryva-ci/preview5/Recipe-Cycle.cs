@@ -112,7 +112,24 @@ internal static class Recipe
             Write("TEST observer="+observe+" assembly="+app.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion);
             SetProcessDPIAware(); original=Cursor.Position;
             Application.EnableVisualStyles(); Application.SetCompatibleTextRenderingDefault(false);
-            Static("TrailTrial","Initialize",(object)new[]{"--trail-session",Path.Combine(folder,"profile")});
+            string trialProfile=Path.Combine(folder,mode=="reload"?"profile-reload":"profile");
+            Static("TrailTrial","Initialize",(object)new[]{"--trail-session",trialProfile});
+            if(mode=="reload") {
+                if(args.Length<4) throw new Exception("Saved profile evidence path is required");
+                string savedProfile=Path.GetFullPath(args[3]);
+                string runnerRoot=Path.GetFullPath(Environment.GetEnvironmentVariable("RUNNER_TEMP")).TrimEnd(Path.DirectorySeparatorChar)+Path.DirectorySeparatorChar;
+                if(!savedProfile.StartsWith(runnerRoot,StringComparison.OrdinalIgnoreCase)) throw new Exception("Saved test profile must be under RUNNER_TEMP");
+                Check(File.Exists(savedProfile),"Saved profile from successful native feature phase exists");
+                string destination=Path.Combine(trialProfile,"settings.json");
+                if(File.Exists(destination)) throw new Exception("Unexpected existing settings in fresh test profile");
+                // TrailTrial intentionally requires a new directory on each run.
+                // Copy the exact persisted bytes into that new isolated profile;
+                // production ConfigStore.Load below performs the actual reload.
+                File.Copy(savedProfile,destination);
+                string before=FileSHA256(savedProfile),after=FileSHA256(destination);
+                Check(before==after,"Fresh profile contains exactly the previously persisted JSON bytes");
+                Write("PERSISTENCE sourceSHA256="+before+" copiedSHA256="+after);
+            }
             // New known profile inside virtualized storage, never the normal installed profile.
             if(mode=="features") {
                 var config=Activator.CreateInstance(app.GetType("CursorFlow.Config"));
@@ -386,6 +403,12 @@ internal static class Recipe
         File.WriteAllText(Path.Combine(folder,"ui-"+label+".txt"),text.ToString(),Encoding.UTF8);
     }
 
+    static string FileSHA256(string path)
+    {
+        using(var stream=File.OpenRead(path))
+        using(var sha=System.Security.Cryptography.SHA256.Create())
+            return BitConverter.ToString(sha.ComputeHash(stream)).Replace("-","");
+    }
     static string[] AllTools { get { return (string[])app.GetType("CursorFlow.DrawingTools").GetField("Names",Flags).GetValue(null); } }
     static string[] Cycle(object config) { return (string[])Get(config,"DrawingToolCycle"); }
     static bool SameTools(string[] a,string[] b) { return a!=null && b!=null && String.Join("|",a)==String.Join("|",b); }
