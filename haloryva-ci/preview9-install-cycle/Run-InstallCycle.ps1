@@ -63,8 +63,12 @@ function Start-Setup([string]$file,[bool]$uninstall) {
   if($candidates.Count -gt 1){throw 'Ambiguous setup worker'}
   if($candidates.Count -ne 1){return $false}
   $info=$candidates[0]
-  $prefix=(Join-Path $env:TEMP 'HaloryvaMaintenance')+'\'
-  if(!$info.ExecutablePath.StartsWith($prefix,[StringComparison]::OrdinalIgnoreCase)){throw 'Unexpected setup worker location'}
+  $expectedRoot=Join-Path ([IO.Path]::GetTempPath()) 'HaloryvaMaintenance'
+  $workerDirectory=Split-Path -Parent $info.ExecutablePath
+  $actualRoot=Split-Path -Parent $workerDirectory
+  $location=[ordered]@{ExecutablePath=$info.ExecutablePath;ExpectedRoot=$expectedRoot;ActualRoot=$actualRoot;TempEnvironment=$env:TEMP;TmpEnvironment=$env:TMP;CommandLine=$info.CommandLine}
+  $report.LastWorkerLocation=$location;Save-Report
+  if([SetupUi]::CanonicalPath($actualRoot) -ine [SetupUi]::CanonicalPath($expectedRoot) -or (Split-Path -Leaf $workerDirectory) -notmatch '^run-[a-f0-9]{32}$'){throw ('Unexpected setup worker location: '+($location|ConvertTo-Json -Compress))}
   if((Hash $info.ExecutablePath) -cne $expectedSetup){throw 'Relocated setup bytes changed'}
   $candidate=[Diagnostics.Process]::GetProcessById($info.ProcessId);$candidate.Refresh()
   if($candidate.MainWindowHandle -eq [IntPtr]::Zero){return $false}

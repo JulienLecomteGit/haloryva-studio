@@ -42,6 +42,15 @@ public sealed class AppTrace : IDisposable {
     public void Dispose() { starts.Stop(); stops.Stop(); starts.Dispose(); stops.Dispose(); }
 }
 public static class SetupUi {
+    [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)]
+    static extern uint GetLongPathName(string shortPath,System.Text.StringBuilder longPath,uint size);
+    public static string CanonicalPath(string path) {
+        var buffer=new System.Text.StringBuilder(32768);
+        uint count=GetLongPathName(path,buffer,(uint)buffer.Capacity);
+        if(count==0 || count>=buffer.Capacity) throw new Exception("Cannot normalize existing path: "+path);
+        return System.IO.Path.GetFullPath(buffer.ToString()).TrimEnd(System.IO.Path.DirectorySeparatorChar);
+    }
+
     [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left, Top, Right, Bottom; }
     [StructLayout(LayoutKind.Sequential)] public struct Point { public int X,Y; }
     [DllImport("user32.dll")] public static extern bool GetClientRect(IntPtr h, out Rect r);
