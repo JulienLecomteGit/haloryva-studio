@@ -114,7 +114,7 @@
       "label": "Identité du produit Microsoft Store vérifiée",
       "closed": false,
       "scope": "store_extra",
-      "evidence": "Accès UI arrêté avant le portail : URL du navigateur Windows non identifiée avec assez de certitude."
+      "evidence": "Portail consulté après autorisation. Windows proposé à l’inscription, aucun espace de produits accessible dans ce compte. Identité non obtenue ; brouillon du manifeste seulement."
     },
     {
       "id": "J11",

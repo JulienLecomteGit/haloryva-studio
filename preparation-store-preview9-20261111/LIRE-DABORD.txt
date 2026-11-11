@@ -16,7 +16,13 @@ Seule la branche haloryva-preparation-store-preview9 reçoit ce nouveau dossier.
 21 branches préexistantes et 521 fichiers préexistants sont à préserver à l'identique.
 
 AJOUT — LECTURE PARTNER CENTER ET LISTE FERMEE
-LECTURE-PARTNER-CENTER.txt précise le blocage du navigateur et les valeurs manquantes.
+LECTURE-PARTNER-CENTER.txt contient la lecture effective du compte : aucun espace développeur Windows accessible ; inscription proposée.
 FINITIONS-FERMEES-2.7.1.txt ferme le périmètre des retouches proposées ; aucune exécution.
 POINT-AVANCEMENT.txt explique les camemberts demandés (75 % / 50 % par comptage de jalons).
 AVANCEMENT-PAR-JALONS.json conserve leur base de calcul et les limites.
+
+AJOUT — BROUILLON DU MANIFESTE
+production-msix/AppxManifest.xml.template prépare le paquet de production sans modifier les recettes existantes.
+production-msix/LIRE-LE-BROUILLON.txt distingue les champs connus, proposés et encore inconnus.
+Nom public prévu 2.7.1 ; installateur HaloryvaSetup_2.7.1.exe ; paquet Store proposé 2.7.1.0.
+Identité du produit et historique des versions non obtenus. Ne pas empaqueter ce modèle incomplet.

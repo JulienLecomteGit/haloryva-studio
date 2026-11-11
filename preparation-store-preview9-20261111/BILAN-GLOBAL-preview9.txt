@@ -80,7 +80,7 @@ Le dernier défaut S3 observé dans preview.8 est corrigé dans preview.9 ; les 
 BLOCAGES AVANT DIFFUSION
 D0 commun : fabriquer et qualifier le livrable final 2.7.1, après gel des finitions et métadonnées ; preview.9 reste une préversion.
 D1 qualité MSIX : S6, vraie ouverture de session avec démarrage autorisé puis désactivé, non exécutée.
-D3 Store : identité Partner Center, historique des versions et métadonnées finales non vérifiés.
+D3 Store : compte consulté, mais espace développeur Windows non accessible ; identité du produit et historique des paquets non obtenus.
 D4 Store : politique de confidentialité/contact/support et droits des ressources à finaliser.
 D5 Store : captures finales de soumission à préparer/approuver.
 D6 Store : paquet de production, rapport WACK et certification non acquis.
@@ -98,8 +98,9 @@ Aucun nouvel échec produit découvert dans cette lecture ; aucune correction de
 Aucune preuve de mise à jour d'une installation réelle 2.7.0, de vraie connexion Windows ou de certification ne doit être déduite du cycle EXE.
 
 PROCHAINE ACTION UTILE
-Récupérer en lecture seule les informations d'identité et l'historique du produit Partner Center, si le compte/produit existe déjà,
-puis arrêter une liste fermée de finitions pour une seule fabrication finale 2.7.1.
+La lecture du compte Partner Center est réalisée ; Programs propose une inscription Windows et aucun espace de produits n’est accessible.
+Déterminer si ce compte doit être inscrit au programme Windows ou si le produit est dans un autre compte, avant de reprendre ses données.
+La liste fermée de six finitions est déjà préparée ; son exécution reste soumise à accord.
 Cela évite de fabriquer un paquet de production avec une identité inventée.
 Si ces informations ne sont pas disponibles, les laisser explicitement manquantes ; ne créer aucun compte, abonnement ou produit sans accord.
 Pour S6, seule une session Windows distincte persistante et accessible depuis l'extérieur apportera la preuve manquante ; aucun équipement disponible n'est présumé.
@@ -116,7 +117,14 @@ A la demande de l'utilisateur, POINT-AVANCEMENT.txt et AVANCEMENT-PAR-JALONS.jso
 comptent les étapes closes : 6/8 pour application/installateur et 6/12 avec le Store.
 Cet indice à poids égaux ne remplace pas les limites de couverture et ne mesure pas le temps restant.
 Le pourcentage global de qualité reste non calculé.
-La consultation Partner Center n'a pas pu atteindre le portail ; aucune identité obtenue.
+La première consultation Partner Center avait échoué avant le portail ; elle est désormais suivie d’une lecture effective du compte.
+Le programme Windows n’y est pas accessible comme programme inscrit ; aucun produit ni historique n’a pu être consulté.
 Une liste fermée de six lots de finition 2.7.1 est préparée, sans code modifié.
 Aucun nouveau test, aucune compilation, signature, installation ni publication.
 Seul le camembert demandé a été ajouté localement dans le dossier de visualisation du chat.
+
+AJOUT — MANIFESTE DE PRODUCTION EN BROUILLON
+production-msix/AppxManifest.xml.template préparé ; il ne constitue pas un paquet ni une validation.
+Identité Microsoft et limite OS finales en attente ; version 2.7.1.0 proposée uniquement.
+Aucun test, compilation, changement binaire, signature, publication ou installation dans cette étape.
+Les jalons restent 6/8 et 6/12 : un brouillon ne clôt ni la production finale ni l’identité Store.

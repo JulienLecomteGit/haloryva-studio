@@ -65,3 +65,10 @@ Fabrication de l'assistant : https://github.com/JulienLecomteGit/haloryva-studio
 Cycle réel : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43065284869
 Documentation Microsoft du format de version du paquet :
 https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+
+PRECISION — BROUILLON DE PRODUCTION
+Le versionnement prévu reste 2.7.1 (public/informatif), 2.7.1.0 (AssemblyVersion) et
+2.7.1.10 (FileVersion proposé, à avancer si une compilation intermédiaire consomme ce numéro).
+Le paquet Store proposé 2.7.1.0 figure dans production-msix/AppxManifest.xml.template.
+Le compte Partner Center a été lu, mais son espace Windows n’est pas accessible ; l’historique reste inconnu.
+Le numéro de paquet n’est donc pas encore confirmé pour dépôt. Aucun exécutable existant n’est modifié.

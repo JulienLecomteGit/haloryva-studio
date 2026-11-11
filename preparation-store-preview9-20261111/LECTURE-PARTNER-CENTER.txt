@@ -1,43 +1,47 @@
-HALORYVA — TENTATIVE DE CONSULTATION PARTNER CENTER
-11 novembre 2026 — lecture seule demandée ; accès non obtenu.
+HALORYVA — CONSULTATION PARTNER CENTER ET CHAMPS DU PRODUIT
+11 novembre 2026 — consultation en lecture seule ; aucun changement de compte.
 
-RESULTAT OBSERVE
-Aucun connecteur Partner Center dédié n'est disponible dans la session.
-L'inventaire des navigateurs a été consulté. La tentative de sélectionner le navigateur Chrome existant
-a été arrêtée automatiquement par l'outil : il ne pouvait pas déterminer l'adresse actuelle du navigateur
-Windows avec assez de certitude pour appliquer ses règles d'accès.
-Aucune page Partner Center n'a donc pu être ouverte ou lue pendant cette tâche.
-Aucune connexion, création de compte, réservation, acceptation de conditions, souscription, soumission ou publication.
-Aucun autre moyen n'a été utilisé pour contourner l'arrêt du navigateur.
-Cela ne démontre ni l'absence d'un compte, ni l'absence du produit Haloryva Studio, ni un refus de droits par Microsoft.
-Les valeurs Partner Center restent explicitement inconnues dans le dossier.
+RESULTAT ACTUEL, APRES AUTORISATION DE CONNEXION
+Le portail officiel a pu être ouvert dans une session déjà connectée.
+Accueil : aucun espace d'applications affiché ; menu Home / Help + support.
+My access : aucun espace de travail accessible listé.
+Programs : Windows est affiché sous Other programs, avec Get started et invitation à s'inscrire comme développeur.
+Le lien Get started n'a pas été activé. Aucune inscription ni réservation n'a été lancée.
 
-INFORMATIONS EXISTANTES A RELEVER, SI LE PRODUIT EST ACCESSIBLE
-A. Existence/statut du produit Windows Haloryva Studio et nom effectivement réservé.
-B. Package/Identity/Name exact, casse et ponctuation comprises.
-C. Package/Identity/Publisher exact, tel que fourni par Microsoft.
-D. Properties/PublisherDisplayName exact.
-E. Identifiant du produit Store et, s'il existe, lien de sa fiche.
-F. Version(s) de paquet déjà déposées : plus haute version pertinente, architecture et état du dépôt.
-G. Versions de Windows ciblées et architectures déclarées.
-H. Langues et marchés déjà sélectionnés, catégorie et classification.
-I. URL de confidentialité, URL/support et coordonnées publiques déjà renseignées.
-J. Etat d'une soumission éventuelle, messages de certification et capacité runFullTrust si déjà examinée.
+Conclusion limitée au compte connecté : aucun espace développeur Windows inscrit n'est accessible.
+Cette observation ne prouve pas l'absence d'un produit dans un autre compte.
+L'identité du produit et l'historique des paquets restent inaccessibles, et ne sont pas inventés.
+Le compte Partner Center existe ; le produit Haloryva Studio n'a pas pu être vérifié.
+Aucun identifiant de connexion, courriel personnel, cookie ou secret n'est recopié dans ce dossier.
 
-Ces données servent à compléter l'identité et à éviter d'inventer un numéro de paquet.
-Le nom public du dépôt GitHub et son auteur ne permettent pas de déduire le Publisher du Store.
-Aucun mot de passe, code de connexion, cookie, jeton ou document d'identité n'est demandé.
+LES CINQ CHAMPS, COMPLETES AVEC LEUR STATUT REEL
+Nom réservé : non vérifiable dans le compte connecté. Nom souhaité déjà renseigné : Haloryva Studio.
+Package/Identity/Name : non obtenu ; seul Microsoft fournit la valeur exacte après accès au produit.
+Package/Identity/Publisher : non obtenu ; ne pas déduire un CN du nom GitHub ou de l'auteur.
+Nom d'éditeur affiché : Julien Lecomte proposé, d'après les sources existantes ; valeur Store non vérifiée.
+Dernière version de paquet déposée : inconnue. Ne pas remplacer cette inconnue par « aucun paquet ».
 
-DECISIONS DE L'AUTEUR DISTINCTES DES DONNEES DU COMPTE
-Application gratuite et droits actuels conservés : décisions déjà retenues.
-Cible publique proposée 2.7.1 ; package Store proposé 2.7.1.0 seulement après lecture de F.
-Marchés, limites OS/architecture et coordonnées publiques finales restent à confirmer si non renseignés.
-Les textes de confidentialité et les ressources doivent encore être approuvés pour diffusion.
-Le compte ou produit ne sera pas créé implicitement si les informations ne sont pas disponibles.
+URLS CONSULTEES EN LECTURE SEULE
+https://partner.microsoft.com/en-us/dashboard/home
+https://partner.microsoft.com/dashboard/v2/account-settings/myaccess
+https://partner.microsoft.com/dashboard/v2/account-settings/partner-programs
 
-PROCHAINE ACTION CONCRETE
-Ouvrir Partner Center soi-même et le produit existant, puis relever A/B/C/D/F en priorité.
-La page d'identité du produit fournit normalement les valeurs techniques nécessaires au manifeste.
-Communiquer seulement ces champs de produit ; ne pas transmettre les données d'authentification.
-Si aucun compte ou produit n'existe, le signaler : une décision explicite sera nécessaire avant création.
-Aucun de ces champs n'a été renseigné par supposition ici.
+BROUILLON LIVRE
+production-msix/AppxManifest.xml.template reprend une seule application Haloryva et son démarrage facultatif.
+Les valeurs techniques déjà connues sont renseignées ; l'identité Microsoft et la limite OS finale restent marquées.
+production-msix/LIRE-LE-BROUILLON.txt distingue propositions, valeurs héritées et informations manquantes.
+Aucun script, workflow ou binaire n'utilise ce modèle. Aucun paquet n'est créé.
+
+PROCHAINE ACTION
+Vérifier si le compte connecté est bien celui destiné à publier Haloryva.
+Si un autre compte détient déjà le produit, l'utilisateur peut s'y connecter lui-même ; la lecture pourra reprendre.
+Sinon, l'étape nécessaire est l'inscription au programme Windows puis la réservation du nom.
+Cela exige une nouvelle autorisation et l'intervention personnelle de l'utilisateur pour les conditions et toute vérification d'identité.
+Aucun compte, inscription, paiement, contrat ou produit n'est créé dans cette tâche.
+L'utilisateur n'a pas à deviner les cinq champs techniques : l'assistant les relèvera sur le produit dès qu'il sera accessible.
+
+HISTORIQUE CONSERVE
+Première tentative : navigateur Windows non sélectionnable avec une adresse suffisamment certaine.
+Deuxième tentative : origine de connexion Microsoft refusée par le contrôle automatique.
+Après autorisation explicite de l'utilisateur, la consultation officielle a réussi.
+Le blocage actuel est donc l'absence d'un espace Windows accessible dans ce compte, et non un refus persistant de l'outil.

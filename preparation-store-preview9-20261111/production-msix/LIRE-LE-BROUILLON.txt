@@ -1,0 +1,68 @@
+HALORYVA STUDIO — MANIFESTE DE PRODUCTION EN BROUILLON
+11 novembre 2026 — texte préparé seulement, non empaqueté et non validé par MakeAppx/WACK.
+
+FICHIER
+AppxManifest.xml.template est un modèle documentaire incomplet.
+Son extension .template et trois marqueurs explicites empêchent de le confondre avec un manifeste prêt à livrer.
+Il n'est copié dans aucun layout et aucun script de compilation ou de recette n'est modifié.
+
+DEJA RENSEIGNE
+Nom souhaité Haloryva Studio ; éditeur affiché proposé Julien Lecomte, repris de Brand.Author.
+Version de paquet proposée 2.7.1.0, architecture x64, interface français / anglais / espagnol.
+Une seule application Id=Haloryva, Haloryva.exe, Windows.FullTrustApplication.
+Un seul StartupTask HaloryvaStudioStartup, Enabled=false, argument --silent.
+Capacité runFullTrust uniquement ; aucun allowElevation, service ou pilote ajouté.
+Logos : Assets/StoreLogo.png, Assets/Square150x150Logo.png, Assets/Square44x44Logo.png.
+Ces chemins existent dans le modèle d'essai conservé ; ils ne constituent pas une approbation des images Store finales.
+Les déclarations de langue ne créent pas de traduction nouvelle : les traductions sont déjà dans Haloryva.
+Les descriptions du manifeste restent françaises ; les fiches Store FR/EN/ES sont un document distinct.
+
+INFORMATIONS BLOQUANTES, NON DEVINEES
+__PARTNER_CENTER_IDENTITY_NAME__ : recopier Package/Identity/Name du produit effectivement réservé.
+__PARTNER_CENTER_IDENTITY_PUBLISHER__ : recopier Package/Identity/Publisher exactement.
+__MIN_WINDOWS_VERSION__ : arrêter la borne OS finale en fonction du périmètre de diffusion qualifié.
+Le nom réservé et PublisherDisplayName doivent aussi correspondre exactement aux valeurs de Partner Center.
+Le nom public souhaité et le nom de l'auteur n'établissent pas une réservation ni une identité Microsoft.
+L'historique des paquets demeure inconnu ; 2.7.1.0 n'est pas encore un numéro de dépôt confirmé.
+
+BORNE WINDOWS ET PORTÉE
+Cible proposée : Windows 11 Desktop, binaire x64.
+Si la cible Windows 11 dès sa première version est retenue, la proposition MinVersion est 10.0.22000.0.
+Cette proposition ne certifie pas la compatibilité de toutes les versions Windows 11.
+La borne d'essai 10.0.19041.0 n'est pas recopiée comme engagement de prise en charge de Windows 10.
+MaxVersionTested=10.0.26100.0 est conservé du manifeste d'essai existant.
+La preuve MSIX disponible sur Windows 11 Enterprise build 26200 utilise un Windows ARM64 avec EXE x64 émulé.
+Aucune validation nouvelle de Windows 11 x64 natif, du démarrage lors d'une vraie connexion ou de ces bornes n'a été exécutée ici.
+Ces choix doivent être finalisés avant la fabrication de production ; le modèle reste volontairement incomplet.
+
+ORIGINE DU MODELE
+Base de structure : haloryva-ci/Inputs/msix-layout/AppxManifest.xml.
+Extension de démarrage préparée dans haloryva-ci/preview8-msix/Run-Msix.ps1.
+Invariant final une application / un StartupTask désactivé : haloryva-ci/preview9-focus/Package-Preview9.ps1,
+qui reprend le paquet final preview.8 2.7.1.80 et produit le paquet d'essai preview.9.
+Le modèle présent ne contient ni application Recipe ni exécutable de pilote diagnostic.
+Aucune identité Prototype / MsixLifecycleTest / Preview*UnsignedTest ni éditeur d'essai n'est réutilisé.
+Il s'agit d'une reprise documentaire des éléments connus, pas d'une extraction nouvelle de l'archive MSIX.
+
+VERSIONNEMENT PREVU
+Version publique et informative de la future stable : 2.7.1.
+Installateur prévu : HaloryvaSetup_2.7.1.exe.
+AssemblyVersion prévu : 2.7.1.0.
+FileVersion proposé : 2.7.1.10, prochaine révision après le fichier preview.9 2.7.1.9,
+sous réserve qu'aucune nouvelle préversion n'ait été compilée entre-temps.
+Paquet Store proposé : 2.7.1.0, seulement après lecture de l'historique de la famille réelle.
+Le paquet d'essai 2.7.1.90 a une identité distincte ; il n'impose pas de produire un paquet Store 2.7.1.91.
+Ne jamais abaisser une version dans une même famille pour la faire correspondre au nom public.
+Aucune de ces métadonnées n'est appliquée aux fichiers exécutables existants.
+
+AVANT UNE FUTURE FABRICATION, APRES ACCORD SEPARE
+Accès au produit Store, reprise exacte de l'identité et vérification des versions.
+Finitions fermées F01–F06 et bornes Windows arrêtées.
+Nouvel EXE stable avec provenance ; même EXE final pour l'installateur et le paquet Store.
+Préparer le layout avec les ressources applicatives nécessaires, sans pilotes de recette.
+Contrôle du manifeste, qualification ciblée du livrable, WACK et certification restent à exécuter.
+Ces opérations sont uniquement décrites ici et ne sont pas autorisées par cette préparation documentaire.
+
+REFERENCES MICROSOFT CONSULTEES
+https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
+https://learn.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-desktop-startuptask

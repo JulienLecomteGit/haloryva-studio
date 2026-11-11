@@ -8,7 +8,8 @@ Canal visé pour une installation publique simple : Microsoft Store / MSIX.
 L'installateur EXE GitHub est distinct et reste non signé.
 Nom proposé Haloryva Studio, catégorie Productivité, interface FR/EN/ES.
 Choix de langue mémorisé et appliqué au prochain lancement complet de l'application.
-Compte Partner Center, réservation, marchés, classification et coordonnées non vérifiés, pas présumés absents.
+Compte Partner Center consulté ; aucun espace développeur Windows accessible dans la session connectée.
+Programs propose l’inscription Windows avec Get started. Produit, réservation, historique, marchés et coordonnées non vérifiés.
 
 VERSION ET ARCHITECTURE
 Application Win32/WinForms .NET Framework, EXE x64 ; aucun ARM64 natif fabriqué.
@@ -67,15 +68,29 @@ Aucun certificat acheté, aucune signature, souscription ou publication dans cet
 Référence officielle vérifiée le 11 novembre 2026 :
 https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements
 
-SUITE CONCRETE
-Renseigner l'identité existante et l'historique des versions en lecture seule avant de préparer le paquet final.
-Les champs réellement manquants restent null dans identite-store.a-renseigner.json.
-Aucune création de compte, réservation, paiement ou soumission implicite.
+BROUILLON DE MANIFESTE PREPARE
+production-msix/AppxManifest.xml.template : version proposée 2.7.1.0, x64, FR/EN/ES,
+une application et un StartupTask désactivé par défaut, runFullTrust seul.
+Nom public proposé Haloryva Studio ; éditeur proposé Julien Lecomte.
+Identité Microsoft et limite Windows finale explicitement en attente ; modèle non empaquetable en l'état.
+Voir production-msix/LIRE-LE-BROUILLON.txt : aucune validation de schéma, compilation ou recette nouvelle.
+Ne pas utiliser les identités d'essai ; le brouillon ne modifie pas les manifests historiques.
 
-MISE A JOUR — TENTATIVE DE LECTURE PARTNER CENTER
-La consultation a été arrêtée par l'outil de navigateur avant ouverture du portail,
-car l'adresse du navigateur Windows ne pouvait pas être déterminée avec certitude.
-Aucune donnée de compte ou de produit obtenue ; les valeurs inconnues restent null.
-Cela ne signifie pas que le compte ou le produit est absent.
-Voir LECTURE-PARTNER-CENTER.txt pour la liste exacte des données manquantes et
-FINITIONS-FERMEES-2.7.1.txt pour les six lots préparés, non exécutés.
+LECTURE PARTNER CENTER EFFECTUEE
+Après accord explicite pour la connexion Microsoft, le portail officiel a été consulté en lecture seule.
+Home et My access ne présentent aucun espace d'applications accessible.
+Programs présente Windows sous Other programs avec Get started et invitation à s'inscrire.
+Aucune inscription n'a été lancée. Aucun produit Haloryva n'a été accessible dans ce compte.
+L'existence d'un produit dans un autre compte n'est pas exclue.
+Les champs Microsoft et la dernière version déposée restent inconnus ; « aucun paquet » n'est pas déduit.
+Les blocages D3 et J10 restent ouverts malgré le brouillon.
+Le refus initial de l'outil d'accès à la connexion a été levé après l'autorisation explicite.
+Voir LECTURE-PARTNER-CENTER.txt et identite-store.a-renseigner.json pour les observations précises.
+
+SUITE CONCRETE
+Si ce compte est celui destiné à Haloryva, l'accès développeur Windows et la réservation seront
+la prochaine étape, sur autorisation distincte. Si le produit existe ailleurs, reprendre la lecture dans ce compte.
+L'assistant renseignera les champs techniques depuis le produit ; l'utilisateur n'a pas à les deviner.
+Version stable prévue 2.7.1 ; paquet Store 2.7.1.0 proposé, conditionné à l'historique réel.
+FINITIONS-FERMEES-2.7.1.txt conserve six lots, non appliqués.
+Aucun compte créé, contrat accepté, paiement, inscription, compilation, test, signature ou soumission.

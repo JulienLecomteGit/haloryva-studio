@@ -3,7 +3,7 @@
   "preparation_date": "2026-11-11",
   "product_name_proposed": "Haloryva Studio",
   "name_reserved": null,
-  "partner_center_account_checked": false,
+  "partner_center_account_checked": true,
   "partner_center_product_id": null,
   "package_identity_name": null,
   "package_publisher": null,
@@ -54,7 +54,7 @@
   "source_preview": "2.7.1-preview.9",
   "source_commit": "a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5",
   "source_executable_sha256": "678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC",
-  "name_reservation_status": "not_checked",
+  "name_reservation_status": "not_verified_no_accessible_windows_product",
   "language_change_application": "next_application_launch",
   "tested_environments": [
     {
@@ -161,16 +161,91 @@
   "partner_center_read_attempt": {
     "date": "2026-11-11",
     "requested_access": "read_only",
-    "status": "blocked_before_portal",
-    "reason": "Computer-use tool could not confidently identify the current Windows browser URL and stopped interaction.",
-    "portal_opened": false,
-    "account_exists": null,
+    "status": "portal_read_windows_workspace_unavailable",
+    "portal_opened": true,
+    "account_exists": true,
     "product_exists": null,
-    "new_credentials_requested": false,
+    "windows_program_enrollment_status": "not_shown_as_enrolled_in_connected_account",
+    "observed_pages": [
+      {
+        "url": "https://partner.microsoft.com/en-us/dashboard/home",
+        "observation": "No application workspace displayed; navigation contains Home and Help + support."
+      },
+      {
+        "url": "https://partner.microsoft.com/dashboard/v2/account-settings/myaccess",
+        "observation": "No accessible workspace listed."
+      },
+      {
+        "url": "https://partner.microsoft.com/dashboard/v2/account-settings/partner-programs",
+        "observation": "Windows shown under Other programs with Get started and invitation to register as an app developer."
+      }
+    ],
+    "inference": "The connected account does not expose an enrolled Windows developer workspace. Product identity and package history cannot be read here; another account is not ruled out.",
     "account_created": false,
+    "program_enrollment_started": false,
+    "name_reserved_this_task": false,
     "subscription_created": false,
-    "fields_obtained": []
+    "credential_entry_by_agent": false,
+    "product_fields_obtained": []
   },
   "closed_finishing_list": "FINITIONS-FERMEES-2.7.1.txt",
-  "partner_center_missing_details_document": "LECTURE-PARTNER-CENTER.txt"
+  "partner_center_missing_details_document": "LECTURE-PARTNER-CENTER.txt",
+  "partner_center_prior_read_attempts": [
+    {
+      "date": "2026-11-11",
+      "requested_access": "read_only",
+      "status": "blocked_before_portal",
+      "reason": "Computer-use tool could not confidently identify the current Windows browser URL and stopped interaction.",
+      "portal_opened": false,
+      "account_exists": null,
+      "product_exists": null,
+      "new_credentials_requested": false,
+      "account_created": false,
+      "subscription_created": false,
+      "fields_obtained": []
+    },
+    {
+      "date": "2026-11-11",
+      "status": "login_origin_approval_required",
+      "resolved": true,
+      "resolution": "Explicit user approval obtained before reopening the official Microsoft sign-in flow."
+    }
+  ],
+  "publisher_display_name_proposed": "Julien Lecomte",
+  "last_submitted_package_version": null,
+  "package_history_status": "unavailable_not_equivalent_to_no_previous_package",
+  "production_manifest_draft": {
+    "path": "production-msix/AppxManifest.xml.template",
+    "status": "DRAFT_INCOMPLETE_NOT_PACKAGED",
+    "product_display_name_proposed": "Haloryva Studio",
+    "publisher_display_name_proposed": "Julien Lecomte",
+    "package_version_proposed": "2.7.1.0",
+    "architecture": "x64",
+    "languages": [
+      "fr-FR",
+      "en-US",
+      "es-ES"
+    ],
+    "identity_name_pending": true,
+    "identity_publisher_pending": true,
+    "publisher_display_name_requires_exact_store_match": true,
+    "min_windows_version_pending": true,
+    "min_windows_version_proposed_if_windows11_only": "10.0.22000.0",
+    "max_windows_version_tested_draft": "10.0.26100.0",
+    "max_version_reason": "Retained from the existing test manifest, not a new qualification claim.",
+    "enabled_at_install": false,
+    "startup_task_id": "HaloryvaStudioStartup",
+    "startup_parameters": "--silent",
+    "applications": 1,
+    "restricted_capabilities": [
+      "runFullTrust"
+    ],
+    "helper_included": false,
+    "packaged": false,
+    "schema_validation_executed": false,
+    "tests_executed": false,
+    "signed": false,
+    "submitted": false
+  },
+  "final_file_version_proposed": "2.7.1.10"
 }
