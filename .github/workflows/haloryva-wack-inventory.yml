@@ -1,0 +1,61 @@
+name: Haloryva WACK ARM inventory only
+on:
+  push:
+    branches: ['haloryva-inventaire-wack-arm']
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: windows-11-arm
+    timeout-minutes: 8
+    steps:
+      - name: Read OS session and tool metadata without executing product or certification tools
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $os=Get-CimInstance Win32_OperatingSystem
+          $cpu=Get-CimInstance Win32_Processor|Select-Object Name,Architecture,AddressWidth
+          $proc=Get-Process -Id $PID
+          $sessionOutput=(& query.exe session 2>&1|Out-String)
+          $sessionExit=$LASTEXITCODE
+          $currentSessionRows=@($sessionOutput -split "\r?\n"|Where-Object {$_ -match '^\s*>'})
+          $tools=@()
+          $roots=@(
+           (Join-Path ([Environment]::GetFolderPath('ProgramFilesX86')) 'Windows Kits'),
+           (Join-Path $env:ProgramFiles 'Windows Kits')
+          )|Select-Object -Unique
+          foreach($root in $roots){
+           if(Test-Path -LiteralPath $root){
+            foreach($name in @('appcert.exe','signtool.exe')){
+             foreach($file in Get-ChildItem -LiteralPath $root -Filter $name -File -Recurse -ErrorAction SilentlyContinue){
+              $v=[Diagnostics.FileVersionInfo]::GetVersionInfo($file.FullName)
+              $stream=[IO.File]::OpenRead($file.FullName);$reader=New-Object IO.BinaryReader($stream)
+              try{$stream.Position=0x3c;$pe=$reader.ReadInt32();$stream.Position=$pe+4;$machine=$reader.ReadUInt16()}finally{$reader.Dispose()}
+              $tools+=@{Name=$name;Path=$file.FullName;FileVersion=$v.FileVersion;ProductVersion=$v.ProductVersion;PEMachine=('0x{0:X4}' -f $machine)}
+             }
+            }
+           }
+          }
+          $result=[ordered]@{
+           OS=$os.Caption;Version=$os.Version;Build=$os.BuildNumber;OSArchitecture=$os.OSArchitecture
+           ProcessorArchitecture=$env:PROCESSOR_ARCHITECTURE;CPU=$cpu
+           ImageOS=$env:ImageOS;ImageVersion=$env:ImageVersion
+           SessionId=$proc.SessionId;UserInteractive=[Environment]::UserInteractive
+           SessionQueryExitCode=$sessionExit;CurrentSessionRows=$currentSessionRows;SessionQuery=$sessionOutput
+           Session0=($proc.SessionId -eq 0)
+           AdminToken=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+           Tools=$tools;WACKFound=(@($tools|Where-Object Name -eq 'appcert.exe').Count -gt 0)
+           SignToolFound=(@($tools|Where-Object Name -eq 'signtool.exe').Count -gt 0)
+           WACKExecuted=$false;SignToolExecuted=$false;HaloryvaExecuted=$false;Installed=$false;Signed=$false;ProtectionChanged=$false
+           PackageDownloaded=$false;TestsExecuted=$false;WorkflowCommit=$env:GITHUB_SHA
+          }
+          $out=Join-Path $env:RUNNER_TEMP 'haloryva-wack-inventory'
+          New-Item -ItemType Directory -Path $out|Out-Null
+          $result|ConvertTo-Json -Depth 8|Tee-Object (Join-Path $out 'inventory.json')
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Haloryva-WACK-ARM-inventory
+          path: ${{ runner.temp }}/haloryva-wack-inventory/
+          retention-days: 90
+          if-no-files-found: error
