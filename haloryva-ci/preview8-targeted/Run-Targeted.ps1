@@ -5,10 +5,10 @@ if(Test-Path -LiteralPath $out){throw 'Fresh output required'}
 New-Item -ItemType Directory -Path $out|Out-Null
 $build=Join-Path $env:RUNNER_TEMP 'haloryva-preview8-build'
 $app=Join-Path $build 'Haloryva.exe'
-$expected='05D47EC2F97B378E7CE09B38ED642BD710095CD4B92E1AAE343C0844F9F4AEB8'
+$expected='7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E'
 if((Get-FileHash -LiteralPath $app).Hash -cne $expected){throw 'Frozen binary mismatch'}
 $p=Get-Content -LiteralPath (Join-Path $build 'build-provenance.json') -Raw|ConvertFrom-Json
-if($p.Commit -cne 'e3cbcdb732af337953f246ec267bd0e0d1b109cf' -or $p.Version -ne '2.7.1-preview.8'){throw 'Build provenance mismatch'}
+if($p.Commit -cne '8c99140684659faef4ec15addbc7cc96c09ae2c1' -or $p.Version -ne '2.7.1-preview.8'){throw 'Build provenance mismatch'}
 Copy-Item -LiteralPath $app -Destination $out
 Copy-Item -LiteralPath (Join-Path $build 'build-provenance.json') -Destination $out
 $pf86=[Environment]::GetFolderPath('ProgramFilesX86')
@@ -40,4 +40,4 @@ $data=Get-Content -LiteralPath $result -Raw -Encoding UTF8|ConvertFrom-Json
 $data|ConvertTo-Json -Depth 8|Write-Output
 if($proc.ExitCode -ne 0 -or !$data.Passed){throw 'Targeted isolated checks failed'}
 $os=Get-CimInstance Win32_OperatingSystem
-[ordered]@{Version='2.7.1-preview.8';SHA256=$expected;BuildRun=43012511350;RecipeRun=$env:GITHUB_RUN_ID;Status='targeted-passed';OS=$os.Caption;Build=$os.BuildNumber;Arch=$env:RUNNER_ARCH;Image=$env:ImageVersion;Historical195Executed=$false;Signed=$false;Published=$false;DriverSHA256=(Get-FileHash -LiteralPath $exe).Hash;Assertions=@($data.Checks).Count;SimulatedAssertions=@($data.Checks|Where-Object Kind -eq 'simulated-state').Count}|ConvertTo-Json|Tee-Object -FilePath (Join-Path $out 'result.json')
+[ordered]@{Version='2.7.1-preview.8';SHA256=$expected;BuildRun=43013253531;RecipeRun=$env:GITHUB_RUN_ID;Status='targeted-passed';OS=$os.Caption;Build=$os.BuildNumber;Arch=$env:RUNNER_ARCH;Image=$env:ImageVersion;Historical195Executed=$false;Signed=$false;Published=$false;DriverSHA256=(Get-FileHash -LiteralPath $exe).Hash;Assertions=@($data.Checks).Count;SimulatedAssertions=@($data.Checks|Where-Object Kind -eq 'simulated-state').Count}|ConvertTo-Json|Tee-Object -FilePath (Join-Path $out 'result.json')
