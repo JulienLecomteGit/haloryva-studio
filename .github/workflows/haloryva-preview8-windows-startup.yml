@@ -1,0 +1,29 @@
+name: Haloryva preview.8 Windows user startup disable only
+on:
+  push:
+    branches: ['haloryva-tests-preview8-import']
+    paths: ['haloryva-ci/preview8-windows-startup/**', '.github/workflows/haloryva-preview8-windows-startup.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  windows-startup:
+    runs-on: windows-11-arm
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: preview8-startup-ui-evidence
+          run-id: 43017325667
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/preview8-frozen/
+      - name: Disable only the test app through actual Windows Settings
+        shell: powershell
+        run: ./haloryva-ci/preview8-windows-startup/Run-WindowsStartup.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview8-windows-startup-evidence
+          path: ${{ runner.temp }}/preview8-windows-startup/
+          retention-days: 30
