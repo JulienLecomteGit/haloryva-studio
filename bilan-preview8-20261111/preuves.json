@@ -1,0 +1,724 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "version": "2.7.1-preview.8",
+  "finalBinarySHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+  "finalBuildCommit": "bba2ca20b5a6723550221ee770c620ff326bbac7",
+  "finalBuildRun": 43017117882,
+  "priorCandidateSHA256": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+  "componentRun": {
+    "id": 43014257655,
+    "status": "success",
+    "results": [
+      {
+        "Version": "2.7.1-preview.8",
+        "Mode": "unit",
+        "Passed": true,
+        "Checks": [
+          {
+            "Id": "M1-language-tools",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M1-fields",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M1-source-unchanged",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M4-refuse-overwrite",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M2-backup-no-repair",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M2-invalid-refused",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M2-limit",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M5-concurrent-destination",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M5-rollback-source-target",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M1-270-defaults",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M6-asset-plan",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M6-image-copy",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "M6-preset-missing-reference",
+            "Kind": "isolated-files",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-0",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-0",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-1",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-1",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-2",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-2",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-3",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-3",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-4",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-4",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state--1",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission--1",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-state-99",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "S4-permission-99",
+            "Kind": "simulated-state",
+            "Passed": true
+          },
+          {
+            "Id": "M4-protected-roots",
+            "Kind": "isolated-path-policy",
+            "Passed": true
+          },
+          {
+            "Id": "S5-import-no-startup-calls",
+            "Kind": "real-controller-fake-startup",
+            "Passed": true
+          },
+          {
+            "Id": "M1-controller-source-intact",
+            "Kind": "real-controller-isolated-files",
+            "Passed": true
+          }
+        ],
+        "Historical195Executed": false
+      },
+      {
+        "Version": "2.7.1-preview.8",
+        "SHA256": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+        "BuildRun": 43013253531,
+        "RecipeRun": "43014257655",
+        "Status": "targeted-passed",
+        "OS": "Microsoft Windows Server 2025 Datacenter",
+        "Build": "26100",
+        "Arch": "X64",
+        "Image": "20261103.298.1",
+        "Historical195Executed": false,
+        "Signed": false,
+        "Published": false,
+        "DriverSHA256": "A6BDE68F85757463075773B33387EAF04FE568DFADA6D0A0F8CF7EE0D69E48C4",
+        "Assertions": 30,
+        "SimulatedAssertions": 14
+      }
+    ],
+    "reused_after_shown_only_change": true,
+    "executed_on_final_binary": false
+  },
+  "lifecycleRun": {
+    "id": 43014976009,
+    "status": "failure",
+    "qualification": "migration/update checks passed; secondary-app startup helper failed",
+    "results": [
+      {
+        "Version": "2.7.1-preview.8",
+        "Mode": "package-enable",
+        "Passed": false,
+        "Checks": [
+          {
+            "Id": "package-identity",
+            "Kind": "real-windows-msix",
+            "Passed": true
+          },
+          {
+            "Id": "package-private-path",
+            "Kind": "real-windows-msix",
+            "Passed": true
+          },
+          {
+            "Diagnostic": "adapter-before",
+            "State": "Unknown",
+            "Enabled": null,
+            "CanChange": false,
+            "Message": "État du démarrage indisponible."
+          },
+          {
+            "Diagnostic": "direct-get-error",
+            "Error": "System.ArgumentException: The parameter is incorrect.\r\n\r\nCouldn't find a StartupTask in the appx manifest with the input taskId\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at Targeted.<Packaged>d__e.MoveNext()",
+            "HResult": -2147024809
+          },
+          {
+            "Diagnostic": "package-task-list",
+            "Tasks": []
+          },
+          {
+            "Id": "S1-default-disabled",
+            "Kind": "real-windows-msix",
+            "Passed": false
+          },
+          {
+            "Error": "System.Exception: Assertion failed: S1-default-disabled\r\n   at Targeted.Check(Boolean condition, String id, String kind)\r\n   at Targeted.<Packaged>d__e.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at Targeted.<>c__DisplayClass1f.<<Main>b__1c>d__21.MoveNext()"
+          }
+        ],
+        "Historical195Executed": false
+      },
+      {
+        "Version": "2.7.1-preview.8",
+        "Mode": "package-retained",
+        "Passed": false,
+        "Checks": [
+          {
+            "Id": "package-identity",
+            "Kind": "real-windows-msix",
+            "Passed": true
+          },
+          {
+            "Id": "package-private-path",
+            "Kind": "real-windows-msix",
+            "Passed": true
+          },
+          {
+            "Diagnostic": "adapter-before",
+            "State": "Unknown",
+            "Enabled": null,
+            "CanChange": false,
+            "Message": "État du démarrage indisponible."
+          },
+          {
+            "Diagnostic": "direct-get-error",
+            "Error": "System.ArgumentException: The parameter is incorrect.\r\n\r\nCouldn't find a StartupTask in the appx manifest with the input taskId\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at Targeted.<Packaged>d__e.MoveNext()",
+            "HResult": -2147024809
+          },
+          {
+            "Diagnostic": "package-task-list",
+            "Tasks": []
+          },
+          {
+            "Id": "U2-startup-retained",
+            "Kind": "real-windows-msix",
+            "Passed": false
+          },
+          {
+            "Error": "System.Exception: Assertion failed: U2-startup-retained\r\n   at Targeted.Check(Boolean condition, String id, String kind)\r\n   at Targeted.<Packaged>d__e.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at Targeted.<>c__DisplayClass1f.<<Main>b__1c>d__21.MoveNext()"
+          }
+        ],
+        "Historical195Executed": false
+      },
+      {
+        "Version": "2.7.1-preview.8",
+        "Status": "msix8-partial-startup-failed",
+        "Historical195Executed": false,
+        "Signed": false,
+        "Published": false,
+        "Rebuilt": false,
+        "RealLogonExecuted": false,
+        "LegacyInstallerExecuted": false,
+        "Packages": [
+          {
+            "SHA256": "E7F0C032A76FF22F737250B55472B8F638E6B0359B7843E615D54246A3E9F2A4",
+            "Version": "2.7.1.70",
+            "ExecutableSHA256": "B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604",
+            "Startup": false
+          },
+          {
+            "SHA256": "E6C23EB21ECFC675044E3AEF0CDA7A53498FFD264321E465FD73AA6DCA637DD2",
+            "Version": "2.7.1.80",
+            "ExecutableSHA256": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+            "Startup": true
+          },
+          {
+            "SHA256": "E3A72870B99DCFA715CEA6D97A4B71021DD227CC1480DC981014654FDFEA752C",
+            "Version": "2.7.1.81",
+            "ExecutableSHA256": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+            "Startup": true
+          }
+        ],
+        "Launches": [
+          {
+            "Version": "2.7.1.70",
+            "ExitCode": 0,
+            "ForcedStop": false,
+            "Language": "fr",
+            "Silent": false,
+            "Ready": true,
+            "IdentityConfirmed": true
+          },
+          {
+            "Version": "2.7.1.80",
+            "ExitCode": 0,
+            "ForcedStop": false,
+            "Language": "es",
+            "Silent": false,
+            "Ready": true,
+            "IdentityConfirmed": true
+          },
+          {
+            "Version": "2.7.1.81",
+            "ExitCode": 0,
+            "ForcedStop": false,
+            "Language": "es",
+            "Silent": false,
+            "Ready": true,
+            "IdentityConfirmed": true
+          },
+          {
+            "Version": "2.7.1.81",
+            "ExitCode": 0,
+            "ForcedStop": false,
+            "Language": "es",
+            "Silent": true,
+            "Ready": true,
+            "IdentityConfirmed": true
+          }
+        ],
+        "Checks": [
+          {
+            "SHA256": "8D2BB7BDF7210CC95124C0C1911F13CD455974E9FDA9EC5318CAF69FB9086B4F",
+            "Id": "U1-profile-migrated",
+            "Fields": 93,
+            "Passed": true
+          },
+          {
+            "Id": "M3-old-cache-priority-and-sources-intact",
+            "Passed": true
+          },
+          {
+            "SHA256": "8D2BB7BDF7210CC95124C0C1911F13CD455974E9FDA9EC5318CAF69FB9086B4F",
+            "Id": "U2-profile-retained",
+            "Fields": 93,
+            "Passed": true
+          },
+          {
+            "SHA256": "8D2BB7BDF7210CC95124C0C1911F13CD455974E9FDA9EC5318CAF69FB9086B4F",
+            "Id": "silent-relaunch-profile-retained",
+            "Fields": 93,
+            "Passed": true
+          },
+          {
+            "SHA256": "8D2BB7BDF7210CC95124C0C1911F13CD455974E9FDA9EC5318CAF69FB9086B4F",
+            "Id": "U3-rejected-downgrade-profile-intact",
+            "Fields": 93,
+            "Passed": true
+          },
+          {
+            "Id": "U3-downgrade-rejected-no-force",
+            "Passed": true
+          }
+        ],
+        "HelperResults": [
+          {
+            "Version": "2.7.1-preview.8",
+            "Mode": "package-enable",
+            "Passed": false,
+            "Checks": [
+              {
+                "Id": "package-identity",
+                "Kind": "real-windows-msix",
+                "Passed": true
+              },
+              {
+                "Id": "package-private-path",
+                "Kind": "real-windows-msix",
+                "Passed": true
+              },
+              {
+                "Diagnostic": "adapter-before",
+                "State": "Unknown",
+                "Enabled": null,
+                "CanChange": false,
+                "Message": "État du démarrage indisponible."
+              },
+              {
+                "Diagnostic": "direct-get-error",
+                "Error": "System.ArgumentException: The parameter is incorrect.\r\n\r\nCouldn't find a StartupTask in the appx manifest with the input taskId\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at Targeted.<Packaged>d__e.MoveNext()",
+                "HResult": -2147024809
+              },
+              {
+                "Diagnostic": "package-task-list",
+                "Tasks": []
+              },
+              {
+                "Id": "S1-default-disabled",
+                "Kind": "real-windows-msix",
+                "Passed": false
+              },
+              {
+                "Error": "System.Exception: Assertion failed: S1-default-disabled\r\n   at Targeted.Check(Boolean condition, String id, String kind)\r\n   at Targeted.<Packaged>d__e.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at Targeted.<>c__DisplayClass1f.<<Main>b__1c>d__21.MoveNext()"
+              }
+            ],
+            "Historical195Executed": false
+          },
+          {
+            "Version": "2.7.1-preview.8",
+            "Mode": "package-retained",
+            "Passed": false,
+            "Checks": [
+              {
+                "Id": "package-identity",
+                "Kind": "real-windows-msix",
+                "Passed": true
+              },
+              {
+                "Id": "package-private-path",
+                "Kind": "real-windows-msix",
+                "Passed": true
+              },
+              {
+                "Diagnostic": "adapter-before",
+                "State": "Unknown",
+                "Enabled": null,
+                "CanChange": false,
+                "Message": "État du démarrage indisponible."
+              },
+              {
+                "Diagnostic": "direct-get-error",
+                "Error": "System.ArgumentException: The parameter is incorrect.\r\n\r\nCouldn't find a StartupTask in the appx manifest with the input taskId\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at Targeted.<Packaged>d__e.MoveNext()",
+                "HResult": -2147024809
+              },
+              {
+                "Diagnostic": "package-task-list",
+                "Tasks": []
+              },
+              {
+                "Id": "U2-startup-retained",
+                "Kind": "real-windows-msix",
+                "Passed": false
+              },
+              {
+                "Error": "System.Exception: Assertion failed: U2-startup-retained\r\n   at Targeted.Check(Boolean condition, String id, String kind)\r\n   at Targeted.<Packaged>d__e.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at Targeted.<>c__DisplayClass1f.<<Main>b__1c>d__21.MoveNext()"
+              }
+            ],
+            "Historical195Executed": false
+          }
+        ],
+        "Environment": {
+          "RunnerArch": "ARM64",
+          "Build": "26200",
+          "Caption": "Microsoft Windows 11 Enterprise",
+          "Architecture": "ARM 64-bit Processor",
+          "Interactive": true,
+          "Image": "20261101.203.1"
+        },
+        "DiagnosticHelperSHA256": "AD7DA85E58C54182125AA9D810E679E39B1421E550F24691BA480F1124967C9E",
+        "OriginalHelperSHA256": "A6BDE68F85757463075773B33387EAF04FE568DFADA6D0A0F8CF7EE0D69E48C4",
+        "StartupChecksPassed": false,
+        "ExecutableSHA256": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+        "Preview7SHA256": "B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604",
+        "Family": "HaloryvaStudio.MsixLifecycleTest_6f9y2rm4h9xya",
+        "CleanupPackageRemoved": true,
+        "Error": "Lifecycle checks completed; startup diagnostics require review"
+      }
+    ],
+    "executed_on_final_binary": false
+  },
+  "finalStartupRun": {
+    "id": 43017766592,
+    "status": "success",
+    "results": [
+      {
+        "Status": "startup-ui-passed",
+        "Version": "2.7.1-preview.8",
+        "ExecutableSHA256": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512",
+        "Rebuilt": false,
+        "Signed": false,
+        "Published": false,
+        "Historical195Executed": false,
+        "RealLogonExecuted": false,
+        "Checks": [
+          {
+            "LaunchAtLogin": true,
+            "Kind": "real-studio-keyboard-command-and-confirmed-settings",
+            "Id": "S2-studio-enable",
+            "Passed": true
+          },
+          {
+            "LaunchAtLogin": false,
+            "Kind": "real-studio-keyboard-command-and-confirmed-settings",
+            "Id": "S2-studio-disable",
+            "Passed": true
+          },
+          {
+            "LaunchAtLogin": true,
+            "Kind": "real-studio-keyboard-command-and-confirmed-settings",
+            "Id": "U2-studio-enabled-before-update",
+            "Passed": true
+          },
+          {
+            "LaunchAtLogin": false,
+            "Kind": "real-studio-keyboard-command-and-confirmed-settings",
+            "Id": "U2-studio-retained-and-disable",
+            "Passed": true
+          }
+        ],
+        "States": [
+          {
+            "Stage": "opened-2.7.1.80",
+            "RegistryReadOnly": {
+              "UserEnabledStartupOnce": 0,
+              "ShowNotification": 1,
+              "State": 0
+            }
+          },
+          {
+            "Found": true,
+            "Stage": "control-found",
+            "Enabled": true
+          },
+          {
+            "Stage": "S2-studio-enable",
+            "RegistryReadOnly": {
+              "State": 2,
+              "UserEnabledStartupOnce": 1
+            }
+          },
+          {
+            "Stage": "S2-studio-disable",
+            "RegistryReadOnly": {
+              "State": 0,
+              "LastDisabledTime": 1794398976,
+              "UserEnabledStartupOnce": 1
+            }
+          },
+          {
+            "Stage": "U2-studio-enabled-before-update",
+            "RegistryReadOnly": {
+              "State": 2,
+              "LastDisabledTime": 1794398976,
+              "UserEnabledStartupOnce": 1
+            }
+          },
+          {
+            "Stage": "opened-2.7.1.81",
+            "RegistryReadOnly": {
+              "State": 2,
+              "LastDisabledTime": 1794398976,
+              "UserEnabledStartupOnce": 1
+            }
+          },
+          {
+            "Found": true,
+            "Stage": "control-found",
+            "Enabled": true
+          },
+          {
+            "Stage": "U2-studio-retained-and-disable",
+            "RegistryReadOnly": {
+              "State": 0,
+              "LastDisabledTime": 1794398982,
+              "UserEnabledStartupOnce": 1
+            }
+          }
+        ],
+        "Environment": {
+          "Caption": "Microsoft Windows 11 Enterprise",
+          "Arch": "ARM64",
+          "Build": "26200",
+          "Image": "20261101.203.1"
+        },
+        "Family": "HaloryvaStudio.MsixLifecycleTest_6f9y2rm4h9xya",
+        "CleanupPackageRemoved": true
+      }
+    ],
+    "executed_on_final_binary": true,
+    "physical_mouse_gesture_validated": false,
+    "real_logon_validated": false
+  },
+  "shownOnlySourceDiff": {
+    "file": "haloryva-ci/preview8/src/PremiumStudioForm.cs",
+    "before": "Shown += delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); };",
+    "after": "Shown += async delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); await engine.RefreshStartupStatusAsync(); };",
+    "baseBinary": "7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E",
+    "finalBinary": "CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512"
+  },
+  "artifacts": [
+    {
+      "id": 13852713433,
+      "name": "Haloryva-2.7.1-preview.8-build",
+      "size_in_bytes": 239831,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13852713433",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13852713433/zip",
+      "expired": false,
+      "created_at": "2026-11-11T12:04:24Z",
+      "expires_at": "2026-12-11T12:04:24Z",
+      "updated_at": "2026-11-11T12:04:24Z",
+      "digest": "sha256:75dd1800a72812fb1bace90ea3d493fe1c9cdee697df7a5df725b71126334484",
+      "workflow_run": {
+        "id": 43017117882,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview8",
+        "head_sha": "bba2ca20b5a6723550221ee770c620ff326bbac7"
+      }
+    },
+    {
+      "id": 13852581490,
+      "name": "preview8-msix-evidence",
+      "size_in_bytes": 1938597,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13852581490",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13852581490/zip",
+      "expired": false,
+      "created_at": "2026-11-11T11:50:02Z",
+      "expires_at": "2026-12-11T11:50:01Z",
+      "updated_at": "2026-11-11T11:50:02Z",
+      "digest": "sha256:7995ea2f8c3abb3d4ae08d7e7fcb396726eb80b8578036b7d79749bf90d39c28",
+      "workflow_run": {
+        "id": 43014976009,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview8",
+        "head_sha": "1e9594c136167f6e73fb2097b80e7893fd097740"
+      }
+    },
+    {
+      "id": 13853373036,
+      "name": "preview8-startup-ui-evidence",
+      "size_in_bytes": 6387,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13853373036",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13853373036/zip",
+      "expired": false,
+      "created_at": "2026-11-11T12:09:44Z",
+      "expires_at": "2026-12-11T12:09:44Z",
+      "updated_at": "2026-11-11T12:09:44Z",
+      "digest": "sha256:1671e633b3f3c7daea34125c245e144b13d2de4bc78c0589a77e963f437cbc3d",
+      "workflow_run": {
+        "id": 43017766592,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview8",
+        "head_sha": "b4717793a33c019356954034e2f7e855aae6cc44"
+      }
+    },
+    {
+      "id": 13853108416,
+      "name": "preview8-startup-ui-evidence",
+      "size_in_bytes": 1106244,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13853108416",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13853108416/zip",
+      "expired": false,
+      "created_at": "2026-11-11T12:06:36Z",
+      "expires_at": "2026-12-11T12:06:34Z",
+      "updated_at": "2026-11-11T12:06:36Z",
+      "digest": "sha256:4660f31f8e8c9bcd0af9d3b8838c9505174eba5bd36deecd97411a4f66f5894f",
+      "workflow_run": {
+        "id": 43017325667,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview8",
+        "head_sha": "d8fbf133a4d1377bea64a9fcf9a65a30fe82cf74"
+      }
+    }
+  ],
+  "scope": {
+    "historical195Executed": false,
+    "localPCModified": false,
+    "mainModified": false,
+    "signatureCreated": false,
+    "releasePublished": false,
+    "storeSubmission": false,
+    "publicTestBranchCreated": true
+  },
+  "knownAttemptRuns": [
+    {
+      "id": 43012823144,
+      "type": "application-path-normalization-failure",
+      "resolved": true
+    },
+    {
+      "id": 43014545377,
+      "type": "secondary-app-startup-helper-failure",
+      "resolved_by": "real Studio path tested separately"
+    },
+    {
+      "id": 43015667946,
+      "type": "driver-mouse-navigation-not-reached"
+    },
+    {
+      "id": 43016161471,
+      "type": "driver-mouse-navigation-not-reached"
+    },
+    {
+      "id": 43016554824,
+      "type": "real-ui-initial-state-not-loaded",
+      "followup": "Shown initialization added"
+    },
+    {
+      "id": 43017325667,
+      "type": "driver-expected-profile-before-first-save",
+      "resolved_by": 43017766592
+    }
+  ]
+}

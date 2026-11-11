@@ -1,0 +1,69 @@
+{
+  "BranchCount": 14,
+  "PriorBlobs": 363,
+  "ChangedBranches": [],
+  "ChangedPriorFiles": [],
+  "CheckedHead": "b4717793a33c019356954034e2f7e855aae6cc44",
+  "LocalComputerOperations": 0,
+  "Historical195Executed": false,
+  "Signed": false,
+  "ReleasePublished": false,
+  "protectedBranches": [
+    {
+      "name": "haloryva-2.7.0-c4",
+      "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+    },
+    {
+      "name": "haloryva-preparation-msix-preview7",
+      "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+    },
+    {
+      "name": "haloryva-preparation-store-preview5",
+      "sha": "f07890303144653049a05069841838ecd9b9d73d"
+    },
+    {
+      "name": "haloryva-preparation-store-preview7",
+      "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+    },
+    {
+      "name": "haloryva-tests-preview2",
+      "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+    },
+    {
+      "name": "haloryva-tests-preview3",
+      "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+    },
+    {
+      "name": "haloryva-tests-preview4",
+      "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+    },
+    {
+      "name": "haloryva-tests-preview5-msix",
+      "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+    },
+    {
+      "name": "haloryva-tests-preview5",
+      "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+    },
+    {
+      "name": "haloryva-tests-preview6",
+      "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+    },
+    {
+      "name": "haloryva-tests-preview7-msix",
+      "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+    },
+    {
+      "name": "haloryva-tests-preview7",
+      "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+    },
+    {
+      "name": "main",
+      "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+    },
+    {
+      "name": "release/2.7.0-stable",
+      "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+    }
+  ]
+}

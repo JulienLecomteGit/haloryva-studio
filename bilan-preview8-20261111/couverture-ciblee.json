@@ -1,0 +1,91 @@
+{
+  "cases": [
+    {
+      "id": "S1",
+      "status": "partial_real",
+      "scope": "Binaire final : tâche présente, State=0 en lecture seule et interrupteur utilisable dès l’affichage. Aucun suivi complet des écritures Run ; absence de repli Run vérifiée dans le code."
+    },
+    {
+      "id": "S2",
+      "status": "passed_real_studio_msix",
+      "scope": "Binaire final : commandes clavier adressées au véritable interrupteur WinForms ; activation/désactivation via l’API Windows, changements de State 0→2→0 constatés en lecture seule, réglage sauvegardé. Ce ne sont ni des états simulés ni une recette du clic souris."
+    },
+    {
+      "id": "S3",
+      "status": "not_executed",
+      "scope": "Désactivation par l’utilisateur dans les Paramètres Windows et rafraîchissement de l’interface non exécutés."
+    },
+    {
+      "id": "S4",
+      "status": "partial_simulated",
+      "scope": "14 assertions sur la correspondance des états et permissions (0,1,2,3,4,-1,99). Pas de politique Windows modifiée ni de preuve visuelle des messages."
+    },
+    {
+      "id": "S5",
+      "status": "partial_component_with_double",
+      "scope": "Changed, remplacement de configuration et import réel exercés avec un service de démarrage fictif : zéro demande de modification. Tous les parcours UI d’import/couleur ne sont pas couverts."
+    },
+    {
+      "id": "M1",
+      "status": "partial_component",
+      "scope": "Copie réelle de fichiers de test, valeurs FR/ES, outils et défauts 2.7.0, source inchangée. Consentement et import 2.7.0 par l’UI du MSIX non exécutés."
+    },
+    {
+      "id": "M2",
+      "status": "partial_component",
+      "scope": "Source principale invalide avec .bak valide, deux sources invalides et fichier trop volumineux exécutés. Accès refusé par permissions non exécuté."
+    },
+    {
+      "id": "M3",
+      "status": "passed_real_msix",
+      "scope": "Mise à jour réelle A vers B : ancien LocalCache prioritaire sur un profil classique synthétique distinct ; 93 champs conservés, deux sources inchangées."
+    },
+    {
+      "id": "M4",
+      "status": "partial_component_and_msix",
+      "scope": "Refus d’une destination existante, règles de chevauchement et conservation du profil lors des relancements. Tous les modes diagnostic sous MSIX et la destination corrompue ne sont pas exercés."
+    },
+    {
+      "id": "M5",
+      "status": "partial_component",
+      "scope": "Destination modifiée après préparation : commit refusé et fichiers préservés. Panne d’E/S pendant remplacement et concurrence avec sauvegarde différée non injectées."
+    },
+    {
+      "id": "M6",
+      "status": "partial_component",
+      "scope": "PNG de test copié et hash identique ; référence WAV absente conservée et signalée dans le plan ; statut du préréglage ajusté. WAV valide, fichier trop gros et dialogues de consentement non exercés."
+    },
+    {
+      "id": "C1",
+      "status": "not_executed",
+      "scope": "Aucune exécution de la version stable 2.7.0 ni de son installateur ; verrou partagé et maintenance seulement revus dans le code."
+    },
+    {
+      "id": "U1",
+      "status": "passed_real_msix",
+      "scope": "Mise à jour sur place A(2.7.1.70, EXE preview.7 figé) vers B(2.7.1.80, EXE preview.8 figé), sans désinstallation intermédiaire ; migration LocalState et arrêt normal réussis."
+    },
+    {
+      "id": "U2",
+      "status": "passed_targeted_combined_evidence",
+      "scope": "Premier candidat preview.8 : mise à jour B→C avec conservation de 93 champs et du hash de profil. Binaire final : B→C sans désinstallation, EXE identique dans les deux paquets, démarrage actif conservé (State=2), désactivation finale et arrêts normaux. Les 93 champs n’ont pas été retestés après l’unique ajout de lecture d’état dans Shown."
+    },
+    {
+      "id": "U3",
+      "status": "partial_real_msix",
+      "scope": "Retour à une version inférieure refusé par Windows sans forçage ; enregistrement C et profil conservés. Mise à jour pendant que l’application est ouverte et déploiement différé non exécutés."
+    },
+    {
+      "id": "M7",
+      "status": "not_executed",
+      "scope": "Migration depuis une installation réelle 2.7.0 non exécutée. Aucun profil de test n’est présenté comme cette validation."
+    },
+    {
+      "id": "S6",
+      "status": "not_executed",
+      "scope": "Aucune fermeture/ouverture de session ni redémarrage de Windows. Lancement manuel --silent réussi : il ne prouve pas le démarrage à la connexion."
+    }
+  ],
+  "historical195Executed": false,
+  "allPreparedCasesFullyValidated": false
+}

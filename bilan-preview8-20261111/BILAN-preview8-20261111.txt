@@ -1,0 +1,70 @@
+HALORYVA STUDIO 2.7.1-preview.8 — BILAN CIBLÉ DU 11 NOVEMBRE 2026
+
+La préversion est compilée. Les contrôles ciblés de migration et de mise à jour ont fourni des preuves positives ; les commandes de démarrage du véritable Studio MSIX réussissent sur le binaire final. La qualification complète pour diffusion ou Microsoft Store n’est pas déclarée acquise.
+
+Travail uniquement sur la branche haloryva-tests-preview8 et les machines temporaires GitHub. Aucun test des 195 entrées, aucune exécution ou installation sur le PC de l’utilisateur, aucune signature, aucun certificat, aucune release, aucun tag ni modification de main. Les sources nouvelles sont bien sur la branche publique de travail ; « non publié » dans les rapports d’essai signifie aucune diffusion de release/Store.
+
+BINAIRE FINAL
+Version : 2.7.1-preview.8 (fichier 2.7.1.8)
+SHA256 : CFB5322F128EBAA7D1BBC6A4F8892CC853C9B6B9ED7F78DBDC4C2FB3B0CDA512
+Commit de compilation : bba2ca20b5a6723550221ee770c620ff326bbac7
+Compilation réussie : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43017117882
+Archive : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43017117882/artifacts/13852713433
+La compilation utilise les outils déjà présents sur GitHub. Aucun SDK ni logiciel ajouté. Avertissement CS1701 de correspondance System.Runtime 4.0/4.1.2 conservé dans les journaux ; les appels WinRT effectivement utilisés par le contrôle final ont fonctionné. Ce résultat ne remplace pas une certification Store.
+
+CORRECTIONS RÉALISÉES
+- Démarrage MSIX via StartupTask, désactivé par défaut, avec --silent déclaré dans le manifeste de test.
+- Lecture de l’état Windows ; demande explicite depuis le Studio ; plus d’application automatique du démarrage lors des changements ordinaires ou imports de profil.
+- Traitement distinct des états indisponible, désactivé par l’utilisateur et géré par stratégie ; garde contre une réponse de lecture devenue ancienne.
+- Réglages MSIX explicitement dans LocalState/Haloryva ; ancien LocalCache de la même famille prioritaire.
+- Copie explicite des réglages classiques, sauvegarde brute dans la destination, copie conditionnelle PNG/WAV, validation bornée, contrôle d’écrasement et remplacement atomique. Sources ouvertes en lecture seule.
+- Verrou d’instance commun conservé et vérification du verrou de maintenance classique en lecture seule.
+- Deux anomalies rencontrées et corrigées pendant cette recette : normalisation du préfixe de chemin Windows avant son contrôle .NET Framework ; lecture initiale de l’état de démarrage lors de Shown, sans attendre Activated.
+
+PREUVES EFFECTIVEMENT EXÉCUTÉES
+1. Composants ciblés : 30 assertions réussies.
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43014257655
+13 assertions de migration/fichiers, 1 de règles de chemins, 1 de conservation de source par le contrôleur, 1 d’absence de demande de démarrage avec un service fictif, 14 de correspondance d’états simulés.
+Les lectures/copies de fichiers sont réelles sur des données synthétiques. Les 14 états simulés ne prouvent aucune stratégie Windows réelle. Le service fictif n’est pas une validation du système.
+
+2. Mise à jour MSIX réelle sur Windows 11 Enterprise ARM64, build 26200, EXE x64 émulé.
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43014976009
+A (EXE preview.7 conservé, paquet 2.7.1.70) → B (preview.8, 2.7.1.80) → C (même EXE que B, 2.7.1.81), sans désinstallation intermédiaire.
+Migration LocalCache → LocalState, comparaison des 93 champs, espagnol et Stylo/Rectangle conservés ; sources LocalCache et classique synthétique intactes.
+Quatre lancements/arrêts normaux, dont un --silent manuel. Refus réel du retour à B, avec C et le profil conservés. Retrait final du seul paquet de test.
+Attention : CE RUN EST ROUGE. Le pilote secondaire Recipe ne retrouve pas le TaskId (0x80070057, liste vide). Les mises à jour et six vérifications indépendantes réussissent, mais ce run ne valide pas le démarrage. Cette distinction est conservée dans preuves.json.
+
+3. Démarrage par le véritable Studio, sur le binaire FINAL.
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43017766592
+Réussite : interrupteur initial utilisable ; activer, désactiver, réactiver ; mettre à jour B→C ; constater le démarrage toujours actif ; désactiver ; quitter normalement et retirer le paquet de test.
+Commandes clavier adressées au contrôle WinForms réel. Les opérations passent par le code de production et l’API Windows. Les lectures seules du Registre de cette identité constatent 0→2→0→2, puis 2 après mise à jour et 0 après désactivation. Aucune valeur du Registre n’est écrite par le pilote.
+Ce test ne valide ni un clic souris physique ni une ouverture de session Windows.
+MSIX B final : D07978FB383F1CD069DDAE53C49771E9ACFA4D47700FF262374F3BCF3EAD34A9
+MSIX C final : 08B68E89F32032C970B4B36EFFDE868772A10A0ECCFF542CF4BED810F57AAE73
+Paquets non signés, EXE final identique, application unique Haloryva, identité temporaire HaloryvaStudio.MsixLifecycleTest_6f9y2rm4h9xya.
+Archives des paquets : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43017325667/artifacts/13853108416
+Ce run de préparation des paquets s’était arrêté sur une hypothèse erronée du pilote : fichier de réglages attendu avant la première sauvegarde. Le run final réussit avec exactement ces paquets, sans reconstruction.
+
+RÉUTILISATION DES PREUVES, SANS TESTS INUTILES
+Les points 1 et 2 portent sur le candidat preview.8 :
+7EA6B66B0802BB5700885ACEB33081861201A8F26F66108CC1EE96A9F3AA7E4E
+Le seul changement de source applicative entre ce candidat et le binaire final est l’ajout de la lecture d’état dans Shown (PremiumStudioForm.cs). Les composants migration/configuration/démarrage du contrôleur restent identiques. Les 30 assertions et la comparaison des 93 champs n’ont donc pas été relancées ; elles ne sont pas présentées comme une exécution du binaire final.
+Différence vérifiée : https://github.com/JulienLecomteGit/haloryva-studio/compare/8c99140684659faef4ec15addbc7cc96c09ae2c1...bba2ca20b5a6723550221ee770c620ff326bbac7
+Le contrôle du premier affichage et des commandes de démarrage a été repris, car directement affecté par ce changement.
+
+LIMITES ET PROCHAINS CONTRÔLES
+La matrice couverture-ciblee.json décrit séparément les 17 cas préparés, sans transformer une couverture partielle en réussite complète.
+Restent notamment : ouverture de session réelle ; désactivation depuis les Paramètres Windows et rafraîchissement ; import classique par dialogue avec consentement et PNG/WAV ; quelques échecs d’accès/écriture et concurrence ; mise à jour lorsque l’application est encore ouverte ; coexistence et migration depuis une installation réelle 2.7.0.
+Aucune installation 2.7.0 réelle n’a été remplacée par un simple profil de test. Les stratégies Windows n’ont pas été modifiées. Windows 11 x64 natif et certification Microsoft Store non exécutés.
+Les nouvelles traductions FR/EN/ES sont présentes ; aucune revue visuelle complète de leurs dialogues n’est déclarée acquise.
+Les paquets de recette utilisent une identité provisoire. Ils ne constituent pas un dossier prêt à soumettre au Store.
+
+PRÉSERVATION ET CONSERVATION
+14 branches préexistantes et 363 fichiers de départ inchangés, dont main, stable 2.7.0, toutes les préversions et leurs bilans. Vérifications détaillées dans preservation.json.
+Les essais échoués sont conservés, dont les deux pilotes d’entrée qui n’atteignaient pas les préférences ; la commande clavier atteint réellement la page. Le défaut de fichier absent au premier lancement était dans le pilote. Aucun de ces échecs n’est masqué par les résultats finaux.
+Les archives GitHub consultées expirent le 11 décembre 2026. Les synthèses JSON et ce bilan sont conservés dans la branche. Aucune archive n’a été copiée sur le PC de l’utilisateur.
+
+PROCHAINE ACTION PROPOSÉE
+Compléter les contrôles manquants automatisables de l’import classique (profils synthétiques et consentement, PNG/WAV) et de la désactivation par l’utilisateur dans Windows, avec le binaire final figé. Préparer séparément l’ouverture de session réelle et l’essai avec l’installation stable, sans les déclarer réalisés et sans les lancer sur le PC principal.
+
+Référence API : https://learn.microsoft.com/en-us/uwp/api/windows.applicationmodel.startuptask
