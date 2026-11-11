@@ -1,0 +1,80 @@
+HALORYVA STUDIO — PRÉVERSION 2.7.1-preview.3 — 11 NOVEMBRE 2026
+Correction du clic court validée par les tests ciblés Windows x64.
+Validation complète de la préversion NON ACQUISE. Aucune diffusion de version.
+
+VERSION TESTÉE
+Branche : haloryva-tests-preview3
+Commit applicatif et pilotes : 173de48db115468d40980d888922b61343e4a82f
+Run réussi : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42931395281
+Haloryva.exe SHA256 : 4170BEFEC193F5049051D73744CFCAD6D300240CE840E791E2C469A7CECAB13C
+AssemblyInformationalVersion : 2.7.1-preview.3
+Une seule compilation, même empreinte contrôlée avant/après les deux variantes.
+
+CORRECTION FINALE
+GlobalHooks.cs confie les clics à un fil d'exécution dédié, via une file conservant leur ordre.
+Le fil des hooks ne fait plus d'appel à SendInput, même en dehors du callback.
+Le rejeu conserve le wrapper natif existant et son marqueur : un DOWN et un UP.
+L'arrêt réveille puis termine les deux fils d'exécution avant de libérer leurs événements.
+Brand.cs identifie la nouvelle préversion. Aucun autre source applicatif modifié par rapport à la copie locale preview.2.
+28 fichiers conservés à l'octet : 26 autres sources C# et les 2 ressources de compilation.
+La compilation ne lance pas le build.ps1 historique et ne compile/lance pas les 195 contrôles.
+
+RÉSULTATS DU BINAIRE FINAL — WINDOWS SERVER 2025 X64, SESSION INTERACTIVE
+Sans observateur : 39 clics courts réussis, 3 appuis longs de contrôle réussis.
+Avec observateur passif : 39 clics courts réussis, 3 appuis longs de contrôle réussis.
+Total : 78 clics courts, dont 60 en séries rapprochées, et 6 appuis longs.
+Boutons : molette/Milieu, X1 et X2.
+Par variante :
+- 9 clics courts isolés : demandes de 60, 100 et 180 ms par bouton ; seuil long 400 ms ;
+- 3 séries de 10 clics rapprochés, une par bouton ;
+- 3 appuis longs à 650 ms : action halo observée, aucun clic transmis à la cible ;
+- 3 clics normaux de référence et 3 appels directs au wrapper natif réussis ;
+- arrêt des deux fils d'exécution confirmé.
+Chaque clic court a donné exactement un appui et un relâchement, dans cet ordre.
+Aucun événement orphelin/doublé détecté ; le halo reste inchangé lors des clics courts.
+Observateur confirmé installé dans une variante et absent dans l'autre.
+Le pilote compte aussi les messages de double-clic comme des appuis.
+Pour les 18 clics isolés : retour de l'appel de relâchement 0–1 ms ; observation du couple complet 12–47 ms.
+Ces mesures dépendent de l'ordonnancement de la VM et du sondage du pilote, pas d'une garantie de latence.
+35 vérifications ciblées par variante ; ce sont les nouveaux contrôles du pilote, pas la suite historique de 195.
+Processus cible séparé, vrais hooks et événements SendInput ; binaire chargé par le pilote de recette.
+Le démarrage autonome complet, le parcours d'installation et le matériel réel ne sont pas couverts ici.
+
+TRACES FINALES
+Sans observateur : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42931395281/job/130230888569
+Avec observateur : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42931395281/job/130230888442
+Compilation : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42931395281/job/130230742402
+Artifact de compilation : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42931395281/artifacts/13815992726
+Artifacts de cette exécution : conservation jusqu'au 25 novembre 2026 selon la politique de 14 jours.
+Les sources, pilotes et le présent bilan restent dans la branche.
+
+ESSAIS INTERMÉDIAIRES CONSERVÉS
+42929852078 : arrêt du contrôle d'intégrité avant compilation ; conversion des fins de ligne au checkout.
+Correction du pilote de compilation : .gitattributes local au dossier preview3 empêche cette conversion.
+42930126912 : première correction par rejeu différé sur le fil des hooks ; x64 avec/sans observateur réussi.
+42930709549 : le renforcement du pilote a révélé un défaut intermittent sur une série rapide sans observateur :
+comptes 3 DOWN/3 UP mais deux événements désordonnés. Cette première correction n'est pas retenue.
+Le fil de rejeu dédié de la correction finale évite de bloquer le fil des hooks pendant SendInput.
+
+LIMITE WINDOWS 11 ARM OBSERVÉE
+Dans les runs 42930126912 et 42930709549, les deux variantes ARM se sont arrêtées avant les gestes.
+Le diagnostic du dernier run identifie la fenêtre au premier plan : « Microsoft account », appartenant à un autre processus.
+La cible Haloryva était bien créée, avec observateur installé ou désactivé selon le cas, mais ne devenait pas la fenêtre active.
+Aucun clic envoyé dans cet état. Aucun compte utilisé, fenêtre système fermée ou protection contournée.
+Le binaire final n'a donc pas reçu de validation fonctionnelle Windows 11 ARM.
+La matrice finale conserve uniquement l'environnement x64 utilisable.
+Le test MSIX réussi antérieurement concernait preview.2 ; il ne valide pas le nouveau binaire preview.3.
+
+PRÉSERVATION VÉRIFIÉE
+main : 9e900eeaa62dcd2812a6aa0d3f251ad019ef3686.
+Branche preview.2 : 8d84f31157ebfc1e09144811b6b112247f926f81.
+Tous les anciens fichiers Git sont inchangés ; seuls de nouveaux chemins preview3 et ce bilan sont ajoutés.
+Preview.2 local et Git : SHA256 F655930368239905C2DAED1948C22ECC9E7256782C4EC2454E539780C0BD0D2E.
+Sources locales GlobalHooks.cs et Brand.cs : empreintes identiques avant/après.
+Aucune écriture locale, installation, modification système, signature, release ou fusion vers main.
+Aucun des 195 contrôles historiques exécuté. Tous les anciens résultats conservés.
+
+SUITE PROPOSÉE, NON EXÉCUTÉE
+Continuer sur le binaire final identifié ci-dessus : AltGr, dessin et conservation outil/couleur/épaisseur pendant un trait.
+Reprendre ensuite le pilote MSIX avec ce binaire distinct ; ne pas réutiliser le résultat MSIX de preview.2 comme validation de preview.3.
+Une recette des gestes sur un bureau Windows 11 disponible et des périphériques physiques reste à prévoir avant validation définitive.
