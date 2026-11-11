@@ -1,0 +1,481 @@
+{
+  "Version": "2.7.1-preview.7",
+  "Branch": "haloryva-tests-preview7",
+  "Date": "2026-11-11",
+  "Binary": {
+    "SHA256": "B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604",
+    "BuildCommit": "466c8addab0de12de47d6a22c53773152b91d323",
+    "BuildRun": 42957075701,
+    "Artifact": {
+      "id": 13826914087,
+      "name": "Haloryva-2.7.1-preview.7-build",
+      "size_in_bytes": 227488,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13826914087",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13826914087/zip",
+      "expired": false,
+      "created_at": "2026-11-11T04:07:01Z",
+      "expires_at": "2026-12-11T04:07:00Z",
+      "updated_at": "2026-11-11T04:07:01Z",
+      "digest": "sha256:125274e40b8782a442c712743bb7d48b15bd24dd802e5451651bbe3e05dffa8e",
+      "workflow_run": {
+        "id": 42957075701,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview7",
+        "head_sha": "466c8addab0de12de47d6a22c53773152b91d323"
+      }
+    },
+    "FrozenInAllSixTestArchives": true,
+    "RebuiltInTests": false,
+    "SourceCheck": {
+      "files": 32,
+      "differences": []
+    }
+  },
+  "Baseline": {
+    "Version": "2.7.1-preview.6",
+    "Commit": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656",
+    "SHA256": "9978501F8E6B010BAC2739622E7F6E7C5DF6FBBBC19C8FECD76E59E3369A66F8"
+  },
+  "SourceChanges": [
+    "src/Brand.cs",
+    "src/Controller.cs",
+    "src/PremiumStudioForm.cs",
+    "src/ToolToast.cs",
+    "src/Localization.cs",
+    "languages/strings.json"
+  ],
+  "Results": [
+    {
+      "JobId": 130315879705,
+      "Name": "Visual en observer on",
+      "RunId": 42957475470,
+      "Conclusion": "success",
+      "Phases": [
+        {
+          "assertions": 162,
+          "exit": 0
+        },
+        {
+          "assertions": 33,
+          "exit": 0
+        }
+      ],
+      "TitleRenderCases": 0,
+      "NativeButtonCases": 11,
+      "PluralStates": 0,
+      "ScrollRoutes": 0,
+      "ScrollCaptures": 0,
+      "Url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957475470/job/130315879705"
+    },
+    {
+      "JobId": 130315879892,
+      "Name": "Visual fr observer on",
+      "RunId": 42957475470,
+      "Conclusion": "success",
+      "Phases": [
+        {
+          "assertions": 162,
+          "exit": 0
+        },
+        {
+          "assertions": 33,
+          "exit": 0
+        }
+      ],
+      "TitleRenderCases": 0,
+      "NativeButtonCases": 11,
+      "PluralStates": 0,
+      "ScrollRoutes": 0,
+      "ScrollCaptures": 0,
+      "Url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957475470/job/130315879892"
+    },
+    {
+      "JobId": 130315880016,
+      "Name": "Visual es observer on",
+      "RunId": 42957475470,
+      "Conclusion": "success",
+      "Phases": [
+        {
+          "assertions": 162,
+          "exit": 0
+        },
+        {
+          "assertions": 33,
+          "exit": 0
+        }
+      ],
+      "TitleRenderCases": 0,
+      "NativeButtonCases": 11,
+      "PluralStates": 0,
+      "ScrollRoutes": 0,
+      "ScrollCaptures": 0,
+      "Url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957475470/job/130315880016"
+    },
+    {
+      "JobId": 130458981176,
+      "Name": "Visual es observer off",
+      "RunId": 43001652792,
+      "Conclusion": "success",
+      "Phases": [
+        {
+          "assertions": 229,
+          "exit": 0
+        },
+        {
+          "assertions": 33,
+          "exit": 0
+        }
+      ],
+      "TitleRenderCases": 30,
+      "NativeButtonCases": 11,
+      "PluralStates": 6,
+      "ScrollRoutes": 12,
+      "ScrollCaptures": 28,
+      "Url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43001652792/job/130458981176"
+    },
+    {
+      "JobId": 130458981667,
+      "Name": "Visual fr observer off",
+      "RunId": 43001652792,
+      "Conclusion": "success",
+      "Phases": [
+        {
+          "assertions": 229,
+          "exit": 0
+        },
+        {
+          "assertions": 33,
+          "exit": 0
+        }
+      ],
+      "TitleRenderCases": 30,
+      "NativeButtonCases": 11,
+      "PluralStates": 6,
+      "ScrollRoutes": 12,
+      "ScrollCaptures": 28,
+      "Url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43001652792/job/130458981667"
+    },
+    {
+      "JobId": 130458981866,
+      "Name": "Visual en observer off",
+      "RunId": 43001652792,
+      "Conclusion": "success",
+      "Phases": [
+        {
+          "assertions": 229,
+          "exit": 0
+        },
+        {
+          "assertions": 33,
+          "exit": 0
+        }
+      ],
+      "TitleRenderCases": 30,
+      "NativeButtonCases": 11,
+      "PluralStates": 6,
+      "ScrollRoutes": 12,
+      "ScrollCaptures": 28,
+      "Url": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43001652792/job/130458981866"
+    }
+  ],
+  "Totals": {
+    "Configurations": 6,
+    "TargetedAssertionExecutions": 1371,
+    "TitleRenderCases": 90,
+    "NativeButtonCases": 66,
+    "PluralStates": 18,
+    "ScrollRoutes": 36,
+    "ScrollCaptures": 84
+  },
+  "VisualReview": {
+    "GeneratedPNG": 174,
+    "InspectedPNG": 84,
+    "MissingScrollAreaCapturesInspected": 48,
+    "ReviewedFiles": [
+      "preview7-visual-en-on-evidence/cloud-42957475470-X64-on-en-visual7/toast-all-second-en.png",
+      "preview7-visual-en-on-evidence/cloud-42957475470-X64-on-en-visual7/toast-single-en.png",
+      "preview7-visual-en-on-evidence/cloud-42957475470-X64-on-en-visual7/toast-two-second-en.png",
+      "preview7-visual-es-on-evidence/cloud-42957475470-X64-on-es-visual7/toast-all-second-es.png",
+      "preview7-visual-es-on-evidence/cloud-42957475470-X64-on-es-visual7/toast-single-es.png",
+      "preview7-visual-es-on-evidence/cloud-42957475470-X64-on-es-visual7/toast-two-second-es.png",
+      "preview7-visual-fr-on-evidence/cloud-42957475470-X64-on-fr-visual7/toast-all-second-fr.png",
+      "preview7-visual-fr-on-evidence/cloud-42957475470-X64-on-fr-visual7/toast-single-fr.png",
+      "preview7-visual-fr-on-evidence/cloud-42957475470-X64-on-fr-visual7/toast-two-second-fr.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/dropdown-mouse-actions-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/plural-home-0-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/render-all-tools-en-100.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/dropdown-mouse-actions-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/plural-home-0-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/render-all-tools-es-100.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/dropdown-mouse-actions-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/plural-home-0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/render-all-tools-fr-100.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-0-section-0-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-0-section-0-y470-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-1-section-0-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-1-section-0-y524-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-1-section-0-y856-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-1-section-1-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-1-section-1-y260-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-2-section-0-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-2-section-0-y408-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-2-section-1-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-2-section-1-y36-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-3-section-0-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-3-section-0-y416-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-4-section-0-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-4-section-0-y1048-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-4-section-0-y1088-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-4-section-0-y524-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-5-section-0-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-5-section-0-y420-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-5-section-1-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-5-section-1-y200-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-5-section-2-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-5-section-2-y306-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-6-section-0-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-6-section-0-y200-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-7-section-0-y0-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-7-section-0-y524-fr.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/scroll-page-7-section-0-y904-fr.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-0-section-0-y470-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-1-section-0-y524-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-1-section-0-y856-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-1-section-1-y260-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-2-section-0-y408-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-2-section-1-y36-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-3-section-0-y416-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-4-section-0-y1048-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-4-section-0-y1088-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-4-section-0-y524-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-5-section-0-y420-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-5-section-1-y276-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-5-section-2-y296-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-6-section-0-y200-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-7-section-0-y524-en.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/scroll-page-7-section-0-y904-en.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-0-section-0-y470-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-1-section-0-y524-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-1-section-0-y856-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-1-section-1-y260-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-2-section-0-y484-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-2-section-1-y36-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-3-section-0-y416-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-4-section-0-y1048-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-4-section-0-y1088-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-4-section-0-y524-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-5-section-0-y420-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-5-section-1-y200-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-5-section-2-y306-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-6-section-0-y200-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-7-section-0-y524-es.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/scroll-page-7-section-0-y904-es.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/render-all-tools-en-150.png",
+      "preview7-visual-en-off-evidence/cloud-43001652792-X64-off-en-visual7/render-all-tools-en-200.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/render-all-tools-es-150.png",
+      "preview7-visual-es-off-evidence/cloud-43001652792-X64-off-es-visual7/render-all-tools-es-200.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/render-all-tools-fr-150.png",
+      "preview7-visual-fr-off-evidence/cloud-43001652792-X64-off-fr-visual7/render-all-tools-fr-200.png"
+    ],
+    "Findings": [
+      {
+        "id": "V7-ES-SON",
+        "severity": "minor",
+        "file": "scroll-page-3-section-0-y416-es.png",
+        "finding": "Le sous-titre de la carte Sonidos est terminé par une ellipse à 1024×768 : «Respuesta sonora que puedes desactivar en cualquier mo...». Les commandes et leur aide restent lisibles. Texte déjà présent dans preview.6, zone jusqu’ici non capturée."
+      }
+    ],
+    "Environment": "Windows Server 2025 Datacenter x64, interactive desktop 1024x768; rendered tool cards at factors 1, 1.5 and 2, not a whole-application system DPI test"
+  },
+  "Artifacts": [
+    {
+      "id": 13828155970,
+      "name": "preview7-visual-fr-on-evidence",
+      "size_in_bytes": 2617310,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13828155970",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13828155970/zip",
+      "expired": false,
+      "created_at": "2026-11-11T04:11:18Z",
+      "expires_at": "2026-12-11T04:11:17Z",
+      "updated_at": "2026-11-11T04:11:18Z",
+      "digest": "sha256:39405bc404a127c85856685b70a7a19594d33739c835ce771bb7d10b63e0497d",
+      "workflow_run": {
+        "id": 42957475470,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview7",
+        "head_sha": "37feea168facc2f5a0f81e3b200909f3e38f71e3"
+      }
+    },
+    {
+      "id": 13827981537,
+      "name": "preview7-visual-es-on-evidence",
+      "size_in_bytes": 2623768,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13827981537",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13827981537/zip",
+      "expired": false,
+      "created_at": "2026-11-11T04:11:19Z",
+      "expires_at": "2026-12-11T04:11:19Z",
+      "updated_at": "2026-11-11T04:11:19Z",
+      "digest": "sha256:454bd92e8093a6dd2146a79fc1b36360a70ffae98e387e02079233c000612311",
+      "workflow_run": {
+        "id": 42957475470,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview7",
+        "head_sha": "37feea168facc2f5a0f81e3b200909f3e38f71e3"
+      }
+    },
+    {
+      "id": 13827711572,
+      "name": "preview7-visual-en-on-evidence",
+      "size_in_bytes": 2464030,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13827711572",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13827711572/zip",
+      "expired": false,
+      "created_at": "2026-11-11T04:11:21Z",
+      "expires_at": "2026-12-11T04:11:21Z",
+      "updated_at": "2026-11-11T04:11:21Z",
+      "digest": "sha256:ea53c6ebeed024c81e0ece750f1e355438a29a558702bc4bb7b123e4cdca11cb",
+      "workflow_run": {
+        "id": 42957475470,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview7",
+        "head_sha": "37feea168facc2f5a0f81e3b200909f3e38f71e3"
+      }
+    },
+    {
+      "id": 13847255188,
+      "name": "preview7-visual-en-off-evidence",
+      "size_in_bytes": 8607958,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13847255188",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13847255188/zip",
+      "expired": false,
+      "created_at": "2026-11-11T10:13:52Z",
+      "expires_at": "2026-12-11T10:13:51Z",
+      "updated_at": "2026-11-11T10:13:52Z",
+      "digest": "sha256:c3d22da56231ebd9afe45cdf01d5548f927c84aa5a2e0fca3abf004c1190cb50",
+      "workflow_run": {
+        "id": 43001652792,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview7",
+        "head_sha": "871cdd97822ab2014670e6ef8bfe988f99ad479b"
+      }
+    },
+    {
+      "id": 13847020596,
+      "name": "preview7-visual-es-off-evidence",
+      "size_in_bytes": 8693148,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13847020596",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13847020596/zip",
+      "expired": false,
+      "created_at": "2026-11-11T10:13:54Z",
+      "expires_at": "2026-12-11T10:13:52Z",
+      "updated_at": "2026-11-11T10:13:54Z",
+      "digest": "sha256:130f8204ac8e996352b6464267cfbcde6c4596bd90f3a809fa27d0450ab06dc4",
+      "workflow_run": {
+        "id": 43001652792,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview7",
+        "head_sha": "871cdd97822ab2014670e6ef8bfe988f99ad479b"
+      }
+    },
+    {
+      "id": 13845953737,
+      "name": "preview7-visual-fr-off-evidence",
+      "size_in_bytes": 8431250,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13845953737",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13845953737/zip",
+      "expired": false,
+      "created_at": "2026-11-11T10:13:59Z",
+      "expires_at": "2026-12-11T10:13:57Z",
+      "updated_at": "2026-11-11T10:13:59Z",
+      "digest": "sha256:b2dba845cea669eb69f94dc0ceca61bfd29df26fea896c91528161ef5f983633",
+      "workflow_run": {
+        "id": 43001652792,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-tests-preview7",
+        "head_sha": "871cdd97822ab2014670e6ef8bfe988f99ad479b"
+      }
+    }
+  ],
+  "Preservation": {
+    "oldFiles": 300,
+    "changedExistingFiles": [],
+    "addedFiles": [
+      ".github/workflows/haloryva-preview7-build.yml",
+      ".github/workflows/haloryva-preview7-validation.yml",
+      "haloryva-ci/preview7-validation/README.txt",
+      "haloryva-ci/preview7-validation/Recipe-Visual.cs",
+      "haloryva-ci/preview7-validation/Run-Visual.ps1",
+      "haloryva-ci/preview7/.gitattributes",
+      "haloryva-ci/preview7/Build-Preview7.ps1",
+      "haloryva-ci/preview7/README.txt",
+      "haloryva-ci/preview7/assets/Haloryva.ico",
+      "haloryva-ci/preview7/assets/app.manifest",
+      "haloryva-ci/preview7/languages/strings.json",
+      "haloryva-ci/preview7/source-origin.json",
+      "haloryva-ci/preview7/src/Annotations.cs",
+      "haloryva-ci/preview7/src/Brand.cs",
+      "haloryva-ci/preview7/src/ColorWheelPopup.cs",
+      "haloryva-ci/preview7/src/Config.cs",
+      "haloryva-ci/preview7/src/Controller.cs",
+      "haloryva-ci/preview7/src/DrawingGeometry.cs",
+      "haloryva-ci/preview7/src/EffectDiagnostics.cs",
+      "haloryva-ci/preview7/src/ErrorReporting.cs",
+      "haloryva-ci/preview7/src/FrameBounds.cs",
+      "haloryva-ci/preview7/src/FramePump.cs",
+      "haloryva-ci/preview7/src/GlobalHooks.cs",
+      "haloryva-ci/preview7/src/InputPipeline.cs",
+      "haloryva-ci/preview7/src/InputState.cs",
+      "haloryva-ci/preview7/src/KeyboardPolicy.cs",
+      "haloryva-ci/preview7/src/Localization.cs",
+      "haloryva-ci/preview7/src/PremiumStudioForm.cs",
+      "haloryva-ci/preview7/src/PremiumWidgets.cs",
+      "haloryva-ci/preview7/src/Program.cs",
+      "haloryva-ci/preview7/src/SelfTest.cs",
+      "haloryva-ci/preview7/src/Splash.cs",
+      "haloryva-ci/preview7/src/StudioControls.cs",
+      "haloryva-ci/preview7/src/StudioTheme.cs",
+      "haloryva-ci/preview7/src/TextPrompt.cs",
+      "haloryva-ci/preview7/src/ToolToast.cs",
+      "haloryva-ci/preview7/src/TrailDiagnostics.cs",
+      "haloryva-ci/preview7/src/TrailEngine.cs",
+      "haloryva-ci/preview7/src/TrailSelfTest.cs",
+      "haloryva-ci/preview7/src/Visuals.cs",
+      "haloryva-ci/preview7/src/WinNative.cs"
+    ],
+    "branches": {
+      "checked": 10,
+      "differences": []
+    }
+  },
+  "Historical195Executed": false,
+  "PriorFullSuitesExecuted": false,
+  "MSIXExecutedForPreview7": false,
+  "LocalApplicationExecuted": false,
+  "LocalInstallation": false,
+  "Signing": false,
+  "ReleasePublication": false,
+  "PilotCorrections": [
+    {
+      "Run": 42957414396,
+      "Issue": "Extracted test driver had an extra closing brace; compile failed before application tests; corrected only test driver."
+    },
+    {
+      "Run": 42957475470,
+      "Issue": "Reflection selected overloaded Font by name only in visual path; three observer-on jobs passed, three observer-off jobs stopped before visual assertions. Typed method selection fixed; rerun limited to observer-off."
+    }
+  ],
+  "Remaining": [
+    "V7-ES-SON: cosmetic ellipsis on existing Spanish sound-card subtitle at 1024x768.",
+    "Preview.7 MSIX integration not executed. Prior preview.6 result cannot certify a different binary.",
+    "Whole Studio at 150/200% Windows DPI, physical pointing devices and multiple monitors not tested here.",
+    "No signature, Store certification or publication authorization."
+  ]
+}

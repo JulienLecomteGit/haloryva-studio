@@ -1,0 +1,160 @@
+HALORYVA STUDIO 2.7.1-preview.7 — BILAN CIBLÉ
+11 novembre 2026
+
+Résultat : les trois corrections demandées sont validées sur le même binaire.
+Les six configurations FR / EN / ES, avec et sans observateur, ont réussi.
+La revue des zones défilantes manquantes est terminée. Une réserve cosmétique
+mineure est constatée dans un sous-titre espagnol existant (voir ci-dessous).
+Ce bilan n'est pas une validation MSIX ou Microsoft Store de preview.7.
+
+BINAIRE ET TRAÇABILITÉ
+Branche de travail : haloryva-tests-preview7
+Base preview.6 : 8cbe64c2662f9b0afcd0067dd35b91f1722dc656
+Commit du binaire : 466c8addab0de12de47d6a22c53773152b91d323
+Compilation : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957075701
+Artefact : Haloryva-2.7.1-preview.7-build — ID 13826914087
+SHA256 Haloryva.exe : B16B6AC65FA12F30DB35109190E65B8A0ADF86C2A8E5C2863770BEE28A18F604
+Version de fichier : 2.7.1.7 ; version produit : 2.7.1-preview.7.
+Les six archives de recette contiennent exactement ce binaire (empreinte
+vérifiée dans les ZIP sans extraire ni exécuter l'EXE sur le PC principal).
+Aucune recompilation pendant les essais. Les 32 fichiers source / ressources /
+assets du binaire sont identiques entre le commit de compilation et le bilan.
+
+CORRECTIONS
+1. Nom d'outil invisible :
+   le tracé GDI+ limité à une hauteur de ligne de 34 px supprimait le titre.
+   La comparaison ciblée conserve l'ancien GradientText inchangé et mesure
+   zéro pixel de texte, contre 669 (Stylo), 455 (Pen), 694 (Lápiz) avec le
+   nouveau rendu à 100 %. Le titre est maintenant dessiné depuis le contour
+   des glyphes, puis ajusté uniformément dans sa zone.
+   Les noms longs espagnols restent complets et lisibles.
+   Le correctif est local à ToolToast ; le rendu général du Studio est conservé.
+
+2. Indicateur des outils choisis :
+   le compteur et les points utilisent la position dans le cycle mémorisé.
+   Exemple Stylo / Rectangle : 1 / 2 et 2 / 2 ; un seul outil : 1 / 1.
+   L'icône et le titre continuent d'identifier l'outil réel.
+   Le contrôleur transmet une copie du cycle avec l'annonce différée.
+   Un changement de sélection remet correctement la position animée à jour.
+
+3. Pluriels :
+   anglais et espagnol : singulier pour 1 seulement, pluriel pour 0 et 2.
+   Application aux modules, annotations de l'Accueil et traits de l'Historique.
+   Français conservé : singulier pour 0 et 1.
+   Exemples validés : "0 annotations on screen", "0 strokes on screen",
+   "0 anotaciones en pantalla", "0 trazos en pantalla".
+
+Portée du code : cinq fichiers C# modifiés (Brand, Controller,
+PremiumStudioForm, ToolToast, Localization) et une entrée du catalogue
+pour l'historique de version. Les 24 autres sources C#, les assets et les
+algorithmes d'entrées / dessin sont inchangés depuis preview.6.
+Les identifiants persistés et le format des réglages sont inchangés.
+
+ESSAIS RÉELLEMENT EXÉCUTÉS
+Environnement : GitHub hébergé, Windows Server 2025 Datacenter x64,
+build 26100, image 20261103.298.1, bureau interactif 1024 x 768.
+Le pilote charge l'assemblage produit et crée le contrôleur réel, avec ses
+hooks et fenêtres. Les gestes sont injectés par SendInput sur une cible dédiée.
+Il ne s'agit pas ici d'un lancement MSIX ni d'une installation de l'application.
+
+- 66 gestes ciblés au total, répartis sur les six configurations :
+  clics courts et appuis longs avec 1, 2 et 10 outils, retour en début / fin,
+  entrée dans le cycle depuis un outil choisi directement hors sélection,
+  changement de cycle lorsque l'indicateur est visible.
+  Contrôles du nom / index réels, compteur, indicateur visible, absence de vol
+  du focus et absence de clic natif transmis à tort.
+- Six redémarrages dans de nouveaux processus : langue et deux outils
+  mémorisés rechargés, puis indicateur correct après un clic court.
+- 90 cas de rendu : 10 noms x 3 langues x facteurs de taille 100 / 150 / 200 %.
+  Texte présent et intégralement contenu dans sa zone.
+  Ce sont des cartes rendues en image ; ce n'est pas un test du Studio entier
+  avec un changement du DPI système.
+- 18 états d'interface : Accueil et Historique à 0, 1 et 2 dans les trois langues.
+  Les valeurs sont des fixtures d'affichage, sans refaire les tests de dessin.
+- 36 parcours de pages / sous-pages (12 par langue), avec captures contiguës
+  jusqu'en bas, contrôle du défilement atteint et aucun contrôle visible omis.
+- Un menu déroulant d'affectation ouvert dans chaque langue.
+- Arrêt des deux travailleurs d'entrées contrôlé à chaque fin de processus.
+
+Les journaux totalisent 1 371 assertions de cette nouvelle recette, dont des
+préconditions, répétitions entre langues et contrôles de redémarrage.
+Ce total ne représente pas 1 371 scénarios distincts.
+La suite historique de 195 contrôles n'a pas été appelée. Le total arithmétique
+162 + 33 des phases avec observateur vaut aussi 195, par coïncidence :
+ce sont des assertions de Recipe-Visual.cs, pas la suite historique SelfTest.
+
+Résultats avec observateur : run 42957475470
+- Visual en observer on : RÉUSSI, 162 + 33 assertions
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957475470/job/130315879705
+- Visual fr observer on : RÉUSSI, 162 + 33 assertions
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957475470/job/130315879892
+- Visual es observer on : RÉUSSI, 162 + 33 assertions
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/42957475470/job/130315880016
+
+Résultats sans observateur : run 43001652792
+- Visual es observer off : RÉUSSI, 229 + 33 assertions
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43001652792/job/130458981176
+- Visual fr observer off : RÉUSSI, 229 + 33 assertions
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43001652792/job/130458981667
+- Visual en observer off : RÉUSSI, 229 + 33 assertions
+  https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43001652792/job/130458981866
+
+INCIDENTS DU PILOTE, CORRIGÉS SANS MODIFIER LE BINAIRE TESTÉ
+- Run 42957414396 : accolade superflue dans le pilote extrait ;
+  compilation du pilote refusée avant tout scénario d'application.
+- Run 42957475470 : les trois parcours avec observateur ont réussi.
+  Les trois parcours visuels sans observateur se sont arrêtés sur une résolution
+  ambiguë de la méthode Font par réflexion, avant les assertions visuelles.
+  Le choix explicite de la surcharge a corrigé le pilote.
+  Seuls les trois parcours sans observateur ont été relancés.
+Le statut global rouge du premier run ne doit pas masquer les trois jobs
+avec observateur réussis ; leurs liens individuels sont donnés ci-dessus.
+
+CAPTURES ET REVUE
+174 PNG conservés dans six archives : 84 captures de défilement, 54 captures
+d'indicateur, 18 états de pluriels, 9 planches des dix outils, 3 menus déroulants
+et 6 vues du Studio au redémarrage.
+84 PNG examinés visuellement, dont les 48 captures après défilement qui
+complètent les zones manquantes, les 9 planches (90 rendus d'outils), les
+menus déroulants et les compteurs à zéro.
+Les autres images contiennent notamment des vues de début de page déjà
+couvertes dans preview.6 et des répétitions des scénarios d'indicateur.
+La liste exacte des images examinées figure dans resultats-consolides.json.
+Aucun chevauchement ou nom d'outil coupé constaté sur les images examinées.
+Les grilles s'adaptent à la longueur des traductions sans masquer les outils.
+
+RÉSERVE VISUELLE MINEURE V7-ES-SON
+Dans Clics > Sonidos, le sous-titre espagnol existant
+"Respuesta sonora que puedes desactivar en cualquier momento."
+se termine visuellement par "..." à 1024 x 768.
+Capture : scroll-page-3-section-0-y416-es.png.
+Les commandes et l'aide associée restent visibles ; aucune action n'est bloquée.
+Ce texte est inchangé depuis preview.6 ; cette zone n'avait pas encore de capture.
+Proposition pour une finition ultérieure : "Sonido opcional, fácil de desactivar."
+Aucune modification supplémentaire du binaire validé n'a été faite.
+
+CONSERVATION ET LIMITES
+- Les dix branches préexistantes, dont main, stable 2.7.0 et previews 2 à 6,
+  gardent exactement leur commit initial.
+- Les 300 fichiers déjà présents dans l'arbre de base sont conservés à l'identique.
+- Seuls les nouveaux chemins preview7, ses workflows et son bilan sont ajoutés.
+- Aucune application ni aucun script de test exécuté sur le PC principal.
+  Seules les archives autorisées et leurs images / comptes rendus sont copiés
+  dans le dossier de travail. Aucun EXE / DLL / PS1 / MSIX / certificat extrait.
+- Aucun paramètre système modifié, aucun logiciel installé, aucune signature.
+- Aucune release, aucun tag de diffusion, aucune fusion dans main, aucun Store.
+- Les 195 contrôles historiques et les suites acquises ne sont pas relancés.
+- MSIX preview.7 : NON EXÉCUTÉ. Les résultats de preview.6 ne certifient pas
+  le nouveau binaire.
+- Studio entier à 150 / 200 % de DPI Windows, multi-écrans, souris physiques
+  et certification Microsoft Store : NON VALIDÉS PAR CETTE RECETTE.
+
+SUITE PROPOSÉE
+La prochaine validation technique est un essai MSIX ciblé de ce binaire figé
+sur GitHub dans l'environnement Windows 11 compatible déjà utilisé, sans signer
+ni publier et sans exécution sur le PC principal.
+La réserve du sous-titre espagnol peut être traitée séparément lors de la
+dernière finition, avant de figer le candidat à diffuser.
+
+Archives d'essai disponibles jusqu'au 11 décembre 2026 selon GitHub.
+Le dossier de travail contient déjà une copie vérifiée des six archives.
