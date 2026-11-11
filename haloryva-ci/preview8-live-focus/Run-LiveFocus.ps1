@@ -133,7 +133,41 @@ try {
  $report.LiveState=Read-State
  $report.RefreshObservedWithinMilliseconds=$timer.ElapsedMilliseconds
  $report.ForegroundAfterRefresh=[RootFocus]::Describe([RootFocus]::GetForegroundWindow())
- Assert ([RootFocus]::Confirm($studio) -and $report.LiveControlDisabled -and (Read-State) -eq 1) 'live-refocus-refreshes-disabled-user-choice'
+ $primaryPass=([RootFocus]::Confirm($studio) -and $report.LiveControlDisabled -and (Read-State) -eq 1)
+ $report.Checks+=,@{Id='live-refocus-refreshes-disabled-user-choice';Passed=$primaryPass}
+ $report.UIAutomationEnabledAfterFirstReturn=[System.Windows.Automation.AutomationElement]::FromHandle($toggle).Current.IsEnabled
+ $report.LaterFocusDiagnostics=@()
+ if(!$primaryPass){
+  # Failure retained. Additional real foreground transitions distinguish delayed refresh.
+  foreach($mode in @('delayed-second-return','minimize-restore')){
+   $background=$false
+   for($j=0;$j -lt 15;$j++){
+    try{[SettingsUi]::Focus($settingsHandle)}catch{}
+    [void][RootFocus]::Activate($settingsHandle)
+    if([RootFocus]::Confirm($settingsHandle)){$background=$true;break}
+    Start-Sleep -Milliseconds 200
+   }
+   if(!$background){$report.LaterFocusDiagnostics+=,@{Mode=$mode;BackgroundConfirmed=$false;Executed=$false};continue}
+   if($mode -eq 'minimize-restore'){[RootFocus]::Minimize($studio)}
+   Start-Sleep -Milliseconds 2000
+   $again=$false
+   for($j=0;$j -lt 15;$j++){
+    [void][RootFocus]::Activate($studio)
+    if([RootFocus]::Confirm($studio)){$again=$true;break}
+    Start-Sleep -Milliseconds 200
+   }
+   $clock=[Diagnostics.Stopwatch]::StartNew()
+   for($j=0;$j -lt 80;$j++){
+    $toggle=Control 'Démarrage avec Windows'
+    if(![UiProbe]::IsWindowEnabled($toggle)){break}
+    Start-Sleep -Milliseconds 100
+   }
+   $clock.Stop()
+   $report.LaterFocusDiagnostics+=,@{Mode=$mode;Executed=$true;BackgroundConfirmed=$background;ForegroundConfirmed=$again;StillForeground=[RootFocus]::Confirm($studio);State=Read-State;ControlDisabled=![UiProbe]::IsWindowEnabled($toggle);UIAutomationEnabled=[System.Windows.Automation.AutomationElement]::FromHandle($toggle).Current.IsEnabled;WaitMilliseconds=$clock.ElapsedMilliseconds;Foreground=[RootFocus]::Describe([RootFocus]::GetForegroundWindow())}
+   if(![UiProbe]::IsWindowEnabled($toggle)){break}
+  }
+ }
+
  Assert ($child.Id -eq $originalPid -and !$child.HasExited -and $child.StartTime.ToUniversalTime().ToString('o') -ceq $originalStart) 'same-process-no-relaunch'
  $afterProfile=(Get-FileHash -LiteralPath $targetFile).Hash
  $report.ProfileAfterRefocus=@{SHA256=$afterProfile;LaunchAtLogin=(Profile).LaunchAtLogin}
@@ -141,6 +175,7 @@ try {
  [PackageProbe]::Windows($child.Id)|Set-Content -LiteralPath (Join-Path $out 'studio-after-refocus.txt') -Encoding UTF8
  [SettingsUi]::Close($settingsRoot);$settingsRoot=$null
  Finish
+ if(!$primaryPass){throw 'Initial confirmed refocus remained stale; later observations are diagnostics, not a pass'}
  $report.Status='live-refocus-passed'
 
 }catch{$report.Status='failed';$report.Error=$_.ToString();throw}
@@ -153,6 +188,17 @@ finally{
   $data=Join-Path $env:LOCALAPPDATA ('Packages\'+$registered.PackageFamilyName+'\LocalState\Haloryva')
   if(Test-Path -LiteralPath $data){Copy-Item -LiteralPath $data -Destination (Join-Path $out 'synthetic-msix-data') -Recurse}
   if(!$child){try{Remove-AppxPackage -Package $registered.PackageFullName -ErrorAction Stop;$report.TestPackageRemoved=$true}catch{$report.CleanupError=$_.ToString()}}
+ }
+ $report.ApplicationErrorLogs=@()
+ if($registered){
+  $errorFolder=Join-Path $env:LOCALAPPDATA ('Packages\'+$registered.PackageFamilyName+'\LocalState\Haloryva\Logs')
+  # Package data was already copied before package removal; inspect that copy if removed.
+  if(!(Test-Path -LiteralPath $errorFolder)){$errorFolder=Join-Path $out 'synthetic-msix-data/Logs'}
+  if(Test-Path -LiteralPath $errorFolder){
+   foreach($entry in @(Get-ChildItem -LiteralPath $errorFolder -Filter '*.log')){
+    $report.ApplicationErrorLogs+=,@{Name=$entry.Name;Text=(Get-Content -LiteralPath $entry.FullName -Raw -Encoding UTF8)}
+   }
+  }
  }
  $report|ConvertTo-Json -Depth 10|Set-Content -LiteralPath (Join-Path $out 'result.json') -Encoding UTF8
  $report|ConvertTo-Json -Depth 10|Write-Output
