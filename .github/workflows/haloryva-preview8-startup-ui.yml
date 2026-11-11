@@ -1,0 +1,29 @@
+name: Haloryva preview.8 startup from the actual Studio
+on:
+  push:
+    branches: ['haloryva-tests-preview8']
+    paths: ['haloryva-ci/preview8-startup-ui/**', '.github/workflows/haloryva-preview8-startup-ui.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  startup-ui:
+    runs-on: windows-11-arm
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: preview8-msix-evidence
+          run-id: 43014976009
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/haloryva-preview8-msix-input/
+      - name: Verify actual Studio startup commands without rebuilding MSIX
+        shell: powershell
+        run: ./haloryva-ci/preview8-startup-ui/Run-Startup-UI.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview8-startup-ui-evidence
+          path: ${{ runner.temp }}/haloryva-preview8-startup-ui/
+          retention-days: 30
