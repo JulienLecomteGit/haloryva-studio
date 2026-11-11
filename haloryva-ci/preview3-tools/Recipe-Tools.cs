@@ -355,22 +355,40 @@ internal static class Recipe
                 else {
                     Check(edit!=null && save!=null && close!=null,"Native Save dialog exposes filename, Save and Cancel");
                     var value=(System.Windows.Automation.ValuePattern)edit.GetCurrentPattern(System.Windows.Automation.ValuePattern.Pattern);
+                    edit.SetFocus();
                     value.SetValue(path);
                     Check(value.Current.Value==path,"Save filename matches the isolated Unicode path");
                 }
                 uint owner; GetWindowThreadProcessId(dialog,out owner);
                 Check(owner==(uint)ownPid && GetForegroundWindow()==dialog,"Export action remains within the owned dialog");
-                var button=cancel?close:save;
-                ((System.Windows.Automation.InvokePattern)button.GetCurrentPattern(System.Windows.Automation.InvokePattern.Pattern)).Invoke();
+                using(var shot=new Bitmap(SystemInformation.VirtualScreen.Width,SystemInformation.VirtualScreen.Height)) {
+                    using(var g=Graphics.FromImage(shot)) g.CopyFromScreen(SystemInformation.VirtualScreen.Location,Point.Empty,shot.Size);
+                    shot.Save(Path.Combine(folder,"dialog-"+name+".png"),System.Drawing.Imaging.ImageFormat.Png);
+                }
+                Write("EXPORT dialog ready cancel="+cancel+" empty="+empty+" thread="+Thread.CurrentThread.ManagedThreadId);
+                if(!cancel && !empty) {
+                    // Commit the edited filename via the actual keyboard, after focusing the filename field.
+                    edit.SetFocus(); Thread.Sleep(100);
+                    DialogInputs(dialog,new[]{K(13,false,false),K(13,true,false)});
+                    Write("EXPORT native Enter sent to filename field");
+                } else {
+                    var button=cancel?close:save;
+                    ((System.Windows.Automation.InvokePattern)button.GetCurrentPattern(System.Windows.Automation.InvokePattern.Pattern)).Invoke();
+                }
             } catch {
                 if(dialog!=IntPtr.Zero) PostMessage(dialog,0x0010,IntPtr.Zero,IntPtr.Zero);
                 throw;
             }
         });
+        Write("EXPORT controller action entered");
         Call(controller,"ExportDrawings");
+        Write("EXPORT controller action returned fileExists="+File.Exists(path));
         await worker;
         await RefocusTarget();
-        if(!cancel && !empty) Check(File.Exists(path) && new FileInfo(path).Length>100,"Actual PNG export created: "+name);
+        if(!cancel && !empty) {
+            foreach(string file in Directory.GetFiles(folder)) Write("EXPORT observedFile="+Path.GetFileName(file)+" bytes="+new FileInfo(file).Length);
+            Check(File.Exists(path) && new FileInfo(path).Length>100,"Actual PNG export created: "+name);
+        }
         return path;
     }
     static int AlphaPixels(Bitmap image,Rectangle area)
