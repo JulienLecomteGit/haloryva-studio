@@ -1,0 +1,117 @@
+HALORYVA STUDIO — INSTALLATEUR FINAL 2.7.1
+11 novembre 2026 — fabrication, métadonnées et extraction uniquement
+
+RESULTAT
+HaloryvaSetup_2.7.1.exe fabriqué sur GitHub.
+10/10 vérifications de métadonnées réussies.
+Extraction terminée avec le code 0 ; 3/3 fichiers identiques aux fichiers incorporés.
+Aucune recompilation ni exécution de Haloryva, aucun autotest, aucune installation.
+Le candidat validé 2.7.1.11 est incorporé à l’octet près.
+La fabrication est terminée ; le cycle d’installation de cet installateur final
+reste à contrôler séparément avant diffusion.
+
+FICHIER PRODUIT
+Nom : HaloryvaSetup_2.7.1.exe
+Version produit : 2.7.1
+Version fichier : 2.7.1.11
+AssemblyVersion : 2.7.1.0
+Architecture : Windows x64
+Taille : 744960 octets
+Signature : NotSigned
+Fabrication Europe/Paris : 2026-11-11T20:34:18.2858338+01:00
+Fabrication UTC : 2026-11-11T19:34:18.2858338+00:00
+Date affichée conservée depuis le binaire applicatif : 11/11/2026
+SHA-256 de l’installateur :
+BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1
+
+APPLICATION INCORPOREE ET EXTRAITE
+SHA-256 :
+1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81
+Origine : run 43086180391, commit ca14eca6be1e0a19ef9004ba0de2499e00c7c624.
+La version de fichier reste exactement 2.7.1.11.
+Brand.cs estampillé d’origine :
+6D0083AAE493A420627ED183A0BACC0FA34AB81C7F1A39A6E2FA1ECC8E7E775A
+L’EXE de Haloryva, ce fichier estampillé et l’installateur restent identiques après extraction.
+L’empreinte du candidat précédent et toutes les autres préversions ne sont pas remplacées.
+
+PREUVES ET TELECHARGEMENT
+Run réussi :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43088395238
+Job : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43088395238/job/130758677484
+Commit de recette exécuté : 4da5e2c9f55b51ef7f1b7963133dc7c2ccf95bb4
+Archive courte contenant l’EXE, SHA256SUMS.txt et installer-provenance.json :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43088395238/artifacts/13886638835
+Nom : HaloryvaSetup-2.7.1
+Taille ZIP : 447631 octets
+SHA-256 ZIP : sha256:2c2738f511643a8d2ec566368d2a5641cd3b2ee5f5f882cf2aff372f190497eb
+Archive complète des preuves et sources temporaires :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43088395238/artifacts/13886898481
+Nom : HaloryvaSetup-2.7.1-preuves-fabrication
+Taille ZIP : 1190802 octets
+SHA-256 ZIP : sha256:e77c5c64aec0c9235665c56a4b20a6d959fe7c1ffb820eda6e974ba57b7cccab
+Expiration planifiée des deux archives : 9 février 2027.
+Aucun téléchargement ni fichier créé sur le PC principal.
+Ces archives de recette ne sont ni une release GitHub ni une publication Store.
+
+VERIFICATIONS REELLEMENT EXECUTEES
+1. Empreinte et provenance du binaire validé, versions 2.7.1 / 2.7.1.11 / 2.7.1.0.
+2. Empreinte du Brand.cs estampillé téléchargé et objet Git de l’icône archivée.
+3. Objets Git des sept fichiers d’entrée de la recette d’emballage.
+4. Compilation des seules six sources du setup : cinq fichiers d’installateur
+   inchangés et sa copie temporaire de Brand.cs ; aucune source du moteur compilée.
+5. Dix contrôles sur l’installateur : nom produit, éditeur, version produit,
+   version fichier, version assembly, architecture PE x64, version Brand,
+   date estampillée, absence de signature, exactement trois ressources de contenu.
+6. Manifeste temporaire fourni au compilateur : version 2.7.1.11, asInvoker.
+   Cette vérification porte sur la source du manifeste, pas sur une extraction
+   indépendante du manifeste Win32 depuis le PE.
+7. Seul mode exécuté de l’installateur : --extract vers un dossier neuf.
+   Cette branche quitte le programme avant interface, relocalisation, installation
+   ou autotests ; aucun argument --selftest n’est lancé.
+8. Exactement Haloryva.exe, Haloryva.sha256 et haloryva_demo.png extraits ;
+   trois comparaisons SHA-256 avant/après identiques, fichier d’empreinte cohérent.
+9. Nouvelle lecture des empreintes du setup et des entrées figées après extraction.
+La compilation du setup n’a signalé aucune erreur ni aucun avertissement C#.
+
+INCIDENT DE PREPARATION CONSERVE
+Premier run 43088099468 : arrêt avant compilation du setup.
+Windows PowerShell a mal décodé le caractère « · » dans un script UTF-8 sans BOM,
+ce qui a fait échouer la garde de remplacement du texte de Brand.cs.
+Correction : ajout du BOM UTF-8 au script, sans aucun changement de logique.
+Le second run réussit. Il y a eu une seule compilation effective du setup.
+Les preuves du premier arrêt restent conservées :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43088099468/artifacts/13886184525
+Le binaire Haloryva et son archive n’ont pas été modifiés pendant cette reprise.
+
+ADAPTATIONS LIMITEES A L’EMBALLAGE
+Recette dérivée de celle de preview.9 déjà éprouvée.
+Les cinq sources de l’assistant sont réutilisées sans modification.
+Le Brand.cs du setup provient du même artefact estampillé que Haloryva.exe.
+Dans cette seule copie temporaire, l’appel L.T(" · build ") est remplacé par
+le texte français de l’assistant autonome, comme dans la recette précédente.
+L’adaptation DisplayVersion réservée aux préversions n’est plus nécessaire.
+Les sources de l’application, son historique et ses trois langues restent inchangés.
+Aucun nouvel outil installé : compilateur .NET Framework déjà présent sur Windows GitHub.
+
+CONSERVATION
+25 branches antérieures inchangées, dont main, tous les candidats et préversions.
+648 fichiers préexistants conservés par identité d’objet Git.
+Tous les binaires existants et preuves antérieures restent préservés.
+Aucun fichier, réglage, application ou système du PC principal modifié.
+La branche de fabrication dédiée est haloryva-installateur-final-2.7.1.
+
+NON EXECUTE / NON VALIDE PAR CETTE TACHE
+- Compilation ou lancement de Haloryva ; autotest Haloryva ou setup ; 195 contrôles.
+- Sonidos, captures ou recettes déjà acquises.
+- Installation, désinstallation, maintenance/mise à jour ou conservation des réglages.
+- Lancement normal du setup, connexion Windows 11 réelle, nouveau MSIX.
+- Signature, release GitHub, publication Store ou abonnement.
+La réussite de l’extraction ne vaut pas validation d’installation.
+
+PROCHAINE ACTION PROPOSEE
+Autoriser une recette d’installation/désinstallation de CET installateur inchangé
+sur un Windows GitHub isolé, avec conservation des réglages.
+Le fonctionnement normal du setup déclenche automatiquement Haloryva --selftest :
+cette exception devra être explicitement autorisée pour cette prochaine recette.
+Les 195 contrôles n’ont pas à être relancés.
+Aucune installation sur le PC principal ni diffusion avant présentation du bilan.

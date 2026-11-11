@@ -1,0 +1,456 @@
+{
+  "scope": "Installer-only compilation, installer metadata and extraction only",
+  "status": "passed",
+  "installer": {
+    "name": "HaloryvaSetup_2.7.1.exe",
+    "version": "2.7.1",
+    "fileVersion": "2.7.1.11",
+    "assemblyVersion": "2.7.1.0",
+    "sha256": "BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1",
+    "bytes": 744960,
+    "builtAtParis": "2026-11-11T20:34:18.2858338+01:00",
+    "builtAtUTC": "2026-11-11T19:34:18.2858338+00:00",
+    "signed": false
+  },
+  "frozenApplication": {
+    "sha256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+    "buildRun": 43086180391,
+    "buildCommit": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624",
+    "version": "2.7.1",
+    "fileVersion": "2.7.1.11",
+    "stampedBrandSHA256": "6D0083AAE493A420627ED183A0BACC0FA34AB81C7F1A39A6E2FA1ECC8E7E775A",
+    "buildDate": "11/11/2026",
+    "unchanged": true,
+    "recompiled": false,
+    "executed": false
+  },
+  "execution": {
+    "successfulRun": 43088395238,
+    "successfulJob": 130758677484,
+    "recipeCommit": "4da5e2c9f55b51ef7f1b7963133dc7c2ccf95bb4",
+    "installerCompilationCount": 1,
+    "compilerErrors": 0,
+    "compilerWarnings": 0,
+    "metadata": {
+      "ProductName": true,
+      "CompanyName": true,
+      "ProductVersion": true,
+      "FileVersion": true,
+      "AssemblyVersion": true,
+      "WindowsX64": true,
+      "BrandVersion": true,
+      "StampedApplicationDate": true,
+      "NotSigned": true,
+      "ExactEmbeddedPayload": true
+    },
+    "metadataChecksPassed": 10,
+    "extractionExitCode": 0,
+    "extractedFileCount": 3,
+    "extractedFiles": [
+      {
+        "ExtractedSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+        "Identical": true,
+        "File": "Haloryva.exe",
+        "PayloadSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81"
+      },
+      {
+        "ExtractedSHA256": "DAE990166A22472109F0FBA8442E26C9963AB1EA6D9AE4F43B5F12DE2A38A26B",
+        "Identical": true,
+        "File": "Haloryva.sha256",
+        "PayloadSHA256": "DAE990166A22472109F0FBA8442E26C9963AB1EA6D9AE4F43B5F12DE2A38A26B"
+      },
+      {
+        "ExtractedSHA256": "D39C71F4CB838AA564C1E3E24A6682475F9075650C869DD9823AFBE1F9DF4865",
+        "Identical": true,
+        "File": "haloryva_demo.png",
+        "PayloadSHA256": "D39C71F4CB838AA564C1E3E24A6682475F9075650C869DD9823AFBE1F9DF4865"
+      }
+    ],
+    "installerHashUnchangedAfterExtraction": true
+  },
+  "firstAttempt": {
+    "run": 43088099468,
+    "commit": "430c36bde43714eb80ee70f7418595156fa968f9",
+    "status": "failed before compiler invocation",
+    "reason": "Windows PowerShell decoded the UTF-8 script without BOM as ANSI; the middle-dot source anchor was misread.",
+    "fix": "Only a UTF-8 BOM was added to Build-InstallerOnly.ps1; application, stamped source, installer source and recipe logic unchanged.",
+    "installerCompiled": false,
+    "applicationExecuted": false,
+    "artifacts": [
+      {
+        "id": 13886184525,
+        "name": "HaloryvaSetup-2.7.1-preuves-fabrication",
+        "size_in_bytes": 7501,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886184525",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886184525/zip",
+        "expired": false,
+        "created_at": "2026-11-11T19:32:29Z",
+        "expires_at": "2027-02-09T19:32:09Z",
+        "updated_at": "2026-11-11T19:32:29Z",
+        "digest": "sha256:cc5dc3cf8bee8c18a15ed4a8548fc3f788523eba757dab00e9dfdcc45e12a16a",
+        "workflow_run": {
+          "id": 43088099468,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-installateur-final-2.7.1",
+          "head_sha": "430c36bde43714eb80ee70f7418595156fa968f9"
+        }
+      }
+    ]
+  },
+  "sourceProvenance": {
+    "inputs": {
+      "Version": "2.7.1",
+      "FileVersion": "2.7.1.11",
+      "AssemblyVersion": "2.7.1.0",
+      "BuildDate": "11/11/2026",
+      "BaseCommit": "fa3c0ed958c5382e6b69832ea4c054f21b47f506",
+      "ApplicationBuildCommit": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624",
+      "ApplicationBuildRun": 43086180391,
+      "ApplicationArtifactId": 13886896454,
+      "ApplicationArtifactName": "Haloryva-2.7.1-file11-history-build",
+      "ApplicationSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+      "StampedBrandSHA256": "6D0083AAE493A420627ED183A0BACC0FA34AB81C7F1A39A6E2FA1ECC8E7E775A",
+      "ArchivedIconBlob": "5b20315ddc019df76288ba42282b8bf5ebb9a7ec",
+      "OutputName": "HaloryvaSetup_2.7.1.exe",
+      "SourceInputs": [
+        {
+          "Path": "Haloryva_Windows64/installer/FileTransaction.cs",
+          "GitBlobSHA": "e62a96b4828964630c143536d65cd2e3febf9e4a"
+        },
+        {
+          "Path": "Haloryva_Windows64/installer/MigrationPreview.cs",
+          "GitBlobSHA": "76720c4e641189ad3996568c1cf6880da58188c0"
+        },
+        {
+          "Path": "Haloryva_Windows64/installer/RegistryJournal.cs",
+          "GitBlobSHA": "4d042012a14551283ae8f93f46c2e911b40e4b91"
+        },
+        {
+          "Path": "Haloryva_Windows64/installer/SetupForm.cs",
+          "GitBlobSHA": "d5f8aebfd2940482a61b6d491cfc933431aa414e"
+        },
+        {
+          "Path": "Haloryva_Windows64/installer/SetupWork.cs",
+          "GitBlobSHA": "4e531293914254014929852471eec5130fd24b52"
+        },
+        {
+          "Path": "Haloryva_Windows64/assets/setup.manifest",
+          "GitBlobSHA": "dfaed5194219463d266da1428b7fbdd453924cd9"
+        },
+        {
+          "Path": "Haloryva_Windows64/assets/haloryva_demo.png",
+          "GitBlobSHA": "73ab07759047f3678aa56199b753b31b887a7536"
+        }
+      ],
+      "CompileApplication": false,
+      "ExecuteApplication": false,
+      "ApplicationSelfTests": false,
+      "InstallerSelfTest": false,
+      "ExtractionOnly": true,
+      "Install": false,
+      "Sign": false,
+      "Publish": false
+    },
+    "stagedSourceHashes": [
+      {
+        "SHA256": "A8013D7E51ECB24926C4C9861F8B80DCCC325F2E596E623839DE8D5C323E08AD",
+        "Name": "Brand.cs"
+      },
+      {
+        "SHA256": "B95B1604E13283D3F6C0F10FC6A4B0CA2FD44DF2094E03A6FAFD5DB3FC3FFFA1",
+        "Name": "FileTransaction.cs"
+      },
+      {
+        "SHA256": "1BF3E8EF10E3943300FAB1FDC58AED62613491F00396C69C1298E3720E8E5635",
+        "Name": "MigrationPreview.cs"
+      },
+      {
+        "SHA256": "BE2FE04A7A642DD6550EDB8F4C1DD8DFD44D8335D89C4FF7D7E3173027B6991F",
+        "Name": "RegistryJournal.cs"
+      },
+      {
+        "SHA256": "2442C8181B047C4DFB9B601F079D1623E786AF7A9D9E08DEFFB0C309137DEFCF",
+        "Name": "SetupForm.cs"
+      },
+      {
+        "SHA256": "91BB58BF6F7B14A5ECCB1A08FADF5E43464EA0E13375F4771E993FBC113B52DF",
+        "Name": "SetupWork.cs"
+      }
+    ],
+    "temporaryAdaptations": [
+      "Use the verified archived stamped Brand.cs and icon.",
+      "Replace only L.T(\" · build \") with the literal French setup text in the setup's temporary Brand.cs.",
+      "Set the temporary setup manifest version to 2.7.1.11; retain asInvoker."
+    ],
+    "fiveInstallerSourcesUnmodified": true
+  },
+  "artifacts": [
+    {
+      "id": 13886898481,
+      "name": "HaloryvaSetup-2.7.1-preuves-fabrication",
+      "size_in_bytes": 1190802,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886898481",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886898481/zip",
+      "expired": false,
+      "created_at": "2026-11-11T19:34:27Z",
+      "expires_at": "2027-02-09T19:34:02Z",
+      "updated_at": "2026-11-11T19:34:27Z",
+      "digest": "sha256:e77c5c64aec0c9235665c56a4b20a6d959fe7c1ffb820eda6e974ba57b7cccab",
+      "workflow_run": {
+        "id": 43088395238,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-installateur-final-2.7.1",
+        "head_sha": "4da5e2c9f55b51ef7f1b7963133dc7c2ccf95bb4"
+      }
+    },
+    {
+      "id": 13886638835,
+      "name": "HaloryvaSetup-2.7.1",
+      "size_in_bytes": 447631,
+      "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886638835",
+      "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13886638835/zip",
+      "expired": false,
+      "created_at": "2026-11-11T19:34:25Z",
+      "expires_at": "2027-02-09T19:34:02Z",
+      "updated_at": "2026-11-11T19:34:25Z",
+      "digest": "sha256:2c2738f511643a8d2ec566368d2a5641cd3b2ee5f5f882cf2aff372f190497eb",
+      "workflow_run": {
+        "id": 43088395238,
+        "repository_id": 1450529585,
+        "head_repository_id": 1450529585,
+        "head_branch": "haloryva-installateur-final-2.7.1",
+        "head_sha": "4da5e2c9f55b51ef7f1b7963133dc7c2ccf95bb4"
+      }
+    }
+  ],
+  "preservation": {
+    "all25PriorBranchesUnchanged": true,
+    "branches": [
+      {
+        "name": "haloryva-2.7.0-c4",
+        "commit": {
+          "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/678c637b4c87b07ebc6b615154ffc2122c320a06"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-candidat-2.7.1-historique",
+        "commit": {
+          "sha": "fa3c0ed958c5382e6b69832ea4c054f21b47f506",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/fa3c0ed958c5382e6b69832ea4c054f21b47f506"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-candidat-2.7.1",
+        "commit": {
+          "sha": "25f6f03216c4f89988bf82521edc0938c458e35f",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/25f6f03216c4f89988bf82521edc0938c458e35f"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-exe-preview9",
+        "commit": {
+          "sha": "c158d3fa27e1cd3e1dbeeb3655a4682b820e034d",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/c158d3fa27e1cd3e1dbeeb3655a4682b820e034d"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-livraison-2.7.1",
+        "commit": {
+          "sha": "9482b046fa6fc096fd5942482c3ddff8516dcbcc",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/9482b046fa6fc096fd5942482c3ddff8516dcbcc"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-msix-preview7",
+        "commit": {
+          "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview5",
+        "commit": {
+          "sha": "f07890303144653049a05069841838ecd9b9d73d",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/f07890303144653049a05069841838ecd9b9d73d"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview7",
+        "commit": {
+          "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview8",
+        "commit": {
+          "sha": "bf8892413e6d686feb2884d26e118eff94d32723",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/bf8892413e6d686feb2884d26e118eff94d32723"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-preparation-store-preview9",
+        "commit": {
+          "sha": "dca613b3714ccc85a2d1930f1a0cb5e23e91388c",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/dca613b3714ccc85a2d1930f1a0cb5e23e91388c"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-installateur-preview9",
+        "commit": {
+          "sha": "18a647ed7c22c6f4d19159721bc2ce844d8455a9",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/18a647ed7c22c6f4d19159721bc2ce844d8455a9"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview2",
+        "commit": {
+          "sha": "8d84f31157ebfc1e09144811b6b112247f926f81",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/8d84f31157ebfc1e09144811b6b112247f926f81"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview3",
+        "commit": {
+          "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview4",
+        "commit": {
+          "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview5-msix",
+        "commit": {
+          "sha": "cfdb260c50bf771843065eff8eefadae24899f06",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/cfdb260c50bf771843065eff8eefadae24899f06"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview5",
+        "commit": {
+          "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview6",
+        "commit": {
+          "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview7-msix",
+        "commit": {
+          "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/6689a23a953c5c553d6706e0c845467d7c8592e0"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview7",
+        "commit": {
+          "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8-focus",
+        "commit": {
+          "sha": "638e2044e6c988b784941329316aa53b99005e8a",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/638e2044e6c988b784941329316aa53b99005e8a"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8-import",
+        "commit": {
+          "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/78c8063e7109e8e8529f82adf8f37d075fe20420"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview8",
+        "commit": {
+          "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/61db4b63737c3907216c9d4bee2bc8485662f2aa"
+        },
+        "protected": false
+      },
+      {
+        "name": "haloryva-tests-preview9",
+        "commit": {
+          "sha": "d1afe7b5a155355bbf60645a4ad04c7f963bfb87",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/d1afe7b5a155355bbf60645a4ad04c7f963bfb87"
+        },
+        "protected": false
+      },
+      {
+        "name": "main",
+        "commit": {
+          "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+        },
+        "protected": false
+      },
+      {
+        "name": "release/2.7.0-stable",
+        "commit": {
+          "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980",
+          "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/commits/d80b33ea17bf6d667322adc60bdde31ac9039980"
+        },
+        "protected": false
+      }
+    ],
+    "all648PriorFilesUnchanged": true,
+    "allPriorBinariesPreserved": true,
+    "mainUnchanged": true,
+    "userPCModified": false,
+    "previousCandidateBranchesUnchanged": true
+  },
+  "notExecuted": [
+    "Haloryva compilation",
+    "Haloryva execution",
+    "Haloryva self-test",
+    "Installer self-test",
+    "195 historical checks",
+    "Prior UI recipes or Sonidos",
+    "Normal setup UI launch",
+    "Installation or uninstallation",
+    "Settings retention during installation or maintenance",
+    "MSIX build or tests",
+    "Signing",
+    "GitHub release or Microsoft Store publication",
+    "Subscription"
+  ],
+  "environment": "GitHub-hosted windows-2025; Windows Server 2025 x64; existing .NET Framework compiler only; no software installation",
+  "limitation": "Passing metadata and extraction does not validate installation/uninstallation or settings retention for this final setup. No claim of user-PC or real Windows 11 installation validation.",
+  "nextAction": "After explicit authorization, test installation and uninstallation with settings retention on isolated GitHub Windows using this exact installer. Normal installation automatically invokes Haloryva --selftest; that one self-test must be explicitly authorized for that next step. Do not replay the 195 checks."
+}

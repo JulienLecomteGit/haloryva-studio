@@ -1,0 +1,92 @@
+{
+  "Version": "2.7.1",
+  "FileVersion": "2.7.1.11",
+  "Status": "passed",
+  "BuildCommit": "4da5e2c9f55b51ef7f1b7963133dc7c2ccf95bb4",
+  "ApplicationSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+  "ApplicationBuildRun": 43086180391,
+  "ApplicationBuildCommit": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624",
+  "ApplicationBuildDate": "11/11/2026",
+  "ApplicationCompiled": false,
+  "ApplicationExecuted": false,
+  "ApplicationSelfTests": false,
+  "InstallerSelfTest": false,
+  "Installed": false,
+  "Historical195Executed": false,
+  "Signed": false,
+  "Published": false,
+  "InstallerCompiled": true,
+  "SetupBuiltAtUTC": "2026-11-11T19:34:18.2858338+00:00",
+  "SetupBuiltAtParis": "2026-11-11T20:34:18.2858338+01:00",
+  "MetadataChecks": {
+    "ProductName": true,
+    "CompanyName": true,
+    "ProductVersion": true,
+    "FileVersion": true,
+    "AssemblyVersion": true,
+    "WindowsX64": true,
+    "BrandVersion": true,
+    "StampedApplicationDate": true,
+    "NotSigned": true,
+    "ExactEmbeddedPayload": true
+  },
+  "MetadataChecksPassed": 10,
+  "AssemblyVersion": "2.7.1.0",
+  "SetupBrandBuildDate": "11/11/2026",
+  "SignatureStatus": "NotSigned",
+  "SetupManifestSourceVersion": "2.7.1.11",
+  "SetupManifestSourceExecutionLevel": "asInvoker",
+  "StampedBrandSHA256": "6D0083AAE493A420627ED183A0BACC0FA34AB81C7F1A39A6E2FA1ECC8E7E775A",
+  "StagedSourceHashes": [
+    {
+      "SHA256": "A8013D7E51ECB24926C4C9861F8B80DCCC325F2E596E623839DE8D5C323E08AD",
+      "Name": "Brand.cs"
+    },
+    {
+      "SHA256": "B95B1604E13283D3F6C0F10FC6A4B0CA2FD44DF2094E03A6FAFD5DB3FC3FFFA1",
+      "Name": "FileTransaction.cs"
+    },
+    {
+      "SHA256": "1BF3E8EF10E3943300FAB1FDC58AED62613491F00396C69C1298E3720E8E5635",
+      "Name": "MigrationPreview.cs"
+    },
+    {
+      "SHA256": "BE2FE04A7A642DD6550EDB8F4C1DD8DFD44D8335D89C4FF7D7E3173027B6991F",
+      "Name": "RegistryJournal.cs"
+    },
+    {
+      "SHA256": "2442C8181B047C4DFB9B601F079D1623E786AF7A9D9E08DEFFB0C309137DEFCF",
+      "Name": "SetupForm.cs"
+    },
+    {
+      "SHA256": "91BB58BF6F7B14A5ECCB1A08FADF5E43464EA0E13375F4771E993FBC113B52DF",
+      "Name": "SetupWork.cs"
+    }
+  ],
+  "ExtractionExitCode": 0,
+  "SetupSHA256": "BC782C5DD43A795E1F5666A08621F7176F2F4DF1663F844C8BD83A8E55BFFDB1",
+  "SetupBytes": 744960,
+  "ExtractionFiles": [
+    {
+      "ExtractedSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+      "Identical": true,
+      "File": "Haloryva.exe",
+      "PayloadSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81"
+    },
+    {
+      "ExtractedSHA256": "DAE990166A22472109F0FBA8442E26C9963AB1EA6D9AE4F43B5F12DE2A38A26B",
+      "Identical": true,
+      "File": "Haloryva.sha256",
+      "PayloadSHA256": "DAE990166A22472109F0FBA8442E26C9963AB1EA6D9AE4F43B5F12DE2A38A26B"
+    },
+    {
+      "ExtractedSHA256": "D39C71F4CB838AA564C1E3E24A6682475F9075650C869DD9823AFBE1F9DF4865",
+      "Identical": true,
+      "File": "haloryva_demo.png",
+      "PayloadSHA256": "D39C71F4CB838AA564C1E3E24A6682475F9075650C869DD9823AFBE1F9DF4865"
+    }
+  ],
+  "InstallerExtractedOnly": true,
+  "ApplicationAndStampedSourceUnchanged": true,
+  "SetupUnchangedAfterExtraction": true
+}
