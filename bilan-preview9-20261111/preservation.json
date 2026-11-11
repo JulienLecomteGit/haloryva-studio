@@ -1,0 +1,134 @@
+{
+  "Date": "2026-11-11",
+  "BaseCommit": "638e2044e6c988b784941329316aa53b99005e8a",
+  "ApplicationBuildCommit": "a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5",
+  "TestCommit": "3f1d4fc32a7dfc2ae5529c3c45896ff9bb434615",
+  "PriorFileCount": 448,
+  "PriorFilesChanged": [],
+  "Branches": {
+    "PriorBranches": [
+      {
+        "name": "haloryva-2.7.0-c4",
+        "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+      },
+      {
+        "name": "haloryva-preparation-msix-preview7",
+        "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+      },
+      {
+        "name": "haloryva-preparation-store-preview5",
+        "sha": "f07890303144653049a05069841838ecd9b9d73d"
+      },
+      {
+        "name": "haloryva-preparation-store-preview7",
+        "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+      },
+      {
+        "name": "haloryva-preparation-store-preview8",
+        "sha": "bf8892413e6d686feb2884d26e118eff94d32723"
+      },
+      {
+        "name": "haloryva-tests-preview2",
+        "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+      },
+      {
+        "name": "haloryva-tests-preview3",
+        "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+      },
+      {
+        "name": "haloryva-tests-preview4",
+        "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+      },
+      {
+        "name": "haloryva-tests-preview5-msix",
+        "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+      },
+      {
+        "name": "haloryva-tests-preview5",
+        "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+      },
+      {
+        "name": "haloryva-tests-preview6",
+        "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+      },
+      {
+        "name": "haloryva-tests-preview7-msix",
+        "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+      },
+      {
+        "name": "haloryva-tests-preview7",
+        "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+      },
+      {
+        "name": "haloryva-tests-preview8-focus",
+        "sha": "638e2044e6c988b784941329316aa53b99005e8a"
+      },
+      {
+        "name": "haloryva-tests-preview8-import",
+        "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420"
+      },
+      {
+        "name": "haloryva-tests-preview8",
+        "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+      },
+      {
+        "name": "main",
+        "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+      },
+      {
+        "name": "release/2.7.0-stable",
+        "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+      }
+    ],
+    "Changes": [],
+    "Count": 18
+  },
+  "SourceInheritance": {
+    "UnchangedCSharp": [
+      "haloryva-ci/preview8/src/Annotations.cs",
+      "haloryva-ci/preview8/src/ColorWheelPopup.cs",
+      "haloryva-ci/preview8/src/Config.cs",
+      "haloryva-ci/preview8/src/DrawingGeometry.cs",
+      "haloryva-ci/preview8/src/EffectDiagnostics.cs",
+      "haloryva-ci/preview8/src/ErrorReporting.cs",
+      "haloryva-ci/preview8/src/FrameBounds.cs",
+      "haloryva-ci/preview8/src/FramePump.cs",
+      "haloryva-ci/preview8/src/GlobalHooks.cs",
+      "haloryva-ci/preview8/src/InputPipeline.cs",
+      "haloryva-ci/preview8/src/InputState.cs",
+      "haloryva-ci/preview8/src/KeyboardPolicy.cs",
+      "haloryva-ci/preview8/src/Localization.cs",
+      "haloryva-ci/preview8/src/PackageContext.cs",
+      "haloryva-ci/preview8/src/PremiumWidgets.cs",
+      "haloryva-ci/preview8/src/ProfileMigration.cs",
+      "haloryva-ci/preview8/src/Program.cs",
+      "haloryva-ci/preview8/src/SelfTest.cs",
+      "haloryva-ci/preview8/src/Splash.cs",
+      "haloryva-ci/preview8/src/StartupSettings.cs",
+      "haloryva-ci/preview8/src/StudioControls.cs",
+      "haloryva-ci/preview8/src/StudioTheme.cs",
+      "haloryva-ci/preview8/src/TextPrompt.cs",
+      "haloryva-ci/preview8/src/ToolToast.cs",
+      "haloryva-ci/preview8/src/TrailDiagnostics.cs",
+      "haloryva-ci/preview8/src/TrailEngine.cs",
+      "haloryva-ci/preview8/src/TrailSelfTest.cs",
+      "haloryva-ci/preview8/src/Visuals.cs",
+      "haloryva-ci/preview8/src/WinNative.cs"
+    ],
+    "ChangedCSharp": [
+      "haloryva-ci/preview9/src/Brand.cs",
+      "haloryva-ci/preview9/src/Controller.cs",
+      "haloryva-ci/preview9/src/PremiumStudioForm.cs"
+    ],
+    "AdditionalCSharp": [
+      "haloryva-ci/preview9/src/StartupRefreshTrace.cs"
+    ],
+    "AssetsUnchanged": true,
+    "AssetsCount": 3
+  },
+  "PCChanged": false,
+  "Historical195Executed": false,
+  "AcquiredSuitesRerun": false,
+  "Signing": false,
+  "ReleasePublication": false
+}

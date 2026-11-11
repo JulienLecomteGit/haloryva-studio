@@ -1,0 +1,136 @@
+HALORYVA STUDIO — PREVIEW.9 — ACTUALISATION AU PREMIER RETOUR
+11 novembre 2026 — bilan ciblé, aucune diffusion
+
+RÉSULTAT À RETENIR
+Le défaut d'actualisation est corrigé et validé en fonctionnement normal :
+7/7 assertions, au premier retour réel au Studio, sur le binaire final ci-dessous.
+Le mode diagnostic confirme aussi la lecture du véritable état DisabledByUser.
+Son pilote a franchi les neuf assertions mais son job s'est interrompu ensuite
+à la limite de 10 minutes. Le résultat JSON final manque : ce job n'est PAS vert.
+La campagne complète a donc le statut GitHub « cancelled », malgré le job normal
+réussi et les preuves fonctionnelles récupérées. Pas de feu vert global de diffusion.
+
+BINAIRE CONSERVÉ APRÈS COMPILATION
+Version : 2.7.1-preview.9 (fichier 2.7.1.9).
+Commit de compilation : a6c817fc8601b7c5b4f90da46d00fb7f9cd16fd5
+EXE SHA-256 : 678DB7DBBAB906A438F01F83A27D8A4D9C1904D1E280880D148FE3A1610522DC
+MSIX SHA-256 : A6D0A75878175AF51B29D167A612300A0811E0AF238D9D0489927DC1E24A3926
+MSIX d'essai 2.7.1.90, identité HaloryvaStudio.MsixLifecycleTest.
+Compilation réussie : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43035196363
+Archive EXE : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43035196363/artifacts/13862528027
+C'est Haloryva.exe, l'application de test, pas encore l'installateur HaloryvaSetup.
+L'archive est annoncée disponible jusqu'au 11 décembre 2026.
+Aucune signature et aucun changement du binaire après cette compilation.
+Avertissement CS1701 de références WinRT/.NET déjà présent ; aucune erreur de compilation.
+
+CORRECTION LIMITÉE
+- Dans le Studio empaqueté affiché, observation du véritable premier plan toutes
+  les 100 ms. Une transition vers le Studio déclenche la relecture du démarrage.
+  L'observation s'arrête lorsque le Studio est masqué et est libérée à sa fermeture.
+- Les lectures StartupTask sont bornées : immédiate puis délais 250/750/1500 ms
+  entre relectures, auxquels s'ajoute le temps des appels. Il ne s'agit pas d'un
+  sondage continu de l'état du démarrage. Aucun écrit Windows depuis ces lectures.
+- Une demande de lecture arrivée pendant une autre lecture/action n'est plus perdue.
+  Les résultats périmés d'une génération précédente ne sont pas publiés.
+- Diagnostic optatif --startup-refresh-trace, absent en lancement normal.
+  Il contient uniquement dates, étapes et états techniques ; taille limitée.
+- 29 fichiers C# hérités et les 3 fichiers d'assets/catalogue sont identiques
+  à preview.8. Seuls Brand.cs, Controller.cs et PremiumStudioForm.cs sont adaptés,
+  avec le nouveau fichier de diagnostic StartupRefreshTrace.cs.
+  Les langues FR/EN/ES, choix d'outils, clic court, dessin, réglages figés pendant
+  un trait et autres corrections précédentes restent intégrés dans l'EXE.
+  Leurs anciennes campagnes restent acquises sur leurs versions, non rejouées ici.
+
+CE QUE LES DIAGNOSTICS PROUVENT
+Le premier candidat n'a effectué aucune nouvelle lecture au retour réel confirmé.
+Le candidat utilisant WinEvent n'a pas déclenché de relecture utile non plus.
+Ces observations justifient le suivi du véritable premier plan. Elles ne prouvent
+pas précisément pourquoi les événements WinForms/WinEvent n'ont pas abouti dans
+ce parcours. Aucun défaut de cache WinRT n'est démontré.
+Les deux candidats insuffisants, leurs commits, binaires et résultats sont conservés.
+
+RECETTE FINALE RÉELLEMENT EXÉCUTÉE
+Run : https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43035528813
+Pilote figé : 3f1d4fc32a7dfc2ae5529c3c45896ff9bb434615.
+Deux Windows 11 Enterprise ARM64, build 26200, image 20261101.203.1.
+L'EXE x64 tourne sous émulation. Ce n'est pas une validation Windows 11 x64 natif.
+L'identité du paquet, le hash du MSIX et celui de l'EXE installé sont vérifiés.
+Le paquet est enregistré sans signature uniquement dans les machines GitHub.
+
+MODE NORMAL — JOB 130573406999 RÉUSSI
+1. Vraie fenêtre racine du Studio identifiée.
+2. Désactivation par l'interface Windows, au premier plan, état réel State=1.
+3. Premier retour confirmé par fenêtre de premier plan ET fenêtre active du fil UI.
+4. Contrôle du Studio désactivé ; Windows reste DisabledByUser.
+5. Même processus, sans relance et sans second aller-retour.
+6. Profil identique, LaunchAtLogin=true conservé sans réactiver Windows.
+7. Aucun fichier diagnostic créé en mode normal.
+Observation de l'actualisation : 137 ms dans cet essai, pas une garantie de latence.
+Profil avant/après : F47AACF7C397714236D0E518456CE862E7EEEE67D1A74F0CB22AB1CA52E30E31
+Arrêt normal de Haloryva (code 0) et retrait du paquet de test confirmés.
+
+MODE DIAGNOSTIC — JOB 130573407015 INTERROMPU APRÈS LE PARCOURS
+Les traces conservées montrent une transition observée à 14:09:46.981 UTC,
+puis quatre publications de State=1 entre 14:09:47.018 et 14:09:49.581 UTC.
+Le fichier studio-after-refocus.txt (6562 octets) existe. Dans le pilote figé,
+son écriture vient APRÈS les six assertions fonctionnelles et les trois assertions
+diagnostiques (transition, état lu, fin des relectures). Son existence établit
+que le pilote a franchi ces neuf assertions. C'est une déduction du chemin
+d'exécution et des fichiers, pas un compte rendu JSON final récupéré.
+La clôture n'a pas abouti avant la limite de temps. Le point exact entre fermeture
+de Paramètres Windows, arrêt de Haloryva et collecte/nettoyage n'est pas établi.
+Ne pas attribuer sans preuve ce blocage à la désinstallation MSIX ou à Haloryva.
+Arrêt normal et retrait du paquet non confirmés pour CE job.
+Le résultat fonctionnel ne transforme pas un job cancelled en job réussi.
+Lecture des preuves sans exécution de Haloryva :
+https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43037376117
+Les traces récupérées sont également versionnées dans ce dossier.
+
+TENTATIVES ANTÉRIEURES CONSERVÉES
+- Build 43029558353 : premier candidat compilé.
+- Run 43030441632 : paquet construit ; deux pilotes arrêtés avant assertions
+  à cause de l'encodage « Préférences ». BOM corrigé sans changer ce binaire.
+- Run 43030955991 : deux échecs réels du premier retour, chacun 3 assertions
+  réussies puis une échouée ; les suivantes non exécutées.
+- Lecture 43031438855 : récupération des traces, aucun essai applicatif.
+- Build 43032731854 / run 43032986050 : second candidat, événement WinEvent ;
+  mode normal en échec (3 réussies, une échouée). Le journal du mode diagnostic
+  contient aussi l'échec du rafraîchissement, puis son job est interrompu.
+- Lecture 43034840389 : récupération des preuves de ce second candidat.
+- Build 43035196363 / run 43035528813 : candidat courant ci-dessus.
+Ne pas additionner toutes ces assertions comme des fonctionnalités indépendantes.
+Trois compilations ont été nécessaires à trois changements applicatifs distincts.
+
+ACQUIS, LIMITES ET DIFFUSION
+- S3 premier retour n'est plus en échec dans le mode normal de preview.9.
+- Matrice MSIX héritée : 6 scénarios complets, 8 partiels, 3 non exécutés (C1, M7,
+  S6), sur 17. Ce total combine des preuves de plusieurs versions explicitement
+  délimitées ; il ne mesure pas la qualité globale de preview.9.
+- Vraie ouverture de session Windows S6 toujours NON exécutée. Le runner interactif
+  disponible n'a pas de continuité externe préparée pour une déconnexion.
+  Aucun abonnement, installation, autologon ou service nouveau n'a été créé.
+- Aucune migration depuis une installation réelle 2.7.0 : les profils déjà testés
+  restent des profils synthétiques. Les acquis d'import ne sont pas réexécutés.
+- La clôture du pilote diagnostic reste à fiabiliser/qualifier séparément.
+- Installateur .exe final, identité Store, finitions Store et certification restent
+  à préparer/terminer selon le dossier existant. Le défaut S3 corrigé ne suffit
+  pas à donner un feu vert global. La connexion réelle S6 reste notamment ouverte.
+- Le futur installateur pourra embarquer les corrections cumulées validées.
+  Aucun engagement « zéro bug » ni « toutes les validations terminées » n'est donné.
+
+CONSERVATION ET PÉRIMÈTRE
+18 branches antérieures inchangées, dont main et release/2.7.0-stable.
+448 fichiers de départ identiques, toutes les préversions préservées.
+Nouvelle branche de travail uniquement : haloryva-tests-preview9.
+Aucun test historique des 195, aucune ancienne campagne acquise relancée.
+L'activation puis la désactivation du démarrage sont les prérequis du nouveau
+scénario S3, pas une répétition de la campagne S2.
+0 modification ou fichier créé sur le PC principal ; aucune exécution locale.
+0 signature, 0 release, 0 soumission Store, 0 souscription.
+
+PROCHAINE ACTION
+Examiner la clôture du pilote à partir des preuves, en conservant l'EXE courant
+et sans rejouer les assertions fonctionnelles acquises. Préparer des points de
+reprise enregistrés AVANT chaque opération de clôture éventuellement bloquante.
+Puis préparer l'installateur .exe séparément, avec les blocages de diffusion
+toujours explicités. Aucun installateur à lancer sur le PC principal sans accord.

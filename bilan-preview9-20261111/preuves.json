@@ -1,7 +1,7 @@
 {
   "Date": "2026-11-11",
   "Version": "2.7.1-preview.9",
-  "State": "Normal-mode-first-return-passed; diagnostic job still running",
+  "State": "First-return defect validated in normal mode; diagnostic functional path recovered, job closure incomplete",
   "BaseCommit": "638e2044e6c988b784941329316aa53b99005e8a",
   "BuildRun": 43035196363,
   "Build": {
@@ -543,5 +543,230 @@
   "Historical195Rerun": false,
   "LocalPCChanges": false,
   "Published": false,
-  "Signed": false
+  "Signed": false,
+  "DiagnosticMode": {
+    "RunId": 43035528813,
+    "JobId": 130573407015,
+    "GitHubConclusion": "cancelled",
+    "FinalStructuredResultAvailable": false,
+    "FunctionalCheckpointAvailable": false,
+    "ArchiveArtifactId": 13863825999,
+    "ReadOnlyRecoveryRunId": 43037376117,
+    "DirectEvidence": {
+      "StudioAfterRefocusFileExists": true,
+      "StudioAfterRefocusFileLength": 6562,
+      "TraceLines": [
+        "2026-11-11T14:09:38.5182233Z\tfocus_read\t0\t-1",
+        "2026-11-11T14:09:38.5514990Z\tread_requested\t0\t-1",
+        "2026-11-11T14:09:38.5514990Z\tread_begin\t0\t-1",
+        "2026-11-11T14:09:38.8278341Z\tread_return\t0\t0",
+        "2026-11-11T14:09:38.8338523Z\tread_publish\t0\t0",
+        "2026-11-11T14:09:39.1907816Z\tfocus_recheck\t0\t-1",
+        "2026-11-11T14:09:39.1907816Z\tread_requested\t0\t-1",
+        "2026-11-11T14:09:39.1907816Z\tread_begin\t0\t-1",
+        "2026-11-11T14:09:39.2162912Z\tread_return\t0\t0",
+        "2026-11-11T14:09:39.2162912Z\tread_publish\t0\t0",
+        "2026-11-11T14:09:40.0687556Z\tfocus_recheck\t0\t-1",
+        "2026-11-11T14:09:40.0687556Z\tread_requested\t1\t-1",
+        "2026-11-11T14:09:40.0687556Z\tread_begin\t1\t-1",
+        "2026-11-11T14:09:40.0846388Z\tread_return\t1\t2",
+        "2026-11-11T14:09:40.0846388Z\tread_publish\t1\t2",
+        "2026-11-11T14:09:41.6059429Z\tfocus_recheck\t0\t-1",
+        "2026-11-11T14:09:41.6059429Z\tread_requested\t1\t-1",
+        "2026-11-11T14:09:41.6059429Z\tread_begin\t1\t-1",
+        "2026-11-11T14:09:41.6216833Z\tread_return\t1\t2",
+        "2026-11-11T14:09:41.6216833Z\tread_publish\t1\t2",
+        "2026-11-11T14:09:46.9813809Z\tforeground_observed\t0\t1",
+        "2026-11-11T14:09:46.9833919Z\tfocus_read\t0\t-1",
+        "2026-11-11T14:09:46.9833919Z\tread_requested\t1\t-1",
+        "2026-11-11T14:09:46.9854074Z\tread_begin\t1\t-1",
+        "2026-11-11T14:09:46.9940917Z\tread_return\t1\t1",
+        "2026-11-11T14:09:47.0186882Z\tread_publish\t1\t1",
+        "2026-11-11T14:09:47.2892692Z\tfocus_recheck\t0\t-1",
+        "2026-11-11T14:09:47.2892692Z\tread_requested\t1\t-1",
+        "2026-11-11T14:09:47.2892692Z\tread_begin\t1\t-1",
+        "2026-11-11T14:09:47.2981498Z\tread_return\t1\t1",
+        "2026-11-11T14:09:47.2981498Z\tread_publish\t1\t1",
+        "2026-11-11T14:09:48.0674757Z\tfocus_recheck\t0\t-1",
+        "2026-11-11T14:09:48.0674757Z\tread_requested\t1\t-1",
+        "2026-11-11T14:09:48.0674757Z\tread_begin\t1\t-1",
+        "2026-11-11T14:09:48.0674757Z\tread_return\t1\t1",
+        "2026-11-11T14:09:48.0674757Z\tread_publish\t1\t1",
+        "2026-11-11T14:09:49.5751881Z\tfocus_recheck\t0\t-1",
+        "2026-11-11T14:09:49.5751881Z\tread_requested\t1\t-1",
+        "2026-11-11T14:09:49.5751881Z\tread_begin\t1\t-1",
+        "2026-11-11T14:09:49.5814653Z\tread_return\t1\t1",
+        "2026-11-11T14:09:49.5814653Z\tread_publish\t1\t1"
+      ],
+      "DisabledByUserPublications": 4
+    },
+    "Interpretation": "Le fichier studio-after-refocus.txt est écrit après les neuf assertions dans le pilote figé. Sa présence établit que le pilote les a franchies. Il s'agit d'une déduction à partir du chemin d'exécution et des preuves, pas d'un résultat JSON final ni d'un job GitHub réussi.",
+    "Unconfirmed": [
+      "Point exact du blocage après les assertions",
+      "Arrêt normal du processus dans ce job",
+      "Retrait du paquet dans ce job"
+    ],
+    "DoNotAggregateAsGreenJob": true
+  },
+  "TestArtifacts": {
+    "artifacts": [
+      {
+        "id": 13863825999,
+        "name": "preview9-first-refocus-on",
+        "size_in_bytes": 5680,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13863825999",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13863825999/zip",
+        "expired": false,
+        "created_at": "2026-11-11T14:18:36Z",
+        "expires_at": "2026-12-11T14:18:35Z",
+        "updated_at": "2026-11-11T14:18:36Z",
+        "digest": "sha256:b54917d0d841e2432eb2efc78ee0fdd299033deefa3eb0ca4bcf3e0be448efb6",
+        "workflow_run": {
+          "id": 43035528813,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-tests-preview9",
+          "head_sha": "3f1d4fc32a7dfc2ae5529c3c45896ff9bb434615"
+        }
+      },
+      {
+        "id": 13862837786,
+        "name": "preview9-first-refocus-off",
+        "size_in_bytes": 9717,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13862837786",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13862837786/zip",
+        "expired": false,
+        "created_at": "2026-11-11T14:09:33Z",
+        "expires_at": "2026-12-11T14:09:33Z",
+        "updated_at": "2026-11-11T14:09:33Z",
+        "digest": "sha256:0efbe3c42f71e2cb5b1f357c51d0cbb4901702cbfceeade02faaf7e6d15ce443",
+        "workflow_run": {
+          "id": 43035528813,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-tests-preview9",
+          "head_sha": "3f1d4fc32a7dfc2ae5529c3c45896ff9bb434615"
+        }
+      },
+      {
+        "id": 13862238785,
+        "name": "Haloryva-preview9-msix-test",
+        "size_in_bytes": 554722,
+        "url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13862238785",
+        "archive_download_url": "https://api.github.com/repos/JulienLecomteGit/haloryva-studio/actions/artifacts/13862238785/zip",
+        "expired": false,
+        "created_at": "2026-11-11T14:08:18Z",
+        "expires_at": "2026-12-11T14:08:17Z",
+        "updated_at": "2026-11-11T14:08:18Z",
+        "digest": "sha256:9ae90940b220843e0c74235f9704ae148a0a031b955c1b7d3c291e99f2649812",
+        "workflow_run": {
+          "id": 43035528813,
+          "repository_id": 1450529585,
+          "head_repository_id": 1450529585,
+          "head_branch": "haloryva-tests-preview9",
+          "head_sha": "3f1d4fc32a7dfc2ae5529c3c45896ff9bb434615"
+        }
+      }
+    ]
+  },
+  "WorkflowConclusion": "cancelled",
+  "PreservedBranches": {
+    "PriorBranches": [
+      {
+        "name": "haloryva-2.7.0-c4",
+        "sha": "678c637b4c87b07ebc6b615154ffc2122c320a06"
+      },
+      {
+        "name": "haloryva-preparation-msix-preview7",
+        "sha": "87fc35da1699ebc2e8f47b7ec1cfacd7898d1c43"
+      },
+      {
+        "name": "haloryva-preparation-store-preview5",
+        "sha": "f07890303144653049a05069841838ecd9b9d73d"
+      },
+      {
+        "name": "haloryva-preparation-store-preview7",
+        "sha": "a2361882d9d1fe21f6b626fe3bedc05fbf74a37c"
+      },
+      {
+        "name": "haloryva-preparation-store-preview8",
+        "sha": "bf8892413e6d686feb2884d26e118eff94d32723"
+      },
+      {
+        "name": "haloryva-tests-preview2",
+        "sha": "8d84f31157ebfc1e09144811b6b112247f926f81"
+      },
+      {
+        "name": "haloryva-tests-preview3",
+        "sha": "c74f4d66c6a7f742e338408e427e29da3fa02eb5"
+      },
+      {
+        "name": "haloryva-tests-preview4",
+        "sha": "e7eefcf5aa8d1f1df97567fbff56e40965d8b69f"
+      },
+      {
+        "name": "haloryva-tests-preview5-msix",
+        "sha": "cfdb260c50bf771843065eff8eefadae24899f06"
+      },
+      {
+        "name": "haloryva-tests-preview5",
+        "sha": "67b7efebe4efcfc24168d6f92bd0e1f2277aa58f"
+      },
+      {
+        "name": "haloryva-tests-preview6",
+        "sha": "8cbe64c2662f9b0afcd0067dd35b91f1722dc656"
+      },
+      {
+        "name": "haloryva-tests-preview7-msix",
+        "sha": "6689a23a953c5c553d6706e0c845467d7c8592e0"
+      },
+      {
+        "name": "haloryva-tests-preview7",
+        "sha": "5d62e71cd9e6d5ee2c33c672691ef6a075a10bfa"
+      },
+      {
+        "name": "haloryva-tests-preview8-focus",
+        "sha": "638e2044e6c988b784941329316aa53b99005e8a"
+      },
+      {
+        "name": "haloryva-tests-preview8-import",
+        "sha": "78c8063e7109e8e8529f82adf8f37d075fe20420"
+      },
+      {
+        "name": "haloryva-tests-preview8",
+        "sha": "61db4b63737c3907216c9d4bee2bc8485662f2aa"
+      },
+      {
+        "name": "main",
+        "sha": "9e900eeaa62dcd2812a6aa0d3f251ad019ef3686"
+      },
+      {
+        "name": "release/2.7.0-stable",
+        "sha": "d80b33ea17bf6d667322adc60bdde31ac9039980"
+      }
+    ],
+    "Changes": [],
+    "Count": 18
+  },
+  "RecoveryRuns": [
+    43031438855,
+    43034840389,
+    43037376117
+  ],
+  "PreviousCandidateBuilds": [
+    {
+      "RunId": 43029558353,
+      "Commit": "0175bc2fbb1e8b77a099e10d59818580715fa67c",
+      "SHA256": "5A7CF59D6C4638F68474EBCCC9D4FDCEC610638D0EBCD612B2B5828B7411EE87",
+      "FinalTestRun": 43030955991,
+      "Status": "first-return-failed-both-modes"
+    },
+    {
+      "RunId": 43032731854,
+      "Commit": "4ed3f2ad13594bba2a5425db564cfaf3ff1c5521",
+      "SHA256": "B19528E2C077AA52B5BE5D293853E142ECD243DE39F1A87176A14A1A9DCF91D8",
+      "FinalTestRun": 43032986050,
+      "Status": "normal-first-return-failed; trace-first-return-failure-recorded-before-timeout"
+    }
+  ]
 }
