@@ -162,20 +162,23 @@ namespace CursorFlow
         public StartupSnapshot StartupStatus { get { return startupStatus; } private set { startupStatus = value; } }
         public bool StartupBusy { get; private set; }
         private bool startupReadBusy;
+        private int startupGeneration;
         public async System.Threading.Tasks.Task RefreshStartupStatusAsync()
         {
             if (exiting || StartupBusy || startupReadBusy) return;
             startupReadBusy = true;
+            int generation = startupGeneration;
             try
             {
                 var result = await StartupProvider.ReadAsync();
-                if (!exiting) { StartupStatus = result; if (SettingsChanged != null) SettingsChanged(); }
+                if (!exiting && !StartupBusy && generation == startupGeneration) { StartupStatus = result; if (SettingsChanged != null) SettingsChanged(); }
             }
             finally { startupReadBusy = false; }
         }
         public async System.Threading.Tasks.Task RequestStartupChangeAsync(bool desired)
         {
             if (exiting || StartupBusy || !ProfilePaths.SystemChangesAllowed) return;
+            startupGeneration++;
             StartupBusy = true;
             if (SettingsChanged != null) SettingsChanged();
             try

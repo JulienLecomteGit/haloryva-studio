@@ -41,8 +41,8 @@ namespace CursorFlow
         { using (var sha = SHA256.Create()) return BitConverter.ToString(sha.ComputeHash(bytes)).Replace("-", ""); }
         private static string Canonical(string path)
         {
-            path = Path.GetFullPath(path);
             if (path.StartsWith(@"\\?\", StringComparison.Ordinal)) path = path.Substring(4);
+            path = Path.GetFullPath(path);
             return path.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
         }
         private static void RejectLinks(string path)
