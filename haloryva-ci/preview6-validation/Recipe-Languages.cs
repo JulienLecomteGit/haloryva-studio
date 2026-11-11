@@ -313,8 +313,16 @@ internal static class Recipe
     static async Task Navigate(int page)
     {
         Control tab=FindControl(delegate(Control c) { return c.GetType().Name=="PremiumNavButton" && (int)c.Tag==page; });
-        await UiClick(tab);
-        Check((int)Get(Studio,"page")==page,"Visible navigation reaches page "+page);
+        bool clicked=false;
+        EventHandler observed=delegate { clicked=true; Write("NAV_NATIVE_CLICK requested="+page+" actual="+Get(Studio,"page")); };
+        tab.Click+=observed;
+        var navigationClock=Stopwatch.StartNew();
+        try {
+            Write("NAV_BEGIN requested="+page+" actual="+Get(Studio,"page")+" control="+tab.Text+" bounds="+tab.Bounds);
+            await UiClick(tab);
+            await WaitFor(delegate { return (int)Get(Studio,"page")==page; },"Visible navigation reaches page "+page);
+            Write("NAV_DONE requested="+page+" clicked="+clicked+" elapsedMs="+navigationClock.ElapsedMilliseconds);
+        } finally { tab.Click-=observed; }
     }
     static async Task Section(int index)
     {

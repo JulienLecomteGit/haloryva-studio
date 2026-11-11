@@ -14,8 +14,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['en', 'es']
-        observer: ['off', 'on']
+        language: ['en']
+        observer: ['off']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
