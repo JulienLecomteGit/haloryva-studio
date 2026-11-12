@@ -1,5 +1,16 @@
 # Historique — Haloryva Studio
 
+## 2.7.1 — préparation documentaire du 12 novembre 2026
+
+- Interface français, anglais et espagnol avec langue mémorisée.
+- Sélection mémorisée des outils parcourus par les boutons de souris.
+- Améliorations des clics courts, du traitement des entrées et du placement initial du Studio ; outil, couleur et épaisseur fixés au début du trait.
+- Ajustements des textes, indicateurs et historique.
+- Canal Store certifié, reprise consentie des anciens réglages et gestion du démarrage à la connexion.
+- Essais utilisateur réussis de reprise des réglages, langues, démarrage automatique et reconnexion avec préférences conservées.
+- Diffusion actuellement privée. Microsoft Store retenu pour la diffusion publique future ; aucun EXE 2.7.1 proposé ici.
+- Intégration documentaire uniquement : sources historiques 2.7.0 préservées, sources finales 2.7.1 non intégrées dans cette branche. Voir [les limites](docs/DIFFUSION.md).
+
 ## 2.7.0 — 10 novembre 2026 — version stable déclarée par l'auteur
 
 - Identité de l'application et de l'installateur simplifiée : **Haloryva Studio 2.7.0** et `HaloryvaSetup_2.7.0.exe`. Les mentions « candidat » et « C4 » sont retirées des libellés d'identité actuels ; les archives techniques conservent leurs noms historiques.

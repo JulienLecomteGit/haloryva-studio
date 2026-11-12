@@ -1,55 +1,52 @@
 # Haloryva Studio
 
-<p align="center">
-  <img src="docs/Haloryva_Banniere_V01.png" alt="Bannière Haloryva Studio : curseur lumineux et halo" width="900">
-</p>
+<p align="center"><img src="docs/Haloryva_Banniere_V01.png" alt="Haloryva Studio : curseur lumineux et halo" width="900"></p>
 
-**Version 2.7.0 — Windows x64**  
-Créé par Julien Lecomte.
+**Version 2.7.1 — Windows x64** · Créé par Julien Lecomte.
 
-Haloryva Studio accompagne les présentations, démonstrations et cours sur Windows : effets de halo autour du pointeur, traînées réglables, annotations et outils de dessin, ainsi que raccourcis configurables sur les boutons de la souris.
+[Français](docs/fr/README.md) · [English](docs/en/README.md) · [Español](docs/es/README.md)
+
+Rendez votre curseur visible et annotez votre écran pendant vos présentations : halo, traînées, effets de clic, dix outils de dessin et actions personnalisées sur les boutons de souris.
 
 ## Télécharger
 
-- [Version 2.7.0 — GitHub Releases](https://github.com/JulienLecomteGit/haloryva-studio/releases/tag/v2.7.0)
-- **Installateur :** `HaloryvaSetup_2.7.0.exe` — Windows 11 x64 testé.
-- **SHA-256 :** `A60215938B82EFBAD1B744E4E85911256426103F4D18E7F1B2213E9C4BC6178A`.
+**Microsoft Store est le canal principal retenu pour la 2.7.1.** La version est certifiée et accessible au groupe de test privé. La disponibilité publique n’est pas encore ouverte.
 
-L'application est précompilée : son installation normale ne nécessite ni Python, ni Visual Studio, ni compilation manuelle. Consulte la [notice d'installation](docs/INSTALLATION.md) avant la première utilisation.
+[Fiche Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) — tant que l’audience reste privée, cette fiche n’est pas un téléchargement accessible à tous.
+
+Aucun installateur EXE 2.7.1 n’est proposé ici. Les versions antérieures dans les releases sont historiques et ne constituent pas le téléchargement recommandé de la 2.7.1.
+
+Consultez la [notice Store](docs/INSTALLATION.md) pour l’installation, la reprise des réglages, les mises à jour et la désinstallation.
 
 ## Fonctionnalités
 
-- Halo du curseur et traînées personnalisables.
-- Dessin, annotations, présentation et raccourcis clavier.
-- Affectation des boutons de souris, dont X1 (arrière) et X2 (avant), avec appuis courts et longs selon les options disponibles.
-- Profils locaux exportables et importables ; paramètres visuels et fluidité configurables.
-- Usage local sur Windows.
+- Halo, traînées et effets de clic personnalisables.
+- Dix outils d’annotation, lissage, formes assistées, annuler/rétablir et export PNG transparent.
+- Liste personnelle d’outils parcourus par les boutons de souris, avec appuis courts et longs.
+- Loupe, focus, affichage des raccourcis et profils JSON locaux.
+- Français, anglais et espagnol, avec langue mémorisée.
 
-## État des vérifications — 10 novembre 2026
+[Nouveautés 2.7.1](docs/fr/NOUVEAUTES.md) · [Historique](CHANGELOG.md)
 
-- La fabrication Windows de **Haloryva Studio 2.7.0** a passé **8 étapes** : compilation de l'application et des tests, protocoles, autotests de l'application et des traînées, compilation de l'installateur, autotest de l'installateur, extraction et comparaison de l'EXE extrait.
-- **108 assertions de protocole** et **63 contrôles de traînée** réussis ; les sorties de contrôle et les empreintes sont conservées dans le dossier de preuves du projet.
-- L'installateur final téléchargé depuis Google Drive a été comparé à l'empreinte du rapport de fabrication : **identique**.
-- La préversion précédente a été lancée sous Windows et soumise à des essais ciblés par Julien : boutons X1/X2 et traînée Ligne à 50 %. Le passage à 2.7.0 stable ne change que les libellés de marque/version, sans modification revendiquée du moteur souris.
-- **Limites :** le cycle de désinstallation/réinstallation du nouvel installateur, un essai prolongé et exhaustif des effets, les autres styles de traînée et un second PC Windows restent à vérifier. La version est déclarée stable par son auteur ; ces tests ne constituent pas une certification extérieure.
+![Studio en français](docs/images/studio-fr-1920x1080.png)
 
-## Code et historique
+## Installation et réglages
 
-- `Haloryva_Windows64/src/` : application Windows Forms en C#.
-- `Haloryva_Windows64/installer/` : assistant graphique d'installation.
-- `Haloryva_Windows64/tests/maintenance/` : tests C#.
-- `Haloryva_Windows64/assets/` : ressources de l'application.
+Clavier et souris requis. Le paquet Store x64 déclare Windows 10.0.26200.0 comme minimum. La cible retenue est Windows 11 25H2/26H2 sur PC Intel/AMD ; les essais ne qualifient pas toutes les combinaisons de systèmes et matériels.
 
-L'historique technique est décrit dans le [CHANGELOG](CHANGELOG.md). Les préversions antérieures sont conservées comme archives de travail et ne sont pas des versions de téléchargement recommandées.
+Sauvegardez vos profils et ressources personnelles avant de changer de canal. Quittez l’ancienne version avant d’ouvrir la nouvelle. Si vous conservez deux installations, gardez un seul démarrage automatique. Fermer le Studio peut laisser les effets actifs ; utilisez Quitter Haloryva près de l’horloge pour sortir complètement.
 
-## Identité visuelle
+## Assistance et confidentialité
 
-<img src="docs/Haloryva_Logo_V01.png" alt="Logo Haloryva Studio : pointeur et halo lumineux" width="160">
+- [Assistance publique](docs/fr/SUPPORT.md) et [GitHub Issues](https://github.com/JulienLecomteGit/haloryva-studio/issues).
+- [Politique de confidentialité FR/EN/ES](docs/confidentialite/README.md).
 
-Logo et bannière de présentation V01 : ils ne remplacent pas encore les ressources intégrées à l'installateur Windows 2.7.0 contrôlé.
+Les tickets sont publics : ne joignez ni profil personnel complet, ni journal non relu, ni capture contenant des données privées. Aucun canal de support privé n’est actuellement proposé.
 
-## Licence et sécurité
+## Code, versions et droits
 
-**© 2026 Julien Lecomte — tous droits réservés.** La visibilité publique de ce dépôt n'en fait pas un projet sous licence open source. Les droits de consultation et de duplication sur GitHub suivent les conditions de GitHub ; aucune licence générale de redistribution ou de modification du code n'est accordée par ce README.
+Cette branche prépare uniquement la documentation de la 2.7.1. Les sources présentes dans `Haloryva_Windows64/` restent la base historique 2.7.0 ; elles ne sont pas présentées comme les sources finales du binaire Store 2.7.1.11. Leur intégration est une étape distincte.
 
-L'installateur n'est **pas signé numériquement**. Une empreinte SHA-256 vérifie l'identité du fichier, pas son innocuité. Si Windows ou une politique d'organisation bloque l'installation, ne désactive aucune protection. Voir [diffusion et limites](docs/DIFFUSION.md).
+Version affichée : 2.7.1 ; version du fichier validé : 2.7.1.11 ; paquet Store : 2.7.1.0 x64. La certification et les essais utilisateur acquis sont décrits avec leurs limites dans [Diffusion et transparence](docs/DIFFUSION.md).
+
+**© 2026 Julien Lecomte — tous droits réservés.** La visibilité publique du dépôt n’accorde pas de licence générale de modification ou de redistribution. Les droits actuels restent inchangés.

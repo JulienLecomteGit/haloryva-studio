@@ -1,18 +1,18 @@
 name: Signaler une anomalie
-description: Décrire un problème reproductible dans CursorFlow Studio.
+description: Décrire un problème reproductible dans Haloryva Studio.
 title: "[Anomalie] "
 body:
   - type: markdown
     attributes:
       value: |
-        Le dépôt est en préparation privée. Ne joins ni profil, ni sauvegarde complète,
+        Les signalements sont publics. Ne joins ni profil, ni sauvegarde complète,
         ni secret. Masque les données personnelles. En cas de blocage de sécurité,
         conserve le message sans désactiver les protections.
   - type: input
     id: version
     attributes:
-      label: Version de CursorFlow
-      placeholder: "2.6.6 — indication dans À propos"
+      label: Version de Haloryva
+      placeholder: "2.7.1 — Store ou EXE, indication dans À propos"
     validations:
       required: true
   - type: input
