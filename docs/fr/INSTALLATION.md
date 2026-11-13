@@ -2,11 +2,11 @@
 
 [Accueil](../../README.md) · [English](../en/README.md) · [Español](../es/README.md)
 
-Texte destiné à la future diffusion publique ; l’audience actuelle reste privée.
+Installation depuis la fiche publique Microsoft Store. La disponibilité dépend du pays et de l’appareil.
 
 Installation
 Fiche officielle : https://apps.microsoft.com/detail/9NJ14SZJP55B
-Vérifiez le nom Haloryva Studio et l’éditeur Julien Lecomte. Lorsque la fiche sera ouverte au public, choisissez Obtenir ou Installer, puis Ouvrir. Aucun installateur EXE ni certificat à installer séparément n’est nécessaire pour ce canal.
+Vérifiez le nom Haloryva Studio et l’éditeur Julien Lecomte. Choisissez Obtenir ou Installer, puis Ouvrir. Aucun installateur EXE ni certificat à installer séparément n’est nécessaire pour ce canal.
 Paquet x64 destiné aux PC Intel/AMD, minimum déclaré Windows 10.0.26200.0. La cible retenue est Windows 11 25H2/26H2 ; les essais disponibles ne constituent pas une qualification exhaustive de ces versions et de tous les matériels. Le Store vérifie les exigences déclarées pour votre appareil. Clavier et souris requis.
 
 Passage depuis une ancienne version

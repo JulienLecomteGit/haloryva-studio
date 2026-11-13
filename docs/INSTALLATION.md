@@ -1,6 +1,6 @@
 # Installer et désinstaller Haloryva Studio 2.7.1
 
-Microsoft Store est le canal principal. L’audience actuelle est privée ; le téléchargement public n’est pas encore ouvert.
+Microsoft Store est le canal principal gratuit. La fiche publique est accessible en France ; sa disponibilité peut varier selon le pays et l’appareil.
 
 - [Français](fr/INSTALLATION.md)
 - [English](en/INSTALLATION.md)

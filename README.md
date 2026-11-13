@@ -10,9 +10,9 @@ Rendez votre curseur visible et annotez votre écran pendant vos présentations 
 
 ## Télécharger
 
-**Microsoft Store est le canal principal retenu pour la 2.7.1.** La version est certifiée et accessible au groupe de test privé. La disponibilité publique n’est pas encore ouverte.
+**Haloryva Studio 2.7.1 est disponible gratuitement sur Microsoft Store**, le canal principal de téléchargement.
 
-[Fiche Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) — tant que l’audience reste privée, cette fiche n’est pas un téléchargement accessible à tous.
+[Télécharger sur Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) — fiche publique accessible en France le 14 novembre 2026 ; la disponibilité peut varier selon le pays et l’appareil.
 
 Aucun installateur EXE 2.7.1 n’est proposé ici. Les versions antérieures dans les releases sont historiques et ne constituent pas le téléchargement recommandé de la 2.7.1.
 

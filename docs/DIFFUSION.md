@@ -2,7 +2,7 @@
 
 ## Canal retenu
 
-Microsoft Store est le téléchargement principal. La 2.7.1 est certifiée et sa publication a été autorisée uniquement pour le groupe privé. Aucun passage automatique au public n’est configuré. Ce document ne vaut pas autorisation de changer l’audience.
+Microsoft Store est le téléchargement principal gratuit. La soumission publique 2 est certifiée et sa publication a été autorisée. La fiche publique est accessible en France le 14 novembre 2026, avec les boutons de téléchargement. Partner Center indique encore une publication en cours : la fin de propagation dans les sept pays retenus n’est pas confirmée.
 
 [Fiche Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) · [Installation](INSTALLATION.md) · [Confidentialité](confidentialite/README.md)
 

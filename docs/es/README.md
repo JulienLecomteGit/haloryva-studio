@@ -23,7 +23,7 @@ Exportación de anotaciones a PNG y perfiles de ajustes guardados.
 
 © 2026 Julien Lecomte — Todos los derechos reservados.
 
-**Disponibilidad:** la 2.7.1 está certificada y disponible para el grupo privado. El acceso público aún no está abierto. No se ofrece un EXE 2.7.1.
+**Disponibilidad:** la 2.7.1 está disponible gratis en Microsoft Store. Ficha pública accesible en Francia el 14 de noviembre de 2026; disponibilidad según el país y el dispositivo. No se ofrece un EXE 2.7.1.
 
 [Instalación](INSTALLATION.md) · [Soporte](SUPPORT.md) · [Privacidad](../confidentialite/es.md) · [Novedades](NOUVEAUTES.md)
 

@@ -8,7 +8,7 @@
 - Ajustements des textes, indicateurs et historique.
 - Canal Store certifié, reprise consentie des anciens réglages et gestion du démarrage à la connexion.
 - Essais utilisateur réussis de reprise des réglages, langues, démarrage automatique et reconnexion avec préférences conservées.
-- Diffusion actuellement privée. Microsoft Store retenu pour la diffusion publique future ; aucun EXE 2.7.1 proposé ici.
+- Fiche publique Microsoft Store accessible en France le 14 novembre 2026 ; téléchargement principal gratuit. Aucun EXE 2.7.1 proposé ici.
 - Intégration documentaire uniquement : sources historiques 2.7.0 préservées, sources finales 2.7.1 non intégrées dans cette branche. Voir [les limites](docs/DIFFUSION.md).
 
 ## 2.7.0 — 10 novembre 2026 — version stable déclarée par l'auteur

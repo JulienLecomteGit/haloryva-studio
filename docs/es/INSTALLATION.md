@@ -2,11 +2,11 @@
 
 [Français](../fr/README.md) · [English](../en/README.md) · [Inicio](../../README.md)
 
-Texto preparado para la futura distribución pública; el público actual sigue siendo privado.
+Instalación desde la ficha pública de Microsoft Store. La disponibilidad depende del país y del dispositivo.
 
 Instalación
 Ficha oficial: https://apps.microsoft.com/detail/9NJ14SZJP55B
-Comprueba Haloryva Studio y el editor Julien Lecomte. Cuando la ficha esté disponible para el público, elige Obtener o Instalar y después Abrir. Este canal no requiere un instalador EXE ni un certificado independiente.
+Comprueba Haloryva Studio y el editor Julien Lecomte. Elige Obtener o Instalar y después Abrir. Este canal no requiere un instalador EXE ni un certificado independiente.
 El paquete x64 está destinado a PC Intel/AMD y declara Windows 10.0.26200.0 como mínimo. Los objetivos elegidos son Windows 11 25H2/26H2; los ensayos disponibles no validan todas las versiones y combinaciones de hardware. El Store comprueba los requisitos declarados para tu dispositivo. Se requieren teclado y ratón.
 
 Cambio desde una versión anterior

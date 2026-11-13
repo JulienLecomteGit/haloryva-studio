@@ -2,11 +2,11 @@
 
 [Français](../fr/README.md) · [Home](../../README.md) · [Español](../es/README.md)
 
-Text prepared for future public distribution; the current audience remains private.
+Install from the public Microsoft Store listing. Availability depends on country and device.
 
 Installation
 Official listing: https://apps.microsoft.com/detail/9NJ14SZJP55B
-Check Haloryva Studio and publisher Julien Lecomte. Once the listing is publicly available, choose Get or Install, then Open. This channel does not require a separate EXE installer or certificate.
+Check Haloryva Studio and publisher Julien Lecomte. Choose Get or Install, then Open. This channel does not require a separate EXE installer or certificate.
 The x64 package targets Intel/AMD PCs and declares Windows 10.0.26200.0 as its minimum. Windows 11 25H2/26H2 are the selected targets; available trials do not qualify every Windows version and hardware combination. The Store checks declared requirements for your device. Keyboard and mouse required.
 
 Moving from an older version

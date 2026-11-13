@@ -23,7 +23,7 @@ PNG annotation export and saved settings profiles.
 
 © 2026 Julien Lecomte — All rights reserved.
 
-**Availability:** 2.7.1 is certified and available to the private group. Public access is not yet open. No 2.7.1 EXE is offered here.
+**Availability:** 2.7.1 is available free of charge on Microsoft Store. The public listing was accessible in France on 14 November 2026; availability depends on country and device. No 2.7.1 EXE is offered here.
 
 [Installation](INSTALLATION.md) · [Support](SUPPORT.md) · [Privacy](../confidentialite/en.md) · [Release notes](NOUVEAUTES.md)
 
