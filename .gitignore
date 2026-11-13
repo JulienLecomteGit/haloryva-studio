@@ -1,4 +1,4 @@
-# Depot documentaire : ne pas ajouter le logiciel, les builds ou les donnees privees.
+# Sources autorisées dans le dossier applicatif ; builds et données privées exclus.
 *.exe
 *.dll
 *.pdb
@@ -6,6 +6,7 @@
 *.7z
 *.bak
 *.cs
+!/Haloryva_Windows64/src/*.cs
 *.ps1
 *.pfx
 *.p12

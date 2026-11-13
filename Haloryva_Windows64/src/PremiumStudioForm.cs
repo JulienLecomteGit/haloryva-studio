@@ -135,7 +135,7 @@ namespace CursorFlow
             PremiumPalette.TextAt(g, "Haloryva", brand, PremiumPalette.Text, new Rectangle(tx, y - PremiumPalette.S(1), PremiumPalette.S(160), PremiumPalette.S(22)), ContentAlignment.MiddleLeft);
             int bw = PremiumPalette.TextWidth("Haloryva", brand);
             PremiumPalette.TextAt(g, "Studio", brand, PremiumPalette.Cyan, new Rectangle(tx + bw + PremiumPalette.S(5), y - PremiumPalette.S(1), PremiumPalette.S(90), PremiumPalette.S(22)), ContentAlignment.MiddleLeft);
-            PremiumPalette.TextAt(g, "Effets, annotations et présentation du curseur", PremiumPalette.Font(8.25f, 0), PremiumPalette.Faint,
+            PremiumPalette.TextAt(g, L.T("Effets, annotations et présentation du curseur"), PremiumPalette.Font(8.25f, 0), PremiumPalette.Faint,
                 new Rectangle(tx, y + PremiumPalette.S(20), PremiumPalette.S(330), PremiumPalette.S(17)), ContentAlignment.MiddleLeft);
             Rectangle chip = new Rectangle(tx + bw + PremiumPalette.S(66), y + PremiumPalette.S(1), PremiumPalette.S(42), PremiumPalette.S(19));
             using (GraphicsPath p = PremiumPalette.Round(chip, chip.Height / 2))
@@ -202,7 +202,7 @@ namespace CursorFlow
     // Pied de barre latérale : profil actif + bouton de repli.
     internal sealed class SidebarFooter : Control
     {
-        internal string Profile = "Personnalisé";
+        internal string Profile = L.T("Personnalisé");
         internal bool Collapsed;
         public SidebarFooter()
         {
@@ -220,7 +220,7 @@ namespace CursorFlow
             int d = PremiumPalette.S(32);
             PremiumPalette.IconBubble(g, new Rectangle(PremiumPalette.S(12), (Height - d) / 2, d, d), "sparkles", PremiumPalette.Cyan, PremiumPalette.Purple, true);
             int x = PremiumPalette.S(54);
-            PremiumPalette.TextAt(g, "PROFIL ACTIF", PremiumPalette.Font(7.5f, 1), PremiumPalette.Faint, new Rectangle(x, Height / 2 - PremiumPalette.S(18), Width - x - 8, PremiumPalette.S(16)), ContentAlignment.MiddleLeft);
+            PremiumPalette.TextAt(g, L.T("PROFIL ACTIF"), PremiumPalette.Font(7.5f, 1), PremiumPalette.Faint, new Rectangle(x, Height / 2 - PremiumPalette.S(18), Width - x - 8, PremiumPalette.S(16)), ContentAlignment.MiddleLeft);
             PremiumPalette.TextAt(g, Profile, PremiumPalette.Font(10f, 1), PremiumPalette.Text, new Rectangle(x, Height / 2 - PremiumPalette.S(2), Width - x - 8, PremiumPalette.S(20)), ContentAlignment.MiddleLeft);
         }
     }
@@ -229,7 +229,7 @@ namespace CursorFlow
     {
         public AboutBlock()
         {
-            Height = PremiumPalette.S(286); BackColor = PremiumPalette.Surface;
+            Height = PremiumPalette.S(128) + (Brand.History.Length + 1) * PremiumPalette.S(24) + PremiumPalette.S(14); BackColor = PremiumPalette.Surface;
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
         }
         protected override void OnPaint(PaintEventArgs e)
@@ -241,14 +241,14 @@ namespace CursorFlow
             Font title = PremiumPalette.Font(14f, 2);
             PremiumPalette.TextAt(g, "Haloryva", title, PremiumPalette.Text, new Rectangle(x, PremiumPalette.S(2), w, PremiumPalette.S(28)), ContentAlignment.MiddleLeft);
             PremiumPalette.TextAt(g, "Studio", title, PremiumPalette.Cyan, new Rectangle(x + PremiumPalette.TextWidth("Haloryva", title) + PremiumPalette.S(6), PremiumPalette.S(2), w, PremiumPalette.S(28)), ContentAlignment.MiddleLeft);
-            PremiumPalette.TextAt(g, "Version " + Brand.Version + " · build " + Brand.BuildDate + " · Windows x64", PremiumPalette.Font(9f, 0), PremiumPalette.Subtle, new Rectangle(x, PremiumPalette.S(32), w, PremiumPalette.S(20)), ContentAlignment.MiddleLeft);
-            PremiumPalette.TextAt(g, "Création : " + Brand.Author, PremiumPalette.Font(10f, 1), PremiumPalette.Text, new Rectangle(x, PremiumPalette.S(54), w, PremiumPalette.S(22)), ContentAlignment.MiddleLeft);
-            PremiumPalette.TextAt(g, Brand.Copyright + " · Tous droits réservés", PremiumPalette.Font(8.75f, 0), PremiumPalette.Faint, new Rectangle(x, PremiumPalette.S(76), w, PremiumPalette.S(18)), ContentAlignment.MiddleLeft);
+            PremiumPalette.TextAt(g, L.T("Version ") + Brand.Version + L.T(" · build ") + Brand.BuildDate + " · Windows x64", PremiumPalette.Font(9f, 0), PremiumPalette.Subtle, new Rectangle(x, PremiumPalette.S(32), w, PremiumPalette.S(20)), ContentAlignment.MiddleLeft);
+            PremiumPalette.TextAt(g, L.T("Création : ") + Brand.Author, PremiumPalette.Font(10f, 1), PremiumPalette.Text, new Rectangle(x, PremiumPalette.S(54), w, PremiumPalette.S(22)), ContentAlignment.MiddleLeft);
+            PremiumPalette.TextAt(g, Brand.Copyright + L.T(" · Tous droits réservés"), PremiumPalette.Font(8.75f, 0), PremiumPalette.Faint, new Rectangle(x, PremiumPalette.S(76), w, PremiumPalette.S(18)), ContentAlignment.MiddleLeft);
             PremiumPalette.TextAt(g, Brand.Privacy, PremiumPalette.Font(8.75f, 0), PremiumPalette.Faint, new Rectangle(x, PremiumPalette.S(94), w, PremiumPalette.S(18)), ContentAlignment.MiddleLeft);
 
             int y = PremiumPalette.S(128);
             using (Pen line = new Pen(PremiumPalette.Border)) g.DrawLine(line, 0, y - PremiumPalette.S(8), Width, y - PremiumPalette.S(8));
-            PremiumPalette.TextAt(g, "HISTORIQUE DES VERSIONS", PremiumPalette.Font(8f, 1), PremiumPalette.Faint, new Rectangle(0, y, w + x, PremiumPalette.S(18)), ContentAlignment.MiddleLeft);
+            PremiumPalette.TextAt(g, L.T("HISTORIQUE DES VERSIONS"), PremiumPalette.Font(8f, 1), PremiumPalette.Faint, new Rectangle(0, y, w + x, PremiumPalette.S(18)), ContentAlignment.MiddleLeft);
             y += PremiumPalette.S(24);
             for (int i = 0; i < Brand.History.Length; i++)
             {
@@ -296,35 +296,42 @@ namespace CursorFlow
         private string currentDetected = "Aucun";
         private string lastObservedNativeButton = "Aucun";
 
-        private static readonly string[] Pages = { "Accueil", "Halo", "Traînées", "Clics", "Boutons souris", "Dessin", "Présentation", "Préférences" };
+        private static readonly string[] Pages = { L.T("Accueil"), L.T("Halo"), L.T("Traînées"), L.T("Clics"), L.T("Boutons souris"), L.T("Dessin"), "Présentation", L.T("Préférences") };
         private static readonly string[] Icons = { "home", "halo", "trail", "click", "mouse", "pen", "present", "settings" };
         private static readonly string[] Subtitles = {
-            "Tout ton studio en un coup d'œil : modules, styles et raccourcis.",
-            "Un halo précis et lumineux qui rend ton pointeur visible partout.",
-            "Une signature de mouvement fluide à chaque déplacement.",
-            "Des animations nettes pour rendre chaque clic lisible.",
-            "Chaque bouton physique peut déclencher une action Haloryva.",
-            "Annote ton écran librement — les formes se régularisent toutes seules.",
-            "Touches, loupe et focus pour présenter et expliquer.",
-            "Performance, profils et informations sur l'application." };
+            L.T("Tout ton studio en un coup d'œil : modules, styles et raccourcis."),
+            L.T("Un halo précis et lumineux qui rend ton pointeur visible partout."),
+            L.T("Une signature de mouvement fluide à chaque déplacement."),
+            L.T("Des animations nettes pour rendre chaque clic lisible."),
+            L.T("Chaque bouton physique peut déclencher une action Haloryva."),
+            L.T("Annote ton écran librement — les formes se régularisent toutes seules."),
+            L.T("Touches, loupe et focus pour présenter et expliquer."),
+            L.T("Performance, profils et informations sur l'application.") };
         // Ordre d'affichage dans la barre latérale (null = intitulé de groupe).
-        private static readonly object[] NavOrder = { 0, "EFFETS", 1, 2, 3, "ATELIER", 5, 6, "SYSTÈME", 4, 7 };
+        private static readonly object[] NavOrder = { 0, L.T("EFFETS"), 1, 2, 3, L.T("ATELIER"), 5, 6, L.T("SYSTÈME"), 4, 7 };
 
         private static int S(int v) { return PremiumPalette.S(v); }
 
         public PremiumStudioForm(IStudioEngine owner)
         {
             engine = owner; cfg = engine.Options;
+            // InitScale can create the native handle. Choose manual placement before
+            // that happens, then set the complete DPI-sized bounds below.
+            FormBorderStyle = FormBorderStyle.None; StartPosition = FormStartPosition.Manual;
+            AutoScaleMode = AutoScaleMode.None;
             PremiumPalette.InitScale(this);
             PremiumPalette.ApplyAccent(cfg.StudioAccent);
             Text = "Haloryva Studio";
             BackColor = PremiumPalette.Background; ForeColor = PremiumPalette.Text;
-            FormBorderStyle = FormBorderStyle.None; StartPosition = FormStartPosition.CenterScreen;
-            AutoScaleMode = AutoScaleMode.None; KeyPreview = true;
+            KeyPreview = true;
             Rectangle work = Screen.FromPoint(Cursor.Position).WorkingArea;
             MinimumSize = new Size(Math.Min(S(960), work.Width), Math.Min(S(620), work.Height));   // jamais plus grand que l'écran
-            Size = new Size(Math.Max(Math.Min(S(960), work.Width), Math.Min(S(1440), work.Width - 40)),
-                Math.Max(Math.Min(S(620), work.Height), Math.Min(S(900), work.Height - 40)));
+            int initialWidth = Math.Max(Math.Min(S(960), work.Width), Math.Min(S(1440), work.Width - 40));
+            int initialHeight = Math.Max(Math.Min(S(620), work.Height), Math.Min(S(900), work.Height - 40));
+            // Center once when creating the Studio, within the monitor's working area
+            // (including its origin). Showing an existing window keeps the user's position.
+            Bounds = new Rectangle(work.Left + (work.Width - initialWidth) / 2,
+                work.Top + (work.Height - initialHeight) / 2, initialWidth, initialHeight);
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
             try { Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath); } catch { }
 
@@ -334,12 +341,12 @@ namespace CursorFlow
             statusPill = new StatusPill();
             statusPill.Click += delegate { engine.ToggleEnabled(); RefreshStates(); };
             header.Controls.Add(statusPill);
-            quickDraw = new PremiumButton("Dessiner", ButtonKind.Secondary, "pen"); quickDraw.Height = S(34); quickDraw.Width = S(118);
+            quickDraw = new PremiumButton(L.T("Dessiner"), ButtonKind.Secondary, "pen"); quickDraw.Height = S(34); quickDraw.Width = S(118);
             quickDraw.Click += delegate { engine.DrawOnDesktop(); };
             header.Controls.Add(quickDraw);
-            PremiumButton minimize = WindowButton("minus", ButtonKind.Ghost, "Réduire");
-            PremiumButton maximize = WindowButton("square", ButtonKind.Ghost, "Agrandir");
-            PremiumButton close = WindowButton("x", ButtonKind.WindowClose, "Fermer (Haloryva reste actif près de l'horloge)");
+            PremiumButton minimize = WindowButton("minus", ButtonKind.Ghost, L.T("Réduire"));
+            PremiumButton maximize = WindowButton("square", ButtonKind.Ghost, L.T("Agrandir"));
+            PremiumButton close = WindowButton("x", ButtonKind.WindowClose, L.T("Fermer (Haloryva reste actif près de l'horloge)"));
             minimize.Click += delegate { WindowState = FormWindowState.Minimized; };
             maximize.Click += delegate { ToggleMaximize(); };
             close.Click += delegate { Close(); };
@@ -372,7 +379,7 @@ namespace CursorFlow
             }
             footer = new SidebarFooter(); nav.Controls.Add(footer);
             footer.Cursor = Cursors.Hand; footer.Click += delegate { Navigate(0, 0); };
-            collapseButton = new PremiumButton("Replier", ButtonKind.Ghost, "sidebar"); collapseButton.Height = S(36);
+            collapseButton = new PremiumButton(L.T("Replier"), ButtonKind.Ghost, "sidebar"); collapseButton.Height = S(36);
             collapseButton.Click += delegate { userCollapsed = !userCollapsed; ApplyNavWidth(); };
             nav.Controls.Add(collapseButton);
             nav.Resize += delegate { LayoutNav(); };
@@ -386,15 +393,108 @@ namespace CursorFlow
             engine.MouseButtonObserved += ButtonObserved;
             FormClosed += delegate
             {
+                StopStartupForegroundWatch();
+                CancelStartupFocusRefresh();
                 engine.SettingsChanged -= EngineChanged;
                 engine.MouseButtonObserved -= ButtonObserved;
                 engine.CancelButtonCapture();
             };
             // Mise en page recalculée une fois la fenêtre réellement affichée (tailles définitives).
-            Shown += delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); };
+            Shown += async delegate { LayoutCards(); workspace.Invalidate(true); engine.KeepEffectLayersVisible(); StartStartupForegroundWatch(); await RefreshStartupAfterActivationAsync(); };
             ResizeEnd += delegate { LayoutCards(); workspace.Invalidate(true); };
-            Activated += delegate { if (IsHandleCreated) BeginInvoke((Action)delegate { engine.KeepEffectLayersVisible(); }); };
+            Activated += async delegate { if (IsHandleCreated) BeginInvoke((Action)delegate { engine.KeepEffectLayersVisible(); }); await RefreshStartupAfterActivationAsync(); };
+            Deactivate += delegate { CancelStartupFocusRefresh(); };
+            VisibleChanged += delegate
+            {
+                if (Visible) StartStartupForegroundWatch();
+                else
+                {
+                    if (startupForegroundTimer != null) startupForegroundTimer.Stop();
+                    startupWasForeground = false;
+                    CancelStartupFocusRefresh();
+                }
+            };
             ApplyNavWidth(); Navigate(0, 0);
+        }
+
+
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+        private Timer startupForegroundTimer;
+        private bool startupWasForeground;
+
+        private void StartStartupForegroundWatch()
+        {
+            if (!PackageContext.IsPackaged || IsDisposed || Disposing) return;
+            if (startupForegroundTimer == null)
+            {
+                startupForegroundTimer = new Timer();
+                startupForegroundTimer.Interval = 100;
+                startupForegroundTimer.Tick += async delegate
+                {
+                    if (!Visible || !IsHandleCreated || IsDisposed || Disposing) return;
+                    // The CI repro changes the real foreground HWND without delivering
+                    // Activated/WinEvent callbacks. Sample only that HWND, not StartupTask.
+                    bool foreground = GetForegroundWindow() == Handle;
+                    if (foreground == startupWasForeground) return;
+                    startupWasForeground = foreground;
+                    StartupRefreshTrace.Record("foreground_observed", 0, foreground ? 1 : 0);
+                    if (foreground) await RefreshStartupAfterActivationAsync();
+                    else CancelStartupFocusRefresh();
+                };
+            }
+            startupForegroundTimer.Enabled = Visible;
+        }
+        private void StopStartupForegroundWatch()
+        {
+            if (startupForegroundTimer == null) return;
+            startupForegroundTimer.Stop();
+            startupForegroundTimer.Dispose();
+            startupForegroundTimer = null;
+            startupWasForeground = false;
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                StopStartupForegroundWatch();
+                CancelStartupFocusRefresh();
+            }
+            base.Dispose(disposing);
+        }
+
+        private System.Threading.CancellationTokenSource startupFocusRefresh;
+        private void CancelStartupFocusRefresh()
+        {
+            var pending = startupFocusRefresh;
+            startupFocusRefresh = null;
+            if (pending != null) pending.Cancel();
+        }
+        private async System.Threading.Tasks.Task RefreshStartupAfterActivationAsync()
+        {
+            CancelStartupFocusRefresh();
+            var pending = new System.Threading.CancellationTokenSource();
+            startupFocusRefresh = pending;
+            try
+            {
+                // Windows may publish an external startup change just after activation.
+                // Read now and at 250, 1000 and 2500 ms; no permanent polling or OS mutation.
+                foreach (int delay in new int[] { 0, 250, 750, 1500 })
+                {
+                    if (delay > 0) await System.Threading.Tasks.Task.Delay(delay, pending.Token);
+                    if (pending.IsCancellationRequested || IsDisposed || Disposing) return;
+                    StartupRefreshTrace.Record(delay == 0 ? "focus_read" : "focus_recheck", 0, -1);
+                    await engine.RefreshStartupStatusAsync();
+                }
+            }
+            catch (OperationCanceledException) { }
+            catch (Exception ex) { ErrorReporting.Record("STARTUP_FOCUS_REFRESH", ex); }
+            finally
+            {
+                if (Object.ReferenceEquals(startupFocusRefresh, pending)) startupFocusRefresh = null;
+                pending.Dispose();
+            }
         }
 
         private PremiumButton WindowButton(string icon, ButtonKind kind, string name)
@@ -506,7 +606,7 @@ namespace CursorFlow
                 tab.Selected = (int)tab.Tag == page;
                 y += S(46);
             }
-            collapseButton.Text = minimizedNav ? "" : (userCollapsed ? "Déplier" : "Replier le menu");
+            collapseButton.Text = minimizedNav ? "" : (userCollapsed ? L.T("Déplier") : L.T("Replier le menu"));
             collapseButton.SetBounds(pad, nav.ClientSize.Height - S(14) - S(36), w, S(36));
             footer.Collapsed = minimizedNav;
             footer.Visible = !minimizedNav && collapseButton.Top - S(80) > y;
@@ -637,7 +737,7 @@ namespace CursorFlow
             currentDetected = SideButtonMap.ToDisplay(button, engine.Options.SwapSideButtons);
             Action update = delegate
             {
-                if (detectedButton != null && !detectedButton.IsDisposed) detectedButton.Text = "Dernier bouton détecté : " + currentDetected;
+                if (detectedButton != null && !detectedButton.IsDisposed) detectedButton.Text = L.T("Dernier bouton détecté : ") + L.T(currentDetected);
                 if (mouseDiagram != null && !mouseDiagram.IsDisposed) { mouseDiagram.Detected = currentDetected; mouseDiagram.Invalidate(); }
             };
             if (InvokeRequired) { if (IsHandleCreated) BeginInvoke(update); }
@@ -652,7 +752,7 @@ namespace CursorFlow
                 statusPill.Active = cfg.Enabled;
                 statusPill.Location = new Point(quickDraw.Left - S(10) - statusPill.Width, statusPill.Top);
                 quickDraw.Selected = engine.IsDrawing;
-                quickDraw.Text = engine.IsDrawing ? "Dessin actif" : "Dessiner";
+                quickDraw.Text = engine.IsDrawing ? L.T("Dessin actif") : L.T("Dessiner");
                 foreach (PremiumNavButton tab in tabs)
                 {
                     int id = (int)tab.Tag;
@@ -660,14 +760,14 @@ namespace CursorFlow
                         id == 5 ? engine.IsDrawing : id == 6 ? cfg.Enabled && (cfg.KeyDisplay || cfg.Loupe || cfg.Focus) : false;
                     tab.IndicatorColor = id == 5 ? PremiumPalette.Pink : PremiumPalette.Green;
                 }
-                string profile = cfg.ActivePresetSignature == PresetFingerprint() && !String.IsNullOrEmpty(cfg.ActivePreset) ? cfg.ActivePreset : "Personnalisé";
+                string profile = cfg.ActivePresetSignature == PresetFingerprint() && !String.IsNullOrEmpty(cfg.ActivePreset) ? cfg.ActivePreset : L.T("Personnalisé");
                 if (footer.Profile != profile) { footer.Profile = profile; footer.Invalidate(); }
                 foreach (Action action in sync) action();
                 // Lors du changement d'orientation, le dernier bouton détecté suit
                 // la nouvelle étiquette, sans échanger les actions enregistrées.
                 currentDetected = SideButtonMap.ToDisplay(lastObservedNativeButton, cfg.SwapSideButtons);
                 if (detectedButton != null && !detectedButton.IsDisposed)
-                    detectedButton.Text = "Dernier bouton détecté : " + currentDetected;
+                    detectedButton.Text = L.T("Dernier bouton détecté : ") + L.T(currentDetected);
                 if (mouseDiagram != null && !mouseDiagram.IsDisposed)
                 { mouseDiagram.Detected = currentDetected; mouseDiagram.Invalidate(); }
                 if (preview != null) { preview.Config = cfg; preview.Invalidate(); }
@@ -722,7 +822,7 @@ namespace CursorFlow
         {
             Panel row = new Panel(); row.Height = S(70); row.BackColor = PremiumPalette.Surface;
             Label label = FieldLabel(title); label.SetBounds(0, 0, S(300), S(24)); row.Controls.Add(label);
-            PremiumSelect select = new PremiumSelect(values, getter()); select.Location = new Point(0, S(28)); select.AccessibleName = title;
+            PremiumSelect select = new PremiumSelect(values, getter()); select.Location = new Point(0, S(28)); select.AccessibleName = L.T(title);
             row.Controls.Add(select);
             row.Resize += delegate { select.Width = Math.Max(S(50), row.ClientSize.Width); label.Width = row.Width; };
             select.SelectedChanged += delegate(string s) { if (!refreshing) { setter(s); CommitSettings(); } };
@@ -736,7 +836,7 @@ namespace CursorFlow
         {
             if (!String.IsNullOrEmpty(title)) card.Add(FieldLabel(title));
             PremiumChoiceGrid grid = new PremiumChoiceGrid(values, captions, icons, columns, tiles);
-            grid.Value = getter(); grid.AccessibleName = title;
+            grid.Value = getter(); grid.AccessibleName = L.T(title);
             grid.ValueChanged += delegate(string v) { if (!refreshing) { setter(v); CommitSettings(); } };
             card.Add(grid); sync.Add(delegate { grid.Value = getter(); });
             return grid;
@@ -750,7 +850,7 @@ namespace CursorFlow
         }
         private Label FieldLabel(string text)
         {
-            Label l = new Label(); l.Text = text; l.Font = PremiumPalette.Font(9.75f, 1); l.ForeColor = PremiumPalette.Text;
+            Label l = new Label(); l.Text = L.T(text); l.Font = PremiumPalette.Font(9.75f, 1); l.ForeColor = PremiumPalette.Text;
             l.BackColor = PremiumPalette.Surface; l.AutoSize = false; l.Height = S(24); l.TextAlign = ContentAlignment.MiddleLeft;
             return l;
         }
@@ -778,8 +878,8 @@ namespace CursorFlow
         {
             hero = new HeroBanner();
             workspace.Controls.Add(hero); extras.Add(hero);
-            PremiumButton draw = new PremiumButton("Dessiner sur le Bureau", ButtonKind.Primary, "pen");
-            PremiumButton pause = new PremiumButton("Mettre en pause", ButtonKind.Secondary, "pause");
+            PremiumButton draw = new PremiumButton(L.T("Dessiner sur le Bureau"), ButtonKind.Primary, "pen");
+            PremiumButton pause = new PremiumButton(L.T("Mettre en pause"), ButtonKind.Secondary, "pause");
             draw.Click += delegate { engine.DrawOnDesktop(); };
             pause.Click += delegate { engine.ToggleEnabled(); RefreshStates(); };
             hero.Controls.Add(draw); hero.Controls.Add(pause);
@@ -794,40 +894,40 @@ namespace CursorFlow
                 if (cfg.Ring) active++; if (cfg.Trail) active++; if (cfg.Clicks) active++;
                 if (cfg.KeyDisplay) active++; if (cfg.Loupe) active++; if (cfg.Focus) active++;
                 hero.Active = cfg.Enabled;
-                hero.Title = cfg.Enabled ? "Ton curseur, version studio." : "Effets en pause.";
+                hero.Title = cfg.Enabled ? L.T("Ton curseur, version studio.") : L.T("Effets en pause.");
                 hero.Status = cfg.Enabled
-                    ? active + (active > 1 ? " modules actifs" : " module actif") + "  ·  " + engine.StrokeCount + (engine.StrokeCount > 1 ? " annotations" : " annotation") + " à l'écran" + (engine.IsDrawing ? "  ·  dessin en cours" : "")
-                    : "Rien ne s'affiche à l'écran. Réactive les effets en un clic.";
-                pause.Text = cfg.Enabled ? "Mettre en pause" : "Réactiver les effets";
+                    ? L.Count(active, " module actif", " modules actifs") + "  ·  " + L.Count(engine.StrokeCount, " annotation", " annotations") + L.T(" à l'écran") + (engine.IsDrawing ? L.T("  ·  dessin en cours") : "")
+                    : L.T("Rien ne s'affiche à l'écran. Réactive les effets en un clic.");
+                pause.Text = cfg.Enabled ? L.T("Mettre en pause") : L.T("Réactiver les effets");
                 pause.IconName = cfg.Enabled ? "pause" : "play";
-                draw.Text = engine.IsDrawing ? "Reprendre le dessin" : "Dessiner sur le Bureau";
+                draw.Text = engine.IsDrawing ? L.T("Reprendre le dessin") : L.T("Dessiner sur le Bureau");
                 hero.Invalidate();
             });
 
-            PremiumCard modules = Card("Modules", "Active, coupe ou ouvre un module en un clic.", 2, "grid");
+            PremiumCard modules = Card(L.T("Modules"), L.T("Active, coupe ou ouvre un module en un clic."), 2, "grid");
             FlowGrid grid = new FlowGrid(2, S(250));
-            Module(grid, "Halo", "halo", 1, () => cfg.Ring, b => cfg.Ring = b, () => cfg.RingShape + " · " + (cfg.RingRadius * 2) + " px");
-            Module(grid, "Traînée", "trail", 2, () => cfg.Trail, b => cfg.Trail = b, () => cfg.TrailStyle + " · " + cfg.TrailColorMode);
-            Module(grid, "Clics animés", "click", 3, () => cfg.Clicks, b => cfg.Clicks = b, () => cfg.ClickStyle + " · " + cfg.ClickDuration + " ms");
-            Module(grid, "Touches à l'écran", "keyboard", 6, () => cfg.KeyDisplay, b => cfg.KeyDisplay = b, () => "Style " + cfg.KeyStyle);
-            Module(grid, "Loupe", "loupe", 6, () => cfg.Loupe, b => cfg.Loupe = b, () => "Grossissement ×" + cfg.LoupeMagnification);
-            Module(grid, "Fenêtre active", "focus", 6, () => cfg.Focus, b => cfg.Focus = b, () => "Le reste du Bureau est assombri");
+            Module(grid, L.T("Halo"), "halo", 1, () => cfg.Ring, b => cfg.Ring = b, () => L.T(cfg.RingShape) + " · " + (cfg.RingRadius * 2) + " px");
+            Module(grid, L.T("Traînée"), "trail", 2, () => cfg.Trail, b => cfg.Trail = b, () => L.T(cfg.TrailStyle) + " · " + L.T(cfg.TrailColorMode));
+            Module(grid, L.T("Clics animés"), "click", 3, () => cfg.Clicks, b => cfg.Clicks = b, () => L.T(cfg.ClickStyle) + " · " + cfg.ClickDuration + " ms");
+            Module(grid, L.T("Touches à l'écran"), "keyboard", 6, () => cfg.KeyDisplay, b => cfg.KeyDisplay = b, () => L.T("Style ") + L.T(cfg.KeyStyle));
+            Module(grid, L.T("Loupe"), "loupe", 6, () => cfg.Loupe, b => cfg.Loupe = b, () => L.T("Grossissement ×") + cfg.LoupeMagnification);
+            Module(grid, L.T("Fenêtre active"), "focus", 6, () => cfg.Focus, b => cfg.Focus = b, () => L.T("Le reste du Bureau est assombri"));
             modules.Add(grid);
 
-            PremiumCard looks = Card("Styles instantanés", "Un profil complet en un clic.", 1, "sparkles");
-            Preset(looks, "Minimal", "Halo net, sans traînée", delegate { cfg.Ring = true; cfg.RingNeon = false; cfg.Trail = false; cfg.Clicks = true; cfg.KeyDisplay = false; },
+            PremiumCard looks = Card(L.T("Styles instantanés"), L.T("Un profil complet en un clic."), 1, "sparkles");
+            Preset(looks, "Minimal", L.T("Halo net, sans traînée"), delegate { cfg.Ring = true; cfg.RingNeon = false; cfg.Trail = false; cfg.Clicks = true; cfg.KeyDisplay = false; },
                 PremiumPalette.Cyan, Color.FromArgb(80, 140, 200));
-            Preset(looks, "Néon", "Halo lumineux + traînée lumière", delegate { cfg.Ring = true; cfg.RingNeon = true; cfg.Trail = true; cfg.TrailStyle = "Lumière"; cfg.TrailColorMode = "Dégradé"; },
+            Preset(looks, "Néon", L.T("Halo lumineux + traînée lumière"), delegate { cfg.Ring = true; cfg.RingNeon = true; cfg.Trail = true; cfg.TrailStyle = "Lumière"; cfg.TrailColorMode = "Dégradé"; },
                 PremiumPalette.Cyan, PremiumPalette.Purple, PremiumPalette.Pink);
-            Preset(looks, "Présentation", "Clics + raccourcis affichés", delegate { cfg.Ring = true; cfg.RingNeon = false; cfg.Trail = false; cfg.Clicks = true; cfg.KeyDisplay = true; },
+            Preset(looks, "Présentation", L.T("Clics + raccourcis affichés"), delegate { cfg.Ring = true; cfg.RingNeon = false; cfg.Trail = false; cfg.Clicks = true; cfg.KeyDisplay = true; },
                 PremiumPalette.Amber, PremiumPalette.Green);
-            Preset(looks, "Créatif", "Étoiles arc-en-ciel", delegate { cfg.Ring = true; cfg.Trail = true; cfg.TrailStyle = "Étoiles"; cfg.TrailColorMode = "Arc-en-ciel"; },
+            Preset(looks, "Créatif", L.T("Étoiles arc-en-ciel"), delegate { cfg.Ring = true; cfg.Trail = true; cfg.TrailStyle = "Étoiles"; cfg.TrailColorMode = "Arc-en-ciel"; },
                 Color.FromArgb(255, 90, 120), PremiumPalette.Amber, PremiumPalette.Green, Color.FromArgb(60, 170, 255), PremiumPalette.Purple);
 
-            PremiumCard keys = Card("Raccourcis essentiels", "Utilisables depuis n'importe quelle application.", 1, "keyboard");
+            PremiumCard keys = Card(L.T("Raccourcis essentiels"), L.T("Utilisables depuis n'importe quelle application."), 1, "keyboard");
             keys.Add(new ShortcutList(
-                new string[] { "Dessin : activer / arrêter", "Effets : pause / reprise", "Annuler le dernier trait", "Effacer les dessins", "Recentrer le halo", "Secours boutons souris" },
-                new string[][] { new[] { "Ctrl", "Alt", "D" }, new[] { "Ctrl", "Alt", "M" }, new[] { "Ctrl", "Alt", "Retour" },
+                new string[] { "Dessin : activer / arrêter", "Effets : pause / reprise", "Annuler le dernier trait", "Effacer les dessins", L.T("Recentrer le halo"), L.T("Secours boutons souris") },
+                new string[][] { new[] { "Ctrl", "Alt", "D" }, new[] { "Ctrl", "Alt", "M" }, new[] { "Ctrl", "Alt", L.T("Retour") },
                     new[] { "Ctrl", "Alt", "C" }, new[] { "Ctrl", "Alt", "H" }, new[] { "Ctrl", "Alt", "R" } }));
         }
         private void Module(FlowGrid grid, string name, string icon, int target, Func<bool> getter, Action<bool> setter, Func<string> status)
@@ -861,203 +961,204 @@ namespace CursorFlow
 
         private void PageHalo()
         {
-            MasterToggle("Halo activé", () => cfg.Ring, b => cfg.Ring = b);
-            Sections(new string[] { "Apparence", "Comportement" }, new string[] { "palette", "wand" });
+            MasterToggle(L.T("Halo activé"), () => cfg.Ring, b => cfg.Ring = b);
+            Sections(new string[] { L.T("Apparence"), L.T("Comportement") }, new string[] { "palette", "wand" });
             if (section == 0)
             {
-                PremiumCard live = Card("Aperçu en direct", "Le rendu réel du halo, sans déplacer celui de ton écran.", 2, "eye");
+                PremiumCard live = Card(L.T("Aperçu en direct"), L.T("Le rendu réel du halo, sans déplacer celui de ton écran."), 2, "eye");
                 preview = new PremiumPreview(cfg, PreviewMode.Halo); live.Add(preview);
-                Choices(live, null, new string[] { "texte", "pointeur" }, new string[] { "Mode texte (curseur I)", "Mode pointeur" },
+                Choices(live, null, new string[] { "texte", "pointeur" }, new string[] { L.T("Mode texte (curseur I)"), L.T("Mode pointeur") },
                     new string[] { "ibeam", "pointer" }, 2, false,
                     () => preview != null && preview.TextMode ? "texte" : "pointeur",
                     v => { if (preview != null) preview.TextMode = v == "texte"; });
 
-                PremiumCard style = Card("Forme et taille", "La silhouette du halo.", 1, "layers");
-                Choices(style, "Forme", new string[] { "Cercle", "Carré arrondi", "Ellipse", "Réticule" }, new string[] { "Cercle", "Carré", "Ellipse", "Réticule" },
+                PremiumCard style = Card(L.T("Forme et taille"), L.T("La silhouette du halo."), 1, "layers");
+                Choices(style, L.T("Forme"), new string[] { "Cercle", "Carré arrondi", "Ellipse", "Réticule" }, new string[] { "Cercle", L.T("Carré"), "Ellipse", "Réticule" },
                     new string[] { "ring", "rect", "ellipse", "crosshair" }, 4, true, () => cfg.RingShape, s => cfg.RingShape = s);
-                Slider(style, "Diamètre", 16, 310, "px", () => cfg.RingRadius * 2, n => cfg.RingRadius = n / 2);
-                Slider(style, "Épaisseur", 1, 16, "px", () => cfg.RingThickness, n => cfg.RingThickness = n);
-                Slider(style, "Opacité", 10, 100, "%", () => (int)Math.Round(cfg.RingOpacity * 100 / 255.0), n => cfg.RingOpacity = (int)Math.Round(n * 2.55));
+                Slider(style, L.T("Diamètre"), 16, 310, "px", () => cfg.RingRadius * 2, n => cfg.RingRadius = n / 2);
+                Slider(style, L.T("Épaisseur"), 1, 16, "px", () => cfg.RingThickness, n => cfg.RingThickness = n);
+                Slider(style, L.T("Opacité"), 10, 100, "%", () => (int)Math.Round(cfg.RingOpacity * 100 / 255.0), n => cfg.RingOpacity = (int)Math.Round(n * 2.55));
 
-                PremiumCard colors = Card("Couleur et ambiance", "Roue chromatique, palette rapide et HEX précis.", 1, "palette");
-                PremiumChoiceGrid ringModes = Choices(colors, "Mode de couleur", new string[] { "Unie", "Dégradé", "Arc-en-ciel", "Dynamique" }, null,
+                PremiumCard colors = Card(L.T("Couleur et ambiance"), L.T("Roue chromatique, palette rapide et HEX précis."), 1, "palette");
+                PremiumChoiceGrid ringModes = Choices(colors, L.T("Mode de couleur"), new string[] { "Unie", "Dégradé", "Arc-en-ciel", "Dynamique" }, null,
                     null, 2, false, () => cfg.RingColorMode, s => cfg.RingColorMode = s);
                 sync.Add(delegate { ringModes.Swatches = new string[] { cfg.RingColor, cfg.RingColor + "|" + cfg.RingColor2, "rainbow", "#22D3EE|#F472B6" }; ringModes.Invalidate(); });
-                ColorPick(colors, "Couleur principale", () => cfg.RingColor, s => cfg.RingColor = s);
-                ColorField second = ColorPick(colors, "Couleur secondaire", () => cfg.RingColor2, s => cfg.RingColor2 = s);
+                ColorPick(colors, L.T("Couleur principale"), () => cfg.RingColor, s => cfg.RingColor = s);
+                ColorField second = ColorPick(colors, L.T("Couleur secondaire"), () => cfg.RingColor2, s => cfg.RingColor2 = s);
                 sync.Add(delegate { second.Enabled = cfg.RingColorMode == "Dégradé"; });
 
-                PremiumCard light = Card("Lumière et animation", "Glow, néon et pulsation.", 1, "sparkles");
-                Slider(light, "Flou lumineux", 0, 40, "px", () => cfg.RingGlowBlur, n => cfg.RingGlowBlur = n);
-                Slider(light, "Intensité du glow", 0, 100, "%", () => cfg.RingGlowIntensity, n => cfg.RingGlowIntensity = n);
-                Toggle(light, "Halo néon", "Éclairage secondaire diffus", () => cfg.RingNeon, b => cfg.RingNeon = b, "sparkles");
-                Toggle(light, "Pulsation", "Respiration douce du contour", () => cfg.RingPulse, b => cfg.RingPulse = b, "waves");
-                Slider(light, "Vitesse de pulsation", 1, 15, "", () => cfg.RingPulseSpeed, n => cfg.RingPulseSpeed = n);
+                PremiumCard light = Card(L.T("Lumière et animation"), L.T("Glow, néon et pulsation."), 1, "sparkles");
+                Slider(light, L.T("Flou lumineux"), 0, 40, "px", () => cfg.RingGlowBlur, n => cfg.RingGlowBlur = n);
+                Slider(light, L.T("Intensité du glow"), 0, 100, "%", () => cfg.RingGlowIntensity, n => cfg.RingGlowIntensity = n);
+                Toggle(light, L.T("Halo néon"), L.T("Éclairage secondaire diffus"), () => cfg.RingNeon, b => cfg.RingNeon = b, "sparkles");
+                Toggle(light, L.T("Pulsation"), L.T("Respiration douce du contour"), () => cfg.RingPulse, b => cfg.RingPulse = b, "waves");
+                Slider(light, L.T("Vitesse de pulsation"), 1, 15, "", () => cfg.RingPulseSpeed, n => cfg.RingPulseSpeed = n);
             }
             else
             {
-                PremiumCard behavior = Card("Comportement intelligent", "Disparaît au repos, revient au mouvement.", 1, "timer");
-                Toggle(behavior, "Disparition automatique", "Fondu après inactivité de la souris", () => cfg.RingAutoHide, b => cfg.RingAutoHide = b, "eye");
-                Slider(behavior, "Délai d'inactivité", 1, 15, "s", () => cfg.RingIdleSeconds, v => cfg.RingIdleSeconds = v);
-                Slider(behavior, "Durée du fondu", 100, 1200, "ms", () => cfg.RingFadeMilliseconds, v => cfg.RingFadeMilliseconds = v);
+                PremiumCard behavior = Card(L.T("Comportement intelligent"), L.T("Disparaît au repos, revient au mouvement."), 1, "timer");
+                Toggle(behavior, L.T("Disparition automatique"), L.T("Fondu après inactivité de la souris"), () => cfg.RingAutoHide, b => cfg.RingAutoHide = b, "eye");
+                Slider(behavior, L.T("Délai d'inactivité"), 1, 15, "s", () => cfg.RingIdleSeconds, v => cfg.RingIdleSeconds = v);
+                Slider(behavior, L.T("Durée du fondu"), 100, 1200, "ms", () => cfg.RingFadeMilliseconds, v => cfg.RingFadeMilliseconds = v);
 
-                PremiumCard precision = Card("Curseur texte", "Recentrage précis et discret pendant la saisie.", 1, "ibeam");
-                Toggle(precision, "Centrer sur le curseur texte", "Ignore le décalage dans les champs", () => cfg.RingCenterOnText,
+                PremiumCard precision = Card(L.T("Curseur texte"), L.T("Recentrage précis et discret pendant la saisie."), 1, "ibeam");
+                Toggle(precision, L.T("Centrer sur le curseur texte"), L.T("Ignore le décalage dans les champs"), () => cfg.RingCenterOnText,
                     b => { cfg.RingCenterOnText = b; if (!b) cfg.RingTextPrecision = false; }, "crosshair");
-                Toggle(precision, "Accent texte", "Contour fin et lumineux sur le I", () => cfg.RingTextPrecision,
+                Toggle(precision, L.T("Accent texte"), L.T("Contour fin et lumineux sur le I"), () => cfg.RingTextPrecision,
                     b => { cfg.RingTextPrecision = b; if (b) cfg.RingCenterOnText = true; }, "sparkles");
-                Toggle(precision, "Agrandir le halo sur texte", "Dégage la lecture et la sélection", () => cfg.RingTextGrow, b => cfg.RingTextGrow = b, "ibeam");
-                Slider(precision, "Agrandissement", 10, 250, "%", () => cfg.RingTextGrowPercent, n => cfg.RingTextGrowPercent = n);
-                Slider(precision, "Intensité de l'accent", 0, 100, "%", () => cfg.RingTextFocusIntensity, n => cfg.RingTextFocusIntensity = n);
-                Slider(precision, "Contour plus fin", 0, 80, "%", () => cfg.RingTextFocusThinness, n => cfg.RingTextFocusThinness = n);
+                Toggle(precision, L.T("Agrandir le halo sur texte"), L.T("Dégage la lecture et la sélection"), () => cfg.RingTextGrow, b => cfg.RingTextGrow = b, "ibeam");
+                Slider(precision, L.T("Agrandissement"), 10, 250, "%", () => cfg.RingTextGrowPercent, n => cfg.RingTextGrowPercent = n);
+                Slider(precision, L.T("Intensité de l'accent"), 0, 100, "%", () => cfg.RingTextFocusIntensity, n => cfg.RingTextFocusIntensity = n);
+                Slider(precision, L.T("Contour plus fin"), 0, 80, "%", () => cfg.RingTextFocusThinness, n => cfg.RingTextFocusThinness = n);
 
-                PremiumCard position = Card("Position du halo", "Décalage appliqué hors curseur texte.", 1, "move");
-                Slider(position, "Décalage horizontal", -250, 250, "px", () => cfg.RingOffsetX, n => cfg.RingOffsetX = n);
-                Slider(position, "Décalage vertical", -250, 250, "px", () => cfg.RingOffsetY, n => cfg.RingOffsetY = n);
-                Button(position, "Recentrer le halo", delegate { cfg.RingOffsetX = cfg.RingOffsetY = 0; CommitSettings(); }, ButtonKind.Secondary, "crosshair");
-                Note(position, "Halo décalé hors de l'écran ? Ctrl + Alt + H le recentre depuis n'importe où.");
+                PremiumCard position = Card(L.T("Position du halo"), L.T("Décalage appliqué hors curseur texte."), 1, "move");
+                Slider(position, L.T("Décalage horizontal"), -250, 250, "px", () => cfg.RingOffsetX, n => cfg.RingOffsetX = n);
+                Slider(position, L.T("Décalage vertical"), -250, 250, "px", () => cfg.RingOffsetY, n => cfg.RingOffsetY = n);
+                Button(position, L.T("Recentrer le halo"), delegate { cfg.RingOffsetX = cfg.RingOffsetY = 0; CommitSettings(); }, ButtonKind.Secondary, "crosshair");
+                Note(position, L.T("Halo décalé hors de l'écran ? Ctrl + Alt + H le recentre depuis n'importe où."));
             }
         }
         private void PageTrails()
         {
-            MasterToggle("Traînée activée", () => cfg.Trail, b => cfg.Trail = b);
-            Sections(new string[] { "Apparence", "Mouvement et logo" }, new string[] { "palette", "trail" });
+            MasterToggle(L.T("Traînée activée"), () => cfg.Trail, b => cfg.Trail = b);
+            Sections(new string[] { L.T("Apparence"), L.T("Mouvement et logo") }, new string[] { "palette", "trail" });
             if (section == 0)
             {
-            PremiumCard live = Card("Aperçu en direct", "Survole la zone pour dessiner ta propre traînée.", 2, "eye");
+            PremiumCard live = Card(L.T("Aperçu en direct"), L.T("Survole la zone pour dessiner ta propre traînée."), 2, "eye");
             preview = new PremiumPreview(cfg, PreviewMode.Trail); live.Add(preview);
 
-            PremiumCard look = Card("Style de traînée", "Huit signatures visuelles.", 1, "sparkles");
+            PremiumCard look = Card(L.T("Style de traînée"), L.T("Huit signatures visuelles."), 1, "sparkles");
             Choices(look, null, new string[] { "Particules", "Ligne", "Points", "Pointillés", "Lumière", "Étoiles", "Kawaii", "Logo" }, null,
                 new string[] { "sparkles", "line", "dots", "dash", "glow", "star", "heart", "image" }, 4, true, () => cfg.TrailStyle, s => cfg.TrailStyle = s);
-            Slider(look, "Épaisseur", 1, 40, "px", () => cfg.TrailWidth, n => cfg.TrailWidth = n);
-            Slider(look, "Persistance", 100, 2800, "ms", () => cfg.TrailLife, n => cfg.TrailLife = n);
-            Slider(look, "Opacité", 6, 100, "%", () => (int)Math.Round(cfg.TrailOpacity * 100 / 255.0), n => cfg.TrailOpacity = (int)Math.Round(n * 2.55));
+            Slider(look, L.T("Épaisseur"), 1, 40, "px", () => cfg.TrailWidth, n => cfg.TrailWidth = n);
+            Slider(look, L.T("Persistance"), 100, 2800, "ms", () => cfg.TrailLife, n => cfg.TrailLife = n);
+            Slider(look, L.T("Opacité"), 6, 100, "%", () => (int)Math.Round(cfg.TrailOpacity * 100 / 255.0), n => cfg.TrailOpacity = (int)Math.Round(n * 2.55));
 
-            PremiumCard colors = Card("Couleurs", "Unie, dégradé ou arc-en-ciel animé.", 1, "palette");
+            PremiumCard colors = Card(L.T("Couleurs"), L.T("Unie, dégradé ou arc-en-ciel animé."), 1, "palette");
             PremiumChoiceGrid trailModes = Choices(colors, null, new string[] { "Unie", "Dégradé", "Arc-en-ciel" }, null, null, 3, false, () => cfg.TrailColorMode, s => cfg.TrailColorMode = s);
             sync.Add(delegate { trailModes.Swatches = new string[] { cfg.TrailColor, cfg.TrailColor + "|" + cfg.TrailColor2, "rainbow" }; trailModes.Invalidate(); });
-            ColorPick(colors, "Première couleur", () => cfg.TrailColor, s => cfg.TrailColor = s);
-            ColorField second = ColorPick(colors, "Seconde couleur", () => cfg.TrailColor2, s => cfg.TrailColor2 = s);
+            ColorPick(colors, L.T("Première couleur"), () => cfg.TrailColor, s => cfg.TrailColor = s);
+            ColorField second = ColorPick(colors, L.T("Seconde couleur"), () => cfg.TrailColor2, s => cfg.TrailColor2 = s);
             sync.Add(delegate { second.Enabled = cfg.TrailColorMode == "Dégradé"; });
             }
             else
             {
-            PremiumCard motion = Card("Mouvement souple", "Souplesse : Ligne, Pointillés et Lumière.", 1, "trail");
-            Slider(motion, "Densité", 1, 5, "/5", () => cfg.TrailDensity, n => cfg.TrailDensity = n);
-            Slider(motion, "Espacement", 2, 40, "px", () => cfg.TrailSpacing, n => cfg.TrailSpacing = n);
-            Slider(motion, "Dispersion", 0, 90, "px", () => cfg.TrailSpread, n => cfg.TrailSpread = n);
-            Slider(motion, "Souplesse", 0, 100, "%", () => cfg.TrailSmoothness, n => cfg.TrailSmoothness = n);
-            Toggle(motion, "Épaisseur dynamique", "Réagit à la vitesse de la souris", () => cfg.TrailSpeedResponsive, b => cfg.TrailSpeedResponsive = b);
+            PremiumCard motion = Card(L.T("Mouvement souple"), L.T("Souplesse : Ligne, Pointillés et Lumière."), 1, "trail");
+            Slider(motion, L.T("Densité"), 1, 5, "/5", () => cfg.TrailDensity, n => cfg.TrailDensity = n);
+            Slider(motion, L.T("Espacement"), 2, 40, "px", () => cfg.TrailSpacing, n => cfg.TrailSpacing = n);
+            Slider(motion, L.T("Dispersion"), 0, 90, "px", () => cfg.TrailSpread, n => cfg.TrailSpread = n);
+            Slider(motion, L.T("Souplesse"), 0, 100, "%", () => cfg.TrailSmoothness, n => cfg.TrailSmoothness = n);
+            Toggle(motion, L.T("Épaisseur dynamique"), L.T("Réagit à la vitesse de la souris"), () => cfg.TrailSpeedResponsive, b => cfg.TrailSpeedResponsive = b);
 
-            PremiumCard logo = Card("Logo personnalisé", "Un PNG transparent dans ta traînée.", 1, "image");
+            PremiumCard logo = Card(L.T("Logo personnalisé"), L.T("Un PNG transparent dans ta traînée."), 1, "image");
             Label file = StatusLabel(logo, "", PremiumPalette.Subtle);
-            sync.Add(delegate { file.Text = String.IsNullOrEmpty(cfg.TrailLogoPath) ? "Aucun logo — une étoile est utilisée." : "Logo : " + Path.GetFileName(cfg.TrailLogoPath); });
-            PremiumButton import = new PremiumButton("Importer un PNG", ButtonKind.Secondary, "upload");
+            sync.Add(delegate { file.Text = String.IsNullOrEmpty(cfg.TrailLogoPath) ? L.T("Aucun logo — une étoile est utilisée.") : L.T("Logo : ") + Path.GetFileName(cfg.TrailLogoPath); });
+            PremiumButton import = new PremiumButton(L.T("Importer un PNG"), ButtonKind.Secondary, "upload");
             import.Click += delegate
             {
                 using (OpenFileDialog dialog = new OpenFileDialog())
                 {
-                    dialog.Filter = "Images PNG (*.png)|*.png";
+                    dialog.Filter = L.T("Images PNG (*.png)|*.png");
                     if (dialog.ShowDialog(this) == DialogResult.OK) { cfg.TrailLogoPath = dialog.FileName; cfg.TrailStyle = "Logo"; cfg.Trail = true; CommitSettings(); }
                 }
             };
-            PremiumButton remove = new PremiumButton("Retirer", ButtonKind.Ghost, "trash");
+            PremiumButton remove = new PremiumButton(L.T("Retirer"), ButtonKind.Ghost, "trash");
             remove.Click += delegate { cfg.TrailLogoPath = ""; CommitSettings(); };
             logo.Add(new ButtonRow(import, remove));
-            Slider(logo, "Taille du logo", 10, 125, "px", () => cfg.TrailLogoSize, n => cfg.TrailLogoSize = n);
-            Slider(logo, "Un logo tous les", 1, 12, "pts", () => cfg.TrailLogoEvery, n => cfg.TrailLogoEvery = n);
-            Toggle(logo, "Rotation du logo", "Une signature plus vivante", () => cfg.TrailLogoRotate, b => cfg.TrailLogoRotate = b);
+            Slider(logo, L.T("Taille du logo"), 10, 125, "px", () => cfg.TrailLogoSize, n => cfg.TrailLogoSize = n);
+            Slider(logo, L.T("Un logo tous les"), 1, 12, "pts", () => cfg.TrailLogoEvery, n => cfg.TrailLogoEvery = n);
+            Toggle(logo, L.T("Rotation du logo"), L.T("Une signature plus vivante"), () => cfg.TrailLogoRotate, b => cfg.TrailLogoRotate = b);
             }
         }
         private void PageClicks()
         {
-            MasterToggle("Clics animés", () => cfg.Clicks, b => cfg.Clicks = b);
-            PremiumCard live = Card("Aperçu en direct", "Clique (gauche ou droit) dans la zone pour tester.", 2, "eye");
+            MasterToggle(L.T("Clics animés"), () => cfg.Clicks, b => cfg.Clicks = b);
+            PremiumCard live = Card(L.T("Aperçu en direct"), L.T("Clique (gauche ou droit) dans la zone pour tester."), 2, "eye");
             preview = new PremiumPreview(cfg, PreviewMode.Clicks); live.Add(preview);
 
-            PremiumCard visual = Card("Animation", "Lisible, sans bloquer les clics Windows.", 1, "waves");
+            PremiumCard visual = Card(L.T("Animation"), L.T("Lisible, sans bloquer les clics Windows."), 1, "waves");
             Choices(visual, null, new string[] { "Ondes", "Anneau simple", "Flash", "Étincelles" }, new string[] { "Ondes", "Anneau", "Flash", "Étincelles" },
                 new string[] { "waves", "ring", "flash", "sparkles" }, 4, true, () => cfg.ClickStyle, s => cfg.ClickStyle = s);
-            Slider(visual, "Amplitude", 15, 180, "px", () => cfg.ClickSize, n => cfg.ClickSize = n);
-            Slider(visual, "Durée", 200, 1800, "ms", () => cfg.ClickDuration, n => cfg.ClickDuration = n);
-            Toggle(visual, "Détection automatique", "Animation déclenchée à chaque clic réel", () => cfg.ClickOnMouse, b => cfg.ClickOnMouse = b);
+            Slider(visual, L.T("Amplitude"), 15, 180, "px", () => cfg.ClickSize, n => cfg.ClickSize = n);
+            Slider(visual, L.T("Durée"), 200, 1800, "ms", () => cfg.ClickDuration, n => cfg.ClickDuration = n);
+            Toggle(visual, L.T("Détection automatique"), L.T("Animation déclenchée à chaque clic réel"), () => cfg.ClickOnMouse, b => cfg.ClickOnMouse = b);
 
-            PremiumCard palette = Card("Couleurs", "Distingue le clic gauche du clic droit.", 1, "palette");
-            ColorPick(palette, "Clic gauche", () => cfg.LeftColor, s => cfg.LeftColor = s);
-            ColorPick(palette, "Clic droit", () => cfg.RightColor, s => cfg.RightColor = s);
+            PremiumCard palette = Card(L.T("Couleurs"), L.T("Distingue le clic gauche du clic droit."), 1, "palette");
+            ColorPick(palette, L.T("Clic gauche"), () => cfg.LeftColor, s => cfg.LeftColor = s);
+            ColorPick(palette, L.T("Clic droit"), () => cfg.RightColor, s => cfg.RightColor = s);
 
-            PremiumCard sound = Card("Sons", "Un retour sonore, désactivable à tout moment.", 1, "sound");
-            Toggle(sound, "Sons de clic", "Son Windows ou fichier WAV personnel", () => cfg.ClickSounds, b => cfg.ClickSounds = b, "sound");
+            PremiumCard sound = Card(L.T("Sons"), L.T("Un retour sonore, désactivable à tout moment."), 1, "sound");
+            Toggle(sound, L.T("Sons de clic"), L.T("Son Windows ou fichier WAV personnel"), () => cfg.ClickSounds, b => cfg.ClickSounds = b, "sound");
             Label file = StatusLabel(sound, "", PremiumPalette.Subtle);
-            sync.Add(delegate { file.Text = String.IsNullOrEmpty(cfg.CustomSound) ? "Son : Windows par défaut" : "Son : " + Path.GetFileName(cfg.CustomSound); });
-            PremiumButton import = new PremiumButton("Importer un WAV", ButtonKind.Secondary, "upload");
+            sync.Add(delegate { file.Text = String.IsNullOrEmpty(cfg.CustomSound) ? L.T("Son : Windows par défaut") : L.T("Son : ") + Path.GetFileName(cfg.CustomSound); });
+            PremiumButton import = new PremiumButton(L.T("Importer un WAV"), ButtonKind.Secondary, "upload");
             import.Click += delegate
             {
                 using (OpenFileDialog dialog = new OpenFileDialog())
                 {
-                    dialog.Filter = "Audio WAV (*.wav)|*.wav";
+                    dialog.Filter = L.T("Audio WAV (*.wav)|*.wav");
                     if (dialog.ShowDialog(this) == DialogResult.OK) { cfg.CustomSound = dialog.FileName; CommitSettings(); }
                 }
             };
-            PremiumButton reset = new PremiumButton("Par défaut", ButtonKind.Ghost, "restore");
+            PremiumButton reset = new PremiumButton(L.T("Par défaut"), ButtonKind.Ghost, "restore");
             reset.Click += delegate { cfg.CustomSound = ""; CommitSettings(); };
             sound.Add(new ButtonRow(import, reset));
         }
         private void PageMouseButtons()
         {
-            PremiumButton restoreAll = new PremiumButton("Tout restaurer", ButtonKind.Secondary, "restore");
+            PremiumButton restoreAll = new PremiumButton(L.T("Tout restaurer"), ButtonKind.Secondary, "restore");
             restoreAll.Width = S(170);
             restoreAll.Click += delegate { cfg.ResetButtons(); CommitSettings(); };
             heading.Accessory = restoreAll;
 
-            PremiumCard mapping = Card("Affectations", "Appui court et appui long : une action pour chacun. Le comportement Windows reste normal par défaut.", 2, "mouse");
+            PremiumCard mapping = Card(L.T("Affectations"), L.T("Appui court et appui long : une action pour chacun. Le comportement Windows reste normal par défaut."), 2, "mouse");
             mouseDiagram = new MouseDiagram(); mouseDiagram.ActionOf = ButtonValue; mouseDiagram.LongActionOf = ButtonLongValue; mouseDiagram.Detected = currentDetected;
             mapping.Add(mouseDiagram);
             sync.Add(delegate { if (mouseDiagram != null) mouseDiagram.Invalidate(); });
-            Toggle(mapping, "Inverser X1 et X2 sur ma souris",
-                "Adapte les libellés à ta souris, sans changer les actions actuelles.",
+            Toggle(mapping, L.T("Inverser X1 et X2 sur ma souris"),
+                L.T("Adapte les libellés à ta souris, sans changer les actions actuelles."),
                 () => cfg.SwapSideButtons, value => cfg.SwapSideButtons = value, "mouse");
-            Note(mapping, "Si tu as déjà échangé les actions pour compenser : active cette option. Les actions physiques restent identiques, et les menus X1/X2 affichent désormais leur véritable rôle. Cyan = bouton configuré ; vert = dernier bouton détecté.");
-            string[] names = { "Bouton gauche", "Bouton droit", "Molette (clic)", "Latéral X1 (arrière)", "Latéral X2 (avant)" };
-            ActionTable table = new ActionTable("Bouton", "Appui court", "Appui long");
+            Note(mapping, L.T("Si tu as déjà échangé les actions pour compenser : active cette option. Les actions physiques restent identiques, et les menus X1/X2 affichent désormais leur véritable rôle. Cyan = bouton configuré ; vert = dernier bouton détecté."));
+            string[] names = { L.T("Bouton gauche"), L.T("Bouton droit"), L.T("Molette (clic)"), L.T("Latéral X1 (arrière)"), L.T("Latéral X2 (avant)") };
+            ActionTable table = new ActionTable(L.T("Bouton"), L.T("Appui court"), L.T("Appui long"));
             for (int i = 0; i < 5; i++)
             {
                 int id = i;
                 Label name = new Label(); name.Text = names[i]; name.Font = PremiumPalette.Font(9.75f, 1); name.ForeColor = PremiumPalette.Text;
                 name.BackColor = PremiumPalette.Surface; name.TextAlign = ContentAlignment.MiddleLeft; name.AutoEllipsis = true;
-                PremiumSelect shortSelect = new PremiumSelect(Config.ButtonActions, ButtonValue(id)); shortSelect.AccessibleName = names[i] + ", appui court";
+                PremiumSelect shortSelect = new PremiumSelect(Config.ButtonActions, ButtonValue(id)); shortSelect.AccessibleName = names[i] + L.T(", appui court");
                 shortSelect.SelectedChanged += delegate(string v) { if (!refreshing) { AssignButton(id, v); CommitSettings(); } };
                 sync.Add(delegate { shortSelect.Value = ButtonValue(id); });
                 if (id < 2)
                 {
                     // Clics principaux : pas d'appui long (le clic serait retardé, le glisser-déposer cassé).
-                    Label na = new Label(); na.Text = "Indisponible sur les clics principaux"; na.Font = PremiumPalette.Font(8.75f, 0);
+                    Label na = new Label(); na.Text = L.T("Indisponible sur les clics principaux"); na.Font = PremiumPalette.Font(8.75f, 0);
                     na.ForeColor = PremiumPalette.Faint; na.BackColor = PremiumPalette.Surface; na.TextAlign = ContentAlignment.MiddleLeft; na.AutoEllipsis = true;
                     table.AddRow(name, shortSelect, na);
                     continue;
                 }
-                PremiumSelect longSelect = new PremiumSelect(LongActions, ButtonLongValue(id) == "Normal" ? "Aucun" : ButtonLongValue(id)); longSelect.AccessibleName = names[i] + ", appui long";
+                PremiumSelect longSelect = new PremiumSelect(LongActions, ButtonLongValue(id) == "Normal" ? "Aucun" : ButtonLongValue(id)); longSelect.AccessibleName = names[i] + L.T(", appui long");
                 longSelect.SelectedChanged += delegate(string v) { if (!refreshing) { AssignLong(id, v); CommitSettings(); } };
                 sync.Add(delegate { longSelect.Value = ButtonLongValue(id) == "Normal" ? "Aucun" : ButtonLongValue(id); });
                 table.AddRow(name, shortSelect, longSelect);
             }
             mapping.Add(table);
-            Slider(mapping, "Durée de l'appui long", 250, 1200, "ms", () => cfg.LongPressMs, n => cfg.LongPressMs = n);
-            Note(mapping, "Un bouton qui a un appui long n'envoie son clic Windows qu'au relâchement. L'appui long est réservé à la molette, X1 et X2 ; gauche et droit restent toujours immédiats.");
+            Slider(mapping, L.T("Durée de l'appui long"), 250, 1200, "ms", () => cfg.LongPressMs, n => cfg.LongPressMs = n);
+            Note(mapping, L.T("Un bouton qui a un appui long n'envoie son clic Windows qu'au relâchement. L'appui long est réservé à la molette, X1 et X2 ; gauche et droit restent toujours immédiats."));
 
-            PremiumCard restore = Card("Détection et secours", "Identifie un bouton puis affecte-lui une action.", 1, "crosshair");
-            detectedButton = StatusLabel(restore, "Dernier bouton détecté : " + currentDetected, PremiumPalette.Cyan);
-            Button(restore, "Détecter mon bouton", delegate
-            { detectedButton.Text = "Appuie maintenant sur un bouton de la souris…"; engine.ArmButtonCapture(); }, ButtonKind.Primary, "crosshair");
-            restore.Add(FieldLabel("Préréglages"));
-            Button(restore, "X1 dessin · X2 annuler", delegate { AssignButton(3, "Dessin : activer / arrêter"); AssignButton(4, "Annuler le dernier trait"); AssignLong(3, "Aucun"); AssignLong(4, "Aucun"); CommitSettings(); }, ButtonKind.Secondary, "pen");
-            Button(restore, "X1 dessin · X2 outil suivant", delegate { AssignButton(3, "Dessin : activer / arrêter"); AssignButton(4, "Outil de dessin suivant"); AssignLong(3, "Aucun"); AssignLong(4, "Aucun"); CommitSettings(); }, ButtonKind.Secondary, "wand");
-            Button(restore, "X2 outil suivant · appui long : précédent", delegate { AssignButton(4, "Outil de dessin suivant"); AssignLong(4, "Outil de dessin précédent"); CommitSettings(); }, ButtonKind.Secondary, "wand");
-            Button(restore, "Restaurer les 5 boutons", delegate { cfg.ResetButtons(); CommitSettings(); }, ButtonKind.Danger, "restore");
-            restore.Add(new InfoNote("Bouton bloqué ? Ctrl + Alt + R rend immédiatement leur comportement Windows aux 5 boutons.", "info", PremiumPalette.Amber));
-            restore.Add(new InfoNote("Un bouton sans réaction (souvent un bouton DPI) est géré par la souris elle-même : Windows ne le voit pas, Haloryva ne peut pas l'utiliser.", "info", PremiumPalette.Cyan));
-            restore.Add(new InfoNote("Changer d'outil de dessin : affecte « Outil de dessin suivant » à X1, X2 ou la molette — son nom s'affiche quelques secondes en haut à gauche de l'écran.", "info", PremiumPalette.Cyan));
+            PremiumCard restore = Card(L.T("Détection et secours"), L.T("Identifie un bouton puis affecte-lui une action."), 1, "crosshair");
+            detectedButton = StatusLabel(restore, L.T("Dernier bouton détecté : ") + L.T(currentDetected), PremiumPalette.Cyan);
+            Button(restore, L.T("Détecter mon bouton"), delegate
+            { detectedButton.Text = L.T("Appuie maintenant sur un bouton de la souris…"); engine.ArmButtonCapture(); }, ButtonKind.Primary, "crosshair");
+            restore.Add(FieldLabel(L.T("Préréglages")));
+            Button(restore, L.T("X1 dessin · X2 annuler"), delegate { AssignButton(3, "Dessin : activer / arrêter"); AssignButton(4, "Annuler le dernier trait"); AssignLong(3, "Aucun"); AssignLong(4, "Aucun"); CommitSettings(); }, ButtonKind.Secondary, "pen");
+            Button(restore, L.T("X1 dessin · X2 outil suivant"), delegate { AssignButton(3, "Dessin : activer / arrêter"); AssignButton(4, "Outil de dessin suivant"); AssignLong(3, "Aucun"); AssignLong(4, "Aucun"); CommitSettings(); }, ButtonKind.Secondary, "wand");
+            Button(restore, L.T("X2 outil suivant · appui long : précédent"), delegate { AssignButton(4, "Outil de dessin suivant"); AssignLong(4, "Outil de dessin précédent"); CommitSettings(); }, ButtonKind.Secondary, "wand");
+            Button(restore, L.T("Restaurer les 5 boutons"), delegate { cfg.ResetButtons(); CommitSettings(); }, ButtonKind.Danger, "restore");
+            restore.Add(new InfoNote(L.T("Bouton bloqué ? Ctrl + Alt + R rend immédiatement leur comportement Windows aux 5 boutons."), "info", PremiumPalette.Amber));
+            restore.Add(new InfoNote(L.T("Un bouton sans réaction (souvent un bouton DPI) est géré par la souris elle-même : Windows ne le voit pas, Haloryva ne peut pas l'utiliser."), "info", PremiumPalette.Cyan));
+            restore.Add(new InfoNote(L.T("Changer d'outil de dessin : affecte « Outil de dessin suivant » à X1, X2 ou la molette — son nom s'affiche quelques secondes en haut à gauche de l'écran."), "info", PremiumPalette.Cyan));
+            Button(restore, L.T("Choisir les outils à faire défiler"), delegate { Navigate(5, 2); }, ButtonKind.Secondary, "pen");
         }
         private static readonly string[] LongActions = MakeLongActions();
         private static string[] MakeLongActions()
@@ -1074,8 +1175,8 @@ namespace CursorFlow
         {
             string v = s == "Aucun" ? "Normal" : s;
             if (id < 2 && v != "Normal" && MessageBox.Show(this,
-                "Un appui long sur un clic principal retarde ce clic jusqu'au relâchement : le glisser-déposer et la sélection à la souris ne fonctionneront plus avec ce bouton. Ctrl + Alt + R rétablit les boutons. Continuer ?",
-                "Confirmer l'appui long", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
+                L.T("Un appui long sur un clic principal retarde ce clic jusqu'au relâchement : le glisser-déposer et la sélection à la souris ne fonctionneront plus avec ce bouton. Ctrl + Alt + R rétablit les boutons. Continuer ?"),
+                L.T("Confirmer l'appui long"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
             SideButtonMap.WriteAction(cfg, id, v, true);
         }
         private string ButtonValue(int id)
@@ -1085,93 +1186,128 @@ namespace CursorFlow
         private void AssignButton(int id, string s)
         {
             if (id < 2 && s != "Normal" && MessageBox.Show(this,
-                "Ce réglage remplace un clic principal. Ctrl + Alt + R rétablit les boutons. Continuer ?",
-                "Confirmer l'affectation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
+                L.T("Ce réglage remplace un clic principal. Ctrl + Alt + R rétablit les boutons. Continuer ?"),
+                L.T("Confirmer l'affectation"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
             SideButtonMap.WriteAction(cfg, id, s, false);
         }
         // Dessin : outils visibles et réels, sans menu déroulant qui masque la page.
         private void PageDrawing()
         {
-            PremiumButton go = new PremiumButton("Dessiner sur le Bureau", ButtonKind.Primary, "pen"); go.Width = S(236);
+            PremiumButton go = new PremiumButton(L.T("Dessiner sur le Bureau"), ButtonKind.Primary, "pen"); go.Width = S(236);
             go.Click += delegate { if (engine.IsDrawing) engine.ToggleDrawing(); else engine.DrawOnDesktop(); RefreshStates(); };
-            sync.Add(delegate { go.Text = engine.IsDrawing ? "Arrêter le dessin" : "Dessiner sur le Bureau"; go.IconName = engine.IsDrawing ? "x" : "pen"; });
+            sync.Add(delegate { go.Text = engine.IsDrawing ? L.T("Arrêter le dessin") : L.T("Dessiner sur le Bureau"); go.IconName = engine.IsDrawing ? "x" : "pen"; });
             heading.Accessory = go;
-            Sections(new string[] { "Dessiner", "Réglages" }, new string[] { "pen", "settings" });
+            Sections(new string[] { L.T("Dessiner"), L.T("Réglages"), L.T("Défilement") }, new string[] { "pen", "settings", "mouse" });
 
             string[] names = DrawingTools.Names, captions = DrawingTools.Captions, icons = DrawingTools.Icons;
             if (section == 0)
             {
-            PremiumCard tools = Card("Outils", "Choisis un outil, puis « Dessiner sur le Bureau ». Clic droit ou Échap : arrêter.", 2, "pen");
+            PremiumCard tools = Card(L.T("Outils"), L.T("Choisis un outil, puis « Dessiner sur le Bureau ». Clic droit ou Échap : arrêter."), 2, "pen");
             Choices(tools, null, names, captions, icons, 5, true, () => cfg.AnnotationTool,
                 v => { cfg.AnnotationTool = v; if (v == "Forme libre") cfg.DrawSmoothMode = "Formes assistées"; });
-            Note(tools, "Auto-formes : trace un cercle, un rectangle, un triangle ou une ligne à main levée puis relâche — la forme est régularisée (le tracé d'origine reste restaurable). Changer d'outil à la souris : page Boutons souris.");
+            Note(tools, L.T("Auto-formes : trace un cercle, un rectangle, un triangle ou une ligne à main levée puis relâche — la forme est régularisée (le tracé d'origine reste restaurable). Changer d'outil à la souris : page Boutons souris."));
 
-            PremiumCard style = Card("Trait", "Couleur et épaisseur, indépendantes du viseur.", 1, "palette");
-            Slider(style, "Épaisseur", 1, 24, "px", () => cfg.AnnotationThickness, n => cfg.AnnotationThickness = n);
-            ColorPick(style, "Couleur du trait", () => cfg.AnnotationColor, c => cfg.AnnotationColor = c);
+            PremiumCard style = Card(L.T("Trait"), L.T("Couleur et épaisseur, indépendantes du viseur."), 1, "palette");
+            Slider(style, L.T("Épaisseur"), 1, 24, "px", () => cfg.AnnotationThickness, n => cfg.AnnotationThickness = n);
+            ColorPick(style, L.T("Couleur du trait"), () => cfg.AnnotationColor, c => cfg.AnnotationColor = c);
 
-            PremiumCard history = Card("Historique", "Annule, rétablis, efface ou exporte.", 2, "layers");
+            PremiumCard history = Card(L.T("Historique"), L.T("Annule, rétablis, efface ou exporte."), 2, "layers");
             Label count = StatusLabel(history, "", PremiumPalette.Subtle);
             sync.Add(delegate
             {
-                count.Text = engine.StrokeCount + (engine.StrokeCount > 1 ? " traits" : " trait") + " à l'écran" +
-                    (engine.RedoCount > 0 ? " · " + engine.RedoCount + " rétablissable" + (engine.RedoCount > 1 ? "s" : "") : "");
+                count.Text = L.Count(engine.StrokeCount, " trait", " traits") + L.T(" à l'écran") +
+                    (engine.RedoCount > 0 ? " · " + L.Format("{0} à rétablir", engine.RedoCount) : "");
             });
-            PremiumButton undo = new PremiumButton("Annuler", ButtonKind.Secondary, "undo");
-            PremiumButton redo = new PremiumButton("Rétablir", ButtonKind.Secondary, "redo");
+            PremiumButton undo = new PremiumButton(L.T("Annuler"), ButtonKind.Secondary, "undo");
+            PremiumButton redo = new PremiumButton(L.T("Rétablir"), ButtonKind.Secondary, "redo");
             undo.Click += delegate { engine.UndoDrawing(); RefreshStates(); };
             redo.Click += delegate { engine.RedoDrawing(); RefreshStates(); };
-            PremiumButton clear = new PremiumButton("Tout effacer", ButtonKind.Danger, "trash");
-            PremiumButton export = new PremiumButton("Exporter PNG", ButtonKind.Primary, "download");
+            PremiumButton clear = new PremiumButton(L.T("Tout effacer"), ButtonKind.Danger, "trash");
+            PremiumButton export = new PremiumButton(L.T("Exporter PNG"), ButtonKind.Primary, "download");
             clear.Click += delegate { engine.ClearDrawings(); RefreshStates(); };
             export.Click += delegate { engine.ExportDrawings(); };
             history.Add(new ButtonRow(undo, redo, clear, export));
-            Button(history, "Restaurer le trait original", delegate { engine.RestoreLastOriginalStroke(); }, ButtonKind.Ghost, "restore");
+            Button(history, L.T("Restaurer le trait original"), delegate { engine.RestoreLastOriginalStroke(); }, ButtonKind.Ghost, "restore");
             sync.Add(delegate { undo.Enabled = engine.StrokeCount > 0; redo.Enabled = engine.RedoCount > 0; clear.Enabled = engine.StrokeCount > 0; });
 
             }
-            else
+            else if (section == 1)
             {
-            PremiumCard assist = Card("Formes assistées", "Cercles, rectangles, triangles et lignes.", 1, "wand");
-            Choices(assist, null, new string[] { "Désactivé", "Lissage léger", "Formes assistées" }, new string[] { "Brut", "Lissage", "Auto-formes" },
+            PremiumCard assist = Card("Formes assistées", L.T("Cercles, rectangles, triangles et lignes."), 1, "wand");
+            Choices(assist, null, new string[] { "Désactivé", "Lissage léger", "Formes assistées" }, new string[] { L.T("Brut"), L.T("Lissage"), L.T("Auto-formes") },
                 new string[] { "minus", "trail", "shapes" }, 3, false, () => cfg.DrawSmoothMode,
                 v => { cfg.DrawSmoothMode = v; if (v != "Formes assistées" && cfg.AnnotationTool == "Forme libre") cfg.AnnotationTool = "Stylo"; });
-            Slider(assist, "Intensité du lissage", 0, 100, "%", () => cfg.DrawSmoothStrength, n => cfg.DrawSmoothStrength = n);
-            Note(assist, "50 % : lissage net conseillé · 100 % : très fort. Appliqué au relâchement du clic ; les formes reconnues gardent leurs angles.");
+            Slider(assist, L.T("Intensité du lissage"), 0, 100, "%", () => cfg.DrawSmoothStrength, n => cfg.DrawSmoothStrength = n);
+            Note(assist, L.T("50 % : lissage net conseillé · 100 % : très fort. Appliqué au relâchement du clic ; les formes reconnues gardent leurs angles."));
 
-            PremiumCard cursor = Card("Viseur de dessin", "Le pointeur affiché pendant que tu dessines.", 1, "crosshair");
-            Choices(cursor, null, new string[] { "Croix + anneau", "Croix", "Anneau", "Point central" }, new string[] { "Mixte", "Croix", "Anneau", "Point" },
+            PremiumCard cursor = Card(L.T("Viseur de dessin"), L.T("Le pointeur affiché pendant que tu dessines."), 1, "crosshair");
+            Choices(cursor, null, new string[] { "Croix + anneau", "Croix", "Anneau", "Point central" }, new string[] { L.T("Mixte"), "Croix", "Anneau", L.T("Point") },
                 new string[] { "crosshair", "plus", "ring", "dot" }, 4, true, () => cfg.DrawCursorStyle, s => cfg.DrawCursorStyle = s);
-            Toggle(cursor, "Lier au stylo", "Reprend la couleur du trait", () => cfg.DrawCursorLinkedToPen, b => cfg.DrawCursorLinkedToPen = b);
-            ColorField cursorColor = ColorPick(cursor, "Couleur du viseur", () => cfg.DrawCursorColor, c => cfg.DrawCursorColor = c);
+            Toggle(cursor, L.T("Lier au stylo"), L.T("Reprend la couleur du trait"), () => cfg.DrawCursorLinkedToPen, b => cfg.DrawCursorLinkedToPen = b);
+            ColorField cursorColor = ColorPick(cursor, L.T("Couleur du viseur"), () => cfg.DrawCursorColor, c => cfg.DrawCursorColor = c);
             sync.Add(delegate { cursorColor.Enabled = !cfg.DrawCursorLinkedToPen; });
-            Slider(cursor, "Diamètre", 12, 48, "px", () => cfg.DrawCursorSize, n => cfg.DrawCursorSize = n);
-            Slider(cursor, "Épaisseur", 1, 5, "px", () => cfg.DrawCursorThickness, n => cfg.DrawCursorThickness = n);
-            Slider(cursor, "Opacité", 20, 100, "%", () => cfg.DrawCursorOpacity, n => cfg.DrawCursorOpacity = n);
-            Toggle(cursor, "Masquer pendant le tracé", "Le viseur revient au relâchement", () => cfg.DrawCursorHideWhileDrawing, b => cfg.DrawCursorHideWhileDrawing = b);
+            Slider(cursor, L.T("Diamètre"), 12, 48, "px", () => cfg.DrawCursorSize, n => cfg.DrawCursorSize = n);
+            Slider(cursor, L.T("Épaisseur"), 1, 5, "px", () => cfg.DrawCursorThickness, n => cfg.DrawCursorThickness = n);
+            Slider(cursor, L.T("Opacité"), 20, 100, "%", () => cfg.DrawCursorOpacity, n => cfg.DrawCursorOpacity = n);
+            Toggle(cursor, L.T("Masquer pendant le tracé"), L.T("Le viseur revient au relâchement"), () => cfg.DrawCursorHideWhileDrawing, b => cfg.DrawCursorHideWhileDrawing = b);
             }
+            else PageDrawingCycle();
+        }
+        private void PageDrawingCycle()
+        {
+            PremiumCard first = Card(L.T("Outils à faire défiler"), L.T("Garde au moins un outil activé."), 1, "mouse");
+            PremiumCard second = Card(L.T("Autres outils"), L.T("Même sélection pour suivant et précédent."), 1, "pen");
+            for (int i = 0; i < DrawingTools.Names.Length; i++)
+            {
+                string tool = DrawingTools.Names[i];
+                PremiumSwitch sw = Toggle(i < 5 ? first : second, DrawingTools.Captions[i], null,
+                    () => Array.IndexOf(cfg.DrawingToolCycle, tool) >= 0,
+                    enabled =>
+                    {
+                        var chosen = new List<string>(cfg.DrawingToolCycle);
+                        if (enabled) { if (!chosen.Contains(tool)) chosen.Add(tool); }
+                        else if (chosen.Count > 1) chosen.Remove(tool);
+                        cfg.DrawingToolCycle = chosen.ToArray();
+                    });
+                sw.AccessibleName = L.T("Inclure ") + L.T(DrawingTools.Captions[i]) + L.T(" dans le défilement");
+                sync.Add(delegate
+                {
+                    sw.Enabled = !sw.Checked || cfg.DrawingToolCycle.Length > 1;
+                    sw.AccessibleDescription = sw.Enabled ? L.T("Outil parcouru par les boutons suivant et précédent.") :
+                        L.T("Au moins un outil doit rester sélectionné.");
+                });
+            }
+            PremiumCard help = Card(L.T("Défilement par boutons"), L.T("Choix enregistré automatiquement."), 2, "info");
+            Label count = StatusLabel(help, "", PremiumPalette.Cyan);
+            sync.Add(delegate { count.Text = cfg.DrawingToolCycle.Length + (cfg.DrawingToolCycle.Length > 1 ?
+                L.T(" outils dans le défilement") : L.T(" outil dans le défilement")); });
+            Note(help, L.T("Les boutons parcourent uniquement les outils activés, dans l'ordre affiché : colonne de gauche puis colonne de droite. Avec deux outils, ils alternent entre les deux."));
+            Note(help, L.T("Tous les outils restent accessibles dans l'onglet Dessiner. Le trait en cours conserve son outil ; le changement s'applique au suivant."));
+            Button(help, L.T("Inclure tous les outils"), delegate
+            { cfg.DrawingToolCycle = (string[])DrawingTools.Names.Clone(); CommitSettings(); }, ButtonKind.Secondary, "restore");
+            Button(help, L.T("Configurer les boutons souris"), delegate { Navigate(4, 0); }, ButtonKind.Ghost, "mouse");
         }
         private void PageTools()
         {
-            PremiumCard keys = Card("Touches à l'écran", "Affiche tes raccourcis pendant une démo.", 1, "keyboard");
-            Toggle(keys, "Afficher les raccourcis", "Uniquement les combinaisons Ctrl / Alt / Win", () => cfg.KeyDisplay, b => cfg.KeyDisplay = b, "keyboard");
-            Choices(keys, "Style des touches", new string[] { "Classique", "Verre", "Touches", "Néon", "Dégradé", "Minimal" }, null, null, 3, false,
+            PremiumCard keys = Card(L.T("Touches à l'écran"), L.T("Affiche tes raccourcis pendant une démo."), 1, "keyboard");
+            Toggle(keys, L.T("Afficher les raccourcis"), L.T("Uniquement les combinaisons Ctrl / Alt / Win"), () => cfg.KeyDisplay, b => cfg.KeyDisplay = b, "keyboard");
+            Choices(keys, L.T("Style des touches"), new string[] { "Classique", "Verre", "Touches", "Néon", "Dégradé", "Minimal" }, null, null, 3, false,
                 () => cfg.KeyStyle, s => cfg.KeyStyle = s);
-            keys.Add(new InfoNote("Confidentialité : le texte tapé n'est jamais affiché, seulement les raccourcis.", "info", PremiumPalette.Green));
+            keys.Add(new InfoNote(L.T("Confidentialité : le texte tapé n'est jamais affiché, seulement les raccourcis."), "info", PremiumPalette.Green));
 
-            PremiumCard lens = Card("Loupe", "Une loupe flottante à côté du pointeur.", 1, "loupe");
-            Toggle(lens, "Loupe manuelle", "Toujours visible près du pointeur", () => cfg.Loupe, b => cfg.Loupe = b, "loupe");
-            Slider(lens, "Taille", 95, 380, "px", () => cfg.LoupeSize, n => cfg.LoupeSize = n);
-            Slider(lens, "Grossissement", 2, 5, "×", () => cfg.LoupeMagnification, n => cfg.LoupeMagnification = n);
-            Toggle(lens, "Zoom ponctuel au clic", "La loupe apparaît un instant à chaque clic", () => cfg.ZoomOnClick, b => cfg.ZoomOnClick = b);
+            PremiumCard lens = Card(L.T("Loupe"), L.T("Une loupe flottante à côté du pointeur."), 1, "loupe");
+            Toggle(lens, L.T("Loupe manuelle"), L.T("Toujours visible près du pointeur"), () => cfg.Loupe, b => cfg.Loupe = b, "loupe");
+            Slider(lens, L.T("Taille"), 95, 380, "px", () => cfg.LoupeSize, n => cfg.LoupeSize = n);
+            Slider(lens, L.T("Grossissement"), 2, 5, "×", () => cfg.LoupeMagnification, n => cfg.LoupeMagnification = n);
+            Toggle(lens, L.T("Zoom ponctuel au clic"), L.T("La loupe apparaît un instant à chaque clic"), () => cfg.ZoomOnClick, b => cfg.ZoomOnClick = b);
 
-            PremiumCard focus = Card("Fenêtre active", "Attire l'attention sur l'application en cours.", 1, "focus");
-            Toggle(focus, "Assombrir le reste du Bureau", "Seule la fenêtre au premier plan reste claire", () => cfg.Focus, b => cfg.Focus = b, "focus");
-            Toggle(focus, "Secouer pour retrouver", "Agite la souris : le halo grossit un instant", () => cfg.Shake, b => cfg.Shake = b, "sparkles");
+            PremiumCard focus = Card(L.T("Fenêtre active"), L.T("Attire l'attention sur l'application en cours."), 1, "focus");
+            Toggle(focus, L.T("Assombrir le reste du Bureau"), L.T("Seule la fenêtre au premier plan reste claire"), () => cfg.Focus, b => cfg.Focus = b, "focus");
+            Toggle(focus, L.T("Secouer pour retrouver"), L.T("Agite la souris : le halo grossit un instant"), () => cfg.Shake, b => cfg.Shake = b, "sparkles");
 
-            PremiumCard shortcuts = Card("Raccourcis de présentation", "Bascule chaque outil sans ouvrir le Studio.", 1, "bolt");
+            PremiumCard shortcuts = Card(L.T("Raccourcis de présentation"), L.T("Bascule chaque outil sans ouvrir le Studio."), 1, "bolt");
             shortcuts.Add(new ShortcutList(
-                new string[] { "Loupe", "Fenêtre active", "Touches à l'écran", "Zoom au clic", "Onde de clic manuelle" },
+                new string[] { L.T("Loupe"), L.T("Fenêtre active"), L.T("Touches à l'écran"), L.T("Zoom au clic"), L.T("Onde de clic manuelle") },
                 new string[][] { new[] { "Ctrl", "Alt", "L" }, new[] { "Ctrl", "Alt", "F" }, new[] { "Ctrl", "Alt", "K" },
                     new[] { "Ctrl", "Alt", "Z" }, new[] { "Ctrl", "Alt", "X" } }));
         }
@@ -1183,62 +1319,104 @@ namespace CursorFlow
         }
         private void PagePreferences()
         {
-            PremiumCard look = Card("Apparence du Studio", "Choisis l'ambiance de couleur de l'interface.", 1, "palette");
+            PremiumCard language = Card(L.T("Langue de l'application"), L.T("Français, anglais ou espagnol. Application au prochain lancement."), 2, "settings");
+            PremiumChoiceGrid languageChoice = Choices(language, L.T("Langue"),
+                new string[] { "fr", "en", "es" }, new string[] { "Français", "English", "Español" },
+                null, 3, false, () => cfg.UiLanguage, value => cfg.UiLanguage = value);
+            languageChoice.Name = "UiLanguage";
+            language.Add(new InfoNote(L.T("La langue choisie sera utilisée au prochain lancement de Haloryva.")));
+
+            PremiumCard look = Card(L.T("Apparence du Studio"), L.T("Choisis l'ambiance de couleur de l'interface."), 1, "palette");
             PremiumChoiceGrid accents = Choices(look, null, PremiumPalette.AccentNames, null, null, 3, true, () => cfg.StudioAccent, s =>
             {
                 cfg.StudioAccent = s; RefreshTheme();
             });
             accents.Swatches = PremiumPalette.AccentSwatches;
-            look.Add(new InfoNote("Le thème change uniquement l'interface du Studio, pas les couleurs du halo ni des traînées."));
+            look.Add(new InfoNote(L.T("Le thème change uniquement l'interface du Studio, pas les couleurs du halo ni des traînées.")));
 
-            PremiumCard behavior = Card("Performance et démarrage", "Réglages locaux, aucune connexion externe.", 1, "bolt");
-            Toggle(behavior, "Démarrage avec Windows", "Lance Haloryva à la connexion", () => cfg.LaunchAtLogin, b => cfg.LaunchAtLogin = b, "power");
-            Toggle(behavior, "Mode fluide", "Effets allégés pour les PC modestes", () => cfg.PerformanceMode, b => cfg.PerformanceMode = b, "bolt");
-            Slider(behavior, "Rafraîchissement cible", 15, 60, "ips", () => cfg.FrameRate, n => cfg.FrameRate = n);
+            PremiumCard behavior = Card(L.T("Performance et démarrage"), L.T("Réglages locaux, aucune connexion externe."), 1, "bolt");
+            var startup = new PremiumSwitch(L.T("Démarrage avec Windows"), L.T("Vérification du démarrage…"), false);
+            startup.IconName = "power"; startup.Height = S(56); behavior.Add(startup);
+            sync.Add(delegate
+            {
+                startup.Checked = engine.StartupStatus.EffectiveEnabled == true;
+                startup.Enabled = engine.StartupStatus.CanChange && !engine.StartupBusy;
+                startup.Description = engine.StartupBusy ? L.T("Vérification du démarrage…") :
+                    engine.StartupStatus.MessageKey != null ? L.T(engine.StartupStatus.MessageKey) : L.T("Lance Haloryva à la connexion");
+                startup.Invalidate();
+            });
+            startup.CheckedChanged += async delegate
+            {
+                if (refreshing || engine.StartupBusy) return;
+                bool desired = startup.Checked;
+                if (desired && PackageContext.IsPackaged && StartupSettings.HasLegacyEntry() &&
+                    MessageBox.Show(this, L.T("Une entrée de démarrage classique existe. Vérifie que l'ancien démarrage est désactivé avant d'activer celui du Store. Continuer ?"),
+                    "Haloryva Studio", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
+                { RefreshStates(); return; }
+                await engine.RequestStartupChangeAsync(desired);
+                if (!IsDisposed) RefreshStates();
+            };
+            Toggle(behavior, L.T("Mode fluide"), L.T("Effets allégés pour les PC modestes"), () => cfg.PerformanceMode, b => cfg.PerformanceMode = b, "bolt");
+            Slider(behavior, L.T("Rafraîchissement cible"), 15, 60, L.T("ips"), () => cfg.FrameRate, n => cfg.FrameRate = n);
 
-            PremiumCard profile = Card("Profils et sauvegardes", "Compatible avec tes anciens réglages JSON.", 1, "user");
-            Button(profile, "Exporter mon profil", delegate
+            PremiumCard profile = Card(L.T("Profils et sauvegardes"), L.T("Compatible avec tes anciens réglages JSON."), 1, "user");
+            Button(profile, L.T("Exporter mon profil"), delegate
             {
                 using (SaveFileDialog d = new SaveFileDialog())
                 {
-                    d.Filter = "Profil JSON|*.json"; d.FileName = "Haloryva_profil.json";
+                    d.Filter = L.T("Profil JSON|*.json"); d.FileName = "Haloryva_profil.json";
                     if (d.ShowDialog(this) == DialogResult.OK)
                     {
                         try { ConfigStore.Export(cfg, d.FileName); }
-                        catch (Exception ex) { MessageBox.Show(this, ex.Message, "Export impossible", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                        catch (Exception ex) { MessageBox.Show(this, ex.Message, L.T("Export impossible"), MessageBoxButtons.OK, MessageBoxIcon.Warning); }
                     }
                 }
             }, ButtonKind.Primary, "download");
-            Button(profile, "Importer un profil", delegate
+            Button(profile, L.T("Importer un profil"), delegate
             {
                 using (OpenFileDialog d = new OpenFileDialog())
                 {
-                    d.Filter = "Profil JSON|*.json";
+                    d.Filter = L.T("Profil JSON|*.json");
                     if (d.ShowDialog(this) == DialogResult.OK)
                     {
-                        try { engine.ReplaceOptions(ConfigStore.Import(d.FileName)); cfg = engine.Options; RefreshTheme(); }
-                        catch (Exception ex) { MessageBox.Show(this, ex.Message, "Import impossible", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                        try
+                        {
+                            if (MessageBox.Show(this, L.T("Les réglages actuels seront sauvegardés avant leur remplacement."),
+                                "Haloryva Studio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK) return;
+                            engine.ImportProfile(d.FileName); cfg = engine.Options; RefreshTheme();
+                        }
+                        catch (Exception ex) { MessageBox.Show(this, ex.Message, L.T("Import impossible"), MessageBoxButtons.OK, MessageBoxIcon.Warning); }
                     }
                 }
             }, ButtonKind.Secondary, "upload");
-            Button(profile, "Ouvrir le dossier des réglages", delegate
+            if (PackageContext.IsPackaged)
+                Button(profile, L.T("Reprendre mes réglages 2.7.0"), delegate
+                {
+                    try
+                    {
+                        if (ProfileMigration.OfferLegacy(this, true))
+                        { engine.ReplaceOptions(ConfigStore.Load()); cfg = engine.Options; RefreshTheme(); }
+                    }
+                    catch (Exception ex) { MessageBox.Show(this, ex.Message, L.T("Import impossible"), MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                }, ButtonKind.Secondary, "upload");
+            Button(profile, L.T("Ouvrir le dossier des réglages"), delegate
             {
                 try { Directory.CreateDirectory(ConfigStore.DirectoryPath); System.Diagnostics.Process.Start("explorer.exe", "\"" + ConfigStore.DirectoryPath + "\""); }
                 catch { }
             }, ButtonKind.Ghost, "squares");
-            Button(profile, "Réinitialiser la configuration", delegate
+            Button(profile, L.T("Réinitialiser la configuration"), delegate
             {
-                if (MessageBox.Show(this, "Réinitialiser tous les réglages et affectations ?", "Confirmer", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show(this, L.T("Réinitialiser tous les réglages et affectations ?"), L.T("Confirmer"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 { engine.ReplaceOptions(new Config()); cfg = engine.Options; RefreshTheme(); }
             }, ButtonKind.Danger, "restore");
 
-            PremiumCard info = Card("À propos", "Haloryva Studio · Windows 64 bits", 2, "info");
+            PremiumCard info = Card(L.T("À propos"), L.T("Haloryva Studio · Windows 64 bits"), 2, "info");
             info.Add(new AboutBlock());
-            Button(info, "Copier les informations de version", delegate
+            Button(info, L.T("Copier les informations de version"), delegate
             {
-                try { Clipboard.SetText(Brand.VersionLine + "\r\nSystème : " + Environment.OSVersion + "\r\n.NET : " + Environment.Version); } catch { }
+                try { Clipboard.SetText(Brand.VersionLine + L.T("\r\nSystème : ") + Environment.OSVersion + L.T("\r\n.NET : ") + Environment.Version); } catch { }
             }, ButtonKind.Secondary, "export");
-            info.Add(new InfoNote("Ctrl + 1 à 8 : changer de page · Échap : fermer le Studio (Haloryva reste actif près de l'horloge)."));
+            info.Add(new InfoNote(L.T("Ctrl + 1 à 8 : changer de page · Échap : fermer le Studio (Haloryva reste actif près de l'horloge).")));
         }
     }
 }

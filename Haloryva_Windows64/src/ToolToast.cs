@@ -33,7 +33,9 @@ namespace CursorFlow
         private readonly Timer timer = new Timer();
         private DateTime inStart, lastTrigger, popStart, moveStart;
         private float activeFrom, activeTo;
-        private int index;
+        private int index, cyclePosition;
+        private int cycleCount = DrawingTools.Names.Length;
+        private string cycleKey = "";
         private bool live;
         private float k = 1f;
         private Point origin;
@@ -78,7 +80,7 @@ namespace CursorFlow
 
         // Affiche (ou met à jour sans clignoter) l'outil courant, en haut à gauche
         // de l'écran qui contient le pointeur.
-        public void Announce(int toolIndex, Point cursor)
+        public void Announce(int toolIndex, Point cursor, string[] selectedTools)
         {
             DateTime now = DateTime.UtcNow;
             toolIndex = Math.Max(0, Math.Min(DrawingTools.Names.Length - 1, toolIndex));
@@ -87,17 +89,26 @@ namespace CursorFlow
             Rectangle area = Screen.FromPoint(cursor).WorkingArea;
             origin = new Point(area.Left + (int)Math.Round(4 * k), area.Top + (int)Math.Round(4 * k));
 
-            if (!live || Alpha(now) < .05f)
+            // Snapshot from the button action: positions refer to the chosen cycle, not all tools.
+            string[] chosen = selectedTools == null || selectedTools.Length == 0 ? DrawingTools.Names : selectedTools;
+            string nextKey = String.Join("|", chosen);
+            int nextPosition = Array.IndexOf(chosen, DrawingTools.Names[toolIndex]);
+            bool changedCycle = cycleKey != nextKey;
+            cycleCount = chosen.Length;
+            cyclePosition = nextPosition;
+            cycleKey = nextKey;
+
+            if (!live || Alpha(now) < .05f || changedCycle || nextPosition < 0 || activeTo < 0)
             {
                 inStart = now;
-                activeFrom = activeTo = toolIndex;
+                activeFrom = activeTo = nextPosition;
                 moveStart = now.AddMilliseconds(-MoveMs * 2);
             }
             else
             {
                 // Déjà visible : l'indicateur ne se rejoue pas, il glisse vers le nouvel outil.
                 activeFrom = ActivePosition(now);
-                activeTo = toolIndex;
+                activeTo = nextPosition;
                 moveStart = now;
                 inStart = now.AddMilliseconds(-InMs * 2);
             }
@@ -158,7 +169,7 @@ namespace CursorFlow
             float remaining = 1f - Clamp01((now - lastTrigger).TotalMilliseconds / HoldMs);
 
             using (Graphics g = Graphics.FromImage(frame))
-                PaintCard(g, size, k, index, ActivePosition(now), pop, shine, remaining, PremiumPalette.Cyan, PremiumPalette.Purple);
+                PaintCard(g, size, k, index, cyclePosition, cycleCount, ActivePosition(now), pop, shine, remaining, PremiumPalette.Cyan, PremiumPalette.Purple);
 
             Publish(new Point(origin.X + (int)Math.Round(slide), origin.Y), size, (byte)Math.Max(0, Math.Min(255, (int)Math.Round(alpha * 255f))));
         }
@@ -211,12 +222,37 @@ namespace CursorFlow
             return new Size((int)Math.Round(392 * k), (int)Math.Round(152 * k));
         }
 
+
+        // Lay out glyphs without a height-limited line box: GDI+ can otherwise discard
+        // an entire line when the font's line spacing exceeds the 34px title area.
+        // Fit the actual outline uniformly, including the longest translated captions.
+        internal static void PaintTitle(Graphics g, string text, Font font, Rectangle area, Color a, Color b)
+        {
+            if (String.IsNullOrEmpty(text) || area.Width < 1 || area.Height < 1) return;
+            using (GraphicsPath path = new GraphicsPath())
+            using (StringFormat format = new StringFormat(StringFormat.GenericTypographic))
+            {
+                format.FormatFlags |= StringFormatFlags.NoWrap | StringFormatFlags.NoClip;
+                path.AddString(text, font.FontFamily, (int)font.Style, font.SizeInPoints * g.DpiY / 72f,
+                    PointF.Empty, format);
+                RectangleF bounds = path.GetBounds();
+                if (bounds.Width <= 0 || bounds.Height <= 0) return;
+                float fit = Math.Min(1f, Math.Min((area.Width - 2f) / bounds.Width, (area.Height - 2f) / bounds.Height));
+                using (Matrix transform = new Matrix(fit, 0, 0, fit,
+                    area.Left + 1f - bounds.Left * fit,
+                    area.Top + (area.Height - bounds.Height * fit) / 2f - bounds.Top * fit))
+                    path.Transform(transform);
+                using (LinearGradientBrush brush = new LinearGradientBrush(area, a, b, 0f))
+                    g.FillPath(brush, path);
+            }
+        }
+
         // Dessin pur (sans fenêtre) : réutilisable pour les captures de contrôle.
         //   activeF  : position fractionnaire de l'outil actif dans la rangée de points
         //   pop      : 0..1, rebond de l'icône à chaque changement
         //   shine    : 0..1, reflet qui traverse la carte
         //   remaining: 1..0, barre de temps restant
-        internal static void PaintCard(Graphics g, Size total, float k, int tool, float activeF,
+        internal static void PaintCard(Graphics g, Size total, float k, int tool, int selectedPosition, int selectedCount, float activeF,
             float pop, float shine, float remaining, Color ca, Color cb)
         {
             g.Clear(Color.Transparent);
@@ -333,22 +369,22 @@ namespace CursorFlow
                     left.FormatFlags |= StringFormatFlags.NoWrap; right.FormatFlags |= StringFormatFlags.NoWrap;
                     right.Alignment = StringAlignment.Far;
                     using (SolidBrush eb = new SolidBrush(PremiumPalette.Alpha(PremiumPalette.Mix(ca, Color.White, .55), 215)))
-                        g.DrawString("OUTIL DE DESSIN", eyebrow, eb, new RectangleF(tx, card.Y + 17f * k, tw, 16f * k), left);
+                        g.DrawString(L.T("OUTIL DE DESSIN"), eyebrow, eb, new RectangleF(tx, card.Y + 17f * k, tw - 42f * k, 16f * k), left);
                     using (SolidBrush cb2 = new SolidBrush(PremiumPalette.Alpha(PremiumPalette.Subtle, 230)))
-                        g.DrawString((tool + 1) + " / " + DrawingTools.Names.Length, counter, cb2, new RectangleF(tx, card.Y + 16f * k, tw, 16f * k), right);
+                        g.DrawString((selectedPosition < 0 ? "—" : (selectedPosition + 1).ToString()) + " / " + selectedCount, counter, cb2, new RectangleF(tx, card.Y + 16f * k, tw, 16f * k), right);
                 }
-                PremiumPalette.GradientText(g, DrawingTools.Captions[tool], title,
+                PaintTitle(g, L.T(DrawingTools.Captions[tool]), title,
                     new Rectangle((int)Math.Round(tx), (int)Math.Round(card.Y + 31f * k), (int)Math.Round(tw), (int)Math.Round(34f * k)),
                     Color.White, PremiumPalette.Mix(ca, Color.White, .42));
 
                 // Rangée de points : la pastille active glisse d'un outil à l'autre.
-                int n = DrawingTools.Names.Length;
+                int n = selectedCount;
                 float dot = 6f * k, gap = 7f * k, extra = 17f * k;
                 float dy = card.Y + 77f * k;
                 float x = tx;
                 for (int i = 0; i < n; i++)
                 {
-                    float near = Math.Max(0f, 1f - Math.Abs(i - activeF));
+                    float near = activeF < 0 ? 0f : Math.Max(0f, 1f - Math.Abs(i - activeF));
                     float w = dot + extra * near;
                     RectangleF pill = new RectangleF(x, dy - dot / 2f, w, dot);
                     Color baseColor = PremiumPalette.Mix(ca, cb, n > 1 ? i / (double)(n - 1) : 0);

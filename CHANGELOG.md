@@ -9,7 +9,7 @@
 - Canal Store certifié, reprise consentie des anciens réglages et gestion du démarrage à la connexion.
 - Essais utilisateur réussis de reprise des réglages, langues, démarrage automatique et reconnexion avec préférences conservées.
 - Fiche publique Microsoft Store accessible en France le 14 novembre 2026 ; téléchargement principal gratuit. Aucun EXE 2.7.1 proposé ici.
-- Intégration documentaire uniquement : sources historiques 2.7.0 préservées, sources finales 2.7.1 non intégrées au dépôt. Voir [les limites](docs/DIFFUSION.md).
+- La publication documentaire initiale conservait les sources historiques 2.7.0. Cette branche prépare maintenant la reprise exacte des 36 fichiers applicatifs estampillés 2.7.1.11 ; l’installateur reste historique. Voir [la provenance et les limites](docs/SOURCES-2.7.1.11.md).
 
 ## 2.7.0 — 10 novembre 2026 — version stable déclarée par l'auteur
 

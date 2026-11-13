@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using Microsoft.Win32;
 
@@ -8,6 +9,8 @@ namespace CursorFlow
     // Format JSON rétrocompatible : les anciens champs ne sont pas nécessaires.
     public sealed class Config
     {
+        // UI preference only; all existing tool/action identities keep their original values.
+        public string UiLanguage = "fr";
         public bool Enabled = true;
         public string ActivePreset = "";
         public string ActivePresetSignature = "";
@@ -77,6 +80,8 @@ namespace CursorFlow
         public bool ZoomOnClick = false;
         public bool Focus = false;
         public string AnnotationTool = "Stylo";
+        // Missing in older profiles: preserve the complete tool cycle by default.
+        public string[] DrawingToolCycle = (string[])DrawingTools.Names.Clone();
         public string DrawCursorColor = "#20DCE7";
         public string DrawCursorStyle = "Croix + anneau";
         public int DrawCursorSize = 24;
@@ -129,6 +134,7 @@ namespace CursorFlow
 
         public void Normalize()
         {
+            UiLanguage = L.NormalizeLanguage(UiLanguage);
             RingRadius = Math.Max(8, Math.Min(155, RingRadius));
             RingTextGrowPercent = Math.Max(10, Math.Min(250, RingTextGrowPercent));
             RingThickness = Math.Max(1, Math.Min(16, RingThickness));
@@ -176,6 +182,12 @@ namespace CursorFlow
             KeyStyle = OneOf(KeyStyle, "Verre", "Classique", "Verre", "Touches", "Néon", "Dégradé", "Minimal");
             AnnotationTool = OneOf(AnnotationTool, "Stylo", "Stylo", "Surligneur", "Ligne droite", "Rectangle", "Ellipse",
                 "Flèche droite", "Flèche libre", "Forme libre", "Numéro", "Texte");
+            // Stable display order, no duplicate/unknown tools, never an empty cycle.
+            var cycle = new List<string>();
+            if (DrawingToolCycle != null)
+                foreach (string tool in DrawingTools.Names)
+                    if (Array.IndexOf(DrawingToolCycle, tool) >= 0) cycle.Add(tool);
+            DrawingToolCycle = cycle.Count == 0 ? (string[])DrawingTools.Names.Clone() : cycle.ToArray();
             if (Visuals.ParseColor(LeftColor, System.Drawing.Color.Empty).IsEmpty) LeftColor = "#49E6B2";
             if (Visuals.ParseColor(RightColor, System.Drawing.Color.Empty).IsEmpty) RightColor = "#FFB46D";
             if (String.IsNullOrEmpty(RingColor)) RingColor = "#38D6FF";
@@ -212,7 +224,7 @@ namespace CursorFlow
     {
         public static string DirectoryPath
         {
-            get { return TrailTrial.Active ? TrailTrial.DirectoryPath : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Haloryva"); }
+            get { return ProfilePaths.CurrentDirectory; }
         }
         public static string FilePath { get { return Path.Combine(DirectoryPath, "settings.json"); } }
 
@@ -224,6 +236,13 @@ namespace CursorFlow
         {
             try { if (File.Exists(path)) return Deserialize(File.ReadAllText(path)); } catch { }
             return null;
+        }
+        // Read language before early dialogs/splash without changing or recovering any file.
+        internal static string ReadLanguage()
+        {
+            if (ProfilePaths.DiagnosticRequested && !TrailTrial.Active) return "fr";
+            Config profile = TryRead(FilePath) ?? TryRead(FilePath + ".bak");
+            return profile == null ? "fr" : profile.UiLanguage;
         }
         public static Config Load()
         {
@@ -241,16 +260,16 @@ namespace CursorFlow
             Config backup = TryRead(FilePath + ".bak");
             if (backup != null)
             {
-                SetNotice("Réglages illisibles : la dernière sauvegarde valide a été restaurée.");
+                SetNotice(L.T("Réglages illisibles : la dernière sauvegarde valide a été restaurée."));
                 return backup;
             }
-            SetNotice("Réglages illisibles : valeurs par défaut utilisées. L'ancien fichier est conservé dans le dossier Haloryva.");
+            SetNotice(L.T("Réglages illisibles : valeurs par défaut utilisées. L'ancien fichier est conservé dans le dossier Haloryva."));
             return new Config();
         }
         public static Config Deserialize(string json)
         {
             Config config = new JavaScriptSerializer().Deserialize<Config>(json);
-            if (config == null) throw new InvalidDataException("Configuration vide");
+            if (config == null) throw new InvalidDataException(L.T("Configuration vide"));
             config.Normalize();
             return config;
         }
@@ -272,7 +291,7 @@ namespace CursorFlow
                 else File.Move(path, FilePath);
                 return true;
             }
-            catch (Exception ex) { SetNotice("Réglages non enregistrés : " + ex.Message); return false; }
+            catch (Exception ex) { SetNotice(L.T("Réglages non enregistrés : ") + ex.Message); return false; }
         }
         public static void Export(Config config, string path)
         {
@@ -281,32 +300,32 @@ namespace CursorFlow
         public static Config Import(string path)
         {
             FileInfo fi = new FileInfo(path);
-            if (fi.Length > 1000000) throw new InvalidDataException("Le fichier de réglages est trop volumineux.");
+            if (fi.Length > 1000000) throw new InvalidDataException(L.T("Le fichier de réglages est trop volumineux."));
             return Deserialize(File.ReadAllText(path));
         }
         public static bool ApplyAutoStart(bool on)
         {
-            if (TrailTrial.Active) return true; // Essai isolé : ne pas modifier le registre.
+            if (!ProfilePaths.SystemChangesAllowed || PackageContext.IsPackaged) return false; // Never use Run in a package or diagnostic.
             try
             {
                 using (RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true))
                 {
-                    if (key == null) throw new IOException("Clé de démarrage Windows absente.");
+                    if (key == null) throw new IOException(L.T("Clé de démarrage Windows absente."));
                     if (on && key.GetValue("CursorFlow") != null)
                     {
-                        SetNotice("Démarrage Haloryva refusé : une ancienne application d'effets démarre déjà avec Windows. Désactive d'abord son démarrage automatique.");
+                        SetNotice(L.T("Démarrage Haloryva refusé : une ancienne application d'effets démarre déjà avec Windows. Désactive d'abord son démarrage automatique."));
                         return false;
                     }
                     if (on) key.SetValue("Haloryva", "\"" + System.Windows.Forms.Application.ExecutablePath + "\" --silent");
                     else key.DeleteValue("Haloryva", false);
                     if ((key.GetValue("Haloryva") != null) != on)
-                        throw new IOException("Le réglage de démarrage Windows n'a pas été confirmé.");
+                        throw new IOException(L.T("Le réglage de démarrage Windows n'a pas été confirmé."));
                     return true;
                 }
             }
             catch (Exception ex)
             {
-                SetNotice("Modification du démarrage Windows impossible : " + ex.Message);
+                SetNotice(L.T("Modification du démarrage Windows impossible : ") + ex.Message);
                 return false;
             }
         }

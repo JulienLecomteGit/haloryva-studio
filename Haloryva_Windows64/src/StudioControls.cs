@@ -21,7 +21,7 @@ namespace CursorFlow
         {
             Size = new Size(PremiumPalette.S(270), PremiumPalette.S(214)); Cursor = Cursors.Cross; TabStop = true;
             BackColor = PremiumPalette.Surface;
-            AccessibleName = "Roue chromatique. Flèches gauche droite : teinte. Haut bas : luminosité.";
+            AccessibleName = L.T("Roue chromatique. Flèches gauche droite : teinte. Haut bas : luminosité.");
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint |
                 ControlStyles.ResizeRedraw | ControlStyles.Selectable, true);
             SetColor(initial);
@@ -148,7 +148,7 @@ namespace CursorFlow
                 using (SolidBrush glow = new SolidBrush(Color.FromArgb(60, current))) g.FillEllipse(glow, px - PremiumPalette.Sf(6), c.Y - d / 2 - PremiumPalette.Sf(6), d + PremiumPalette.Sf(12), d + PremiumPalette.Sf(12));
                 using (SolidBrush swatch = new SolidBrush(current)) g.FillEllipse(swatch, px, c.Y - d / 2, d, d);
                 using (Pen p = new Pen(Color.FromArgb(110, 255, 255, 255), 1.4f)) g.DrawEllipse(p, px, c.Y - d / 2, d, d);
-                PremiumPalette.TextAt(g, "Teinte " + (int)Math.Round(hue) + "°", PremiumPalette.Font(8.25f, 0), PremiumPalette.Faint,
+                PremiumPalette.TextAt(g, L.T("Teinte ") + (int)Math.Round(hue) + "°", PremiumPalette.Font(8.25f, 0), PremiumPalette.Faint,
                     new Rectangle((int)px - PremiumPalette.S(14), (int)(c.Y + d / 2 + PremiumPalette.S(8)), (int)d + PremiumPalette.S(28), PremiumPalette.S(18)), ContentAlignment.MiddleCenter);
             }
             if (Focused && ShowFocusCues)
