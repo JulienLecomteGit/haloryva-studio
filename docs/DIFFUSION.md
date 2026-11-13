@@ -18,7 +18,7 @@ L’EXE autonome 2.7.1 reste conservé hors de cette intégration et n’est pas
 
 Ces éléments ne qualifient pas toutes les versions Windows, tous les matériels, profils ou fichiers PNG/WAV. WACK local n’a pas été exécuté ; la certification Microsoft a été acquise par la soumission Store. La cible 25H2/26H2 Intel/AMD ne constitue pas une garantie universelle. Aucun support Windows 10 ou ARM64 natif n’est annoncé.
 
-Les sources actuellement présentes dans ce dépôt restent la base historique 2.7.0. Cette branche documentaire ne les remplace pas par les sources estampillées du binaire 2.7.1.11.
+Les sources actuellement présentes dans ce dépôt restent la base historique 2.7.0. La mise à jour documentaire ne les remplace pas par les sources estampillées du binaire 2.7.1.11.
 
 ## Droits et données
 

@@ -45,7 +45,7 @@ Les tickets sont publics : ne joignez ni profil personnel complet, ni journal no
 
 ## Code, versions et droits
 
-Cette branche prépare uniquement la documentation de la 2.7.1. Les sources présentes dans `Haloryva_Windows64/` restent la base historique 2.7.0 ; elles ne sont pas présentées comme les sources finales du binaire Store 2.7.1.11. Leur intégration est une étape distincte.
+La documentation décrit la version Store 2.7.1. Les sources présentes dans `Haloryva_Windows64/` restent la base historique 2.7.0 ; elles ne sont pas présentées comme les sources finales du binaire Store 2.7.1.11. Leur intégration est une étape distincte.
 
 Version affichée : 2.7.1 ; version du fichier validé : 2.7.1.11 ; paquet Store : 2.7.1.0 x64. La certification et les essais utilisateur acquis sont décrits avec leurs limites dans [Diffusion et transparence](docs/DIFFUSION.md).
 

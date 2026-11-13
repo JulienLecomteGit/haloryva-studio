@@ -1,6 +1,6 @@
 # Historique — Haloryva Studio
 
-## 2.7.1 — préparation documentaire du 12 novembre 2026
+## 2.7.1 — Microsoft Store, fiche publique vérifiée le 14 novembre 2026
 
 - Interface français, anglais et espagnol avec langue mémorisée.
 - Sélection mémorisée des outils parcourus par les boutons de souris.
@@ -9,7 +9,7 @@
 - Canal Store certifié, reprise consentie des anciens réglages et gestion du démarrage à la connexion.
 - Essais utilisateur réussis de reprise des réglages, langues, démarrage automatique et reconnexion avec préférences conservées.
 - Fiche publique Microsoft Store accessible en France le 14 novembre 2026 ; téléchargement principal gratuit. Aucun EXE 2.7.1 proposé ici.
-- Intégration documentaire uniquement : sources historiques 2.7.0 préservées, sources finales 2.7.1 non intégrées dans cette branche. Voir [les limites](docs/DIFFUSION.md).
+- Intégration documentaire uniquement : sources historiques 2.7.0 préservées, sources finales 2.7.1 non intégrées au dépôt. Voir [les limites](docs/DIFFUSION.md).
 
 ## 2.7.0 — 10 novembre 2026 — version stable déclarée par l'auteur
 
