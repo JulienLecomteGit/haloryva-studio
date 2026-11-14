@@ -3,3 +3,9 @@
 *.txt text eol=lf
 *.json text eol=lf
 *.yml text eol=lf
+
+# Conserver les octets des sources estampillées de l'archive 2.7.1.11.
+Haloryva_Windows64/src/*.cs -text diff whitespace=cr-at-eol
+Haloryva_Windows64/assets/app.manifest -text diff whitespace=cr-at-eol
+Haloryva_Windows64/assets/Haloryva.ico -text
+Haloryva_Windows64/languages/strings.json -text diff whitespace=cr-at-eol

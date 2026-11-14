@@ -33,6 +33,11 @@ namespace CursorFlow
     internal interface IStudioEngine
     {
         Config Options { get; }
+        StartupSnapshot StartupStatus { get; }
+        bool StartupBusy { get; }
+        System.Threading.Tasks.Task RefreshStartupStatusAsync();
+        System.Threading.Tasks.Task RequestStartupChangeAsync(bool desired);
+        void ImportProfile(string path);
         bool IsDrawing { get; }
         int StrokeCount { get; }
         int RedoCount { get; }
@@ -102,8 +107,11 @@ namespace CursorFlow
         public event Action<string> MouseButtonObserved;
         private string lastPhysicalButton = "Aucun";
         private bool capturePending;
+        private int captureToken, pressEpoch;
+        private long inputRevision, inputAcknowledged;
+        private bool processingInput;
         private DateTime captureArmedAt = DateTime.MinValue;
-        public void ArmButtonCapture() { capturePending = true; captureArmedAt = DateTime.UtcNow; }
+        public void ArmButtonCapture() { capturePending = true; captureToken++; captureArmedAt = DateTime.UtcNow; PublishInputState(); }
         public bool CaptureButtonIfArmed(string button)
         {
             if (!capturePending) return false;
@@ -113,7 +121,7 @@ namespace CursorFlow
             NotifyPhysicalButton(button);
             return true;
         }
-        public void CancelButtonCapture() { capturePending = false; }
+        public void CancelButtonCapture() { capturePending = false; PublishInputState(); }
         public string LastPhysicalButton { get { return lastPhysicalButton; } }
         public void NotifyPhysicalButton(string button)
         {
@@ -149,7 +157,70 @@ namespace CursorFlow
         private readonly GlobalHooks hooks;
         private readonly FramePump timer;
         private PremiumStudioForm settings;
-        private bool lastAutoStart;
+        internal IStartupSettings StartupProvider = StartupSettings.Create();
+        private StartupSnapshot startupStatus = StartupSnapshot.FromState(-1);
+        public StartupSnapshot StartupStatus { get { return startupStatus; } private set { startupStatus = value; } }
+        public bool StartupBusy { get; private set; }
+        private bool startupReadBusy, startupReadRequested;
+        private int startupGeneration;
+        public async System.Threading.Tasks.Task RefreshStartupStatusAsync()
+        {
+            if (exiting) return;
+            startupReadRequested = true;
+            StartupRefreshTrace.Record("read_requested", startupGeneration, -1);
+            // Coalesce requests, but retain one that arrives while a read or user change is pending.
+            if (StartupBusy || startupReadBusy)
+            {
+                StartupRefreshTrace.Record("read_deferred", startupGeneration, -1);
+                return;
+            }
+            startupReadBusy = true;
+            try
+            {
+                while (startupReadRequested && !exiting && !StartupBusy)
+                {
+                    startupReadRequested = false;
+                    int generation = startupGeneration;
+                    StartupRefreshTrace.Record("read_begin", generation, -1);
+                    var result = await StartupProvider.ReadAsync();
+                    StartupRefreshTrace.Record("read_return", generation, (int)result.Availability);
+                    if (!exiting && !StartupBusy && generation == startupGeneration)
+                    {
+                        StartupStatus = result;
+                        StartupRefreshTrace.Record("read_publish", generation, (int)result.Availability);
+                        if (SettingsChanged != null) SettingsChanged();
+                    }
+                    else if (!exiting) startupReadRequested = true;
+                }
+            }
+            finally { startupReadBusy = false; }
+        }
+        public async System.Threading.Tasks.Task RequestStartupChangeAsync(bool desired)
+        {
+            if (exiting || StartupBusy || !ProfilePaths.SystemChangesAllowed) return;
+            startupGeneration++;
+            StartupBusy = true;
+            if (SettingsChanged != null) SettingsChanged();
+            try
+            {
+                var result = await StartupProvider.ChangeFromUserAsync(desired);
+                if (exiting) return;
+                StartupStatus = result;
+                if (result.EffectiveEnabled.HasValue && result.EffectiveEnabled.Value == desired &&
+                    (result.Availability == StartupAvailability.Enabled || result.Availability == StartupAvailability.Disabled))
+                { Options.LaunchAtLogin = desired; Changed(); }
+            }
+            finally { StartupBusy = false; if (!exiting && SettingsChanged != null) SettingsChanged(); }
+            if (!exiting && startupReadRequested) await RefreshStartupStatusAsync();
+        }
+        public void ImportProfile(string path)
+        {
+            var plan = ProfileMigration.Prepare(ProfileMigration.ReadCandidate(path, false),
+                ConfigStore.DirectoryPath, false, true);
+            ProfileMigration.Commit(plan, true);
+            savePending = false;
+            ReplaceOptions(plan.Options);
+        }
         private bool savePending;
         private DateTime lastSettingChange = DateTime.MinValue;
         private SoundPlayer customPlayer;
@@ -162,8 +233,9 @@ namespace CursorFlow
             try { exitRequested = new System.Threading.EventWaitHandle(false, System.Threading.EventResetMode.AutoReset,
                 "Local\\HaloryvaStudio.Exit." + Process.GetCurrentProcess().Id); } catch { }
             Options = ConfigStore.Load();
+            L.Initialize(Options.UiLanguage);
             TrailMetrics.Configure(Options);
-            lastAutoStart = Options.LaunchAtLogin;
+
             CursorPoint = Cursor.Position;
             previousPoint = CursorPoint;
             lastRenderedPoint = new Point(int.MinValue, int.MinValue);
@@ -174,12 +246,64 @@ namespace CursorFlow
             annotations = new AnnotationOverlayForm(this);
             annotations.Show();
             toast = new ToolToast();
-            hooks = new GlobalHooks(this);
-            if (!hooks.Installed) ConfigStore.SetNotice("Les raccourcis souris/clavier globaux n'ont pas pu démarrer : boutons et dessin indisponibles. Relance Haloryva.");
+            hooks = new GlobalHooks(CreateInputSnapshot(), ProcessInput);
+            if (!hooks.Installed) ConfigStore.SetNotice(L.T("Les raccourcis souris/clavier globaux n'ont pas pu démarrer : boutons et dessin indisponibles. Relance Haloryva."));
             timer = new FramePump(overlay, RenderTick, Options.FrameRate);
             timer.Start();
             if (!Array.Exists(Environment.GetCommandLineArgs(), delegate(string a) { return a == "--silent"; }))
                 ShowSettings();
+        }
+
+        private InputSnapshot CreateInputSnapshot()
+        {
+            return new InputSnapshot(++inputRevision, inputAcknowledged, Options, IsDrawing, drawSession,
+                pressEpoch, capturePending ? captureToken : 0, captureArmedAt.AddSeconds(6), overlay.Handle, annotations.Handle);
+        }
+        private void PublishInputState()
+        {
+            if (hooks != null && !processingInput && !exiting) hooks.Publish(CreateInputSnapshot());
+        }
+        private void ProcessInput(InputCommand command)
+        {
+            processingInput = true;
+            try
+            {
+                if (command.Button != null && command.Kind != InputKind.Capture) NotifyPhysicalButton(command.Button);
+                switch (command.Kind)
+                {
+                    case InputKind.Move: MouseMoved(command.X, command.Y); break;
+                    case InputKind.Click:
+                        if (command.Button == "Gauche" || command.Button == "Droit") MouseClicked(command.X, command.Y, command.Button == "Droit");
+                        break;
+                    case InputKind.Action:
+                        ExecutePress(new PressCommand { Button = command.Button, Action = command.Action, X = command.X, Y = command.Y, Long = command.Long });
+                        break;
+                    case InputKind.Drawing:
+                        MouseMoved(command.X, command.Y);
+                        if (IsDrawing && command.Session == drawSession) DrawingInput(command.Code, command.X, command.Y, command);
+                        break;
+                    case InputKind.Key: KeyPressed(command.Key, command.Modifiers); break;
+                    case InputKind.Capture:
+                        if (capturePending && command.CaptureToken == captureToken)
+                        { capturePending = false; NotifyPhysicalButton(command.Button); }
+                        break;
+                    case InputKind.CancelStroke:
+                        if (command.Session == drawSession)
+                        {
+                            if (CurrentStroke != null) Strokes.Remove(CurrentStroke);
+                            CurrentStroke = null;
+                            if (IsDrawing) ToggleDrawing();
+                            ConfigStore.SetNotice(L.T("Le dessin a été interrompu car l’application était occupée. Tu peux reprendre le tracé."));
+                        }
+                        break;
+                }
+            }
+            finally
+            {
+                inputAcknowledged = command.Sequence;
+                processingInput = false;
+                PublishInputState();
+            }
         }
 
         public void ShowSettings()
@@ -244,13 +368,6 @@ namespace CursorFlow
         public void Changed()
         {
             timer.FrameRate = Options.FrameRate;
-            if (lastAutoStart != Options.LaunchAtLogin)
-            {
-                if (ConfigStore.ApplyAutoStart(Options.LaunchAtLogin))
-                    lastAutoStart = Options.LaunchAtLogin;
-                else
-                    Options.LaunchAtLogin = lastAutoStart;
-            }
             savePending = true;
             // Laisse l'anneau visible pendant la manipulation de ses réglages.
             lastPointerMotion = DateTime.UtcNow;
@@ -258,6 +375,7 @@ namespace CursorFlow
             forceRender = true;
             lastSettingChange = DateTime.UtcNow;
             if (SettingsChanged != null) SettingsChanged();
+            PublishInputState();
         }
 
         internal int DrawingSession { get { return drawSession; } }
@@ -290,6 +408,7 @@ namespace CursorFlow
             tray.Refresh();
             if (!IsDrawing) RestoreSettingsAfterDrawing();
             if (SettingsChanged != null) SettingsChanged();
+            PublishInputState();
         }
 
         // « Dessiner sur le Bureau » : masque le Studio puis le réaffiche
@@ -316,9 +435,17 @@ namespace CursorFlow
         // et affiche brièvement l'outil actif en haut à gauche de l'écran.
         public void StepDrawingTool(int delta)
         {
-            int n = DrawingTools.Names.Length;
-            int next = ((DrawingTools.IndexOf(Options.AnnotationTool) + delta) % n + n) % n;
-            Options.AnnotationTool = DrawingTools.Names[next];
+            if (delta == 0) return;
+            string[] cycle = Options.DrawingToolCycle;
+            if (cycle == null || cycle.Length == 0) cycle = DrawingTools.Names;
+            int current = Array.IndexOf(cycle, Options.AnnotationTool);
+            // A tool selected directly in Studio may be outside the button cycle.
+            // Enter at the first selected tool going forward, or the last going back.
+            int next = current < 0 ? (delta < 0 ? cycle.Length - 1 : 0) :
+                (int)(((long)current + delta) % cycle.Length + cycle.Length) % cycle.Length;
+            Options.AnnotationTool = cycle[next];
+            int toastIndex = DrawingTools.IndexOf(Options.AnnotationTool);
+            string[] toastCycle = (string[])cycle.Clone();
             // Même règle que dans le Studio : « Auto-formes » exige les formes assistées.
             if (Options.AnnotationTool == "Forme libre" && Options.DrawSmoothMode != "Formes assistées")
                 Options.DrawSmoothMode = "Formes assistées";
@@ -326,7 +453,7 @@ namespace CursorFlow
             // Jamais de création / affichage de fenêtre dans le hook souris (délai de 300 ms).
             Point where = CursorPoint;
             if (overlay.IsHandleCreated)
-                overlay.BeginInvoke((Action)delegate { toast.Announce(next, where); });
+                overlay.BeginInvoke((Action)delegate { toast.Announce(toastIndex, where, toastCycle); });
         }
 
         public void UndoDrawing()
@@ -383,17 +510,17 @@ namespace CursorFlow
         {
             if (Strokes.Count == 0)
             {
-                MessageBox.Show("Aucun dessin à exporter.", "Haloryva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(L.T("Aucun dessin à exporter."), "Haloryva", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             using (SaveFileDialog dialog = new SaveFileDialog())
             {
-                dialog.Filter = "Image PNG transparente|*.png";
+                dialog.Filter = L.T("Image PNG transparente|*.png");
                 dialog.FileName = "Haloryva_annotations.png";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     try { overlay.ExportAnnotations(dialog.FileName); }
-                    catch (Exception ex) { MessageBox.Show("Export impossible : " + ex.Message, "Haloryva", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                    catch (Exception ex) { MessageBox.Show(L.T("Export impossible : ") + ex.Message, "Haloryva", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
             }
         }
@@ -429,12 +556,7 @@ namespace CursorFlow
         }
 
         // Appui court / long : actions et seuil figés à l'appui.
-        private readonly PressBook presses = new PressBook();
-        public void ResetPressState() { presses.Clear(); }
-        public bool BeginPress(string button, int x, int y)
-        { return Options.Enabled && presses.Begin(button, ButtonAction(button), ButtonLongAction(button), Options.LongPressMs, x, y); }
-        public void EndPress(string button, int x, int y)
-        { ExecutePress(presses.Release(button)); }
+        public void ResetPressState() { pressEpoch++; }
         private void ExecutePress(PressCommand command)
         {
             if (command == null) return;
@@ -443,7 +565,7 @@ namespace CursorFlow
             {
                 if (overlay.IsHandleCreated) overlay.BeginInvoke((Action)delegate {
                     if (!Native.SendMouseClick(command.Button))
-                        ConfigStore.SetNotice("Windows a refusé le rejeu du clic. Aucune protection n'a été contournée.");
+                        ConfigStore.SetNotice(L.T("Windows a refusé le rejeu du clic. Aucune protection n'a été contournée."));
                 });
             }
             else RunAction(command.Action, command.X, command.Y);
@@ -452,7 +574,7 @@ namespace CursorFlow
         {
             if (capturePending && (now - captureArmedAt).TotalSeconds > 6)
             { capturePending = false; NotifyPhysicalButton("Aucun"); }
-            presses.Poll(ExecutePress);
+            PublishInputState();
         }
 
         public bool HandleMouseButton(string button, bool pressed, int x, int y)
@@ -551,14 +673,17 @@ namespace CursorFlow
         }
 
         public void DrawingInput(int code, int x, int y)
+        { DrawingInput(code, x, y, null); }
+
+        private void DrawingInput(int code, int x, int y, InputCommand input)
         {
             if (code == Native.WM_LBUTTONDOWN)
             {
                 annotationsDirty = true;
                 CurrentStroke = new AnnotationStroke();
-                CurrentStroke.Tool = Options.AnnotationTool;
-                CurrentStroke.Color = Visuals.ParseColor(Options.AnnotationColor, Color.DeepPink);
-                CurrentStroke.Width = Options.AnnotationThickness;
+                CurrentStroke.Tool = input == null ? Options.AnnotationTool : input.DrawingTool;
+                CurrentStroke.Color = Visuals.ParseColor(input == null ? Options.AnnotationColor : input.DrawingColor, Color.DeepPink);
+                CurrentStroke.Width = input == null ? Options.AnnotationThickness : input.DrawingWidth;
                 CurrentStroke.Points.Add(new Point(x, y));
                 if (CurrentStroke.Tool == "Numéro") CurrentStroke.Number = ++annotationNumber;
                 Strokes.Add(CurrentStroke);
@@ -566,7 +691,7 @@ namespace CursorFlow
             }
             else if (code == Native.WM_MOUSEMOVE && CurrentStroke != null)
             {
-                // Traçage capturé dans le hook ; rendu à fréquence limitée dans la boucle UI.
+                // Points reçus dans l'ordre depuis le hook ; rendu limité à la fréquence UI.
                 annotationsDirty = true;
                 if (CurrentStroke.Tool == "Stylo" || CurrentStroke.Tool == "Surligneur" ||
                     CurrentStroke.Tool == "Flèche libre" || CurrentStroke.Tool == "Forme libre")
@@ -627,6 +752,7 @@ namespace CursorFlow
                         // Reprendre le dessin seulement si rien ne l'a arrêté ou mis en pause entre-temps.
                         if (session == drawSession && Options.Enabled) IsDrawing = true;
                         tray.Refresh();
+                        PublishInputState();
                     });
                 }
             }
@@ -645,13 +771,21 @@ namespace CursorFlow
         }
 
         // true = raccourci réservé à Haloryva : ne pas transmettre à l'application active.
-        public bool KeyPressed(Keys key)
+        public bool KeyPressed(Keys key, bool rightAltDown)
         {
+            if (KeyboardPolicy.IsTextEntry(key, rightAltDown)) return false;
+            return KeyPressed(key, new InputModifiers {
+                Ctrl = (Native.GetAsyncKeyState((int)Keys.ControlKey) & 0x8000) != 0,
+                Alt = (Native.GetAsyncKeyState((int)Keys.Menu) & 0x8000) != 0,
+                Shift = (Native.GetAsyncKeyState((int)Keys.ShiftKey) & 0x8000) != 0,
+                Win = (Native.GetAsyncKeyState((int)Keys.LWin) & 0x8000) != 0 || (Native.GetAsyncKeyState((int)Keys.RWin) & 0x8000) != 0,
+                RightAlt = rightAltDown });
+        }
+        private bool KeyPressed(Keys key, InputModifiers modifiers)
+        {
+            if (KeyboardPolicy.IsTextEntry(key, modifiers.RightAlt)) return false;
             DateTime now = DateTime.UtcNow;
-            bool ctrl = (Native.GetAsyncKeyState((int)Keys.ControlKey) & 0x8000) != 0;
-            bool alt = (Native.GetAsyncKeyState((int)Keys.Menu) & 0x8000) != 0;
-            bool shift = (Native.GetAsyncKeyState((int)Keys.ShiftKey) & 0x8000) != 0;
-            bool win = (Native.GetAsyncKeyState((int)Keys.LWin) & 0x8000) != 0 || (Native.GetAsyncKeyState((int)Keys.RWin) & 0x8000) != 0;
+            bool ctrl = modifiers.Ctrl, alt = modifiers.Alt, shift = modifiers.Shift, win = modifiers.Win;
             if (ctrl && alt && !win)
             {
                 if (key == Keys.R) { Options.ResetButtons(); ResetPressState(); Changed(); return true; }
@@ -675,8 +809,8 @@ namespace CursorFlow
             // Confidentialité : seuls les raccourcis à modificateur sont affichés.
             if (ctrl || alt || win)
             {
-                if (key == Keys.ControlKey || key == Keys.Menu || key == Keys.LWin || key == Keys.RWin || key == Keys.ShiftKey) return false;
-                LastKeys = (ctrl ? "Ctrl + " : "") + (alt ? "Alt + " : "") + (shift ? "Maj + " : "") + (win ? "Win + " : "") + key.ToString();
+                if (KeyboardPolicy.IsModifier(key)) return false;
+                LastKeys = (ctrl ? "Ctrl + " : "") + (alt ? "Alt + " : "") + (shift ? L.T("Maj + ") : "") + (win ? "Win + " : "") + key.ToString();
                 KeysUntil = now.AddMilliseconds(1100);
             }
             return false;
@@ -685,6 +819,7 @@ namespace CursorFlow
         private bool wasAnimating;
         private void RenderTick()
         {
+            hooks.Drain();
             EffectDiagnostics.RenderTick();
             if (EffectDiagnostics.ShouldSample())
             {
@@ -775,13 +910,13 @@ namespace CursorFlow
         {
             if (exiting) return;
             if (!ConfigStore.Save(Options))
-            { tray.Notify(ConfigStore.TakeNotice() ?? "Fermeture annulée : les réglages ne sont pas sauvegardés."); return; }
+            { tray.Notify(ConfigStore.TakeNotice() ?? L.T("Fermeture annulée : les réglages ne sont pas sauvegardés.")); return; }
             exiting = true;
             drawSession++; IsDrawing = false; CurrentStroke = null; ResetPressState();
             timer.Stop();
             if (exitRequested != null) { exitRequested.Dispose(); exitRequested = null; }
             try { TrailMetrics.Save(timer.Mode, timer.Coalesced, overlay.SurfaceCreations, overlay.FallbackFrames); }
-            catch (Exception ex) { MessageBox.Show("Écriture des mesures impossible : " + ex.Message, "Haloryva"); }
+            catch (Exception ex) { MessageBox.Show(L.T("Écriture des mesures impossible : ") + ex.Message, "Haloryva"); }
             hooks.Dispose();
             if (customPlayer != null) customPlayer.Dispose();
             overlay.Close();
@@ -813,22 +948,22 @@ namespace CursorFlow
             icon = new NotifyIcon();
             try { icon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath); }
             catch { icon.Icon = SystemIcons.Information; }
-            icon.Text = "Haloryva — effets du curseur";
+            icon.Text = L.T("Haloryva — effets du curseur");
             ContextMenuStrip menu = new ContextMenuStrip();
             StudioMenuRenderer.Apply(menu);
-            enabled = new ToolStripMenuItem("Effets actifs", null, delegate { controller.ToggleEnabled(); });
-            drawing = new ToolStripMenuItem("Mode annotation (Ctrl+Alt+D)", null, delegate { controller.ToggleDrawing(); });
+            enabled = new ToolStripMenuItem(L.T("Effets actifs"), null, delegate { controller.ToggleEnabled(); });
+            drawing = new ToolStripMenuItem(L.T("Mode annotation (Ctrl+Alt+D)"), null, delegate { controller.ToggleDrawing(); });
             menu.Items.Add(enabled);
-            menu.Items.Add(new ToolStripMenuItem("Réglages...", null, delegate { controller.ShowSettings(); }));
-            menu.Items.Add(new ToolStripMenuItem("Recentrer le halo (Ctrl+Alt+H)", null, delegate
+            menu.Items.Add(new ToolStripMenuItem(L.T("Réglages..."), null, delegate { controller.ShowSettings(); }));
+            menu.Items.Add(new ToolStripMenuItem(L.T("Recentrer le halo (Ctrl+Alt+H)"), null, delegate
             { controller.Options.RingOffsetX = 0; controller.Options.RingOffsetY = 0; controller.Changed(); }));
             menu.Items.Add(drawing);
-            menu.Items.Add(new ToolStripMenuItem("Annuler le dernier trait", null, delegate { controller.UndoDrawing(); }));
-            menu.Items.Add(new ToolStripMenuItem("Rétablir un trait", null, delegate { controller.RedoDrawing(); }));
-            menu.Items.Add(new ToolStripMenuItem("Effacer les annotations", null, delegate { controller.ClearDrawings(); }));
-            menu.Items.Add(new ToolStripMenuItem("Exporter les dessins en PNG...", null, delegate { controller.ExportDrawings(); }));
+            menu.Items.Add(new ToolStripMenuItem(L.T("Annuler le dernier trait"), null, delegate { controller.UndoDrawing(); }));
+            menu.Items.Add(new ToolStripMenuItem(L.T("Rétablir un trait"), null, delegate { controller.RedoDrawing(); }));
+            menu.Items.Add(new ToolStripMenuItem(L.T("Effacer les annotations"), null, delegate { controller.ClearDrawings(); }));
+            menu.Items.Add(new ToolStripMenuItem(L.T("Exporter les dessins en PNG..."), null, delegate { controller.ExportDrawings(); }));
             menu.Items.Add(new ToolStripSeparator());
-            menu.Items.Add(new ToolStripMenuItem("Quitter Haloryva", null, delegate { controller.Exit(); }));
+            menu.Items.Add(new ToolStripMenuItem(L.T("Quitter Haloryva"), null, delegate { controller.Exit(); }));
             icon.ContextMenuStrip = menu;
             icon.DoubleClick += delegate { controller.ShowSettings(); };
             icon.Visible = true;

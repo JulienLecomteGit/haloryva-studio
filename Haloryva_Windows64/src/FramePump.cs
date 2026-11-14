@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CursorFlow
 {
-    // Le worker ATTEND seulement. Tous les effets, contrôles, collections et hooks
+    // Le worker ATTEND seulement. Tous les effets, contrôles et collections visuelles
     // restent sur le fil UI. Au plus un callback en attente/en cours, sans rattrapage.
     internal sealed class FramePump : IDisposable
     {
@@ -86,9 +86,9 @@ namespace CursorFlow
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Observation seulement : propager l'erreur comme dans M1.
+                ErrorReporting.Record("FRAME_PUMP", ex);
                 EffectDiagnostics.Event("PUMP_EXCEPTION", "UNEXPECTED_EXCEPTION");
                 throw;
             }

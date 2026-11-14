@@ -114,7 +114,7 @@ namespace CursorFlow
                 using (SolidBrush b = new SolidBrush(PremiumPalette.Alpha(PremiumPalette.Purple, 40)))
                 using (Pen edge = new Pen(PremiumPalette.Alpha(PremiumPalette.Purple, 120))) { g.FillPath(b, p); g.DrawPath(edge, p); }
                 PremiumPalette.TextAt(g, "v" + Brand.Version, PremiumPalette.Font(8.5f, 1), Color.FromArgb(205, 190, 255), chip, ContentAlignment.MiddleCenter);
-                PremiumPalette.TextAt(g, "par " + Brand.Author, PremiumPalette.Font(9f, 0), PremiumPalette.Faint, new Rectangle(chip.Right + PremiumPalette.S(10), chip.Y, tw, chip.Height), ContentAlignment.MiddleLeft);
+                PremiumPalette.TextAt(g, L.T("par ") + Brand.Author, PremiumPalette.Font(9f, 0), PremiumPalette.Faint, new Rectangle(chip.Right + PremiumPalette.S(10), chip.Y, tw, chip.Height), ContentAlignment.MiddleLeft);
 
                 // Barre de chargement : remplissage continu + reflet qui glisse.
                 int by = card.Bottom - PremiumPalette.S(26), bx = card.X + PremiumPalette.S(34), bwid = card.Width - PremiumPalette.S(68), bh = PremiumPalette.S(4);

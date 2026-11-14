@@ -21,7 +21,9 @@ namespace CursorFlow
             if (index < 0) return;
             if (index + 1 >= args.Length || !Path.IsPathRooted(args[index + 1])) throw new ArgumentException("Dossier de session absolu attendu.");
             string path = Path.GetFullPath(args[index + 1]).TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-            string installed = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Haloryva");
+            string installed = ProfilePaths.NormalDirectory;
+            foreach (string root in ProfilePaths.ProtectedRoots)
+                if (ProfilePaths.Overlaps(path, root)) throw new ArgumentException("Dossier de session adjacent aux profils : refus.");
             if (path.Length < 10 || Directory.Exists(path) || File.Exists(path) ||
                 path.StartsWith(installed, StringComparison.OrdinalIgnoreCase) ||
                 installed.StartsWith(path + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))

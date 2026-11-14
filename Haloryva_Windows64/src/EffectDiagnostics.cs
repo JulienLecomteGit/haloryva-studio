@@ -29,7 +29,9 @@ namespace CursorFlow
             if (index + 1 >= args.Length || !Path.IsPathRooted(args[index + 1]))
                 throw new ArgumentException("Un dossier de diagnostic absolu et neuf est requis.");
             string path = Path.GetFullPath(args[index + 1]).TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-            string local = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            foreach (string root in ProfilePaths.ProtectedRoots)
+                if (ProfilePaths.Overlaps(path, root)) throw new ArgumentException("Dossier de diagnostic adjacent aux profils : refus.");
+            string local = PackageContext.RealLocalAppData;
             string haloryva = Path.Combine(local, "Haloryva");
             string legacyProfile = Path.Combine(local, "CursorFlow");
             if (path.Length < 10 || Directory.Exists(path) || File.Exists(path) ||

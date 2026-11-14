@@ -68,6 +68,7 @@ namespace CursorFlow
         // Titre en dégradé (texte converti en tracé, lissé).
         internal static void GradientText(Graphics g, string text, Font font, Rectangle area, Color a, Color b)
         {
+            text = L.T(text);
             if (String.IsNullOrEmpty(text) || area.Width < 4) return;
             using (GraphicsPath path = new GraphicsPath())
             using (StringFormat fmt = new StringFormat(StringFormat.GenericTypographic))
@@ -116,6 +117,7 @@ namespace CursorFlow
         }
         internal static void TextAt(Graphics g, string text, Font font, Color color, Rectangle area, ContentAlignment align)
         {
+            text = L.T(text);
             TextFormatFlags flags = TextFormatFlags.EndEllipsis | TextFormatFlags.SingleLine | TextFormatFlags.NoPrefix | TextFormatFlags.NoPadding;
             if (align == ContentAlignment.MiddleCenter || align == ContentAlignment.TopCenter) flags |= TextFormatFlags.HorizontalCenter;
             else if (align == ContentAlignment.MiddleRight) flags |= TextFormatFlags.Right;
@@ -125,11 +127,13 @@ namespace CursorFlow
         }
         internal static void WrapText(Graphics g, string text, Font font, Color color, Rectangle area)
         {
+            text = L.T(text);
             TextRenderer.DrawText(g, text ?? "", font, area, color,
                 TextFormatFlags.WordBreak | TextFormatFlags.NoPrefix | TextFormatFlags.Left | TextFormatFlags.Top | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPadding);
         }
         internal static int TextWidth(string text, Font font)
         {
+            text = L.T(text);
             return TextRenderer.MeasureText(text ?? "", font, new Size(4000, 200), TextFormatFlags.NoPadding | TextFormatFlags.SingleLine | TextFormatFlags.NoPrefix).Width;
         }
         internal static Color Alpha(Color c, int alpha) { return Color.FromArgb(Math.Max(0, Math.Min(255, alpha)), c); }

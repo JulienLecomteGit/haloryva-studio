@@ -76,8 +76,8 @@ namespace CursorFlow
         public PremiumButton(string label, bool isPrimary) : this(label, isPrimary ? ButtonKind.Primary : ButtonKind.Secondary, null) { }
         public PremiumButton(string label, ButtonKind buttonKind, string iconName)
         {
-            Text = label; kind = buttonKind; icon = iconName; Height = PremiumPalette.S(40);
-            AccessibleRole = AccessibleRole.PushButton; AccessibleName = label;
+            Text = L.T(label); kind = buttonKind; icon = iconName; Height = PremiumPalette.S(40);
+            AccessibleRole = AccessibleRole.PushButton; AccessibleName = L.T(label);
             Cursor = Cursors.Hand; TabStop = true; Font = PremiumPalette.Font(9.75f, 1);
             SetStyle(ControlStyles.Selectable | ControlStyles.StandardClick, true);
         }
@@ -166,8 +166,8 @@ namespace CursorFlow
         public PremiumNavButton(string label) : this(label, "dot") { }
         public PremiumNavButton(string label, string iconName)
         {
-            Text = label; icon = iconName; Height = PremiumPalette.S(42); Cursor = Cursors.Hand; TabStop = true;
-            AccessibleRole = AccessibleRole.PageTab; AccessibleName = label;
+            Text = L.T(label); icon = iconName; Height = PremiumPalette.S(42); Cursor = Cursors.Hand; TabStop = true;
+            AccessibleRole = AccessibleRole.PageTab; AccessibleName = L.T(label);
             Font = PremiumPalette.Font(10f, 1);
             SetStyle(ControlStyles.Selectable | ControlStyles.StandardClick, true);
             Disposed += delegate { tip.Dispose(); };
@@ -251,10 +251,10 @@ namespace CursorFlow
         }
         public PremiumSwitch(string label, string description, bool initial)
         {
-            Text = label; Description = description; checkedValue = initial; knob = initial ? 1f : 0f;
+            Text = L.T(label); Description = description; checkedValue = initial; knob = initial ? 1f : 0f;
             Height = String.IsNullOrEmpty(description) ? PremiumPalette.S(40) : PremiumPalette.S(54);
             Font = PremiumPalette.Font(9.75f, 1); Cursor = Cursors.Hand; TabStop = true;
-            AccessibleRole = AccessibleRole.CheckButton; AccessibleName = label;
+            AccessibleRole = AccessibleRole.CheckButton; AccessibleName = L.T(label);
             SetStyle(ControlStyles.Selectable | ControlStyles.StandardClick, true);
             animation.Interval = 15;
             animation.Tick += delegate
@@ -403,8 +403,8 @@ namespace CursorFlow
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw, true);
             editor = new TextBox(); editor.BorderStyle = BorderStyle.None; editor.TextAlign = HorizontalAlignment.Right;
             editor.BackColor = PremiumPalette.Field; editor.ForeColor = PremiumPalette.Text; editor.Font = PremiumPalette.Font(9.5f, 1);
-            editor.Text = value.ToString(); editor.AccessibleName = name;
-            track = new PremiumSliderTrack(min, max, value); track.AccessibleName = name;
+            editor.Text = value.ToString(); editor.AccessibleName = L.T(name);
+            track = new PremiumSliderTrack(min, max, value); track.AccessibleName = L.T(name);
             track.Changed += delegate(int n) { editor.Text = n.ToString(); if (ValueChanged != null) ValueChanged(n); };
             editor.KeyDown += delegate(object sender, KeyEventArgs e) { if (e.KeyCode == Keys.Enter) { Commit(); e.Handled = true; e.SuppressKeyPress = true; } };
             editor.Leave += delegate { Commit(); };
@@ -603,7 +603,10 @@ namespace CursorFlow
             menu = new PremiumChoicePopup(options, Value, Math.Min(7, options.Length));
             menu.Picked += delegate(string choice) { Choose(choice); };
             menu.Canceled += delegate { CloseMenu(); };
-            menu.Width = Math.Max(PremiumPalette.S(220), Width);
+            int preferred = Math.Max(PremiumPalette.S(220), Width);
+            foreach (string option in options)
+                preferred = Math.Max(preferred, PremiumPalette.TextWidth(option, Font) + PremiumPalette.S(60));
+            menu.Width = Math.Min(Math.Max(40, form.ClientSize.Width - 16), preferred);
             Point at = form.PointToClient(PointToScreen(new Point(0, Height + PremiumPalette.S(4))));
             if (at.Y + menu.Height > form.ClientSize.Height - 8)
                 at.Y = form.PointToClient(PointToScreen(new Point(0, -menu.Height - PremiumPalette.S(4)))).Y;
@@ -653,6 +656,9 @@ namespace CursorFlow
         private int Columns(int width)
         {
             int min = tiles ? PremiumPalette.S(68) : PremiumPalette.S(92);
+            // Fit the translated caption before deciding how many columns are visible.
+            foreach (string caption in captions)
+                min = Math.Max(min, PremiumPalette.TextWidth(caption, Font) + PremiumPalette.S(24));
             return Math.Max(1, Math.Min(maxColumns, (width + Gap) / (min + Gap)));
         }
         private int MeasureHeight(int width)
@@ -957,7 +963,7 @@ namespace CursorFlow
             Cursor = Cursors.Default;
             editor = new TextBox(); editor.BorderStyle = BorderStyle.None; editor.BackColor = PremiumPalette.Field;
             editor.ForeColor = PremiumPalette.Text; editor.Font = PremiumPalette.Font(9.5f, 1); editor.Text = initial;
-            editor.CharacterCasing = CharacterCasing.Upper; editor.MaxLength = 7; editor.AccessibleName = label + " (hexadécimal)";
+            editor.CharacterCasing = CharacterCasing.Upper; editor.MaxLength = 7; editor.AccessibleName = L.T(label) + L.T(" (hexadécimal)");
             editor.KeyDown += delegate(object s, KeyEventArgs e) { if (e.KeyCode == Keys.Enter) { Apply(editor.Text); e.SuppressKeyPress = true; } };
             editor.Leave += delegate { Apply(editor.Text); };
             Controls.Add(editor);
@@ -1092,7 +1098,7 @@ namespace CursorFlow
         public ModuleTile(string name, string iconName)
         {
             title = name; icon = iconName; Height = PremiumPalette.S(74); Cursor = Cursors.Hand; TabStop = true;
-            AccessibleRole = AccessibleRole.PushButton; AccessibleName = name;
+            AccessibleRole = AccessibleRole.PushButton; AccessibleName = L.T(name);
             SetStyle(ControlStyles.Selectable, true);
         }
         private Rectangle ToggleRect
@@ -1152,7 +1158,7 @@ namespace CursorFlow
         public PresetTile(string name, string description, params Color[] palette)
         {
             title = name; detail = description; colors = palette; Height = PremiumPalette.S(60); Cursor = Cursors.Hand; TabStop = true;
-            AccessibleRole = AccessibleRole.RadioButton; AccessibleName = name;
+            AccessibleRole = AccessibleRole.RadioButton; AccessibleName = L.T(name);
             SetStyle(ControlStyles.Selectable | ControlStyles.StandardClick, true);
         }
         protected override void OnKeyDown(KeyEventArgs e)
@@ -1258,7 +1264,7 @@ namespace CursorFlow
         private void Fit()
         {
             int w = Math.Max(PremiumPalette.S(60), Width - PremiumPalette.S(50));
-            Size need = TextRenderer.MeasureText(Text ?? "", PremiumPalette.Font(8.75f, 0), new Size(w, 2000),
+            Size need = TextRenderer.MeasureText(L.T(Text), PremiumPalette.Font(8.75f, 0), new Size(w, 2000),
                 TextFormatFlags.WordBreak | TextFormatFlags.NoPrefix | TextFormatFlags.NoPadding);
             int h = Math.Max(PremiumPalette.S(40), need.Height + PremiumPalette.S(20));
             if (h != Height) Height = h;
@@ -1369,10 +1375,10 @@ namespace CursorFlow
     internal sealed class StatusPill : StudioControl
     {
         private bool active = true;
-        internal bool Active { get { return active; } set { if (active != value) { active = value; Text = value ? "Effets actifs" : "Effets en pause"; Width = PreferredWidth; Invalidate(); } } }
+        internal bool Active { get { return active; } set { if (active != value) { active = value; Text = value ? L.T("Effets actifs") : L.T("Effets en pause"); Width = PreferredWidth; Invalidate(); } } }
         public StatusPill()
         {
-            Text = "Effets actifs"; Height = PremiumPalette.S(34); Cursor = Cursors.Hand; TabStop = true;
+            Text = L.T("Effets actifs"); Height = PremiumPalette.S(34); Cursor = Cursors.Hand; TabStop = true;
             Font = PremiumPalette.Font(9.25f, 1); AccessibleRole = AccessibleRole.CheckButton;
             SetStyle(ControlStyles.Selectable | ControlStyles.StandardClick, true);
             Width = PreferredWidth;
@@ -1478,7 +1484,7 @@ namespace CursorFlow
                 using (Pen edge = new Pen(PremiumPalette.Alpha(PremiumPalette.Purple, 70), 1f)) g.DrawPath(edge, p);
             }
             int x = PremiumPalette.S(28), w = Width - PremiumPalette.S(330);
-            PremiumPalette.TextAt(g, "TABLEAU DE BORD", PremiumPalette.Font(8f, 1), PremiumPalette.Cyan, new Rectangle(x, PremiumPalette.S(22), w, PremiumPalette.S(18)), ContentAlignment.MiddleLeft);
+            PremiumPalette.TextAt(g, L.T("TABLEAU DE BORD"), PremiumPalette.Font(8f, 1), PremiumPalette.Cyan, new Rectangle(x, PremiumPalette.S(22), w, PremiumPalette.S(18)), ContentAlignment.MiddleLeft);
             PremiumPalette.GradientText(g, Title, PremiumPalette.Font(20f, 2), new Rectangle(x, PremiumPalette.S(40), Math.Max(50, Width - PremiumPalette.S(300)), PremiumPalette.S(40)),
                 Color.White, PremiumPalette.Mix(PremiumPalette.Cyan, Color.White, .25));
             Color tone = Active ? PremiumPalette.Green : PremiumPalette.Amber;
@@ -1535,7 +1541,7 @@ namespace CursorFlow
             for (int i = 0; i < heads.Length && i < 3; i++)
             {
                 int x = i == 0 ? 0 : i == 1 ? lw + gap : lw + gap * 2 + cw;
-                PremiumPalette.TextAt(g, heads[i].ToUpperInvariant(), PremiumPalette.Font(7.75f, 2),
+                PremiumPalette.TextAt(g, L.T(heads[i]).ToUpperInvariant(), PremiumPalette.Font(7.75f, 2),
                     i == 2 ? PremiumPalette.Purple : PremiumPalette.Faint, new Rectangle(x + (i == 0 ? 0 : PremiumPalette.S(4)), 0, i == 0 ? lw : cw, HeadHeight - PremiumPalette.S(4)), ContentAlignment.MiddleLeft);
             }
         }
@@ -1546,7 +1552,7 @@ namespace CursorFlow
         internal Func<int, string> ActionOf;
         internal Func<int, string> LongActionOf;
         internal string Detected = "";
-        private static readonly string[] Names = { "Gauche", "Droit", "Molette", "Latéral X1", "Latéral X2" };
+        private static readonly string[] Names = { "Gauche", "Droit", L.T("Molette"), L.T("Latéral X1"), L.T("Latéral X2") };
         private static readonly string[] ButtonIds = { "Gauche", "Droit", "Milieu", "X1", "X2" };
         public MouseDiagram()
         {
@@ -1609,11 +1615,11 @@ namespace CursorFlow
                 string lng = LongActionOf == null ? "Normal" : LongActionOf(i);
                 bool hasLong = lng != "Normal";
                 int tx = (int)(lx + 130 * s), tw = Math.Max(20, Width - tx);
-                PremiumPalette.TextAt(g, action == "Normal" ? "Comportement Windows" : action, PremiumPalette.Font(9f, 0),
+                PremiumPalette.TextAt(g, action == "Normal" ? L.T("Comportement Windows") : action, PremiumPalette.Font(9f, 0),
                     action == "Normal" ? PremiumPalette.Faint : PremiumPalette.Cyan,
                     new Rectangle(tx, (int)(y - (hasLong ? row * .2f : 0)), tw, (int)row), ContentAlignment.MiddleLeft);
                 if (hasLong)
-                    PremiumPalette.TextAt(g, "Appui long : " + lng, PremiumPalette.Font(8.5f, 0), PremiumPalette.Purple,
+                    PremiumPalette.TextAt(g, L.T("Appui long : ") + L.T(lng), PremiumPalette.Font(8.5f, 0), PremiumPalette.Purple,
                         new Rectangle(tx, (int)(y + row * .26f), tw, (int)row), ContentAlignment.MiddleLeft);
             }
         }
@@ -1742,8 +1748,8 @@ namespace CursorFlow
             using (SolidBrush b = new SolidBrush(Color.FromArgb(180, 12, 18, 38)))
             using (Pen edge = new Pen(PremiumPalette.Alpha(PremiumPalette.Green, 80), 1f)) { g.FillPath(b, c); g.DrawPath(edge, c); }
             using (SolidBrush dot = new SolidBrush(PremiumPalette.Green)) g.FillEllipse(dot, chip.X + PremiumPalette.S(10), chip.Y + chip.Height / 2 - PremiumPalette.S(3), PremiumPalette.S(6), PremiumPalette.S(6));
-            PremiumPalette.TextAt(g, "En direct", PremiumPalette.Font(8.25f, 1), PremiumPalette.Text, new Rectangle(chip.X + PremiumPalette.S(22), chip.Y, chip.Width - PremiumPalette.S(24), chip.Height), ContentAlignment.MiddleLeft);
-            string hint = Mode == PreviewMode.Clicks ? "Clic gauche / droit pour tester" : "Survole pour piloter l'aperçu";
+            PremiumPalette.TextAt(g, L.T("En direct"), PremiumPalette.Font(8.25f, 1), PremiumPalette.Text, new Rectangle(chip.X + PremiumPalette.S(22), chip.Y, chip.Width - PremiumPalette.S(24), chip.Height), ContentAlignment.MiddleLeft);
+            string hint = Mode == PreviewMode.Clicks ? L.T("Clic gauche / droit pour tester") : L.T("Survole pour piloter l'aperçu");
             PremiumPalette.TextAt(g, hint, PremiumPalette.Font(8.25f, 0), PremiumPalette.Faint, new Rectangle(0, PremiumPalette.S(12), Width - PremiumPalette.S(16), PremiumPalette.S(24)), ContentAlignment.MiddleRight);
         }
         private void PaintOff(Graphics g, string text)
@@ -1755,12 +1761,12 @@ namespace CursorFlow
             {
                 Font line = PremiumPalette.Font(14f, 1); // police partagée : ne jamais la libérer
                 int x = PremiumPalette.S(30), y = PremiumPalette.S(58);
-                string first = TextMode ? "Édite ton texte avec précision." : "Un curseur visible, partout.";
+                string first = TextMode ? L.T("Édite ton texte avec précision.") : L.T("Un curseur visible, partout.");
                 TextRenderer.DrawText(g, first, line, new Point(x, y), PremiumPalette.Text, TextFormatFlags.NoPadding);
                 textAnchor = new PointF(x + PremiumPalette.TextWidth(first, line) + PremiumPalette.Sf(6), y + PremiumPalette.Sf(13));
                 Font sub = PremiumPalette.Font(10.5f, 0);
-                TextRenderer.DrawText(g, "Le halo te suit en douceur et reste lisible", sub, new Point(x, y + PremiumPalette.S(40)), PremiumPalette.Subtle, TextFormatFlags.NoPadding);
-                TextRenderer.DrawText(g, "sur tous les fonds, clairs comme sombres.", sub, new Point(x, y + PremiumPalette.S(66)), PremiumPalette.Subtle, TextFormatFlags.NoPadding);
+                TextRenderer.DrawText(g, L.T("Le halo te suit en douceur et reste lisible"), sub, new Point(x, y + PremiumPalette.S(40)), PremiumPalette.Subtle, TextFormatFlags.NoPadding);
+                TextRenderer.DrawText(g, L.T("sur tous les fonds, clairs comme sombres."), sub, new Point(x, y + PremiumPalette.S(66)), PremiumPalette.Subtle, TextFormatFlags.NoPadding);
             }
             if (!Config.Ring) { PaintOff(g, ""); }
             else
@@ -1775,7 +1781,7 @@ namespace CursorFlow
         }
         private void PaintTrail(Graphics g, DateTime now)
         {
-            if (!Config.Trail) { PaintOff(g, "Traînée désactivée"); return; }
+            if (!Config.Trail) { PaintOff(g, L.T("Traînée désactivée")); return; }
             GraphicsState st = g.Save();
             OverlayForm.DrawTrailCore(g, now, Config, dots, logo);
             g.Restore(st);
@@ -1783,7 +1789,7 @@ namespace CursorFlow
         }
         private void PaintClicks(Graphics g, DateTime now)
         {
-            if (!Config.Clicks) { PaintOff(g, "Animations de clic désactivées"); return; }
+            if (!Config.Clicks) { PaintOff(g, L.T("Animations de clic désactivées")); return; }
             GraphicsState st = g.Save();
             OverlayForm.DrawRipplesCore(g, now, Config, ripples);
             g.Restore(st);

@@ -32,7 +32,7 @@ namespace CursorFlow
             value = Visuals.ParseColor(initial, PremiumPalette.Cyan).IsEmpty ? "#22D3EE" : initial.ToUpperInvariant();
             BackColor = PremiumPalette.SurfaceHigh;
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
-            AccessibleRole = AccessibleRole.Dialog; AccessibleName = "Roue chromatique";
+            AccessibleRole = AccessibleRole.Dialog; AccessibleName = L.T("Roue chromatique");
 
             wheel = new StudioColorWheel(Visuals.ParseColor(value, PremiumPalette.Cyan));
             wheel.BackColor = PremiumPalette.SurfaceHigh;
@@ -56,7 +56,7 @@ namespace CursorFlow
             hex = new TextBox();
             hex.BorderStyle = BorderStyle.None; hex.BackColor = PremiumPalette.Field; hex.ForeColor = PremiumPalette.Text;
             hex.Font = PremiumPalette.Font(10f, 1); hex.CharacterCasing = CharacterCasing.Upper; hex.MaxLength = 7;
-            hex.Text = value; hex.AccessibleName = "Couleur (hexadécimal)";
+            hex.Text = value; hex.AccessibleName = L.T("Couleur (hexadécimal)");
             hex.Width = Width - Pad * 2 - PremiumPalette.S(84);
             hex.Location = new Point(Pad + PremiumPalette.S(70), hexY + Math.Max(0, (pillH - hex.Height) / 2));
             hex.KeyDown += delegate(object s, KeyEventArgs e) { if (e.KeyCode == Keys.Enter) { ApplyText(hex.Text); e.SuppressKeyPress = true; } };
@@ -154,7 +154,7 @@ namespace CursorFlow
                 using (LinearGradientBrush edge = new LinearGradientBrush(back, PremiumPalette.Alpha(PremiumPalette.Cyan, 130), PremiumPalette.Alpha(PremiumPalette.Purple, 130), 35f))
                 using (Pen pen = new Pen(edge, 1.2f)) g.DrawPath(pen, shape);
             }
-            PremiumPalette.TextAt(g, "Roue chromatique", PremiumPalette.Font(10f, 1), PremiumPalette.Text,
+            PremiumPalette.TextAt(g, L.T("Roue chromatique"), PremiumPalette.Font(10f, 1), PremiumPalette.Text,
                 new Rectangle(Pad, PremiumPalette.S(6), Width - Pad * 2 - PremiumPalette.S(34), PremiumPalette.S(26)), ContentAlignment.MiddleLeft);
             Rectangle x = CloseRect;
             StudioIcons.Draw(g, "x", new RectangleF(x.X + x.Width * .25f, x.Y + x.Height * .25f, x.Width * .5f, x.Height * .5f),

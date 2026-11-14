@@ -1,0 +1,196 @@
+{
+  "Version": "2.7.1",
+  "FileVersion": "2.7.1.11",
+  "AssemblyVersion": "2.7.1.0",
+  "BuildDate": "11/11/2026",
+  "SourceRun": "https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/43086180391",
+  "ArtifactId": "13886896454",
+  "ArchiveSHA256": "32568F54E246A6CBEE0AE1D6DDDDA451341D3FE5134FF9FBEC742EE728A9CE67",
+  "SourceCommit": "ca14eca6be1e0a19ef9004ba0de2499e00c7c624",
+  "ArchivedExeSHA256": "1CB026DDBA084A648832FBD91118A67000373E076DAFA72BE2957B47223A6F81",
+  "IntegrationBase": "d003a11b4c9de94942c57aaca150a2d21d74c0cf",
+  "FileCount": 36,
+  "Files": [
+    {
+      "Path": "Haloryva_Windows64/assets/app.manifest",
+      "SHA256": "A5C6CDF59E24ED1EA481FA0BBF0796190FDEA692057068FD46237E0EF909299C",
+      "Bytes": 660
+    },
+    {
+      "Path": "Haloryva_Windows64/assets/Haloryva.ico",
+      "SHA256": "7B0DAA920CD5CFDADEBF530ABD69AA301ABF2069847D3E5F691E707D9CEF100C",
+      "Bytes": 61099
+    },
+    {
+      "Path": "Haloryva_Windows64/languages/strings.json",
+      "SHA256": "7901233660F6823ED41FC857BF932028AADB9FC7599DE728582764550753469F",
+      "Bytes": 76119
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Annotations.cs",
+      "SHA256": "108D4DB1B1C8B99524C4D3EEFE21C717907F16287BE59ABAC776A6CC00507B4C",
+      "Bytes": 5892
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Brand.cs",
+      "SHA256": "6D0083AAE493A420627ED183A0BACC0FA34AB81C7F1A39A6E2FA1ECC8E7E775A",
+      "Bytes": 7439
+    },
+    {
+      "Path": "Haloryva_Windows64/src/ColorWheelPopup.cs",
+      "SHA256": "92168886D4E44C68F6229AF206AF0C887EB8CD4E7C33F79C03F5F5D6130CD8B2",
+      "Bytes": 10936
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Config.cs",
+      "SHA256": "D3E37BC4D278B673E14AC7826D776345FBE59CCB965124BAAA7DC4ADF6805286",
+      "Bytes": 19077
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Controller.cs",
+      "SHA256": "627A98E12E7C507C794ACED8CB582099282C724F807ED5AD8C0926FC1D474588",
+      "Bytes": 50976
+    },
+    {
+      "Path": "Haloryva_Windows64/src/DrawingGeometry.cs",
+      "SHA256": "B42B681D95758A3F7EAC65236537205A467925F479D10273F7D3BDD9C1853AF1",
+      "Bytes": 19359
+    },
+    {
+      "Path": "Haloryva_Windows64/src/EffectDiagnostics.cs",
+      "SHA256": "DB2EA45215BE856B136628CC63E999FA0727B0DE99ECE96F51ABFBE1900F40EC",
+      "Bytes": 7432
+    },
+    {
+      "Path": "Haloryva_Windows64/src/ErrorReporting.cs",
+      "SHA256": "A8F4B1BC0C97609D2935E58DF2782948C229BCAE5AE6613FAC6F8FFB2F810ABD",
+      "Bytes": 4070
+    },
+    {
+      "Path": "Haloryva_Windows64/src/FrameBounds.cs",
+      "SHA256": "B68F7F9AB482B510351FB4E525DB70B0B61B34227B1CA1E5334F1AF3EF6AB24E",
+      "Bytes": 1640
+    },
+    {
+      "Path": "Haloryva_Windows64/src/FramePump.cs",
+      "SHA256": "9AB4256379ED8E564CB0E29765FB6E7AEAEA979203A4B7CBB3C43976161DFD07",
+      "Bytes": 6316
+    },
+    {
+      "Path": "Haloryva_Windows64/src/InputPipeline.cs",
+      "SHA256": "B800E10D412BE0F2CEE4434C4666F2C9722C4DEBA61F6F47C961D5BC083EA5E5",
+      "Bytes": 14016
+    },
+    {
+      "Path": "Haloryva_Windows64/src/GlobalHooks.cs",
+      "SHA256": "726C87C1EDF24E89AF6BDFF9D34FFB840D03BD316B7934E2CB5E1EB2F319146B",
+      "Bytes": 11757
+    },
+    {
+      "Path": "Haloryva_Windows64/src/InputState.cs",
+      "SHA256": "51C3A018D4657EBCF251D97230B70BCC4C9A6F779DEFEDCA582A9ACFA745201D",
+      "Bytes": 6314
+    },
+    {
+      "Path": "Haloryva_Windows64/src/KeyboardPolicy.cs",
+      "SHA256": "F0EF6FA96D6FE2599995BF02A2A3C95854FCD206BA683AFC8038FCC4715ACF6F",
+      "Bytes": 1534
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Localization.cs",
+      "SHA256": "49EA8B6CA859213D41DF10866A2BD6B547F214D551A0D30BB578205B1C1A5B02",
+      "Bytes": 3680
+    },
+    {
+      "Path": "Haloryva_Windows64/src/PackageContext.cs",
+      "SHA256": "29AB8855F1CC56E41F01A6025630AE59CA6F54900651DCAE60FB8E8BEAD9E009",
+      "Bytes": 4889
+    },
+    {
+      "Path": "Haloryva_Windows64/src/PremiumStudioForm.cs",
+      "SHA256": "98634FFF12D83DF19250439DBF63F7FEE2459A8A8F581C930C174B51FFEB978D",
+      "Bytes": 96990
+    },
+    {
+      "Path": "Haloryva_Windows64/src/PremiumWidgets.cs",
+      "SHA256": "18804FE8B89C085D075FC3B0D2F934AE3195B0A6080646143C6B67E4BD5F2425",
+      "Bytes": 111556
+    },
+    {
+      "Path": "Haloryva_Windows64/src/ProfileMigration.cs",
+      "SHA256": "45F3FF1F400C5B03DF82C6940411F07980C12555A7D82516A3D922F468810672",
+      "Bytes": 14491
+    },
+    {
+      "Path": "Haloryva_Windows64/src/SelfTest.cs",
+      "SHA256": "E8C4D2FB9802679552956431A624ED375D5DB5982800C2EC1F496062B33554FC",
+      "Bytes": 15270
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Program.cs",
+      "SHA256": "362CA3F1D6F537A174A35CB28DF85B060ECC573E618FBAE12B44A49D50794642",
+      "Bytes": 3532
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Splash.cs",
+      "SHA256": "02EA7F334E9784AF1DBFD64613CBAAEBD21C329B733AF3F0EE531AC1CC1D3EF7",
+      "Bytes": 9490
+    },
+    {
+      "Path": "Haloryva_Windows64/src/StartupRefreshTrace.cs",
+      "SHA256": "2EF7F769542D518B31F558AC211C0750CB1D3A394097B590893095D56DEF7C78",
+      "Bytes": 1283
+    },
+    {
+      "Path": "Haloryva_Windows64/src/StartupSettings.cs",
+      "SHA256": "2A346108715069D6FD2027B0EF305E33D14F5B9CE5047BB3F483E00B20CC6AAB",
+      "Bytes": 5556
+    },
+    {
+      "Path": "Haloryva_Windows64/src/StudioControls.cs",
+      "SHA256": "C2E203577962B20F0EAF30B0A5D22EDC92A35F2189ACAB0AF72B244222258F71",
+      "Bytes": 9524
+    },
+    {
+      "Path": "Haloryva_Windows64/src/StudioTheme.cs",
+      "SHA256": "DB5DDF75161260B725B461E2EC26EB4D0B467770F3263803D763F3765D78E890",
+      "Bytes": 29672
+    },
+    {
+      "Path": "Haloryva_Windows64/src/TextPrompt.cs",
+      "SHA256": "2478E171D265225EF9BA2617901D2057AE60CBCEDA030C668B50248604F23D7F",
+      "Bytes": 4591
+    },
+    {
+      "Path": "Haloryva_Windows64/src/ToolToast.cs",
+      "SHA256": "BF17DA0A36D85CD9D8774F7F277030C473FEFEFB2371C9D6693F9469C07DA6DA",
+      "Bytes": 22645
+    },
+    {
+      "Path": "Haloryva_Windows64/src/TrailDiagnostics.cs",
+      "SHA256": "6FEF6055DAFE7B1013CBA98DBCFDC7A28F3949E599292D63EA205248087E0E5B",
+      "Bytes": 8154
+    },
+    {
+      "Path": "Haloryva_Windows64/src/TrailEngine.cs",
+      "SHA256": "933D442F2019A903111BA167F83D0F00CF0F7C5BB975DE193E8787B53072BF5D",
+      "Bytes": 11217
+    },
+    {
+      "Path": "Haloryva_Windows64/src/TrailSelfTest.cs",
+      "SHA256": "DEFEEB900149FBC4B0D0FE3B55E4D130CC24AC867B4F6EFF38CC2C1D07439CBF",
+      "Bytes": 10937
+    },
+    {
+      "Path": "Haloryva_Windows64/src/Visuals.cs",
+      "SHA256": "084266C7928F563A22975CF7B688FF90DFB0309ADF24BB675377538FF23F0F96",
+      "Bytes": 48007
+    },
+    {
+      "Path": "Haloryva_Windows64/src/WinNative.cs",
+      "SHA256": "78CD836411C3CD71858387D93C617BD7B82824A7A453BDF2DA670BAF09E6E1F2",
+      "Bytes": 10827
+    }
+  ],
+  "Verification": "Comparaison SHA256 des fichiers copiés avec les octets archivés ; aucun programme exécuté, aucune recompilation."
+}
