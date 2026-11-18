@@ -8,7 +8,7 @@
 
 Ficha oficial: https://apps.microsoft.com/detail/9NJ14SZJP55B
 Comprueba Haloryva Studio y el editor Julien Lecomte. Elige Obtener o Instalar y después Abrir. Este canal no requiere un instalador EXE ni un certificado independiente.
-La referencia Store 2.7.1 es un paquete x64 para PC Intel/AMD con Windows 10.0.26200.0 como mínimo declarado. Los requisitos del paquete final 2.7.2 deben confirmarse con su fabricación. Los objetivos elegidos son Windows 11 25H2/26H2; los ensayos disponibles no validan todas las versiones y combinaciones de hardware. El Store comprueba los requisitos declarados para tu dispositivo. Se requieren teclado y ratón.
+El paquete 2.7.2.0 comprobado en validación está destinado a PC x64 Intel/AMD y conserva Windows 10.0.26200.0 como mínimo declarado. La estructura verificada todavía no equivale a certificación o disponibilidad en el Store. Los objetivos elegidos son Windows 11 25H2/26H2; los ensayos disponibles no validan todas las versiones y combinaciones de hardware. El Store comprueba los requisitos declarados para tu dispositivo. Se requieren teclado y ratón.
 
 ## Actualizar una instalación Store existente
 

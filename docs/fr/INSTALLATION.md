@@ -8,7 +8,7 @@
 
 Fiche officielle : https://apps.microsoft.com/detail/9NJ14SZJP55B
 Vérifiez le nom Haloryva Studio et l’éditeur Julien Lecomte. Choisissez Obtenir ou Installer, puis Ouvrir. Aucun installateur EXE ni certificat à installer séparément n’est nécessaire pour ce canal.
-La référence Store 2.7.1 est un paquet x64 destiné aux PC Intel/AMD, avec Windows 10.0.26200.0 comme minimum déclaré. Les exigences du paquet final 2.7.2 doivent être confirmées avec sa fabrication. La cible retenue est Windows 11 25H2/26H2 ; les essais disponibles ne constituent pas une qualification exhaustive de ces versions et de tous les matériels. Le Store vérifie les exigences déclarées pour votre appareil. Clavier et souris requis.
+Le paquet 2.7.2.0 contrôlé en qualification est destiné aux PC x64 Intel/AMD et conserve Windows 10.0.26200.0 comme minimum déclaré. Cette structure vérifiée ne vaut pas encore certification ou disponibilité Store. La cible retenue est Windows 11 25H2/26H2 ; les essais disponibles ne constituent pas une qualification exhaustive de ces versions et de tous les matériels. Le Store vérifie les exigences déclarées pour votre appareil. Clavier et souris requis.
 
 ## Mettre à jour une installation Store existante
 

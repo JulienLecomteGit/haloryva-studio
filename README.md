@@ -2,7 +2,7 @@
 
 <p align="center"><img src="docs/Haloryva_Banniere_V01.png" alt="Haloryva Studio : curseur lumineux et halo" width="900"></p>
 
-**Version préparée : 2.7.2 — Windows x64** · Créé par Julien Lecomte.
+**Version 2.7.2 — Windows x64 · publication Store en attente** · Créé par Julien Lecomte.
 
 [Français](docs/fr/README.md) · [English](docs/en/README.md) · [Español](docs/es/README.md)
 
@@ -12,9 +12,9 @@ Rendez votre curseur visible et annotez votre écran pendant vos présentations 
 
 La version 2.7.2 reprend le moteur de la copie expérimentale exp4, dont la compilation, les autotests et une recette visuelle ont réussi le 18 novembre 2026. Les maillons de la traînée Ligne / Lumière n’ont plus été perçus pendant cet essai.
 
-**Les sources de diffusion 2.7.2 sont préparées ; leur compilation finale et leurs tests Windows restent à confirmer. Le paquet Store 2.7.2 n’est pas encore soumis ni certifié.** La recette d’exp4 ne vaut pas certification du nouveau paquet ni garantie de fluidité parfaite sur tous les appareils.
+**La fabrication Windows de qualification a réussi : binaire 2.7.2.6 compilé, suites natives réussies et structure du paquet MSIX 2.7.2.0 contrôlée.** [Preuve du run de qualification](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44298963756). Le paquet est non signé, non installé et **la 2.7.2 n’est pas encore soumise ni certifiée par Microsoft Store**. Le contrôle du paquet ne remplace pas la certification Microsoft ni un essai de mise à jour sur un PC.
 
-[État de validation 2.7.2](docs/VALIDATION-2.7.2.md) · [Provenance des sources](docs/SOURCES-2.7.2.md) · [Diffusion](docs/DIFFUSION.md)
+[État de validation 2.7.2](docs/VALIDATION-2.7.2.md) · [Provenance des sources](docs/SOURCES-2.7.2.md) · [Diffusion](docs/DIFFUSION.md) · [Dernières fabrications main](https://github.com/JulienLecomteGit/haloryva-studio/actions/workflows/haloryva-2.7.2.yml?query=branch%3Amain)
 
 ## Télécharger
 
@@ -54,7 +54,7 @@ Un journal technique local et borné accompagne la récupération des effets. Le
 
 ## Code, versions et droits
 
-Identités de la préparation 2.7.2 : version affichée **2.7.2**, fichier **2.7.2.6**, assembly **2.7.2.0**, paquet Store cible **2.7.2.0 x64**. Les sources de diffusion conservent le moteur validé d’exp4 ; les changements de promotion et leurs limites sont décrits dans [SOURCES-2.7.2.md](docs/SOURCES-2.7.2.md).
+Identités contrôlées pendant la qualification 2.7.2 : version affichée **2.7.2**, fichier **2.7.2.6**, assembly **2.7.2.0**, paquet Store cible **2.7.2.0 x64**. Les sources de diffusion conservent le moteur validé d’exp4 ; les changements de promotion et leurs limites sont décrits dans [SOURCES-2.7.2.md](docs/SOURCES-2.7.2.md).
 
 La [provenance historique 2.7.1.11](docs/SOURCES-2.7.1.11.md) reste disponible. Les anciens dossiers d’installateur et de maintenance ne sont pas présentés comme un installateur EXE final 2.7.2.
 

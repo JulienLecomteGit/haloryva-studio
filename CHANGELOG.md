@@ -1,8 +1,8 @@
 # Historique — Haloryva Studio
 
-## 2.7.2 — préparation de la mise à jour, 18 novembre 2026
+## 2.7.2 — fabrication Windows qualifiée, publication Store en attente — 18 novembre 2026
 
-**Code préparé ; compilation et tests du binaire final à confirmer ; Store 2.7.2 non soumis et non certifié.** Les résultats réels seront consignés dans [la fiche de validation](docs/VALIDATION-2.7.2.md).
+**Compilation et suites Windows réussies ; paquet MSIX contrôlé, non signé et non installé ; Store 2.7.2 non soumis et non certifié.** Les résultats sont rattachés au commit de qualification dans [la fiche de validation](docs/VALIDATION-2.7.2.md).
 
 - Traînée Ligne / Lumière continue, courbes adaptatives et extinction progressive ; réglages accompagnés d’explications et aperçu partagé.
 - Échantillons d’entrée horodatés et conservation de leur ordre dans le pipeline de traînée.
@@ -11,6 +11,7 @@
 - Écriture des journaux d’effets et de récupération en arrière-plan ; diagnostics détaillés facultatifs, sans nouvel envoi réseau.
 - Identité finale 2.7.2 / fichier 2.7.2.6 ; démarrage normal rétabli après le garde-fou propre à la copie expérimentale.
 - Base exp4 compilée et testée sur Windows ; recette visuelle positive sur les cinq observations demandées, sans garantie d’absence définitive d’incidents rares.
+- Qualification sur le commit `64d97384dfa2c5bfd2618c43b348dff20a863be2` : fabrication Windows réussie, 52 contrôles de structure du paquet réussis et archive de sources de 125 fichiers vérifiée. Le premier passage avait réussi compilation/tests puis échoué à la découverte de Git ; ce point de fabrication a été corrigé.
 - Documentation FR/EN/ES actualisée ; captures 2.7.1 conservées et explicitement identifiées comme historiques.
 - Microsoft Store reste le canal principal. Aucun EXE 2.7.2 public n’est ajouté par cette préparation.
 

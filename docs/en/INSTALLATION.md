@@ -8,7 +8,7 @@
 
 Official listing: https://apps.microsoft.com/detail/9NJ14SZJP55B
 Check Haloryva Studio and publisher Julien Lecomte. Choose Get or Install, then Open. This channel does not require a separate EXE installer or certificate.
-The 2.7.1 Store reference is an x64 package for Intel/AMD PCs with Windows 10.0.26200.0 as its declared minimum. The final 2.7.2 package requirements must be confirmed with its build. Windows 11 25H2/26H2 are the selected targets; available trials do not qualify every Windows version and hardware combination. The Store checks declared requirements for your device. Keyboard and mouse required.
+The 2.7.2.0 package checked during qualification targets Intel/AMD x64 PCs and retains Windows 10.0.26200.0 as its declared minimum. Verified structure does not yet mean Store certification or availability. Windows 11 25H2/26H2 are the selected targets; available trials do not qualify every Windows version and hardware combination. The Store checks declared requirements for your device. Keyboard and mouse required.
 
 ## Updating an existing Store installation
 

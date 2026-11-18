@@ -2,7 +2,7 @@
 
 [Accueil](../../README.md) · [English](../en/README.md) · [Español](../es/README.md)
 
-**2.7.2 en préparation :** le code reprend exp4 validée, mais la compilation finale, les tests du binaire de diffusion et la certification Store 2.7.2 restent à confirmer. La dernière diffusion documentée est la 2.7.1. [État de validation](../VALIDATION-2.7.2.md).
+**2.7.2 : fabrication Windows qualifiée.** La compilation, les suites natives et les contrôles de structure du paquet ont réussi sur le commit de qualification. Le paquet est non signé et non installé ; la 2.7.2 n’est pas encore soumise ni certifiée par Microsoft Store. La dernière diffusion publique documentée est la 2.7.1. [Preuves et limites](../VALIDATION-2.7.2.md).
 
 Rendez votre curseur visible et annotez votre écran pendant vos présentations.
 

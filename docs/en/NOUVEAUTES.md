@@ -2,7 +2,7 @@
 
 [Français](../fr/README.md) · [Home](../../README.md) · [Español](../es/README.md)
 
-**2.7.2 is being prepared:** the code is based on the validated exp4 build, but the final release build, its native tests and Store certification for 2.7.2 still need confirmation. The last documented public release is 2.7.1. [Validation status](../VALIDATION-2.7.2.md).
+**2.7.2: Windows build qualified.** Compilation, native test suites and package-structure checks passed on the qualification commit. The package is unsigned and has not been installed; 2.7.2 has not yet been submitted or certified by Microsoft Store. The last documented public release is 2.7.1. [Evidence and limits](../VALIDATION-2.7.2.md).
 
 - Continuous Line / Light trails, adaptive curves and progressive fading.
 - Explained trail settings and a preview shared with the rendering engine.

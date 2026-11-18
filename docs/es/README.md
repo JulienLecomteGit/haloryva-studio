@@ -2,7 +2,7 @@
 
 [Français](../fr/README.md) · [English](../en/README.md) · [Inicio](../../README.md)
 
-**2.7.2 en preparación:** el código procede de exp4 validada, pero la compilación final, sus pruebas nativas y la certificación Store de 2.7.2 todavía deben confirmarse. La última publicación documentada es la 2.7.1. [Estado de validación](../VALIDATION-2.7.2.md).
+**2.7.2: fabricación Windows validada.** La compilación, las pruebas nativas y los controles de estructura del paquete se han superado en el commit de validación. El paquete no está firmado ni instalado; la 2.7.2 aún no se ha enviado ni certificado en Microsoft Store. La última publicación pública documentada es la 2.7.1. [Pruebas y límites](../VALIDATION-2.7.2.md).
 
 Haz que tu cursor sea fácil de seguir y anota en pantalla durante tus presentaciones.
 

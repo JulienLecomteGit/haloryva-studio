@@ -1,6 +1,6 @@
 # Sources applicatives 2.7.2 — provenance et promotion
 
-## Identité de la préparation
+## Identité contrôlée en qualification
 
 - Version affichée et informationnelle : **2.7.2**.
 - Version de fichier : **2.7.2.6**.
@@ -8,7 +8,7 @@
 - Paquet Microsoft Store cible : **2.7.2.0 x64**.
 - Date de préparation : **18 novembre 2026**.
 
-Les identités du binaire et du paquet fabriqués doivent être contrôlées dans les résultats de compilation et de packaging. Ce document n’atteste pas une soumission ou une certification Microsoft.
+Les identités du binaire et du paquet ont été contrôlées dans le [run Windows de qualification](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44298963756) du commit `64d97384dfa2c5bfd2618c43b348dff20a863be2`. Les empreintes et la portée de cette preuve figurent dans [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md). Une fabrication ultérieure produit ses propres bilans et empreintes. Aucune soumission, certification Microsoft ou installation de la 2.7.2 n’est attestée ici.
 
 ## Origine
 
@@ -45,6 +45,8 @@ Le journal technique local de récupération est actif et borné à 262 144 octe
 
 ## Fabrication et limites
 
-Les résultats de la fabrication native 2.7.2.6, du paquet 2.7.2.0, des tests et de la publication doivent être enregistrés dans [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md). À ce stade, les sources sont préparées ; aucune réussite finale n’est déduite des seuls contrôles statiques.
+La fabrication native 2.7.2.6 et ses suites ont réussi ; le paquet 2.7.2.0 a passé ses 52 contrôles de structure et a été extrait pour vérifier le binaire exact testé. Le paquet est non signé et non installé. La validation visuelle de la base exp4 reste distincte : aucune nouvelle interface 2.7.2 n’a été ouverte pendant ce job. Voir [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md).
+
+La recette de fabrication est définie par [le workflow Windows](../.github/workflows/haloryva-2.7.2.yml), [Fabriquer.ps1](../build/Fabriquer.ps1) et [Creer-Paquet.ps1](../packaging/Creer-Paquet.ps1). Les [dernières fabrications de main](https://github.com/JulienLecomteGit/haloryva-studio/actions/workflows/haloryva-2.7.2.yml?query=branch%3Amain) portent les résultats et artefacts de leurs commits exacts ; une réussite de qualification ne suffit pas à déclarer réussi un autre commit. Les empreintes de qualification ne doivent pas être utilisées à la place de celles du paquet ultérieurement déposé au Store.
 
 Les anciens fichiers `installer/`, `tests/maintenance/` et les ressources historiques du dépôt restent identifiés comme tels. Ils ne constituent pas un installateur EXE final 2.7.2. Le téléchargement utilisateur prévu reste Microsoft Store. Les droits réservés de Julien Lecomte sont inchangés.
