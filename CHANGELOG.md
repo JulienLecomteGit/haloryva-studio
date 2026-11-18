@@ -1,8 +1,8 @@
 # Historique — Haloryva Studio
 
-## 2.7.2 — fabrication Windows qualifiée, publication Store en attente — 18 novembre 2026
+## 2.7.2 — certification et mise à jour Store contrôlées — 18 novembre 2026
 
-**Compilation et suites Windows réussies ; paquet MSIX contrôlé, non signé et non installé ; Store 2.7.2 non soumis et non certifié.** Les résultats sont rattachés au commit de qualification dans [la fiche de validation](docs/VALIDATION-2.7.2.md).
+**Fabrication finale réussie, certification Microsoft acquise et mise à jour depuis la 2.7.1 contrôlée sur le PC testé.** Le paquet Store 2.7.2.0 x64 contient le binaire 2.7.2.6 livré ; les 93 valeurs du profil et le fichier de réglages sont restés identiques. La fin de publication du portail, la disponibilité générale et la relance visuelle finale restent à confirmer. La [fiche de validation](docs/VALIDATION-2.7.2.md) distingue livraison, qualification antérieure et installation.
 
 - Traînée Ligne / Lumière continue, courbes adaptatives et extinction progressive ; réglages accompagnés d’explications et aperçu partagé.
 - Échantillons d’entrée horodatés et conservation de leur ordre dans le pipeline de traînée.
@@ -12,8 +12,9 @@
 - Identité finale 2.7.2 / fichier 2.7.2.6 ; démarrage normal rétabli après le garde-fou propre à la copie expérimentale.
 - Base exp4 compilée et testée sur Windows ; recette visuelle positive sur les cinq observations demandées, sans garantie d’absence définitive d’incidents rares.
 - Qualification sur le commit `64d97384dfa2c5bfd2618c43b348dff20a863be2` : fabrication Windows réussie, 52 contrôles de structure du paquet réussis et archive de sources de 125 fichiers vérifiée. Le premier passage avait réussi compilation/tests puis échoué à la découverte de Git ; ce point de fabrication a été corrigé.
+- Livraison finale : commit `32234c0410e080add61742b29ee794b5a566fa2e`, run `44300357140` réussi ; huit suites natives, 52 contrôles MSIX et 125 fichiers sources vérifiés. Les artefacts et empreintes de ce run restent la référence du paquet installé.
 - Documentation FR/EN/ES actualisée ; captures 2.7.1 conservées et explicitement identifiées comme historiques.
-- Microsoft Store reste le canal principal. Aucun EXE 2.7.2 public n’est ajouté par cette préparation.
+- Microsoft Store reste le canal principal. Aucun installateur EXE 2.7.2 public n’est proposé ; les mises à jour documentaires ne remplacent pas le paquet livré.
 
 ## 2.7.1 — Microsoft Store, fiche publique vérifiée le 14 novembre 2026
 

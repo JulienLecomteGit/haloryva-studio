@@ -2,13 +2,13 @@
 
 [Accueil](../../README.md) · [English](../en/README.md) · [Español](../es/README.md)
 
-**Mise à jour 2.7.2 en préparation.** Sa soumission et sa certification ne sont pas encore acquises. La dernière version publiée documentée est la 2.7.1. Vérifiez [l’état de diffusion](../DIFFUSION.md) et la version proposée par Microsoft Store avant d’attendre une mise à jour.
+**Mise à jour 2.7.2 certifiée par Microsoft Store.** Le passage depuis la 2.7.1 a été contrôlé sur le PC testé, avec un paquet signé Store, le binaire livré et des réglages conservés. La relance et le démarrage après reconnexion restent à confirmer pour cette installation. Consultez [l’état de diffusion](../DIFFUSION.md) et la version proposée par Microsoft Store sur votre appareil.
 
 ## Installation depuis Microsoft Store
 
 Fiche officielle : https://apps.microsoft.com/detail/9NJ14SZJP55B
 Vérifiez le nom Haloryva Studio et l’éditeur Julien Lecomte. Choisissez Obtenir ou Installer, puis Ouvrir. Aucun installateur EXE ni certificat à installer séparément n’est nécessaire pour ce canal.
-Le paquet 2.7.2.0 contrôlé en qualification est destiné aux PC x64 Intel/AMD et conserve Windows 10.0.26200.0 comme minimum déclaré. Cette structure vérifiée ne vaut pas encore certification ou disponibilité Store. La cible retenue est Windows 11 25H2/26H2 ; les essais disponibles ne constituent pas une qualification exhaustive de ces versions et de tous les matériels. Le Store vérifie les exigences déclarées pour votre appareil. Clavier et souris requis.
+Le paquet 2.7.2.0 certifié est destiné aux PC x64 Intel/AMD et conserve Windows 10.0.26200.0 comme minimum déclaré. Sa disponibilité est confirmée sur le PC testé ; le statut final du portail et la diffusion sur tous les appareils n’ont pas été vérifiés. La cible retenue est Windows 11 25H2/26H2 ; les essais disponibles ne constituent pas une qualification exhaustive de ces versions et de tous les matériels. Le Store vérifie les exigences déclarées pour votre appareil. Clavier et souris requis.
 
 ## Mettre à jour une installation Store existante
 
@@ -19,7 +19,7 @@ Lorsque la version 2.7.2 est effectivement proposée :
 3. Ouvrez Microsoft Store et recherchez les mises à jour de vos applications. Appliquez celle de Haloryva Studio si elle est proposée.
 4. Ouvrez Haloryva, puis À propos : contrôlez la version affichée **2.7.2**. Vérifiez vos réglages et l’état du démarrage automatique.
 
-Une mise à jour du même paquet Store conserve le canal existant ; il n’est pas nécessaire de désinstaller ni d’importer un profil EXE pour cette opération. La conservation réelle des réglages et le démarrage doivent être confirmés sur la version mise à jour. Si le Store propose encore 2.7.1, la présence des sources 2.7.2 sur GitHub ne permet pas de forcer sa disponibilité.
+Une mise à jour du même paquet Store conserve le canal existant ; il n’est pas nécessaire de désinstaller ni d’importer un profil EXE pour cette opération. Lors du contrôle 2.7.1 → 2.7.2 sur le PC testé, les 93 valeurs du profil et le fichier de réglages sont restés identiques. Vérifiez néanmoins vos réglages et le démarrage sur votre propre poste. Si le Store propose encore 2.7.1, la présence des sources 2.7.2 sur GitHub ne permet pas de forcer sa disponibilité.
 
 ## Passage d’une ancienne installation EXE au Store
 

@@ -2,7 +2,7 @@
 
 [Accueil](../../README.md) · [English](../en/README.md) · [Español](../es/README.md)
 
-**2.7.2 : fabrication Windows qualifiée.** La compilation, les suites natives et les contrôles de structure du paquet ont réussi sur le commit de qualification. Le paquet est non signé et non installé ; la 2.7.2 n’est pas encore soumise ni certifiée par Microsoft Store. La dernière diffusion publique documentée est la 2.7.1. [Preuves et limites](../VALIDATION-2.7.2.md).
+**2.7.2 : certifiée par Microsoft Store, mise à jour contrôlée sur le PC testé.** Le paquet Store 2.7.2.0 x64 contient le binaire 2.7.2.6 livré et conserve les réglages préexistants. La relance et le rendu de cette installation restent à confirmer ; la recette visuelle positive d’exp4 est une preuve distincte. [Preuves et limites](../VALIDATION-2.7.2.md).
 
 Rendez votre curseur visible et annotez votre écran pendant vos présentations.
 
@@ -23,11 +23,11 @@ Liste personnelle des outils parcourus par les boutons.
 Actions par appui court ou long ; annuler et rétablir.
 Export PNG des annotations et sauvegarde des profils.
 
-La préparation 2.7.2 apporte une traînée Ligne / Lumière continue, des courbes adaptatives, une extinction progressive et des réglages expliqués. La recette visuelle d’exp4 a été positive ; elle ne garantit pas une fluidité parfaite sur tous les appareils.
+La version 2.7.2 apporte une traînée Ligne / Lumière continue, des courbes adaptatives, une extinction progressive et des réglages expliqués. La recette visuelle d’exp4 a été positive ; elle ne garantit pas une fluidité parfaite sur tous les appareils.
 
 © 2026 Julien Lecomte — Tous droits réservés.
 
-**Téléchargement :** [Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) reste le canal principal gratuit. La version proposée dépend de la diffusion, du pays et de l’appareil ; la 2.7.2 n’est pas encore soumise ni certifiée. Aucun EXE 2.7.2 n’est proposé ici.
+**Téléchargement :** [Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) reste le canal principal de distribution. La 2.7.2 est disponible sur le PC testé ; la fin de publication du portail et la disponibilité dans tous les pays et sur tous les appareils ne sont pas confirmées. Aucun installateur EXE 2.7.2 n’est proposé ici.
 
 [Installation](INSTALLATION.md) · [Assistance](SUPPORT.md) · [Confidentialité](../confidentialite/fr.md) · [Nouveautés](NOUVEAUTES.md)
 

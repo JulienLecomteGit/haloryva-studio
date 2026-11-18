@@ -2,7 +2,7 @@
 
 [Français](../fr/README.md) · [English](../en/README.md) · [Inicio](../../README.md)
 
-**2.7.2: fabricación Windows validada.** La compilación, las pruebas nativas y los controles de estructura del paquete se han superado en el commit de validación. El paquete no está firmado ni instalado; la 2.7.2 aún no se ha enviado ni certificado en Microsoft Store. La última publicación pública documentada es la 2.7.1. [Pruebas y límites](../VALIDATION-2.7.2.md).
+**2.7.2: certificación de Microsoft Store superada; actualización verificada en el PC de prueba.** La actualización desde 2.7.1 conservó los ajustes existentes. La disponibilidad en otros equipos y el estado final de publicación siguen sin verificarse. [Pruebas y límites](../VALIDATION-2.7.2.md).
 
 - Estelas Línea / Luz continuas, curvas adaptativas y desvanecimiento progresivo.
 - Ajustes de estela explicados y vista previa compartida con el motor de dibujo.
@@ -12,7 +12,7 @@
 - Escritura de registros en segundo plano; diagnósticos detallados solo a petición.
 - Inicio normal e historial de versiones preparados para la distribución final.
 
-Identidades preparadas: versión mostrada 2.7.2; archivo 2.7.2.6; assembly 2.7.2.0; paquete Store objetivo 2.7.2.0 x64.
+Versiones de esta distribución: versión mostrada 2.7.2; archivo 2.7.2.6; assembly 2.7.2.0; paquete Store 2.7.2.0 x64.
 
 ## Funciones conservadas de la 2.7.1
 
