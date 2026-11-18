@@ -1,6 +1,8 @@
-# Haloryva Studio 2.7.1
+# Haloryva Studio 2.7.2
 
 [Français](../fr/README.md) · [English](../en/README.md) · [Inicio](../../README.md)
+
+**2.7.2: fabricación Windows validada.** La compilación, las pruebas nativas y los controles de estructura del paquete se han superado en el commit de validación. El paquete no está firmado ni instalado; la 2.7.2 aún no se ha enviado ni certificado en Microsoft Store. La última publicación pública documentada es la 2.7.1. [Pruebas y límites](../VALIDATION-2.7.2.md).
 
 Haz que tu cursor sea fácil de seguir y anota en pantalla durante tus presentaciones.
 
@@ -21,10 +23,14 @@ Selección personal de herramientas para recorrer con los botones del ratón.
 Acciones de clic corto y pulsación larga; deshacer y rehacer.
 Exportación de anotaciones a PNG y perfiles de ajustes guardados.
 
+La preparación 2.7.2 incorpora estelas Línea / Luz continuas, curvas adaptativas, desvanecimiento progresivo y ajustes explicados. La prueba visual de exp4 fue positiva; no garantiza una fluidez perfecta en todos los dispositivos.
+
 © 2026 Julien Lecomte — Todos los derechos reservados.
 
-**Disponibilidad:** la 2.7.1 está disponible gratis en Microsoft Store. Ficha pública accesible en Francia el 14 de noviembre de 2026; disponibilidad según el país y el dispositivo. No se ofrece un EXE 2.7.1.
+**Descarga:** [Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) sigue siendo el canal principal gratuito. La versión ofrecida depende de la distribución, del país y del dispositivo; la 2.7.2 aún no se ha enviado ni certificado. No se ofrece un EXE 2.7.2.
 
 [Instalación](INSTALLATION.md) · [Soporte](SUPPORT.md) · [Privacidad](../confidentialite/es.md) · [Novedades](NOUVEAUTES.md)
 
-![Haloryva Studio](../images/studio-es-1920x1080.png)
+![Captura histórica de Haloryva Studio 2.7.1](../images/studio-es-1920x1080.png)
+
+*Captura real de la versión 2.7.1, conservada como ilustración histórica. No es una captura ni una prueba de publicación de la 2.7.2.*

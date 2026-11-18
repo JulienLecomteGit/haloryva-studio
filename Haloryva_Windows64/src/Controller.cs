@@ -87,8 +87,12 @@ namespace CursorFlow
             return new Point(point.X + Options.RingOffsetX, point.Y + Options.RingOffsetY);
         }
         public bool IsDrawing { get; private set; }
-        private readonly TrailHistory trailHistory = new TrailHistory();
-        public List<TrailDot> Trail { get { return trailHistory.Points; } }
+        private readonly TrailPipeline trailPipeline = new TrailPipeline();
+        private bool trailInputActive;
+        private DateTime trailAcceptAfter = DateTime.MinValue;
+        internal TrailPipeline TrailPipeline { get { return trailPipeline; } }
+        internal bool TrailAlive { get { return trailPipeline.HasLiveContent(TrailClock.Now, Options.TrailLife); } }
+        public List<TrailDot> Trail { get { return trailPipeline.History.Points; } }
         public List<Ripple> Ripples = new List<Ripple>();
         public List<AnnotationStroke> Strokes = new List<AnnotationStroke>();
         public List<AnnotationStroke> RedoStrokes = new List<AnnotationStroke>();
@@ -156,6 +160,8 @@ namespace CursorFlow
         private readonly ToolToast toast;
         private readonly GlobalHooks hooks;
         private readonly FramePump timer;
+        private readonly OverlayRecoveryPolicy recovery;
+        private readonly OverlayRecoveryLog recoveryLog;
         private PremiumStudioForm settings;
         internal IStartupSettings StartupProvider = StartupSettings.Create();
         private StartupSnapshot startupStatus = StartupSnapshot.FromState(-1);
@@ -215,12 +221,19 @@ namespace CursorFlow
         }
         public void ImportProfile(string path)
         {
-            var plan = ProfileMigration.Prepare(ProfileMigration.ReadCandidate(path, false),
-                ConfigStore.DirectoryPath, false, true);
-            ProfileMigration.Commit(plan, true);
-            savePending = false;
-            ReplaceOptions(plan.Options);
+            if (!settingsWriter.TryPauseAndDrain(1500))
+                throw new IOException(L.T("Import différé : une sauvegarde est encore en cours. Réessaie dans quelques instants."));
+            try
+            {
+                var plan = ProfileMigration.Prepare(ProfileMigration.ReadCandidate(path, false),
+                    ConfigStore.DirectoryPath, false, true);
+                ProfileMigration.Commit(plan, true);
+                savePending = false;
+                ReplaceOptions(plan.Options);
+            }
+            finally { settingsWriter.Resume(); }
         }
+        private readonly SerializedSettingsWriter settingsWriter = new SerializedSettingsWriter(ConfigStore.SaveSnapshot);
         private bool savePending;
         private DateTime lastSettingChange = DateTime.MinValue;
         private SoundPlayer customPlayer;
@@ -235,6 +248,7 @@ namespace CursorFlow
             Options = ConfigStore.Load();
             L.Initialize(Options.UiLanguage);
             TrailMetrics.Configure(Options);
+            SynchronizeTrailActivity();
 
             CursorPoint = Cursor.Position;
             previousPoint = CursorPoint;
@@ -246,6 +260,8 @@ namespace CursorFlow
             annotations = new AnnotationOverlayForm(this);
             annotations.Show();
             toast = new ToolToast();
+            recoveryLog = new OverlayRecoveryLog(Path.Combine(ConfigStore.DirectoryPath, "Logs"));
+            recovery = new OverlayRecoveryPolicy(new OverlayRecovery(overlay, RecoveryEligible), recoveryLog.Write);
             hooks = new GlobalHooks(CreateInputSnapshot(), ProcessInput);
             if (!hooks.Installed) ConfigStore.SetNotice(L.T("Les raccourcis souris/clavier globaux n'ont pas pu démarrer : boutons et dessin indisponibles. Relance Haloryva."));
             timer = new FramePump(overlay, RenderTick, Options.FrameRate);
@@ -261,7 +277,19 @@ namespace CursorFlow
         }
         private void PublishInputState()
         {
+            SynchronizeTrailActivity();
             if (hooks != null && !processingInput && !exiting) hooks.Publish(CreateInputSnapshot());
+        }
+        private void SynchronizeTrailActivity()
+        {
+            bool active = Options.Enabled && Options.Trail && !IsDrawing;
+            if (active == trailInputActive) return;
+            trailInputActive = active;
+            trailPipeline.Clear();
+            TrailMetrics.InputReset();
+            // UI transitions can happen ahead of an already queued movement batch.
+            // A hook-command transition is already ordered in the mailbox instead.
+            if (!processingInput) trailAcceptAfter = TrailClock.Now;
         }
         private void ProcessInput(InputCommand command)
         {
@@ -271,7 +299,7 @@ namespace CursorFlow
                 if (command.Button != null && command.Kind != InputKind.Capture) NotifyPhysicalButton(command.Button);
                 switch (command.Kind)
                 {
-                    case InputKind.Move: MouseMoved(command.X, command.Y); break;
+                    case InputKind.Move: PointerMoved(command); break;
                     case InputKind.Click:
                         if (command.Button == "Gauche" || command.Button == "Droit") MouseClicked(command.X, command.Y, command.Button == "Droit");
                         break;
@@ -279,7 +307,7 @@ namespace CursorFlow
                         ExecutePress(new PressCommand { Button = command.Button, Action = command.Action, X = command.X, Y = command.Y, Long = command.Long });
                         break;
                     case InputKind.Drawing:
-                        MouseMoved(command.X, command.Y);
+                        UpdateMouseMoved(command.X, command.Y, command.Session == drawSession);
                         if (IsDrawing && command.Session == drawSession) DrawingInput(command.Code, command.X, command.Y, command);
                         break;
                     case InputKind.Key: KeyPressed(command.Key, command.Modifiers); break;
@@ -301,6 +329,7 @@ namespace CursorFlow
             finally
             {
                 inputAcknowledged = command.Sequence;
+                SynchronizeTrailActivity();
                 processingInput = false;
                 PublishInputState();
             }
@@ -388,9 +417,9 @@ namespace CursorFlow
                 drawSession++; ResetPressState();
                 IsDrawing = false;
                 CurrentStroke = null;
-                trailHistory.Clear(); Ripples.Clear();
+                trailPipeline.Clear(); Ripples.Clear();
             }
-            previousPoint = Cursor.Position; trailHistory.ResetInput(); previousMove = DateTime.UtcNow;
+            previousPoint = Cursor.Position; trailPipeline.ResetInput(); previousMove = DateTime.UtcNow;
             annotationsDirty = true; forceRender = true;
             Changed();
             tray.Refresh();
@@ -401,8 +430,8 @@ namespace CursorFlow
             if (!IsDrawing && !Options.Enabled) { Options.Enabled = true; Changed(); }
             IsDrawing = !IsDrawing;
             drawSession++;
-            trailHistory.Clear(); Ripples.Clear();
-            previousPoint = Cursor.Position; trailHistory.ResetInput();   // pas de segment entre deux sessions
+            trailPipeline.Clear(); Ripples.Clear();
+            previousPoint = Cursor.Position; trailPipeline.ResetInput();   // pas de segment entre deux sessions
             CurrentStroke = null;
             annotationsDirty = true; forceRender = true;
             tray.Refresh();
@@ -611,7 +640,28 @@ namespace CursorFlow
             }
         }
 
-        public void MouseMoved(int x, int y)
+        private void PointerMoved(InputCommand command)
+        {
+            PointerTrailBatch batch = command.TrailSamples;
+            if (command.Session != drawSession || batch == null || batch.Count == 0)
+            { UpdateMouseMoved(command.X, command.Y, false); return; }
+            if (batch.BreakBefore) trailPipeline.ResetInput();
+            bool active = Options.Enabled && Options.Trail && !IsDrawing;
+            int accepted = 0;
+            for (int i = 0; i < batch.Count; i++)
+            {
+                PointerTrailSample sample = batch[i];
+                if (!PointerTrailFilter.Accept(command.Session, drawSession, sample.Time, trailAcceptAfter)) continue;
+                trailPipeline.Move(new Point(sample.X, sample.Y), sample.Time, Options, active);
+                if (active) TrailMetrics.InputAccepted(sample.Time);
+                accepted++;
+            }
+            TrailMetrics.RecordInputBatch(accepted, batch.Dropped, batch.BreakBefore);
+            UpdateMouseMoved(command.X, command.Y, false);
+        }
+
+        public void MouseMoved(int x, int y) { UpdateMouseMoved(x, y, true); }
+        private void UpdateMouseMoved(int x, int y, bool sampleTrail)
         {
             Point current = new Point(x, y);
             if (current != CursorPoint)
@@ -621,7 +671,7 @@ namespace CursorFlow
                 forceRender = true;
             }
             CursorPoint = current;
-            trailHistory.Move(current, TrailClock.Now, Options.TrailSpacing, Options.TrailLife,
+            if (sampleTrail) trailPipeline.Move(current, TrailClock.Now, Options,
                 Options.Enabled && Options.Trail && !IsDrawing);
             if (!Options.Enabled) return;
             DateTime now = DateTime.UtcNow;
@@ -763,7 +813,7 @@ namespace CursorFlow
                 CurrentStroke = null;
                 IsDrawing = false;
                 drawSession++;
-                previousPoint = Cursor.Position; trailHistory.ResetInput();
+                previousPoint = Cursor.Position; trailPipeline.ResetInput();
                 tray.Refresh();
                 RestoreSettingsAfterDrawing();
                 if (SettingsChanged != null) SettingsChanged();
@@ -816,34 +866,70 @@ namespace CursorFlow
             return false;
         }
 
+        private bool RecoveryEligible()
+        {
+            if (exiting || Options == null || !Options.Enabled || IsDrawing || capturePending ||
+                overlay == null || overlay.IsDisposed || overlay.Disposing || !overlay.IsHandleCreated || !overlay.Visible)
+                return false;
+            if (settings != null && !settings.IsDisposed && settings.Visible) return false;
+            DateTime now = DateTime.UtcNow;
+            // Never wake a deliberately transparent/idle layer just to raise it.
+            return (Options.Ring && RingVisibility(now) > 0f) || (Options.Trail && TrailAlive) ||
+                Ripples.Count > 0 || ShakeUntil > now || ZoomUntil > now || KeysUntil > now || Options.Focus;
+        }
+
         private bool wasAnimating;
         private void RenderTick()
         {
+            long start = TrailMetrics.BeginTick();
+            try { RenderTickCore(); }
+            finally { TrailMetrics.CompleteTick(start, Stopwatch.GetTimestamp()); }
+        }
+        private void RenderTickCore()
+        {
+            long drainStart = Stopwatch.GetTimestamp();
             hooks.Drain();
+            TrailMetrics.Drained(drainStart, Stopwatch.GetTimestamp());
             EffectDiagnostics.RenderTick();
             if (EffectDiagnostics.ShouldSample())
             {
+                long observationStart = TrailMetrics.BeginStage();
                 bool hasHandle = overlay.IsHandleCreated;
                 int style = hasHandle ? Native.GetWindowLong(overlay.Handle, Native.GWL_EXSTYLE) : 0;
+                bool windowsVisible = hasHandle && Native.IsWindowVisible(overlay.Handle);
+                int windowsAbove = VisibleTopmostAboveOverlay();
+                TrailMetrics.Stage(TickWork.DiagnosticWindows, observationStart);
+                long enqueueStart = TrailMetrics.BeginStage();
                 EffectDiagnostics.Sample(Options.Enabled, hasHandle, overlay.Visible,
-                    hasHandle && Native.IsWindowVisible(overlay.Handle),
+                    windowsVisible,
                     hasHandle && (style & Native.WS_EX_TOPMOST) != 0,
-                    VisibleTopmostAboveOverlay(), overlay.LastPublished);
+                    windowsAbove, overlay.LastPublished);
+                TrailMetrics.Stage(TickWork.DiagnosticQueue, enqueueStart);
             }
             if (exitRequested != null && exitRequested.WaitOne(0)) { Exit(); return; }
+            long preparationStart = TrailMetrics.BeginStage();
             DateTime now = DateTime.UtcNow;
             CheckLongPresses(now);
             string notice = ConfigStore.TakeNotice();
             if (notice != null) tray.Notify(notice);
+            string writeError = settingsWriter.TakeError();
+            if (writeError != null) tray.Notify(L.T("Réglages non enregistrés : ") + writeError);
             if (savePending && (now - lastSettingChange).TotalMilliseconds > 380)
             {
                 savePending = false;
-                ConfigStore.Save(Options);
+                // Capture immutable JSON on the owner thread; validation and disk I/O
+                // are serialized by the writer, never performed by this render tick.
+                try { settingsWriter.Enqueue(ConfigStore.CaptureSnapshot(Options)); }
+                catch (Exception ex) { tray.Notify(L.T("Réglages non enregistrés : ") + ex.Message); }
             }
-            trailHistory.Expire(TrailClock.Now, Options.TrailLife);
+            trailPipeline.Expire(TrailClock.Now, Options.TrailLife);
             Ripples.RemoveAll(delegate(Ripple r) { return (now - r.Time).TotalMilliseconds > Options.ClickDuration + 150; });
             if (!Options.Enabled)
             {
+                TrailMetrics.Stage(TickWork.Preparation, preparationStart);
+                long disabledRecoveryStart = TrailMetrics.BeginStage();
+                recovery.Tick(growthClock.ElapsedMilliseconds, false);
+                TrailMetrics.Stage(TickWork.Recovery, disabledRecoveryStart);
                 overlay.Visible = false;
                 annotations.Visible = false;
                 return;
@@ -869,7 +955,7 @@ namespace CursorFlow
             lastRingVisibilityStep = visibilityStep;
             bool changing = forceRender || CursorPoint != lastRenderedPoint ||
                 previousTextPointer != IsTextPointer || fading || growing;
-            bool animated = (Options.Trail && Trail.Count > 0) || Ripples.Count > 0 ||
+            bool animated = (Options.Trail && TrailAlive) || Ripples.Count > 0 ||
                 ShakeUntil > now || ZoomUntil > now || KeysUntil > now || Options.Focus;
             // Une pulsation immobile n'exige pas 30 rendus par seconde.
             bool slowPulse = Options.Ring && ringVisibility > 0f && Options.RingPulse &&
@@ -882,6 +968,7 @@ namespace CursorFlow
             // Dernière image après l'expiration du dernier effet : le calque est effacé explicitement.
             bool finalClear = wasAnimating && !animated;
             wasAnimating = animated;
+            TrailMetrics.Stage(TickWork.Preparation, preparationStart);
             if (changing || animated || slowPulse || liveTextZoom || finalClear)
             {
                 long measuredAt = TrailMetrics.BeginFrame();
@@ -889,7 +976,8 @@ namespace CursorFlow
                 TrailMetrics.Record(measuredAt, Trail.Count, overlay.LastSurfaceSize.Width, overlay.LastSurfaceSize.Height,
                     (now - lastPointerMotion).TotalMilliseconds < 150,
                     settings != null && settings.Visible && settings.WindowState != FormWindowState.Minimized,
-                    Options.Trail ? Options.TrailStyle : "INACTIVE", overlay.LastPublished);
+                    Options.Trail ? Options.TrailStyle : "INACTIVE", overlay.LastPublished,
+                    overlay.RibbonUsedThisFrame ? overlay.RibbonMetrics : null, overlay.LastRenderTiming, Options);
                 lastRenderedPoint = CursorPoint;
                 lastEffectDraw = now;
                 forceRender = false;
@@ -898,39 +986,64 @@ namespace CursorFlow
             // rendu plein ecran en boucle lorsque des annotations existent.
             if (annotationsDirty && (now - lastAnnotationDraw).TotalMilliseconds >= 45)
             {
+                long annotationsStart = TrailMetrics.BeginStage();
                 annotations.Render();
                 // Un calque d'annotation rendu/affiché peut changer l'ordre Z.
                 if (settings != null && settings.Visible) KeepEffectLayersVisible();
                 annotationsDirty = false;
                 lastAnnotationDraw = now;
+                TrailMetrics.Stage(TickWork.Annotations, annotationsStart);
             }
+            // Tick is cheap between probes; native inspection is at most 2 Hz,
+            // except the extra confirmation immediately before a bounded repair.
+            long recoveryStart = TrailMetrics.BeginStage();
+            recovery.Tick(growthClock.ElapsedMilliseconds, RecoveryEligible());
+            TrailMetrics.Stage(TickWork.Recovery, recoveryStart);
         }
 
         public void Exit()
         {
             if (exiting) return;
+            if (!settingsWriter.TryPauseAndDrain(1500))
+            {
+                tray.Notify(L.T("Fermeture différée : une sauvegarde est encore en cours. Réessaie dans quelques instants."));
+                return;
+            }
             if (!ConfigStore.Save(Options))
-            { tray.Notify(ConfigStore.TakeNotice() ?? L.T("Fermeture annulée : les réglages ne sont pas sauvegardés.")); return; }
+            {
+                settingsWriter.Resume();
+                tray.Notify(ConfigStore.TakeNotice() ?? L.T("Fermeture annulée : les réglages ne sont pas sauvegardés.")); return;
+            }
             exiting = true;
             drawSession++; IsDrawing = false; CurrentStroke = null; ResetPressState();
-            timer.Stop();
+            timer.Dispose(); // Bounded join before the final PUMP_EXIT journal record is drained.
             if (exitRequested != null) { exitRequested.Dispose(); exitRequested = null; }
-            try { TrailMetrics.Save(timer.Mode, timer.Coalesced, overlay.SurfaceCreations, overlay.FallbackFrames); }
-            catch (Exception ex) { MessageBox.Show(L.T("Écriture des mesures impossible : ") + ex.Message, "Haloryva"); }
+            // Stop producers, then drain the opt-in journal outside animation.
+            // Save the final writer state even when its bounded close times out.
             hooks.Dispose();
+            TrailMetrics.PumpStopped(timer.WorkerExited);
+            recoveryLog.Close();
+            TrailMetrics.RecoveryJournal(recoveryLog.GetWriterSnapshot(), recoveryLog.CapReached);
+            EffectDiagnostics.Close();
+            try
+            {
+                TrailMetrics.SettingsWrites(settingsWriter.Requested, settingsWriter.Completed, settingsWriter.Coalesced, settingsWriter.Failed);
+                TrailMetrics.Save(timer.Mode, timer.Coalesced, overlay.SurfaceCreations, overlay.FallbackFrames);
+            }
+            catch (Exception ex) { MessageBox.Show(L.T("Écriture des mesures impossible : ") + ex.Message, "Haloryva"); }
             if (customPlayer != null) customPlayer.Dispose();
             overlay.Close();
             annotations.Close();
             toast.Close();
             tray.Dispose();
             if (settings != null && !settings.IsDisposed) settings.Dispose();
-            EffectDiagnostics.Close();
+            settingsWriter.Dispose();
             ExitThread();
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing) timer.Dispose();
+            if (disposing) { timer.Dispose(); settingsWriter.Dispose(); }
             base.Dispose(disposing);
         }
     }

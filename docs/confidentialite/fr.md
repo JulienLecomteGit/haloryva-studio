@@ -1,11 +1,13 @@
-# Confidentialité — Haloryva Studio 2.7.1
+# Confidentialité — Haloryva Studio 2.7.2
 
 [Français](fr.md) · [English](en.md) · [Español](es.md)
 
 Éditeur : Julien Lecomte
 Contact public : https://github.com/JulienLecomteGit/haloryva-studio/issues
-Cette politique s’applique à compter de la première mise à disposition de Haloryva Studio 2.7.1.
-Fonctionnement sur votre appareil
+Version de politique préparée le 18 novembre 2026 pour Haloryva Studio 2.7.2 ; elle s’appliquera à cette version lors de sa mise à disposition. Cette préparation ne signifie pas que la mise à jour est déjà publiée. La [politique historique 2.7.1](https://github.com/JulienLecomteGit/haloryva-studio/blob/8fa015f798f6cc9803acf40972d2bcac8f28d434/docs/confidentialite/fr.md) reste consultable.
+
+## Fonctionnement sur votre appareil
+
 Haloryva Studio met en valeur le curseur et permet de dessiner des annotations.
 L’application traite les événements de souris et de clavier pour ses effets,
 raccourcis et actions de boutons, même lorsqu’une autre fenêtre est active.
@@ -17,7 +19,9 @@ choisir de les enregistrer par export.
 L’export PNG enregistre les annotations sur fond transparent dans le fichier choisi ;
 il ne produit pas une capture complète du bureau.
 
-Réglages, fichiers et copies de récupération
+
+## Réglages, fichiers et copies de récupération
+
 Un profil JSON local conserve les préférences : langue, outils choisis, actions de
 boutons et réglages visuels. Il peut contenir les chemins de vos fichiers PNG ou WAV.
 La version EXE utilise le dossier Haloryva de vos données locales Windows.
@@ -34,10 +38,16 @@ L’import ne supprime ni les fichiers ni l’installation d’origine. Vous pou
 ou annuler. L’import d’un ancien choix de démarrage n’autorise pas à lui seul le
 démarrage automatique dans Windows.
 
-Journaux et réseau
+
+## Journaux et réseau
+
 Un journal d’erreur peut conserver la date, la catégorie, le type d’erreur et la pile
 technique, avec rotation des fichiers. Le journal d’erreur exclut le message et les
 données de l’exception. Les diagnostics supplémentaires sont activés explicitement.
+Le journal de récupération des effets est activé en fonctionnement normal. Il peut enregistrer la date, la catégorie d’événement, une raison technique, un code Windows et le nombre de tentatives. Il est local, écrit en arrière-plan et limité à 262 144 octets (256 Kio) ; à ce plafond, les ajouts cessent sans effacer les entrées existantes. Il ne contient ni titre ou contenu de fenêtre, ni frappe, image ou coordonnée de souris.
+
+Les modes détaillés sont facultatifs : une session d’essai copie les réglages dans un dossier neuf et peut enregistrer des durées, compteurs et paramètres de rendu ; le diagnostic des effets peut enregistrer des instantanés de l’état du calque. Ces modes ne s’activent pas par un lancement normal et ne collectent pas de texte saisi, de trajectoire, de capture d’écran, d’URL ou de titre de fenêtre. La copie du profil de test peut néanmoins contenir les mêmes chemins de ressources que le profil d’origine.
+
 Aucun envoi automatique de ces journaux ou des profils au support n’est prévu.
 Les fonctions courantes ne demandent pas de compte Haloryva. Les revues de sources
 de cette version n’ont identifié ni télémétrie applicative, ni publicité, ni mécanisme
@@ -46,7 +56,9 @@ Un fichier placé dans un dossier synchronisé ou réseau peut être traité par
 service que vous avez choisi. Windows, le Microsoft Store, GitHub et votre service
 de messagerie appliquent leurs propres règles.
 
-Conservation et suppression
+
+## Conservation et suppression
+
 Les fichiers locaux restent jusqu’à leur remplacement, rotation ou suppression.
 L’assistant EXE conserve les réglages et sauvegardes par défaut à la désinstallation ;
 leur suppression est une option distincte. Les exports et copies conservés ailleurs
@@ -58,7 +70,9 @@ Les copies de récupération et les fichiers synchronisés doivent aussi être p
 compte si vous souhaitez effacer vos données. Haloryva n’offre pas de chiffrement
 propre de ces fichiers ni de garantie d’effacement de toutes leurs copies.
 
-Support et demandes de confidentialité
+
+## Support et demandes de confidentialité
+
 Un envoi au support nécessite votre action. L’éditeur utilise les informations
 communiquées pour répondre à votre demande et comprendre le problème signalé.
 Assistance publique retenue :
@@ -72,9 +86,12 @@ La règle de conservation de trois mois après clôture prévue pour un éventue
 L’éditeur ne dispose pas d’un accès à distance
 aux réglages restés sur votre appareil et ne peut pas les effacer à votre place.
 
-Vos choix
+
+## Vos choix
+
 Vous pouvez modifier les préférences, désactiver les effets, gérer le démarrage
 dans l’application et Windows, ou quitter depuis l’icône près de l’horloge.
 « Ouvrir le dossier des réglages » permet de retrouver vos fichiers locaux.
 Relisez les informations de version, profils, annotations et diagnostics avant de
 les partager. Cette politique sera actualisée si les fonctions ou les pratiques changent.
+

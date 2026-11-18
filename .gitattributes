@@ -9,3 +9,8 @@ Haloryva_Windows64/src/*.cs -text diff whitespace=cr-at-eol
 Haloryva_Windows64/assets/app.manifest -text diff whitespace=cr-at-eol
 Haloryva_Windows64/assets/Haloryva.ico -text
 Haloryva_Windows64/languages/strings.json -text diff whitespace=cr-at-eol
+
+# Livraison 2.7.2 : les empreintes portent sur les octets exacts du commit.
+# Eviter toute conversion LF/CRLF au checkout Windows, y compris les scripts.
+* -text
+

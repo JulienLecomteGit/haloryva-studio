@@ -49,6 +49,8 @@ namespace CursorFlow
         public int TrailWidth = 7;
         // Valeur de référence validée pour Haloryva : 269 ms (réglable dans le Studio).
         public int TrailLife = 269;
+        // Number of motifs side by side (1-5), no point filtering.
+        // Optional --trail-session launches isolate their settings from the installed profile.
         public int TrailDensity = 3;
         public int TrailSpacing = 6;
         public int TrailSpread = 9;
@@ -230,8 +232,10 @@ namespace CursorFlow
 
         // Message à montrer une seule fois à l'utilisateur (réglages restaurés, écriture impossible…).
         private static string notice;
-        public static string TakeNotice() { string n = notice; notice = null; return n; }
-        public static void SetNotice(string text) { if (notice == null) notice = text; }
+        private static readonly object noticeGate = new object();
+        private static readonly object saveGate = new object();
+        public static string TakeNotice() { lock (noticeGate) { string n = notice; notice = null; return n; } }
+        public static void SetNotice(string text) { lock (noticeGate) { if (notice == null) notice = text; } }
         private static Config TryRead(string path)
         {
             try { if (File.Exists(path)) return Deserialize(File.ReadAllText(path)); } catch { }
@@ -273,23 +277,64 @@ namespace CursorFlow
             config.Normalize();
             return config;
         }
+        // Capture sur le fil UI : le worker ne reçoit jamais le Config mutable.
+        internal static string CaptureSnapshot(Config config)
+        {
+            if (config == null) throw new ArgumentNullException("config");
+            return new JavaScriptSerializer().Serialize(config);
+        }
+
+        private static void ValidateSnapshot(string json)
+        {
+            if (String.IsNullOrWhiteSpace(json) || json.Length > 1000000 ||
+                !json.TrimStart().StartsWith("{", StringComparison.Ordinal) ||
+                new JavaScriptSerializer().Deserialize<Config>(json) == null)
+                throw new InvalidDataException("Configuration JSON invalide.");
+            // Pas de Normalize, de traduction ni d'accès à l'interface depuis le worker.
+        }
+
+        private static bool IsReadableSnapshot(string path)
+        {
+            try { ValidateSnapshot(File.ReadAllText(path)); return true; }
+            catch { return false; }
+        }
+
+        internal static bool SaveSnapshot(string json, out string error)
+        {
+            error = null;
+            try
+            {
+                ValidateSnapshot(json);
+                lock (saveGate)
+                {
+                    string directory = DirectoryPath;
+                    string destination = Path.Combine(directory, "settings.json");
+                    string temporary = destination + ".tmp";
+                    Directory.CreateDirectory(directory);
+                    File.WriteAllText(temporary, json);
+                    ValidateSnapshot(File.ReadAllText(temporary));
+                    // Le verrou couvre aussi Save(Config), l'écriture et le remplacement.
+                    if (File.Exists(destination))
+                    {
+                        string backup = IsReadableSnapshot(destination) ? destination + ".bak" :
+                            Path.Combine(directory, "settings.invalide-" + Guid.NewGuid().ToString("N") + ".json");
+                        File.Replace(temporary, destination, backup);
+                    }
+                    else File.Move(temporary, destination);
+                }
+                return true;
+            }
+            catch (Exception ex) { error = ex.Message; return false; }
+        }
+
         public static bool Save(Config config)
         {
             try
             {
-                Directory.CreateDirectory(DirectoryPath);
-                string path = FilePath + ".tmp";
-                string json = new JavaScriptSerializer().Serialize(config);
-                File.WriteAllText(path, json);
-                Deserialize(File.ReadAllText(path));   // relecture : ne jamais remplacer par un fichier illisible
-                // Le .bak ne reçoit que des réglages valides.
-                if (File.Exists(FilePath))
-                {
-                    if (TryRead(FilePath) != null) File.Replace(path, FilePath, FilePath + ".bak");
-                    else File.Replace(path, FilePath, Path.Combine(DirectoryPath, "settings.invalide-" + Guid.NewGuid().ToString("N") + ".json"));
-                }
-                else File.Move(path, FilePath);
-                return true;
+                string error;
+                if (SaveSnapshot(CaptureSnapshot(config), out error)) return true;
+                SetNotice(L.T("Réglages non enregistrés : ") + error);
+                return false;
             }
             catch (Exception ex) { SetNotice(L.T("Réglages non enregistrés : ") + ex.Message); return false; }
         }

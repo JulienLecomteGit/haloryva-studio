@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,6 +12,7 @@ namespace CursorFlow
         {
             if (Array.IndexOf(args, "--trail-selftest") >= 0) return TrailSelfTest.Run();
             if (Array.IndexOf(args, "--selftest") >= 0) return GeometrySmoke.Run();
+            // Diagnostic sessions remain opt-in; normal launches use the existing profile.
             try { ProfilePaths.Configure(args); L.Initialize(ConfigStore.ReadLanguage()); }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Haloryva Studio"); return 15; }
             // A normal launch cannot race a maintenance operation. Self-tests above remain isolated.

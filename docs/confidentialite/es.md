@@ -1,12 +1,14 @@
-# Privacidad — Haloryva Studio 2.7.1
+# Privacidad — Haloryva Studio 2.7.2
 
 [Français](fr.md) · [English](en.md) · [Español](es.md)
 
 Editor: Julien Lecomte
 Contacto público: https://github.com/JulienLecomteGit/haloryva-studio/issues
-Esta política se aplica desde la primera puesta a disposición de Haloryva Studio 2.7.1.
+Versión de la política preparada el 18 de noviembre de 2026 para Haloryva Studio 2.7.2; se aplicará a esa versión cuando esté disponible. La preparación de esta política no significa que la actualización ya esté publicada. La [política histórica 2.7.1](https://github.com/JulienLecomteGit/haloryva-studio/blob/8fa015f798f6cc9803acf40972d2bcac8f28d434/docs/confidentialite/es.md) sigue disponible.
 
-Tratamiento en tu dispositivo
+
+## Tratamiento en tu dispositivo
+
 Haloryva Studio destaca el cursor y permite dibujar anotaciones.
 La aplicación trata los eventos del ratón y del teclado para sus efectos, atajos
 y acciones de botones, incluso cuando otra ventana está activa. La visualización
@@ -18,7 +20,9 @@ la exportación.
 La exportación PNG guarda las anotaciones con fondo transparente en el archivo elegido;
 no crea una captura completa del escritorio.
 
-Ajustes, archivos y copias de recuperación
+
+## Ajustes, archivos y copias de recuperación
+
 Un perfil JSON local conserva preferencias como el idioma, las herramientas elegidas,
 las acciones de botones y los ajustes visuales. Puede incluir rutas a tus archivos PNG o WAV.
 La versión EXE utiliza la carpeta Haloryva de los datos locales de Windows.
@@ -35,10 +39,16 @@ La importación no elimina los archivos ni la instalación de origen. Puedes rec
 o cancelarla. Importar una preferencia anterior de inicio no autoriza por sí solo
 el inicio automático en Windows.
 
-Registros y servicios de red
+
+## Registros y servicios de red
+
 Un registro de errores puede guardar la fecha, la categoría, el tipo de error y la
 traza técnica, con rotación de archivos. Este registro excluye el mensaje y los datos
 de la excepción. Los diagnósticos adicionales se activan de forma explícita.
+El registro de recuperación de efectos está activo durante el funcionamiento normal. Puede guardar la fecha, la categoría del evento, una razón técnica, un código de Windows y el número de intentos. Es local, se escribe en segundo plano y está limitado a 262 144 bytes (256 KiB); al alcanzar ese límite, las nuevas entradas se detienen sin borrar las existentes. No contiene títulos ni contenido de ventanas, pulsaciones, imágenes ni coordenadas del ratón.
+
+Los modos detallados son opcionales: una sesión de prueba copia los ajustes en una carpeta nueva y puede registrar tiempos, contadores y parámetros de dibujo; el diagnóstico de efectos puede guardar instantáneos del estado de la capa. Estos modos no se activan con un inicio normal y no recogen texto escrito, trayectorias, capturas de pantalla, URL ni títulos de ventanas. La copia del perfil de prueba sí puede contener las mismas rutas de recursos que el perfil original.
+
 Los perfiles y registros no se envían automáticamente al soporte.
 Las funciones habituales no requieren una cuenta de Haloryva. Las revisiones del
 código de esta versión no han identificado telemetría de la aplicación, publicidad
@@ -47,7 +57,9 @@ Un archivo en una carpeta sincronizada o de red puede ser tratado por el servici
 que elijas. Windows, Microsoft Store, GitHub y tu proveedor de correo aplican sus
 propias políticas.
 
-Conservación y eliminación
+
+## Conservación y eliminación
+
 Los archivos locales permanecen hasta su sustitución, rotación o eliminación.
 El desinstalador EXE conserva por defecto los ajustes y las copias de seguridad;
 eliminarlos es una opción independiente. Esta opción no elimina todas las exportaciones
@@ -59,7 +71,9 @@ Ten también en cuenta las copias de recuperación y los archivos sincronizados 
 eliminar tus datos. Haloryva no ofrece cifrado propio de estos archivos ni garantiza
 la eliminación de todas sus copias.
 
-Soporte y solicitudes de privacidad
+
+## Soporte y solicitudes de privacidad
+
 Enviar información al soporte requiere una acción tuya. El editor utiliza la información
 que envías para responder a tu solicitud y comprender el problema comunicado.
 Soporte público elegido:
@@ -73,10 +87,13 @@ La regla de conservación de tres meses prevista para un eventual soporte privad
 El editor no tiene acceso remoto a los ajustes
 que permanecen en tu dispositivo y no puede borrarlos por ti.
 
-Tus opciones
+
+## Tus opciones
+
 Puedes cambiar las preferencias, desactivar los efectos, gestionar el inicio en
 la aplicación y Windows o salir desde el icono junto al reloj.
 «Abrir la carpeta de ajustes» permite localizar tus archivos.
 Revisa la información de versión, los perfiles, las anotaciones y los diagnósticos
 antes de compartirlos. Esta política se actualizará si cambian las funciones o las
 prácticas de tratamiento de datos.
+

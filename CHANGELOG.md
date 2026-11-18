@@ -1,5 +1,20 @@
 # Historique — Haloryva Studio
 
+## 2.7.2 — fabrication Windows qualifiée, publication Store en attente — 18 novembre 2026
+
+**Compilation et suites Windows réussies ; paquet MSIX contrôlé, non signé et non installé ; Store 2.7.2 non soumis et non certifié.** Les résultats sont rattachés au commit de qualification dans [la fiche de validation](docs/VALIDATION-2.7.2.md).
+
+- Traînée Ligne / Lumière continue, courbes adaptatives et extinction progressive ; réglages accompagnés d’explications et aperçu partagé.
+- Échantillons d’entrée horodatés et conservation de leur ordre dans le pipeline de traînée.
+- Composition du ruban limitée aux zones utiles et copie bitmap regroupée, sans nouvelle modification du moteur lors de la promotion finale.
+- Récupération conditionnelle de l’ordre du calque des effets, avec journal technique local borné.
+- Écriture des journaux d’effets et de récupération en arrière-plan ; diagnostics détaillés facultatifs, sans nouvel envoi réseau.
+- Identité finale 2.7.2 / fichier 2.7.2.6 ; démarrage normal rétabli après le garde-fou propre à la copie expérimentale.
+- Base exp4 compilée et testée sur Windows ; recette visuelle positive sur les cinq observations demandées, sans garantie d’absence définitive d’incidents rares.
+- Qualification sur le commit `64d97384dfa2c5bfd2618c43b348dff20a863be2` : fabrication Windows réussie, 52 contrôles de structure du paquet réussis et archive de sources de 125 fichiers vérifiée. Le premier passage avait réussi compilation/tests puis échoué à la découverte de Git ; ce point de fabrication a été corrigé.
+- Documentation FR/EN/ES actualisée ; captures 2.7.1 conservées et explicitement identifiées comme historiques.
+- Microsoft Store reste le canal principal. Aucun EXE 2.7.2 public n’est ajouté par cette préparation.
+
 ## 2.7.1 — Microsoft Store, fiche publique vérifiée le 14 novembre 2026
 
 - Interface français, anglais et espagnol avec langue mémorisée.
@@ -9,7 +24,7 @@
 - Canal Store certifié, reprise consentie des anciens réglages et gestion du démarrage à la connexion.
 - Essais utilisateur réussis de reprise des réglages, langues, démarrage automatique et reconnexion avec préférences conservées.
 - Fiche publique Microsoft Store accessible en France le 14 novembre 2026 ; téléchargement principal gratuit. Aucun EXE 2.7.1 proposé ici.
-- La publication documentaire initiale conservait les sources historiques 2.7.0. Cette branche prépare maintenant la reprise exacte des 36 fichiers applicatifs estampillés 2.7.1.11 ; l’installateur reste historique. Voir [la provenance et les limites](docs/SOURCES-2.7.1.11.md).
+- La publication documentaire initiale conservait les sources historiques 2.7.0. Les 36 fichiers applicatifs estampillés 2.7.1.11 ont ensuite été intégrés sur la branche principale ; l’installateur reste historique. Voir [la provenance et les limites](docs/SOURCES-2.7.1.11.md).
 
 ## 2.7.0 — 10 novembre 2026 — version stable déclarée par l'auteur
 
@@ -28,3 +43,4 @@
 ## 2.6.6 — CursorFlow Studio (secours historique)
 
 - Installateur de retour arrière conservé sur le Drive du projet, distinct de l'installateur stable Haloryva.
+

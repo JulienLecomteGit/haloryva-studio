@@ -291,6 +291,8 @@ namespace CursorFlow
         private readonly List<Control> extras = new List<Control>();
         private readonly List<Action> sync = new List<Action>();
         private PremiumPreview preview;
+        private PremiumCard trailPreviewCard, trailColorsCard, trailLogoCard;
+        private bool trailLayoutDirty;
         private int page = 0, section = 0;
         private bool refreshing, committing, minimizedNav, userCollapsed, laying;
         private string currentDetected = "Aucun";
@@ -628,6 +630,7 @@ namespace CursorFlow
                 foreach (Control c in extras) { workspace.Controls.Remove(c); c.Dispose(); }
                 cards.Clear(); extras.Clear(); sync.Clear();
                 preview = null; detectedButton = null; mouseDiagram = null; hero = null; sections = null;
+                trailPreviewCard = trailColorsCard = trailLogoCard = null; trailLayoutDirty = false;
                 heading.Title = Pages[page]; heading.Subtitle = Subtitles[page]; heading.IconName = Icons[page];
                 heading.Accessory = null;
                 if (page == 0) PageHome();
@@ -696,7 +699,10 @@ namespace CursorFlow
                 for (int i = 0; i < cols; i++) heights[i] = top;
                 foreach (PremiumCard card in cards)
                 {
+                    if (!card.LayoutIncluded) continue;
                     int span = Math.Min(cols, Math.Max(1, card.Span));
+                    if (card == trailPreviewCard || card == trailColorsCard || card == trailLogoCard)
+                        span = Math.Max(1, cols - 1);
                     int best = 0, bestY = int.MaxValue;
                     for (int c = 0; c + span <= cols; c++)
                     {
@@ -762,6 +768,7 @@ namespace CursorFlow
                 }
                 string profile = cfg.ActivePresetSignature == PresetFingerprint() && !String.IsNullOrEmpty(cfg.ActivePreset) ? cfg.ActivePreset : L.T("Personnalisé");
                 if (footer.Profile != profile) { footer.Profile = profile; footer.Invalidate(); }
+                if (preview != null) preview.Config = cfg;
                 foreach (Action action in sync) action();
                 // Lors du changement d'orientation, le dernier bouton détecté suit
                 // la nouvelle étiquette, sans échanger les actions enregistrées.
@@ -773,6 +780,7 @@ namespace CursorFlow
                 if (preview != null) { preview.Config = cfg; preview.Invalidate(); }
             }
             finally { refreshing = false; }
+            if (trailLayoutDirty) { trailLayoutDirty = false; LayoutCards(); }
         }
 
         // ---------- Fabriques de contrôles liés à la configuration ----------
@@ -816,6 +824,12 @@ namespace CursorFlow
             PremiumSlider slider = new PremiumSlider(name, min, max, getter(), unit);
             slider.ValueChanged += delegate(int n) { if (!refreshing) { setter(n); CommitSettings(); } };
             card.Add(slider); sync.Add(delegate { slider.Value = getter(); });
+            return slider;
+        }
+        private PremiumSlider TrailSlider(PremiumCard card, string name, string effect, int min, int max, string unit, Func<int> getter, Action<int> setter)
+        {
+            PremiumSlider slider = Slider(card, name, min, max, unit, getter, setter);
+            slider.Explain(effect);
             return slider;
         }
         private Panel Select(Control host, string title, string[] values, Func<string> getter, Action<string> setter)
@@ -1021,38 +1035,62 @@ namespace CursorFlow
         private void PageTrails()
         {
             MasterToggle(L.T("Traînée activée"), () => cfg.Trail, b => cfg.Trail = b);
-            Sections(new string[] { L.T("Apparence"), L.T("Mouvement et logo") }, new string[] { "palette", "trail" });
-            if (section == 0)
-            {
-            PremiumCard live = Card(L.T("Aperçu en direct"), L.T("Survole la zone pour dessiner ta propre traînée."), 2, "eye");
-            preview = new PremiumPreview(cfg, PreviewMode.Trail); live.Add(preview);
-
-            PremiumCard look = Card(L.T("Style de traînée"), L.T("Huit signatures visuelles."), 1, "sparkles");
+            PremiumCard look = Card(L.T("Style et réglages"), L.T("Chaque réglage agit sur le style choisi."), 1, "trail");
             Choices(look, null, new string[] { "Particules", "Ligne", "Points", "Pointillés", "Lumière", "Étoiles", "Kawaii", "Logo" }, null,
-                new string[] { "sparkles", "line", "dots", "dash", "glow", "star", "heart", "image" }, 4, true, () => cfg.TrailStyle, s => cfg.TrailStyle = s);
-            Slider(look, L.T("Épaisseur"), 1, 40, "px", () => cfg.TrailWidth, n => cfg.TrailWidth = n);
-            Slider(look, L.T("Persistance"), 100, 2800, "ms", () => cfg.TrailLife, n => cfg.TrailLife = n);
-            Slider(look, L.T("Opacité"), 6, 100, "%", () => (int)Math.Round(cfg.TrailOpacity * 100 / 255.0), n => cfg.TrailOpacity = (int)Math.Round(n * 2.55));
+                new string[] { "sparkles", "line", "dots", "dash", "glow", "star", "heart", "image" }, 4, false, () => cfg.TrailStyle, s => cfg.TrailStyle = s);
+            TrailSlider(look, L.T("Durée avant disparition"), L.T("Le tracé s'efface pendant cette durée."), 100, 2800, "ms", () => cfg.TrailLife, n => cfg.TrailLife = n);
+            PremiumSlider width = TrailSlider(look, L.T("Épaisseur"), L.T("Largeur du trait, avant l'effet de vitesse."), 1, 40, "px", () => cfg.TrailWidth, n => cfg.TrailWidth = n);
+            TrailSlider(look, L.T("Opacité"), L.T("Augmente la présence de toute la traînée."), 6, 100, "%", () => (int)Math.Round(cfg.TrailOpacity * 100 / 255.0), n => cfg.TrailOpacity = (int)Math.Round(n * 2.55));
+            PremiumSlider rounding = TrailSlider(look, L.T("Arrondi des virages"), L.T("Adoucit les angles, sans retarder la tête."), 0, 100, "%", () => cfg.TrailSmoothness, n => cfg.TrailSmoothness = n);
+            PremiumSlider quantity = TrailSlider(look, L.T("Quantité de motifs"), L.T("Dessine de 1 à 5 motifs côte à côte."), 1, 5, "", () => cfg.TrailDensity, n => cfg.TrailDensity = n);
+            PremiumSlider spacing = TrailSlider(look, L.T("Écart entre les motifs"), L.T("Distance entre deux groupes sur le parcours."), 2, 40, "px", () => cfg.TrailSpacing, n => cfg.TrailSpacing = n);
+            PremiumSlider spread = TrailSlider(look, L.T("Éparpillement"), L.T("Écarte les motifs de part et d'autre du tracé."), 0, 90, "px", () => cfg.TrailSpread, n => cfg.TrailSpread = n);
+            PremiumSwitch responsive = Toggle(look, L.T("Élargir quand j'accélère"), L.T("Augmente la taille avec la vitesse de la souris."), () => cfg.TrailSpeedResponsive, b => cfg.TrailSpeedResponsive = b);
 
-            PremiumCard colors = Card(L.T("Couleurs"), L.T("Unie, dégradé ou arc-en-ciel animé."), 1, "palette");
+            trailPreviewCard = Card(L.T("Aperçu en direct"), L.T("Essaie une vitesse, des virages ou ta souris."), 2, "eye");
+            PremiumPreview trailView = new PremiumPreview(cfg, PreviewMode.Trail); trailView.Height = S(306); preview = trailView;
+            PremiumChoiceGrid movement = new PremiumChoiceGrid(new string[] { "Slow", "Fast", "Turns", "Mouse" },
+                new string[] { L.T("Lent"), L.T("Rapide"), L.T("Virages"), L.T("À la souris") },
+                new string[] { "play", "bolt", "trail", "mouse" }, 4, false);
+            movement.AccessibleName = L.T("Mouvement de l'aperçu");
+            movement.ValueChanged += delegate(string value)
+            {
+                TrailPreviewMotion motion = value == "Slow" ? TrailPreviewMotion.Slow : value == "Turns" ? TrailPreviewMotion.Turns : value == "Mouse" ? TrailPreviewMotion.Mouse : TrailPreviewMotion.Fast;
+                trailView.SetTrailMotion(motion);
+            };
+            trailPreviewCard.Add(movement);
+            trailPreviewCard.Add(trailView);
+            PremiumButton pause = new PremiumButton(L.T("Pause"), ButtonKind.Secondary, "pause");
+            pause.AccessibleDescription = L.T("Arrête le mouvement et laisse finir le fondu.");
+            pause.Click += delegate { trailView.ToggleTrailPause(); };
+            PremiumButton reset = new PremiumButton(L.T("Réinitialiser"), ButtonKind.Ghost, "restore");
+            reset.AccessibleDescription = L.T("Efface l'aperçu et relance le mouvement rapide.");
+            reset.Click += delegate { trailView.ResetTrailPreview(); };
+            trailPreviewCard.Add(new ButtonRow(pause, reset));
+            Action syncPreview = delegate
+            {
+                movement.Value = trailView.TrailMotion.ToString();
+                pause.Text = trailView.TrailPaused ? L.T("Reprendre") : L.T("Pause");
+                pause.IconName = trailView.TrailPaused ? "play" : "pause";
+                pause.Selected = trailView.TrailPaused;
+            };
+            trailView.TrailPreviewChanged += syncPreview;
+            syncPreview();
+            Note(trailPreviewCard, L.T("Ces boutons pilotent seulement l'aperçu. Réinitialiser conserve tes réglages."));
+            InfoNote precision = new InfoNote(L.T("Précision du trait automatique. L'arrondi modifie les virages, sans ralentir le pointeur."));
+            trailPreviewCard.Add(precision);
+
+            PremiumCard colors = Card(L.T("Couleurs"), L.T("Unie, dégradé ou arc-en-ciel animé."), 2, "palette");
+            trailColorsCard = colors;
             PremiumChoiceGrid trailModes = Choices(colors, null, new string[] { "Unie", "Dégradé", "Arc-en-ciel" }, null, null, 3, false, () => cfg.TrailColorMode, s => cfg.TrailColorMode = s);
             sync.Add(delegate { trailModes.Swatches = new string[] { cfg.TrailColor, cfg.TrailColor + "|" + cfg.TrailColor2, "rainbow" }; trailModes.Invalidate(); });
-            ColorPick(colors, L.T("Première couleur"), () => cfg.TrailColor, s => cfg.TrailColor = s);
+            ColorField first = ColorPick(colors, L.T("Première couleur"), () => cfg.TrailColor, s => cfg.TrailColor = s);
             ColorField second = ColorPick(colors, L.T("Seconde couleur"), () => cfg.TrailColor2, s => cfg.TrailColor2 = s);
-            sync.Add(delegate { second.Enabled = cfg.TrailColorMode == "Dégradé"; });
-            }
-            else
-            {
-            PremiumCard motion = Card(L.T("Mouvement souple"), L.T("Souplesse : Ligne, Pointillés et Lumière."), 1, "trail");
-            Slider(motion, L.T("Densité"), 1, 5, "/5", () => cfg.TrailDensity, n => cfg.TrailDensity = n);
-            Slider(motion, L.T("Espacement"), 2, 40, "px", () => cfg.TrailSpacing, n => cfg.TrailSpacing = n);
-            Slider(motion, L.T("Dispersion"), 0, 90, "px", () => cfg.TrailSpread, n => cfg.TrailSpread = n);
-            Slider(motion, L.T("Souplesse"), 0, 100, "%", () => cfg.TrailSmoothness, n => cfg.TrailSmoothness = n);
-            Toggle(motion, L.T("Épaisseur dynamique"), L.T("Réagit à la vitesse de la souris"), () => cfg.TrailSpeedResponsive, b => cfg.TrailSpeedResponsive = b);
+            InfoNote colorEffect = new InfoNote(""); colors.Add(colorEffect);
 
-            PremiumCard logo = Card(L.T("Logo personnalisé"), L.T("Un PNG transparent dans ta traînée."), 1, "image");
+            PremiumCard logo = Card(L.T("Logo personnalisé"), L.T("Un PNG transparent dans ta traînée."), 2, "image");
+            trailLogoCard = logo;
             Label file = StatusLabel(logo, "", PremiumPalette.Subtle);
-            sync.Add(delegate { file.Text = String.IsNullOrEmpty(cfg.TrailLogoPath) ? L.T("Aucun logo — une étoile est utilisée.") : L.T("Logo : ") + Path.GetFileName(cfg.TrailLogoPath); });
             PremiumButton import = new PremiumButton(L.T("Importer un PNG"), ButtonKind.Secondary, "upload");
             import.Click += delegate
             {
@@ -1065,10 +1103,44 @@ namespace CursorFlow
             PremiumButton remove = new PremiumButton(L.T("Retirer"), ButtonKind.Ghost, "trash");
             remove.Click += delegate { cfg.TrailLogoPath = ""; CommitSettings(); };
             logo.Add(new ButtonRow(import, remove));
-            Slider(logo, L.T("Taille du logo"), 10, 125, "px", () => cfg.TrailLogoSize, n => cfg.TrailLogoSize = n);
-            Slider(logo, L.T("Un logo tous les"), 1, 12, "pts", () => cfg.TrailLogoEvery, n => cfg.TrailLogoEvery = n);
-            Toggle(logo, L.T("Rotation du logo"), L.T("Une signature plus vivante"), () => cfg.TrailLogoRotate, b => cfg.TrailLogoRotate = b);
-            }
+            TrailSlider(logo, L.T("Taille du logo"), L.T("Taille maximale ; les proportions sont conservées."), 10, 125, "px", () => cfg.TrailLogoSize, n => cfg.TrailLogoSize = n);
+            TrailSlider(logo, L.T("Un groupe de logos tous les"), L.T("1 conserve chaque groupe ; 2 en affiche un sur deux."), 1, 12, "", () => cfg.TrailLogoEvery, n => cfg.TrailLogoEvery = n);
+            PremiumSwitch rotation = Toggle(logo, L.T("Rotation du logo"), L.T("Oriente les logos différemment le long du tracé."), () => cfg.TrailLogoRotate, b => cfg.TrailLogoRotate = b);
+            InfoNote logoEffect = new InfoNote(""); logo.Add(logoEffect);
+
+            string previousStyle = null, previousColorMode = null;
+            bool previousLogoLoaded = false;
+            sync.Add(delegate
+            {
+                bool line = cfg.TrailStyle == "Ligne" || cfg.TrailStyle == "Lumière" || cfg.TrailStyle == "Pointillés";
+                bool isLogo = cfg.TrailStyle == "Logo";
+                bool logoLoaded = isLogo && trailView.HasTrailLogo;
+                bool changed = false;
+                changed |= look.SetItemVisible(width, !isLogo);
+                changed |= look.SetItemVisible(rounding, line);
+                changed |= look.SetItemVisible(quantity, !line);
+                changed |= look.SetItemVisible(spacing, !line);
+                changed |= look.SetItemVisible(spread, !line);
+                changed |= look.SetItemVisible(responsive, !isLogo);
+                width.TitleText = line ? L.T("Épaisseur") : L.T("Taille des motifs");
+                width.Explain(line ? L.T("Largeur du trait, avant l'effet de vitesse.") : L.T("Change la taille de chaque motif."));
+                changed |= trailPreviewCard.SetItemVisible(precision, line);
+                changed |= colors.SetLayoutIncluded(!logoLoaded);
+                changed |= colors.SetItemVisible(first, cfg.TrailColorMode != "Arc-en-ciel");
+                changed |= colors.SetItemVisible(second, cfg.TrailColorMode == "Dégradé");
+                colorEffect.Text = cfg.TrailColorMode == "Dégradé" ? L.T("Le dégradé relie les deux couleurs sur la traînée.") :
+                    cfg.TrailColorMode == "Arc-en-ciel" ? L.T("Les couleurs changent automatiquement au fil du temps.") : L.T("La première couleur s'applique à toute la traînée.");
+                changed |= logo.SetLayoutIncluded(isLogo);
+                changed |= logo.SetItemVisible(rotation, logoLoaded);
+                remove.Enabled = !String.IsNullOrEmpty(cfg.TrailLogoPath);
+                file.Text = logoLoaded ? L.T("Logo : ") + Path.GetFileName(cfg.TrailLogoPath) : String.IsNullOrEmpty(cfg.TrailLogoPath) ?
+                    L.T("Aucun logo — une étoile est utilisée.") : L.T("PNG illisible — une étoile est utilisée.");
+                logoEffect.Text = logoLoaded ? L.T("Le PNG conserve ses propres couleurs ; l'opacité reste réglable.") :
+                    L.T("L'étoile de remplacement utilise les réglages de couleurs.");
+                if (changed || previousStyle != cfg.TrailStyle || previousColorMode != cfg.TrailColorMode || previousLogoLoaded != logoLoaded)
+                    trailLayoutDirty = true;
+                previousStyle = cfg.TrailStyle; previousColorMode = cfg.TrailColorMode; previousLogoLoaded = logoLoaded;
+            });
         }
         private void PageClicks()
         {

@@ -13,10 +13,26 @@ namespace CursorFlow
         { if (!ok) throw new InvalidOperationException(label); count++; Console.WriteLine("OK " + count + " " + label); }
         internal static int Run()
         {
+            try { Console.OutputEncoding = new System.Text.UTF8Encoding(false); } catch { }
+            // Explicit streams also work when the runner has no attached console.
+            try
+            {
+                var output = new System.IO.StreamWriter(Console.OpenStandardOutput(), new System.Text.UTF8Encoding(false));
+                var error = new System.IO.StreamWriter(Console.OpenStandardError(), new System.Text.UTF8Encoding(false));
+                output.AutoFlush = true; error.AutoFlush = true; Console.SetOut(output); Console.SetError(error);
+            }
+            catch { }
             count = 0;
             try
             {
                 Sampling(); Bounds(); Compaction(); Scheduling(); Smoothing();
+                if (TrailPrecisionSelfTest.Run() != 0) return 1;
+                if (PreviewCadenceSelfTest.Run() != 0) return 1;
+                if (DiagnosticWriterSelfTest.Run() != 0) return 1;
+                if (PointerTrailSelfTest.Run() != 0) return 1;
+                if (InputTrailIntegrationSelfTest.Run() != 0) return 1;
+                if (TrailRenderingSelfTest.Run() != 0) return 1;
+                if (TrailStylesSelfTest.Run() != 0) return 1;
                 Console.WriteLine("TOTAL " + count + " contrôles traînée C# réussis."); return 0;
             }
             catch (Exception ex) { Console.Error.WriteLine("ECHEC TRAINEE : " + ex); return 1; }

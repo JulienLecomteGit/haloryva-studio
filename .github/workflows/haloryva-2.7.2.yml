@@ -1,0 +1,86 @@
+name: Haloryva 2.7.2 - tests Windows et paquet Store
+
+on:
+  push:
+    branches: [main, release/2.7.2]
+    paths:
+      - 'Haloryva_Windows64/**'
+      - 'Verifier-Compiler.ps1'
+      - 'Inventaire-sources.json'
+      - 'SHA256.json'
+      - 'SHA256SUMS-SOURCES.txt'
+      - 'build/**'
+      - 'packaging/**'
+      - 'outils/**'
+      - '.github/workflows/haloryva-2.7.2.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Haloryva_Windows64/**'
+      - 'Verifier-Compiler.ps1'
+      - 'Inventaire-sources.json'
+      - 'SHA256.json'
+      - 'SHA256SUMS-SOURCES.txt'
+      - 'build/**'
+      - 'packaging/**'
+      - 'outils/**'
+      - '.github/workflows/haloryva-2.7.2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: haloryva-2.7.2-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  windows-tests-msix:
+    if: github.repository == 'JulienLecomteGit/haloryva-studio'
+    runs-on: windows-2025
+    timeout-minutes: 20
+    steps:
+      - name: Recuperer les sources du commit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Compiler, executer les autotests et fabriquer le paquet non signe
+        shell: powershell
+        run: ./build/Fabriquer.ps1 -ProjetSources $env:GITHUB_WORKSPACE
+      - name: Conserver les preuves, y compris en cas d echec
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Haloryva-2.7.2-preuves-${{ github.run_number }}
+          path: |
+            Resultats/Preuves-R5-*.zip
+            Resultats/Verification-R5-*/Resume.json
+            Livraison/Haloryva-2.7.2/*.json
+            Livraison/Haloryva-2.7.2/*.log
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Conserver le paquet verifie et ses empreintes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Haloryva-2.7.2-MSIX-${{ github.run_number }}
+          path: |
+            Livraison/Haloryva-2.7.2/*.msix
+            Livraison/Haloryva-2.7.2/*.json
+            Livraison/Haloryva-2.7.2/*.txt
+            Livraison/Haloryva-2.7.2/*.log
+            Livraison/Haloryva-2.7.2/*.xml
+            Livraison/Haloryva-2.7.2/Preuves-compilation-tests.zip
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver les sources completes du commit apres tests reussis
+        if: ${{ always() && hashFiles('Distribution/SHA256SUMS.txt') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Haloryva-2.7.2-sources-${{ github.run_number }}
+          path: |
+            Distribution/Haloryva-Studio-2.7.2-sources.zip
+            Distribution/Provenance-sources.json
+            Distribution/SHA256SUMS.txt
+          if-no-files-found: warn
+          retention-days: 90

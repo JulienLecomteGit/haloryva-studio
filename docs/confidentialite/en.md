@@ -1,12 +1,14 @@
-# Privacy — Haloryva Studio 2.7.1
+# Privacy — Haloryva Studio 2.7.2
 
 [Français](fr.md) · [English](en.md) · [Español](es.md)
 
 Publisher: Julien Lecomte
 Public contact: https://github.com/JulienLecomteGit/haloryva-studio/issues
-This policy applies from the first availability of Haloryva Studio 2.7.1.
+Policy version prepared on 18 November 2026 for Haloryva Studio 2.7.2; it will apply to that version when it becomes available. Preparing this policy does not mean the update has already been published. The [historical 2.7.1 policy](https://github.com/JulienLecomteGit/haloryva-studio/blob/8fa015f798f6cc9803acf40972d2bcac8f28d434/docs/confidentialite/en.md) remains available.
 
-Processing on your device
+
+## Processing on your device
+
 Haloryva Studio highlights your pointer and lets you draw annotations.
 The app processes mouse and keyboard events for effects, shortcuts and mouse-button
 actions, including while another window is active. The key display shows certain
@@ -17,7 +19,9 @@ by exporting.
 PNG export saves annotations with a transparent background to your chosen file;
 it does not create a full desktop screenshot.
 
-Settings, files and recovery copies
+
+## Settings, files and recovery copies
+
 A local JSON profile stores preferences, including language, selected tools,
 button actions and visual settings. It may include paths to your PNG or WAV files.
 The EXE version uses the Haloryva folder in your local Windows app data.
@@ -34,18 +38,26 @@ Import does not delete the original files or installation. You can decline or
 cancel. Importing an old startup preference does not itself authorize automatic
 startup in Windows.
 
-Logs and network services
+
+## Logs and network services
+
 An error log may record the date, category, error type and technical stack trace,
 with file rotation. The error log excludes the exception message and exception data.
 Additional diagnostic modes are enabled explicitly. Profiles and logs are not
 automatically sent to support.
+The effect-recovery log is enabled during normal operation. It may record a timestamp, event category, technical reason, Windows error code and number of attempts. It is local, written in the background and limited to 262,144 bytes (256 KiB); at that limit, appends stop without erasing existing entries. It contains no window title or content, keystroke, image or pointer coordinate.
+
+Detailed modes are optional: a trial session copies settings to a new folder and may record timings, counters and rendering settings; effect diagnostics may record snapshots of overlay state. These modes are not enabled by a normal launch and do not collect typed text, pointer paths, screenshots, URLs or window titles. The copied trial profile may still include the same resource paths as the original profile.
+
 Normal app functions do not require a Haloryva account. Source reviews for this
 version have not identified application telemetry, advertising or a mechanism
 that sends information to a publisher-operated server.
 Files in a synchronized or network folder may be processed by your chosen service.
 Windows, Microsoft Store, GitHub and your email provider apply their own policies.
 
-Retention and deletion
+
+## Retention and deletion
+
 Local files remain until they are replaced, rotated or deleted.
 The EXE uninstaller keeps settings and backups by default; deleting them is a
 separate option. This option does not delete every export or copy stored elsewhere.
@@ -56,7 +68,9 @@ Recovery copies and synchronized files also need to be considered when deleting
 your data. Haloryva does not provide its own encryption for these files or guarantee
 that every copy is erased.
 
-Support and privacy requests
+
+## Support and privacy requests
+
 Sending information to support requires your action. The publisher uses the
 information you provide to answer your request and understand the reported problem.
 Selected public support channel:
@@ -70,9 +84,12 @@ The three-month retention rule planned for any future private support does not a
 The publisher has no remote access to settings stored only
 on your device and cannot erase them on your behalf.
 
-Your choices
+
+## Your choices
+
 You can change preferences, disable effects, manage startup in the app and Windows,
 or quit using the icon near the clock.
 “Open the settings folder” helps you find local files.
 Review version information, profiles, annotations and diagnostics before sharing
 them. This policy will be updated if app functions or data practices change.
+
