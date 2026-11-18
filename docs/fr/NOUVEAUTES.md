@@ -2,7 +2,7 @@
 
 [Accueil](../../README.md) · [English](../en/README.md) · [Español](../es/README.md)
 
-**2.7.2 : fabrication Windows qualifiée.** La compilation, les suites natives et les contrôles de structure du paquet ont réussi sur le commit de qualification. Le paquet est non signé et non installé ; la 2.7.2 n’est pas encore soumise ni certifiée par Microsoft Store. La dernière diffusion publique documentée est la 2.7.1. [Preuves et limites](../VALIDATION-2.7.2.md).
+**2.7.2 : certifiée par Microsoft Store, mise à jour contrôlée sur le PC testé.** Le paquet Store 2.7.2.0 x64 contient le binaire 2.7.2.6 livré et conserve les réglages préexistants. La relance et le rendu de cette installation restent à confirmer ; la recette visuelle positive d’exp4 est une preuve distincte. [Preuves et limites](../VALIDATION-2.7.2.md).
 
 - Traînée Ligne / Lumière continue, courbes adaptatives et extinction progressive.
 - Réglages de traînée expliqués et aperçu partagé avec le moteur de rendu.
@@ -12,7 +12,7 @@
 - Journaux écrits en arrière-plan ; diagnostics détaillés uniquement sur demande.
 - Démarrage normal et historique de version adaptés à la diffusion finale.
 
-Identités préparées : version affichée 2.7.2 ; fichier 2.7.2.6 ; assembly 2.7.2.0 ; paquet Store cible 2.7.2.0 x64.
+Identités contrôlées dans la livraison : produit 2.7.2 ; fichier 2.7.2.6 ; assembly 2.7.2.0 ; paquet Store 2.7.2.0 x64. La version 2.7.2.0 est installée sur le PC testé ; la fin de publication du portail et la diffusion sur tous les appareils restent à vérifier.
 
 ## Fonctions conservées de la 2.7.1
 

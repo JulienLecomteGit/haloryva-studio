@@ -2,7 +2,7 @@
 
 [Français](../fr/README.md) · [Home](../../README.md) · [Español](../es/README.md)
 
-**2.7.2: Windows build qualified.** Compilation, native test suites and package-structure checks passed on the qualification commit. The package is unsigned and has not been installed; 2.7.2 has not yet been submitted or certified by Microsoft Store. The last documented public release is 2.7.1. [Evidence and limits](../VALIDATION-2.7.2.md).
+**2.7.2: certified by Microsoft Store; update verified on the tested PC.** The update from 2.7.1 preserved existing settings. Availability on other devices and the final publication status have not been verified. [Evidence and limits](../VALIDATION-2.7.2.md).
 
 Make your pointer easy to follow and annotate your screen during presentations.
 
@@ -23,11 +23,11 @@ A personal selection of tools to cycle through with mouse buttons.
 Short-click and long-press actions; undo and redo.
 PNG annotation export and saved settings profiles.
 
-The 2.7.2 preparation adds continuous Line / Light trails, adaptive curves, progressive fading and explained settings. The exp4 visual trial was positive; this does not guarantee perfect smoothness on every device.
+Version 2.7.2 adds continuous Line / Light trails, adaptive curves, progressive fading and explained settings. The exp4 visual trial was positive; this does not guarantee perfect smoothness on every device.
 
 © 2026 Julien Lecomte — All rights reserved.
 
-**Download:** [Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) remains the main free distribution channel. The offered version depends on rollout, country and device; 2.7.2 has not yet been submitted or certified. No 2.7.2 EXE is offered here.
+**Download:** [Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) remains the main distribution channel. Availability of 2.7.2 has been confirmed on the tested PC; the version offered may vary by country and device. No 2.7.2 EXE is offered here.
 
 [Installation](INSTALLATION.md) · [Support](SUPPORT.md) · [Privacy](../confidentialite/en.md) · [Release notes](NOUVEAUTES.md)
 

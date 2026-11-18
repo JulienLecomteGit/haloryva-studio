@@ -2,7 +2,7 @@
 
 [Français](../fr/README.md) · [Home](../../README.md) · [Español](../es/README.md)
 
-**2.7.2: Windows build qualified.** Compilation, native test suites and package-structure checks passed on the qualification commit. The package is unsigned and has not been installed; 2.7.2 has not yet been submitted or certified by Microsoft Store. The last documented public release is 2.7.1. [Evidence and limits](../VALIDATION-2.7.2.md).
+**2.7.2: certified by Microsoft Store; update verified on the tested PC.** The update from 2.7.1 preserved existing settings. Availability on other devices and the final publication status have not been verified. [Evidence and limits](../VALIDATION-2.7.2.md).
 
 - Continuous Line / Light trails, adaptive curves and progressive fading.
 - Explained trail settings and a preview shared with the rendering engine.
@@ -12,7 +12,7 @@
 - Background log writing; detailed diagnostics enabled only on request.
 - Normal startup and version history prepared for the final release.
 
-Prepared identities: displayed version 2.7.2; file 2.7.2.6; assembly 2.7.2.0; target Store package 2.7.2.0 x64.
+Release versions: displayed version 2.7.2; file 2.7.2.6; assembly 2.7.2.0; Store package 2.7.2.0 x64.
 
 ## Features retained from 2.7.1
 

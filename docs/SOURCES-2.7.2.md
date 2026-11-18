@@ -1,14 +1,16 @@
 # Sources applicatives 2.7.2 — provenance et promotion
 
-## Identité contrôlée en qualification
+## Identité de la livraison contrôlée
 
 - Version affichée et informationnelle : **2.7.2**.
 - Version de fichier : **2.7.2.6**.
 - Assembly et manifeste applicatif : **2.7.2.0**.
-- Paquet Microsoft Store cible : **2.7.2.0 x64**.
+- Paquet Microsoft Store : **2.7.2.0 x64**.
 - Date de préparation : **18 novembre 2026**.
 
-Les identités du binaire et du paquet ont été contrôlées dans le [run Windows de qualification](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44298963756) du commit `64d97384dfa2c5bfd2618c43b348dff20a863be2`. Les empreintes et la portée de cette preuve figurent dans [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md). Une fabrication ultérieure produit ses propres bilans et empreintes. Aucune soumission, certification Microsoft ou installation de la 2.7.2 n’est attestée ici.
+La livraison provient du commit [`32234c0410e080add61742b29ee794b5a566fa2e`](https://github.com/JulienLecomteGit/haloryva-studio/commit/32234c0410e080add61742b29ee794b5a566fa2e), fabriqué et contrôlé au [run 44300357140](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44300357140). Le binaire installé depuis le Store possède le SHA256 **`A88FC82D352D0B69EFC8229210C63C88A559586D3A36656011959BB3DB1BEDEE`**, identique à celui livré. Certification Microsoft et mise à jour sur le PC testé sont confirmées ; les preuves et leurs limites figurent dans [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md).
+
+La qualification intermédiaire `64d97384…` et ses empreintes restent historiques. Les commits de suivi documentaire et leurs éventuelles fabrications ne remplacent pas le commit, les ZIP ou le paquet de cette livraison.
 
 ## Origine
 
@@ -45,8 +47,8 @@ Le journal technique local de récupération est actif et borné à 262 144 octe
 
 ## Fabrication et limites
 
-La fabrication native 2.7.2.6 et ses suites ont réussi ; le paquet 2.7.2.0 a passé ses 52 contrôles de structure et a été extrait pour vérifier le binaire exact testé. Le paquet est non signé et non installé. La validation visuelle de la base exp4 reste distincte : aucune nouvelle interface 2.7.2 n’a été ouverte pendant ce job. Voir [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md).
+La fabrication finale 2.7.2.6 et ses huit suites ont réussi ; le paquet 2.7.2.0 a passé ses 52 contrôles de structure et a été extrait pour vérifier le binaire exact testé. La CI produit le paquet de dépôt non signé pour Partner Center. Après certification, le contrôle sur le PC retrouve un paquet signé Store en état Ok, le même binaire et un profil inchangé. La validation visuelle de la base exp4 reste distincte : la relance et le rendu de l’installation finale n’ont pas encore été confirmés. Voir [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md).
 
-La recette de fabrication est définie par [le workflow Windows](../.github/workflows/haloryva-2.7.2.yml), [Fabriquer.ps1](../build/Fabriquer.ps1) et [Creer-Paquet.ps1](../packaging/Creer-Paquet.ps1). Les [dernières fabrications de main](https://github.com/JulienLecomteGit/haloryva-studio/actions/workflows/haloryva-2.7.2.yml?query=branch%3Amain) portent les résultats et artefacts de leurs commits exacts ; une réussite de qualification ne suffit pas à déclarer réussi un autre commit. Les empreintes de qualification ne doivent pas être utilisées à la place de celles du paquet ultérieurement déposé au Store.
+La recette de fabrication est définie par [le workflow Windows](../.github/workflows/haloryva-2.7.2.yml), [Fabriquer.ps1](../build/Fabriquer.ps1) et [Creer-Paquet.ps1](../packaging/Creer-Paquet.ps1). Les [fabrications de main](https://github.com/JulienLecomteGit/haloryva-studio/actions/workflows/haloryva-2.7.2.yml?query=branch%3Amain) portent les résultats de leurs commits exacts. Pour identifier le paquet diffusé, utiliser uniquement les empreintes du run `44300357140`, et non celles de la qualification antérieure ou d’un nouveau run documentaire.
 
-Les anciens fichiers `installer/`, `tests/maintenance/` et les ressources historiques du dépôt restent identifiés comme tels. Ils ne constituent pas un installateur EXE final 2.7.2. Le téléchargement utilisateur prévu reste Microsoft Store. Les droits réservés de Julien Lecomte sont inchangés.
+Les anciens fichiers `installer/`, `tests/maintenance/` et les ressources historiques du dépôt restent identifiés comme tels. Ils ne constituent pas un installateur EXE final 2.7.2. Le téléchargement utilisateur reste Microsoft Store. Les droits réservés de Julien Lecomte sont inchangés.

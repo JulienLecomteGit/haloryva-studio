@@ -2,7 +2,7 @@
 
 <p align="center"><img src="docs/Haloryva_Banniere_V01.png" alt="Haloryva Studio : curseur lumineux et halo" width="900"></p>
 
-**Version 2.7.2 — Windows x64 · publication Store en attente** · Créé par Julien Lecomte.
+**Version 2.7.2 — Windows x64 · Microsoft Store** · Créé par Julien Lecomte.
 
 [Français](docs/fr/README.md) · [English](docs/en/README.md) · [Español](docs/es/README.md)
 
@@ -12,13 +12,13 @@ Rendez votre curseur visible et annotez votre écran pendant vos présentations 
 
 La version 2.7.2 reprend le moteur de la copie expérimentale exp4, dont la compilation, les autotests et une recette visuelle ont réussi le 18 novembre 2026. Les maillons de la traînée Ligne / Lumière n’ont plus été perçus pendant cet essai.
 
-**La fabrication Windows de qualification a réussi : binaire 2.7.2.6 compilé, suites natives réussies et structure du paquet MSIX 2.7.2.0 contrôlée.** [Preuve du run de qualification](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44298963756). Le paquet est non signé, non installé et **la 2.7.2 n’est pas encore soumise ni certifiée par Microsoft Store**. Le contrôle du paquet ne remplace pas la certification Microsoft ni un essai de mise à jour sur un PC.
+**La 2.7.2 a réussi la certification Microsoft Store.** La mise à jour depuis la 2.7.1 est contrôlée sur le PC testé : paquet Store 2.7.2.0 x64, binaire 2.7.2.6 identique à celui livré et réglages conservés. La [fabrication finale du commit livré](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44300357140) a réussi les huit suites natives et les 52 contrôles de structure MSIX. La relance et le rendu visuel de cette installation restent à confirmer séparément de la recette exp4.
 
 [État de validation 2.7.2](docs/VALIDATION-2.7.2.md) · [Provenance des sources](docs/SOURCES-2.7.2.md) · [Diffusion](docs/DIFFUSION.md) · [Dernières fabrications main](https://github.com/JulienLecomteGit/haloryva-studio/actions/workflows/haloryva-2.7.2.yml?query=branch%3Amain)
 
 ## Télécharger
 
-**Microsoft Store est le canal principal gratuit.** La dernière publication documentée est la 2.7.1 ; la version effectivement proposée dépend de l’état de diffusion, du pays et de l’appareil.
+**Microsoft Store est le canal principal de distribution.** La disponibilité de la 2.7.2 est confirmée sur le PC testé. Le dernier écran Partner Center observé indiquait encore une publication en cours ; la fin de diffusion et la disponibilité dans tous les pays et sur tous les appareils n’ont pas été vérifiées.
 
 [Télécharger sur Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B)
 
@@ -54,7 +54,7 @@ Un journal technique local et borné accompagne la récupération des effets. Le
 
 ## Code, versions et droits
 
-Identités contrôlées pendant la qualification 2.7.2 : version affichée **2.7.2**, fichier **2.7.2.6**, assembly **2.7.2.0**, paquet Store cible **2.7.2.0 x64**. Les sources de diffusion conservent le moteur validé d’exp4 ; les changements de promotion et leurs limites sont décrits dans [SOURCES-2.7.2.md](docs/SOURCES-2.7.2.md).
+Identités contrôlées pendant la fabrication finale et la vérification de l’installation : produit **2.7.2**, fichier **2.7.2.6**, assembly **2.7.2.0**, paquet Store **2.7.2.0 x64**. Le binaire livré provient du commit `32234c0410e080add61742b29ee794b5a566fa2e`. Les sources de diffusion conservent le moteur validé d’exp4 ; les changements de promotion et leurs limites sont décrits dans [SOURCES-2.7.2.md](docs/SOURCES-2.7.2.md). Les mises à jour documentaires ultérieures ne remplacent pas cette provenance.
 
 La [provenance historique 2.7.1.11](docs/SOURCES-2.7.1.11.md) reste disponible. Les anciens dossiers d’installateur et de maintenance ne sont pas présentés comme un installateur EXE final 2.7.2.
 

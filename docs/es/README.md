@@ -2,7 +2,7 @@
 
 [Français](../fr/README.md) · [English](../en/README.md) · [Inicio](../../README.md)
 
-**2.7.2: fabricación Windows validada.** La compilación, las pruebas nativas y los controles de estructura del paquete se han superado en el commit de validación. El paquete no está firmado ni instalado; la 2.7.2 aún no se ha enviado ni certificado en Microsoft Store. La última publicación pública documentada es la 2.7.1. [Pruebas y límites](../VALIDATION-2.7.2.md).
+**2.7.2: certificación de Microsoft Store superada; actualización verificada en el PC de prueba.** La actualización desde 2.7.1 conservó los ajustes existentes. La disponibilidad en otros equipos y el estado final de publicación siguen sin verificarse. [Pruebas y límites](../VALIDATION-2.7.2.md).
 
 Haz que tu cursor sea fácil de seguir y anota en pantalla durante tus presentaciones.
 
@@ -23,11 +23,11 @@ Selección personal de herramientas para recorrer con los botones del ratón.
 Acciones de clic corto y pulsación larga; deshacer y rehacer.
 Exportación de anotaciones a PNG y perfiles de ajustes guardados.
 
-La preparación 2.7.2 incorpora estelas Línea / Luz continuas, curvas adaptativas, desvanecimiento progresivo y ajustes explicados. La prueba visual de exp4 fue positiva; no garantiza una fluidez perfecta en todos los dispositivos.
+La versión 2.7.2 incorpora estelas Línea / Luz continuas, curvas adaptativas, desvanecimiento progresivo y ajustes explicados. La prueba visual de exp4 fue positiva; no garantiza una fluidez perfecta en todos los dispositivos.
 
 © 2026 Julien Lecomte — Todos los derechos reservados.
 
-**Descarga:** [Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) sigue siendo el canal principal gratuito. La versión ofrecida depende de la distribución, del país y del dispositivo; la 2.7.2 aún no se ha enviado ni certificado. No se ofrece un EXE 2.7.2.
+**Descarga:** [Microsoft Store](https://apps.microsoft.com/detail/9NJ14SZJP55B) sigue siendo el canal principal de distribución. La disponibilidad de 2.7.2 está confirmada en el PC de prueba; la versión ofrecida puede variar según el país y el dispositivo. No se ofrece un EXE 2.7.2.
 
 [Instalación](INSTALLATION.md) · [Soporte](SUPPORT.md) · [Privacidad](../confidentialite/es.md) · [Novedades](NOUVEAUTES.md)
 

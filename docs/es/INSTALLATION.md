@@ -2,13 +2,13 @@
 
 [Français](../fr/README.md) · [English](../en/README.md) · [Inicio](../../README.md)
 
-**Actualización 2.7.2 en preparación.** El envío y la certificación aún no se han completado. La última versión pública documentada es la 2.7.1. Comprueba el [estado de distribución](../DIFFUSION.md) y la versión ofrecida por Microsoft Store antes de esperar una actualización.
+**2.7.2 ha superado la certificación de Microsoft Store.** La actualización desde 2.7.1 se ha verificado en el PC de prueba. La última captura de Partner Center aún mostraba la publicación en curso; su estado final y la disponibilidad en otros equipos siguen sin verificarse. Comprueba el [estado de distribución](../DIFFUSION.md) y la versión ofrecida por Microsoft Store.
 
 ## Instalación desde Microsoft Store
 
 Ficha oficial: https://apps.microsoft.com/detail/9NJ14SZJP55B
 Comprueba Haloryva Studio y el editor Julien Lecomte. Elige Obtener o Instalar y después Abrir. Este canal no requiere un instalador EXE ni un certificado independiente.
-El paquete 2.7.2.0 comprobado en validación está destinado a PC x64 Intel/AMD y conserva Windows 10.0.26200.0 como mínimo declarado. La estructura verificada todavía no equivale a certificación o disponibilidad en el Store. Los objetivos elegidos son Windows 11 25H2/26H2; los ensayos disponibles no validan todas las versiones y combinaciones de hardware. El Store comprueba los requisitos declarados para tu dispositivo. Se requieren teclado y ratón.
+El paquete 2.7.2.0 certificado está destinado a PC x64 Intel/AMD y conserva Windows 10.0.26200.0 como mínimo declarado. Los objetivos elegidos son Windows 11 25H2/26H2; los ensayos disponibles no validan todas las versiones y combinaciones de hardware. El Store comprueba los requisitos declarados para tu dispositivo. Se requieren teclado y ratón.
 
 ## Actualizar una instalación Store existente
 
@@ -19,7 +19,9 @@ Cuando la versión 2.7.2 esté realmente disponible:
 3. Abre Microsoft Store y busca actualizaciones de las aplicaciones. Aplica la de Haloryva Studio si se ofrece.
 4. Abre Haloryva y después Acerca de: comprueba que la versión mostrada sea **2.7.2**. Revisa tus ajustes y el estado del inicio automático.
 
-Actualizar el mismo paquete Store conserva el canal existente; esta operación no requiere desinstalar ni importar un perfil EXE. La conservación real de los ajustes y el inicio deben confirmarse en la versión actualizada. Si el Store aún ofrece 2.7.1, la presencia de las fuentes 2.7.2 en GitHub no permite forzar su disponibilidad.
+Actualizar el mismo paquete Store conserva el canal existente; esta operación no requiere desinstalar ni importar un perfil EXE. Comprueba tus ajustes y el inicio en tu propio equipo después de actualizar. Si el Store aún ofrece 2.7.1, la presencia de las fuentes 2.7.2 en GitHub no permite forzar su disponibilidad.
+
+La actualización de 2.7.1 a 2.7.2 del 18 de noviembre de 2026 conservó los ajustes existentes en el PC de prueba; el archivo del perfil permaneció idéntico byte por byte. La apertura de la aplicación, los efectos visuales y el inicio tras volver a iniciar sesión siguen pendientes de confirmación para esta versión. [Pruebas y límites](../VALIDATION-2.7.2.md).
 
 ## Cambio de una instalación EXE anterior al Store
 
