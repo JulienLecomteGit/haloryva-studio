@@ -14,12 +14,16 @@ namespace CursorFlow
         private Bitmap buffer;
         private Graphics surfaceGraphics;
         private readonly List<TrailDot> renderTrail = new List<TrailDot>(1536);
+        private readonly TrailRibbon trailRibbon = new TrailRibbon();
+        internal TrailRibbon RibbonMetrics { get { return trailRibbon; } }
+        internal bool RibbonUsedThisFrame { get; private set; }
         private readonly StableSurfaceBounds surfaceBounds = new StableSurfaceBounds();
         private readonly System.Diagnostics.Stopwatch surfaceClock = System.Diagnostics.Stopwatch.StartNew();
         internal int SurfaceCreations { get; private set; }
         internal long FallbackFrames { get; private set; }
         internal bool LastPublished { get; private set; }
         internal Size LastSurfaceSize { get; private set; }
+        internal RenderStageTiming LastRenderTiming { get; private set; }
         // Surface GDI réutilisable : évite la conversion en HBITMAP à chaque frame.
         private IntPtr surfaceDC = IntPtr.Zero;
         private IntPtr surfaceBitmap = IntPtr.Zero;
@@ -60,118 +64,149 @@ namespace CursorFlow
 
         public void Render(DateTime now)
         {
-            LastPublished = false;
-            Rectangle desktop = SystemInformation.VirtualScreen;
-            Point p = controller.CursorPoint;
-            Config c = controller.Options;
-            bool linearTrail = c.TrailStyle == "Ligne" || c.TrailStyle == "Lumière" || c.TrailStyle == "Pointillés";
-            renderTrail.Clear();
-            if (c.Trail)
+            bool measured = TrailTrial.Active;
+            long totalStarted = RenderStageClock.Start(measured);
+            long stage = totalStarted;
+            RenderStageTiming timing = new RenderStageTiming { Active = measured };
+            trailRibbon.MeasureCosts = measured;
+            try
             {
-                if (linearTrail) TrailPath.Compact(controller.Trail, renderTrail);
-                else renderTrail.AddRange(controller.Trail);
-            }
-            bool fullscreen = c.Focus;
-            Rectangle target;
-            if (fullscreen) { target = desktop; surfaceBounds.Reset(); }
-            else
-            {
-                // Englobe le halo déplacé, les traînées encore vivantes et les clics.
-                int minX = p.X - 145, minY = p.Y - 145, maxX = p.X + 145, maxY = p.Y + 145;
-                if (c.Ring && controller.RingVisibility(now) > 0f)
+                LastPublished = false;
+                RibbonUsedThisFrame = false;
+                Rectangle desktop = SystemInformation.VirtualScreen;
+                Point p = controller.CursorPoint;
+                Config c = controller.Options;
+                bool linearTrail = c.TrailStyle == "Ligne" || c.TrailStyle == "Lumière" || c.TrailStyle == "Pointillés";
+                DateTime trailNow = TrailClock.Now;
+                controller.TrailPipeline.Prepare(p, trailNow, c);
+                renderTrail.Clear(); renderTrail.AddRange(controller.TrailPipeline.RenderPoints);
+                bool fullscreen = c.Focus;
+                Rectangle target;
+                if (fullscreen) { target = desktop; surfaceBounds.Reset(); }
+                else
                 {
-                    Point center = controller.RingCenter(p);
-                    float radius = (c.RingRadius + (c.RingPulse ? 2.7f : 0f)) * controller.RingTextScale;
-                    if (controller.ShakeUntil > now) radius *= 1.7f;
-                    float border = c.RingThickness / 2f + (c.RingNeon ? c.RingGlowBlur / 2f : 0) + 4f;
-                    int rx = (int)Math.Ceiling(radius * (c.RingShape == "Ellipse" ? 1.30f : 1f) + border + (c.RingShape == "Réticule" ? 11 : 0));
-                    int ry = (int)Math.Ceiling(radius * (c.RingShape == "Ellipse" ? .78f : 1f) + border);
-                    minX = Math.Min(minX, center.X - rx); maxX = Math.Max(maxX, center.X + rx);
-                    minY = Math.Min(minY, center.Y - ry); maxY = Math.Max(maxY, center.Y + ry);
-                }
-                if (c.Trail && renderTrail.Count > 0)
-                {
-                    // Même géométrie que le rendu : inclure contrôles des Bézier et débordement du glow.
-                    float presence = c.TrailWidth * (c.TrailSpeedResponsive ? 2.12f : 1f);
-                    float padding;
-                    if (linearTrail) padding = presence * (c.TrailStyle == "Lumière" ? (c.PerformanceMode ? 3.6f : 7f) : 1f) / 2f + 5;
-                    else if (c.TrailStyle == "Logo") padding = c.TrailLogoSize * .72f + c.TrailSpread + 5;
-                    else padding = c.TrailWidth * 1.6f * (c.TrailSpeedResponsive ? 2.08f : 1f) * 1.85f + c.TrailSpread + 5;
-                    foreach (TrailDot d in renderTrail)
-                        IncludePoint(d.Point.X, d.Point.Y, padding, ref minX, ref minY, ref maxX, ref maxY);
-                    if (linearTrail)
+                    // Englobe le halo déplacé, les traînées encore vivantes et les clics.
+                    int minX = p.X - 145, minY = p.Y - 145, maxX = p.X + 145, maxY = p.Y + 145;
+                    if (c.Ring && controller.RingVisibility(now) > 0f)
                     {
-                        float tension = TrailPath.SmoothingTension(c.TrailSmoothness);
-                        for (int i = 1; i < renderTrail.Count; i++)
-                        {
-                            if (renderTrail[i].BreakBefore) continue;
-                            PointF a = renderTrail[i - 1].Point, b = renderTrail[i].Point;
-                            PointF prev = i < 2 || renderTrail[i - 1].BreakBefore ? a : renderTrail[i - 2].Point;
-                            PointF next = i + 1 < renderTrail.Count && !renderTrail[i + 1].BreakBefore ? renderTrail[i + 1].Point : b;
-                            PointF c1, c2;
-                            TrailPath.CurveControls(prev, a, b, next, tension, out c1, out c2);
-                            IncludePoint(c1.X, c1.Y, padding, ref minX, ref minY, ref maxX, ref maxY);
-                            IncludePoint(c2.X, c2.Y, padding, ref minX, ref minY, ref maxX, ref maxY);
-                        }
-                        IncludePoint(p.X, p.Y, padding + 20, ref minX, ref minY, ref maxX, ref maxY);
+                        Point center = controller.RingCenter(p);
+                        float radius = (c.RingRadius + (c.RingPulse ? 2.7f : 0f)) * controller.RingTextScale;
+                        if (controller.ShakeUntil > now) radius *= 1.7f;
+                        float border = c.RingThickness / 2f + (c.RingNeon ? c.RingGlowBlur / 2f : 0) + 4f;
+                        int rx = (int)Math.Ceiling(radius * (c.RingShape == "Ellipse" ? 1.30f : 1f) + border + (c.RingShape == "Réticule" ? 11 : 0));
+                        int ry = (int)Math.Ceiling(radius * (c.RingShape == "Ellipse" ? .78f : 1f) + border);
+                        minX = Math.Min(minX, center.X - rx); maxX = Math.Max(maxX, center.X + rx);
+                        minY = Math.Min(minY, center.Y - ry); maxY = Math.Max(maxY, center.Y + ry);
                     }
+                    if (c.Trail && renderTrail.Count > 0)
+                    {
+                        // Même géométrie que le rendu : inclure contrôles des Bézier et débordement du glow.
+                        float presence = c.TrailWidth * (c.TrailSpeedResponsive ? 2.12f : 1f);
+                        float padding;
+                        if (linearTrail) padding = presence * (c.TrailStyle == "Lumière" ? (c.PerformanceMode ? 3.6f : 7f) : 1f) / 2f + 5;
+                        else if (c.TrailStyle == "Logo") padding = c.TrailLogoSize * .72f + c.TrailSpread + 5;
+                        else padding = c.TrailWidth * 1.6f * (c.TrailSpeedResponsive ? 2.08f : 1f) * 1.85f + c.TrailSpread + 5;
+                        if (!linearTrail)
+                            padding += (Math.Max(1, Math.Min(5, c.TrailDensity)) - 1) * .5f *
+                                (c.TrailStyle == "Logo" ? c.TrailLogoSize * .8f : c.TrailWidth * 2.4f);
+                        foreach (TrailDot d in renderTrail)
+                            IncludePoint(d.Point.X, d.Point.Y, padding, ref minX, ref minY, ref maxX, ref maxY);
+                        if (linearTrail)
+                        {
+                            float tension = TrailPath.SmoothingTension(c.TrailSmoothness);
+                            for (int i = 1; i < renderTrail.Count; i++)
+                            {
+                                if (renderTrail[i].BreakBefore) continue;
+                                PointF a = renderTrail[i - 1].Point, b = renderTrail[i].Point;
+                                PointF prev = i < 2 || renderTrail[i - 1].BreakBefore ? a : renderTrail[i - 2].Point;
+                                PointF next = i + 1 < renderTrail.Count && !renderTrail[i + 1].BreakBefore ? renderTrail[i + 1].Point : b;
+                                PointF c1, c2;
+                                if (c.TrailStyle == "Pointillés")
+                                    TrailPath.CurveControls(prev, a, b, next, tension, out c1, out c2);
+                                else TrailPath.RibbonCurveControls(prev, a, b, next, tension, out c1, out c2);
+                                IncludePoint(c1.X, c1.Y, padding, ref minX, ref minY, ref maxX, ref maxY);
+                                IncludePoint(c2.X, c2.Y, padding, ref minX, ref minY, ref maxX, ref maxY);
+                            }
+                            IncludePoint(p.X, p.Y, padding + 20, ref minX, ref minY, ref maxX, ref maxY);
+                        }
+                    }
+                    foreach (Ripple r in controller.Ripples)
+                    {
+                        minX = Math.Min(minX, r.Point.X - c.ClickSize - 18);
+                        minY = Math.Min(minY, r.Point.Y - c.ClickSize - 18);
+                        maxX = Math.Max(maxX, r.Point.X + c.ClickSize + 18);
+                        maxY = Math.Max(maxY, r.Point.Y + c.ClickSize + 18);
+                    }
+                    // Loupe et texte des touches : toujours inclus dans le calque.
+                    if (c.Loupe || (c.ZoomOnClick && now < controller.ZoomUntil))
+                    {
+                        Rectangle lr = LensRect(p, c, desktop);
+                        minX = Math.Min(minX, lr.Left - 8); maxX = Math.Max(maxX, lr.Right + 8);
+                        minY = Math.Min(minY, lr.Top - 8); maxY = Math.Max(maxY, lr.Bottom + 8);
+                    }
+                    if (c.KeyDisplay && now < controller.KeysUntil && !String.IsNullOrEmpty(controller.LastKeys))
+                    {
+                        maxX = Math.Max(maxX, p.X + 40 + controller.LastKeys.Length * 17 + 60);
+                        minY = Math.Min(minY, p.Y - 90);
+                    }
+                    target = surfaceBounds.Calculate(desktop, Rectangle.FromLTRB(minX, minY, maxX, maxY),
+                        (c.Trail && controller.TrailAlive) || controller.Ripples.Count > 0, surfaceClock.Elapsed.TotalMilliseconds);
                 }
-                foreach (Ripple r in controller.Ripples)
+                timing.PrepareMs = RenderStageClock.Elapsed(stage);
+                if (target.Width < 1 || target.Height < 1) return;
+                stage = RenderStageClock.Start(measured);
+                // UpdateLayeredWindow publie position + dimensions + pixels ensemble, sans SetBounds préalable.
+                if (buffer == null || buffer.Width != target.Width || buffer.Height != target.Height)
+                    CreateSurface(target.Width, target.Height);
+                if (surfaceGraphics == null) surfaceGraphics = Graphics.FromImage(buffer);
+                Graphics g = surfaceGraphics;
+                timing.SurfaceMs = RenderStageClock.Elapsed(stage);
+                stage = RenderStageClock.Start(measured);
                 {
-                    minX = Math.Min(minX, r.Point.X - c.ClickSize - 18);
-                    minY = Math.Min(minY, r.Point.Y - c.ClickSize - 18);
-                    maxX = Math.Max(maxX, r.Point.X + c.ClickSize + 18);
-                    maxY = Math.Max(maxY, r.Point.Y + c.ClickSize + 18);
+                    g.ResetTransform(); g.ResetClip();
+                    g.CompositingMode = CompositingMode.SourceCopy;
+                    g.Clear(Color.Transparent);
+                    g.CompositingMode = CompositingMode.SourceOver;
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    g.PixelOffsetMode = c.PerformanceMode ? PixelOffsetMode.Half : PixelOffsetMode.HighQuality;
+                    g.TranslateTransform(-target.X, -target.Y);
+                    timing.ClearMs = RenderStageClock.Elapsed(stage);
+                    stage = RenderStageClock.Start(measured);
+                    if (c.Focus) DrawFocus(g, desktop);
+                    timing.OtherEffectsMs = RenderStageClock.Elapsed(stage);
+                    stage = RenderStageClock.Start(measured);
+                    if (c.Trail) DrawTrail(g, trailNow, c);
+                    timing.TrailMs = RenderStageClock.Elapsed(stage);
+                    stage = RenderStageClock.Start(measured);
+                    if (c.Ring && controller.RingVisibility(now) > 0f)
+                    {
+                        Point ringAt = controller.RingCenter(p);
+                        // Mode précision texte : aucun pixel de l'écran n'est capturé.
+                        DrawRing(g, now, ringAt, c,
+                            controller.ShakeUntil > now, controller.RingVisibility(now));
+                    }
+                    if (c.Clicks) DrawRipples(g, now, c);
+                    if (controller.IsDrawing && (!c.DrawCursorHideWhileDrawing || controller.CurrentStroke == null))
+                        DrawDrawingIndicator(g, p, c);
+                    if (c.Loupe || (c.ZoomOnClick && now < controller.ZoomUntil)) DrawLens(g, now, p, c, desktop);
+                    if (c.KeyDisplay && now < controller.KeysUntil) DrawKeys(g, p, controller.LastKeys, now, controller.KeysUntil, c.KeyStyle);
                 }
-                // Loupe et texte des touches : toujours inclus dans le calque.
-                if (c.Loupe || (c.ZoomOnClick && now < controller.ZoomUntil))
-                {
-                    Rectangle lr = LensRect(p, c, desktop);
-                    minX = Math.Min(minX, lr.Left - 8); maxX = Math.Max(maxX, lr.Right + 8);
-                    minY = Math.Min(minY, lr.Top - 8); maxY = Math.Max(maxY, lr.Bottom + 8);
-                }
-                if (c.KeyDisplay && now < controller.KeysUntil && !String.IsNullOrEmpty(controller.LastKeys))
-                {
-                    maxX = Math.Max(maxX, p.X + 40 + controller.LastKeys.Length * 17 + 60);
-                    minY = Math.Min(minY, p.Y - 90);
-                }
-                target = surfaceBounds.Calculate(desktop, Rectangle.FromLTRB(minX, minY, maxX, maxY),
-                    (c.Trail && controller.Trail.Count > 0) || controller.Ripples.Count > 0, surfaceClock.Elapsed.TotalMilliseconds);
+                timing.OtherEffectsMs += RenderStageClock.Elapsed(stage);
+                stage = RenderStageClock.Start(measured);
+                // Le Graphics est désormais persistant : terminer ses écritures avant
+                // que UpdateLayeredWindow lise les pixels partagés de la DIB.
+                g.Flush(FlushIntention.Sync);
+                timing.FlushMs = RenderStageClock.Elapsed(stage);
+                LastSurfaceSize = target.Size;
+                stage = RenderStageClock.Start(measured);
+                Publish(target);
+                timing.PublishMs = RenderStageClock.Elapsed(stage);
             }
-            if (target.Width < 1 || target.Height < 1) return;
-            // UpdateLayeredWindow publie position + dimensions + pixels ensemble, sans SetBounds préalable.
-            if (buffer == null || buffer.Width != target.Width || buffer.Height != target.Height)
-                CreateSurface(target.Width, target.Height);
-            if (surfaceGraphics == null) surfaceGraphics = Graphics.FromImage(buffer);
-            Graphics g = surfaceGraphics;
+            finally
             {
-                g.ResetTransform(); g.ResetClip();
-                g.CompositingMode = CompositingMode.SourceCopy;
-                g.Clear(Color.Transparent);
-                g.CompositingMode = CompositingMode.SourceOver;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.PixelOffsetMode = c.PerformanceMode ? PixelOffsetMode.Half : PixelOffsetMode.HighQuality;
-                g.TranslateTransform(-target.X, -target.Y);
-                if (c.Focus) DrawFocus(g, desktop);
-                if (c.Trail) DrawTrail(g, now, c);
-                if (c.Ring && controller.RingVisibility(now) > 0f)
-                {
-                    Point ringAt = controller.RingCenter(p);
-                    // Mode précision texte : aucun pixel de l'écran n'est capturé.
-                    DrawRing(g, now, ringAt, c,
-                        controller.ShakeUntil > now, controller.RingVisibility(now));
-                }
-                if (c.Clicks) DrawRipples(g, now, c);
-                if (controller.IsDrawing && (!c.DrawCursorHideWhileDrawing || controller.CurrentStroke == null))
-                    DrawDrawingIndicator(g, p, c);
-                if (c.Loupe || (c.ZoomOnClick && now < controller.ZoomUntil)) DrawLens(g, now, p, c, desktop);
-                if (c.KeyDisplay && now < controller.KeysUntil) DrawKeys(g, p, controller.LastKeys, now, controller.KeysUntil, c.KeyStyle);
+                timing.TotalMs = RenderStageClock.Elapsed(totalStarted);
+                LastRenderTiming = timing;
             }
-            // Le Graphics est désormais persistant : terminer ses écritures avant
-            // que UpdateLayeredWindow lise les pixels partagés de la DIB.
-            g.Flush(FlushIntention.Sync);
-            LastSurfaceSize = target.Size;
-            Publish(target);
         }
 
         // DIB de haut en bas, surface Format32bppPArgb partagée directement
@@ -378,40 +413,43 @@ namespace CursorFlow
         private void DrawTrail(Graphics g, DateTime now, Config c)
         {
             if (c.TrailStyle == "Logo") EnsureLogo(c.TrailLogoPath);
-            DrawTrailCore(g, TrailClock.Now, c, renderTrail, logoBitmap, controller.CursorPoint);
+            DrawTrailCore(g, now, c, renderTrail, logoBitmap, controller.CursorPoint, trailRibbon);
+            RibbonUsedThisFrame = c.TrailStyle == "Ligne" || c.TrailStyle == "Lumière";
         }
-        internal static void DrawTrailCore(Graphics g, DateTime now, Config c, List<TrailDot> dots, Bitmap logoBitmap, Point? head = null)
+        internal static void DrawTrailCore(Graphics g, DateTime now, Config c, List<TrailDot> dots, Bitmap logoBitmap,
+            Point? head = null, TrailRibbon ribbon = null)
         {
-            if (dots.Count < 1) return;
             string style = c.TrailStyle;
             double life = Math.Max(100, c.TrailLife);
-            bool linear = style == "Ligne" || style == "Pointillés" || style == "Lumière";
-            if (linear && dots.Count < 2) return;
             Color firstColor = Visuals.ParseColor(c.TrailColor, Color.Cyan);
             Color secondColor = Visuals.ParseColor(c.TrailColor2, Color.MediumPurple);
-            if (linear)
+            if (style == "Ligne" || style == "Lumière")
             {
-                using (Pen wide = new Pen(Color.Transparent, 1))
-                using (Pen soft = new Pen(Color.Transparent, 1))
+                TrailRibbonOptions options = new TrailRibbonOptions { Width = c.TrailWidth, Life = c.TrailLife,
+                    Opacity = c.TrailOpacity, Smoothness = c.TrailSmoothness, SpeedResponsive = c.TrailSpeedResponsive,
+                    PerformanceMode = c.PerformanceMode, Glow = style == "Lumière", FirstColor = firstColor,
+                    SecondColor = secondColor, ColorMode = c.TrailColorMode };
+                if (ribbon != null) ribbon.Draw(g, now, options, dots);
+                else using (TrailRibbon temporary = new TrailRibbon()) temporary.Draw(g, now, options, dots);
+                return;
+            }
+            if (dots.Count < 1) return;
+            // Pointillés retains its intentionally segmented historical rendering.
+            if (style == "Pointillés")
+            {
+                if (dots.Count < 2) return;
                 using (Pen pen = new Pen(Color.Transparent, 1))
-                using (Pen core = new Pen(Color.Transparent, 1))
                 {
-                    wide.StartCap = wide.EndCap = soft.StartCap = soft.EndCap = core.StartCap = core.EndCap = LineCap.Flat;
-                    // Ligne/Lumière : des extrémités rondes sur CHAQUE segment se
-                    // superposent et dessinent des « perles » lumineuses aux raccords.
-                    // Les pointillés conservent leurs embouts ronds intentionnels.
-                    pen.StartCap = pen.EndCap = style == "Pointillés" ? LineCap.Round : LineCap.Flat;
-                    pen.LineJoin = soft.LineJoin = LineJoin.Round;
-                    if (style == "Pointillés") pen.DashStyle = DashStyle.Dash;
-                    bool freshHead = head.HasValue && (now - dots[dots.Count - 1].Time).TotalMilliseconds < 150 &&
-                        head.Value != dots[dots.Count - 1].Point;
-                    int count = dots.Count + (freshHead ? 1 : 0);
+                    pen.StartCap = pen.EndCap = LineCap.Round;
+                    pen.LineJoin = LineJoin.Round; pen.DashStyle = DashStyle.Dash;
+                    // The shared pipeline already supplies an observed head and
+                    // every break. Never append an unchecked cursor position.
+                    int count = dots.Count;
                     float tension = TrailPath.SmoothingTension(c.TrailSmoothness);
                     for (int i = 1; i < count; i++)
                     {
-                        bool atHead = i == dots.Count;
-                        if (!atHead && dots[i].BreakBefore) continue;
-                        TrailDot dot = dots[Math.Min(i, dots.Count - 1)];
+                        if (dots[i].BreakBefore) continue;
+                        TrailDot dot = dots[i];
                         double rem = Math.Max(0, Math.Min(1, 1.0 - (now - dot.Time).TotalMilliseconds / life));
                         if (rem <= 0) continue;
                         Color col = TrailColorFast(c, firstColor, secondColor, i, count, now, -1);
@@ -419,64 +457,58 @@ namespace CursorFlow
                         float speed = c.TrailSpeedResponsive ? (float)(1 + Math.Min(1.4, dot.Speed * .28)) : 1f;
                         float thickness = Math.Max(1, c.TrailWidth * speed * (float)(.55 + .45 * rem));
                         PointF a = dots[i - 1].Point;
-                        PointF b = atHead ? head.Value : dot.Point;
-                        PointF prev = atHead || i < 2 || dots[i - 1].BreakBefore ? a : dots[i - 2].Point;
+                        PointF b = dot.Point;
+                        PointF prev = i < 2 || dots[i - 1].BreakBefore ? a : dots[i - 2].Point;
                         PointF next = i + 1 < dots.Count && !dots[i + 1].BreakBefore ? dots[i + 1].Point : b;
                         PointF c1, c2;
                         TrailPath.CurveControls(prev, a, b, next, tension, out c1, out c2);
-                        if (style == "Lumière")
-                        {
-                            if (!c.PerformanceMode)
-                            { wide.Color = Color.FromArgb(Math.Max(1, alpha / 10), col); wide.Width = thickness * 7f; g.DrawBezier(wide, a, c1, c2, b); }
-                            soft.Color = Color.FromArgb(Math.Max(1, alpha / 4), col); soft.Width = thickness * 3.6f;
-                            g.DrawBezier(soft, a, c1, c2, b);
-                        }
                         pen.Color = Color.FromArgb(alpha, col); pen.Width = thickness;
                         g.DrawBezier(pen, a, c1, c2, b);
-                        if (style == "Lumière")
-                        {
-                            core.Color = Color.FromArgb(Clamp((int)(alpha * .85)), Visuals.Lerp(col, Color.White, .75));
-                            core.Width = Math.Max(1f, thickness * .38f); g.DrawBezier(core, a, c1, c2, b);
-                        }
                     }
                 }
                 return;
             }
-            int every = Math.Max(1, 6 - c.TrailDensity);
+            int quantity = TrailMotifLayout.Quantity(c.TrailDensity);
             for (int i = 0; i < dots.Count; i++)
             {
                 long id = dots[i].Id;
-                if (id % every != 0) continue;   // sélection liée à l'identité : retirer le premier point ne décale pas les autres
+                if (style == "Logo" && !TrailMotifLayout.LogoGroup(id, c.TrailLogoEvery)) continue;
                 double age = (now - dots[i].Time).TotalMilliseconds;
-                double remain = 1.0 - age / life;
+                double remain = Math.Max(0, Math.Min(1, 1.0 - age / life));
                 if (remain <= 0) continue;
                 int alpha = Clamp((int)(c.TrailOpacity * remain));
                 Color col = TrailColorFast(c, firstColor, secondColor, i, dots.Count, now, id);
                 Point p = dots[i].Point;
                 float spread = c.TrailSpread * (float)(.25 + (1 - remain) * .75);
-                float dx = (float)(Math.Sin(id * 12.9898) * spread);
-                float dy = (float)(Math.Cos(id * 9.4371) * spread);
-                PointF location = new PointF(p.X + dx, p.Y + dy);
                 float speed = c.TrailSpeedResponsive ? (float)(1.0 + Math.Min(1.6, dots[i].Speed * .27)) : 1f;
                 float size = Math.Max(2f, c.TrailWidth * 1.6f * speed * (float)(.30 + .70 * remain));
-                if (style == "Logo")
+                PointF normal = TrailMotifLayout.Normal(dots, i);
+                float gap = style == "Logo" ? c.TrailLogoSize * .8f : c.TrailWidth * 2.4f;
+                for (int lane = 0; lane < quantity; lane++)
                 {
-                    if ((id / every) % Math.Max(1, c.TrailLogoEvery) != 0) continue;
-                    float iconSize = c.TrailLogoSize * (float)(.45 + remain * .55);
-                    DrawLogo(g, logoBitmap, location, iconSize, alpha, c.TrailLogoRotate ? (float)(id * 23 % 360) : 0, col);
-                }
-                else using (SolidBrush brush = new SolidBrush(Color.FromArgb(alpha, col)))
-                {
-                    if (style == "Points") g.FillEllipse(brush, location.X - size, location.Y - size, size * 2, size * 2);
-                    else if (style == "Étoiles") FillStar(g, brush, Point.Round(location), size * 1.6f);
-                    else if (style == "Kawaii") FillHeart(g, brush, Point.Round(location), size * 1.7f);
-                    else
+                    double seed = id * 7.0 + lane;
+                    float lateral = TrailMotifLayout.LaneOffset(lane, quantity, gap);
+                    PointF location = new PointF(p.X + normal.X * lateral + (float)(Math.Sin(seed * 12.9898) * spread),
+                        p.Y + normal.Y * lateral + (float)(Math.Cos(seed * 9.4371) * spread));
+                    if (style == "Logo")
                     {
-                        g.FillEllipse(brush, location.X - size / 2, location.Y - size / 2, size, size);
-                        using (Pen spark = new Pen(Color.FromArgb(alpha, col), Math.Max(1, size / 4)))
+                        float iconSize = c.TrailLogoSize * (float)(.45 + remain * .55);
+                        DrawLogo(g, logoBitmap, location, iconSize, alpha,
+                            c.TrailLogoRotate ? (float)((id * 23 + lane * 17) % 360) : 0, col);
+                    }
+                    else using (SolidBrush brush = new SolidBrush(Color.FromArgb(alpha, col)))
+                    {
+                        if (style == "Points") g.FillEllipse(brush, location.X - size, location.Y - size, size * 2, size * 2);
+                        else if (style == "Étoiles") FillStar(g, brush, Point.Round(location), size * 1.6f);
+                        else if (style == "Kawaii") FillHeart(g, brush, Point.Round(location), size * 1.7f);
+                        else
                         {
-                            g.DrawLine(spark, location.X - size * 1.8f, location.Y, location.X + size * 1.8f, location.Y);
-                            g.DrawLine(spark, location.X, location.Y - size * 1.8f, location.X, location.Y + size * 1.8f);
+                            g.FillEllipse(brush, location.X - size / 2, location.Y - size / 2, size, size);
+                            using (Pen spark = new Pen(Color.FromArgb(alpha, col), Math.Max(1, size / 4)))
+                            {
+                                g.DrawLine(spark, location.X - size * 1.8f, location.Y, location.X + size * 1.8f, location.Y);
+                                g.DrawLine(spark, location.X, location.Y - size * 1.8f, location.X, location.Y + size * 1.8f);
+                            }
                         }
                     }
                 }
@@ -525,7 +557,8 @@ namespace CursorFlow
             {
                 g.TranslateTransform(at.X, at.Y);
                 if (rotate != 0) g.RotateTransform(rotate);
-                float w = size, h = size * logoBitmap.Height / Math.Max(1f, logoBitmap.Width);
+                float scale = size / Math.Max(logoBitmap.Width, logoBitmap.Height);
+                float w = logoBitmap.Width * scale, h = logoBitmap.Height * scale;
                 using (ImageAttributes attrs = new ImageAttributes())
                 {
                     ColorMatrix matrix = new ColorMatrix(); matrix.Matrix33 = alpha / 255f;
@@ -803,6 +836,7 @@ namespace CursorFlow
             if (disposing)
             {
                 ReleaseSurface();
+                trailRibbon.Dispose();
                 if (lensSnapshot != null) lensSnapshot.Dispose();
                 if (logoBitmap != null) logoBitmap.Dispose();
             }

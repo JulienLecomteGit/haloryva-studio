@@ -18,10 +18,12 @@ namespace CursorFlow
         private volatile bool stopped;
         private int fps;
         private long coalesced;
+        private long queuedAt;
         private int disposed;
         private volatile string mode = "INITIALISATION";
         internal string Mode { get { return mode; } }
         internal long Coalesced { get { return Interlocked.Read(ref coalesced); } }
+        internal bool WorkerExited { get { return worker == null || !worker.IsAlive; } }
         internal int FrameRate { get { return Interlocked.CompareExchange(ref fps, 0, 0); } set { Interlocked.Exchange(ref fps, Math.Max(15, Math.Min(60, value))); } }
         internal FramePump(Control owner, Action action, int rate)
         {
@@ -30,6 +32,7 @@ namespace CursorFlow
             {
                 try
                 {
+                    TrailMetrics.Dispatch(Interlocked.Read(ref queuedAt), Stopwatch.GetTimestamp());
                     EffectDiagnostics.FrameDispatched();
                     if (!stopped) tick();
                 }
@@ -78,7 +81,11 @@ namespace CursorFlow
                     if (stopped) break;
                     deadline.Advance(clock.Elapsed.TotalMilliseconds, FrameRate);
                     if (!gate.TryEnter()) { Interlocked.Increment(ref coalesced); EffectDiagnostics.FrameCoalesced(); continue; }
-                    try { target.BeginInvoke(dispatch); EffectDiagnostics.FrameQueued(); }
+                    try
+                    {
+                        Interlocked.Exchange(ref queuedAt, Stopwatch.GetTimestamp());
+                        target.BeginInvoke(dispatch); EffectDiagnostics.FrameQueued();
+                    }
                     catch (InvalidOperationException)
                     {
                         EffectDiagnostics.Event("PUMP_DISPATCH_FAILED", "INVALID_OPERATION");

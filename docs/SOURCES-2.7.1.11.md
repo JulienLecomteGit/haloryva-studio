@@ -1,3 +1,5 @@
+> **Référence historique 2.7.1.11.** Ce document conserve le périmètre et les limites de l’intégration de novembre 2026. Les sources courantes préparées pour la 2.7.2 sont décrites dans [SOURCES-2.7.2.md](SOURCES-2.7.2.md). L’inventaire 2.7.1.11 reste inchangé.
+
 # Sources applicatives 2.7.1.11 — intégration préparée
 
 Les 36 fichiers sous `stamped-source/` de l’archive de fabrication sont repris à l’identique dans `Haloryva_Windows64/` : 33 fichiers C#, un catalogue de langues, l’icône et le manifeste applicatif. Aucun code n’est corrigé pendant cette intégration.
@@ -28,3 +30,4 @@ L’archive ne contient pas les sources de l’installateur final, les scripts d
 Aucune recette de compilation reproductible n’est revendiquée ici. Le catalogue doit notamment être embarqué sous le nom `Haloryva.Localization.json` ; les références Windows utilisées par la fabrication doivent être reprises de sa recette officielle avant une future compilation. Aucun script ni workflow n’est exécuté ou ajouté dans cette préparation.
 
 La version 2.7.0 reste accessible dans l’historique Git. Aucun EXE, DLL, paquet MSIX, archive de fabrication, certificat ou donnée personnelle n’est ajouté. Le téléchargement destiné aux utilisateurs reste Microsoft Store.
+

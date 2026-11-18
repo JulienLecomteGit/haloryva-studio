@@ -35,3 +35,25 @@ CONTEXTE*.md
 Thumbs.db
 .DS_Store
 # Ces regles n'empechent pas un ajout force ou un envoi par API : relire avant commit.
+
+# Chaine de fabrication 2.7.2 et controles publics autorises.
+!/Verifier-Compiler.ps1
+!/build/*.ps1
+!/packaging/*.ps1
+!/outils/*.ps1
+!/Haloryva_Windows64/tests/*.cs
+!/Haloryva_Windows64/tests/**/*.cs
+
+# Livrables generes et mesures locales : jamais dans l'arbre source.
+/Resultats/
+/Livraison/
+/Distribution/
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+*.log
+ticks.csv
+EFFETS_DIAGNOSTIC.csv
+MiseAJour-Haloryva-*.json
+

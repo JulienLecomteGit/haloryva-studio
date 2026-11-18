@@ -2830,5 +2830,275 @@
     "fr": "Langues, outils choisis et corrections de fiabilité",
     "en": "Languages, selected tools and reliability fixes",
     "es": "Idiomas, herramientas elegidas y mejoras de fiabilidad"
+  },
+  {
+    "key": "trail.m01.01",
+    "fr": "1 conserve chaque groupe ; 2 en affiche un sur deux.",
+    "en": "1 keeps every group; 2 shows every other group.",
+    "es": "1 conserva cada grupo; 2 muestra uno de cada dos."
+  },
+  {
+    "key": "trail.m01.02",
+    "fr": "Adoucit les angles, sans retarder la tête.",
+    "en": "Softens corners without delaying the head.",
+    "es": "Suaviza los ángulos sin retrasar la cabeza."
+  },
+  {
+    "key": "trail.m01.03",
+    "fr": "Arrondi des virages",
+    "en": "Corner rounding",
+    "es": "Redondeo de las curvas"
+  },
+  {
+    "key": "trail.m01.04",
+    "fr": "Arrête le mouvement et laisse finir le fondu.",
+    "en": "Stops the movement and lets the trail fade out.",
+    "es": "Detiene el movimiento y deja que termine el desvanecimiento."
+  },
+  {
+    "key": "trail.m01.05",
+    "fr": "Augmente la présence de toute la traînée.",
+    "en": "Makes the whole trail more visible.",
+    "es": "Hace más visible toda la estela."
+  },
+  {
+    "key": "trail.m01.06",
+    "fr": "Augmente la taille avec la vitesse de la souris.",
+    "en": "Increases the size as the mouse moves faster.",
+    "es": "Aumenta el tamaño con la velocidad del ratón."
+  },
+  {
+    "key": "trail.m01.07",
+    "fr": "Ces boutons pilotent seulement l'aperçu. Réinitialiser conserve tes réglages.",
+    "en": "These buttons control only the preview. Reset keeps your settings.",
+    "es": "Estos botones solo controlan la vista previa. Restablecer conserva tus ajustes."
+  },
+  {
+    "key": "trail.m01.08",
+    "fr": "Change la taille de chaque motif.",
+    "en": "Changes the size of each motif.",
+    "es": "Cambia el tamaño de cada motivo."
+  },
+  {
+    "key": "trail.m01.09",
+    "fr": "Chaque réglage agit sur le style choisi.",
+    "en": "Every setting affects the selected style.",
+    "es": "Cada ajuste modifica el estilo elegido."
+  },
+  {
+    "key": "trail.m01.10",
+    "fr": "Dessine de 1 à 5 motifs côte à côte.",
+    "en": "Draws 1 to 5 motifs side by side.",
+    "es": "Dibuja de 1 a 5 motivos uno junto a otro."
+  },
+  {
+    "key": "trail.m01.11",
+    "fr": "Distance entre deux groupes sur le parcours.",
+    "en": "Distance between two groups along the path.",
+    "es": "Distancia entre dos grupos a lo largo del recorrido."
+  },
+  {
+    "key": "trail.m01.12",
+    "fr": "Durée avant disparition",
+    "en": "Time before disappearing",
+    "es": "Tiempo antes de desaparecer"
+  },
+  {
+    "key": "trail.m01.13",
+    "fr": "Efface l'aperçu et relance le mouvement rapide.",
+    "en": "Clears the preview and restarts the fast movement.",
+    "es": "Borra la vista previa y reinicia el movimiento rápido."
+  },
+  {
+    "key": "trail.m01.14",
+    "fr": "En pause — le tracé s'efface",
+    "en": "Paused — the trail is fading",
+    "es": "En pausa — la estela se desvanece"
+  },
+  {
+    "key": "trail.m01.15",
+    "fr": "Essaie une vitesse, des virages ou ta souris.",
+    "en": "Try a speed, corners, or your own mouse.",
+    "es": "Prueba una velocidad, curvas o tu propio ratón."
+  },
+  {
+    "key": "trail.m01.16",
+    "fr": "L'étoile de remplacement utilise les réglages de couleurs.",
+    "en": "The fallback star uses the color settings.",
+    "es": "La estrella de sustitución utiliza los ajustes de color."
+  },
+  {
+    "key": "trail.m01.17",
+    "fr": "La première couleur s'applique à toute la traînée.",
+    "en": "The first color applies to the whole trail.",
+    "es": "El primer color se aplica a toda la estela."
+  },
+  {
+    "key": "trail.m01.18",
+    "fr": "Taille maximale ; les proportions sont conservées.",
+    "en": "Maximum size; the proportions are preserved.",
+    "es": "Tamaño máximo; se conservan las proporciones."
+  },
+  {
+    "key": "trail.m01.19",
+    "fr": "Largeur du trait, avant l'effet de vitesse.",
+    "en": "Line width before the speed effect.",
+    "es": "Anchura del trazo antes del efecto de velocidad."
+  },
+  {
+    "key": "trail.m01.20",
+    "fr": "Le PNG conserve ses propres couleurs ; l'opacité reste réglable.",
+    "en": "The PNG keeps its own colors; opacity remains adjustable.",
+    "es": "El PNG conserva sus propios colores; la opacidad sigue siendo ajustable."
+  },
+  {
+    "key": "trail.m01.21",
+    "fr": "Le dégradé relie les deux couleurs sur la traînée.",
+    "en": "The gradient blends the two colors along the trail.",
+    "es": "El degradado une los dos colores a lo largo de la estela."
+  },
+  {
+    "key": "trail.m01.22",
+    "fr": "Le tracé s'efface pendant cette durée.",
+    "en": "The trail fades out over this duration.",
+    "es": "La estela se desvanece durante este tiempo."
+  },
+  {
+    "key": "trail.m01.23",
+    "fr": "Lent",
+    "en": "Slow",
+    "es": "Lento"
+  },
+  {
+    "key": "trail.m01.24",
+    "fr": "Les couleurs changent automatiquement au fil du temps.",
+    "en": "Colors change automatically over time.",
+    "es": "Los colores cambian automáticamente con el tiempo."
+  },
+  {
+    "key": "trail.m01.25",
+    "fr": "Mouvement de l'aperçu",
+    "en": "Preview movement",
+    "es": "Movimiento de la vista previa"
+  },
+  {
+    "key": "trail.m01.26",
+    "fr": "Oriente les logos différemment le long du tracé.",
+    "en": "Rotates the logos differently along the path.",
+    "es": "Orienta los logotipos de forma distinta a lo largo del recorrido."
+  },
+  {
+    "key": "trail.m01.27",
+    "fr": "PNG illisible — une étoile est utilisée.",
+    "en": "Unreadable PNG — a star is used.",
+    "es": "PNG ilegible — se utiliza una estrella."
+  },
+  {
+    "key": "trail.m01.28",
+    "fr": "Pause",
+    "en": "Pause",
+    "es": "Pausa"
+  },
+  {
+    "key": "trail.m01.29",
+    "fr": "Précision du trait automatique. L'arrondi modifie les virages, sans ralentir le pointeur.",
+    "en": "Automatic line precision. Rounding changes corners without slowing the pointer.",
+    "es": "Precisión automática del trazo. El redondeo modifica las curvas sin ralentizar el puntero."
+  },
+  {
+    "key": "trail.m01.30",
+    "fr": "Quantité de motifs",
+    "en": "Number of motifs",
+    "es": "Cantidad de motivos"
+  },
+  {
+    "key": "trail.m01.31",
+    "fr": "Rapide",
+    "en": "Fast",
+    "es": "Rápido"
+  },
+  {
+    "key": "trail.m01.32",
+    "fr": "Reprendre",
+    "en": "Resume",
+    "es": "Reanudar"
+  },
+  {
+    "key": "trail.m01.33",
+    "fr": "Réinitialiser",
+    "en": "Reset",
+    "es": "Restablecer"
+  },
+  {
+    "key": "trail.m01.34",
+    "fr": "Style et réglages",
+    "en": "Style and settings",
+    "es": "Estilo y ajustes"
+  },
+  {
+    "key": "trail.m01.35",
+    "fr": "Taille des motifs",
+    "en": "Motif size",
+    "es": "Tamaño de los motivos"
+  },
+  {
+    "key": "trail.m01.36",
+    "fr": "Un groupe de logos tous les",
+    "en": "One group of logos every",
+    "es": "Un grupo de logotipos cada"
+  },
+  {
+    "key": "trail.m01.37",
+    "fr": "Virages",
+    "en": "Corners",
+    "es": "Curvas"
+  },
+  {
+    "key": "trail.m01.38",
+    "fr": "À la souris",
+    "en": "With the mouse",
+    "es": "Con el ratón"
+  },
+  {
+    "key": "trail.m01.39",
+    "fr": "Écart entre les motifs",
+    "en": "Motif spacing",
+    "es": "Separación entre motivos"
+  },
+  {
+    "key": "trail.m01.40",
+    "fr": "Écarte les motifs de part et d'autre du tracé.",
+    "en": "Spreads the motifs on either side of the path.",
+    "es": "Separa los motivos a ambos lados del recorrido."
+  },
+  {
+    "key": "trail.m01.41",
+    "fr": "Élargir quand j'accélère",
+    "en": "Widen as I accelerate",
+    "es": "Ensanchar al acelerar"
+  },
+  {
+    "key": "trail.m01.42",
+    "fr": "Éparpillement",
+    "en": "Spread",
+    "es": "Dispersión"
+  },
+  {
+    "key": "Traînée continue, extinction douce et réglages expliqués",
+    "fr": "Traînée continue, extinction douce et réglages expliqués",
+    "en": "Continuous trails, smooth fading and clearer settings",
+    "es": "Estelas continuas, desvanecimiento suave y ajustes claros"
+  },
+  {
+    "key": "Import différé : une sauvegarde est encore en cours. Réessaie dans quelques instants.",
+    "fr": "Import différé : une sauvegarde est encore en cours. Réessaie dans quelques instants.",
+    "en": "Import postponed: settings are still being saved. Try again in a moment.",
+    "es": "Importación aplazada: se siguen guardando los ajustes. Vuelve a intentarlo en unos instantes."
+  },
+  {
+    "key": "Fermeture différée : une sauvegarde est encore en cours. Réessaie dans quelques instants.",
+    "fr": "Fermeture différée : une sauvegarde est encore en cours. Réessaie dans quelques instants.",
+    "en": "Closing postponed: settings are still being saved. Try again in a moment.",
+    "es": "Cierre aplazado: se siguen guardando los ajustes. Vuelve a intentarlo en unos instantes."
   }
 ]

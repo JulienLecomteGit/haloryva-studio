@@ -388,9 +388,29 @@ namespace CursorFlow
     {
         private readonly PremiumSliderTrack track;
         private readonly TextBox editor;
-        private readonly string title, unit;
+        private string title;
+        private readonly string unit;
+        private string explanation;
+        private int helpHeight;
+        private bool positioning;
         private int low, high;
         internal event Action<int> ValueChanged;
+        internal string TitleText
+        {
+            get { return title; }
+            set
+            {
+                if (title == value) return;
+                title = value; editor.AccessibleName = value; track.AccessibleName = value; Invalidate();
+            }
+        }
+        internal void Explain(string text)
+        {
+            if (explanation == text) return;
+            explanation = text;
+            AccessibleDescription = text; track.AccessibleDescription = text; editor.AccessibleDescription = text;
+            PositionControls();
+        }
         internal int Value
         {
             get { return track.Value; }
@@ -430,12 +450,24 @@ namespace CursorFlow
         private int UnitWidth { get { return unit.Length == 0 ? 0 : PremiumPalette.TextWidth(unit, PremiumPalette.Font(8.5f, 0)) + PremiumPalette.S(4); } }
         private void PositionControls()
         {
-            Rectangle pill = Pill;
-            int uw = UnitWidth;
-            editor.Width = Math.Max(PremiumPalette.S(20), pill.Width - uw - PremiumPalette.S(14));
-            editor.Location = new Point(pill.X + PremiumPalette.S(7), pill.Y + Math.Max(0, (pill.Height - editor.Height) / 2));
-            track.SetBounds(0, PremiumPalette.S(30), Width, PremiumPalette.S(28));
-            Invalidate();
+            if (positioning) return;
+            positioning = true;
+            try
+            {
+                Rectangle pill = Pill;
+                int uw = UnitWidth;
+                editor.Width = Math.Max(PremiumPalette.S(20), pill.Width - uw - PremiumPalette.S(14));
+                editor.Location = new Point(pill.X + PremiumPalette.S(7), pill.Y + Math.Max(0, (pill.Height - editor.Height) / 2));
+                bool explained = !String.IsNullOrEmpty(explanation);
+                helpHeight = explained ? Math.Max(PremiumPalette.S(16), TextRenderer.MeasureText(explanation,
+                    PremiumPalette.Font(8.5f, 0), new Size(Math.Max(PremiumPalette.S(80), Width - PremiumPalette.S(4)), 2000),
+                    TextFormatFlags.WordBreak | TextFormatFlags.NoPrefix | TextFormatFlags.NoPadding).Height) : 0;
+                int trackTop = explained ? PremiumPalette.S(28) + helpHeight + PremiumPalette.S(2) : PremiumPalette.S(30);
+                track.SetBounds(0, trackTop, Width, PremiumPalette.S(28));
+                if (explained) Height = track.Bottom + PremiumPalette.S(18);
+                Invalidate();
+            }
+            finally { positioning = false; }
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -450,6 +482,16 @@ namespace CursorFlow
             if (unit.Length > 0)
                 PremiumPalette.TextAt(g, unit, PremiumPalette.Font(8.5f, 0), PremiumPalette.Faint,
                     new Rectangle(pill.Right - UnitWidth - PremiumPalette.S(6), pill.Y, UnitWidth + PremiumPalette.S(2), pill.Height), ContentAlignment.MiddleLeft);
+            if (!String.IsNullOrEmpty(explanation))
+            {
+                TextRenderer.DrawText(g, explanation, PremiumPalette.Font(8.5f, 0),
+                    new Rectangle(PremiumPalette.S(2), PremiumPalette.S(28), Math.Max(1, Width - PremiumPalette.S(4)), helpHeight),
+                    Enabled ? PremiumPalette.Subtle : PremiumPalette.Faint, TextFormatFlags.WordBreak | TextFormatFlags.NoPrefix | TextFormatFlags.NoPadding);
+                string suffix = unit.Length == 0 ? "" : " " + unit;
+                Rectangle limits = new Rectangle(PremiumPalette.S(2), track.Bottom, Math.Max(1, Width - PremiumPalette.S(4)), PremiumPalette.S(16));
+                PremiumPalette.TextAt(g, low.ToString() + suffix, PremiumPalette.Font(8f, 0), PremiumPalette.Faint, limits, ContentAlignment.MiddleLeft);
+                PremiumPalette.TextAt(g, high.ToString() + suffix, PremiumPalette.Font(8f, 0), PremiumPalette.Faint, limits, ContentAlignment.MiddleRight);
+            }
         }
     }
 
@@ -842,6 +884,8 @@ namespace CursorFlow
     {
         private readonly string heading, subtitle;
         internal readonly FlowLayoutPanel Stack;
+        private readonly HashSet<Control> hiddenItems = new HashSet<Control>();
+        internal bool LayoutIncluded = true;
         public int Span = 1;
         internal string IconName;
         internal Color AccentA = PremiumPalette.Cyan, AccentB = PremiumPalette.Purple;
@@ -869,6 +913,20 @@ namespace CursorFlow
             Stack.Controls.Add(control);
             PlaceStack();
         }
+        internal bool SetItemVisible(Control control, bool visible)
+        {
+            // L'état souhaité est distinct de Control.Visible, qui dépend aussi
+            // des parents et vaut false avant l'ouverture du studio.
+            bool changed = visible ? hiddenItems.Remove(control) : hiddenItems.Add(control);
+            if (changed) control.Visible = visible;
+            return changed;
+        }
+        internal bool SetLayoutIncluded(bool included)
+        {
+            if (LayoutIncluded == included) return false;
+            LayoutIncluded = included; Visible = included;
+            return true;
+        }
         public int PreferredCardHeight
         {
             get
@@ -876,7 +934,8 @@ namespace CursorFlow
                 int h = HeaderHeight;
                 // Correctif : ne pas tester Visible (toujours faux avant l'affichage de la fenêtre
                 // sous Windows -> cartes écrasées au démarrage).
-                foreach (Control c in Stack.Controls) h += c.Height + c.Margin.Vertical;
+                foreach (Control c in Stack.Controls)
+                    if (!hiddenItems.Contains(c)) h += c.Height + c.Margin.Vertical;
                 return h + PremiumPalette.S(10);
             }
         }
@@ -1037,6 +1096,11 @@ namespace CursorFlow
         {
             if (disposing && wheelPopup != null && !wheelPopup.IsDisposed) wheelPopup.Dismiss();
             base.Dispose(disposing);
+        }
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            if (!Visible && wheelPopup != null && !wheelPopup.IsDisposed) wheelPopup.Dismiss();
+            base.OnVisibleChanged(e);
         }
         protected override void OnEnabledChanged(EventArgs e) { editor.Enabled = Enabled; Invalidate(); base.OnEnabledChanged(e); }
         protected override void OnPaint(PaintEventArgs e)
@@ -1641,28 +1705,184 @@ namespace CursorFlow
         private PointF point;
         private bool mouseInside;
         private readonly Timer timer = new Timer();
-        private readonly List<TrailDot> dots = new List<TrailDot>();
+        private readonly TrailPipeline trail = new TrailPipeline();
+        private readonly TrailRibbon trailRibbon = new TrailRibbon();
+        private readonly TrailPreviewSampler trailSampler = new TrailPreviewSampler();
+        private readonly List<Control> animationAncestors = new List<Control>();
         private readonly List<Ripple> ripples = new List<Ripple>();
-        private DateTime started = DateTime.UtcNow, lastAutoClick = DateTime.MinValue;
-        private PointF lastSample, textAnchor;
-        private bool autoRight;
-        private static Bitmap logo; private static string logoPath = "";
+        private DateTime started = TrailClock.Now, lastAutoClick = DateTime.MinValue;
+        private DateTime lastTrailFrame = DateTime.MinValue;
+        private PointF textAnchor;
+        private bool autoRight, trailPaused, resourcesDisposed, animationActive;
+        private TrailPreviewMotion trailMotion = TrailPreviewMotion.Fast;
+        private double trailSeconds;
+        private Bitmap logo;
+        private string logoPath = "";
+        internal event Action TrailPreviewChanged;
+        internal TrailPreviewMotion TrailMotion { get { return trailMotion; } }
+        internal bool TrailPaused { get { return trailPaused; } }
+        internal bool HasTrailLogo { get { RefreshTrailLogo(); return logo != null; } }
         public PremiumPreview(Config config) : this(config, PreviewMode.Halo) { }
         public PremiumPreview(Config config, PreviewMode mode)
         {
             Config = config; Mode = mode; Height = PremiumPalette.S(232); Cursor = Cursors.Cross;
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
-            timer.Interval = 33;
-            timer.Tick += delegate { Step(); Invalidate(); };
-            VisibleChanged += delegate { if (Visible) timer.Start(); else timer.Stop(); };
-            Disposed += delegate { timer.Dispose(); };
-            timer.Start();
+            timer.Interval = mode == PreviewMode.Trail ? 16 : 33;
+            timer.Tick += delegate { UpdateTimer(); if (animationActive) { Step(); Invalidate(); } };
+            point = new PointF(Width / 2f, Height / 2f);
         }
-        protected override void OnMouseMove(MouseEventArgs e) { point = e.Location; mouseInside = true; base.OnMouseMove(e); }
-        protected override void OnMouseLeave(EventArgs e) { mouseInside = false; base.OnMouseLeave(e); }
+        internal void SetTrailMotion(TrailPreviewMotion motion)
+        {
+            trailMotion = motion; trailPaused = false; trailSeconds = 0;
+            lastTrailFrame = TrailClock.Now;
+            trail.ResetInput();
+            if (motion != TrailPreviewMotion.Mouse)
+            {
+                point = TrailAutoPoint(0);
+                trail.Move(point, lastTrailFrame, Config, Config.Trail);
+            }
+            NotifyTrailPreviewChanged(); Invalidate();
+        }
+        internal void ToggleTrailPause()
+        {
+            trailPaused = !trailPaused;
+            lastTrailFrame = TrailClock.Now;
+            trail.ResetInput();
+            NotifyTrailPreviewChanged(); Invalidate();
+        }
+        internal void ResetTrailPreview()
+        {
+            // Réinitialise uniquement la démonstration, jamais les options du bureau.
+            trail.Clear(); trailSeconds = 0; trailPaused = false;
+            trailMotion = TrailPreviewMotion.Fast; lastTrailFrame = TrailClock.Now;
+            point = TrailAutoPoint(0);
+            NotifyTrailPreviewChanged(); Invalidate();
+        }
+        private void NotifyTrailPreviewChanged()
+        {
+            if (TrailPreviewChanged != null) TrailPreviewChanged();
+        }
+        private void UpdateTimer()
+        {
+            if (timer == null || resourcesDisposed) return;
+            bool active = CanAnimate();
+            if (active == animationActive) return;
+            animationActive = active;
+            if (trail != null) trail.ResetInput();
+            lastTrailFrame = TrailClock.Now;
+            if (active) { timer.Start(); Invalidate(); }
+            else { timer.Stop(); mouseInside = false; }
+        }
+        private bool CanAnimate()
+        {
+            if (!IsHandleCreated || !Visible || IsDisposed || Width < 2 || Height < 2) return false;
+            Form host = FindForm();
+            if (host == null || !host.Visible || host.WindowState == FormWindowState.Minimized) return false;
+            Rectangle visible = RectangleToScreen(ClientRectangle);
+            for (Control ancestor = Parent; ancestor != null; ancestor = ancestor.Parent)
+            {
+                if (!ancestor.Visible || !ancestor.IsHandleCreated || ancestor.IsDisposed) return false;
+                visible = Rectangle.Intersect(visible, ancestor.RectangleToScreen(ancestor.ClientRectangle));
+                if (visible.Width <= 0 || visible.Height <= 0) return false;
+            }
+            return true;
+        }
+        private void UnwatchAnimationAncestors()
+        {
+            if (animationAncestors == null) return;
+            foreach (Control ancestor in animationAncestors)
+            {
+                ancestor.VisibleChanged -= AnimationAncestorChanged;
+                ancestor.LocationChanged -= AnimationAncestorChanged;
+                ancestor.Resize -= AnimationAncestorChanged;
+                ancestor.ParentChanged -= AnimationParentChanged;
+                ancestor.Layout -= AnimationAncestorLayout;
+                ScrollableControl scroll = ancestor as ScrollableControl;
+                if (scroll != null) scroll.Scroll -= AnimationAncestorScrolled;
+            }
+            animationAncestors.Clear();
+        }
+        private void WatchAnimationAncestors()
+        {
+            if (animationAncestors == null || resourcesDisposed) return;
+            UnwatchAnimationAncestors();
+            for (Control ancestor = Parent; ancestor != null; ancestor = ancestor.Parent)
+            {
+                animationAncestors.Add(ancestor);
+                ancestor.VisibleChanged += AnimationAncestorChanged;
+                ancestor.LocationChanged += AnimationAncestorChanged;
+                ancestor.Resize += AnimationAncestorChanged;
+                ancestor.ParentChanged += AnimationParentChanged;
+                ancestor.Layout += AnimationAncestorLayout;
+                ScrollableControl scroll = ancestor as ScrollableControl;
+                if (scroll != null) scroll.Scroll += AnimationAncestorScrolled;
+            }
+        }
+        private void AnimationAncestorChanged(object sender, EventArgs e) { UpdateTimer(); }
+        private void AnimationAncestorLayout(object sender, LayoutEventArgs e) { UpdateTimer(); }
+        private void AnimationAncestorScrolled(object sender, ScrollEventArgs e) { UpdateTimer(); }
+        private void AnimationParentChanged(object sender, EventArgs e) { WatchAnimationAncestors(); UpdateTimer(); }
+        protected override void OnParentChanged(EventArgs e)
+        { base.OnParentChanged(e); WatchAnimationAncestors(); UpdateTimer(); }
+        protected override void OnLocationChanged(EventArgs e) { base.OnLocationChanged(e); UpdateTimer(); }
+        protected override void OnHandleCreated(EventArgs e)
+        { base.OnHandleCreated(e); WatchAnimationAncestors(); UpdateTimer(); }
+        protected override void OnHandleDestroyed(EventArgs e)
+        {
+            if (timer != null && !resourcesDisposed) { timer.Stop(); animationActive = false; }
+            UnwatchAnimationAncestors();
+            base.OnHandleDestroyed(e);
+        }
+        protected override void OnVisibleChanged(EventArgs e) { base.OnVisibleChanged(e); UpdateTimer(); }
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            if (Mode == PreviewMode.Trail && trail != null)
+            {
+                trail.Clear(); lastTrailFrame = TrailClock.Now;
+                point = trailMotion == TrailPreviewMotion.Mouse ? new PointF(Width / 2f, Height / 2f) : TrailAutoPoint(trailSeconds);
+            }
+            UpdateTimer();
+        }
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            mouseInside = true;
+            if (Mode == PreviewMode.Trail)
+            {
+                trail.ResetInput();
+                if (trailMotion != TrailPreviewMotion.Mouse)
+                { trailMotion = TrailPreviewMotion.Mouse; NotifyTrailPreviewChanged(); }
+            }
+            base.OnMouseEnter(e);
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            mouseInside = true;
+            if (Mode != PreviewMode.Trail) point = e.Location;
+            else if (!trailPaused)
+            {
+                // La tête suit exactement l'événement souris. Tout l'échantillonnage
+                // et l'arrondi appartiennent au même pipeline que celui du bureau.
+                point = e.Location;
+                if (trailMotion != TrailPreviewMotion.Mouse)
+                {
+                    trail.ResetInput(); trailMotion = TrailPreviewMotion.Mouse;
+                    NotifyTrailPreviewChanged();
+                }
+                trail.Move(e.Location, TrailClock.Now, Config, Config.Trail);
+                Invalidate();
+            }
+            base.OnMouseMove(e);
+        }
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            mouseInside = false;
+            if (Mode == PreviewMode.Trail) trail.ResetInput();
+            base.OnMouseLeave(e);
+        }
         protected override void OnMouseDown(MouseEventArgs e)
         {
-            if (Mode == PreviewMode.Clicks && Config.Clicks) ripples.Add(new Ripple(e.Location, DateTime.UtcNow, e.Button == MouseButtons.Right));
+            if (Mode == PreviewMode.Clicks && Config.Clicks) ripples.Add(new Ripple(e.Location, TrailClock.Now, e.Button == MouseButtons.Right));
             base.OnMouseDown(e);
         }
         private PointF AutoPoint(double t)
@@ -1670,33 +1890,44 @@ namespace CursorFlow
             float cx = Width / 2f, cy = Height / 2f + PremiumPalette.Sf(6);
             return new PointF(cx + (float)Math.Sin(t * .9) * Width * .32f, cy + (float)Math.Sin(t * 1.8) * Height * .22f);
         }
+        private PointF TrailAutoPoint(double t)
+        {
+            return TrailPreviewSampler.PointAt(trailMotion, t, Width, Height, PremiumPalette.Sf(62), PremiumPalette.Sf(6));
+        }
         private void Step()
         {
-            DateTime now = DateTime.UtcNow;
+            DateTime now = TrailClock.Now;
             double t = (now - started).TotalSeconds;
-            if (!mouseInside)
+            if (Mode != PreviewMode.Trail && !mouseInside)
             {
                 if (Mode != PreviewMode.Halo) point = AutoPoint(t);
                 else if (TextMode) point = textAnchor.IsEmpty ? new PointF(Width * .5f, Height * .4f) : textAnchor;
                 else point = AutoPoint(t * .55);
             }
-            if (Mode == PreviewMode.Trail && Config.Trail)
+            if (Mode == PreviewMode.Trail)
             {
-                double spacing = Math.Max(2, Config.TrailSpacing);
-                double dist = Math.Sqrt(Math.Pow(point.X - lastSample.X, 2) + Math.Pow(point.Y - lastSample.Y, 2));
-                if (dist >= spacing)
+                DateTime fromTime = lastTrailFrame == DateTime.MinValue ? now : lastTrailFrame;
+                double elapsed = Math.Max(0, (now - fromTime).TotalSeconds);
+                lastTrailFrame = now;
+                if (!Config.Trail) trail.Move(point, now, Config, false);
+                else if (!trailPaused && trailMotion != TrailPreviewMotion.Mouse)
                 {
-                    int steps = Math.Max(1, Math.Min(10, (int)(dist / spacing)));
-                    for (int s = 1; s <= steps; s++)
+                    double fromSeconds = trailSeconds;
+                    trailSeconds += elapsed;
+                    trailSampler.Generate(trailMotion, fromSeconds, trailSeconds, fromTime, now,
+                        Width, Height, PremiumPalette.Sf(62), PremiumPalette.Sf(6));
+                    if (trailSampler.Discontinuous) trail.ResetInput();
+                    foreach (TrailPreviewSample sample in trailSampler.Samples)
                     {
-                        float k = s / (float)steps;
-                        dots.Add(new TrailDot(Point.Round(new PointF(lastSample.X + (point.X - lastSample.X) * k, lastSample.Y + (point.Y - lastSample.Y) * k)), now, (float)Math.Min(4, dist / 33.0)));
+                        trail.Move(sample.Point, sample.Time, Config, true);
+                        if (sample.Corner) trail.PreserveInputCorner();
                     }
-                    lastSample = point;
-                    if (dots.Count > 160) dots.RemoveRange(0, dots.Count - 160);
+                    point = TrailAutoPoint(trailSeconds);
                 }
-                dots.RemoveAll(delegate(TrailDot d) { return (now - d.Time).TotalMilliseconds > Config.TrailLife; });
-                if (Config.TrailStyle == "Logo" && logoPath != (Config.TrailLogoPath ?? "")) LoadLogo(Config.TrailLogoPath);
+                // Pause et sortie de la zone arrêtent l'émission ; le temps continue
+                // pour que les points déjà présents terminent leur fondu naturel.
+                trail.Expire(now, Config.TrailLife);
+                RefreshTrailLogo();
             }
             if (Mode == PreviewMode.Clicks)
             {
@@ -1709,7 +1940,12 @@ namespace CursorFlow
                 ripples.RemoveAll(delegate(Ripple r) { return (now - r.Time).TotalMilliseconds > Config.ClickDuration + 150; });
             }
         }
-        private static void LoadLogo(string path)
+        private void RefreshTrailLogo()
+        {
+            string path = Config != null && Mode == PreviewMode.Trail && Config.TrailStyle == "Logo" ? Config.TrailLogoPath ?? "" : "";
+            if (path != logoPath) LoadLogo(path);
+        }
+        private void LoadLogo(string path)
         {
             logoPath = path ?? "";
             if (logo != null) { logo.Dispose(); logo = null; }
@@ -1718,18 +1954,37 @@ namespace CursorFlow
                 if (String.IsNullOrEmpty(path) || !System.IO.File.Exists(path)) return;
                 using (Image src = Image.FromFile(path))
                 {
-                    double k = Math.Min(1.0, 128.0 / Math.Max(src.Width, src.Height));
-                    logo = new Bitmap(src, Math.Max(1, (int)Math.Round(src.Width * k)), Math.Max(1, (int)Math.Round(src.Height * k)));
+                    double k = Math.Min(1.0, 256.0 / Math.Max(src.Width, src.Height));
+                    int width = Math.Max(1, (int)Math.Round(src.Width * k)), height = Math.Max(1, (int)Math.Round(src.Height * k));
+                    logo = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+                    using (Graphics graphics = Graphics.FromImage(logo))
+                    {
+                        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        graphics.DrawImage(src, 0, 0, width, height);
+                    }
                 }
             }
-            catch { logo = null; }
+            catch { if (logo != null) logo.Dispose(); logo = null; }
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && !resourcesDisposed)
+            {
+                resourcesDisposed = true;
+                UnwatchAnimationAncestors();
+                timer.Stop(); timer.Dispose();
+                if (logo != null) { logo.Dispose(); logo = null; }
+                trail.Clear(); trailRibbon.Dispose(); TrailPreviewChanged = null;
+            }
+            base.Dispose(disposing);
         }
         protected override void OnPaintBackground(PaintEventArgs e) { e.Graphics.Clear(PremiumPalette.BackOf(this)); }
         protected override void OnPaint(PaintEventArgs e)
         {
+            if (Width < 2 || Height < 2) return;
             Graphics g = e.Graphics; PremiumPalette.Quality(g);
             Rectangle r = new Rectangle(0, 0, Width - 1, Height - 1);
-            DateTime now = DateTime.UtcNow;
+            DateTime now = TrailClock.Now;
             using (GraphicsPath p = PremiumPalette.Round(r, PremiumPalette.S(14)))
             {
                 using (LinearGradientBrush b = new LinearGradientBrush(r, Color.FromArgb(9, 13, 29), Color.FromArgb(15, 17, 40), 35f)) g.FillPath(b, p);
@@ -1749,8 +2004,10 @@ namespace CursorFlow
             using (Pen edge = new Pen(PremiumPalette.Alpha(PremiumPalette.Green, 80), 1f)) { g.FillPath(b, c); g.DrawPath(edge, c); }
             using (SolidBrush dot = new SolidBrush(PremiumPalette.Green)) g.FillEllipse(dot, chip.X + PremiumPalette.S(10), chip.Y + chip.Height / 2 - PremiumPalette.S(3), PremiumPalette.S(6), PremiumPalette.S(6));
             PremiumPalette.TextAt(g, L.T("En direct"), PremiumPalette.Font(8.25f, 1), PremiumPalette.Text, new Rectangle(chip.X + PremiumPalette.S(22), chip.Y, chip.Width - PremiumPalette.S(24), chip.Height), ContentAlignment.MiddleLeft);
-            string hint = Mode == PreviewMode.Clicks ? L.T("Clic gauche / droit pour tester") : L.T("Survole pour piloter l'aperçu");
-            PremiumPalette.TextAt(g, hint, PremiumPalette.Font(8.25f, 0), PremiumPalette.Faint, new Rectangle(0, PremiumPalette.S(12), Width - PremiumPalette.S(16), PremiumPalette.S(24)), ContentAlignment.MiddleRight);
+            string hint = Mode == PreviewMode.Clicks ? L.T("Clic gauche / droit pour tester") : Mode == PreviewMode.Trail && trailPaused ? L.T("En pause — le tracé s'efface") : L.T("Survole pour piloter l'aperçu");
+            Rectangle hintBox = Mode == PreviewMode.Trail ? new Rectangle(PremiumPalette.S(14), Height - PremiumPalette.S(32), Math.Max(1, Width - PremiumPalette.S(28)), PremiumPalette.S(22)) :
+                new Rectangle(0, PremiumPalette.S(12), Width - PremiumPalette.S(16), PremiumPalette.S(24));
+            PremiumPalette.TextAt(g, hint, PremiumPalette.Font(8.25f, 0), PremiumPalette.Faint, hintBox, Mode == PreviewMode.Trail ? ContentAlignment.MiddleLeft : ContentAlignment.MiddleRight);
         }
         private void PaintOff(Graphics g, string text)
         {
@@ -1782,8 +2039,10 @@ namespace CursorFlow
         private void PaintTrail(Graphics g, DateTime now)
         {
             if (!Config.Trail) { PaintOff(g, L.T("Traînée désactivée")); return; }
+            RefreshTrailLogo();
+            trail.Prepare(point, now, Config);
             GraphicsState st = g.Save();
-            OverlayForm.DrawTrailCore(g, now, Config, dots, logo);
+            OverlayForm.DrawTrailCore(g, now, Config, trail.RenderPoints, logo, Point.Round(point), trailRibbon);
             g.Restore(st);
             DrawPointer(g, point, false);
         }

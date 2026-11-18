@@ -13,9 +13,9 @@ using System.Reflection;
 [assembly: AssemblyProduct("Haloryva Studio")]
 [assembly: AssemblyCopyright("© 2026 Julien Lecomte")]
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Haloryva.Preview8.Targeted")]
-[assembly: AssemblyVersion("2.7.1.0")]
-[assembly: AssemblyFileVersion("2.7.1.11")]
-[assembly: AssemblyInformationalVersion("2.7.1")]
+[assembly: AssemblyVersion("2.7.2.0")]
+[assembly: AssemblyFileVersion("2.7.2.6")]
+[assembly: AssemblyInformationalVersion("2.7.2")]
 
 namespace CursorFlow
 {
@@ -23,9 +23,9 @@ namespace CursorFlow
     {
         public const string Product = "Haloryva Studio";
         public const string Short = "Haloryva";
-        public const string Version = "2.7.1";
-        // À remplacer par la date réelle de fabrication avant toute compilation de livraison.
-        public const string BuildDate = "11/11/2026";
+        public const string Version = "2.7.2";
+        // Date de fabrication de la version de diffusion.
+        public const string BuildDate = "18/11/2026";
         public const string Author = "Julien Lecomte";
         public const string Copyright = "© 2026 Julien Lecomte";
         public const string Tagline = "Effets, annotations et présentation du curseur";
@@ -34,7 +34,8 @@ namespace CursorFlow
         // Historique court affiché dans « À propos » : version, date, résumé.
         public static readonly string[][] History = new string[][]
         {
-            new string[] { Version, BuildDate, "Langues, outils choisis et corrections de fiabilité" },
+            new string[] { Version, BuildDate, "Traînée continue, extinction douce et réglages expliqués" },
+            new string[] { "2.7.1", "11/11/2026", "Langues, outils choisis et corrections de fiabilité" },
             new string[] { "2.7.0", "10/11/2026", "269 ms, souplesse continue et orientation X1/X2 personnalisable" },
             new string[] { "2.6.6", "08/11/2026", "Fluidité : traînée persistante, surface stable, cadence et mesures" },
             new string[] { "2.6.5", "08/11/2026", "Routage des boutons, installation précompilée et maintenance vérifiée" },

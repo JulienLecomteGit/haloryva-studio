@@ -49,6 +49,9 @@ namespace CursorFlow
         internal bool Long;
         internal Keys Key;
         internal InputModifiers Modifiers;
+        // Source time and a bounded value-only batch for the visual trail.
+        internal DateTime TrailTime;
+        internal PointerTrailBatch TrailSamples;
     }
     internal interface IInputMailbox
     { bool TryPost(InputCommand command, bool terminal); }
@@ -59,15 +62,25 @@ namespace CursorFlow
         private readonly object sync = new object();
         private readonly LinkedList<InputCommand> queue = new LinkedList<InputCommand>();
         private readonly int capacity;
+        private bool trailGapPending;
         internal InputMailbox(int capacity) { this.capacity = Math.Max(64, capacity); }
         internal int Count { get { lock (sync) return queue.Count; } }
         public bool TryPost(InputCommand command, bool terminal)
         {
             lock (sync)
             {
-                if (command.Kind == InputKind.Move && queue.Last != null && queue.Last.Value.Kind == InputKind.Move)
-                { queue.Last.Value = command; return true; }
-                if (queue.Count >= capacity - (terminal ? 0 : 32)) return false;
+                if (command.Kind == InputKind.Move && queue.Last != null && queue.Last.Value.Kind == InputKind.Move &&
+                    queue.Last.Value.Session == command.Session)
+                {
+                    AttachTrail(command, queue.Last.Value);
+                    queue.Last.Value = command; return true;
+                }
+                if (queue.Count >= capacity - (terminal ? 0 : 32))
+                {
+                    if (command.Kind == InputKind.Move) trailGapPending = true;
+                    return false;
+                }
+                if (command.Kind == InputKind.Move) AttachTrail(command, null);
                 queue.AddLast(command); return true;
             }
         }
@@ -79,7 +92,16 @@ namespace CursorFlow
                 InputCommand result = queue.First.Value; queue.RemoveFirst(); return result;
             }
         }
-        internal void Clear() { lock (sync) queue.Clear(); }
+        private void AttachTrail(InputCommand command, InputCommand previous)
+        {
+            PointerTrailBatch batch = previous == null ? null : previous.TrailSamples;
+            if (batch == null) batch = new PointerTrailBatch();
+            if (previous != null && batch.Count == 0) batch.Add(previous.X, previous.Y, previous.TrailTime);
+            batch.Add(command.X, command.Y, command.TrailTime);
+            if (trailGapPending) { batch.MarkDiscontinuity(); trailGapPending = false; }
+            command.TrailSamples = batch;
+        }
+        internal void Clear() { lock (sync) { queue.Clear(); trailGapPending = true; } }
     }
 
     // Owned exclusively by the hook thread. Tests inject the clock, mailbox and replay.
@@ -148,7 +170,8 @@ namespace CursorFlow
             if (code == Native.WM_MOUSEMOVE)
             {
                 bool trace = drawing && routes.IsDrawing("Gauche", session) && !ownWindow;
-                var move = new InputCommand { Kind = trace ? InputKind.Drawing : InputKind.Move, Code = code, X = x, Y = y, Session = session };
+                var move = new InputCommand { Kind = trace ? InputKind.Drawing : InputKind.Move, Code = code,
+                    X = x, Y = y, Session = session, TrailTime = trace ? DateTime.MinValue : TrailClock.Now };
                 if (!Post(move, false, ModeChange.None) && trace)
                 {
                     // Do not silently connect a stroke across a missing segment.
