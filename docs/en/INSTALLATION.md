@@ -21,7 +21,7 @@ Once version 2.7.2 is actually offered:
 
 Updating the same Store package keeps the existing channel; this operation does not require uninstalling or importing an EXE profile. Check your settings and startup on your own device after updating. If the Store still offers 2.7.1, the presence of 2.7.2 source code on GitHub cannot force its availability.
 
-The 18 November 2026 update from 2.7.1 to 2.7.2 preserved the existing settings on the tested PC; the profile file was unchanged byte for byte. Relaunch, visual effects and startup after signing in still await confirmation for this release. [Evidence and limits](../VALIDATION-2.7.2.md).
+The 18 November 2026 update from 2.7.1 to 2.7.2 preserved the existing settings on the tested PC; the profile file was unchanged byte for byte. The user confirmed a successful manual relaunch, working halo and trail effects, and correct settings in the interface. Startup after signing in again has not yet been confirmed. [Evidence and limits](../VALIDATION-2.7.2.md).
 
 ## Moving from an older EXE installation to the Store
 

@@ -13,7 +13,8 @@
 | Publication Store 2.7.2 | Lancée ; dernier écran Partner Center encore en cours, fin de publication non relue |
 | Disponibilité et installation sur le PC testé | Paquet 2.7.2.0 x64 signé Store, état Ok, binaire 2.7.2.6 identique à la livraison |
 | Conservation des réglages après mise à jour | 93 valeurs identiques, aucun champ modifié, manquant ou ajouté ; fichier identique octet pour octet |
-| Relance, rendu visuel final et démarrage après reconnexion | Non encore confirmés pour cette installation |
+| Relance manuelle, halo, traînée et réglages visibles | Confirmés par Julien après la mise à jour |
+| Démarrage après reconnexion | Non encore confirmé pour cette installation |
 
 La [fabrication finale du run 44300357140](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44300357140) a réussi sur le commit `32234c0410e080add61742b29ee794b5a566fa2e`, après fusion de la PR nº 5. Le binaire extrait du MSIX correspond au binaire testé puis à celui retrouvé dans l’installation Store. Les preuves et empreintes finales figurent dans [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md).
 
@@ -33,7 +34,7 @@ La mise à jour 2.7.2 a été reçue et contrôlée sur le PC testé. Ce constat
 
 Le 18 novembre 2026, la copie expérimentale 2.7.2-exp4 a compilé sur Windows, passé ses suites automatisées et terminé normalement une recette locale d’environ quatre minutes. Le retour visuel confirme une traînée Ligne / Lumière sans maillons perçus, un aspect agréable et aucune des trois anomalies d’affichage signalées pendant cette session.
 
-Les mesures ne montrent ni perte d’entrée connue ni échec de publication du calque, et les journaux sont complets. Elles ne constituent pas une mesure des FPS effectivement présentées à l’écran. Aucune garantie permanente de fluidité ni de disparition des incidents rares n’est annoncée ; aucune réparation autonome réelle n’a été exercée pendant cette recette. Fabrication native, certification Microsoft et contrôle de mise à jour sont désormais établis par leurs preuves respectives ; la relance et la recette visuelle de l’installation finale restent à confirmer. Voir [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md).
+Les mesures ne montrent ni perte d’entrée connue ni échec de publication du calque, et les journaux sont complets. Elles ne constituent pas une mesure des FPS effectivement présentées à l’écran. Aucune garantie permanente de fluidité ni de disparition des incidents rares n’est annoncée ; aucune réparation autonome réelle n’a été exercée pendant cette recette. Fabrication native, certification Microsoft et contrôle de mise à jour sont désormais établis par leurs preuves respectives. Le retour ultérieur de Julien confirme la relance manuelle, le halo, la traînée et les réglages visibles ; il ne constitue pas une nouvelle recette des anciens symptômes, un essai après lasso ou une mesure de cadence. Voir [VALIDATION-2.7.2.md](VALIDATION-2.7.2.md).
 
 ## Référence historique : 2.7.1
 

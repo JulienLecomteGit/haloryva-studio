@@ -2,7 +2,7 @@
 
 [Accueil](../../README.md) · [English](../en/README.md) · [Español](../es/README.md)
 
-**2.7.2 : certifiée par Microsoft Store, mise à jour contrôlée sur le PC testé.** Le paquet Store 2.7.2.0 x64 contient le binaire 2.7.2.6 livré et conserve les réglages préexistants. La relance et le rendu de cette installation restent à confirmer ; la recette visuelle positive d’exp4 est une preuve distincte. [Preuves et limites](../VALIDATION-2.7.2.md).
+**2.7.2 : certifiée par Microsoft Store, mise à jour contrôlée sur le PC testé.** Le paquet Store 2.7.2.0 x64 contient le binaire 2.7.2.6 livré et conserve les réglages préexistants. Julien confirme la relance manuelle, le halo, la traînée et les réglages visibles ; la recette visuelle positive d’exp4 est une preuve distincte. [Preuves et limites](../VALIDATION-2.7.2.md).
 
 - Traînée Ligne / Lumière continue, courbes adaptatives et extinction progressive.
 - Réglages de traînée expliqués et aperçu partagé avec le moteur de rendu.
