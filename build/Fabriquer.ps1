@@ -87,7 +87,7 @@ $sourceZipSHA256 = $null
 # GitHub uniquement : archive des objets du commit, jamais de .git ou d'un dossier local incomplet.
 # Cette archive reste disponible si la phase MSIX suivante echoue.
 if ($env:GITHUB_ACTIONS -eq 'true') {
-    $git = Get-Command git.exe -CommandType Application -ErrorAction Stop
+    $git = Get-Command git.exe -CommandType Application -ErrorAction Stop | Select-Object -First 1
     $racineGit = (& $git.Source -C $racine rev-parse --show-toplevel)
     if ($LASTEXITCODE -ne 0) { throw 'Impossible de lire la racine Git du checkout.' }
     if ([IO.Path]::GetFullPath(([string]$racineGit).Trim()).TrimEnd('\', '/') -ine $racine.TrimEnd('\', '/')) {
