@@ -21,7 +21,7 @@ Cuando la versión 2.7.2 esté realmente disponible:
 
 Actualizar el mismo paquete Store conserva el canal existente; esta operación no requiere desinstalar ni importar un perfil EXE. Comprueba tus ajustes y el inicio en tu propio equipo después de actualizar. Si el Store aún ofrece 2.7.1, la presencia de las fuentes 2.7.2 en GitHub no permite forzar su disponibilidad.
 
-La actualización de 2.7.1 a 2.7.2 del 18 de noviembre de 2026 conservó los ajustes existentes en el PC de prueba; el archivo del perfil permaneció idéntico byte por byte. La apertura de la aplicación, los efectos visuales y el inicio tras volver a iniciar sesión siguen pendientes de confirmación para esta versión. [Pruebas y límites](../VALIDATION-2.7.2.md).
+La actualización de 2.7.1 a 2.7.2 del 18 de noviembre de 2026 conservó los ajustes existentes en el PC de prueba; el archivo del perfil permaneció idéntico byte por byte. El usuario confirmó que la aplicación se abre manualmente, que el halo y la estela funcionan y que los ajustes de la interfaz son correctos. El inicio tras volver a iniciar sesión sigue sin confirmarse. [Pruebas y límites](../VALIDATION-2.7.2.md).
 
 ## Cambio de una instalación EXE anterior al Store
 

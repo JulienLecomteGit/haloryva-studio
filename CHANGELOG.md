@@ -2,7 +2,7 @@
 
 ## 2.7.2 — certification et mise à jour Store contrôlées — 18 novembre 2026
 
-**Fabrication finale réussie, certification Microsoft acquise et mise à jour depuis la 2.7.1 contrôlée sur le PC testé.** Le paquet Store 2.7.2.0 x64 contient le binaire 2.7.2.6 livré ; les 93 valeurs du profil et le fichier de réglages sont restés identiques. La fin de publication du portail, la disponibilité générale et la relance visuelle finale restent à confirmer. La [fiche de validation](docs/VALIDATION-2.7.2.md) distingue livraison, qualification antérieure et installation.
+**Fabrication finale réussie, certification Microsoft acquise et mise à jour depuis la 2.7.1 contrôlée sur le PC testé.** Le paquet Store 2.7.2.0 x64 contient le binaire 2.7.2.6 livré ; les 93 valeurs du profil et le fichier de réglages sont restés identiques. Julien confirme la relance manuelle, le halo, la traînée et les réglages visibles. La fin de publication du portail, la disponibilité générale et le démarrage après reconnexion restent à confirmer. La [fiche de validation](docs/VALIDATION-2.7.2.md) distingue livraison, qualification antérieure, installation et portée de ce retour utilisateur.
 
 - Traînée Ligne / Lumière continue, courbes adaptatives et extinction progressive ; réglages accompagnés d’explications et aperçu partagé.
 - Échantillons d’entrée horodatés et conservation de leur ordre dans le pipeline de traînée.

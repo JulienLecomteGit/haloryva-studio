@@ -2,7 +2,7 @@
 
 [Accueil](../../README.md) · [English](../en/README.md) · [Español](../es/README.md)
 
-**Mise à jour 2.7.2 certifiée par Microsoft Store.** Le passage depuis la 2.7.1 a été contrôlé sur le PC testé, avec un paquet signé Store, le binaire livré et des réglages conservés. La relance et le démarrage après reconnexion restent à confirmer pour cette installation. Consultez [l’état de diffusion](../DIFFUSION.md) et la version proposée par Microsoft Store sur votre appareil.
+**Mise à jour 2.7.2 certifiée par Microsoft Store.** Le passage depuis la 2.7.1 a été contrôlé sur le PC testé, avec un paquet signé Store, le binaire livré et des réglages conservés. Julien confirme la relance manuelle, le halo, la traînée et les réglages visibles ; le démarrage après reconnexion reste à confirmer. Consultez [l’état de diffusion](../DIFFUSION.md) et la version proposée par Microsoft Store sur votre appareil.
 
 ## Installation depuis Microsoft Store
 

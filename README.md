@@ -12,7 +12,7 @@ Rendez votre curseur visible et annotez votre écran pendant vos présentations 
 
 La version 2.7.2 reprend le moteur de la copie expérimentale exp4, dont la compilation, les autotests et une recette visuelle ont réussi le 18 novembre 2026. Les maillons de la traînée Ligne / Lumière n’ont plus été perçus pendant cet essai.
 
-**La 2.7.2 a réussi la certification Microsoft Store.** La mise à jour depuis la 2.7.1 est contrôlée sur le PC testé : paquet Store 2.7.2.0 x64, binaire 2.7.2.6 identique à celui livré et réglages conservés. La [fabrication finale du commit livré](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44300357140) a réussi les huit suites natives et les 52 contrôles de structure MSIX. La relance et le rendu visuel de cette installation restent à confirmer séparément de la recette exp4.
+**La 2.7.2 a réussi la certification Microsoft Store.** La mise à jour depuis la 2.7.1 est contrôlée sur le PC testé : paquet Store 2.7.2.0 x64, binaire 2.7.2.6 identique à celui livré et réglages conservés. La [fabrication finale du commit livré](https://github.com/JulienLecomteGit/haloryva-studio/actions/runs/44300357140) a réussi les huit suites natives et les 52 contrôles de structure MSIX. Julien confirme ensuite la relance manuelle, le fonctionnement du halo et de la traînée, ainsi que les réglages visibles. Ce retour reste distinct de la recette exp4 et d’une mesure de cadence.
 
 [État de validation 2.7.2](docs/VALIDATION-2.7.2.md) · [Provenance des sources](docs/SOURCES-2.7.2.md) · [Diffusion](docs/DIFFUSION.md) · [Dernières fabrications main](https://github.com/JulienLecomteGit/haloryva-studio/actions/workflows/haloryva-2.7.2.yml?query=branch%3Amain)
 

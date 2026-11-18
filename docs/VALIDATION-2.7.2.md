@@ -1,6 +1,6 @@
 # Validation — Haloryva Studio 2.7.2
 
-**État au 18 novembre 2026 : livraison finale fabriquée et contrôlée, certification Microsoft Store réussie, mise à jour 2.7.1 → 2.7.2 vérifiée sur le PC testé avec réglages conservés. La disponibilité est établie pour ce poste ; le statut final de publication du portail et la recette visuelle de l’installation restent à confirmer.**
+**État au 18 novembre 2026 : livraison finale fabriquée et contrôlée, certification Microsoft Store réussie, mise à jour 2.7.1 → 2.7.2 vérifiée sur le PC testé avec réglages conservés. Julien confirme la relance manuelle, le halo, la traînée et les réglages visibles. La disponibilité est établie pour ce poste ; le statut final de publication du portail et le démarrage après reconnexion restent à confirmer.**
 
 ## Livraison finale de référence
 
@@ -27,10 +27,12 @@ Le MSIX de dépôt est produit non signé pour Partner Center. L’installation 
 | Identité et binaire installé | Produit 2.7.2, fichier 2.7.2.6, SHA256 identique au binaire livré | Vérification des rapports Avant/Après et de l’empreinte finale |
 | Profil après mise à jour depuis 2.7.1 | 93 valeurs identiques ; aucun champ modifié, manquant ou ajouté | Fichier de réglages également identique octet pour octet entre les deux contrôles |
 | Vérificateur Après | `VERSION_CIBLE_INSTALLEE`, comparaison `VALEURS_EXISTANTES_IDENTIQUES`, code 0 | Application fermée pendant le contrôle |
-| Relance, effets et réglages visibles | Non encore confirmés | La recette visuelle exp4 ne remplace pas celle de l’installation finale |
+| Relance manuelle, halo, traînée et réglages visibles | Confirmés par Julien | Retour utilisateur après la mise à jour, sans nouvelle mesure de cadence |
 | Démarrage après reconnexion | Non encore confirmé | Le contrôle de version et du profil ne démontre pas le lancement automatique |
 
 Les rapports complets ont été relus pour cette synthèse. Aucun profil, chemin personnel, donnée de compte ou journal brut n’est publié ici. Le contrôle sur ce PC ne démontre ni la disponibilité dans tous les marchés, ni le comportement sur tous les appareils. WACK n’a pas été exécuté localement ou dans notre CI ; la certification Microsoft est une preuve distincte.
+
+Après la mise à jour, Julien confirme : **« Haloryva relancé — halo et traînée OK — réglages OK »**. Ce retour valide la relance manuelle et ces observations. Il ne constitue pas une nouvelle recette de l’ensemble des anciens symptômes, un test après lasso, une mesure de cadence ou un essai du démarrage après reconnexion.
 
 ## Qualification intermédiaire conservée
 
@@ -104,7 +106,6 @@ Le catalogue contient 517 clés uniques avec le nouveau résumé FR/EN/ES ; le m
 ## Vérifications restantes
 
 - Observer le statut final de la soumission nº 3 dans Partner Center ; la disponibilité sur le PC testé est déjà établie par l’installation Store.
-- Relancer Haloryva et vérifier les effets, la fluidité perçue et les réglages dans l’interface de la version installée.
 - Vérifier le démarrage après reconnexion si cette option est utilisée ; conserver les résultats distincts des contrôles déjà réussis.
 
 Les captures conservées dans `docs/images/` proviennent de la version 2.7.1. Elles ne servent pas de preuve d’exécution de la 2.7.2.
